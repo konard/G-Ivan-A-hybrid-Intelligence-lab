@@ -37,6 +37,7 @@ required_directories=(
   "projects"
   "research"
   "research/mango"
+  "research/repository-governance"
   "standards"
   "tests"
 )
@@ -63,6 +64,10 @@ required_files=(
   "research/mango/classification.md"
   "research/mango/classification-tz.md"
   "research/mango/requirements-flow.md"
+  "research/repository-governance/README.md"
+  "research/repository-governance/comparison.md"
+  "research/repository-governance/final-vision.md"
+  "research/repository-governance/change-proposal.md"
   "standards/README.md"
 )
 
