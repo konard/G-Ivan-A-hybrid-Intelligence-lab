@@ -88,7 +88,7 @@ traceable.
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution workflow и PR expectations. |
 | [standards/README.md](standards/README.md) | Реестр standards и инструкция применения. |
 | [governance/REPO_MODEL.md](governance/REPO_MODEL.md) | Правила структуры и Anti-Inflation. |
-| `TEAM_CONTRACT.md` | Шаблон командного соглашения для spoke-проектов; не является активным контрактом этого репозитория, пока файл не создан и не принят review. |
+| [standards/TEAM_CONTRACT.md](standards/TEAM_CONTRACT.md) | Шаблон командного соглашения для spoke-проектов; не является контрактом для прямого использования в этом репозитории. |
 | `GLOSSARY.md` | Планируемый источник единой терминологии; до его создания термины фиксируются в ближайшем active artifact или issue. |
 
 ## Стандарты

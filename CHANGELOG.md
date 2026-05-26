@@ -11,6 +11,8 @@ All notable repository governance changes are documented here.
 - Repository structure validation в `tools/validate-repository-structure.sh`.
 - Active documentation для Anti-Inflation principle: артефакт создается только
   когда снижает операционную боль.
+- `standards/TEAM_CONTRACT.md` как шаблон и инструкция для создания
+  project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md` в spoke-проектах.
 
 ### Changed
 
@@ -33,6 +35,7 @@ All notable repository governance changes are documented here.
 - [AI_GOVERNANCE.md](AI_GOVERNANCE.md)
 - [CONTRIBUTING.md](CONTRIBUTING.md)
 - [standards/README.md](standards/README.md)
+- [standards/TEAM_CONTRACT.md](standards/TEAM_CONTRACT.md)
 - [governance/REPO_MODEL.md](governance/REPO_MODEL.md)
 
 ## TODO
