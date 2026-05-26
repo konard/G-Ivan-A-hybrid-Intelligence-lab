@@ -45,6 +45,7 @@ is_active_file() {
     standards/PRODUCT_PROFILE.md | \
     standards/TEAM_CONTRACT.md | \
     standards/ISSUE_WORKFLOW.md | \
+    projects/mango/README.md | \
     governance/REPO_MODEL.md | \
     .github/ISSUE_TEMPLATE/task.yml | \
     tools/validate-frontmatter.sh | \
