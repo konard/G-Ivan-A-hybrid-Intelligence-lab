@@ -42,6 +42,7 @@
 | Проект | Назначение |
 | --- | --- |
 | [projects/repo-development/README.md](projects/repo-development/README.md) | Развитие самого репозитория: аудит миграции, согласованность и предложения по оптимизации. |
+| [projects/education-ba-prompt/README.md](projects/education-ba-prompt/README.md) | Песочница идей, терминов, кейсов и шаблонов для будущего курса БА по промпт-инжинирингу. |
 | [projects/mango/README.md](projects/mango/README.md) | Пилотный продуктовый spoke-проект Mango: навигация и применяемые стандарты. |
 
 ## Состояние миграции

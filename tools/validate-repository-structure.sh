@@ -46,6 +46,8 @@ is_active_file() {
     standards/TEAM_CONTRACT.md | \
     standards/ISSUE_WORKFLOW.md | \
     projects/mango/README.md | \
+    projects/education-ba-prompt/README.md | \
+    projects/education-ba-prompt/docs/course-ideas.md | \
     projects/repo-development/README.md | \
     projects/repo-development/docs/migration-audit-2026-05.md | \
     governance/REPO_MODEL.md | \
@@ -94,6 +96,8 @@ required_files=(
   "standards/ISSUE_WORKFLOW.md"
   "governance/REPO_MODEL.md"
   "governance/ARTIFACT_MAP.md"
+  "projects/education-ba-prompt/README.md"
+  "projects/education-ba-prompt/docs/course-ideas.md"
   ".github/ISSUE_TEMPLATE/task.yml"
   "tools/validate-frontmatter.sh"
   "tools/validate-repository-structure.sh"
@@ -131,6 +135,7 @@ require_text "README.md" "standards/GLOSSARY.md"
 require_text "README.md" "standards/TEAM_CONTRACT.md"
 require_text "README.md" "governance/REPO_MODEL.md"
 require_text "README.md" "governance/ARTIFACT_MAP.md"
+require_text "README.md" "projects/education-ba-prompt/README.md"
 require_text "README.md" "./tools/validate-frontmatter.sh"
 require_text "README.md" "./tools/validate-repository-structure.sh"
 
@@ -305,6 +310,24 @@ require_text "governance/ARTIFACT_MAP.md" "| Путь | Тип | Назначе�
 require_text "governance/ARTIFACT_MAP.md" "Как использовать карту"
 require_text "governance/ARTIFACT_MAP.md" "Как обновлять карту"
 require_text "governance/ARTIFACT_MAP.md" "GLOSSARY.md"
+
+require_text "projects/education-ba-prompt/README.md" "status: draft"
+require_text "projects/education-ba-prompt/README.md" "version: 0.1"
+require_text "projects/education-ba-prompt/README.md" "updated: 2026-05-26"
+require_text "projects/education-ba-prompt/README.md" "ai-generated: false"
+require_text "projects/education-ba-prompt/README.md" "docs/course-ideas.md"
+require_text "projects/education-ba-prompt/README.md" "standards/EDUCATION_PROFILE.md"
+
+require_text "projects/education-ba-prompt/docs/course-ideas.md" "status: draft"
+require_text "projects/education-ba-prompt/docs/course-ideas.md" "version: 0.1"
+require_text "projects/education-ba-prompt/docs/course-ideas.md" "updated: 2026-05-26"
+require_text "projects/education-ba-prompt/docs/course-ideas.md" "ai-generated: false"
+require_text "projects/education-ba-prompt/docs/course-ideas.md" "## 🔹 Термины и концепции"
+require_text "projects/education-ba-prompt/docs/course-ideas.md" "## 🔹 Практические кейсы БА"
+require_text "projects/education-ba-prompt/docs/course-ideas.md" "## 🔹 Шаблоны промптов (рабочие)"
+require_text "projects/education-ba-prompt/docs/course-ideas.md" "## 🔹 Идеи модулей курса"
+require_text "projects/education-ba-prompt/docs/course-ideas.md" "## 🔹 Форматы подачи"
+require_text "projects/education-ba-prompt/docs/course-ideas.md" "## 🔹 Вопросы для обсуждения"
 
 require_text ".github/ISSUE_TEMPLATE/task.yml" "📋 Task Implementation"
 require_text ".github/ISSUE_TEMPLATE/task.yml" "structured"
