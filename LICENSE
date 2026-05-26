@@ -2,10 +2,13 @@ License pending.
 
 Copyright (c) 2026 hybrid-Intelligence-lab contributors.
 
-No final project license has been selected yet. Until Founder & PO approves a
-license, this file is a governance placeholder and does not grant additional
-usage rights beyond those provided by the repository host and applicable law.
+Финальная лицензия проекта еще не выбрана. Пока Founder & PO не утвердит
+license, этот файл является governance placeholder и не предоставляет
+дополнительных прав использования сверх прав, предоставленных платформой
+репозитория и применимым правом.
 
-TODO:
-- Select and approve the project license.
-- Replace this placeholder with the final license text.
+Активный контекст репозитория:
+
+- [CONCEPT.md](CONCEPT.md)
+- [AI_GOVERNANCE.md](AI_GOVERNANCE.md)
+- [standards/README.md](standards/README.md)

@@ -1,41 +1,44 @@
 # Changelog
 
-All notable changes to this repository will be documented here.
-
-The format follows a simple date-based history until a release process is
-selected.
+All notable repository governance changes are documented here.
 
 ## Unreleased
 
 ### Added
 
-- Operational backbone for issue #15: `CHANGELOG.md`, `CONTRIBUTING.md`,
-  `LICENSE`, GitHub issue templates, and a pull request template.
-- GitHub issue templates for AI implementation tasks, research tasks, and
-  governance changes.
-- Pull request checklist aligned with the hybrid-team collaboration rules.
-- Changelog entry connecting this implementation to the repository-governance
-  research completed in issue #13.
+- Issue #17 migration structure: `CONCEPT.md`, обновленные root governance
+  files, `standards/README.md`, `governance/REPO_MODEL.md` и `tools/`.
+- Repository structure validation в `tools/validate-repository-structure.sh`.
+- Active documentation для Anti-Inflation principle: артефакт создается только
+  когда снижает операционную боль.
 
 ### Changed
 
-- Repository identity in core documents now uses `hybrid-Intelligence-lab`.
-- Mango TZ corpus experiment moved from `experiments/tz-corpus/` to
-  `experiments/mango/tz-corpus/`.
-- Repository structure validation now checks the operational backbone files,
-  current repository identity, and the Mango-scoped experiment path.
+- Previous tracked files сохранены с суффиксом `-old` для анализа и выборочной
+  миграции.
+- Active navigation теперь указывает на `governance/` вместо `meta/` и на
+  `tools/` вместо `tests/`.
+- Standards рассматриваются как плоский registry, пока operational use не
+  докажет потребность в более глубокой taxonomy.
 
 ### Removed
 
-- Legacy bootstrap `.gitkeep` from the repository root.
-- Legacy root experiment path `experiments/tz-corpus/`.
+- Old content не удалялся в этой миграции; previous files были переименованы
+  для review.
+
+## Связанные документы
+
+- [README.md](README.md)
+- [CONCEPT.md](CONCEPT.md)
+- [AI_GOVERNANCE.md](AI_GOVERNANCE.md)
+- [CONTRIBUTING.md](CONTRIBUTING.md)
+- [standards/README.md](standards/README.md)
+- [governance/REPO_MODEL.md](governance/REPO_MODEL.md)
 
 ## TODO
 
-- Founder & PO to select and approve the final project license.
-- Add artifact maturity frontmatter (`status:`) after the FR-7 trigger is
-  confirmed.
-- Add `meta/artifact-map.md` when the repository exceeds the agreed artifact
-  navigation threshold.
-- Introduce `/governance/` layering only when the specialized-policy trigger is
-  met.
+- Проанализировать `-old` files и перенести только содержание, которое остается
+  операционно полезным.
+- Добавить concrete artifact templates после появления повторяющихся работ и
+  стабильных потребностей.
+- Заменить license placeholder после решения Founder & PO.

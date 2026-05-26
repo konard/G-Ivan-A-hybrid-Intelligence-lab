@@ -1,21 +1,31 @@
 # Standards
 
-Каталог для стандартов оформления и ведения артефактов.
+Каталог является плоским реестром активных и планируемых стандартов. Более
+глубокая структура добавляется только после повторяющегося использования, когда
+плоский реестр становится операционно неудобным.
 
-## Базовое решение
+## Реестр
 
-Стандарт продуктового видения и концепции зафиксирован в
-[docs/concept/vision-standard.md](../docs/concept/vision-standard.md).
+| Стандарт | Статус | Где применяется | Источник |
+| --- | --- | --- | --- |
+| Концепция репозитория | Active | Root concept и назначение репозитория | [CONCEPT.md](../CONCEPT.md) |
+| AI governance contract | Active | AI-assisted issues, PRs и reviews | [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) |
+| Repository model | Active | Размещение артефактов и правила создания | [governance/REPO_MODEL.md](../governance/REPO_MODEL.md) |
+| Research report | Planned | `research/<domain>/` | Создать после повторяющихся research tasks. |
+| Framework proposal | Planned | `frameworks/` | Создать после documented framework gap. |
+| Education program | Planned | `education/` | Создать после повторения стабильного course format. |
+| Project knowledge base | Planned | `projects/` | Создать после повторяющейся потребности в project context. |
+| Artifact lifecycle | Planned | Все reviewed artifacts | Создать, когда maturity states станут операционно необходимы. |
 
-## Будущие стандарты
+## Как пользоваться
 
-| Стандарт | Где применять |
-| --- | --- |
-| Research report template | `research/` |
-| Framework proposal template | `frameworks/` |
-| Education program template | `education/` |
-| Project knowledge base template | `projects/` |
-| Artifact maturity model | `meta/` и README каталогов |
-
-Новый стандарт должен содержать область применения, обязательные поля, пример
-и связь с проверками, если формат можно валидировать автоматически.
+1. Определите тип артефакта и целевой каталог по
+   [governance/REPO_MODEL.md](../governance/REPO_MODEL.md).
+2. Используйте active standard из таблицы, если он уже есть.
+3. Если standard planned, но еще не active, держите артефакт минимальным и
+   объясните gap в issue или PR.
+4. Не добавляйте новый standard только потому, что документ можно
+   стандартизировать. Добавляйте его, когда повторяющаяся работа создает
+   реальную coordination или review problem.
+5. Ссылайтесь на новый active standard из этой таблицы и ближайшего README или
+   governance document.

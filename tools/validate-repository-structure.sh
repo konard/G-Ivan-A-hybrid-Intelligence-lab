@@ -1,0 +1,147 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT_DIR"
+
+failures=0
+
+fail() {
+  printf 'FAIL: %s\n' "$1" >&2
+  failures=$((failures + 1))
+}
+
+require_dir() {
+  local path="$1"
+  [[ -d "$path" ]] || fail "missing directory: $path"
+}
+
+require_file() {
+  local path="$1"
+  [[ -f "$path" ]] || fail "missing file: $path"
+}
+
+require_text() {
+  local path="$1"
+  local text="$2"
+  if [[ -f "$path" ]] && ! grep -Fq "$text" "$path"; then
+    fail "$path must contain: $text"
+  fi
+}
+
+is_active_file() {
+  case "$1" in
+    README.md | \
+    CONCEPT.md | \
+    CONTRIBUTING.md | \
+    AI_GOVERNANCE.md | \
+    CHANGELOG.md | \
+    LICENSE | \
+    standards/README.md | \
+    governance/REPO_MODEL.md | \
+    tools/validate-repository-structure.sh)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+is_old_file() {
+  local name="${1##*/}"
+  [[ "$name" == *-old || "$name" == *-old.* ]]
+}
+
+required_directories=(
+  ".github/ISSUE_TEMPLATE"
+  "standards"
+  "research"
+  "frameworks"
+  "projects"
+  "education"
+  "governance"
+  "tools"
+)
+
+required_files=(
+  "README.md"
+  "CONCEPT.md"
+  "CONTRIBUTING.md"
+  "AI_GOVERNANCE.md"
+  "CHANGELOG.md"
+  "LICENSE"
+  "standards/README.md"
+  "governance/REPO_MODEL.md"
+  "tools/validate-repository-structure.sh"
+)
+
+for dir in "${required_directories[@]}"; do
+  require_dir "$dir"
+done
+
+for file in "${required_files[@]}"; do
+  require_file "$file"
+done
+
+old_file_count=0
+while IFS= read -r file; do
+  if is_active_file "$file"; then
+    continue
+  fi
+
+  if is_old_file "$file"; then
+    old_file_count=$((old_file_count + 1))
+    continue
+  fi
+
+  fail "tracked legacy file without -old suffix: $file"
+done < <(git ls-files)
+
+if [[ "$old_file_count" -eq 0 ]]; then
+  fail "expected preserved -old files for migration analysis"
+fi
+
+require_text "README.md" "CONCEPT.md"
+require_text "README.md" "standards/README.md"
+require_text "README.md" "governance/REPO_MODEL.md"
+require_text "README.md" "./tools/validate-repository-structure.sh"
+
+require_text "CONCEPT.md" "governance/REPO_MODEL.md"
+require_text "CONCEPT.md" "standards/README.md"
+require_text "CONCEPT.md" "Anti-Inflation"
+
+require_text "CONTRIBUTING.md" "AI_GOVERNANCE.md"
+require_text "CONTRIBUTING.md" "standards/README.md"
+require_text "CONTRIBUTING.md" "./tools/validate-repository-structure.sh"
+
+require_text "AI_GOVERNANCE.md" "Founder & PO"
+require_text "AI_GOVERNANCE.md" "Human reviewer"
+require_text "AI_GOVERNANCE.md" "standards/README.md"
+
+require_text "CHANGELOG.md" "## Unreleased"
+require_text "CHANGELOG.md" "### Added"
+require_text "CHANGELOG.md" "### Changed"
+require_text "CHANGELOG.md" "### Removed"
+
+require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
+require_text "standards/README.md" "Как пользоваться"
+
+require_text "governance/REPO_MODEL.md" "Артефакт только при операционной боли"
+require_text "governance/REPO_MODEL.md" "Anti-Inflation"
+require_text "governance/REPO_MODEL.md" "tools/"
+
+if [[ -e meta/README.md ]]; then
+  fail "active meta/README.md should be renamed to meta/README-old.md"
+fi
+
+if [[ -e tests/validate-repository-structure.sh ]]; then
+  fail "active tests/validate-repository-structure.sh should move to tools/"
+fi
+
+if [[ "$failures" -gt 0 ]]; then
+  printf '\nRepository structure validation failed with %d issue(s).\n' "$failures" >&2
+  exit 1
+fi
+
+printf 'Repository structure validation passed.\n'

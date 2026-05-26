@@ -1,88 +1,58 @@
 # AI Governance
 
-Операционный контракт для работы гибридных human + AI команд в
-`hybrid-Intelligence-lab`.
-
-## Назначение
-
-Документ фиксирует правила взаимодействия людей, Команды C и AI-агентов при
-создании исследований, образовательных материалов, методологий и проектных
-артефактов.
+Операционный контракт для AI-assisted work в `hybrid-Intelligence-lab`.
 
 ## Роли
 
 | Роль | Ответственность |
 | --- | --- |
-| Founder & PO - Иван Гулиенко | Формирует видение, приоритеты, границы публичности, принимает ключевые продуктовые и методологические решения. |
-| Команда C | Поддерживает подготовку артефактов, проверяет структуру, полноту, согласованность, помогает превращать черновики в пригодные для использования материалы. |
-| Human reviewer | Проверяет выводы, источники, риски публикации, качество структуры и пригодность результата для целевой аудитории. |
-| AI agent | Готовит черновики, сравнительные таблицы, структурные предложения, тесты и PR в пределах issue и governance-правил. |
-| External contributor | Предлагает исследования, образовательные материалы или улучшения через issue и PR, соблюдая структуру репозитория. |
+| Founder & PO | Формирует vision, priorities, publication boundaries и финальные product/governance decisions. |
+| Human reviewer | Проверяет структуру, источники, риски и полезность до merge или публикации. |
+| Contributor | Создает issues, artifacts и pull requests внутри repository model. |
+| AI agent | Готовит черновики, миграции, проверки и summaries внутри scope issue и governance rules. |
 
-## Принципы работы
+## Правила
 
-1. **Human-in-control.** AI может предлагать и оформлять, но не принимает
-   окончательные решения за Founder & PO и назначенных ревьюеров.
-2. **Issue-first.** Значимая работа начинается с issue: цель, контекст,
-   ограничения, формат результата, язык и критерии приемки.
-3. **Comparative-first.** Если нужно выбрать структуру, стандарт или
-   методологию, сначала сравниваются варианты в таблице, затем фиксируется
-   решение.
-4. **Traceability.** Документы должны ссылаться на связанные issue, PR,
-   источники, эксперименты и предыдущие артефакты, когда это влияет на вывод.
-5. **Separation of concerns.** Research, education, frameworks и projects не
-   смешиваются в одном документе без явной причины.
-6. **Small reviewable changes.** PR должен быть понятен человеку: структура,
-   содержание, тесты или проверки и риски видны сразу.
-7. **Safe publication.** Не публикуются секреты, закрытые клиентские данные,
-   внутренние договорные условия и несанитизированные production-промпты.
+1. Работа начинается с issue или явного maintainer request.
+2. AI agents читают issue, последние comments, relevant files и текущий PR
+   context до изменения файлов.
+3. Изменения должны следовать [CONCEPT.md](CONCEPT.md),
+   [governance/REPO_MODEL.md](governance/REPO_MODEL.md) и
+   [standards/README.md](standards/README.md).
+4. AI agents могут предлагать структуру, но humans принимают финальные решения
+   по vision, publication, license и sensitive context.
+5. Claims, влияющие на решения, связываются с sources, experiments, issues,
+   PRs или сохраненными `-old` files.
+6. Secrets, private client data, credentials и несанитизированные
+   production-промпты не коммитятся.
+7. Малые reviewable pull requests предпочтительнее широких undocumented
+   rewrites.
 
-## Рабочие режимы
+## Operating Modes
 
-| Режим | Когда применять | Поведение AI |
-| --- | --- | --- |
-| Structured | По умолчанию для governance, структуры, документов и проверки PR. | Следовать issue, менять только нужные файлы, добавлять проверяемые артефакты. |
-| Research | Для исследований рынка, технологий, стандартов и доменных задач. | Фиксировать вопрос, метод, источники, ограничения, выводы и bilingual ru/en план публикации. |
-| Creative proposal | Только если issue явно просит варианты концепции или новой методологии. | Давать альтернативы, сравнивать их, не превращать предложение в обязательный стандарт без human review. |
+| Mode | Когда использовать |
+| --- | --- |
+| Structured | По умолчанию для governance, структуры репозитория, standards и migration work. |
+| Research | Для source-backed analysis, domain research, methods, limitations и reproducibility. |
+| Education | Для programs, lessons, scenarios и teaching artifacts. |
+| Project | Для prompt, process и knowledge-base context, связанных с scoped initiative. |
 
-## Цикл работы
+## Эскалация
 
-1. Прочитать issue, последние комментарии и связанные документы.
-2. Определить тип работы: framework, education, research, project, standard или meta/governance.
-3. Проверить похожие артефакты в репозитории и переиспользовать локальный формат.
-4. Для спорных решений подготовить сравнительную таблицу вариантов.
-5. Создать или обновить артефакт в правильном каталоге.
-6. Добавить воспроизводимую проверку, если структура или формат могут быть
-   проверены автоматически.
-7. Обновить README или навигацию, если появился новый публичный путь.
-8. Открыть или обновить PR с кратким описанием, проверками и рисками.
+Перед продолжением нужно запросить human guidance, если:
+
+- требования противоречат друг другу;
+- изменение публикует sensitive или private information;
+- нужен новый обязательный standard, но нет comparison;
+- репозиторий смещается к production-code ownership;
+- AI agent не может проверить важное claim или migration decision.
 
 ## Definition of Done
 
-Для документационной и методологической задачи PR считается готовым к review,
-если выполнены условия:
+Для AI-assisted repository changes:
 
-| Условие | Проверка |
-| --- | --- |
-| Результат записан в явный файл, а не только в комментарий. | Есть новый или измененный Markdown-артефакт. |
-| Есть обоснование выбора структуры или стандарта. | В документе есть таблица сравнения вариантов. |
-| Роли и ответственность не размыты. | Указаны Founder & PO, Команда C, reviewer и AI agent там, где это влияет на процесс. |
-| Навигация обновлена. | README или индекс каталога ссылается на новый артефакт. |
-| Проверка выполнена. | Запущен `./tests/validate-repository-structure.sh` или более релевантная проверка. |
-
-## Когда эскалировать
-
-AI-агент должен остановиться и задать вопрос в issue или PR, если:
-
-- требования противоречат друг другу;
-- нужно публиковать чувствительные данные;
-- изменение превращает этот репозиторий в production-codebase;
-- требуется выбрать новый обязательный стандарт без сравнительного анализа;
-- вывод исследования нельзя подтвердить источниками или экспериментом.
-
-## Связанные документы
-
-- [PRODUCT_VISION.md](PRODUCT_VISION.md)
-- [docs/concept/repository-structure.md](docs/concept/repository-structure.md)
-- [docs/concept/vision-standard.md](docs/concept/vision-standard.md)
-- [docs/governance/hybrid-team-collaboration.md](docs/governance/hybrid-team-collaboration.md)
+- active files находятся в ожидаемых каталогах;
+- old material сохранен с `-old`, если явно не superseded;
+- navigation и standards links обновлены;
+- `./tools/validate-repository-structure.sh` проходит;
+- PR description объясняет implementation, validation и remaining risks.
