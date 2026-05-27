@@ -29,6 +29,36 @@ require_text() {
   fi
 }
 
+markdown_body_chars() {
+  local path="$1"
+  awk '
+    NR == 1 && $0 == "---" {
+      in_frontmatter = 1
+      next
+    }
+    in_frontmatter && $0 == "---" {
+      in_frontmatter = 0
+      next
+    }
+    !in_frontmatter {
+      print
+    }
+  ' "$path" | wc -m | tr -d '[:space:]'
+}
+
+require_max_body_chars() {
+  local path="$1"
+  local max_chars="$2"
+
+  if [[ -f "$path" ]]; then
+    local chars
+    chars="$(markdown_body_chars "$path")"
+    if (( chars > max_chars )); then
+      fail "$path body is ${chars} chars, expected <= ${max_chars}"
+    fi
+  fi
+}
+
 is_active_file() {
   case "$1" in
     README.md | \
@@ -65,11 +95,16 @@ is_active_file() {
     projects/mango/experiments/user-story_gen-from-raw-request_2026-05-26.md | \
     projects/mango/experiments/tz-stats-prototype-2026-05.md | \
     projects/mango/experiments/usecase_gen-stepwise-alignment_2026-05-26.md | \
+    projects/mango/experiments/prompts-audit-2026-05-26.md | \
+    projects/mango/experiments/prompts-selftest-2026-05-26.md | \
+    projects/mango/prompts/tz-stats-generator_exp-2026-05.md | \
+    projects/mango/prompts/tz-stats-generator_simple-2026-05.md | \
     projects/mango/prompts/user-story-generator_exp-2026-05.md | \
+    projects/mango/prompts/user-story-generator_simple-2026-05.md | \
+    projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md | \
+    projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md | \
     projects/mango/standards/classification-glossary.md | \
     projects/mango/kb/.gitkeep | \
-    projects/mango/prompts/.gitkeep | \
-    projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md | \
     projects/mango/docs/.gitkeep | \
     projects/mango/experiments/.gitkeep | \
     projects/mango/decisions/.gitkeep | \
@@ -144,11 +179,16 @@ required_files=(
   "projects/mango/experiments/user-story_gen-from-raw-request_2026-05-26.md"
   "projects/mango/experiments/tz-stats-prototype-2026-05.md"
   "projects/mango/experiments/usecase_gen-stepwise-alignment_2026-05-26.md"
+  "projects/mango/experiments/prompts-audit-2026-05-26.md"
+  "projects/mango/experiments/prompts-selftest-2026-05-26.md"
+  "projects/mango/prompts/tz-stats-generator_exp-2026-05.md"
+  "projects/mango/prompts/tz-stats-generator_simple-2026-05.md"
   "projects/mango/prompts/user-story-generator_exp-2026-05.md"
+  "projects/mango/prompts/user-story-generator_simple-2026-05.md"
+  "projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md"
+  "projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md"
   "projects/mango/standards/classification-glossary.md"
   "projects/mango/kb/.gitkeep"
-  "projects/mango/prompts/.gitkeep"
-  "projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md"
   "projects/mango/docs/.gitkeep"
   "projects/mango/experiments/.gitkeep"
   "projects/mango/decisions/.gitkeep"
@@ -425,6 +465,55 @@ require_text "projects/README.md" "repo-development/"
 require_text "projects/mango/README.md" "research/mango/README.md"
 require_text "projects/mango/README.md" "standards/classification-glossary.md"
 require_text "projects/mango/README.md" 'Все исследования Mango используют термины из `standards/classification-glossary.md`'
+
+prompt_file_count="$(find projects/mango/prompts -maxdepth 1 -type f | wc -l | tr -d '[:space:]')"
+if [[ "$prompt_file_count" != "6" ]]; then
+  fail "projects/mango/prompts must contain exactly 6 files, found $prompt_file_count"
+fi
+
+prompt_files=(
+  "projects/mango/prompts/tz-stats-generator_exp-2026-05.md"
+  "projects/mango/prompts/tz-stats-generator_simple-2026-05.md"
+  "projects/mango/prompts/user-story-generator_exp-2026-05.md"
+  "projects/mango/prompts/user-story-generator_simple-2026-05.md"
+  "projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md"
+  "projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md"
+)
+
+for prompt_file in "${prompt_files[@]}"; do
+  require_text "$prompt_file" "type:"
+  require_text "$prompt_file" "variant:"
+  require_text "$prompt_file" "scope: mango-only"
+  require_text "$prompt_file" "based_on:"
+  require_text "$prompt_file" "# РОЛЬ"
+  require_text "$prompt_file" "# КАК РАБОТАЕМ"
+  require_text "$prompt_file" "# ПРАВИЛА"
+  require_text "$prompt_file" "# НАЧНЕМ?"
+done
+
+require_text "projects/mango/prompts/tz-stats-generator_exp-2026-05.md" "variant: exp"
+require_text "projects/mango/prompts/user-story-generator_exp-2026-05.md" "variant: exp"
+require_text "projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md" "variant: exp"
+require_text "projects/mango/prompts/tz-stats-generator_simple-2026-05.md" "variant: simple"
+require_text "projects/mango/prompts/user-story-generator_simple-2026-05.md" "variant: simple"
+require_text "projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md" "variant: simple"
+
+require_max_body_chars "projects/mango/prompts/tz-stats-generator_exp-2026-05.md" 1000
+require_max_body_chars "projects/mango/prompts/user-story-generator_exp-2026-05.md" 1000
+require_max_body_chars "projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md" 1000
+require_max_body_chars "projects/mango/prompts/tz-stats-generator_simple-2026-05.md" 3000
+require_max_body_chars "projects/mango/prompts/user-story-generator_simple-2026-05.md" 3000
+require_max_body_chars "projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md" 3000
+
+require_text "projects/mango/experiments/prompts-audit-2026-05-26.md" "type: prompt-audit"
+require_text "projects/mango/experiments/prompts-audit-2026-05-26.md" "Что работает"
+require_text "projects/mango/experiments/prompts-audit-2026-05-26.md" 'Упрощения для `_simple`'
+require_text "projects/mango/experiments/prompts-audit-2026-05-26.md" 'Критичные ссылки для `_exp`'
+
+require_text "projects/mango/experiments/prompts-selftest-2026-05-26.md" "type: prompt-selftest"
+require_text "projects/mango/experiments/prompts-selftest-2026-05-26.md" "Результаты self-test"
+require_text "projects/mango/experiments/prompts-selftest-2026-05-26.md" "Идеи на будущее"
+require_text "projects/mango/experiments/prompts-selftest-2026-05-26.md" "Вопросы для согласования"
 
 require_text "projects/mango/standards/classification-glossary.md" "status: draft"
 require_text "projects/mango/standards/classification-glossary.md" "version: 0.1"

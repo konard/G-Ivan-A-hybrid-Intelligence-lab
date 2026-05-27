@@ -6,6 +6,12 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #77: аудит `projects/mango/experiments/prompts-audit-2026-05-26.md`,
+  self-test `projects/mango/experiments/prompts-selftest-2026-05-26.md` и
+  шесть готовых Mango prompt assets в `projects/mango/prompts/`: TZ Stats,
+  User Story и Use Case в вариантах `_exp` и `_simple`. Prompt assets
+  зарегистрированы в `tools/validate-repository-structure.sh`,
+  `projects/mango/README.md` и `governance/ARTIFACT_MAP.md`.
 - Issue #69: справочник `research/mango/capability-decomposition-2026-05.md`
   (`status: draft`, `scope: mango-only`) — детализация уровня `Atomic Function`
   для трёх пилотных доменов (`voice-ucaas`, `contact-center`,
@@ -35,6 +41,10 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #77: прототипные `_exp` prompt-файлы для User Story и Use Case
+  заменены короткими copy-paste промптами; валидатор структуры теперь проверяет
+  наличие ровно 6 файлов в `projects/mango/prompts/` и лимиты длины prompt body
+  для `_exp` / `_simple`.
 - Issue #67: `research/mango/classification.md` обновлён с версии 2 до v3.0
   аддитивно — все 37 существующих строк сохранены и переструктурированы под
   новую модель; сравнительная таблица международной классификации дополнена
@@ -49,6 +59,9 @@ All notable repository governance changes are documented here.
 
 ### Removed
 
+- Issue #77: удалены root `.gitkeep` из служебного PR-initial commit и
+  `projects/mango/prompts/.gitkeep`, потому что `prompts/` теперь содержит
+  шесть активных prompt files.
 - Issue #69: повторно удалён служебный корневой `.gitkeep`, восстановленный при
   создании PR-ветки, чтобы `tools/validate-repository-structure.sh` проходил без
   ошибок.
