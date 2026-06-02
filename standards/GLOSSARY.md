@@ -1,15 +1,15 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-05-26
+version: 1.1
+updated: 2026-06-02
 ai-generated: false
 ---
 
 # Glossary
 
-Версия: 1.0
+Версия: 1.1
 
-Дата: 2026-05-26
+Дата: 2026-06-02
 
 Этот глоссарий фиксирует рабочие определения терминов для
 `hybrid-Intelligence-lab`. Он нужен, чтобы issues, standards, governance-файлы
@@ -52,6 +52,8 @@ ai-generated: false
 | Среда работы агента | Чат диалога (LLM-интерфейс), где агент «думает» и общается с пользователем. Агент НЕ работает внутри репозитория. | Ортогональна `Источнику контекста`. Введена, чтобы устранить ложную модель «агент живёт в репозитории» (см. issue #99). | [governance/proposals/rfc-two-cases-of-project-initialization.md](../governance/proposals/rfc-two-cases-of-project-initialization.md) |
 | Источник контекста | Репозиторий (GitHub, файловая система) как внешняя база знаний, к которой агент обращается по алгоритму протокола. | Ортогонален `Среде работы агента`: агент *читает* источник, а не «живёт» внутри него. Постоянный результат `Bootstrap-клонирования`. | [governance/proposals/rfc-two-cases-of-project-initialization.md](../governance/proposals/rfc-two-cases-of-project-initialization.md) |
 | North Star | Долгосрочное стратегическое направление проекта, выраженное одной формулировкой: куда репозиторий движется как продукт и какую нишу занимает. North Star задаёт *направление*, но не *темп* внедрения. | Используется как ориентир для приоритизации, не как обязательное `Policy`. Отличается от `Concept`: concept фиксирует текущие цель и границы, North Star указывает целевую нишу на горизонте. Темп движения регулируется матрицей применимости и `Триггерами внедрения`. | [research/hub/external-governance-patterns-review-2026-06.md](../research/hub/external-governance-patterns-review-2026-06.md) |
+| Ретроспектива | Структурированный разбор завершённой сессии или этапа работы, который фиксирует допущенные ошибки, их корневые причины и системные выводы для предотвращения повторения. | Оформляется как research-`Artifact` в `research/hub/`; фиксирует факты и выводы, но не меняет governance-контракты напрямую (выводы идут в будущий proposal или human review). Отличается от `Practice`: practice описывает повторяемый способ работы, ретроспектива анализирует уже произошедшую работу. | [research/hub/ai-collaboration-retrospective-mango-migration-2026-06.md](../research/hub/ai-collaboration-retrospective-mango-migration-2026-06.md), [research/hub/ai-collaboration-retrospective-2026-06.md](../research/hub/ai-collaboration-retrospective-2026-06.md) |
+| Корневая причина | Базовый фактор, устранение которого предотвращает повторение ошибки, в отличие от её внешнего симптома. | Используется в `Ретроспективе` и разборах инцидентов: каждая зафиксированная ошибка связывается с корневой причиной и системным выводом, а не только с описанием симптома. Поддерживает Anti-Inflation principle — решение направляется на причину, а не на создание нового артефакта «вокруг» симптома. | [research/hub/ai-collaboration-retrospective-mango-migration-2026-06.md](../research/hub/ai-collaboration-retrospective-mango-migration-2026-06.md) |
 | Триггер внедрения | Заранее зафиксированное условие (операционная боль, инцидент или порог масштаба), при наступлении которого отложенную идею или артефакт нужно пересмотреть и, возможно, внедрить. | Операционализирует принцип «нет governance-артефакта без операционной боли» (Anti-Inflation). Используется в матрицах применимости: пока триггер не сработал — идея остаётся отложенной. Отличается от срока: триггер событийный, а не календарный. | [research/hub/external-governance-patterns-review-2026-06.md](../research/hub/external-governance-patterns-review-2026-06.md), [governance/REPO_MODEL.md](../governance/REPO_MODEL.md) |
 
 ## Связи терминов

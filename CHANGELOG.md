@@ -6,6 +6,21 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #124: новый research-артефакт
+  `research/hub/ai-collaboration-retrospective-mango-migration-2026-06.md` —
+  ретроспектива ошибок AI-агента в сессии проектирования миграции Mango
+  (Хаб → спок): реестр из 5 ошибок (режимы, pre-flight контекст, Anti-Inflation,
+  формат issue, архитектурное размещение артефактов), их корневые причины и
+  4 системных вывода для будущего onboarding/governance proposal (режим
+  `Research`, governance-файлы не меняются). Имя файла осознанно отличается от
+  запрошенного в issue `ai-collaboration-retrospective-2026-06.md`: тот файл уже
+  существует в `main` и описывает другую сессию (проектирование шаблонов споков,
+  #95) — перезапись уничтожила бы прежний артефакт. Новые термины «Ретроспектива»
+  и «Корневая причина» добавлены в `standards/GLOSSARY.md` (версия 1.0 → 1.1) как
+  единый источник определений. Артефакт зарегистрирован как active в
+  `tools/validate-repository-structure.sh` (`is_active_file`) и в навигации
+  `research/hub/README.md`. Удалён сгенерированный харнессом корневой `.gitkeep`
+  (его нет в `main`), снимавший FAIL структурного валидатора.
 - Issue #114 (B-003): новый артефакт генома спока
   `templates/spoke/AI_HANDOVER_PROMPT.md` — копия *Handover Prompt* с
   плейсхолдером `{{REPO_NAME}}` (по умолчанию `hybrid-Intelligence-lab`), готовая

@@ -52,6 +52,7 @@ is_active_file() {
     research/mango/capability-decomposition-2026-05.md | \
     research/hub/project-context-and-bootstrap-patterns-2026-05.md | \
     research/hub/ai-collaboration-retrospective-2026-06.md | \
+    research/hub/ai-collaboration-retrospective-mango-migration-2026-06.md | \
     research/hub/prompts-classification-audit-2026-05.md | \
     research/hub/prompts-classification-standard-2026-05.md | \
     research/hub/team-c-governance-strategy-audit-2026-05.md | \
@@ -377,8 +378,8 @@ require_text "standards/RESEARCH_PROFILE.md" "Правила цитирован�
 require_text "standards/RESEARCH_PROFILE.md" "FAIR Principles"
 
 require_text "standards/GLOSSARY.md" "status: canonical"
-require_text "standards/GLOSSARY.md" "version: 1.0"
-require_text "standards/GLOSSARY.md" "updated: 2026-05-26"
+require_text "standards/GLOSSARY.md" "version: 1.1"
+require_text "standards/GLOSSARY.md" "updated: 2026-06-02"
 require_text "standards/GLOSSARY.md" "ai-generated: false"
 require_text "standards/GLOSSARY.md" "Standard"
 require_text "standards/GLOSSARY.md" "Concept"
