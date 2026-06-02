@@ -15,6 +15,19 @@ All notable repository governance changes are documented here.
   — Q «взять сейчас», команда С `[C5]`, внешний паттерн `[GAP]`). Секция даёт
   агенту ясные границы между корзинами «Правила» и «Эскалация» без новой
   структуры (Anti-Inflation).
+- Issue #115 (B-005): шаблон `templates/spoke/README.md` (точка входа **Кейса 2**,
+  *Bootstrap-клонирование*) дополнен разделами «🛠️ Как адаптировать
+  `{{...}}`-плейсхолдеры» (таблица плейсхолдеров, запуск `init.sh`, ручная правка,
+  пояснение про `{{REPO_NAME}}`) и «✅ Как валидировать структуру» (запуск
+  `./tools/validate-repository-structure.sh` перед PR). Замкнуты перекрёстные
+  ссылки между двумя точками входа (follow-up #4, #5 RFC-манифеста двух кейсов):
+  спок-README → Хаб `governance/AGENT_ONBOARDING.md` (Кейс 1),
+  `rfc-two-cases-of-project-initialization.md` и `rfc-creative-template-design.md`
+  через `{{hub_url}}`; обратная ссылка (онбординг → спок-README) уже существовала.
+  Структурный валидатор расширен проверками контента спок-README
+  (`tools/validate-repository-structure.sh`: ссылка на `governance/AGENT_ONBOARDING.md`
+  и наличие раздела валидации). Удалён сгенерированный харнессом корневой
+  `.gitkeep` (его нет в `main`), снимавший FAIL структурного валидатора.
 
 - Issue #114 (B-003): новый артефакт генома спока
   `templates/spoke/AI_HANDOVER_PROMPT.md` — копия *Handover Prompt* с
@@ -35,6 +48,30 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #111 (B-004): в канон `governance/REPO_MODEL.md` добавлен раздел
+  «Spoke Lifecycle: два кейса инициализации», фиксирующий разделение
+  *Runtime-онбординг* (Кейс 1) ⟂ *Bootstrap-клонирование* (Кейс 2) как часть
+  модели жизненного цикла spoke. Operating Mode привязан к кейсу (Кейс 1 →
+  `Structured`, Кейс 2 → `Project`). Раздел сознательно краткий: определения
+  терминов вынесены в `standards/GLOSSARY.md`, полное обоснование с аналогиями и
+  Mermaid-схемой — в RFC-манифесте
+  `governance/proposals/rfc-two-cases-of-project-initialization.md`; канон
+  ссылается на источники, а не дублирует их (Anti-Inflation). Снят риск
+  повторения терминологической путаницы (ошибка №5 ретроспективы). Удалён
+  сгенерированный харнессом корневой `.gitkeep`, снимавший FAIL структурного
+  валидатора.
+
+- Issue #110 (B-002): связаны входные точки репозитория с онбордингом. В
+  `README.md` добавлены предполётный блок «🛫 Новый агент? Начни здесь →
+  `governance/AGENT_ONBOARDING.md`» и строка в таблице «Ключевые документы»; в
+  `AI_GOVERNANCE.md` онбординг закреплён как обязательный pre-flight шаг (нота в
+  шапке + ссылка в правиле 2 «читай до изменения файлов»). Это ссылки, а не
+  копии протокола (Anti-Inflation, риск дублирования снят). Навигационные связи
+  зафиксированы в валидаторе (`require_text` на `governance/AGENT_ONBOARDING.md`
+  в `README.md` и `AI_GOVERNANCE.md`) и в `governance/ARTIFACT_MAP.md` (связи у
+  строк `README.md`, `AI_GOVERNANCE.md` и `AGENT_ONBOARDING.md`; версия карты
+  1.10 → 1.11). Замыкает Кейс 1: артефакт B-001 (#109) теперь виден из двух
+  очевидных точек входа.
 - Issue #116 (B-011): в RFC-манифест
   `governance/proposals/rfc-two-cases-of-project-initialization.md` добавлен
   раздел «Evidence trail: git history + issues + PRs как след доказательств»,
