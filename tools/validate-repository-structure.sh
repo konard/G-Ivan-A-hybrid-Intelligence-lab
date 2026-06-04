@@ -91,6 +91,7 @@ is_active_file() {
     projects/education-ba-prompt/docs/course-ideas.md | \
     projects/repo-development/README.md | \
     projects/repo-development/docs/migration-audit-2026-05.md | \
+    projects/repo-development/docs/contract-violations-self-report-2026-06.md | \
     governance/AGENT_ONBOARDING.md | \
     governance/REPO_MODEL.md | \
     governance/ARTIFACT_MAP.md | \
@@ -199,6 +200,7 @@ required_files=(
   "projects/mango/decisions/.gitkeep"
   "projects/repo-development/README.md"
   "projects/repo-development/docs/migration-audit-2026-05.md"
+  "projects/repo-development/docs/contract-violations-self-report-2026-06.md"
   "governance/AGENT_ONBOARDING.md"
   "governance/REPO_MODEL.md"
   "governance/ARTIFACT_MAP.md"
@@ -484,9 +486,9 @@ require_text "governance/AGENT_ONBOARDING.md" "rfc-two-cases-of-project-initiali
 require_text "governance/AGENT_ONBOARDING.md" "templates/spoke/README.md"
 
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.11"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.12"
 require_text "governance/ARTIFACT_MAP.md" "templates/spoke/AI_GOVERNANCE.md"
-require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-02"
+require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-04"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
 require_text "governance/ARTIFACT_MAP.md" "governance/proposals/rfc-creative-template-design.md"
 require_text "governance/ARTIFACT_MAP.md" "| Путь | Тип | Назначение | Обязательный? | Связанные артефакты |"
