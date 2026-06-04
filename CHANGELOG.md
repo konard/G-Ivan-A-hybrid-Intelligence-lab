@@ -86,6 +86,13 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #142 (CE-005): `governance/REPO_MODEL.md` converted to the executable
+  document standard as a reference policy: added canonical frontmatter with
+  `executable: false`, bumped version `1 → 1.1` and date to `2026-06-04`, and
+  marked Decision Rules as the executable decision checklist inside the
+  otherwise reference document. Structural validation now checks the new
+  frontmatter/version markers; removed the generated harness `.gitkeep`.
+
 - Issue #147 (CE-010): `governance/ARTIFACT_MAP.md` refactored for the
   executable-documents standard. Version `1.14 → 1.15`; the main artifact table
   now has a `🚦 Исполнимый?` column with `🚦 entrypoint`, `🚦 да`, `справка` and
