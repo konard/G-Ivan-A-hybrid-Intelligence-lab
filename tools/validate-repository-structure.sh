@@ -98,6 +98,7 @@ is_active_file() {
     governance/proposals/rfc-creative-template-design.md | \
     governance/proposals/rfc-agent-onboarding-protocol.md | \
     governance/proposals/rfc-two-cases-of-project-initialization.md | \
+    docs/analysis/contract-executability-rfc.md | \
     .github/ISSUE_TEMPLATE/task.yml | \
     templates/spoke/AI_GOVERNANCE.md | \
     templates/spoke/AI_QUICK_RULES.md | \
