@@ -86,6 +86,12 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #146 (CE-009): `tools/validate-frontmatter.sh` теперь мягко
+  валидирует опциональные маркеры стандарта исполнимых документов:
+  `executable` допускает только `true|false`, а `entrypoint` при наличии
+  допускает только `true`. Поле `executable` не стало обязательным, поэтому
+  существующая fail-open семантика и документы без этого маркера сохранены.
+
 - Issue #147 (CE-010): `governance/ARTIFACT_MAP.md` refactored for the
   executable-documents standard. Version `1.14 → 1.15`; the main artifact table
   now has a `🚦 Исполнимый?` column with `🚦 entrypoint`, `🚦 да`, `справка` and
