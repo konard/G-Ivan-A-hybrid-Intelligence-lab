@@ -73,6 +73,14 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #147 (CE-010): `governance/ARTIFACT_MAP.md` refactored for the
+  executable-documents standard. Version `1.14 → 1.15`; the main artifact table
+  now has a `🚦 Исполнимый?` column with `🚦 entrypoint`, `🚦 да`, `справка` and
+  `—` markers. RFC `governance/proposals/contract-executability-rfc.md` remains
+  registered in `governance/proposals/` and is linked from the map legend,
+  related contracts and the relevant executable/reference rows. The structural
+  validator expectation is updated to the new map version and table header.
+
 - Issue #111 (B-004): в канон `governance/REPO_MODEL.md` добавлен раздел
   «Spoke Lifecycle: два кейса инициализации», фиксирующий разделение
   *Runtime-онбординг* (Кейс 1) ⟂ *Bootstrap-клонирование* (Кейс 2) как часть
