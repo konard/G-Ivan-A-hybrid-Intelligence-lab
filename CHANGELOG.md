@@ -6,6 +6,13 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #141 (CE-004): `AI_GOVERNANCE.md` converted to the executable-documents
+  standard as a reference contract. Added canonical frontmatter with
+  `executable: false`, bumped version to `1.1` and date to `2026-06-04`, and
+  replaced the pre-flight note with a directive pointer to
+  `governance/AGENT_ONBOARDING.md`. Roles, Operating Modes, escalation and
+  Definition of Done remain unchanged. Structural validation now checks the new
+  frontmatter/version markers; removed the generated harness `.gitkeep`.
 - Issue #138 (CE-001): `governance/AGENT_ONBOARDING.md` (версия 1.0 → 1.1)
   переведён в стандарт исполнимых документов
   `governance/proposals/contract-executability-rfc.md` (§5.1, §6.1, §7).
