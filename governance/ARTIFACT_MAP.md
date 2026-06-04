@@ -1,15 +1,15 @@
 ---
 status: canonical
-version: 1.11
-updated: 2026-06-02
+version: 1.12
+updated: 2026-06-04
 ai-generated: false
 ---
 
 # Artifact Map
 
-Версия: 1.11
+Версия: 1.12
 
-Дата: 2026-06-02
+Дата: 2026-06-04
 
 Карта артефактов — единая точка входа в репозиторий `hybrid-Intelligence-lab`.
 Она показывает, что где лежит, зачем нужно и как связано, чтобы новые участники
@@ -115,6 +115,7 @@ ai-generated: false
 | `/projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md` | шаблон | Standalone prompt для пошаговой генерации Use Case без доступа к репозиторию. | ✅ Да | `projects/mango/experiments/usecase_gen-stepwise-alignment_2026-05-26.md` |
 | `/projects/repo-development/README.md` | навигация | Развитие структуры, governance и локальных проверок самого репозитория. | ✅ Да | `projects/README.md`, `governance/REPO_MODEL.md` |
 | `/projects/repo-development/docs/migration-audit-2026-05.md` | исследование | Аудит миграции: согласованность, ссылки, таблица `-old` и рекомендации cleanup. | ✅ Да | `projects/repo-development/README.md`, `CONCEPT.md` |
+| `/projects/repo-development/docs/contract-violations-self-report-2026-06.md` | исследование | Операционный self-report (`type: audit`) шести ошибок исполнения контрактов в сессии миграции Mango: обоснование выбора таргета, реестр нарушений, системные выводы для контрактов и анализ размещения существующих ретроспектив (без перемещения). | ⚠️ По необходимости | `projects/repo-development/README.md`, `standards/PROJECT_STRUCTURE_INHERITANCE.md`, `standards/FILE_NAMING.md`, `research/hub/ai-collaboration-retrospective-mango-migration-2026-06.md` |
 | `/research/README.md` | навигация | Навигация по исследовательским направлениям, правило запрета файлов в корне `research/` и правила воспроизводимости. | ✅ Да | `standards/RESEARCH_PROFILE.md`, `governance/REPO_MODEL.md` |
 | `/research/hub/README.md` | навигация | Индекс фундаментальных (`scope: repo-wide`) исследований работы Хаба. | ✅ Да | `research/README.md`, `governance/REPO_MODEL.md` |
 | `/research/mango/README.md` | навигация | Индекс активных исследований MANGO OFFICE и их HTML-export. | ✅ Да | `research/README.md`, `projects/mango/README.md` |

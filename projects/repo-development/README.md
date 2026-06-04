@@ -40,6 +40,7 @@ ai-generated: false
 | Документ | Назначение |
 | --- | --- |
 | [docs/migration-audit-2026-05.md](docs/migration-audit-2026-05.md) | Отчёт аудита миграции: согласованность с `CONCEPT.md`, матрица ссылок, таблица `-old`, рекомендации. |
+| [docs/contract-violations-self-report-2026-06.md](docs/contract-violations-self-report-2026-06.md) | Self-report (`type: audit`) ошибок исполнения контрактов в сессии миграции Mango: обоснование таргета, 6 нарушений, системные выводы и анализ размещения ретроспектив. |
 | [governance/REPO_MODEL.md](../../governance/REPO_MODEL.md) | Модель структуры репозитория и Anti-Inflation principle. |
 | [governance/ARTIFACT_MAP.md](../../governance/ARTIFACT_MAP.md) | Карта артефактов: где что лежит и как связано. |
 | [standards/ISSUE_WORKFLOW.md](../../standards/ISSUE_WORKFLOW.md) | Жизненный цикл задач: статусы и правила переходов. |
