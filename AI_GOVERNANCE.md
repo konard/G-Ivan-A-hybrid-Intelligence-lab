@@ -1,12 +1,25 @@
-# AI Governance
+---
+status: canonical
+version: 1.1
+updated: 2026-06-04
+ai-generated: false
+executable: false
+---
 
-Операционный контракт для AI-assisted work в `hybrid-Intelligence-lab`.
-
-> **🛫 Pre-flight (обязательно перед любой работой).** Прежде чем менять файлы,
-> ИИ-агент проходит предполётный протокол *Runtime-онбординга*
+> **🛫 Директива pre-flight (обязательно перед любой работой).** ИИ-агент
+> выполняет предполётный протокол *Runtime-онбординга* по
 > [governance/AGENT_ONBOARDING.md](governance/AGENT_ONBOARDING.md): чек-лист
 > governance → чек-лист контекста → *Readback* → стоп до апрува человека. Этот
-> контракт описывает *что* можно делать; онбординг — *как* безопасно начать.
+> файл — контракт-справка (`executable: false`): он описывает *что* можно делать;
+> онбординг — *как* безопасно начать.
+
+# AI Governance
+
+Версия: 1.1
+
+Дата: 2026-06-04
+
+Операционный контракт для AI-assisted work в `hybrid-Intelligence-lab`.
 
 ## Роли
 
