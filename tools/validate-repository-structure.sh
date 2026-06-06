@@ -50,6 +50,7 @@ is_active_file() {
     standards/research-documentation-standard.md | \
     standards/executable-contract-standard.md | \
     standards/contract-documentation-standard.md | \
+    standards/webportal-concept-standard.md | \
     research/mango/taxonomy-concept-2026-05.md | \
     research/mango/requirements-lifecycle-uncertainty-2026-05.md | \
     research/mango/rag-mapping-roadmap-2026-05.md | \
@@ -72,6 +73,7 @@ is_active_file() {
     research/governance/governance-folder-structure-decisions-2026-06.md | \
     research/portal/README.md | \
     research/portal/documentation-standards-comparison-2026-06.md | \
+    research/portal/concept-standards-comparison-2026-06.md | \
     research/portal/architecture-and-stack-comparison-2026-06.md | \
     research/portal/repository-structure-design-2026-06.md | \
     research/portal/ai-and-mango-integration-patterns-2026-06.md | \
@@ -129,6 +131,7 @@ is_active_file() {
     templates/spoke/.github/ISSUE_TEMPLATE/task.md | \
     templates/spoke/tools/validate-repository-structure.sh | \
     templates/spoke/init.sh | \
+    templates/webportal-concept-template.md | \
     tools/validate-frontmatter.sh | \
     tools/validate-repository-structure.sh)
       return 0
@@ -213,6 +216,7 @@ required_files=(
   "standards/research-documentation-standard.md"
   "standards/executable-contract-standard.md"
   "standards/contract-documentation-standard.md"
+  "standards/webportal-concept-standard.md"
   "research/README.md"
   "research/hub/README.md"
   "research/mango/README.md"
@@ -223,6 +227,7 @@ required_files=(
   "research/governance/governance-folder-structure-decisions-2026-06.md"
   "research/portal/README.md"
   "research/portal/documentation-standards-comparison-2026-06.md"
+  "research/portal/concept-standards-comparison-2026-06.md"
   "research/portal/architecture-and-stack-comparison-2026-06.md"
   "research/portal/repository-structure-design-2026-06.md"
   "research/portal/open-ai-portal-concept-rfc.md"
@@ -280,6 +285,7 @@ required_files=(
   "templates/spoke/.github/ISSUE_TEMPLATE/task.md"
   "templates/spoke/tools/validate-repository-structure.sh"
   "templates/spoke/init.sh"
+  "templates/webportal-concept-template.md"
   "tools/validate-frontmatter.sh"
   "tools/validate-repository-structure.sh"
 )
@@ -584,7 +590,7 @@ require_text "governance/AGENT_ONBOARDING.md" "rfc-two-cases-of-project-initiali
 require_text "governance/AGENT_ONBOARDING.md" "templates/spoke/README.md"
 
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.17"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.18"
 require_text "governance/ARTIFACT_MAP.md" "templates/spoke/AI_GOVERNANCE.md"
 require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-06"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
