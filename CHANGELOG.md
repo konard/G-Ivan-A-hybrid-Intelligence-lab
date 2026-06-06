@@ -53,6 +53,13 @@ All notable repository governance changes are documented here.
   миграции во внешний `mango_ba_prompts`, `standards/file-naming.md` расширен до
   версии 1.2 для `governance/`, карта артефактов обновлена до 1.20, а
   структурный валидатор обновлён под новый целевой набор артефактов.
+- Issue #185 (Structured mode): объединены три дублирующих design/standard
+  артефакта с canonical-документами. Rationale протокола онбординга перенесён в
+  `governance/agent-onboarding.md`, rationale ДНК-шаблона — в
+  `templates/spoke/README.md`, body-structure правила research-документов
+  оформлены как `## Body Structure: Введение → Результаты → Детализация` в
+  `standards/research-profile.md` (v1.1). Удалены superseded RFC drafts; ссылки,
+  карта артефактов и структурный валидатор обновлены под новый canonical-набор.
 - Issue #177 (Structured mode): `governance/rfc/repository-quality-improvement-plan.md`
   обновлён до v0.2: раздел "Full draft list" заменён 52-строчной таблицей
   с колонками для номера, файла, строки `status: draft`, summary,
@@ -209,7 +216,7 @@ All notable repository governance changes are documented here.
   `./tools/validate-repository-structure.sh` перед PR). Замкнуты перекрёстные
   ссылки между двумя точками входа (follow-up #4, #5 RFC-манифеста двух кейсов):
   спок-README → Хаб `governance/agent-onboarding.md` (Кейс 1),
-  `rfc-two-cases-of-project-initialization.md` и `rfc-creative-template-design.md`
+  `rfc-two-cases-of-project-initialization.md` и canonical rationale в этом README
   через `{{hub_url}}`; обратная ссылка (онбординг → спок-README) уже существовала.
   Структурный валидатор расширен проверками контента спок-README
   (`tools/validate-repository-structure.sh`: ссылка на `governance/agent-onboarding.md`
@@ -319,15 +326,15 @@ All notable repository governance changes are documented here.
 
 - Issue #109 (B-001): рабочая инструкция `governance/agent-onboarding.md`
   (`status: canonical`, тип `правило`) — единый входной артефакт *Runtime-онбординга*
-  (Кейс 1) по дизайну `proposals/rfc-agent-onboarding-protocol.md`. Содержит:
+  (Кейс 1) по утверждённому onboarding-дизайну. Содержит:
   *Handover Prompt* с плейсхолдером `{{REPO_NAME}}`, 4-шаговый протокол агента
   (чек-лист governance → чек-лист контекста → *Readback* → стоп до апрува), шаблон
   *Readback* и раздел threat awareness «Что может пойти не так» (5 рисков холодного
   старта) — реализация рекомендации команды Q без отдельного файла (Anti-Inflation).
   Все термины — со ссылкой на `standards/glossary.md`; добавлены перекрёстные ссылки
   на `templates/spoke/README.md` (Кейс 2) и на RFC-манифест двух кейсов. Граница с
-  RFC явная: RFC остаётся *проектом* (`proposals/`), а `agent-onboarding.md` —
-  *рабочей инструкцией*. Файл зарегистрирован как active в
+  design rationale позже упрощена: `agent-onboarding.md` стал и рабочей
+  инструкцией, и canonical-историей решений. Файл зарегистрирован как active в
   `tools/validate-repository-structure.sh` (`is_active_file`, `required_files` и
   набор `require_text`) и `governance/artifact-map.md` (версия карты 1.9 → 1.10).
 - Issue #99: RFC-манифест `governance/proposals/rfc-two-cases-of-project-initialization.md`
@@ -344,7 +351,7 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
-- Issue #99: уточнён `governance/proposals/rfc-agent-onboarding-protocol.md` —
+- Issue #99: уточнён onboarding-дизайн —
   добавлен раздел «Модель процесса» (без блока терминологии, только ссылки на
   `standards/glossary.md` и на RFC-манифест), фиксирующий, что агент работает в
   *Среде работы агента* (чат) и обращается к *Источнику контекста* (репозиторий);
@@ -381,8 +388,8 @@ All notable repository governance changes are documented here.
   frontmatter), портабельный `sed` (без `sed -i`) и самоудаление после запуска.
   Артефакты зарегистрированы как active в `tools/validate-repository-structure.sh`
   и `governance/artifact-map.md` (тип `шаблон`, версия карты 1.4 → 1.5).
-- Issue #89: креативный RFC `governance/proposals/rfc-creative-template-design.md`
-  — проект "ДНК-шаблона" для клонирования spoke-проектов: концептуальная аналогия
+- Issue #89: креативный дизайн "ДНК-шаблона" для клонирования spoke-проектов:
+  концептуальная аналогия
   (геном, а не чемодан), сравнительная матрица имён корневого каталога
   (`templates`/`blueprints`/`genesis`), минимальная карта файлов с креативными
   комментариями, три антипаттерна, обработка краевых случаев ("А что, если...") и
