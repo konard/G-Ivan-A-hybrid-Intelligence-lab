@@ -1,5 +1,9 @@
 # hybrid-Intelligence-lab
 
+> **«Человек задаёт смысл, AI ускоряет путь — вместе по правилам»** — слоган
+> Хаба и формула гибридной работы человек + AI. Зафиксирован для Хаба и
+> наследуется всеми споками (геном [`templates/spoke/`](templates/spoke/)).
+
 `hybrid-Intelligence-lab` - governance-first knowledge hub для исследований,
 образования, стандартов, проектных knowledge bases и управляемой работы
 гибридных human + AI команд.

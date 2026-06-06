@@ -47,6 +47,9 @@ is_active_file() {
     standards/ISSUE_WORKFLOW.md | \
     standards/PROJECT_STRUCTURE_INHERITANCE.md | \
     standards/PORTAL_REPOSITORY_STRUCTURE.md | \
+    standards/RESEARCH_DOCUMENTATION_STANDARD.md | \
+    standards/EXECUTABLE_CONTRACT_STANDARD.md | \
+    standards/CONTRACT_DOCUMENTATION_STANDARD.md | \
     research/mango/taxonomy-concept-2026-05.md | \
     research/mango/requirements-lifecycle-uncertainty-2026-05.md | \
     research/mango/rag-mapping-roadmap-2026-05.md | \
@@ -62,11 +65,17 @@ is_active_file() {
     research/README.md | \
     research/hub/README.md | \
     research/mango/README.md | \
+    research/governance/README.md | \
+    research/governance/research-documentation-format-2026-06.md | \
+    research/governance/executable-contract-format-2026-06.md | \
+    research/governance/contract-documentation-format-2026-06.md | \
+    research/governance/governance-folder-structure-decisions-2026-06.md | \
     research/portal/README.md | \
     research/portal/documentation-standards-comparison-2026-06.md | \
     research/portal/architecture-and-stack-comparison-2026-06.md | \
     research/portal/repository-structure-design-2026-06.md | \
     research/portal/ai-and-mango-integration-patterns-2026-06.md | \
+    research/portal/open-ai-portal-concept-rfc.md | \
     research/mango/classification.md | \
     research/mango/classification.html | \
     research/mango/classification-tz.md | \
@@ -103,11 +112,11 @@ is_active_file() {
     governance/ARTIFACT_MAP.md | \
     governance/BACKLOG.md | \
     governance/EXECUTABLE_DOCUMENTS_ISSUES.md | \
-    governance/proposals/rfc-creative-template-design.md | \
-    governance/proposals/rfc-agent-onboarding-protocol.md | \
-    governance/proposals/rfc-two-cases-of-project-initialization.md | \
-    governance/proposals/contract-executability-rfc.md | \
-    governance/proposals/open-ai-portal-concept-rfc.md | \
+    governance/rfc/README.md | \
+    governance/rfc/rfc-creative-template-design.md | \
+    governance/rfc/rfc-agent-onboarding-protocol.md | \
+    governance/rfc/rfc-two-cases-of-project-initialization.md | \
+    governance/rfc/contract-executability-rfc.md | \
     .github/ISSUE_TEMPLATE/task.yml | \
     templates/spoke/AI_GOVERNANCE.md | \
     templates/spoke/AI_QUICK_RULES.md | \
@@ -147,6 +156,7 @@ required_directories=(
   "research"
   "research/hub"
   "research/mango"
+  "research/governance"
   "research/portal"
   "frameworks"
   "projects"
@@ -160,7 +170,7 @@ required_directories=(
   "archive/projects/mango/decisions"
   "education"
   "governance"
-  "governance/proposals"
+  "governance/rfc"
   "tools"
 )
 
@@ -181,13 +191,22 @@ required_files=(
   "standards/ISSUE_WORKFLOW.md"
   "standards/PROJECT_STRUCTURE_INHERITANCE.md"
   "standards/PORTAL_REPOSITORY_STRUCTURE.md"
+  "standards/RESEARCH_DOCUMENTATION_STANDARD.md"
+  "standards/EXECUTABLE_CONTRACT_STANDARD.md"
+  "standards/CONTRACT_DOCUMENTATION_STANDARD.md"
   "research/README.md"
   "research/hub/README.md"
   "research/mango/README.md"
+  "research/governance/README.md"
+  "research/governance/research-documentation-format-2026-06.md"
+  "research/governance/executable-contract-format-2026-06.md"
+  "research/governance/contract-documentation-format-2026-06.md"
+  "research/governance/governance-folder-structure-decisions-2026-06.md"
   "research/portal/README.md"
   "research/portal/documentation-standards-comparison-2026-06.md"
   "research/portal/architecture-and-stack-comparison-2026-06.md"
   "research/portal/repository-structure-design-2026-06.md"
+  "research/portal/open-ai-portal-concept-rfc.md"
   "research/mango/classification.md"
   "research/mango/classification.html"
   "research/mango/classification-tz.md"
@@ -223,11 +242,11 @@ required_files=(
   "governance/ARTIFACT_MAP.md"
   "governance/BACKLOG.md"
   "governance/EXECUTABLE_DOCUMENTS_ISSUES.md"
-  "governance/proposals/rfc-creative-template-design.md"
-  "governance/proposals/rfc-agent-onboarding-protocol.md"
-  "governance/proposals/rfc-two-cases-of-project-initialization.md"
-  "governance/proposals/contract-executability-rfc.md"
-  "governance/proposals/open-ai-portal-concept-rfc.md"
+  "governance/rfc/README.md"
+  "governance/rfc/rfc-creative-template-design.md"
+  "governance/rfc/rfc-agent-onboarding-protocol.md"
+  "governance/rfc/rfc-two-cases-of-project-initialization.md"
+  "governance/rfc/contract-executability-rfc.md"
   "projects/education-ba-prompt/README.md"
   "projects/education-ba-prompt/docs/course-ideas.md"
   ".github/ISSUE_TEMPLATE/task.yml"
@@ -278,6 +297,7 @@ require_text "README.md" "projects/education-ba-prompt/README.md"
 require_text "README.md" "research/mango/README.md"
 require_text "README.md" "./tools/validate-frontmatter.sh"
 require_text "README.md" "./tools/validate-repository-structure.sh"
+require_text "README.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
 
 require_text "CONCEPT.md" "governance/REPO_MODEL.md"
 require_text "CONCEPT.md" "standards/README.md"
@@ -301,17 +321,18 @@ require_text "CONTRIBUTING.md" "./tools/validate-frontmatter.sh"
 require_text "CONTRIBUTING.md" "./tools/validate-repository-structure.sh"
 
 require_text "AI_GOVERNANCE.md" "status: canonical"
-require_text "AI_GOVERNANCE.md" "version: 1.1"
-require_text "AI_GOVERNANCE.md" "updated: 2026-06-04"
+require_text "AI_GOVERNANCE.md" "version: 1.2"
+require_text "AI_GOVERNANCE.md" "updated: 2026-06-06"
 require_text "AI_GOVERNANCE.md" "ai-generated: false"
 require_text "AI_GOVERNANCE.md" "executable: false"
-require_text "AI_GOVERNANCE.md" "Версия: 1.1"
-require_text "AI_GOVERNANCE.md" "Дата: 2026-06-04"
+require_text "AI_GOVERNANCE.md" "Версия: 1.2"
+require_text "AI_GOVERNANCE.md" "Дата: 2026-06-06"
 require_text "AI_GOVERNANCE.md" "Директива pre-flight"
 require_text "AI_GOVERNANCE.md" "Founder & PO"
 require_text "AI_GOVERNANCE.md" "Human reviewer"
 require_text "AI_GOVERNANCE.md" "standards/README.md"
 require_text "AI_GOVERNANCE.md" "governance/AGENT_ONBOARDING.md"
+require_text "AI_GOVERNANCE.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
 
 require_text "CHANGELOG.md" "## Unreleased"
 require_text "CHANGELOG.md" "## [1.1] - 2026-05-26"
@@ -477,50 +498,50 @@ require_text "governance/REPO_MODEL.md" "Версия: 1.1"
 require_text "governance/REPO_MODEL.md" "Дата: 2026-06-04"
 require_text "governance/REPO_MODEL.md" "Decision Rules — исполнимая часть справочного документа"
 
-require_text "governance/proposals/rfc-creative-template-design.md" "status: draft"
-require_text "governance/proposals/rfc-creative-template-design.md" "ai-generated: true"
-require_text "governance/proposals/rfc-creative-template-design.md" "Концептуальная аналогия"
-require_text "governance/proposals/rfc-creative-template-design.md" "Сравнительная матрица"
-require_text "governance/proposals/rfc-creative-template-design.md" "templates/spoke/"
-require_text "governance/proposals/rfc-creative-template-design.md" "AI_GOVERNANCE.md"
-require_text "governance/proposals/rfc-creative-template-design.md" "Антипаттерны"
-require_text "governance/proposals/rfc-creative-template-design.md" "А что, если"
-require_text "governance/proposals/rfc-creative-template-design.md" '```mermaid'
-require_text "governance/proposals/rfc-creative-template-design.md" "Решение за человеком"
+require_text "governance/rfc/rfc-creative-template-design.md" "status: draft"
+require_text "governance/rfc/rfc-creative-template-design.md" "ai-generated: true"
+require_text "governance/rfc/rfc-creative-template-design.md" "Концептуальная аналогия"
+require_text "governance/rfc/rfc-creative-template-design.md" "Сравнительная матрица"
+require_text "governance/rfc/rfc-creative-template-design.md" "templates/spoke/"
+require_text "governance/rfc/rfc-creative-template-design.md" "AI_GOVERNANCE.md"
+require_text "governance/rfc/rfc-creative-template-design.md" "Антипаттерны"
+require_text "governance/rfc/rfc-creative-template-design.md" "А что, если"
+require_text "governance/rfc/rfc-creative-template-design.md" '```mermaid'
+require_text "governance/rfc/rfc-creative-template-design.md" "Решение за человеком"
 
-require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "status: draft"
-require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "ai-generated: true"
-require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "Концептуальная аналогия"
-require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "Обоснование"
-require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "Handover Prompt"
-require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "ai-collaboration-retrospective-2026-06.md"
-require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "AGENT_ONBOARDING.md"
-require_text "governance/proposals/rfc-agent-onboarding-protocol.md" '```mermaid'
-require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "Решение за человеком"
-require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "Модель процесса"
-require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "rfc-two-cases-of-project-initialization.md"
-require_text "governance/proposals/rfc-agent-onboarding-protocol.md" "{{REPO_NAME}}"
+require_text "governance/rfc/rfc-agent-onboarding-protocol.md" "status: draft"
+require_text "governance/rfc/rfc-agent-onboarding-protocol.md" "ai-generated: true"
+require_text "governance/rfc/rfc-agent-onboarding-protocol.md" "Концептуальная аналогия"
+require_text "governance/rfc/rfc-agent-onboarding-protocol.md" "Обоснование"
+require_text "governance/rfc/rfc-agent-onboarding-protocol.md" "Handover Prompt"
+require_text "governance/rfc/rfc-agent-onboarding-protocol.md" "ai-collaboration-retrospective-2026-06.md"
+require_text "governance/rfc/rfc-agent-onboarding-protocol.md" "AGENT_ONBOARDING.md"
+require_text "governance/rfc/rfc-agent-onboarding-protocol.md" '```mermaid'
+require_text "governance/rfc/rfc-agent-onboarding-protocol.md" "Решение за человеком"
+require_text "governance/rfc/rfc-agent-onboarding-protocol.md" "Модель процесса"
+require_text "governance/rfc/rfc-agent-onboarding-protocol.md" "rfc-two-cases-of-project-initialization.md"
+require_text "governance/rfc/rfc-agent-onboarding-protocol.md" "{{REPO_NAME}}"
 
-require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "status: draft"
-require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "ai-generated: true"
-require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Концептуальная аналогия"
-require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Таблица-манифест"
-require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Runtime-онбординг"
-require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Bootstrap-клонирование"
-require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "standards/GLOSSARY.md"
-require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "ai-collaboration-retrospective-2026-06.md"
-require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "rfc-agent-onboarding-protocol.md"
-require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "rfc-creative-template-design.md"
-require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" '```mermaid'
-require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Follow-up"
-require_text "governance/proposals/rfc-two-cases-of-project-initialization.md" "Решение за человеком"
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "status: draft"
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "ai-generated: true"
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Концептуальная аналогия"
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Таблица-манифест"
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Runtime-онбординг"
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Bootstrap-клонирование"
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "standards/GLOSSARY.md"
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "ai-collaboration-retrospective-2026-06.md"
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "rfc-agent-onboarding-protocol.md"
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "rfc-creative-template-design.md"
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" '```mermaid'
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Follow-up"
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Решение за человеком"
 
-require_text "governance/proposals/contract-executability-rfc.md" "status: draft"
-require_text "governance/proposals/contract-executability-rfc.md" "version: 1.1"
-require_text "governance/proposals/contract-executability-rfc.md" "Решения фаундера по RFC"
-require_text "governance/proposals/contract-executability-rfc.md" "executable: true|false"
-require_text "governance/proposals/contract-executability-rfc.md" "governance/proposals/"
-require_text "governance/proposals/contract-executability-rfc.md" "Дата утверждения"
+require_text "governance/rfc/contract-executability-rfc.md" "status: draft"
+require_text "governance/rfc/contract-executability-rfc.md" "version: 1.1"
+require_text "governance/rfc/contract-executability-rfc.md" "Решения фаундера по RFC"
+require_text "governance/rfc/contract-executability-rfc.md" "executable: true|false"
+require_text "governance/rfc/contract-executability-rfc.md" "governance/rfc/"
+require_text "governance/rfc/contract-executability-rfc.md" "Дата утверждения"
 
 require_text "governance/AGENT_ONBOARDING.md" "status: canonical"
 require_text "governance/AGENT_ONBOARDING.md" "version: 1.1"
@@ -540,12 +561,12 @@ require_text "governance/AGENT_ONBOARDING.md" "rfc-two-cases-of-project-initiali
 require_text "governance/AGENT_ONBOARDING.md" "templates/spoke/README.md"
 
 require_text "governance/ARTIFACT_MAP.md" "status: canonical"
-require_text "governance/ARTIFACT_MAP.md" "version: 1.16"
+require_text "governance/ARTIFACT_MAP.md" "version: 1.17"
 require_text "governance/ARTIFACT_MAP.md" "templates/spoke/AI_GOVERNANCE.md"
-require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-05"
+require_text "governance/ARTIFACT_MAP.md" "updated: 2026-06-06"
 require_text "governance/ARTIFACT_MAP.md" "ai-generated: false"
-require_text "governance/ARTIFACT_MAP.md" "governance/proposals/rfc-creative-template-design.md"
-require_text "governance/ARTIFACT_MAP.md" "governance/proposals/contract-executability-rfc.md"
+require_text "governance/ARTIFACT_MAP.md" "governance/rfc/rfc-creative-template-design.md"
+require_text "governance/ARTIFACT_MAP.md" "governance/rfc/contract-executability-rfc.md"
 require_text "governance/ARTIFACT_MAP.md" "| Путь | Тип | 🚦 Исполнимый? | Назначение | Обязательный? | Связанные артефакты |"
 require_text "governance/ARTIFACT_MAP.md" "🚦 entrypoint"
 require_text "governance/ARTIFACT_MAP.md" "standards/PROJECT_STRUCTURE_INHERITANCE.md"
@@ -810,6 +831,7 @@ require_text "templates/spoke/README.md" "AI_HANDOVER_PROMPT.md"
 require_text "templates/spoke/README.md" "{{project_name}}"
 require_text "templates/spoke/README.md" "governance/AGENT_ONBOARDING.md"
 require_text "templates/spoke/README.md" "Как валидировать структуру"
+require_text "templates/spoke/README.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
 require_text "templates/spoke/CONTRIBUTING.md" "issue → PR → review"
 require_text "templates/spoke/CHANGELOG.md" "## Unreleased"
 require_text "templates/spoke/.github/ISSUE_TEMPLATE/task.md" "🎯 Контекст"

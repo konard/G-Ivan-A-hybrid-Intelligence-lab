@@ -6,6 +6,25 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #165 (Creative mode): каталог `governance/proposals/` переименован в
+  `governance/rfc/` (решение Q1): имя `rfc/` соответствует файлам `*-rfc.md` и
+  отраслевому термину IETF «RFC», снимая рассинхрон «proposals vs rfc». `git mv`
+  четырёх RFC; обновлены все живые ссылки (`governance/AGENT_ONBOARDING.md`,
+  `REPO_MODEL.md`, `BACKLOG.md`, `EXECUTABLE_DOCUMENTS_ISSUES.md`,
+  `ARTIFACT_MAP.md`, `standards/GLOSSARY.md`, `templates/spoke/README.md`,
+  research-документы Хаба и портала, кросс-ссылки внутри RFC). Концепт-RFC
+  портала перенесён `governance/proposals/` →
+  `research/portal/open-ai-portal-concept-rfc.md` (решение Q2: концепция
+  проекта — это research проекта и живёт в `research/{project}/`, а не в
+  governance Хаба; канонический путь без точки в имени каталога по
+  `standards/FILE_NAMING.md`). `governance/rfc/` задокументирован как
+  опциональный, не наследуемый споками каталог (решение Q3,
+  `standards/PORTAL_REPOSITORY_STRUCTURE.md`). `AI_GOVERNANCE.md` (1.1 → 1.2):
+  зафиксирован слоган Хаба. `governance/ARTIFACT_MAP.md` (1.16 → 1.17):
+  обновлены пути RFC и добавлены строки новых артефактов. Структурный валидатор
+  обновлён под новые пути и проходит (exit 0). Исторические записи (этот
+  CHANGELOG, §7.4 в `contract-executability-rfc.md`, self-report) сохранены как
+  журнал.
 - Issue #141 (CE-004): `AI_GOVERNANCE.md` converted to the executable-documents
   standard as a reference contract. Added canonical frontmatter with
   `executable: false`, bumped version to `1.1` and date to `2026-06-04`, and
@@ -36,6 +55,25 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #165 (Creative mode): **зафиксирован слоган Хаба** «Человек задаёт
+  смысл, AI ускоряет путь — вместе по правилам» в `README.md`,
+  `AI_GOVERNANCE.md` и `templates/spoke/README.md` (primary для Хаба,
+  наследуется споками); слоган закреплён проверками структурного валидатора.
+  Добавлены три стандарта оформления —
+  `standards/RESEARCH_DOCUMENTATION_STANDARD.md` (структура research:
+  Введение → Результаты → Детализация),
+  `standards/EXECUTABLE_CONTRACT_STANDARD.md` (EXECUTION → EXPLANATION, команда
+  первой строкой) и `standards/CONTRACT_DOCUMENTATION_STANDARD.md`
+  (нормативный язык RFC 2119 / BCP 14) — каждый с опорой на отдельное
+  исследование в новом каталоге `research/governance/`
+  (`research-documentation-format-2026-06.md`,
+  `executable-contract-format-2026-06.md`,
+  `contract-documentation-format-2026-06.md` и запись решений
+  `governance-folder-structure-decisions-2026-06.md` плюс навигация
+  `README.md`). Добавлен навигационный индекс `governance/rfc/README.md`. Все
+  новые артефакты зарегистрированы как active в
+  `tools/validate-repository-structure.sh` (`is_active_file`, `required_files`,
+  `required_directories`) и в `governance/ARTIFACT_MAP.md`.
 - Issue #159 (Creative mode): концепт-проект портала `open-ai.ru` («единая точка
   сборки» spoke-проектов) — независимое исследование, сравнительный анализ и
   предложение без старта реализации. Добавлен RFC
