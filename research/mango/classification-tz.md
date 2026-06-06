@@ -11,8 +11,6 @@ source: research/mango/classification-tz-old.md
 
 # Классификация требований по корпусу ТЗ (classification (TZ))
 
-Версия: 1
-
 Дата среза: 22 мая 2026 г.
 
 Связанный документ: [classification.md](./classification.md) — согласованный классификатор продуктов и сервисов MANGO OFFICE.
