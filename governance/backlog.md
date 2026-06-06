@@ -8,8 +8,8 @@ context: [governance, backlog, sprint-3, creative-analysis, prioritization, hub-
 method: creative-analysis + synthesis + dependency-mapping
 scope: repo-wide
 related_artifacts:
-  - "governance/rfc/rfc-creative-template-design.md"
-  - "governance/rfc/rfc-agent-onboarding-protocol.md"
+  - "templates/spoke/README.md"
+  - "governance/agent-onboarding.md"
   - "governance/rfc/rfc-two-cases-of-project-initialization.md"
   - "research/hub/external-governance-patterns-review-2026-06.md"
   - "research/hub/ai-collaboration-retrospective-2026-06.md"
@@ -70,9 +70,9 @@ related_issues:
 До этого документа задачи были рассыпаны по трём источникам, и ни один из них не
 давал целостной картины:
 
-- блоки **Follow-up** в трёх утверждённых RFC
-  ([rfc-creative-template-design.md](rfc/rfc-creative-template-design.md),
-  [rfc-agent-onboarding-protocol.md](rfc/rfc-agent-onboarding-protocol.md),
+- блоки **Follow-up** в утверждённых onboarding/bootstrap-артефактах
+  ([templates/spoke/README.md](../templates/spoke/README.md),
+  [governance/agent-onboarding.md](agent-onboarding.md),
   [rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md));
 - матрица применимости рекомендаций внешних экспертов
   ([research/hub/external-governance-patterns-review-2026-06.md](../research/hub/external-governance-patterns-review-2026-06.md));
@@ -245,7 +245,7 @@ prompt assets и обязательных секций, но не сжимать
 ### B-001: Создать `governance/agent-onboarding.md` (Кейс 1)
 
 **Приоритет:** P1
-**Источник:** 🔗 [rfc-agent-onboarding-protocol.md](rfc/rfc-agent-onboarding-protocol.md);
+**Источник:** 🔗 [governance/agent-onboarding.md](agent-onboarding.md);
 [rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md)
 (follow-up #3); команда Q «взять сейчас» (threat awareness)
 **Зависимости:** —
@@ -437,7 +437,7 @@ P1 — «бесплатно» и снижает неопределённость
 ### B-003: Продублировать *Handover Prompt* в `templates/spoke/`
 
 **Приоритет:** P2
-**Источник:** 🔗 [rfc-agent-onboarding-protocol.md](rfc/rfc-agent-onboarding-protocol.md)
+**Источник:** 🔗 [governance/agent-onboarding.md](agent-onboarding.md)
 **Зависимости:** B-001
 **Режим работы:** `Structured`
 
@@ -884,8 +884,8 @@ Human Review:
 | --- | --- |
 | [governance/artifact-map.md](artifact-map.md) | Карта «что есть»; бэклог — её ортогональная пара «что осталось». |
 | [governance/repo-model.md](repo-model.md) | Anti-Inflation principle — фундамент шкалы приоритетов. |
-| [governance/rfc/rfc-agent-onboarding-protocol.md](rfc/rfc-agent-onboarding-protocol.md) | Источник задач B-001, B-002, B-003 (Кейс 1). |
-| [governance/rfc/rfc-creative-template-design.md](rfc/rfc-creative-template-design.md) | Контекст генома `templates/spoke/`; первый bootstrap вынесен за пределы текущего бэклога. |
+| [governance/agent-onboarding.md](agent-onboarding.md) | Источник задач B-001, B-002, B-003 (Кейс 1). |
+| [templates/spoke/README.md](../templates/spoke/README.md) | Контекст генома `templates/spoke/`; первый bootstrap вынесен за пределы текущего бэклога. |
 | [governance/rfc/rfc-two-cases-of-project-initialization.md](rfc/rfc-two-cases-of-project-initialization.md) | Источник задач B-004, B-005, B-011. |
 | [research/hub/external-governance-patterns-review-2026-06.md](../research/hub/external-governance-patterns-review-2026-06.md) | Источник матрицы С/Q, North Star и триггеров (B-006, B-007, B-011, deferred `approved_by:`). |
 | [research/hub/ai-collaboration-retrospective-2026-06.md](../research/hub/ai-collaboration-retrospective-2026-06.md) | Системные ошибки, мотивирующие fail-closed, threat awareness и двухкейсовую модель. |
