@@ -20,6 +20,9 @@
 | Жизненный цикл задач | Active | Issues, PRs, переходы статусов, AI-assisted task execution | [ISSUE_WORKFLOW.md](ISSUE_WORKFLOW.md) |
 | PROJECT_STRUCTURE_INHERITANCE.md | Active | Правило наследования структуры каталогов в проектах; обязательно для новых проектов | [PROJECT_STRUCTURE_INHERITANCE.md](PROJECT_STRUCTURE_INHERITANCE.md) |
 | PORTAL_REPOSITORY_STRUCTURE.md | Draft (предложен, на утверждении) | Структура репозитория портала — spoke-проекта «единая точка сборки» (`open-ai.ru`); наследует геном спока и добавляет портал-каталоги | [PORTAL_REPOSITORY_STRUCTURE.md](PORTAL_REPOSITORY_STRUCTURE.md) |
+| RESEARCH_DOCUMENTATION_STANDARD.md | Draft (предложен, на утверждении) | Порядок изложения исследований (`research/<domain>/`): Введение → Результаты → Детализация | [RESEARCH_DOCUMENTATION_STANDARD.md](RESEARCH_DOCUMENTATION_STANDARD.md) |
+| EXECUTABLE_CONTRACT_STANDARD.md | Draft (предложен, на утверждении) | Формат исполнимых контрактов (`executable: true`): директива → EXECUTION → EXPLANATION | [EXECUTABLE_CONTRACT_STANDARD.md](EXECUTABLE_CONTRACT_STANDARD.md) |
+| CONTRACT_DOCUMENTATION_STANDARD.md | Draft (предложен, на утверждении) | Формат прочих контрактов (обязательства сверху, обоснование под катом; нормативный словарь RFC 2119) | [CONTRACT_DOCUMENTATION_STANDARD.md](CONTRACT_DOCUMENTATION_STANDARD.md) |
 | Research report | Planned | `research/<domain>/` | Создать после повторяющихся research tasks. |
 | Framework proposal | Planned | `frameworks/` | Создать после documented framework gap. |
 | Project knowledge base | Planned | `projects/` | Создать после повторяющейся потребности в project context. |

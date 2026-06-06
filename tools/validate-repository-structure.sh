@@ -47,6 +47,9 @@ is_active_file() {
     standards/ISSUE_WORKFLOW.md | \
     standards/PROJECT_STRUCTURE_INHERITANCE.md | \
     standards/PORTAL_REPOSITORY_STRUCTURE.md | \
+    standards/RESEARCH_DOCUMENTATION_STANDARD.md | \
+    standards/EXECUTABLE_CONTRACT_STANDARD.md | \
+    standards/CONTRACT_DOCUMENTATION_STANDARD.md | \
     research/mango/taxonomy-concept-2026-05.md | \
     research/mango/requirements-lifecycle-uncertainty-2026-05.md | \
     research/mango/rag-mapping-roadmap-2026-05.md | \
@@ -62,6 +65,11 @@ is_active_file() {
     research/README.md | \
     research/hub/README.md | \
     research/mango/README.md | \
+    research/governance/README.md | \
+    research/governance/research-documentation-format-2026-06.md | \
+    research/governance/executable-contract-format-2026-06.md | \
+    research/governance/contract-documentation-format-2026-06.md | \
+    research/governance/governance-folder-structure-decisions-2026-06.md | \
     research/portal/README.md | \
     research/portal/documentation-standards-comparison-2026-06.md | \
     research/portal/architecture-and-stack-comparison-2026-06.md | \
@@ -147,6 +155,7 @@ required_directories=(
   "research"
   "research/hub"
   "research/mango"
+  "research/governance"
   "research/portal"
   "frameworks"
   "projects"
@@ -181,9 +190,17 @@ required_files=(
   "standards/ISSUE_WORKFLOW.md"
   "standards/PROJECT_STRUCTURE_INHERITANCE.md"
   "standards/PORTAL_REPOSITORY_STRUCTURE.md"
+  "standards/RESEARCH_DOCUMENTATION_STANDARD.md"
+  "standards/EXECUTABLE_CONTRACT_STANDARD.md"
+  "standards/CONTRACT_DOCUMENTATION_STANDARD.md"
   "research/README.md"
   "research/hub/README.md"
   "research/mango/README.md"
+  "research/governance/README.md"
+  "research/governance/research-documentation-format-2026-06.md"
+  "research/governance/executable-contract-format-2026-06.md"
+  "research/governance/contract-documentation-format-2026-06.md"
+  "research/governance/governance-folder-structure-decisions-2026-06.md"
   "research/portal/README.md"
   "research/portal/documentation-standards-comparison-2026-06.md"
   "research/portal/architecture-and-stack-comparison-2026-06.md"
