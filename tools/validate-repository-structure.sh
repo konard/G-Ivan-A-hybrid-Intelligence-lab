@@ -152,7 +152,7 @@ validate_kebab_case_file_naming() {
   done < <(find "$dir" -maxdepth 1 -type f)
 }
 
-validate_metadata_not_duplicated() {
+validate_metadata_single_source() {
   local file
 
   while IFS= read -r file; do
@@ -198,7 +198,7 @@ validate_metadata_not_duplicated() {
     ' "$file"; then
       fail "Metadata duplicated in body of $file. Keep it only in frontmatter."
     fi
-  done < <(find standards governance -type f -name '*.md' | sort)
+  done < <(find standards governance research -type f -name '*.md' | sort)
 }
 
 validate_internal_markdown_links() {
@@ -410,7 +410,7 @@ for kebab_case_dir in standards governance; do
   validate_kebab_case_file_naming "$kebab_case_dir"
 done
 
-validate_metadata_not_duplicated
+validate_metadata_single_source
 validate_internal_markdown_links
 validate_artifact_map_paths
 validate_spoke_template_placeholders
