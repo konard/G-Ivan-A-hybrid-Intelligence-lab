@@ -38,6 +38,12 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #177 (Structured mode): `governance/rfc/repository-quality-improvement-plan.md`
+  обновлён до v0.2: раздел "Full draft list" заменён 52-строчной таблицей
+  с колонками для номера, файла, строки `status: draft`, summary,
+  рекомендации и обоснования. Добавлен "Триаж по категориям" для canonical,
+  отложенных, доработки, объединения и удаления; структурный валидатор теперь
+  ожидает версию RFC 0.2.
 - Issue #169: файлы стандартов внутри `standards/` переименованы из
   `CAPS_LOCK`/underscore-стиля в kebab-case, все ссылки на старые имена
   обновлены. `standards/file-naming.md` обновлён до версии 1.1 с явным правилом
