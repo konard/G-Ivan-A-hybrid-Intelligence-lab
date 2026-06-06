@@ -109,7 +109,6 @@ is_active_file() {
     templates/spoke/README.md | \
     templates/spoke/CONTRIBUTING.md | \
     templates/spoke/CHANGELOG.md | \
-    .gitkeep | \
     templates/spoke/docs/adr/.gitkeep | \
     templates/spoke/docs/audit/.gitkeep | \
     templates/spoke/.github/ISSUE_TEMPLATE/task.md | \
@@ -365,7 +364,6 @@ required_files=(
   "projects/education-ba-prompt/README.md"
   "projects/education-ba-prompt/docs/course-ideas.md"
   ".github/ISSUE_TEMPLATE/task.yml"
-  ".gitkeep"
   "templates/spoke/AI_GOVERNANCE.md"
   "templates/spoke/AI_QUICK_RULES.md"
   "templates/spoke/AI_HANDOVER_PROMPT.md"
@@ -652,7 +650,7 @@ require_text "governance/rfc/rfc-agent-onboarding-protocol.md" "Модель п�
 require_text "governance/rfc/rfc-agent-onboarding-protocol.md" "rfc-two-cases-of-project-initialization.md"
 require_text "governance/rfc/rfc-agent-onboarding-protocol.md" "{{REPO_NAME}}"
 
-require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "status: draft"
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "status: canonical"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "ai-generated: true"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Концептуальная аналогия"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Таблица-манифест"

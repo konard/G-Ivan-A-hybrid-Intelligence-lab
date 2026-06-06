@@ -1,7 +1,7 @@
 ---
-status: draft
-version: 0.2
-updated: 2026-06-06
+status: canonical
+version: 1.0
+updated: 2026-06-07
 ai-generated: true
 type: navigation
 scope: repo-wide

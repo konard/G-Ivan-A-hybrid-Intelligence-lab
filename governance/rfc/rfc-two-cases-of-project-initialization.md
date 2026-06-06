@@ -1,7 +1,7 @@
 ---
-status: draft
-version: 1.1
-updated: 2026-06-06
+status: canonical
+version: 1.0
+updated: 2026-06-07
 ai-generated: true
 type: rfc
 context: [project-initialization, runtime-onboarding, bootstrap, governance, hub-and-spoke, terminology]

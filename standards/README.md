@@ -20,8 +20,8 @@
 | Жизненный цикл задач | Active | Issues, PRs, переходы статусов, AI-assisted task execution | [issue-workflow.md](issue-workflow.md) |
 | project-structure-inheritance.md | Active | Правило наследования структуры каталогов в проектах; обязательно для новых проектов | [project-structure-inheritance.md](project-structure-inheritance.md) |
 | portal-repository-structure.md | Draft (предложен, на утверждении) | Структура репозитория портала — spoke-проекта «единая точка сборки» (`open-ai.ru`); наследует геном спока и добавляет портал-каталоги | [portal-repository-structure.md](portal-repository-structure.md) |
-| executable-contract-standard.md | Draft (предложен, на утверждении) | Формат исполнимых контрактов (`executable: true`): директива → EXECUTION → EXPLANATION | [executable-contract-standard.md](executable-contract-standard.md) |
-| contract-documentation-standard.md | Draft (предложен, на утверждении) | Формат прочих контрактов (обязательства сверху, обоснование под катом; нормативный словарь RFC 2119) | [contract-documentation-standard.md](contract-documentation-standard.md) |
+| executable-contract-standard.md | Canonical | Формат исполнимых контрактов (`executable: true`): директива → EXECUTION → EXPLANATION | [executable-contract-standard.md](executable-contract-standard.md) |
+| contract-documentation-standard.md | Canonical | Формат прочих контрактов (обязательства сверху, обоснование под катом; нормативный словарь RFC 2119) | [contract-documentation-standard.md](contract-documentation-standard.md) |
 | webportal-concept-standard.md | Draft (предложен, на утверждении) | Структура концепции веб-портала (сайт-визитка → app-портал): обязательное ядро + опциональные слои, связи с roadmap/исследованиями/структурой репозитория. Не для лендингов, мобильных приложений, бэкенд-сервисов, микросервисов | [webportal-concept-standard.md](webportal-concept-standard.md) |
 | Research report | Planned | `research/<domain>/` | Создать после повторяющихся research tasks. |
 | Framework proposal | Planned | `frameworks/` | Создать после documented framework gap. |

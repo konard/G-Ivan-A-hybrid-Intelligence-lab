@@ -1,7 +1,7 @@
 ---
-status: draft
-version: 0.1
-updated: 2026-06-06
+status: canonical
+version: 1.0
+updated: 2026-06-07
 ai-generated: true
 type: external-analysis
 context: [governance, hub, contracts, api-contracts, sla, rfc-2119, design-by-contract, adr]
