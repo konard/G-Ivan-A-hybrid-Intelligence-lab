@@ -165,7 +165,7 @@ Confirmed broken or stale local references:
 | --- | --- | --- | --- | --- |
 | `projects/repo-development/docs/contract-violations-self-report-2026-06.md` | 105 | Link points to deleted `../../../docs/analysis/contract-executability-rfc.md`. | P1 | Replace with `../../../governance/rfc/contract-executability-rfc.md`. |
 | `research/mango/taxonomy-concept-2026-05.md` | 43-45 | Links point to deleted `classification-old.md`, `classification-tz-old.md`, `requirements-flow-old.md`. | P1 | Replace with active `classification.md`, `classification-tz.md`, `requirements-flow.md` or mark as historical source without link. |
-| `governance/rfc/rfc-creative-template-design.md` | 12 | Frontmatter points to `research/project-context-and-bootstrap-patterns-2026-05.md`; actual file is under `research/hub/`. | P1 | Replace with `research/hub/project-context-and-bootstrap-patterns-2026-05.md`. |
+| Superseded spoke-template design draft | 12 | Frontmatter pointed to `research/project-context-and-bootstrap-patterns-2026-05.md`; actual file is under `research/hub/`. | P1 | Merged into `templates/spoke/README.md`; stale draft removed. |
 | `research/mango/capability-decomposition-2026-05.md` | 11-12 | `related_artifacts` includes `classification.md v3.0` and `classification-glossary.md`; one value mixes path and version, the other does not resolve locally. | P1 | Use path-only relation values; move version into prose if needed. |
 | `research/portal/ai-and-mango-integration-patterns-2026-06.md` | 13, 168 | References deleted `projects/mango/README.md`. | P1, portal-deferred | Decide whether to point to `archive/projects/mango/README.md` or external `mango_ba_prompts`; do not alter portal concept semantics here. |
 | `research/portal/repository-structure-design-2026-06.md` | 157 | References deleted `projects/mango/README.md`. | P1, portal-deferred | Same decision as above. |
@@ -244,8 +244,8 @@ Full draft list:
 | 36 | `templates/spoke/CHANGELOG.md` | 2 | Каркас changelog для spoke-проекта: `## Unreleased`, Keep a Changelog и SemVer placeholders. | Доработать | Файл связан с 3 файлами и содержит `{{date}}`; нужен template lifecycle rule, иначе draft-статус остаётся технической защитой. |
 | 37 | `templates/spoke/CONTRIBUTING.md` | 2 | Шаблон contributing для spoke: issue -> PR -> review, локальная проверка и checklist для изменений. | Доработать | Файл связан с 2 файлами и содержит placeholders; до canonical нужно согласовать, какие template root files валидируются как generated artifacts. |
 | 38 | `templates/spoke/README.md` | 2 | Главная навигация spoke template: состав генома, placeholders, `init.sh`, validation и ссылки на hub onboarding. | Доработать | Файл упоминается в 11 местах и является центральным template artifact; требуется решить placeholder validation before/after init. |
-| 39 | `governance/rfc/rfc-agent-onboarding-protocol.md` | 2 | RFC протокола бесшовной передачи проекта: handover prompt, 4-step agent algorithm и место для `agent-onboarding.md`. | Объединить с `governance/agent-onboarding.md` | Реализация уже живёт в canonical `agent-onboarding.md`; RFC нужно закрыть как source/history или перенести оставшиеся уникальные правила в canonical документ. |
-| 40 | `governance/rfc/rfc-creative-template-design.md` | 2 | RFC дизайна ДНК-шаблона spoke: карта файлов, naming options, Mermaid-схема и anti-patterns bootstrap. | Объединить с `templates/spoke/README.md` | Основные решения уже реализованы в `templates/spoke/`; уникальные rationale можно оставить как history, а эксплуатационные правила перенести в README/template docs. |
+| 39 | Superseded onboarding design draft | 2 | Дизайн протокола бесшовной передачи проекта: handover prompt, 4-step agent algorithm и место для `agent-onboarding.md`. | Объединено с `governance/agent-onboarding.md` | Реализация и rationale теперь живут в canonical `agent-onboarding.md`; отдельный draft удалён. |
+| 40 | Superseded spoke-template design draft | 2 | Дизайн ДНК-шаблона spoke: карта файлов, naming options, Mermaid-схема и anti-patterns bootstrap. | Объединено с `templates/spoke/README.md` | Основные решения и unique rationale теперь живут в `templates/spoke/README.md`; отдельный draft удалён. |
 | 41 | former research body-order draft | 2 | Стандарт body-структуры research-документов: введение, результаты, детализация, sources, open questions и template. | Объединён с `standards/research-profile.md` | Phase 1 слил body-order rules в единый research profile и удалил отдельный draft standard; история остаётся в git. |
 | 42 | `archive/projects/mango/experiments/prompts-audit-2026-05-26.md` | 2 | Архивный Mango prompt-audit: что работает в prompt assets, упрощения для simple variants и критичные ссылки для exp variants. | Удалить | Файл находится под `archive/projects/mango/`, а раздел 2.7 рекомендует удалить весь архив после approval; внешним source of truth стал `mango_ba_prompts`. |
 | 43 | `archive/projects/mango/experiments/prompts-selftest-2026-05-26.md` | 2 | Архивный self-test Mango prompts: результаты проверки готовых prompt variants и идеи на будущее. | Удалить | Архив Mango создаёт stale local paths и placeholder debt; файл упоминается только как часть archive package и должен удаляться вместе с ним. |
@@ -306,9 +306,9 @@ Full draft list:
 - [ ] `templates/spoke/README.md`
 
 #### К объединению (3 документа):
-- [ ] `governance/rfc/rfc-agent-onboarding-protocol.md` -> объединить с `governance/agent-onboarding.md`
-- [ ] `governance/rfc/rfc-creative-template-design.md` -> объединить с `templates/spoke/README.md`
-- [ ] former research body-order draft -> объединён с `standards/research-profile.md`
+- [x] Superseded onboarding design draft -> объединён с `governance/agent-onboarding.md`
+- [x] Superseded spoke-template design draft -> объединён с `templates/spoke/README.md`
+- [x] former research body-order draft -> объединён с `standards/research-profile.md`
 
 #### К удалению (11 документов):
 - [ ] `archive/projects/mango/experiments/prompts-audit-2026-05-26.md`
