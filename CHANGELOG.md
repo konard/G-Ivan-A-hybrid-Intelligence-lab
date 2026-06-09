@@ -6,6 +6,21 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #207 (Creative mode): semantic separation of the onboarding files into
+  **protocol** (process/checklist) and **artefact** (copyable prompt). Renamed
+  (via `git mv`, history preserved):
+  `governance/agent-onboarding.md` -> `governance/agent-onboarding-protocol.md`
+  (1.1 -> 1.2) and
+  `templates/htom/AI_HANDOVER_PROMPT.md` -> `templates/htom/AI_SESSION_HANDOVER_PROMPT.md`
+  (0.2 -> 0.3). Added disambiguation disclaimers — to the protocol
+  «⚠️ ЭТО ПРОТОКОЛ (ИНСТРУКЦИЯ). Не копируйте в чат.» and to the prompt
+  «⚠️ ЭТО АРТЕФАКТ ДЛЯ КОПИРОВАНИЯ. Скопируйте в новый чат.» Repointed all live
+  references across `README.md`, `AI_GOVERNANCE.md`, `governance/`, `standards/`,
+  `research/`, `templates/htom/` and both validators. NB: the issue proposed
+  `UPPER_CASE` governance paths and a `templates/spoke/` location; both were
+  adapted to the repository's `standards/file-naming.md` (governance uses
+  kebab-case) and the actual genome layout (the handover prompt lives in
+  `templates/htom/`).
 - Issue #201 (Creative mode): clarified the Hub concept by separating
   **HTOM-команды** (hybrid human + AI work units that inherit the governance
   genome) from **spoke-репозитории** (production code repositories with their
@@ -306,7 +321,7 @@ All notable repository governance changes are documented here.
   плейсхолдером `{{REPO_NAME}}` (по умолчанию `hybrid-Intelligence-lab`), готовая
   «доверенность» для запуска агента (*Runtime-онбординг*) прямо из склонированного
   спока. Источник истины зафиксирован за Хабом
-  ([`governance/agent-onboarding.md`](governance/agent-onboarding.md), создаётся в
+  ([`governance/agent-onboarding.md`](governance/agent-onboarding-protocol.md), создаётся в
   B-001 → #109): файл явно помечен как копия шаблона со ссылкой на хабовый
   оригинал, чтобы избежать рассинхронизации. Файл зарегистрирован как active в
   обоих валидаторах (`tools/validate-repository-structure.sh` — `is_active_file`,

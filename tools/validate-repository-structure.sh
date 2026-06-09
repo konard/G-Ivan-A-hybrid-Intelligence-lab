@@ -85,7 +85,7 @@ is_active_file() {
     projects/repo-development/README.md | \
     projects/repo-development/docs/migration-audit-2026-05.md | \
     projects/repo-development/docs/contract-violations-self-report-2026-06.md | \
-    governance/agent-onboarding.md | \
+    governance/agent-onboarding-protocol.md | \
     governance/repo-model.md | \
     governance/artifact-map.md | \
     governance/backlog.md | \
@@ -121,7 +121,7 @@ is_active_file() {
     .github/ISSUE_TEMPLATE/task.yml | \
     templates/htom/AI_GOVERNANCE.md | \
     templates/htom/AI_QUICK_RULES.md | \
-    templates/htom/AI_HANDOVER_PROMPT.md | \
+    templates/htom/AI_SESSION_HANDOVER_PROMPT.md | \
     templates/htom/README.md | \
     templates/htom/CONTRIBUTING.md | \
     templates/htom/CHANGELOG.md | \
@@ -381,7 +381,7 @@ required_files=(
   "projects/repo-development/README.md"
   "projects/repo-development/docs/migration-audit-2026-05.md"
   "projects/repo-development/docs/contract-violations-self-report-2026-06.md"
-  "governance/agent-onboarding.md"
+  "governance/agent-onboarding-protocol.md"
   "governance/repo-model.md"
   "governance/artifact-map.md"
   "governance/backlog.md"
@@ -395,7 +395,7 @@ required_files=(
   ".github/ISSUE_TEMPLATE/task.yml"
   "templates/htom/AI_GOVERNANCE.md"
   "templates/htom/AI_QUICK_RULES.md"
-  "templates/htom/AI_HANDOVER_PROMPT.md"
+  "templates/htom/AI_SESSION_HANDOVER_PROMPT.md"
   "templates/htom/README.md"
   "templates/htom/CONTRIBUTING.md"
   "templates/htom/CHANGELOG.md"
@@ -451,7 +451,7 @@ require_text "README.md" "CONCEPT.md"
 require_text "README.md" "standards/README.md"
 require_text "README.md" "standards/glossary.md"
 require_text "README.md" "standards/team-contract.md"
-require_text "README.md" "governance/agent-onboarding.md"
+require_text "README.md" "governance/agent-onboarding-protocol.md"
 require_text "README.md" "governance/repo-model.md"
 require_text "README.md" "governance/artifact-map.md"
 require_text "README.md" "projects/education-ba-prompt/README.md"
@@ -492,7 +492,7 @@ require_text "AI_GOVERNANCE.md" "Директива pre-flight"
 require_text "AI_GOVERNANCE.md" "Founder & PO"
 require_text "AI_GOVERNANCE.md" "Human reviewer"
 require_text "AI_GOVERNANCE.md" "standards/README.md"
-require_text "AI_GOVERNANCE.md" "governance/agent-onboarding.md"
+require_text "AI_GOVERNANCE.md" "governance/agent-onboarding-protocol.md"
 require_text "AI_GOVERNANCE.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
 
 require_text "CHANGELOG.md" "## Unreleased"
@@ -575,7 +575,7 @@ require_text "standards/file-naming.md" "lowercase-with-hyphens.md"
 require_text "standards/file-naming.md" "Правила именования файлов в standards/ и governance/"
 require_text "standards/file-naming.md" '`CAPS_LOCK` запрещён'
 require_text "standards/file-naming.md" "classification-glossary.md"
-require_text "standards/file-naming.md" "agent-onboarding.md"
+require_text "standards/file-naming.md" "agent-onboarding-protocol.md"
 require_text "standards/file-naming.md" "Исключения"
 require_text "standards/file-naming.md" "Новый файл не соответствует правилу"
 
@@ -706,7 +706,7 @@ require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Runtim
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Bootstrap-клонирование"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "standards/glossary.md"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "ai-collaboration-retrospective-2026-06.md"
-require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "governance/agent-onboarding.md"
+require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "governance/agent-onboarding-protocol.md"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "templates/htom/README.md"
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" '```mermaid'
 require_text "governance/rfc/rfc-two-cases-of-project-initialization.md" "Follow-up"
@@ -716,7 +716,7 @@ require_text "governance/rfc/contract-executability-rfc.md" "status: reviewed"
 require_text "governance/rfc/contract-executability-rfc.md" "version: 1.1"
 require_text "governance/rfc/contract-executability-rfc.md" "## Decision Status"
 require_text "governance/rfc/contract-executability-rfc.md" '| Executable markers | accepted | `standards/executable-contract-standard.md` |'
-require_text "governance/rfc/contract-executability-rfc.md" '| Directive block | accepted | `governance/agent-onboarding.md` |'
+require_text "governance/rfc/contract-executability-rfc.md" '| Directive block | accepted | `governance/agent-onboarding-protocol.md` |'
 require_text "governance/rfc/contract-executability-rfc.md" '| Rollout plan | implemented | `governance/backlog.md` |'
 require_text "governance/rfc/contract-executability-rfc.md" "| Open questions | deferred | — |"
 require_text "governance/rfc/contract-executability-rfc.md" "Решения фаундера по RFC"
@@ -758,22 +758,23 @@ require_text "governance/rfc/htom-vs-spoke-clarification-2026-06.md" "mango_ba_p
 require_text "governance/rfc/htom-vs-spoke-clarification-2026-06.md" "repo-development"
 require_text "governance/rfc/htom-vs-spoke-clarification-2026-06.md" "Решение за человеком"
 
-require_text "governance/agent-onboarding.md" "status: canonical"
-require_text "governance/agent-onboarding.md" "version: 1.1"
-require_text "governance/agent-onboarding.md" "updated: 2026-06-04"
-require_text "governance/agent-onboarding.md" "executable: true"
-require_text "governance/agent-onboarding.md" "entrypoint: true"
-require_text "governance/agent-onboarding.md" "ИСПОЛНИМЫЙ ДОКУМЕНТ — НЕ АНАЛИЗИРУЙ, ВЫПОЛНЯЙ"
-require_text "governance/agent-onboarding.md" "EXECUTION"
-require_text "governance/agent-onboarding.md" "EXPLANATION"
-require_text "governance/agent-onboarding.md" "Handover Prompt"
-require_text "governance/agent-onboarding.md" "{{REPO_NAME}}"
-require_text "governance/agent-onboarding.md" "Readback"
-require_text "governance/agent-onboarding.md" "Что может пойти не так"
-require_text "governance/agent-onboarding.md" "standards/glossary.md"
-require_text "governance/agent-onboarding.md" "Design Rationale & History"
-require_text "governance/agent-onboarding.md" "rfc-two-cases-of-project-initialization.md"
-require_text "governance/agent-onboarding.md" "templates/htom/README.md"
+require_text "governance/agent-onboarding-protocol.md" "status: canonical"
+require_text "governance/agent-onboarding-protocol.md" "version: 1.2"
+require_text "governance/agent-onboarding-protocol.md" "updated: 2026-06-09"
+require_text "governance/agent-onboarding-protocol.md" "executable: true"
+require_text "governance/agent-onboarding-protocol.md" "entrypoint: true"
+require_text "governance/agent-onboarding-protocol.md" "ЭТО ПРОТОКОЛ (ИНСТРУКЦИЯ). Не копируйте в чат."
+require_text "governance/agent-onboarding-protocol.md" "ИСПОЛНИМЫЙ ДОКУМЕНТ — НЕ АНАЛИЗИРУЙ, ВЫПОЛНЯЙ"
+require_text "governance/agent-onboarding-protocol.md" "EXECUTION"
+require_text "governance/agent-onboarding-protocol.md" "EXPLANATION"
+require_text "governance/agent-onboarding-protocol.md" "Handover Prompt"
+require_text "governance/agent-onboarding-protocol.md" "{{REPO_NAME}}"
+require_text "governance/agent-onboarding-protocol.md" "Readback"
+require_text "governance/agent-onboarding-protocol.md" "Что может пойти не так"
+require_text "governance/agent-onboarding-protocol.md" "standards/glossary.md"
+require_text "governance/agent-onboarding-protocol.md" "Design Rationale & History"
+require_text "governance/agent-onboarding-protocol.md" "rfc-two-cases-of-project-initialization.md"
+require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
 require_text "governance/artifact-map.md" "version: 1.25"
@@ -782,7 +783,7 @@ require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
 require_text "governance/artifact-map.md" "updated: 2026-06-09"
 require_text "governance/artifact-map.md" "ai-generated: false"
-require_text "governance/artifact-map.md" "governance/agent-onboarding.md"
+require_text "governance/artifact-map.md" "governance/agent-onboarding-protocol.md"
 require_text "governance/artifact-map.md" "governance/rfc/contract-executability-rfc.md"
 require_text "governance/artifact-map.md" "governance/rfc/repository-quality-improvement-plan.md"
 require_text "governance/artifact-map.md" "governance/rfc/draft-triage-and-exit-plan.md"
@@ -997,14 +998,15 @@ require_text "templates/htom/AI_GOVERNANCE.md" "{{project_name}}"
 require_text "templates/htom/AI_GOVERNANCE.md" "Эскалация"
 require_text "templates/htom/AI_QUICK_RULES.md" "{{project_name}}"
 require_text "templates/htom/AI_QUICK_RULES.md" "Не создавай"
-require_text "templates/htom/AI_HANDOVER_PROMPT.md" "{{REPO_NAME}}"
-require_text "templates/htom/AI_HANDOVER_PROMPT.md" "governance/agent-onboarding.md"
-require_text "templates/htom/AI_HANDOVER_PROMPT.md" "version: 0.2"
-require_text "templates/htom/AI_HANDOVER_PROMPT.md" "executable: true"
-require_text "templates/htom/AI_HANDOVER_PROMPT.md" "ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ"
-require_text "templates/htom/AI_HANDOVER_PROMPT.md" "EXECUTION"
-require_text "templates/htom/AI_HANDOVER_PROMPT.md" "EXPLANATION"
-require_text "templates/htom/README.md" "AI_HANDOVER_PROMPT.md"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "{{REPO_NAME}}"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "governance/agent-onboarding-protocol.md"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "version: 0.3"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "executable: true"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ЭТО АРТЕФАКТ ДЛЯ КОПИРОВАНИЯ. Скопируйте в новый чат."
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "EXECUTION"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "EXPLANATION"
+require_text "templates/htom/README.md" "AI_SESSION_HANDOVER_PROMPT.md"
 require_text "templates/htom/README.md" "status: canonical"
 require_text "templates/htom/README.md" "version: 0.3"
 require_text "templates/htom/README.md" "## Template Placeholder Policy"
@@ -1014,7 +1016,7 @@ require_text "templates/htom/README.md" "{{date}}"
 require_text "templates/htom/README.md" "{{project_name}}"
 require_text "templates/htom/README.md" "{{hub_url}}"
 require_text "templates/htom/README.md" "{{REPO_NAME}}"
-require_text "templates/htom/README.md" "governance/agent-onboarding.md"
+require_text "templates/htom/README.md" "governance/agent-onboarding-protocol.md"
 require_text "templates/htom/README.md" "Как валидировать структуру"
 require_text "templates/htom/README.md" "Design Decisions & Rationale"
 require_text "templates/htom/README.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
