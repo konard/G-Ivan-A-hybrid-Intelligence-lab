@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.6
-updated: 2026-06-08
+version: 1.7
+updated: 2026-06-09
 ai-generated: false
 source: research/README-old.md
 ---
@@ -35,6 +35,7 @@ source: research/README-old.md
 | [hub/](hub/) | Фундаментальные исследования работы Хаба: передача контекста, project bootstrap, governance-стратегия и классификация промптов (`scope: repo-wide`). |
 | [mango/](mango/) | Классификация продуктов и требований MANGO OFFICE, анализ корпуса ТЗ и flow требований (`scope: mango-only`). |
 | [governance/](governance/) | Исследования governance-форматов Хаба: формат research-документации, исполнимых контрактов, contract documentation и решений по структуре каталогов (`scope: repo-wide`). |
+| [cicd/](cicd/) | Исследования практик и стандартов CI/CD для AI-native проектов: анализ шаблонов, паттернов автоматизации и применимости к нашим репозиториям (`scope: repo-wide`). |
 
 ### Подкаталог `hub/`
 
