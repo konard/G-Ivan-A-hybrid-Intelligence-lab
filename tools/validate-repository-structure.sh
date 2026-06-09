@@ -32,6 +32,7 @@ require_text() {
 is_active_file() {
   case "$1" in
     README.md | \
+    .gitignore | \
     CONCEPT.md | \
     CONTRIBUTING.md | \
     AI_GOVERNANCE.md | \
@@ -94,6 +95,28 @@ is_active_file() {
     governance/rfc/contract-executability-rfc.md | \
     governance/rfc/repository-quality-improvement-plan.md | \
     governance/rfc/draft-triage-and-exit-plan.md | \
+    governance/rfc/hub-vision-concept-proposal-2026-06.md | \
+    docs/vision.md | \
+    docs/product-concept.md | \
+    docs/screenshots/concept-desktop.png | \
+    docs/screenshots/concept-mobile.png | \
+    guides/README.md | \
+    guides/quick-start.md | \
+    guides/init-spoke-repo.md | \
+    guides/sync-from-hub.md | \
+    guides/interact-with-ai.md | \
+    guides/deploy-project.md | \
+    guides/rollback-sync.md | \
+    guides/contribute-template.md | \
+    guides/troubleshooting.md | \
+    guides/glossary.md | \
+    mkdocs.yml | \
+    website/index.md | \
+    website/stylesheets/extra.css | \
+    website/docs | \
+    website/guides | \
+    website/research | \
+    .github/workflows/deploy-docs.yml | \
     .github/ISSUE_TEMPLATE/task.yml | \
     templates/spoke/AI_GOVERNANCE.md | \
     templates/spoke/AI_QUICK_RULES.md | \
