@@ -35,6 +35,18 @@
 | [governance/artifact-map.md](governance/artifact-map.md) | Карта артефактов: где что лежит, зачем нужно и как связано. |
 | [templates/spoke/](templates/spoke/) | Шаблон для создания spoke-репозиториев (*Bootstrap-клонирование*, Кейс 2). Используйте `templates/spoke/README.md` как точку входа. |
 
+## Продукт и гайды
+
+| Документ | Назначение |
+| --- | --- |
+| [docs/vision.md](docs/vision.md) | Product Vision (L1) Хаба: зачем он существует, для кого и какую ценность создаёт (1 страница). |
+| [docs/product-concept.md](docs/product-concept.md) | Product Concept (L2): персоны, сценарии, ключевые возможности, метрики и дорожная карта. |
+| [guides/README.md](guides/README.md) | Библиотека человекочитаемых гайдов «как это сделать»: быстрый старт, синхронизация, развёртывание, решение проблем. |
+
+Разделы `guides/` и `research/` дополнительно публикуются как сайт MkDocs через
+GitHub Pages (см. [`mkdocs.yml`](mkdocs.yml) и
+[`.github/workflows/deploy-docs.yml`](.github/workflows/deploy-docs.yml)).
+
 ## Структура
 
 | Путь | Роль |

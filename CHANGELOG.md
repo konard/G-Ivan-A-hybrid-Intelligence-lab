@@ -6,6 +6,21 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #203 (Creative mode): added a single Draft documentation package for the
+  Hub product layer. New product docs `docs/vision.md` (Product Vision, L1) and
+  `docs/product-concept.md` (Product Concept, L2); RFC
+  `governance/rfc/hub-vision-concept-proposal-2026-06.md` comparing approaches
+  and listing open questions to the founder; a human-facing guide library under
+  `guides/` (`README.md`, `quick-start.md`, `init-spoke-repo.md`,
+  `sync-from-hub.md`, `interact-with-ai.md`, `deploy-project.md`,
+  `rollback-sync.md`, `contribute-template.md`, `troubleshooting.md`,
+  `glossary.md`); and an MkDocs Material site (`mkdocs.yml`, `website/`) with a
+  GitHub Pages auto-deploy workflow `.github/workflows/deploy-docs.yml` that
+  publishes only `guides/` and `research/` (governance/ and standards/ stay
+  unpublished). Added responsive table CSS in `website/stylesheets/extra.css`
+  and registered the RFC in `governance/rfc/README.md`. Updated root `README.md`
+  navigation and the whitelist in `tools/validate-repository-structure.sh`;
+  removed the obsolete root `.gitkeep`.
 - Issue #199: added split webportal concept standards:
   `standards/webportal-product-concept-standard.md` for L2 Product Concept and
   `standards/webportal-solution-concept-standard.md` for L3 Solution Concept.
