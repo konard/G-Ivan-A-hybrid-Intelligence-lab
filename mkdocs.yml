@@ -1,0 +1,111 @@
+site_name: Hybrid Intelligence Lab
+site_description: >-
+  Среда и общая библиотека знаний для гибридных команд человек + AI.
+  Публикуются разделы guides/ и research/.
+site_url: https://g-ivan-a.github.io/hybrid-Intelligence-lab/
+repo_url: https://github.com/G-Ivan-A/hybrid-Intelligence-lab
+repo_name: G-Ivan-A/hybrid-Intelligence-lab
+
+# Контент собран в служебном каталоге website/ через символические ссылки на
+# docs/, guides/ и research/. Это держит Markdown-ссылки валидными для GitHub,
+# валидатора структуры и собранного сайта без сторонних плагинов-агрегаторов.
+# Область публикации — только guides/ и research/ (+ продуктовые docs/vision и
+# docs/product-concept). governance/ и standards/ намеренно НЕ публикуются.
+docs_dir: website
+
+theme:
+  name: material
+  language: ru
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Тёмная тема
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Светлая тема
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - tables
+  - admonition
+  - toc:
+      permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.details
+
+plugins:
+  - search
+
+# Битые внутренние ссылки и пропущенные файлы должны падать в strict-сборке.
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+
+nav:
+  - Главная: index.md
+  - Продукт:
+    - Vision: docs/vision.md
+    - Concept: docs/product-concept.md
+  - Гайды:
+    - Обзор: guides/README.md
+    - Быстрый старт: guides/quick-start.md
+    - Инициализация проекта: guides/init-spoke-repo.md
+    - Синхронизация с Хабом: guides/sync-from-hub.md
+    - Взаимодействие с ИИ: guides/interact-with-ai.md
+    - Развёртывание проекта: guides/deploy-project.md
+    - Откат синхронизации: guides/rollback-sync.md
+    - Добавление шаблона: guides/contribute-template.md
+    - Решение проблем: guides/troubleshooting.md
+    - Глоссарий: guides/glossary.md
+  - Исследования:
+    - Обзор: research/README.md
+    - Hub:
+      - Обзор: research/hub/README.md
+      - Контекст и bootstrap-паттерны: research/hub/project-context-and-bootstrap-patterns-2026-05.md
+      - Аудит классификации промптов: research/hub/prompts-classification-audit-2026-05.md
+      - Стандарт классификации промптов: research/hub/prompts-classification-standard-2026-05.md
+      - Аудит governance-стратегии команды C: research/hub/team-c-governance-strategy-audit-2026-05.md
+      - Анализ пользовательских промптов: research/hub/user-prompts-analysis-2026-05.md
+      - Внешние governance-паттерны: research/hub/external-governance-patterns-review-2026-06.md
+      - Ретроспектива AI-коллаборации: research/hub/ai-collaboration-retrospective-2026-06.md
+      - Ретроспектива миграции Mango: research/hub/ai-collaboration-retrospective-mango-migration-2026-06.md
+    - Governance:
+      - Обзор: research/governance/README.md
+      - Формат research-документации: research/governance/research-documentation-format-2026-06.md
+      - Формат исполнимых контрактов: research/governance/executable-contract-format-2026-06.md
+      - Формат документации контрактов: research/governance/contract-documentation-format-2026-06.md
+      - Решения по структуре каталогов: research/governance/governance-folder-structure-decisions-2026-06.md
+    - Mango:
+      - Обзор: research/mango/README.md
+      - Классификация продуктов: research/mango/classification.md
+      - Классификация ТЗ: research/mango/classification-tz.md
+      - Flow требований: research/mango/requirements-flow.md
+      - Декомпозиция возможностей: research/mango/capability-decomposition-2026-05.md
+      - Дорожная карта RAG-маппинга: research/mango/rag-mapping-roadmap-2026-05.md
+      - Неопределённость жизненного цикла требований: research/mango/requirements-lifecycle-uncertainty-2026-05.md
+      - Концепция таксономии: research/mango/taxonomy-concept-2026-05.md

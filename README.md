@@ -36,6 +36,18 @@
 | [templates/htom/](templates/htom/) | Геном **HTOM-команды** — минимальный governance-скелет для гибридной human + AI работы (*Bootstrap-клонирование*, Кейс 2). Точка входа: `templates/htom/README.md`. |
 | [templates/spoke/](templates/spoke/) | Шаблон **production-спока** — репозитория с собственным кодом и жизненным циклом. Точка входа: `templates/spoke/README.md`. Различие HTOM-команда vs spoke — в [RFC](governance/rfc/htom-vs-spoke-clarification-2026-06.md). |
 
+## Продукт и гайды
+
+| Документ | Назначение |
+| --- | --- |
+| [docs/vision.md](docs/vision.md) | Product Vision (L1) Хаба: зачем он существует, для кого и какую ценность создаёт (1 страница). |
+| [docs/product-concept.md](docs/product-concept.md) | Product Concept (L2): персоны, сценарии, ключевые возможности, метрики и дорожная карта. |
+| [guides/README.md](guides/README.md) | Библиотека человекочитаемых гайдов «как это сделать»: быстрый старт, синхронизация, развёртывание, решение проблем. |
+
+Разделы `guides/` и `research/` дополнительно публикуются как сайт MkDocs через
+GitHub Pages (см. [`mkdocs.yml`](mkdocs.yml) и
+[`.github/workflows/deploy-docs.yml`](.github/workflows/deploy-docs.yml)).
+
 ## Структура
 
 | Путь | Роль |
