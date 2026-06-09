@@ -49,6 +49,23 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #207 (Creative mode): Smart Sync infrastructure for Hub ↔ spoke
+  template synchronization. New auto-generated registry `templates/manifest.json`
+  (fields `manifest_version`, `last_updated`, `templates[]` with
+  `id`/`path`/`version`/`target_type`/`stack`/`min_phase`/`criticality`/`tags`/
+  `description`), produced from the hand-maintained `templates/sync-metadata.json`
+  by `tools/generate-manifest.py` (`--write`/`--check`) — the manifest is never
+  hand-edited. New GitHub Action `.github/workflows/update-manifest.yml`
+  regenerates and commits the manifest (`chore: update manifest.json`) on pushes
+  to `main` that touch `templates/`. New client `tools/sync-from-hub.sh` with
+  `--report` / `--apply` / `--apply --force` / `--init`: it filters templates by
+  the local `.hub-profile.json` (target_type, stack, min_phase), compares
+  versions against `last_sync`, prints a sync report, and applies safely by
+  default (writes `<name>.hub-new.<ext>` alongside local files; `--force`
+  overwrites). End-to-end test `experiments/test-smart-sync.sh`. Extended
+  `tools/validate-repository-structure.sh` to allowlist and assert the new
+  artifacts plus a manifest drift check; bumped `governance/artifact-map.md`
+  (1.25 -> 1.26) with rows for the new artifacts.
 - Issue #203 (Creative mode): added a single Draft documentation package for the
   Hub product layer. New product docs `docs/vision.md` (Product Vision, L1) and
   `docs/product-concept.md` (Product Concept, L2); RFC

@@ -24,7 +24,7 @@ require_file() {
 require_text() {
   local path="$1"
   local text="$2"
-  if [[ -f "$path" ]] && ! grep -Fq "$text" "$path"; then
+  if [[ -f "$path" ]] && ! grep -Fq -e "$text" "$path"; then
     fail "$path must contain: $text"
   fi
 }
@@ -118,6 +118,7 @@ is_active_file() {
     website/guides | \
     website/research | \
     .github/workflows/deploy-docs.yml | \
+    .github/workflows/update-manifest.yml | \
     .github/ISSUE_TEMPLATE/task.yml | \
     templates/htom/AI_GOVERNANCE.md | \
     templates/htom/AI_QUICK_RULES.md | \
@@ -135,6 +136,11 @@ is_active_file() {
     templates/spoke/.github/workflows/ci.yml | \
     templates/webportal-product-concept-template.md | \
     templates/webportal-solution-concept-template.md | \
+    templates/manifest.json | \
+    templates/sync-metadata.json | \
+    tools/generate-manifest.py | \
+    tools/sync-from-hub.sh | \
+    experiments/test-smart-sync.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-repository-structure.sh)
       return 0
@@ -409,6 +415,11 @@ required_files=(
   "templates/spoke/.github/workflows/ci.yml"
   "templates/webportal-product-concept-template.md"
   "templates/webportal-solution-concept-template.md"
+  "templates/manifest.json"
+  "templates/sync-metadata.json"
+  ".github/workflows/update-manifest.yml"
+  "tools/generate-manifest.py"
+  "tools/sync-from-hub.sh"
   "tools/validate-frontmatter.sh"
   "tools/validate-repository-structure.sh"
 )
@@ -777,7 +788,7 @@ require_text "governance/agent-onboarding-protocol.md" "rfc-two-cases-of-project
 require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.25"
+require_text "governance/artifact-map.md" "version: 1.26"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1038,6 +1049,31 @@ require_text "templates/spoke/CONTRIBUTING.md" "issue → PR → review"
 require_text "templates/spoke/CONTRIBUTING.md" "spoke-репозиторий"
 require_text "templates/spoke/.github/workflows/ci.yml" "name: ci"
 require_text "templates/spoke/.github/workflows/ci.yml" "pull_request"
+
+# Smart Sync infrastructure (issue #207): auto-generated manifest + registry +
+# generator + sync CLI. manifest.json must never be hand-edited.
+require_text "templates/sync-metadata.json" "auto-generated"
+require_text "templates/manifest.json" "manifest_version"
+require_text "templates/manifest.json" "target_type"
+require_text "tools/generate-manifest.py" "templates/manifest.json"
+require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"
+require_text ".github/workflows/update-manifest.yml" "templates/**"
+require_text "tools/sync-from-hub.sh" "--report"
+require_text "tools/sync-from-hub.sh" "--apply"
+require_text "tools/sync-from-hub.sh" "--force"
+require_text "tools/sync-from-hub.sh" "--init"
+require_text "tools/sync-from-hub.sh" ".hub-profile.json"
+require_text "tools/sync-from-hub.sh" ".hub-new.md"
+
+# manifest.json must stay in sync with the templates/ tree and never be edited
+# by hand. Enforce when python3 is available (skip gracefully otherwise).
+if command -v python3 >/dev/null 2>&1; then
+  if ! python3 tools/generate-manifest.py --check >/dev/null 2>&1; then
+    fail "templates/manifest.json is out of date or hand-edited; run tools/generate-manifest.py --write"
+  fi
+else
+  printf 'note: python3 not found; skipping manifest.json drift check.\n'
+fi
 
 # Hard constraint: research/ must NOT be baked into the templates.
 if [[ -e templates/htom/research ]]; then

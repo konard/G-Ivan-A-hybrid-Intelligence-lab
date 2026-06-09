@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.25
+version: 1.26
 updated: 2026-06-09
 ai-generated: false
 ---
@@ -89,6 +89,8 @@ ai-generated: false
 | `/templates/spoke/.github/workflows/ci.yml` | шаблон | — | Базовый CI/CD spoke-репозитория: линт + тесты на push и pull request (провайдер-агностичные заглушки). | ⚠️ По необходимости | `templates/spoke/README.md`, `templates/spoke/CONTRIBUTING.md` |
 | `/templates/webportal-product-concept-template.md` | шаблон | — | Копируемый Markdown-шаблон Product Concept (L2) веб-портала: personas, jobs-to-be-done, MVP scope, user flows, success metrics и high-level roadmap. | ⚠️ По необходимости | `standards/webportal-product-concept-standard.md`, `standards/product-profile.md` |
 | `/templates/webportal-solution-concept-template.md` | шаблон | — | Копируемый Markdown-шаблон Solution Concept (L3) веб-портала: C4 diagrams, stack matrix, integrations, data model, NFR, deployment strategy, provider-agnostic AI boundary и risks. | ⚠️ По необходимости | `standards/webportal-solution-concept-standard.md`, `templates/webportal-product-concept-template.md` |
+| `/templates/manifest.json` | навигация | — | Авто-генерируемый реестр шаблонов Smart Sync: `id`, `path`, `version`, `target_type`, `stack`, `min_phase`, `criticality`, `tags`, `description`. Источник — `templates/sync-metadata.json`; генерируется `tools/generate-manifest.py` и **не редактируется вручную**. | ⚠️ По необходимости | `templates/sync-metadata.json`, `tools/generate-manifest.py`, `tools/sync-from-hub.sh` |
+| `/templates/sync-metadata.json` | контракт | справка | Поддерживаемые вручную sync-политики (target_type, stack, min_phase, criticality, tags, description) — единственный ручной вход для генератора манифеста. | ⚠️ По необходимости | `templates/manifest.json`, `tools/generate-manifest.py` |
 | `/standards/README.md` | навигация | — | Плоский реестр активных и планируемых стандартов и инструкция применения. | ✅ Да | `governance/repo-model.md`, `standards/glossary.md` |
 | `/standards/glossary.md` | стандарт | справка | Единый словарь терминов для standards, governance и AI-assisted work. | ✅ Да | `standards/README.md`, `governance/rfc/contract-executability-rfc.md`, все стандарты |
 | `/standards/file-naming.md` | стандарт | — | Единые паттерны именования файлов и каталогов для research, standards, экспериментов, профилей и курсов. | ✅ Да | `standards/README.md`, `standards/glossary.md` |
@@ -104,6 +106,9 @@ ai-generated: false
 | `/standards/education-profile.md` | профиль | — | Профиль образовательных проектов: модули, уроки, упражнения и адаптация форматов. | ✅ Да | `standards/README.md`, `standards/team-contract.md` |
 | `/tools/validate-frontmatter.sh` | утилита | — | Soft-проверка обязательных полей frontmatter в Markdown. | ✅ Да | `CONTRIBUTING.md`, `standards/README.md` |
 | `/tools/validate-repository-structure.sh` | утилита | — | Проверка активной структуры, навигационных ссылок и `-old` миграции. | ✅ Да | `governance/repo-model.md`, `governance/artifact-map.md` |
+| `/tools/generate-manifest.py` | утилита | — | Генератор `templates/manifest.json` из дерева `templates/` и `sync-metadata.json`; режимы `--write` (перегенерация) и `--check` (контроль дрейфа). | ✅ Да | `templates/manifest.json`, `templates/sync-metadata.json`, `.github/workflows/update-manifest.yml` |
+| `/tools/sync-from-hub.sh` | утилита | — | Smart Sync клиент: фильтрация шаблонов по `.hub-profile.json` (target_type/stack/min_phase), отчёт и безопасное применение (`.hub-new.*`) либо `--force`-перезапись; `--init` создаёт профиль. | ✅ Да | `templates/manifest.json`, `guides/sync-from-hub.md`, `guides/rollback-sync.md` |
+| `/.github/workflows/update-manifest.yml` | утилита | — | GitHub Action авто-обновления `templates/manifest.json` при push в `main`, затрагивающем `templates/` (коммит `chore: update manifest.json`). | ⚠️ По необходимости | `tools/generate-manifest.py`, `templates/manifest.json` |
 | `/.github/ISSUE_TEMPLATE/task.yml` | шаблон | — | GitHub-native структура постановки задач с operating mode. | ✅ Да | `AI_GOVERNANCE.md`, `standards/glossary.md` |
 | `/research/mango/taxonomy-concept-2026-05.md` | концепция | — | Draft-концепция Unified Capability Taxonomy для Mango: мета-модель, mapping фич, процесс нормализации, интерфейс команд, метрики, пилот и риски. | ⚠️ По необходимости | `research/mango/classification.md`, `research/mango/classification-tz.md`, `research/mango/requirements-flow.md`, `mango_ba_prompts`, `standards/glossary.md`, `governance/repo-model.md` |
 | `/research/mango/requirements-lifecycle-uncertainty-2026-05.md` | исследование | — | Жизненный цикл требования на доработку Mango: бенчмарк международной практики, моделирование кейсов (`0 → 1`), обработка неопределенности, декомпозиция и рекомендации для стандарта процесса БА. | ⚠️ По необходимости | `research/mango/requirements-flow.md`, `research/mango/taxonomy-concept-2026-05.md`, `research/mango/classification.md`, `mango_ba_prompts`, `standards/glossary.md` |
