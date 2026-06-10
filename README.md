@@ -42,6 +42,7 @@
 | --- | --- |
 | [docs/vision.md](docs/vision.md) | Product Vision (L1) Хаба: зачем он существует, для кого и какую ценность создаёт (1 страница). |
 | [docs/product-concept.md](docs/product-concept.md) | Product Concept (L2): персоны, сценарии, ключевые возможности, метрики и дорожная карта. |
+| [docs/ecosystem-map.md](docs/ecosystem-map.md) | Экосистемная карта: полный граф проектов, их связи и принцип Need-to-Know. |
 | [guides/README.md](guides/README.md) | Библиотека человекочитаемых гайдов «как это сделать»: быстрый старт, синхронизация, развёртывание, решение проблем. |
 
 Разделы `guides/` и `research/` дополнительно публикуются как сайт MkDocs через

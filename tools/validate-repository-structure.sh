@@ -71,6 +71,8 @@ is_active_file() {
     research/governance/executable-contract-format-2026-06.md | \
     research/governance/contract-documentation-format-2026-06.md | \
     research/governance/governance-folder-structure-decisions-2026-06.md | \
+    research/cicd/README.md | \
+    research/cicd/2026-06-js-cicd-template-analysis.md | \
     research/mango/classification.md | \
     research/mango/classification.html | \
     research/mango/classification-tz.md | \
@@ -99,12 +101,16 @@ is_active_file() {
     governance/rfc/hub-vision-concept-proposal-2026-06.md | \
     docs/vision.md | \
     docs/product-concept.md | \
+    docs/ecosystem-map.md | \
     docs/screenshots/concept-desktop.png | \
     docs/screenshots/concept-mobile.png | \
+    docs/screenshots/ecosystem-map-desktop.png | \
+    docs/screenshots/ecosystem-map-mobile.png | \
     guides/README.md | \
     guides/quick-start.md | \
     guides/init-spoke-repo.md | \
     guides/sync-from-hub.md | \
+    guides/sync-with-projects.md | \
     guides/interact-with-ai.md | \
     guides/deploy-project.md | \
     guides/rollback-sync.md | \
