@@ -49,6 +49,21 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- Issue #209 (Creative mode): ecosystem layer for the Hub. New
+  `docs/ecosystem-map.md` (full project graph + the **Need-to-Know** principle —
+  the Hub keeps the full graph, each project keeps a partial graph via
+  `.hub-ecosystem.json` + `docs/ecosystem-context.md`, synced semi-automatically
+  with human confirmation) and a new human-facing guide
+  `guides/sync-with-projects.md` (how to keep the map and a project's links in
+  sync). Wired the map into `docs/vision.md` (ecosystem positioning),
+  `docs/product-concept.md` (new «Функциональная архитектура» and «Зависимости
+  от других проектов» sections), `guides/README.md`, root `README.md` and the
+  MkDocs nav (`mkdocs.yml`, published under «Продукт»; enabled Material's native
+  Mermaid rendering for the connection graph). Extended RFC
+  `governance/rfc/hub-vision-concept-proposal-2026-06.md` (0.1 -> 0.2) with
+  Decision E (ecosystem representation + Need-to-Know) and issue #209. All new
+  artefacts are **Draft**. Allowlisted both new files in
+  `tools/validate-repository-structure.sh`.
 - Issue #207 (Creative mode): Smart Sync infrastructure for Hub ↔ spoke
   template synchronization. New auto-generated registry `templates/manifest.json`
   (fields `manifest_version`, `last_updated`, `templates[]` with

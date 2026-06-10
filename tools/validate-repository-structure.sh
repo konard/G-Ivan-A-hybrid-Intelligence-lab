@@ -99,12 +99,16 @@ is_active_file() {
     governance/rfc/hub-vision-concept-proposal-2026-06.md | \
     docs/vision.md | \
     docs/product-concept.md | \
+    docs/ecosystem-map.md | \
     docs/screenshots/concept-desktop.png | \
     docs/screenshots/concept-mobile.png | \
+    docs/screenshots/ecosystem-map-desktop.png | \
+    docs/screenshots/ecosystem-map-mobile.png | \
     guides/README.md | \
     guides/quick-start.md | \
     guides/init-spoke-repo.md | \
     guides/sync-from-hub.md | \
+    guides/sync-with-projects.md | \
     guides/interact-with-ai.md | \
     guides/deploy-project.md | \
     guides/rollback-sync.md | \

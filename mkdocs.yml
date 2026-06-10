@@ -9,8 +9,9 @@ repo_name: G-Ivan-A/hybrid-Intelligence-lab
 # Контент собран в служебном каталоге website/ через символические ссылки на
 # docs/, guides/ и research/. Это держит Markdown-ссылки валидными для GitHub,
 # валидатора структуры и собранного сайта без сторонних плагинов-агрегаторов.
-# Область публикации — только guides/ и research/ (+ продуктовые docs/vision и
-# docs/product-concept). governance/ и standards/ намеренно НЕ публикуются.
+# Область публикации — только guides/ и research/ (+ продуктовые docs/vision,
+# docs/product-concept и docs/ecosystem-map). governance/ и standards/
+# намеренно НЕ публикуются.
 docs_dir: website
 
 theme:
@@ -54,7 +55,11 @@ markdown_extensions:
           case: lower
   - pymdownx.highlight:
       anchor_linenums: true
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.details
 
 plugins:
@@ -71,11 +76,13 @@ nav:
   - Продукт:
     - Vision: docs/vision.md
     - Concept: docs/product-concept.md
+    - Ecosystem Map: docs/ecosystem-map.md
   - Гайды:
     - Обзор: guides/README.md
     - Быстрый старт: guides/quick-start.md
     - Инициализация проекта: guides/init-spoke-repo.md
     - Синхронизация с Хабом: guides/sync-from-hub.md
+    - Синхронизация с проектами: guides/sync-with-projects.md
     - Взаимодействие с ИИ: guides/interact-with-ai.md
     - Развёртывание проекта: guides/deploy-project.md
     - Откат синхронизации: guides/rollback-sync.md
