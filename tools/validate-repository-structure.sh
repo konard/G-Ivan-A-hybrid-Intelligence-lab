@@ -102,10 +102,6 @@ is_active_file() {
     docs/product-concept.md | \
     docs/ecosystem-map.md | \
     docs/audit/task-execution-audit-2026-06.md | \
-    docs/screenshots/concept-desktop.png | \
-    docs/screenshots/concept-mobile.png | \
-    docs/screenshots/ecosystem-map-desktop.png | \
-    docs/screenshots/ecosystem-map-mobile.png | \
     guides/README.md | \
     guides/quick-start.md | \
     guides/init-spoke-repo.md | \

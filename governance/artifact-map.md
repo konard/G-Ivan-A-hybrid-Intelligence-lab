@@ -138,6 +138,7 @@ ai-generated: false
 | `/research/README.md` | навигация | — | Навигация по исследовательским направлениям, правило запрета файлов в корне `research/` и правила воспроизводимости. | ✅ Да | `standards/research-profile.md`, `governance/repo-model.md` |
 | `/research/hub/README.md` | навигация | — | Индекс фундаментальных (`scope: repo-wide`) исследований работы Хаба. | ✅ Да | `research/README.md`, `governance/repo-model.md` |
 | `/research/mango/README.md` | навигация | — | Индекс активных исследований MANGO OFFICE; HTML генерируется через MkDocs/GitHub Pages и не хранится в репозитории. | ✅ Да | `research/README.md`, `mango_ba_prompts` |
+| `/research/mango/README.md` | навигация | — | Индекс активных исследований MANGO OFFICE. | ✅ Да | `research/README.md`, `mango_ba_prompts` |
 | `/research/mango/classification.md` | исследование | — | Классификация IT/Telecom SaaS-продуктов MANGO OFFICE. | ✅ Да | `research/mango/README.md`, `standards/research-profile.md` |
 | `/research/mango/classification-tz.md` | исследование | — | Проверка классификатора на корпусе тендерных ТЗ и рекомендации по дополнениям. | ✅ Да | `research/mango/classification.md`, `research/mango/README.md` |
 | `/research/mango/requirements-flow.md` | исследование | — | Flow требований для AI-анализа тендерных ТЗ MANGO OFFICE. | ✅ Да | `research/mango/classification.md`, `mango_ba_prompts` |
