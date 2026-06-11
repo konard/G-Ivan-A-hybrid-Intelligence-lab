@@ -75,11 +75,8 @@ is_active_file() {
     research/cicd/README.md | \
     research/cicd/2026-06-js-cicd-template-analysis.md | \
     research/mango/classification.md | \
-    research/mango/classification.html | \
     research/mango/classification-tz.md | \
-    research/mango/classification-tz.html | \
     research/mango/requirements-flow.md | \
-    research/mango/requirements-flow.html | \
     frameworks/README.md | \
     education/README.md | \
     projects/README.md | \
@@ -149,6 +146,7 @@ is_active_file() {
     templates/sync-metadata.json | \
     tools/generate-manifest.py | \
     tools/sync-from-hub.sh | \
+    tools/validate-mkdocs-site.sh | \
     experiments/test-smart-sync.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-repository-structure.sh)
@@ -385,11 +383,8 @@ required_files=(
   "research/governance/contract-documentation-format-2026-06.md"
   "research/governance/governance-folder-structure-decisions-2026-06.md"
   "research/mango/classification.md"
-  "research/mango/classification.html"
   "research/mango/classification-tz.md"
-  "research/mango/classification-tz.html"
   "research/mango/requirements-flow.md"
-  "research/mango/requirements-flow.html"
   "research/mango/rag-mapping-roadmap-2026-05.md"
   "frameworks/README.md"
   "education/README.md"
@@ -430,6 +425,7 @@ required_files=(
   ".github/workflows/update-manifest.yml"
   "tools/generate-manifest.py"
   "tools/sync-from-hub.sh"
+  "tools/validate-mkdocs-site.sh"
   "tools/validate-frontmatter.sh"
   "tools/validate-repository-structure.sh"
 )
@@ -817,7 +813,7 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.27"
+require_text "governance/artifact-map.md" "version: 1.28"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
