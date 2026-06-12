@@ -1,3 +1,10 @@
+---
+status: canonical
+version: 1.1
+updated: 2026-06-12
+temperature: 0.1
+---
+
 # hybrid-Intelligence-lab
 
 > **«Человек задаёт смысл, AI ускоряет путь — вместе по правилам»** — слоган
@@ -29,6 +36,7 @@
 | [LICENSE](LICENSE) | Текущий статус лицензии и pending-решение Founder & PO. |
 | [standards/README.md](standards/README.md) | Таблица активных и планируемых стандартов. |
 | [standards/glossary.md](standards/glossary.md) | Единый словарь терминов для standards, governance и AI-assisted work. |
+| [standards/frontmatter-standard.md](standards/frontmatter-standard.md) | Минимальный frontmatter для Markdown-артефактов: `status`, `version`, `updated`, `temperature`. |
 | [standards/team-contract.md](standards/team-contract.md) | Шаблон и инструкция для создания project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md`. |
 | [governance/agent-onboarding-protocol.md](governance/agent-onboarding-protocol.md) | Обязательный предполётный протокол для нового ИИ-агента (*Runtime-онбординг*, Кейс 1): Handover Prompt, 4-шаговый чек-лист и стоп до апрува. |
 | [governance/repo-model.md](governance/repo-model.md) | Модель структуры репозитория и Anti-Inflation правило. |
@@ -61,6 +69,14 @@ GitHub Pages (см. [`mkdocs.yml`](mkdocs.yml) и
 | `governance/` | Модель репозитория, операционные решения и сквозные governance-правила. |
 | `tools/` | Локальные проверки и служебные скрипты сопровождения репозитория. |
 | `.github/ISSUE_TEMPLATE/` | GitHub-native структура постановки задач. |
+
+## Шаблоны задач
+
+| Шаблон | Когда использовать |
+| --- | --- |
+| [.github/ISSUE_TEMPLATE/task.md](.github/ISSUE_TEMPLATE/task.md) | Structured task: понятный scope, артефакты, ограничения и измеримый Definition of Done. |
+| [.github/ISSUE_TEMPLATE/task-creative.md](.github/ISSUE_TEMPLATE/task-creative.md) | Creative task: задана цель и критерии качества, а способ решения оставлен исполнителю. |
+| [.github/ISSUE_TEMPLATE/task.yml](.github/ISSUE_TEMPLATE/task.yml) | GitHub-native форма для задач в UI. |
 
 ## Проекты
 

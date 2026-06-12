@@ -1,7 +1,8 @@
 ---
 status: canonical
-version: 1.7
-updated: 2026-06-09
+version: 1.8
+updated: 2026-06-12
+temperature: 0.1
 ai-generated: false
 source: research/README-old.md
 ---
@@ -47,6 +48,7 @@ source: research/README-old.md
 | [team-c-governance-strategy-audit-2026-05.md](hub/team-c-governance-strategy-audit-2026-05.md) | Интерпретация аудита стратегии governance от команды C: сильные стороны, риски overgrowth, hierarchy/lifecycle вопросы и backlog candidates. |
 | [user-prompts-analysis-2026-05.md](hub/user-prompts-analysis-2026-05.md) | Анализ 18 пользовательских промптов по стандарту классификации: матрица, устаревшие паттерны, дубли, рекомендации и план интеграции. |
 | [external-governance-patterns-review-2026-06.md](hub/external-governance-patterns-review-2026-06.md) | Анализ external governance patterns (GitAgent/EGAProtocol/IETF AgentID) и матрица применимости рекомендаций команды С: «взять сейчас / отложить / отклонить», North Star и триггеры пересмотра. |
+| [ecosystem-governance-audit-2026-06.md](hub/ecosystem-governance-audit-2026-06.md) | Аудит governance-практик Хаба, `mango_ba_prompts`, `open-ai.ru`, `clarify-engine-ai` и международных AI governance patterns для issue #217. |
 
 ## Рекомендуемая структура
 

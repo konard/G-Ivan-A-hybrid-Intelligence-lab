@@ -39,6 +39,7 @@ is_active_file() {
     CHANGELOG.md | \
     LICENSE | \
     standards/README.md | \
+    standards/frontmatter-standard.md | \
     standards/file-naming.md | \
     standards/research-profile.md | \
     standards/glossary.md | \
@@ -63,6 +64,7 @@ is_active_file() {
     research/hub/prompts-classification-standard-2026-05.md | \
     research/hub/team-c-governance-strategy-audit-2026-05.md | \
     research/hub/external-governance-patterns-review-2026-06.md | \
+    research/hub/ecosystem-governance-audit-2026-06.md | \
     research/hub/user-prompts-analysis-2026-05.md | \
     research/README.md | \
     research/hub/README.md | \
@@ -122,6 +124,8 @@ is_active_file() {
     .github/workflows/deploy-docs.yml | \
     .github/workflows/update-manifest.yml | \
     .github/ISSUE_TEMPLATE/task.yml | \
+    .github/ISSUE_TEMPLATE/task.md | \
+    .github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/AI_GOVERNANCE.md | \
     templates/htom/AI_QUICK_RULES.md | \
     templates/htom/AI_SESSION_HANDOVER_PROMPT.md | \
@@ -131,6 +135,7 @@ is_active_file() {
     templates/htom/docs/adr/.gitkeep | \
     templates/htom/docs/audit/.gitkeep | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
+    templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
     templates/htom/init.sh | \
     templates/spoke/README.md | \
@@ -196,7 +201,7 @@ validate_metadata_single_source() {
           frontmatter_done = 1
           next
         }
-        if ($0 ~ /^(status|version|updated):[[:space:]]*/) {
+        if ($0 ~ /^(status|version|updated|temperature):[[:space:]]*/) {
           has_metadata = 1
         }
         next
@@ -357,6 +362,7 @@ required_files=(
   "CHANGELOG.md"
   "LICENSE"
   "standards/README.md"
+  "standards/frontmatter-standard.md"
   "standards/file-naming.md"
   "standards/research-profile.md"
   "standards/glossary.md"
@@ -372,6 +378,7 @@ required_files=(
   "standards/webportal-solution-concept-standard.md"
   "research/README.md"
   "research/hub/README.md"
+  "research/hub/ecosystem-governance-audit-2026-06.md"
   "research/mango/README.md"
   "research/governance/README.md"
   "research/governance/research-documentation-format-2026-06.md"
@@ -400,6 +407,8 @@ required_files=(
   "governance/rfc/draft-triage-and-exit-plan.md"
   "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
   ".github/ISSUE_TEMPLATE/task.yml"
+  ".github/ISSUE_TEMPLATE/task.md"
+  ".github/ISSUE_TEMPLATE/task-creative.md"
   "templates/htom/AI_GOVERNANCE.md"
   "templates/htom/AI_QUICK_RULES.md"
   "templates/htom/AI_SESSION_HANDOVER_PROMPT.md"
@@ -409,6 +418,7 @@ required_files=(
   "templates/htom/docs/adr/.gitkeep"
   "templates/htom/docs/audit/.gitkeep"
   "templates/htom/.github/ISSUE_TEMPLATE/task.md"
+  "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md"
   "templates/htom/tools/validate-repository-structure.sh"
   "templates/htom/init.sh"
   "templates/spoke/README.md"
@@ -480,7 +490,6 @@ require_text "CONCEPT.md" "status: canonical"
 require_text "CONCEPT.md" "version: 1.0"
 require_text "CONCEPT.md" "updated: 2026-05-26"
 require_text "CONCEPT.md" "ai-generated: false"
-require_text "CONCEPT.md" "Версия: 1.0"
 require_text "CONCEPT.md" "Operating Mode"
 require_text "CONCEPT.md" "structured mode"
 require_text "CONCEPT.md" "creative mode"
@@ -491,20 +500,31 @@ require_text "CONCEPT.md" "единой терминологии"
 
 require_text "CONTRIBUTING.md" "AI_GOVERNANCE.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
+require_text "CONTRIBUTING.md" "status: canonical"
+require_text "CONTRIBUTING.md" "version: 1.1"
+require_text "CONTRIBUTING.md" "updated: 2026-06-12"
+require_text "CONTRIBUTING.md" "temperature: 0.1"
+require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task.md"
+require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task-creative.md"
+require_text "CONTRIBUTING.md" "Специфика работы с AI-агентами"
+require_text "CONTRIBUTING.md" "manual restart"
+require_text "CONTRIBUTING.md" "standards/frontmatter-standard.md"
 require_text "CONTRIBUTING.md" "./tools/validate-frontmatter.sh"
 require_text "CONTRIBUTING.md" "./tools/validate-repository-structure.sh"
 
 require_text "AI_GOVERNANCE.md" "status: canonical"
-require_text "AI_GOVERNANCE.md" "version: 1.3"
-require_text "AI_GOVERNANCE.md" "updated: 2026-06-11"
-require_text "AI_GOVERNANCE.md" "ai-generated: false"
+require_text "AI_GOVERNANCE.md" "version: 1.4"
+require_text "AI_GOVERNANCE.md" "updated: 2026-06-12"
+require_text "AI_GOVERNANCE.md" "temperature: 0.1"
 require_text "AI_GOVERNANCE.md" "executable: false"
-require_text "AI_GOVERNANCE.md" "Версия: 1.3"
-require_text "AI_GOVERNANCE.md" "Дата: 2026-06-11"
 require_text "AI_GOVERNANCE.md" "Директива pre-flight"
 require_text "AI_GOVERNANCE.md" "Founder & PO"
 require_text "AI_GOVERNANCE.md" "Human reviewer"
 require_text "AI_GOVERNANCE.md" "Creative"
+require_text "AI_GOVERNANCE.md" "Хаб является источником рекомендаций"
+require_text "AI_GOVERNANCE.md" "Обоснованный обход в Creative Mode"
+require_text "AI_GOVERNANCE.md" "Специфика работы с AI-агентами"
+require_text "AI_GOVERNANCE.md" "standards/frontmatter-standard.md"
 require_text "AI_GOVERNANCE.md" "standards/README.md"
 require_text "AI_GOVERNANCE.md" "governance/agent-onboarding-protocol.md"
 require_text "AI_GOVERNANCE.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
@@ -516,7 +536,12 @@ require_text "CHANGELOG.md" "### Changed"
 require_text "CHANGELOG.md" "### Removed"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
+require_text "standards/README.md" "status: canonical"
+require_text "standards/README.md" "version: 1.1"
+require_text "standards/README.md" "updated: 2026-06-12"
+require_text "standards/README.md" "temperature: 0.1"
 require_text "standards/README.md" "Как пользоваться"
+require_text "standards/README.md" "frontmatter-standard.md"
 require_text "standards/README.md" "file-naming.md"
 require_text "standards/README.md" "research-profile.md"
 require_text "standards/README.md" "team-contract.md"
@@ -527,6 +552,17 @@ require_text "standards/README.md" "project-structure-inheritance.md"
 require_text "standards/README.md" "artifact-map.md"
 require_text "standards/README.md" "issue-workflow.md"
 require_text "standards/README.md" "session-handover-standard.md"
+
+require_text "standards/frontmatter-standard.md" "status: canonical"
+require_text "standards/frontmatter-standard.md" "version: 1.0"
+require_text "standards/frontmatter-standard.md" "updated: 2026-06-12"
+require_text "standards/frontmatter-standard.md" "temperature: 0.1"
+require_text "standards/frontmatter-standard.md" '`status`'
+require_text "standards/frontmatter-standard.md" '`version`'
+require_text "standards/frontmatter-standard.md" '`updated`'
+require_text "standards/frontmatter-standard.md" '`temperature`'
+require_text "standards/frontmatter-standard.md" '`ai-generated` **НЕ ЯВЛЯЕТСЯ обязательным полем**'
+require_text "standards/frontmatter-standard.md" "NIST AI Risk Management Framework"
 
 require_text "standards/team-contract.md" "status: canonical"
 require_text "standards/team-contract.md" "version: 1.0"
@@ -546,8 +582,9 @@ require_text "standards/team-contract.md" "education-profile.md"
 require_text "standards/team-contract.md" "Источники"
 
 require_text "standards/issue-workflow.md" "status: canonical"
-require_text "standards/issue-workflow.md" "version: 1.1"
-require_text "standards/issue-workflow.md" "updated: 2026-06-04"
+require_text "standards/issue-workflow.md" "version: 1.2"
+require_text "standards/issue-workflow.md" "updated: 2026-06-12"
+require_text "standards/issue-workflow.md" "temperature: 0.1"
 require_text "standards/issue-workflow.md" "ai-generated: false"
 require_text "standards/issue-workflow.md" "executable: false"
 require_text "standards/issue-workflow.md" "## Назначение"
@@ -588,6 +625,8 @@ require_text "standards/project-structure-inheritance.md" "scope: mango-only"
 require_text "standards/project-structure-inheritance.md" "Пример структуры проекта"
 require_text "standards/project-structure-inheritance.md" "Репозиторий-широкий стандарт НЕ должен ссылаться на проектный"
 require_text "standards/issue-workflow.md" "User Story / ФТ"
+require_text "standards/issue-workflow.md" ".github/ISSUE_TEMPLATE/task.md"
+require_text "standards/issue-workflow.md" ".github/ISSUE_TEMPLATE/task-creative.md"
 require_text "standards/issue-workflow.md" "CHANGELOG.md"
 require_text "standards/issue-workflow.md" "governance/artifact-map.md"
 require_text "standards/issue-workflow.md" "validate-frontmatter.sh"
@@ -809,11 +848,12 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.28"
+require_text "governance/artifact-map.md" "version: 1.29"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "governance/artifact-map.md" "updated: 2026-06-11"
+require_text "governance/artifact-map.md" "updated: 2026-06-12"
+require_text "governance/artifact-map.md" "temperature: 0.1"
 require_text "governance/artifact-map.md" "ai-generated: false"
 require_text "governance/artifact-map.md" "governance/agent-onboarding-protocol.md"
 require_text "governance/artifact-map.md" "governance/rfc/contract-executability-rfc.md"
@@ -834,6 +874,11 @@ require_text "governance/artifact-map.md" "mango_ba_prompts"
 require_text "governance/artifact-map.md" "projects/README.md"
 require_text "governance/artifact-map.md" "governance/backlog.md"
 require_text "governance/artifact-map.md" "governance/executable-documents-issues.md"
+require_text "governance/artifact-map.md" "standards/frontmatter-standard.md"
+require_text "governance/artifact-map.md" "research/hub/ecosystem-governance-audit-2026-06.md"
+require_text "governance/artifact-map.md" ".github/ISSUE_TEMPLATE/task.md"
+require_text "governance/artifact-map.md" ".github/ISSUE_TEMPLATE/task-creative.md"
+require_text "governance/artifact-map.md" "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md"
 
 require_text "governance/backlog.md" "status: canonical"
 require_text "governance/backlog.md" "type: backlog"
@@ -864,6 +909,7 @@ require_text "research/README.md" "prompts-classification-audit-2026-05.md"
 require_text "research/README.md" "prompts-classification-standard-2026-05.md"
 require_text "research/README.md" "team-c-governance-strategy-audit-2026-05.md"
 require_text "research/README.md" "user-prompts-analysis-2026-05.md"
+require_text "research/README.md" "ecosystem-governance-audit-2026-06.md"
 require_text "research/README.md" "Размещение файлов исследований в корне каталога"
 
 # Namespacing: no research files allowed in the research/ root except README.md.
@@ -880,6 +926,18 @@ require_text "research/hub/README.md" "prompts-classification-audit-2026-05.md"
 require_text "research/hub/README.md" "prompts-classification-standard-2026-05.md"
 require_text "research/hub/README.md" "team-c-governance-strategy-audit-2026-05.md"
 require_text "research/hub/README.md" "user-prompts-analysis-2026-05.md"
+require_text "research/hub/README.md" "ecosystem-governance-audit-2026-06.md"
+
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "status: draft"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "version: 0.1"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "updated: 2026-06-12"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "temperature: 0.1"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "mango_ba_prompts"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "open-ai.ru"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "clarify-engine-ai"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "NIST AI RMF"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "EU AI Act"
+require_text "research/hub/ecosystem-governance-audit-2026-06.md" "Creative override"
 
 require_text "research/governance/README.md" "status: reviewed"
 require_text "research/governance/README.md" "version: 0.2"
@@ -1024,10 +1082,25 @@ require_text ".github/ISSUE_TEMPLATE/task.yml" "🎯 Контекст"
 require_text ".github/ISSUE_TEMPLATE/task.yml" "📄 Артефакты для создания/изменения"
 require_text ".github/ISSUE_TEMPLATE/task.yml" "✅ Готово, когда"
 
+require_text ".github/ISSUE_TEMPLATE/task.md" "status: canonical"
+require_text ".github/ISSUE_TEMPLATE/task.md" "temperature: 0.1"
+require_text ".github/ISSUE_TEMPLATE/task.md" 'Operating Mode: `Structured`'
+require_text ".github/ISSUE_TEMPLATE/task.md" "Специфика AI-агентов"
+require_text ".github/ISSUE_TEMPLATE/task.md" "Готово, когда"
+
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" "status: canonical"
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" "temperature: 0.7"
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" "Creative mode"
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" "Не писать, как именно реализовывать задачу"
+require_text ".github/ISSUE_TEMPLATE/task-creative.md" "Обоснованный обход рекомендаций"
+
 # HTOM-команда "ДНК-шаблон" (templates/htom/): минимальный геном для клонирования.
 # HTOM-контракты (AI_GOVERNANCE / AI_QUICK_RULES / AI_HANDOVER_PROMPT) обязательны.
 require_text "templates/htom/AI_GOVERNANCE.md" "{{project_name}}"
 require_text "templates/htom/AI_GOVERNANCE.md" "Эскалация"
+require_text "templates/htom/AI_GOVERNANCE.md" "temperature: 0.1"
+require_text "templates/htom/AI_GOVERNANCE.md" "Хаб является источником рекомендаций"
+require_text "templates/htom/AI_GOVERNANCE.md" "Обоснованный обход в Creative Mode"
 require_text "templates/htom/AI_QUICK_RULES.md" "{{project_name}}"
 require_text "templates/htom/AI_QUICK_RULES.md" "Не создавай"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "{{REPO_NAME}}"
@@ -1056,11 +1129,19 @@ require_text "templates/htom/README.md" "governance/agent-onboarding-protocol.md
 require_text "templates/htom/README.md" "Как валидировать структуру"
 require_text "templates/htom/README.md" "Design Decisions & Rationale"
 require_text "templates/htom/README.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
-require_text "templates/htom/CONTRIBUTING.md" "issue → PR → review"
+require_text "templates/htom/CONTRIBUTING.md" "issue -> PR -> review"
+require_text "templates/htom/CONTRIBUTING.md" "task-creative.md"
+require_text "templates/htom/CONTRIBUTING.md" "manual restart"
 require_text "templates/htom/CHANGELOG.md" "## Unreleased"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "🎯 Контекст"
 require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "✅ Готово, когда"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" "temperature: 0.1"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task.md" 'Operating Mode: `Structured`'
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md" "temperature: 0.7"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md" "Creative mode"
+require_text "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md" "Обоснованный обход рекомендаций"
 require_text "templates/htom/tools/validate-repository-structure.sh" "AI_GOVERNANCE.md"
+require_text "templates/htom/tools/validate-repository-structure.sh" "task-creative.md"
 
 # Spoke-репозиторий шаблон (templates/spoke/): production-код, отдельный продукт.
 # Для spoke обязателен CI/CD (отличие от HTOM-команды).

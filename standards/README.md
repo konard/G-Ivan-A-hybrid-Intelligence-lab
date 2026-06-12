@@ -1,3 +1,10 @@
+---
+status: canonical
+version: 1.1
+updated: 2026-06-12
+temperature: 0.1
+---
+
 # Standards
 
 Каталог является плоским реестром активных и планируемых стандартов. Более
@@ -14,6 +21,7 @@
 | Концепция репозитория | Active | Root concept и назначение репозитория | [CONCEPT.md](../CONCEPT.md) |
 | AI governance contract | Active | AI-assisted issues, PRs и reviews | [AI_GOVERNANCE.md](../AI_GOVERNANCE.md) |
 | Repository model | Active | Размещение артефактов и правила создания | [governance/repo-model.md](../governance/repo-model.md) |
+| Frontmatter standard | Canonical | Минимальный metadata contract для Markdown-артефактов и шаблонов | [frontmatter-standard.md](frontmatter-standard.md) |
 | Профиль исследовательских проектов | Active | `research/<domain>/` | [research-profile.md](research-profile.md) |
 | Product profile | Active | Продуктовые spoke-проекты (ПО, сервис, услуга) | [product-profile.md](product-profile.md) |
 | Team contract template | Active | Создание project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md` для spoke-проектов | [team-contract.md](team-contract.md) |

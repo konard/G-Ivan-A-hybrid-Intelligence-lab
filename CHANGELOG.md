@@ -1,3 +1,10 @@
+---
+status: canonical
+version: 1.2
+updated: 2026-06-12
+temperature: 0.1
+---
+
 # Changelog
 
 All notable repository governance changes are documented here.
@@ -6,6 +13,13 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- Issue #217 (Creative mode): audited Hub, `mango_ba_prompts`, `open-ai.ru` and
+  `clarify-engine-ai` against current AI governance practices; reframed the Hub
+  as a recommendation source rather than a blocker; added the four-field
+  `standards/frontmatter-standard.md`; documented Creative override records and
+  AI-agent session semantics; split task authoring into structured
+  `task.md` and creative `task-creative.md` templates for root and HTOM genome;
+  updated validators, manifest metadata and artifact map.
 - Issue #218 (Structured mode): removed generated HTML build artifacts from
   `research/mango/` and obsolete PNG screenshots from `docs/screenshots/`.
   Added scoped `.gitignore` rules for those artifact paths and removed the

@@ -1,20 +1,19 @@
 ---
 name: "Task"
-about: "Структурированная постановка задачи для {{project_name}}"
+about: "Structured task for implementation, documentation, tooling, or governance work."
 title: "[scope] Краткое описание задачи"
-labels: "scope"
+labels: "tools, governance"
 assignees: ""
-status: draft
-version: 2.1
-updated: {{date}}
+status: canonical
+version: 1.0
+updated: 2026-06-12
 temperature: 0.1
 ---
 
 <!--
 Для ИИ: если поле пустое, не генерируй значение. Работай в Structured mode по
 умолчанию. Сохраняй traceability между контекстом, артефактами, изменениями,
-проверками и PR. Не создавай `research/` в HTOM-команде без явного решения
-человека и ADR.
+проверками и PR.
 -->
 
 ## Мета
@@ -26,7 +25,7 @@ temperature: 0.1
 - Depends On: `-`
 - Operating Mode: `Structured`
 
-## 🎯 Контекст
+## Контекст
 
 Опишите, почему задача нужна, какие решения уже приняты, какие источники нужно
 прочитать и какие ограничения известны до старта.
@@ -36,10 +35,11 @@ temperature: 0.1
 Сформулируйте проблему, user story, функциональное требование или governance
 gap, который должен быть закрыт.
 
-## 📄 Артефакты
+## Артефакты
 
 - [ ] Создать или изменить ...
-- [ ] Обновить навигацию или `CHANGELOG.md`, если меняется active artifact.
+- [ ] Обновить навигацию, карту артефактов или changelog, если меняется active
+      artifact.
 - [ ] Проверить ...
 
 ## Ограничения
@@ -47,7 +47,6 @@ gap, который должен быть закрыт.
 - Не публиковать secrets, private data, credentials и несанитизированные
   production-промпты.
 - Не менять unrelated files и не расширять структуру "на вырост".
-- Не создавать `research/`: фундаментальные знания живут в Хабе.
 - Если контекст противоречив или неполон, остановиться и запросить human
   guidance.
 
@@ -60,9 +59,12 @@ gap, который должен быть закрыт.
   отменено.
 - Агент не заполняет пустые поля выдуманными значениями.
 
-## ✅ Готово, когда
+## Готово, когда
 
 - [ ] Изменения закрывают описанную проблему без unrelated scope.
-- [ ] Значимое изменение отражено в `CHANGELOG.md`.
-- [ ] Локальная проверка `./tools/validate-repository-structure.sh` пройдена.
+- [ ] Новые или изменённые Markdown-артефакты имеют frontmatter
+      `status`, `version`, `updated`, `temperature`.
+- [ ] Navigation, standards links, artifact map и changelog обновлены там, где
+      это нужно.
+- [ ] Локальные проверки выполнены и указаны в PR.
 - [ ] PR связан с issue и содержит implementation, validation и remaining risks.
