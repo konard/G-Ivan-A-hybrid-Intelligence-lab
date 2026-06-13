@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-06-06
+version: 0.3
+updated: 2026-06-13
 temperature: 0.1
 ai-generated: true
 type: rfc
@@ -225,7 +225,7 @@ Full draft list:
 | 16 | `standards/portal-repository-structure.md` | 2 | Стандарт структуры репозитория веб-портала: наследование spoke-генома, portal-specific каталоги и validation expectations. | Отложить | Стандарт упоминается в 12 файлах, но является portal-specific; canonical-решение должно следовать после согласования `open-ai.ru`. |
 | 17 | `standards/webportal-concept-standard.md` | 2 | Стандарт структуры концепции веб-портала: обязательное PRD-ядро, Vision/TOGAF-модули, roadmap, risks и metrics. | Отложить | Стандарт связан с 6 файлами, но его применение зависит от решения по portal-концепциям и шаблону; оставлять draft до approval. |
 | 18 | `templates/webportal-concept-template.md` | 2 | Копируемый шаблон концепции веб-портала с placeholders, portal scope и секциями из webportal concept standard. | Отложить | Шаблон зависит от `standards/webportal-concept-standard.md` и содержит `{{date}}`; нужен общий подход к template placeholders перед снятием draft. |
-| 19 | `governance/rfc/contract-executability-rfc.md` | 2 | RFC архитектуры исполнимых документов: маркеры `executable`, directive block, rollout plan и решения фаундера. | Доработать | Принятые части уже вынесены в `agent-onboarding-protocol.md` и standards, но RFC ещё содержит planning/history blocks; нужен explicit статус accepted/superseded по разделам. |
+| 19 | `governance/rfc/contract-executability-rfc.md` | 2 | RFC архитектуры исполнимых документов: маркеры `executable`, directive block, rollout plan и решения Пользователя. | Доработать | Принятые части уже вынесены в `agent-onboarding-protocol.md` и standards, но RFC ещё содержит planning/history blocks; нужен explicit статус accepted/superseded по разделам. |
 | 20 | `projects/education-ba-prompt/README.md` | 2 | Навигация sandbox-проекта курса БА по prompt engineering: цель, docs, связь с education-profile и текущий draft scope. | Доработать | Проект упоминается в 2 файлах и отсутствует в `artifact-map.md` по разделу 2.6; перед canonical нужно решить, это sandbox или public project. |
 | 21 | `projects/education-ba-prompt/docs/course-ideas.md` | 2 | Набор идей курса: термины, практические кейсы БА, рабочие шаблоны промптов, модули и форматы подачи. | Доработать | Документ связан только с project README; требуется разнести идеи в утверждённые course artifacts или оставить как sandbox draft с exit criteria. |
 | 22 | `research/governance/README.md` | 2 | Навигация по governance research: форматы research, executable contracts, contract docs и decisions по структуре папок. | Доработать | Каталог уже содержит source-документы для стандартов, но README остаётся draft; нужно синхронизировать статус с решением по derived standards. |
@@ -447,7 +447,7 @@ Add GitHub Actions after validator improvements:
 
 ## 6. Запрос На Согласование
 
-Questions for Founder & PO:
+Questions for User:
 
 1. Approve this phased plan?
 2. Approve Phase 1 execution first, before metadata and draft lifecycle cleanup?

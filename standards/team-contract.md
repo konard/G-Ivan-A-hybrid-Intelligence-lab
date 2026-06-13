@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-05-26
+version: 1.1
+updated: 2026-06-13
 temperature: 0.1
 ai-generated: false
 ---
@@ -108,7 +108,7 @@ training scenario, rubric or public learning material.
 
 1. Какой тип результата важнее всего: research, product, education или
    смешанный проект?
-2. Кто принимает финальное решение: Founder & PO, maintainer, product owner,
+2. Кто принимает финальное решение: Пользователь, maintainer, product owner,
    research lead, teacher or designated reviewer?
 3. Какие изменения требуют issue до PR?
 4. Какие файлы или домены требуют обязательного reviewer или CODEOWNERS?

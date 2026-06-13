@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.5
-updated: 2026-06-12
+version: 1.6
+updated: 2026-06-13
 temperature: 0.1
 executable: false
 ---
@@ -80,7 +80,7 @@ Framework-документы обязаны указывать, как пере�
 
 | Роль | Ответственность |
 | --- | --- |
-| Founder & PO | Формирует vision, priorities, publication boundaries и финальные product/governance decisions. |
+| Пользователь | Формирует vision, priorities, publication boundaries и финальные product/governance decisions. |
 | Human reviewer | Проверяет структуру, источники, риски и полезность до merge или публикации. |
 | Contributor | Создает issues, artifacts и pull requests внутри repository model. |
 | AI agent | Готовит черновики, миграции, проверки и summaries внутри scope issue и governance rules. |
