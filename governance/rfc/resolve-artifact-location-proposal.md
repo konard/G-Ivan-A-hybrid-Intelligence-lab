@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-12
+version: 0.2
+updated: 2026-06-13
 temperature: 0.1
 ---
 
@@ -10,7 +10,7 @@ temperature: 0.1
 ## Proposal
 
 Adopt `templates/resolve-artifact-location-prompt.md` as the future executable
-resolver for deciding where a new Hub artifact belongs after explicit Founder
+resolver for deciding where a new Hub artifact belongs after explicit User
 approval.
 
 ## Problem
@@ -18,6 +18,23 @@ approval.
 The Hub has multiple artifact classes and lifecycle stages. Without an
 executable resolver, contributors and AI agents can place artifacts by local
 guesswork, skip lifecycle stages, or create duplicate standards/templates.
+
+## Scope Resolver-а
+
+**Scope Resolver-а (строго):**
+
+1. Ответить на вопрос: *"Куда положить этот артефакт?"* (маршрутизация).
+2. Ответить на вопрос: *"Каких upstream-зависимостей не хватает?"* (проверка
+   трассируемости).
+
+**Out of Scope (запрещено):**
+
+- Принимать решения о переводе артефакта на следующий этап Lifecycle: это
+  делает lifecycle governance через review и явное подтверждение Пользователя.
+- Проверять содержательное качество артефакта.
+- Управлять миграцией старых файлов.
+- Создавать новые артефакты: resolver только маршрутизирует существующие или
+  явно предложенные артефакты.
 
 ## Decision Tree
 
@@ -61,14 +78,14 @@ Soft violations are logged in the PR:
 
 If a needed prior stage is missing, Creative mode creates the smallest missing
 proposal or draft candidate. If blocked, the agent creates the safe part and
-documents the dependency in the PR. The founder then approves the transition or
+documents the dependency in the PR. The User then approves the transition or
 explicitly writes "skip stage X".
 
 ## Target Artifact
 
 | Target | Status in this PR | Promotion condition |
 | --- | --- | --- |
-| `templates/resolve-artifact-location-prompt.md` | Proposed target, not created by this PR | Founder review plus explicit Founder approval. |
+| `templates/resolve-artifact-location-prompt.md` | Proposed target, not created by this PR | User review plus явное подтверждение Пользователя. |
 
 Merge silence means applying this PR as-is: the RFC stays in `governance/rfc/`
 with `status: draft`; it does not create the target file and does not promote

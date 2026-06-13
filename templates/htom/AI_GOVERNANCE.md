@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.3
+version: 0.4
 updated: {{date}}
 temperature: 0.1
 ---
@@ -26,7 +26,7 @@ temperature: 0.1
 
 | Роль | Ответственность |
 | --- | --- |
-| Founder & PO | Vision, priorities, publication boundaries и финальные решения по проекту. |
+| Пользователь | Vision, priorities, publication boundaries и финальные решения по проекту. |
 | Human reviewer | Проверяет структуру, источники, риски и полезность до merge или публикации. |
 | Contributor | Создаёт issues, artifacts и pull requests внутри модели проекта. |
 | AI agent | Готовит черновики, проверки и summaries внутри scope issue и правил этого контракта. |

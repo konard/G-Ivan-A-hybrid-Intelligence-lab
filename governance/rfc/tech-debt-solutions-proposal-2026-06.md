@@ -1,14 +1,14 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-11
+version: 0.2
+updated: 2026-06-13
 temperature: 0.1
 ---
 
 # RFC: Предложения по решению техдолга
 
 **Дата:** 2026-06-11
-**Автор:** @konard
+**Автор:** агент-исполнитель
 **Статус:** Draft
 
 ## Executive Summary
@@ -29,7 +29,7 @@ Sync проверяется локальным experiment script без fixture-
 | --- | --- | --- | --- |
 | 1 | Нет стандарта требований к `AI_SESSION_HANDOVER_PROMPT.md` | P1 | M |
 | 2 | Нет fixture-spoke проверки Smart Sync для HTOM/spoke templates | P1 | M |
-| 3 | Не создан `templates/task-for-konard.md` | P2 | S |
+| 3 | Не создан `templates/task-for-executor.md` | P2 | S |
 | 4 | Политика generated HTML/PNG artifacts не формализована | P2 | S |
 | 5 | `governance/backlog.md` может не отражать уже закрытые CE-задачи | P2 | M |
 | 6 | Выводы JS CI/CD research не связаны с минимальным spoke CI contract | P3 | M |
@@ -62,9 +62,9 @@ Sync проверяется локальным experiment script без fixture-
 **Корневая причина:** Smart Sync был создан как инфраструктурный пакет, а не как
 полноценная интеграционная test harness для нескольких типов репозиториев.
 
-### Проблема 3: Нет `templates/task-for-konard.md`
+### Проблема 3: Нет `templates/task-for-executor.md`
 
-**Описание:** issue #213 указывает шаблон задачи для Конарда как техдолг, но
+**Описание:** issue #213 указывает шаблон задачи для агента-исполнителя как техдолг, но
 такого файла в текущем дереве нет.
 
 **Влияние:** задачи для AI-исполнителя продолжают зависеть от issue template и
@@ -140,9 +140,9 @@ cleanup.
 **Оценка:** M
 **Приоритет:** P1
 
-### Решение 3: Шаблон задачи для Конарда
+### Решение 3: Шаблон задачи для агента-исполнителя
 
-**Описание:** создать `templates/task-for-konard.md` как lightweight wrapper над
+**Описание:** создать `templates/task-for-executor.md` как lightweight wrapper над
 issue template: входной контекст, expected autonomy, required checks, PR update
 rules, evidence requirements.
 
@@ -211,7 +211,7 @@ install policy, provider-neutral defaults, extension points.
 
 - Формализовать generated artifacts policy.
 - Обновить `governance/backlog.md` по фактически закрытым issues.
-- Создать `templates/task-for-konard.md` только если он будет ссылочным, без
+- Создать `templates/task-for-executor.md` только если он будет ссылочным, без
   копирования всего issue template.
 
 **Фаза 3 (желательно):**
@@ -225,11 +225,11 @@ install policy, provider-neutral defaults, extension points.
   артефактами или generated output для удаления?
 - Являются ли screenshots в `docs/screenshots/` постоянной review evidence
   policy или временным исключением для PR #210?
-- Нужен ли `templates/task-for-konard.md` как отдельный файл, если
+- Нужен ли `templates/task-for-executor.md` как отдельный файл, если
   `templates/htom/.github/ISSUE_TEMPLATE/task.md` уже содержит AI-блок?
 - Должен ли backlog обновляться в каждом PR, закрывающем backlog item, или
   отдельными periodic audit tasks?
 
 ---
 
-**Для обсуждения:** Фаундер, Команда Q
+**Для обсуждения:** Пользователь, Команда Q

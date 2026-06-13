@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-12
+version: 0.2
+updated: 2026-06-13
 temperature: 0.1
 ---
 
@@ -10,7 +10,7 @@ temperature: 0.1
 ## Proposal
 
 Adopt `standards/knowledge-lifecycle.md` as the future canonical Hub lifecycle
-standard for knowledge artifacts after explicit Founder approval:
+standard for knowledge artifacts after explicit User approval:
 
 ```text
 Observation -> Research -> Hypothesis -> RFC -> Pattern -> Standard -> Template -> Framework -> Deprecation/Archive
@@ -29,15 +29,52 @@ This RFC proposes the lifecycle standard only. It does not approve every draft
 artifact currently in the repository and does not promote any RFC to canonical
 status by itself.
 
+## Обратная трассируемость
+
+**Правило обратной трассируемости:**
+
+- Каждый **Standard** должен ссылаться минимум на один **Pattern**: откуда взята
+  повторяемая практика.
+- Каждый **Pattern** должен ссылаться минимум на один **RFC**: как принималось
+  решение.
+- Каждый **RFC** должен ссылаться минимум на одно **Research/Observation**:
+  какую проблему решает предложение.
+
+**Исключение:** если артефакт импортируется из внешнего источника
+(международные практики, стандарты или публичные frameworks), ссылка на внешний
+источник заменяет внутренний upstream.
+
+**Проверка:** без этой цепочки артефакт не может быть переведён на следующий
+этап зрелости. Если цепочка неполная, PR фиксирует missing upstream как
+lifecycle gap, а не молча повышает статус.
+
+## Frontmatter Traceability Contract
+
+Будущий canonical standard должен закрепить стандартные поля frontmatter для
+артефактов, которые переходят между lifecycle stages:
+
+```yaml
+traceability:
+  based_on: [ссылка на upstream]
+  supersedes: [ссылка на устаревший артефакт, если есть]
+  used_by: [ссылки на downstream]
+```
+
+Поля `based_on`, `supersedes` и `used_by` не заменяют body links и PR evidence:
+они дают быстрый индекс зависимостей, а обоснование остаётся в RFC, issue, PR
+или source-backed research.
+
 ## Target Artifact
 
 | Target | Status in this PR | Promotion condition |
 | --- | --- | --- |
-| `standards/knowledge-lifecycle.md` | Proposed target, not created by this PR | Founder review plus explicit Founder approval. |
+| `standards/knowledge-lifecycle.md` | Proposed target, not created by this PR | User review plus явное подтверждение Пользователя. |
 
 ## Key Rules
 
 - Each stage has a default location, user group, and transition criteria.
+- Reverse traceability is required before moving an artifact to the next
+  maturity stage.
 - Framework L1-L2 lives in `docs/`; Methodology L3-L4 lives in
   `governance/`, `standards/`, `practices/`, `templates/`, `tools/`, and
   project/framework packages.
@@ -55,6 +92,8 @@ status by itself.
 
 - The lifecycle chain is documented end to end.
 - Each stage has a repository location, user group, and transition criteria.
+- Reverse traceability and standard `traceability` frontmatter fields are
+  documented.
 - Resolver behavior for Structured and Creative modes is described.
 - Deprecation/Archive is defined without reintroducing an archive directory by
   default.

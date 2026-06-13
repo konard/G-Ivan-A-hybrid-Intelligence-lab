@@ -31,8 +31,8 @@ All notable repository governance changes are documented here.
   point for session summaries (index + instructions + first digest for the
   2026-06-13 documentation-architecture discussion). The mechanism is for
   external agents (ChatGPT/Claude) on chat-to-chat handover only and explicitly
-  does NOT affect the task-executor agent (Konard) — no token burn on
-  summarization during task execution. Propagates to project repos via Smart
+  does NOT affect the task-executor agent — no token burn on summarization
+  during task execution. Propagates to project repos via Smart
   Sync of the `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` genome.
 
 ### Changed
@@ -42,8 +42,15 @@ All notable repository governance changes are documented here.
   токенов; путь `governance/session-digests.md`; структура контекст/решения/
   открытые вопросы/следующие шаги; агент инициирует вопрос пользователю только
   при передаче контекста в чат). Обновлена `governance/artifact-map.md`.
+- structured: strengthened governance contracts for issue #228. Added reverse
+  traceability and `traceability` frontmatter fields to the knowledge lifecycle
+  RFC, constrained resolver scope to routing plus missing-upstream checks,
+  added the Framework vs Template contract to
+  `standards/executable-documentation-standard.md`, normalized operational
+  terminology to `Пользователь` / `агент-исполнитель`, and expanded structure
+  validation coverage for these rules.
 - structured: обновить Vision/Concept + создать knowledge-lifecycle + resolver + универсальные шаблоны.
-- fix: откатить автоматический перевод Draft → Canonical, требуется явное подтверждение Фаундера.
+- fix: откатить автоматический перевод Draft → Canonical, требуется явное подтверждение Пользователя.
 - Issue #217 PR rebuild (Creative mode): added a separate `practices/` KB for
   fixed practices; extracted Habr agent-work practices with sources/authors;
   added international AI governance practice analysis (NIST AI RMF, EU AI Act,
@@ -154,7 +161,7 @@ All notable repository governance changes are documented here.
   Hub product layer. New product docs `docs/vision.md` (Product Vision, L1) and
   `docs/product-concept.md` (Product Concept, L2); RFC
   `governance/rfc/hub-vision-concept-proposal-2026-06.md` comparing approaches
-  and listing open questions to the founder; a human-facing guide library under
+  and listing open questions to the User; a human-facing guide library under
   `guides/` (`README.md`, `quick-start.md`, `init-spoke-repo.md`,
   `sync-from-hub.md`, `interact-with-ai.md`, `deploy-project.md`,
   `rollback-sync.md`, `contribute-template.md`, `troubleshooting.md`,
@@ -174,10 +181,10 @@ All notable repository governance changes are documented here.
   `{{project_name}}`, `{{date}}` and `{{hub_url}}` placeholders.
 - Issue #191: added `research/portal/portal-documents-review-2026-06.md`,
   standalone `research/portal/portal-documents-review-2026-06.html`, and a
-  desktop verification screenshot to support founder review of the 10 deferred
+  desktop verification screenshot to support User review of the 10 deferred
   portal documents from the repository-quality RFC. The Markdown document
   consolidates clickable links, 2-3 sentence summaries, executor-side disputed
-  questions, founder decision placeholders, a Q01-Q12 decision matrix and
+  questions, User decision placeholders, a Q01-Q12 decision matrix and
   review DoD. The HTML version opens directly in a browser without external
   dependencies and includes full-width responsive tables, sticky navigation,
   color-coded statuses, checkboxes, textareas, local browser persistence and
@@ -223,7 +230,7 @@ All notable repository governance changes are documented here.
   зарегистрированы в `governance/artifact-map.md` (1.17 → 1.18),
   `standards/README.md`, `research/portal/README.md` и структурном валидаторе
   (`is_active_file` + `required_files`); валидатор проходит (exit 0). Решение о
-  переводе стандарта в `reviewed`/`canonical` остаётся за фаундером.
+  переводе стандарта в `reviewed`/`canonical` остаётся за Пользователем.
 
 ### Changed
 
@@ -340,7 +347,7 @@ All notable repository governance changes are documented here.
   `governance/proposals/open-ai-portal-concept-rfc.md` (15 разделов: 5 слоганов,
   сравнение 4 вариантов концепции по матрице из 14 критериев, синтез
   оптимального решения, дорожная карта Phase 0–4 и запрос на согласование с
-  7 вопросами фаундеру); черновик стандарта
+  7 вопросами Пользователю); черновик стандарта
   `standards/portal-repository-structure.md` (структура репозитория портала,
   наследующая геном спока и добавляющая портал-каталоги); четыре research-отчёта в
   новом подкаталоге `research/portal/` — сравнение стандартов документации (вывод:
@@ -399,7 +406,7 @@ All notable repository governance changes are documented here.
   корзин разрешений **прозой** («можно без спроса / можно с апрувом / нельзя
   никогда») с 1–2 примерами на корзину. Сознательно без YAML-машинерии и
   таблиц: формальный Capability Manifest (YAML) `ОТЛОЖЕН` до первого инцидента
-  (решение Конарда, упрощающее «ментальный список» команды Q сильнее; источники
+  (решение агента-исполнителя, упрощающее «ментальный список» команды Q сильнее; источники
   — Q «взять сейчас», команда С `[C5]`, внешний паттерн `[GAP]`). Секция даёт
   агенту ясные границы между корзинами «Правила» и «Эскалация» без новой
   структуры (Anti-Inflation).
@@ -788,4 +795,4 @@ All notable repository governance changes are documented here.
 
 - Добавить concrete artifact templates после появления повторяющихся работ и
   стабильных потребностей.
-- Заменить license placeholder после решения Founder & PO.
+- Заменить license placeholder после решения Пользователя.

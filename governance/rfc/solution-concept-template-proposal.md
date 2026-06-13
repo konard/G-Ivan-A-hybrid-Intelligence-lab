@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-12
+version: 0.2
+updated: 2026-06-13
 temperature: 0.1
 ---
 
@@ -10,7 +10,7 @@ temperature: 0.1
 ## Proposal
 
 Adopt `templates/solution-concept-template.md` as the future universal L3
-Solution Concept template after explicit Founder approval.
+Solution Concept template after explicit User approval.
 
 ## Source Adaptation
 
@@ -36,7 +36,7 @@ tools, prompts, and checks.
 
 | Target | Status in this PR | Promotion condition |
 | --- | --- | --- |
-| `templates/solution-concept-template.md` | Proposed target, not created by this PR | Founder review plus explicit Founder approval. |
+| `templates/solution-concept-template.md` | Proposed target, not created by this PR | User review plus explicit User approval. |
 
 Merge silence means applying this PR as-is: the RFC stays in `governance/rfc/`
 with `status: draft`; it does not create the target file and does not promote
