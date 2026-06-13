@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-06-12
+version: 1.1
+updated: 2026-06-13
 temperature: 0.1
 ---
 
@@ -58,6 +58,22 @@ reject, or adapt one practice without taking an entire research report.
 | Practice matrix | `research/` or `practices/README.md` | Maps sources to fixed practice nodes. |
 | Practice node | `practices/<domain>/<practice>.md` | One reusable behavior, with source, author or organization, link, Hub applicability, and implementation steps. |
 | Prompt template | `templates/` | Copyable execution surface, with approved placeholders. |
+
+## Framework vs Template
+
+**Разграничение:**
+
+- **Template = один воспроизводимый артефакт**: форма, prompt или checklist.
+  Template отвечает на вопрос *"Как заполнить?"*.
+- **Framework = набор связанных Standards, Templates, Patterns** для класса
+  проектов. Framework отвечает на вопрос *"Как собрать систему?"*.
+
+**Запрет:** нельзя создавать Framework, если он содержит только один Template
+или не агрегирует существующие Standards.
+
+**Критерий:** Framework всегда содержит 2+ артефакта разных типов
+(Standards + Templates + Patterns) и описывает их взаимосвязи для класса
+проектов.
 
 ## Practice graph
 

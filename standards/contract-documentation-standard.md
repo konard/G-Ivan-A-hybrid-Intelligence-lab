@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-06-07
+version: 1.1
+updated: 2026-06-13
 temperature: 0.1
 ai-generated: true
 executable: false
@@ -17,7 +17,7 @@ related_issues:
 
 # Contract Documentation Standard
 
-Документ предложен на утверждение фаундеру. До утверждения — рекомендация, не
+Документ предложен на утверждение Пользователю. До утверждения — рекомендация, не
 обязательное правило (AI_GOVERNANCE, правило 4).
 
 Стандарт фиксирует формат **прочих контрактов** — governance-документов, которые

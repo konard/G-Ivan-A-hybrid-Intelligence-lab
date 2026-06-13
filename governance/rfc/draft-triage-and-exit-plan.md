@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 0.2
-updated: 2026-06-07
+version: 0.3
+updated: 2026-06-13
 temperature: 0.1
 ai-generated: true
 type: rfc
@@ -67,8 +67,8 @@ poor content quality; it is unclear lifecycle semantics.
 | `templates/htom/AI_QUICK_RULES.md` | Draft executable quick-start template with placeholders and links to Hub rules. It already reflects current agent survival rules and executable-document structure. Problem: same unresolved placeholder ambiguity; no independent exit criteria. | `approval_target`: executable spoke quick-rules template. `dependencies`: executable-contract standard and template-placeholder policy. `required_changes`: add a small lifecycle note in the template README that this file remains a source template until instantiated; verify quick rules still match current agent-onboarding and artifact-map wording. `estimated_effort`: S. |
 | `templates/htom/CHANGELOG.md` | Draft changelog scaffold using `{{date}}` and Keep a Changelog style. Problem: a changelog template should not be judged by the same currentness rule as a live changelog. | `approval_target`: spoke changelog scaffold. `dependencies`: template-placeholder policy. `required_changes`: document that the first generated spoke changelog must replace date/project placeholders and may start with `status: canonical` only after initialization. `estimated_effort`: XS. |
 | `templates/htom/CONTRIBUTING.md` | Draft contribution workflow template. It has source-template placeholders and a generic PR checklist. Problem: no explicit boundary between Hub contribution rules and spoke-local adaptation. | `approval_target`: spoke contribution template. `dependencies`: `CONTRIBUTING.md`, `standards/issue-workflow.md`, template-placeholder policy. `required_changes`: add a short source-of-truth note in the template README or template body and verify generated links after `init.sh`. `estimated_effort`: S. |
-| `templates/htom/README.md` | Central draft template for spoke repository README. It documents placeholders, `init.sh`, validator behavior, and two onboarding entry points. Problem: it is the right place to define template lifecycle, but it still has draft status and does not fully close the placeholder exception. | `approval_target`: canonical source for spoke-template lifecycle. `dependencies`: founder decision on source-template status, spoke validator expectations. `required_changes`: add a "Template placeholder policy" section, state which placeholders are allowed in source templates, and define generated-spoke DoD. `estimated_effort`: M. |
-| `governance/rfc/contract-executability-rfc.md` | Draft RFC v1.1 with Human Review decisions from 2026-06 and implemented follow-up in `standards/executable-contract-standard.md`, `governance/agent-onboarding-protocol.md`, and spoke templates. Problem: it still reads like an active proposal even though major decisions are already accepted or delegated to canonical standards. | `approval_target`: closed RFC decision record, either `reviewed/canonical` or explicitly `superseded`. `dependencies`: executable-contract standard, agent-onboarding, CE issue registry, template updates. `required_changes`: add a decision-status table for accepted/deferred/superseded sections; identify the standard as owner of normative rules; update status only after founder confirms closure semantics. `estimated_effort`: M. |
+| `templates/htom/README.md` | Central draft template for spoke repository README. It documents placeholders, `init.sh`, validator behavior, and two onboarding entry points. Problem: it is the right place to define template lifecycle, but it still has draft status and does not fully close the placeholder exception. | `approval_target`: canonical source for spoke-template lifecycle. `dependencies`: User decision on source-template status, spoke validator expectations. `required_changes`: add a "Template placeholder policy" section, state which placeholders are allowed in source templates, and define generated-spoke DoD. `estimated_effort`: M. |
+| `governance/rfc/contract-executability-rfc.md` | Draft RFC v1.1 with Human Review decisions from 2026-06 and implemented follow-up in `standards/executable-contract-standard.md`, `governance/agent-onboarding-protocol.md`, and spoke templates. Problem: it still reads like an active proposal even though major decisions are already accepted or delegated to canonical standards. | `approval_target`: closed RFC decision record, either `reviewed/canonical` or explicitly `superseded`. `dependencies`: executable-contract standard, agent-onboarding, CE issue registry, template updates. `required_changes`: add a decision-status table for accepted/deferred/superseded sections; identify the standard as owner of normative rules; update status only after User confirms closure semantics. `estimated_effort`: M. |
 
 Recommended decision: approve source templates as a special lifecycle class
 before changing their statuses. Do not remove placeholders from source
@@ -105,9 +105,9 @@ knowledge base.
 | Document | Current state, links, and specific problems | Exit plan |
 | --- | --- | --- |
 | `research/mango/capability-decomposition-2026-05.md` | Very large draft capability catalog with atomic feature entries, NFR linkage, and integration with `mango_ba_prompts/kb/product-matrix.md`. Body links mostly point to current active or external artifacts. Problem: frontmatter `related_artifacts` mixes path and version (`classification.md v3.0`) and still names `classification-glossary.md`, which is no longer an active local path. Promotion also requires SME review because the file is product-domain heavy. | `approval_target`: reviewed Mango capability research. `dependencies`: product SME review, external Mango glossary/source decision, taxonomy pilot. `required_changes`: fix relation metadata to path-only values or external URLs, add owner-reviewed sample coverage, and record review scope before status promotion. `estimated_effort`: L. |
-| `research/mango/requirements-lifecycle-uncertainty-2026-05.md` | Draft process research for raw requirement `0 -> 1`, ambiguity maps, case modeling, gates, metrics, and n8n-oriented prompt orchestration. Links to related Mango research and external `mango_ba_prompts` are current. Problem: recommendations are candidates for a future process standard, not approved rules; there is no explicit exit plan section. | `approval_target`: reviewed research source or future Mango BA process standard. `dependencies`: PO/Founder choice of uncertainty model and pilot metrics. `required_changes`: add an exit-plan note, record chosen uncertainty model, and only extract a standard after pilot evidence. `estimated_effort`: M. |
+| `research/mango/requirements-lifecycle-uncertainty-2026-05.md` | Draft process research for raw requirement `0 -> 1`, ambiguity maps, case modeling, gates, metrics, and n8n-oriented prompt orchestration. Links to related Mango research and external `mango_ba_prompts` are current. Problem: recommendations are candidates for a future process standard, not approved rules; there is no explicit exit plan section. | `approval_target`: reviewed research source or future Mango BA process standard. `dependencies`: User choice of uncertainty model and pilot metrics. `required_changes`: add an exit-plan note, record chosen uncertainty model, and only extract a standard after pilot evidence. `estimated_effort`: M. |
 | `research/mango/rag-mapping-roadmap-2026-05.md` | Draft roadmap for `kb/product-matrix.md`, source confidence, diagrams, and prompt-chain pilot increments in external `mango_ba_prompts`. Links are current and mostly operationally specific. Problem: roadmap items are not tracked as external spoke tasks and should not remain only as Hub research recommendations. | `approval_target`: reviewed roadmap research plus external spoke backlog. `dependencies`: external `mango_ba_prompts` ownership and source-indexing policy. `required_changes`: convert accepted increments into external spoke issues or backlog items; add status of each roadmap stage; keep Hub copy as rationale. `estimated_effort`: M. |
-| `research/mango/taxonomy-concept-2026-05.md` | Draft Unified Capability Taxonomy concept with domains, maturity, evidence fields, evolution rules, pilot plan, and PO/Founder questions. Links to active Mango research and external spoke are current. Problem: it is a strong standard candidate but still lacks pilot approval, owner assignment, and private-data boundary decisions. | `approval_target`: future `standards/feature-taxonomy.md` or reviewed Mango research. `dependencies`: taxonomy owner, pilot corpus, evidence policy, external spoke integration. `required_changes`: run pilot, decide owner and threshold rules, then extract concise normative taxonomy if approved. `estimated_effort`: L. |
+| `research/mango/taxonomy-concept-2026-05.md` | Draft Unified Capability Taxonomy concept with domains, maturity, evidence fields, evolution rules, pilot plan, and User questions. Links to active Mango research and external spoke are current. Problem: it is a strong standard candidate but still lacks pilot approval, owner assignment, and private-data boundary decisions. | `approval_target`: future `standards/feature-taxonomy.md` or reviewed Mango research. `dependencies`: taxonomy owner, pilot corpus, evidence policy, external spoke integration. `required_changes`: run pilot, decide owner and threshold rules, then extract concise normative taxonomy if approved. `estimated_effort`: L. |
 
 Recommended decision: do not move Mango research into Hub standards until at
 least one pilot demonstrates stable taxonomy, evidence, and source-owner rules.
@@ -121,10 +121,10 @@ describes a sandbox of ideas.
 
 | Document | Current state, links, and specific problems | Exit plan |
 | --- | --- | --- |
-| `projects/education-ba-prompt/README.md` | Draft navigation for a future BA prompt-engineering course sandbox. It links to `standards/education-profile.md`, project structure rules, and issue workflow. Problem: `governance/artifact-map.md` treats the file as required/active, while `projects/README.md` active project list currently emphasizes repo-development and migration history. | `approval_target`: project scope decision. `dependencies`: Founder/PO choice: public project area vs internal sandbox. `required_changes`: if public, list it consistently in `projects/README.md`; if sandbox, label scope explicitly and decide whether artifact-map "required" is appropriate. `estimated_effort`: S. |
+| `projects/education-ba-prompt/README.md` | Draft navigation for a future BA prompt-engineering course sandbox. It links to `standards/education-profile.md`, project structure rules, and issue workflow. Problem: `governance/artifact-map.md` treats the file as required/active, while `projects/README.md` active project list currently emphasizes repo-development and migration history. | `approval_target`: project scope decision. `dependencies`: User choice: public project area vs internal sandbox. `required_changes`: if public, list it consistently in `projects/README.md`; if sandbox, label scope explicitly and decide whether artifact-map "required" is appropriate. `estimated_effort`: S. |
 | `projects/education-ba-prompt/docs/course-ideas.md` | Draft raw material for course modules, terms, exercises, and prompt templates. Links to education profile are current. Problem: it is useful raw input, but not a curriculum artifact and has no exit criteria for becoming one. | `approval_target`: raw-ideas backlog or first reviewed course concept. `dependencies`: education project scope decision and course owner. `required_changes`: add a "not curriculum yet" boundary and a conversion checklist, or split accepted items into course artifacts per education profile. `estimated_effort`: M. |
 
-Recommended decision: keep the education area as a sandbox unless Founder/PO
+Recommended decision: keep the education area as a sandbox unless User
 explicitly approves it as a public project area with an owner and course
 roadmap.
 
@@ -158,7 +158,7 @@ roadmap.
 
 ## 9. Масштабируемость и защита от бюрократии (Anti-Bureaucracy)
 
-Founder approval for issue #193 adds the following Phase 1 constraints to keep
+User approval for issue #193 adds the following Phase 1 constraints to keep
 draft cleanup reviewable and prevent metadata inflation:
 
 1. **Unidirectional Links.** Research may point to standards as its output or
@@ -190,7 +190,7 @@ metadata deduplication in this PR.
 | Phase 2: Research reconciliation | Map draft recommendations to accepted standards, backlog, or deferral. | Status matrices for hub research; prompt-classification decision; external Mango roadmap issues; explicit limitations for prompt audit and user-prompt analysis. |
 | Phase 3: Pilot-backed promotion | Promote only after owner review or pilot evidence. | Taxonomy/process standard extraction if approved; Mango pilot evidence; first education course concept or explicit sandbox retention. |
 
-## Questions To Founder And PO
+## Questions To User
 
 1. Should source templates get a dedicated lifecycle rule, or should they remain
    `draft` until generated-spoke validation is implemented?
@@ -203,7 +203,7 @@ metadata deduplication in this PR.
    operational work moved to `mango_ba_prompts` issues/backlog?
 5. Should `projects/education-ba-prompt/` be a public active project area or a
    sandbox that remains registered only as raw material?
-6. Which owner role can approve domain-heavy Mango research: Founder/PO,
+6. Which owner role can approve domain-heavy Mango research: User,
    product SME, BA owner, or a named taxonomy owner?
 
 ## Definition Of Done For This RFC
