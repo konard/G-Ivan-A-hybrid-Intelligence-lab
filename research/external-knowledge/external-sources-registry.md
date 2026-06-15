@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.3
+version: 0.4
 updated: 2026-06-15
 temperature: 0.1
 ai-generated: true
@@ -14,9 +14,11 @@ related_artifacts:
   - "research/external-knowledge/external-insights/README.md"
   - "governance/rfc/external-knowledge-integration.md"
   - "governance/rfc/knowledge-lifecycle-proposal.md"
+  - "governance/rfc/repository-archetypes-template-release.md"
   - "standards/research-profile.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/227"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/240"
 ---
 
 # Реестр внешних источников
@@ -74,6 +76,14 @@ related_issues:
 | `ext-009` | [Habr — Codex и локальная память на SQLite (Hermes Codex Plugin)](https://habr.com/ru/articles/1045262/) | `habr` | `ru` | `context-engineering, agent-memory, token-budget, mcp, project-rules` | `future-phase: agent-memory, topic: token-budget` | `research` | `hub, mango, open-ai.ru, clarify-engine-ai` | ✅ [agent-local-memory-context-2026-06.md](external-insights/agent-local-memory-context-2026-06.md) |
 | `ext-010` | [Habr — Паттерн экономии токенов в Claude Code на правке файлов](https://habr.com/ru/articles/1045186/) | `habr` | `ru` | `token-budget, claude-code, file-editing, tool-specific` | `topic: tool-specific-file-editing` | `observation` | `hub` | ❌ (не извлечён) |
 | `ext-011` | [Habr — Структурированная разработка на основе промптов (SPDD)](https://habr.com/ru/articles/1045060/) | `habr` | `ru` | `spec-driven, prompts-as-artifacts, reproducibility, workflow` | `use-case: training-courses, topic: prompt-artifacts` | `research` | `hub, mango, clarify-engine-ai, open-ai.ru` | ✅ [structured-prompt-driven-development-2026-06.md](external-insights/structured-prompt-driven-development-2026-06.md) |
+| `ext-012` | [LangChain — langchain-ai/langchain](https://github.com/langchain-ai/langchain) | `github` | `en` | `repository-architecture, agents, framework, integrations` | `topic: archetypes, topic: prompt-libraries` | `research` | `all` | ✅ [repository-archetypes-template-release.md](../../governance/rfc/repository-archetypes-template-release.md) |
+| `ext-013` | [CrewAI examples](https://github.com/crewAIInc/crewAI-examples) | `github` | `en` | `repository-architecture, examples, agents, templates` | `topic: prompt-libraries, topic: examples` | `research` | `all` | ✅ [repository-archetypes-template-release.md](../../governance/rfc/repository-archetypes-template-release.md) |
+| `ext-014` | [Microsoft Foundry samples](https://github.com/microsoft-foundry/foundry-samples) | `github` | `en` | `repository-architecture, samples, ai-foundry, documentation` | `topic: archetypes, topic: samples` | `research` | `all` | ✅ [repository-archetypes-template-release.md](../../governance/rfc/repository-archetypes-template-release.md) |
+| `ext-015` | [Microsoft Foundry — AI solution templates](https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/ai-template-get-started) | `docs` | `en` | `templates, ai-foundry, quickstart, deployment` | `topic: project-template, topic: production-readiness` | `research` | `all` | ✅ [repository-archetypes-template-release.md](../../governance/rfc/repository-archetypes-template-release.md) |
+| `ext-016` | [GitHub Docs — GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow) | `docs` | `en` | `release-engineering, branching, github-flow, pull-requests` | `topic: dev-prod-strategy` | `research` | `all` | ✅ [repository-archetypes-template-release.md](../../governance/rfc/repository-archetypes-template-release.md) |
+| `ext-017` | [Vincent Driessen — A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/) | `blog` | `en` | `release-engineering, gitflow, branching, releases` | `topic: dev-prod-strategy` | `research` | `all` | ✅ [repository-archetypes-template-release.md](../../governance/rfc/repository-archetypes-template-release.md) |
+| `ext-018` | [Trunk-Based Development](https://trunkbaseddevelopment.com/) | `docs` | `en` | `release-engineering, trunk-based-development, continuous-integration` | `topic: dev-prod-strategy` | `research` | `all` | ✅ [repository-archetypes-template-release.md](../../governance/rfc/repository-archetypes-template-release.md) |
+| `ext-019` | [GitHub Docs — GitHub Pages publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) | `docs` | `en` | `release-engineering, github-pages, ci-cd, actions` | `topic: github-pages-deploy` | `research` | `all` | ✅ [repository-archetypes-template-release.md](../../governance/rfc/repository-archetypes-template-release.md) |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены
