@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.7
+version: 1.8
 updated: 2026-06-15
 temperature: 0.1
 ---
@@ -13,6 +13,19 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- creative: repository archetypes, project template and release strategy RFC
+  (issue #240). Added
+  `governance/rfc/repository-archetypes-template-release.md` with a necessity
+  analysis, external structure benchmark (LangChain, CrewAI examples, Microsoft
+  Foundry samples/templates, Azure AI chat sample), release-model benchmark
+  (GitHub Flow, GitFlow, Trunk-Based Development, GitHub Pages Actions), a
+  minimal ecosystem repository archetype taxonomy, a Prompt & Pattern Library
+  project template, illustrative `mango_ba_prompts` mapping without migration
+  instructions, a Governance sync rule (Hub base + local extension), and a
+  GitHub Flow + trunk discipline release strategy with a Pages workflow example.
+  Registered external sources as `ext-016`..`ext-024`, added navigation in
+  `governance/rfc/README.md` and `governance/artifact-map.md`, and extended the
+  structure validator to protect the RFC acceptance criteria.
 - creative: Research Memory & Source Intelligence RFC (issue #239). Added
   `governance/rfc/research-memory-source-intelligence.md` as a draft framework
   for Knowledge Object primacy over Tier 1 external sources and Tier 2 internal
