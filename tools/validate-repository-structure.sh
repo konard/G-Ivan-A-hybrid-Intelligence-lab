@@ -141,6 +141,7 @@ is_active_file() {
     governance/rfc/resolve-artifact-location-proposal.md | \
     governance/rfc/external-knowledge-integration.md | \
     governance/rfc/documentation-architecture-balance.md | \
+    governance/rfc/research-memory-source-intelligence.md | \
     governance/rfc/repository-archetypes-template-release.md | \
     governance/rfc/product-concept-template-proposal.md | \
     governance/rfc/solution-concept-template-proposal.md | \
@@ -493,6 +494,7 @@ required_files=(
   "governance/rfc/resolve-artifact-location-proposal.md"
   "governance/rfc/external-knowledge-integration.md"
   "governance/rfc/documentation-architecture-balance.md"
+  "governance/rfc/research-memory-source-intelligence.md"
   "governance/rfc/repository-archetypes-template-release.md"
   "governance/rfc/product-concept-template-proposal.md"
   "governance/rfc/solution-concept-template-proposal.md"
@@ -1083,7 +1085,7 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.37"
+require_text "governance/artifact-map.md" "version: 1.38"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1159,7 +1161,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.4"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.5"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"
@@ -1170,8 +1172,9 @@ require_text "research/external-knowledge/external-sources-registry.md" "Тег�
 require_text "research/external-knowledge/external-sources-registry.md" "| \`id\` | Источник | Тип | Язык | Теги | Теги будущих фаз / тем | Stage | Проекты | Запись в БЗ |"
 require_text "research/external-knowledge/external-sources-registry.md" "ext-009"
 require_text "research/external-knowledge/external-sources-registry.md" "ext-011"
-require_text "research/external-knowledge/external-sources-registry.md" "ext-012"
-require_text "research/external-knowledge/external-sources-registry.md" "ext-019"
+require_text "research/external-knowledge/external-sources-registry.md" "ext-015"
+require_text "research/external-knowledge/external-sources-registry.md" "ext-016"
+require_text "research/external-knowledge/external-sources-registry.md" "ext-024"
 
 require_text "research/external-knowledge/external-insights/README.md" "status: draft"
 require_text "research/external-knowledge/external-insights/README.md" "source_id"
@@ -1198,6 +1201,25 @@ require_text "governance/rfc/documentation-architecture-balance.md" "Index"
 require_text "governance/rfc/documentation-architecture-balance.md" "Summary"
 require_text "governance/rfc/documentation-architecture-balance.md" "clarify-engine-ai"
 require_text "governance/rfc/documentation-architecture-balance.md" "Open Decision"
+
+# Research Memory & Source Intelligence (issue #239): object-centric memory layer.
+require_text "governance/artifact-map.md" "governance/rfc/research-memory-source-intelligence.md"
+require_text "governance/rfc/README.md" "research-memory-source-intelligence.md"
+require_text "governance/rfc/research-memory-source-intelligence.md" "status: draft"
+require_text "governance/rfc/research-memory-source-intelligence.md" "version: 0.1"
+require_text "governance/rfc/research-memory-source-intelligence.md" "Knowledge Object первичен"
+require_text "governance/rfc/research-memory-source-intelligence.md" "Анализ Необходимости"
+require_text "governance/rfc/research-memory-source-intelligence.md" "Tier 1: External Trusted Sources"
+require_text "governance/rfc/research-memory-source-intelligence.md" "Tier 2: Internal Research Memory"
+require_text "governance/rfc/research-memory-source-intelligence.md" "Observed"
+require_text "governance/rfc/research-memory-source-intelligence.md" "Candidate"
+require_text "governance/rfc/research-memory-source-intelligence.md" "Applied"
+require_text "governance/rfc/research-memory-source-intelligence.md" "Rejected"
+require_text "governance/rfc/research-memory-source-intelligence.md" "Superseded"
+require_text "governance/rfc/research-memory-source-intelligence.md" "Source Intelligence"
+require_text "governance/rfc/research-memory-source-intelligence.md" "Context Engineering"
+require_text "governance/rfc/research-memory-source-intelligence.md" "clarify-engine-ai"
+require_text "governance/rfc/research-memory-source-intelligence.md" "Open Decisions"
 
 # Repository archetypes, Prompt & Pattern Library template and release strategy (issue #240).
 require_text "governance/artifact-map.md" "governance/rfc/repository-archetypes-template-release.md"

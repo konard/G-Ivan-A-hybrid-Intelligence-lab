@@ -65,7 +65,7 @@ platform, applied RAG tool и будущие educational/research packages. Бе
 
 Источники зафиксированы в
 [external-sources-registry.md](../../research/external-knowledge/external-sources-registry.md)
-(`ext-012`..`ext-015`). Анализ ниже использует только структуру и публичные
+(`ext-016`..`ext-020`). Анализ ниже использует только структуру и публичные
 описания источников, не копируя их содержимое.
 
 | Эталон | Наблюдение | Что заимствуем | Что не заимствуем |
@@ -84,7 +84,7 @@ production runtime.
 
 ## Анализ моделей Release Engineering
 
-Источники зафиксированы в реестре как `ext-016`..`ext-019`.
+Источники зафиксированы в реестре как `ext-021`..`ext-024`.
 
 | Модель | Суть | Что заимствуем | Что не подходит |
 | --- | --- | --- | --- |
@@ -327,5 +327,5 @@ and add deploy only after product readiness is explicit.
 - [docs/ecosystem-map-Index.md](../../docs/ecosystem-map-Index.md) — current
   ecosystem project map.
 - [research/external-knowledge/external-sources-registry.md](../../research/external-knowledge/external-sources-registry.md)
-  — registered external sources `ext-012`..`ext-019`.
+  — registered external sources `ext-016`..`ext-024`.
 - [guides/sync-from-hub.md](../../guides/sync-from-hub.md) — Smart Sync guide.

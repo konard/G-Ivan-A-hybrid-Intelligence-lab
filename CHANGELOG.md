@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.8
+version: 1.9
 updated: 2026-06-15
 temperature: 0.1
 ---
@@ -23,9 +23,21 @@ All notable repository governance changes are documented here.
   project template, illustrative `mango_ba_prompts` mapping without migration
   instructions, a Governance sync rule (Hub base + local extension), and a
   GitHub Flow + trunk discipline release strategy with a Pages workflow example.
-  Registered external sources as `ext-012`..`ext-019`, added navigation in
+  Registered external sources as `ext-016`..`ext-024`, added navigation in
   `governance/rfc/README.md` and `governance/artifact-map.md`, and extended the
   structure validator to protect the RFC acceptance criteria.
+- creative: Research Memory & Source Intelligence RFC (issue #239). Added
+  `governance/rfc/research-memory-source-intelligence.md` as a draft framework
+  for Knowledge Object primacy over Tier 1 external sources and Tier 2 internal
+  research memory. The RFC includes the required necessity analysis, comparison
+  of PKM/Zettelkasten/Evergreen Notes, ResearchOps and ADR/Decision Records,
+  the five knowledge statuses (`Observed`, `Candidate`, `Applied`, `Rejected`,
+  `Superseded`), source-intelligence criteria for separating verifiable claims
+  from hype, a concrete Context Engineering traceability example linked to
+  `clarify-engine-ai` ADR-009, and anti-dump rules. Registered the RFC in
+  `governance/rfc/README.md`, `governance/artifact-map.md` (v1.37), the
+  structure validator, and extended `external-sources-registry.md` (v0.4) with
+  methodology sources `ext-012`..`ext-015`.
 - structured: improve Index/Summary format with ISO phase dates and future-phase
   tagging (issue #237). Added `Дата актуализации фазы` to
   `docs/ecosystem-map-Index.md` (v0.2) for all four ecosystem projects, added
