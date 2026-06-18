@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.10
+version: 1.11
 updated: 2026-06-18
 temperature: 0.1
 ---
@@ -13,6 +13,20 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- creative: Formalize AI-classifications and integrate into Mango roadmap
+  (issue #251, builds on PR #248/#250). Added
+  `research/mango/ai-classifications-formalization-2026-06.md` — a detailed
+  formalization of the four new AI-subprocesses (prompt engineering, RAG
+  configuration, agent orchestration design, AI-component testing), each with
+  operations (input → action → output), descriptive/executable artifacts, an
+  explicit link to a Wiegers chapter, a worked example and quality criteria.
+  Added the "Эволюция операций в роадмапе Mango" section (4 phases with a
+  per-operation transition plan: training, configuration, validation,
+  integration) and the synchronization preparation for `mango_ba_prompts`
+  (С1 `requirement_level` axis, С2 Business-Rule type with 5 categories, С3
+  Wiegers ↔ mango ↔ BCREQ crosswalk). All terms are bilingual (RU/EN) and open
+  questions (ОВ-1…ОВ-6) are answered at the end. Registered the artifact in
+  `research/mango/README.md` and the structure validator.
 - creative: Fix Wigers research — paths, classification, AI-processes, BABOK
   comparison (issue #249, corrects PR #248). Moved
   `research/hub/wigers-requirements-analysis-2026-06.md` →

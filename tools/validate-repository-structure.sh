@@ -149,6 +149,7 @@ is_active_file() {
     governance/rfc/solution-concept-template-proposal.md | \
     governance/rfc/methodology-research-and-proposals.md | \
     research/mango/requirements-engineering-ai-era-2026.md | \
+    research/mango/ai-classifications-formalization-2026-06.md | \
     docs/vision.md | \
     docs/product-concept.md | \
     docs/ecosystem-map.md | \
