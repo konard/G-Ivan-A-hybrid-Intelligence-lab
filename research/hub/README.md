@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.2
-updated: 2026-06-18
+version: 1.3
+updated: 2026-06-20
 temperature: 0.1
 ai-generated: false
 ---
@@ -26,6 +26,7 @@ project bootstrap, governance-стратегии и классификации �
 | [ai-collaboration-retrospective-mango-migration-2026-06.md](ai-collaboration-retrospective-mango-migration-2026-06.md) | Ретроспектива ошибок AI-агента в сессии проектирования миграции Mango (Хаб → спок): реестр ошибок (включая архитектурное размещение артефактов), корневые причины и системные выводы для будущего onboarding/governance proposal. |
 | [external-governance-patterns-review-2026-06.md](external-governance-patterns-review-2026-06.md) | Анализ external governance patterns (GitAgent/EGAProtocol/IETF AgentID) и матрица применимости рекомендаций команды С: 8 ценных идей, колонки «взять сейчас / отложить / отклонить», North Star и триггеры пересмотра. |
 | [ecosystem-governance-audit-2026-06.md](ecosystem-governance-audit-2026-06.md) | Аудит governance-практик Хаба, `mango_ba_prompts`, `open-ai.ru`, `clarify-engine-ai` и международных AI governance patterns для issue #217. |
+| [ecosystem-architecture-research-2026-06.md](ecosystem-architecture-research-2026-06.md) | Комплексное исследование архитектуры экосистемы для issue #257: Hub как центр 5+ проектов, token balance, L1-L4 для `open-ai.ru` и репутационные технологии. |
 | [external-practice-intake-2026-06.md](external-practice-intake-2026-06.md) | Анализ внешних agent-work практик по Habr-источникам Artem Chirkov и slam, тест структуры `practices/`, и Mango docs error pattern без изменения Mango. |
 | [international-ai-governance-practices-2026-06.md](international-ai-governance-practices-2026-06.md) | Анализ международных AI governance sources и executable implementation matrix: NIST AI RMF, EU AI Act, ISO/IEC 42001, OpenAI, Anthropic, Google SAIF. |
 

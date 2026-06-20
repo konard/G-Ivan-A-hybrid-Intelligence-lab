@@ -77,6 +77,7 @@ is_active_file() {
     research/hub/team-c-governance-strategy-audit-2026-05.md | \
     research/hub/external-governance-patterns-review-2026-06.md | \
     research/hub/ecosystem-governance-audit-2026-06.md | \
+    research/hub/ecosystem-architecture-research-2026-06.md | \
     research/hub/external-practice-intake-2026-06.md | \
     research/hub/international-ai-governance-practices-2026-06.md | \
     research/external-knowledge/wigers-requirements-analysis-2026-06.md | \
@@ -445,6 +446,7 @@ required_files=(
   "research/README.md"
   "research/hub/README.md"
   "research/hub/ecosystem-governance-audit-2026-06.md"
+  "research/hub/ecosystem-architecture-research-2026-06.md"
   "research/hub/external-practice-intake-2026-06.md"
   "research/hub/international-ai-governance-practices-2026-06.md"
   "research/external-knowledge/wigers-requirements-analysis-2026-06.md"
@@ -1097,11 +1099,11 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.42"
+require_text "governance/artifact-map.md" "version: 1.43"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "governance/artifact-map.md" "updated: 2026-06-18"
+require_text "governance/artifact-map.md" "updated: 2026-06-20"
 require_text "governance/artifact-map.md" "temperature: 0.1"
 require_text "governance/artifact-map.md" "ai-generated: false"
 require_text "governance/artifact-map.md" "governance/agent-onboarding-protocol.md"
@@ -1128,6 +1130,7 @@ require_text "governance/artifact-map.md" "standards/frontmatter-docs-standard.m
 require_text "governance/artifact-map.md" "standards/executable-documentation-standard.md"
 require_text "governance/artifact-map.md" "standards/htom-documentation-structure.md"
 require_text "governance/artifact-map.md" "research/hub/ecosystem-governance-audit-2026-06.md"
+require_text "governance/artifact-map.md" "research/hub/ecosystem-architecture-research-2026-06.md"
 require_text "governance/artifact-map.md" "research/hub/external-practice-intake-2026-06.md"
 require_text "governance/artifact-map.md" "research/hub/international-ai-governance-practices-2026-06.md"
 require_text "governance/artifact-map.md" "practices/README.md"
@@ -1173,7 +1176,7 @@ require_text "research/external-knowledge/README.md" "Повторный ана�
 require_text "research/external-knowledge/README.md" "отклонено"
 
 require_text "research/external-knowledge/external-sources-registry.md" "status: draft"
-require_text "research/external-knowledge/external-sources-registry.md" "version: 0.6"
+require_text "research/external-knowledge/external-sources-registry.md" "version: 0.7"
 require_text "research/external-knowledge/external-sources-registry.md" "type: external-analysis"
 require_text "research/external-knowledge/external-sources-registry.md" "scope: repo-wide"
 require_text "research/external-knowledge/external-sources-registry.md" "Минимальные метаданные"
@@ -1189,6 +1192,7 @@ require_text "research/external-knowledge/external-sources-registry.md" "ext-016
 require_text "research/external-knowledge/external-sources-registry.md" "ext-024"
 require_text "research/external-knowledge/external-sources-registry.md" "ext-025"
 require_text "research/external-knowledge/external-sources-registry.md" "ext-048"
+require_text "research/external-knowledge/external-sources-registry.md" "ext-066"
 
 require_text "research/external-knowledge/external-insights/README.md" "status: draft"
 require_text "research/external-knowledge/external-insights/README.md" "source_id"
@@ -1389,6 +1393,7 @@ require_text "research/README.md" "prompts-classification-standard-2026-05.md"
 require_text "research/README.md" "team-c-governance-strategy-audit-2026-05.md"
 require_text "research/README.md" "user-prompts-analysis-2026-05.md"
 require_text "research/README.md" "ecosystem-governance-audit-2026-06.md"
+require_text "research/README.md" "ecosystem-architecture-research-2026-06.md"
 require_text "research/README.md" "external-practice-intake-2026-06.md"
 require_text "research/README.md" "international-ai-governance-practices-2026-06.md"
 require_text "research/README.md" "Размещение файлов исследований в корне каталога"
@@ -1408,6 +1413,7 @@ require_text "research/hub/README.md" "prompts-classification-standard-2026-05.m
 require_text "research/hub/README.md" "team-c-governance-strategy-audit-2026-05.md"
 require_text "research/hub/README.md" "user-prompts-analysis-2026-05.md"
 require_text "research/hub/README.md" "ecosystem-governance-audit-2026-06.md"
+require_text "research/hub/README.md" "ecosystem-architecture-research-2026-06.md"
 require_text "research/hub/README.md" "external-practice-intake-2026-06.md"
 require_text "research/hub/README.md" "international-ai-governance-practices-2026-06.md"
 
@@ -1421,6 +1427,17 @@ require_text "research/hub/ecosystem-governance-audit-2026-06.md" "clarify-engin
 require_text "research/hub/ecosystem-governance-audit-2026-06.md" "NIST AI RMF"
 require_text "research/hub/ecosystem-governance-audit-2026-06.md" "EU AI Act"
 require_text "research/hub/ecosystem-governance-audit-2026-06.md" "Creative override"
+
+require_text "research/hub/ecosystem-architecture-research-2026-06.md" "status: draft"
+require_text "research/hub/ecosystem-architecture-research-2026-06.md" "version: 0.1"
+require_text "research/hub/ecosystem-architecture-research-2026-06.md" "updated: 2026-06-20"
+require_text "research/hub/ecosystem-architecture-research-2026-06.md" "temperature: 0.1"
+require_text "research/hub/ecosystem-architecture-research-2026-06.md" "open-ai.ru"
+require_text "research/hub/ecosystem-architecture-research-2026-06.md" "mango_ba_prompts"
+require_text "research/hub/ecosystem-architecture-research-2026-06.md" "clarify-engine-ai"
+require_text "research/hub/ecosystem-architecture-research-2026-06.md" "репутационные технологии"
+require_text "research/hub/ecosystem-architecture-research-2026-06.md" "Executable -> Summary -> Full -> Raw"
+require_text "research/hub/ecosystem-architecture-research-2026-06.md" "Проверка требований issue #257"
 
 require_text "research/hub/external-practice-intake-2026-06.md" "status: draft"
 require_text "research/hub/external-practice-intake-2026-06.md" "version: 0.1"
