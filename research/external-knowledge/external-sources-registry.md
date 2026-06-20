@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.6
-updated: 2026-06-16
+version: 0.7
+updated: 2026-06-20
 temperature: 0.1
 ai-generated: true
 type: external-analysis
@@ -21,6 +21,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/227"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/240"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/245"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/257"
 ---
 
 # Реестр внешних источников
@@ -115,6 +116,24 @@ related_issues:
 | `ext-046` | [Lewis et al. — Retrieval-Augmented Generation (arXiv:2005.11401)](https://arxiv.org/abs/2005.11401) | `paper` | `en` | `ai-solution-architecture, rag, knowledge-sources` | `future-phase: agents` | `research` | `all` | ✅ [methodology-research-and-proposals.md](../../governance/rfc/methodology-research-and-proposals.md) |
 | `ext-047` | [Yao et al. — ReAct: Reasoning + Acting (arXiv:2210.03629)](https://arxiv.org/abs/2210.03629) | `paper` | `en` | `ai-solution-architecture, react, agent-loop` | `future-phase: agents` | `research` | `all` | ✅ [methodology-research-and-proposals.md](../../governance/rfc/methodology-research-and-proposals.md) |
 | `ext-048` | [AWS — Well-Architected Generative AI Lens](https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/generative-ai-lens.html) | `standard` | `en` | `ai-solution-architecture, well-architected, reference-architecture` | `topic: production-readiness` | `research` | `hub, open-ai.ru` | ✅ [methodology-research-and-proposals.md](../../governance/rfc/methodology-research-and-proposals.md) |
+| `ext-049` | [TM Forum — Open Digital Architecture](https://www.tmforum.org/open-digital-architecture/) | `docs` | `en` | `ecosystem-architecture, oda, component-architecture, open-apis` | `topic: platform-architecture` | `observation` | `hub, open-ai.ru` | ❌ |
+| `ext-050` | [TM Forum — Information Framework SID](https://www.tmforum.org/open-digital-architecture/information-framework-sid/) | `standard` | `en` | `ecosystem-architecture, data-model, common-vocabulary, sid` | `topic: information-architecture` | `observation` | `hub, open-ai.ru` | ❌ |
+| `ext-051` | [C4 Model](https://c4model.com/) | `docs` | `en` | `software-architecture, diagrams, c4, system-context` | `topic: solution-concept` | `observation` | `hub, open-ai.ru, clarify-engine-ai` | ❌ |
+| `ext-052` | [PeopleCert — ITIL 4 Foundation](https://www.peoplecert.org/browse-certifications/it-governance-and-service-management/ITIL-1/itil-4-foundation-2565) | `docs` | `en` | `service-management, value-chain, governance, operating-model` | `topic: service-architecture` | `observation` | `hub, open-ai.ru` | ❌ |
+| `ext-053` | [Microsoft — Azure Cloud Adoption Framework](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/overview) | `docs` | `en` | `cloud-adoption, governance, secure, manage, roadmap` | `topic: platform-roadmap` | `observation` | `hub, open-ai.ru` | ❌ |
+| `ext-054` | [CNCF — Platform Engineering Maturity Model](https://tag-app-delivery.cncf.io/whitepapers/platform-eng-maturity-model/) | `docs` | `en` | `platform-engineering, maturity-model, operating-model` | `topic: platform-maturity` | `observation` | `hub, open-ai.ru` | ❌ |
+| `ext-055` | [Backstage — Software Catalog](https://backstage.io/docs/features/software-catalog/) | `docs` | `en` | `software-catalog, ownership, metadata, developer-portal` | `future-phase: project-catalog` | `observation` | `hub, open-ai.ru` | ❌ |
+| `ext-056` | [LangChain Docs](https://docs.langchain.com/) | `docs` | `en` | `agents, agent-engineering, observability, lifecycle` | `future-phase: agents, topic: runtime-architecture` | `observation` | `open-ai.ru, clarify-engine-ai` | ❌ |
+| `ext-057` | [CrewAI Documentation](https://docs.crewai.com/) | `docs` | `en` | `agents, crews, flows, human-in-the-loop, production-agents` | `future-phase: agents, topic: orchestration` | `observation` | `open-ai.ru, clarify-engine-ai` | ❌ |
+| `ext-058` | [LlamaIndex Developer Docs](https://developers.llamaindex.ai/python/framework/) | `docs` | `en` | `agents, rag, context-augmentation, data-connectors` | `future-phase: agents, topic: rag-architecture` | `observation` | `open-ai.ru, clarify-engine-ai` | ❌ |
+| `ext-059` | [Trust over IP — Evolution of the ToIP Stack](https://trustoverip.org/our-work/evolution-of-the-toip-stack/) | `docs` | `en` | `digital-trust, trust-layers, governance, credentials` | `future-phase: reputation-engineering` | `observation` | `hub, open-ai.ru` | ❌ |
+| `ext-060` | [W3C — Verifiable Credentials Data Model v2.0](https://www.w3.org/TR/vc-data-model-2.0/) | `standard` | `en` | `digital-trust, verifiable-credentials, claims, provenance` | `future-phase: reputation-engineering` | `observation` | `hub, open-ai.ru` | ❌ |
+| `ext-061` | [W3C — Decentralized Identifiers v1.1](https://www.w3.org/TR/did-1.1/) | `standard` | `en` | `digital-trust, decentralized-identifiers, identity, provenance` | `future-phase: reputation-engineering` | `observation` | `hub, open-ai.ru` | ❌ |
+| `ext-062` | [Stack Overflow Help — What's reputation?](https://stackoverflow.com/help/whats-reputation) | `docs` | `en` | `reputation-systems, community-trust, privileges, moderation` | `future-phase: reputation-engineering` | `observation` | `open-ai.ru` | ❌ |
+| `ext-063` | [Trustpilot — Trust Centre](https://corporate.trustpilot.com/trust) | `docs` | `en` | `reputation-systems, reviews, trustscore, consumer-trust` | `future-phase: reputation-engineering` | `observation` | `open-ai.ru` | ❌ |
+| `ext-064` | [X Community Notes — Note ranking algorithm](https://communitynotes.x.com/guide/en/under-the-hood/ranking-notes) | `docs` | `en` | `reputation-systems, collective-intelligence, ranking, disagreement-bridging` | `future-phase: reputation-engineering` | `observation` | `open-ai.ru` | ❌ |
+| `ext-065` | [OpenRank Documentation](https://docs.openrank.com/) | `docs` | `en` | `reputation-systems, decentralized-reputation, graph-ranking, eigentrust` | `future-phase: reputation-engineering` | `deprecated` | `open-ai.ru` | ❌ |
+| `ext-066` | [KuCoin — Decentralized Reputation Protocol OpenRank to Cease Operations](https://www.kucoin.com/news/flash/decentralized-reputation-protocol-openrank-to-cease-operations) | `blog` | `en` | `reputation-systems, postmortem, business-model, openrank` | `lesson: infrastructure-needs-workflow-anchor` | `observation` | `open-ai.ru` | ❌ |
 
 > 🔗 **Ссылки сознательно не загружаются автоматически.** Реестр — это карта, а
 > не зеркало контента. Скрапинг и кэширование первоисточников запрещены
