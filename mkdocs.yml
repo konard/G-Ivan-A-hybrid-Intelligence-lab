@@ -126,3 +126,10 @@ nav:
     - open-ai.ru:
       - Обзор: research/open-ai-ru/README.md
       - Архитектура репозитория и уровни L3-L4: research/open-ai-ru/2026-06-open-ai-ru-repository-architecture-and-l3-l4.md
+    - Репутационные технологии:
+      - Обзор: research/reputation-technologies/README.md
+      - Видение фаундера и фреймворк GRA (RU): research/reputation-technologies/2026-06-founders-vision-and-framework.ru.md
+      - Стандарт фреймворка (EN): research/reputation-technologies/2026-06-framework-standard.en.md
+      - White paper (EN): research/reputation-technologies/2026-06-white-paper.en.md
+      - Executive summary (RU + EN): research/reputation-technologies/2026-06-executive-summary.ru-en.md
+      - Словарь терминов (RU↔EN): research/reputation-technologies/2026-06-glossary.ru-en.md
