@@ -40,10 +40,9 @@ All notable repository governance changes are documented here.
   research-file naming variants (§22) and Part II sources (§23). Every variant
   carries either an international-practice link or an explicit "practice absent —
   variant theoretical" note. Part I is not rewritten (Anti-Inflation); the file
-  version bumps to 0.2. Also registered the artifact in the
-  `tools/validate-repository-structure.sh` active-file allow-list (a pre-existing
-  gap from issue #265: the file was tracked but never registered, so the
-  structure validator failed on it on `main`).
+  version bumps to 0.2. §22 records that the ecosystem has since adopted
+  date-first naming (issue #267) — i.e. its Variant A — while preserving the
+  objective variant analysis intact.
 - research: Декомпозиция осей, маршрутизация по исполнимости, правила форматов
   (предоставлены варианты) (issue #269). В
   `research/hub/2026-06-25-artifact-inventory-and-classification.md` дописана
@@ -63,10 +62,9 @@ All notable repository governance changes are documented here.
   источники Части II (§23). Каждый вариант сопровождается либо ссылкой на
   международную практику, либо явной пометкой «практика отсутствует — вариант
   теоретический». Часть I не переписывается (Anti-Inflation); версия файла
-  повышена до 0.2. Артефакт также зарегистрирован в allow-list активных файлов
-  `tools/validate-repository-structure.sh` (предсуществующий пробел из issue
-  #265: файл был под версионным контролем, но не зарегистрирован, из-за чего
-  структурная валидация падала на нём на `main`).
+  повышена до 0.2. §22 фиксирует, что экосистема с тех пор приняла date-first
+  именование (issue #267) — то есть его Вариант A — сохраняя объективный анализ
+  вариантов в неизменном виде.
 - governance: Ecosystem-wide date-first file naming for Hub research and spoke
   analysis/RFC/ADR artifacts (issue #267). Added
   `standards/file-naming-convention.md`, extended
