@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.12
+version: 1.13
 updated: 2026-06-25
 temperature: 0.1
 ---
@@ -13,13 +13,57 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: Axes decomposition, executability routing, format rules (variants
+  provided) (issue #269). Appended **Part II** (§16–§23) to
+  `research/hub/2026-06-artifact-inventory-and-classification.md` — a critical
+  `Research` extension that deliberately provides **objective, evidence-backed
+  variants instead of recommendations** (the choice is the founder's). It
+  registers all six problems without solutions (§16); gives variant axis sets
+  that split the conflated L0–L4 ladder into independent orthogonal axes, each
+  with level semantics, the classification task it solves, international-practice
+  examples and an admissibility criterion (§17); gives executability-type and
+  routing variants with placement principles (§18); gives "abstraction → format"
+  variants and the honest finding that no standard binds level to format —
+  format follows function (§19); gives 2+ evidenced variants for each key
+  catalog `governance/kb/standards/prompts/docs/runs` without adapting to the
+  current state (§20); verifies and confirms the `Depends On` = context
+  hypothesis and supplies wording variants for the contract (§21); gives
+  research-file naming variants (§22) and Part II sources (§23). Every variant
+  carries either an international-practice link or an explicit "practice absent —
+  variant theoretical" note. Part I is not rewritten (Anti-Inflation); the file
+  version bumps to 0.2. Also registered the artifact in the
+  `tools/validate-repository-structure.sh` active-file allow-list (a pre-existing
+  gap from issue #265: the file was tracked but never registered, so the
+  structure validator failed on it on `main`).
+- research: Декомпозиция осей, маршрутизация по исполнимости, правила форматов
+  (предоставлены варианты) (issue #269). В
+  `research/hub/2026-06-artifact-inventory-and-classification.md` дописана
+  **Часть II** (§16–§23) — критическое расширение в режиме `Research`, которое
+  намеренно даёт **объективные доказательные варианты вместо рекомендаций**
+  (выбор — за фаундером). Зафиксированы все шесть проблем без решений (§16);
+  даны варианты наборов осей, разделяющие смешанную лестницу L0–L4 на
+  независимые ортогональные оси (семантика уровней, решаемая задача
+  классификации, международная практика, критерий допустимости) (§17); даны
+  варианты типов исполнимости и правил маршрутизации с принципами размещения
+  (§18); даны варианты «уровень абстракции → формат» с честным выводом, что
+  стандарта, связывающего уровень с форматом, нет — формат следует функции
+  (§19); для каждого ключевого каталога `governance/kb/standards/prompts/docs/runs`
+  даны 2+ доказательных варианта без адаптации к текущему состоянию (§20);
+  проверена и подтверждена гипотеза «`Depends On` = контекст» с вариантами
+  формулировок контракта (§21); даны варианты именования research-файлов (§22) и
+  источники Части II (§23). Каждый вариант сопровождается либо ссылкой на
+  международную практику, либо явной пометкой «практика отсутствует — вариант
+  теоретический». Часть I не переписывается (Anti-Inflation); версия файла
+  повышена до 0.2. Артефакт также зарегистрирован в allow-list активных файлов
+  `tools/validate-repository-structure.sh` (предсуществующий пробел из issue
+  #265: файл был под версионным контролем, но не зарегистрирован, из-за чего
+  структурная валидация падала на нём на `main`).
 - governance: Ecosystem-wide date-first file naming for Hub research and spoke
   analysis/RFC/ADR artifacts (issue #267). Added
   `standards/file-naming-convention.md`, extended
   `standards/file-naming.md`, added `tools/validate-file-naming.sh`, wired the
   check into CI and spoke templates, and renamed chronological `research/`
   files to `YYYY-MM-name.md` or `YYYY-name.md` with links updated.
-
 - research: Artifact inventory and classification (mango_ba_prompts +
   hybrid-Intelligence-lab) (issue #265). Added
   `research/hub/2026-06-artifact-inventory-and-classification.md` — a full
