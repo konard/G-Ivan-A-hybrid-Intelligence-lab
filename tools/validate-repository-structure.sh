@@ -83,6 +83,7 @@ is_active_file() {
     research/external-knowledge/wigers-requirements-analysis-2026-06.md | \
     research/hub/user-prompts-analysis-2026-05.md | \
     research/hub/repository-structure-concept-2026-06.md | \
+    research/hub/artifact-inventory-and-classification-2026-06.md | \
     research/README.md | \
     research/hub/README.md | \
     research/mango/README.md | \
