@@ -200,6 +200,7 @@ is_active_file() {
     docs/project-summaries/open-ai-ru-context-Summary.md | \
     docs/project-summaries/clarify-engine-ai-context-Summary.md | \
     docs/audit/task-execution-audit-2026-06.md | \
+    docs/audit/2026-06-29-research-artifact-format-contract-audit.md | \
     guides/README.md | \
     guides/quick-start.md | \
     guides/init-spoke-repo.md | \
@@ -507,6 +508,7 @@ required_files=(
   "research/hub/2026-06-27-adr-industry-norms-and-variants.md"
   "research/hub/2026-06-28-ripple-effects-282-research.md"
   "research/hub/2026-06-28-research-analysis-audit-inventory.md"
+  "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
   "research/external-knowledge/2026-06-18-wigers-requirements-analysis.md"
   "research/mango/README.md"
   "research/governance/README.md"
@@ -729,6 +731,7 @@ require_text "CHANGELOG.md" "issue #241"
 require_text "CHANGELOG.md" "issue #240"
 require_text "CHANGELOG.md" "issue #278"
 require_text "CHANGELOG.md" "issue #288"
+require_text "CHANGELOG.md" "issue #290"
 require_text "CHANGELOG.md" "## [1.1] - 2026-05-26"
 require_text "CHANGELOG.md" "### Added"
 require_text "CHANGELOG.md" "### Changed"
@@ -737,6 +740,7 @@ require_text "mkdocs.yml" "2026-06-27-rfc-industry-norms-and-variants.md"
 require_text "mkdocs.yml" "2026-06-27-adr-industry-norms-and-variants.md"
 require_text "mkdocs.yml" "2026-06-28-ripple-effects-282-research.md"
 require_text "mkdocs.yml" "2026-06-28-research-analysis-audit-inventory.md"
+require_text "mkdocs.yml" "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "status: accepted"
@@ -1199,11 +1203,11 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.52"
+require_text "governance/artifact-map.md" "version: 1.53"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "governance/artifact-map.md" "updated: 2026-06-28"
+require_text "governance/artifact-map.md" "updated: 2026-06-29"
 require_text "governance/artifact-map.md" "temperature: 0.1"
 require_text "governance/artifact-map.md" "governance/agent-onboarding-protocol.md"
 require_text "governance/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -1240,6 +1244,7 @@ require_text "governance/artifact-map.md" "research/hub/2026-06-12-international
 require_text "governance/artifact-map.md" "research/hub/2026-06-27-rfc-industry-norms-and-variants.md"
 require_text "governance/artifact-map.md" "research/hub/2026-06-27-adr-industry-norms-and-variants.md"
 require_text "governance/artifact-map.md" "research/hub/2026-06-28-research-analysis-audit-inventory.md"
+require_text "governance/artifact-map.md" "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
 require_text "governance/artifact-map.md" "research/hub/exp-rfc-adr-industry-norms/"
 require_text "governance/artifact-map.md" "research/hub/exp-research-analysis-audit-288/"
 require_text "governance/artifact-map.md" "practices/README.md"
@@ -1560,6 +1565,18 @@ require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "Cla
 require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "Analysis -> RFC -> Standard"
 require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "2026-06-28-artifact-classification-matrix.md"
 require_text "research/hub/2026-06-28-research-analysis-audit-inventory.md" "не создаёт RFC"
+
+require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "status: draft"
+require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "version: 0.1"
+require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "updated: 2026-06-29"
+require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "temperature: 0.1"
+require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "type: audit"
+require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "issue #290"
+require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "standards/research-profile.md"
+require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "exp-<slug>/outputs/"
+require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "ADR-002"
+require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "runs/"
+require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "dual report + experiment model"
 
 require_text "research/hub/exp-research-analysis-audit-288/README.md" "status: draft"
 require_text "research/hub/exp-research-analysis-audit-288/README.md" "type: experiment"

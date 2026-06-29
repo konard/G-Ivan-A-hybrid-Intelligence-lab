@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.52
-updated: 2026-06-28
+version: 1.53
+updated: 2026-06-29
 temperature: 0.1
 ---
 
@@ -116,6 +116,7 @@ temperature: 0.1
 | `/templates/htom/CHANGELOG.md` | шаблон | — | Шаблон журнала HTOM-команды: каркас с секцией `## Unreleased` (Keep a Changelog). | ⚠️ По необходимости | `templates/htom/README.md` |
 | `/templates/htom/docs/adr/.gitkeep` | шаблон | — | Каркас каталога Architecture Decision Records HTOM-команды с поясняющим комментарием. | ⚠️ По необходимости | `templates/htom/AI_GOVERNANCE.md` |
 | `/templates/htom/docs/audit/.gitkeep` | шаблон | — | Каркас каталога аудитов и проверок соответствия HTOM-команды с поясняющим комментарием. | ⚠️ По необходимости | `templates/htom/AI_GOVERNANCE.md` |
+| `/docs/audit/2026-06-29-research-artifact-format-contract-audit.md` | аудит | — | Audit input для issue #290: источник `research/hub/exp-*` folders, дата первого применения, граница report file vs reproducible experiment corpus, unresolved `exp-<slug>/outputs/` vs ADR-002 `runs/` и рекомендация сохранить dual model до follow-up clarification. | ⚠️ По необходимости | `standards/research-profile.md`, `standards/file-naming.md`, `docs/adr/2026-06-adr-002-artifact-document-methodology.md`, `research/hub/README.md` |
 | `/templates/htom/.github/ISSUE_TEMPLATE/task.md` | шаблон | — | Structured Markdown-шаблон задачи HTOM-команды: Мета, Контекст, Артефакты, ограничения, AI-agent specifics и Готово когда. | ⚠️ По необходимости | `standards/issue-workflow.md`, `.github/ISSUE_TEMPLATE/task.md`, `.github/ISSUE_TEMPLATE/task.yml` |
 | `/templates/htom/.github/ISSUE_TEMPLATE/task-creative.md` | шаблон | — | Creative Markdown-шаблон задачи HTOM-команды: цель, НФТ, свобода исполнителя, hard constraints и запись обоснованного обхода рекомендаций. | ⚠️ По необходимости | `standards/issue-workflow.md`, `.github/ISSUE_TEMPLATE/task-creative.md`, `templates/htom/AI_GOVERNANCE.md` |
 | `/templates/htom/tools/validate-repository-structure.sh` | шаблон | — | Минимальный валидатор структуры HTOM-команды ("иммунная система"): проверяет базовые артефакты, оба task template и предупреждает о `research/` и незаменённых плейсхолдерах. | ⚠️ По необходимости | `templates/htom/AI_GOVERNANCE.md`, `tools/validate-repository-structure.sh` |

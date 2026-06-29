@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.19
-updated: 2026-06-28
+version: 1.20
+updated: 2026-06-29
 temperature: 0.1
 source: research/README-old.md
 ---
