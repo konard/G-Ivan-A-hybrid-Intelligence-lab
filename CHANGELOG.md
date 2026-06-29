@@ -28,8 +28,8 @@ All notable repository governance changes are documented here.
 
 ### Added
 
-- research: Format-contract audit for issue #290. Added
-  `research/hub/2026-06-29-research-artifact-format-contract-audit.md` to trace
+- audit: Format-contract audit for issue #290. Added
+  `docs/audit/2026-06-29-research-artifact-format-contract-audit.md` to trace
   the source of `research/hub/exp-*` folders, distinguish report Markdown files
   from reproducible experiment corpora, identify the unresolved
   `exp-<slug>/outputs/` vs ADR-002 `runs/` boundary, and recommend preserving the

@@ -3,8 +3,8 @@ status: draft
 version: 0.1
 updated: 2026-06-29
 temperature: 0.1
-type: internal-analysis
-context: [hub, research, artifacts, experiments, governance]
+type: audit
+context: [hub, research, audit, artifacts, experiments, governance]
 method: manual-review
 ---
 

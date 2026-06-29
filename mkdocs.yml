@@ -9,8 +9,8 @@ repo_name: G-Ivan-A/hybrid-Intelligence-lab
 # Контент собран в служебном каталоге website/ через символические ссылки на
 # docs/, guides/ и research/. Это держит Markdown-ссылки валидными для GitHub,
 # валидатора структуры и собранного сайта без сторонних плагинов-агрегаторов.
-# Область публикации — только guides/ и research/ (+ продуктовые docs/vision,
-# docs/product-concept и docs/ecosystem-map). governance/ и standards/
+# Область публикации — только guides/, research/ и выбранные docs/ страницы
+# (product concept, ecosystem map, audits). governance/ и standards/
 # намеренно НЕ публикуются.
 docs_dir: website
 
@@ -77,6 +77,8 @@ nav:
     - Vision: docs/vision.md
     - Concept: docs/product-concept.md
     - Ecosystem Map: docs/ecosystem-map.md
+  - Аудиты:
+    - "Research artifact format: audit": docs/audit/2026-06-29-research-artifact-format-contract-audit.md
   - Гайды:
     - Обзор: guides/README.md
     - Быстрый старт: guides/quick-start.md
@@ -109,7 +111,6 @@ nav:
       - "ADR: индустриальные нормы и варианты": research/hub/2026-06-27-adr-industry-norms-and-variants.md
       - "Ripple Effects 282: варианты миграции": research/hub/2026-06-28-ripple-effects-282-research.md
       - "Research / Analysis / Audit: инвентаризация": research/hub/2026-06-28-research-analysis-audit-inventory.md
-      - "Research artifact format: audit": research/hub/2026-06-29-research-artifact-format-contract-audit.md
       - Ретроспектива AI-коллаборации: research/hub/2026-06-02-ai-collaboration-retrospective.md
       - Ретроспектива миграции Mango: research/hub/2026-06-02-ai-collaboration-retrospective-mango-migration.md
     - Governance:
