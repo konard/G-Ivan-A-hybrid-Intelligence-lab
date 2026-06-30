@@ -79,6 +79,8 @@ nav:
     - Ecosystem Map: docs/ecosystem-map.md
   - Аудиты:
     - "Research artifact format: audit": docs/audit/2026-06-29-research-artifact-format-contract-audit.md
+  - Анализы:
+    - "Backlog and artifact changes": docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md
   - Гайды:
     - Обзор: guides/README.md
     - Быстрый старт: guides/quick-start.md

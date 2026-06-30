@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.21
+version: 1.22
 updated: 2026-06-30
 temperature: 0.1
 ---
@@ -28,6 +28,12 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- analysis: Added `docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md`
+  for issue #297. The report confirms backlog role overload and the missing
+  tiered amendment policy, compares native tracker, sprint backlog, small-change
+  review, ADR/RFC and ITIL-style change-class practices, and records follow-up
+  recommendations without changing `governance/backlog.md` or creating new
+  RFC/ADR/standard artifacts.
 - backlog: Added the issue #294 sprint to `governance/backlog.md` as tasks
   B-016..B-023. The sprint traces to issues #288 and #290, defines the
   dependency chain `RFC -> ADR -> standard -> ADR-002 addendum -> glossary ->

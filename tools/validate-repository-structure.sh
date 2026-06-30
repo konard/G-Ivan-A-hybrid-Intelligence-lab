@@ -233,6 +233,7 @@ is_active_file() {
     templates/htom/CHANGELOG.md | \
     templates/htom/docs/adr/.gitkeep | \
     templates/htom/docs/audit/.gitkeep | \
+    docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -438,6 +439,7 @@ validate_template_placeholders() {
 required_directories=(
   ".github/ISSUE_TEMPLATE"
   "docs"
+  "docs/analysis"
   "docs/adr"
   "templates"
   "templates/htom"
@@ -476,6 +478,7 @@ required_files=(
   "LICENSE"
   "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
   "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
+  "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
   "standards/README.md"
   "standards/frontmatter-standard.md"
   "standards/file-naming.md"
@@ -734,6 +737,7 @@ require_text "CHANGELOG.md" "issue #240"
 require_text "CHANGELOG.md" "issue #278"
 require_text "CHANGELOG.md" "issue #288"
 require_text "CHANGELOG.md" "issue #290"
+require_text "CHANGELOG.md" "issue #297"
 require_text "CHANGELOG.md" "## [1.1] - 2026-05-26"
 require_text "CHANGELOG.md" "### Added"
 require_text "CHANGELOG.md" "### Changed"
@@ -743,6 +747,7 @@ require_text "mkdocs.yml" "2026-06-27-adr-industry-norms-and-variants.md"
 require_text "mkdocs.yml" "2026-06-28-ripple-effects-282-research.md"
 require_text "mkdocs.yml" "2026-06-28-research-analysis-audit-inventory.md"
 require_text "mkdocs.yml" "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
+require_text "mkdocs.yml" "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "status: accepted"
@@ -1205,11 +1210,11 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.53"
+require_text "governance/artifact-map.md" "version: 1.54"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "governance/artifact-map.md" "updated: 2026-06-29"
+require_text "governance/artifact-map.md" "updated: 2026-06-30"
 require_text "governance/artifact-map.md" "temperature: 0.1"
 require_text "governance/artifact-map.md" "governance/agent-onboarding-protocol.md"
 require_text "governance/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
