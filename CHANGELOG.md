@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.23
+version: 1.24
 updated: 2026-06-30
 temperature: 0.1
 ---
@@ -28,6 +28,8 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- chore: Добавлена задача B-038 в бэклог (Reports inventory). Источник: видение
+  фаундера §3, согласование в чате 2026-07-01.
 - rfc: Added `governance/rfc/2026-06-30-rfc-research-structure.md` for issue #302
   (backlog B-016). The RFC proposes the base research-structure contract: a single
   `research/<domain>/exp/<issue-slug>/` evidence container, a ban on the nested
