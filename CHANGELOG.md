@@ -28,6 +28,12 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- analysis: Added `docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md`
+  for issue #297. The report confirms backlog role overload and the missing
+  tiered amendment policy, compares native tracker, sprint backlog, small-change
+  review, ADR/RFC and ITIL-style change-class practices, and records follow-up
+  recommendations without changing `governance/backlog.md` or creating new
+  RFC/ADR/standard artifacts.
 - backlog: Added the issue #296 Analysis and Audit standardization sprints to
   `governance/backlog.md` as tasks B-024..B-033, with five stages each:
   current-state analysis, RFC, ADR, standard and post-standard cleanup. Added
