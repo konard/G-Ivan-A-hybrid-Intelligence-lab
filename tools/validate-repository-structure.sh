@@ -47,7 +47,7 @@ is_active_file() {
     AI_PROJECT_CONTEXT-Summary.md | \
     CHANGELOG.md | \
     LICENSE | \
-    reports/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md | \
+    docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md | \
     docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md | \
     docs/adr/2026-06-adr-002-artifact-document-methodology.md | \
     standards/README.md | \
@@ -449,6 +449,7 @@ required_directories=(
   "docs"
   "docs/analysis"
   "docs/adr"
+  "docs/report"
   "templates"
   "templates/htom"
   "templates/htom/docs/adr"
@@ -487,6 +488,7 @@ required_files=(
   "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
   "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
   "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
+  "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
   "standards/README.md"
   "standards/frontmatter-standard.md"
   "standards/file-naming.md"
@@ -700,11 +702,11 @@ require_text "CONCEPT.md" "единой терминологии"
 require_text "CONTRIBUTING.md" "AI_GOVERNANCE.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
 require_text "CONTRIBUTING.md" "status: canonical"
-require_text "CONTRIBUTING.md" "version: 1.7"
+require_text "CONTRIBUTING.md" "version: 1.8"
 require_text "CONTRIBUTING.md" "Консолидация открытых вопросов"
 require_text "CONTRIBUTING.md" "Работа с внешними источниками"
 require_text "CONTRIBUTING.md" "governance/backlog.md"
-require_text "CONTRIBUTING.md" "updated: 2026-06-25"
+require_text "CONTRIBUTING.md" "updated: 2026-07-01"
 require_text "CONTRIBUTING.md" "temperature: 0.1"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task.md"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task-creative.md"
@@ -752,6 +754,7 @@ require_text "CHANGELOG.md" "issue #278"
 require_text "CHANGELOG.md" "issue #288"
 require_text "CHANGELOG.md" "issue #290"
 require_text "CHANGELOG.md" "issue #297"
+require_text "CHANGELOG.md" "issue #311"
 require_text "CHANGELOG.md" "## [1.1] - 2026-05-26"
 require_text "CHANGELOG.md" "### Added"
 require_text "CHANGELOG.md" "### Changed"
@@ -762,13 +765,14 @@ require_text "mkdocs.yml" "2026-06-28-ripple-effects-282-research.md"
 require_text "mkdocs.yml" "2026-06-28-research-analysis-audit-inventory.md"
 require_text "mkdocs.yml" "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
 require_text "mkdocs.yml" "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
+require_text "mkdocs.yml" "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
 require_text "mkdocs.yml" "2026-06-30-reports-industry-norms-and-standardization-scope.md"
 require_text "mkdocs.yml" "2026-07-01-reports-artifacts-inventory.md"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "status: accepted"
-require_text "standards/README.md" "version: 1.5"
-require_text "standards/README.md" "updated: 2026-06-28"
+require_text "standards/README.md" "version: 1.6"
+require_text "standards/README.md" "updated: 2026-07-01"
 require_text "standards/README.md" "temperature: 0.1"
 require_text "standards/README.md" "owner: G-Ivan-A"
 require_text "standards/README.md" "Как пользоваться"
@@ -806,8 +810,8 @@ require_text "standards/frontmatter-standard.md" '`ai-generated` **ЗАПРЕЩ�
 require_text "standards/frontmatter-standard.md" "NIST AI Risk Management Framework"
 
 require_text "standards/frontmatter-docs-standard.md" "status: accepted"
-require_text "standards/frontmatter-docs-standard.md" "version: 1.1"
-require_text "standards/frontmatter-docs-standard.md" "updated: 2026-06-28"
+require_text "standards/frontmatter-docs-standard.md" "version: 1.2"
+require_text "standards/frontmatter-docs-standard.md" "updated: 2026-07-01"
 require_text "standards/frontmatter-docs-standard.md" "temperature: 0.1"
 require_text "standards/frontmatter-docs-standard.md" "owner: G-Ivan-A"
 require_text "standards/frontmatter-docs-standard.md" "standards/frontmatter-standard.md"
@@ -832,7 +836,7 @@ require_text "standards/rfc-structure-standard.md" "rfc-scope"
 require_text "standards/rfc-structure-standard.md" "Open Questions"
 require_text "governance/rfc/2026-06-30-rfc-research-structure.md" "## Матрица дельт A/B/C/D"
 require_text "governance/rfc/2026-06-30-rfc-research-structure.md" "## Boundary RFC/ADR"
-require_text "reports/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "Ошибка генерации RFC не подтверждена"
+require_text "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "Ошибка генерации RFC не подтверждена"
 
 require_text "standards/executable-documentation-standard.md" "status: accepted"
 require_text "standards/executable-documentation-standard.md" "version: 1.2"
@@ -925,8 +929,8 @@ require_text "standards/issue-workflow.md" "governance/artifact-map.md"
 require_text "standards/issue-workflow.md" "validate-frontmatter.sh"
 require_text "standards/issue-workflow.md" "validate-repository-structure.sh"
 require_text "standards/file-naming.md" "status: accepted"
-require_text "standards/file-naming.md" "version: 1.6"
-require_text "standards/file-naming.md" "updated: 2026-06-25"
+require_text "standards/file-naming.md" "version: 1.7"
+require_text "standards/file-naming.md" "updated: 2026-07-01"
 require_text "standards/file-naming.md" "Корень репозитория"
 require_text "standards/file-naming.md" "UPPERCASE_WITH_HYPHENS.md"
 require_text "standards/file-naming.md" "Вложенные каталоги"
@@ -946,14 +950,16 @@ require_text "standards/file-naming.md" "ISO 8601: YYYY-MM-DD"
 require_text "standards/file-naming.md" "Хронологические артефакты"
 require_text "standards/file-naming.md" "YYYY-MM-DD-name.md"
 require_text "standards/file-naming.md" "YYYY-MM-adr-NNN-name.md"
+require_text "standards/file-naming.md" "docs/report/"
 require_text "standards/file-naming.md" "tools/validate-file-naming.sh"
 
 require_text "standards/file-naming-convention.md" "status: accepted"
-require_text "standards/file-naming-convention.md" "version: 1.1"
-require_text "standards/file-naming-convention.md" "updated: 2026-06-25"
+require_text "standards/file-naming-convention.md" "version: 1.2"
+require_text "standards/file-naming-convention.md" "updated: 2026-07-01"
 require_text "standards/file-naming-convention.md" "file-naming.md"
 require_text "standards/file-naming-convention.md" "YYYY-MM-DD-name.md"
 require_text "standards/file-naming-convention.md" "YYYY-MM-adr-NNN-name.md"
+require_text "standards/file-naming-convention.md" "docs/report/"
 require_text "standards/file-naming-convention.md" "./tools/validate-file-naming.sh"
 
 require_text "standards/research-profile.md" "status: accepted"
@@ -1274,6 +1280,7 @@ require_text "governance/artifact-map.md" "research/hub/2026-06-27-adr-industry-
 require_text "governance/artifact-map.md" "research/hub/2026-06-28-research-analysis-audit-inventory.md"
 require_text "governance/artifact-map.md" "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md"
 require_text "governance/artifact-map.md" "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
+require_text "governance/artifact-map.md" "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
 require_text "governance/artifact-map.md" "research/hub/exp-rfc-adr-industry-norms/"
 require_text "governance/artifact-map.md" "research/hub/exp-research-analysis-audit-288/"
 require_text "governance/artifact-map.md" "research/hub/exp-reports-inventory-310/"
@@ -1648,6 +1655,15 @@ require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" 
 require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "ADR-002"
 require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "runs/"
 require_text "docs/audit/2026-06-29-research-artifact-format-contract-audit.md" "dual report + experiment model"
+
+require_text "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "status: draft"
+require_text "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "version: 0.1"
+require_text "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "updated: 2026-06-30"
+require_text "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "temperature: 0.1"
+require_text "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "owner: G-Ivan-A"
+require_text "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "type: report"
+require_text "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "context: [hub, rfc, review, pr-303, hypothesis-analysis]"
+require_text "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "method: hypothesis-testing"
 
 require_text "research/hub/exp-research-analysis-audit-288/README.md" "status: draft"
 require_text "research/hub/exp-research-analysis-audit-288/README.md" "type: experiment"
@@ -2041,6 +2057,7 @@ require_text "templates/spoke/.github/workflows/ci.yml" "pull_request"
 require_text "templates/spoke/.github/workflows/ci.yml" "Validate documentation file naming"
 require_text "templates/spoke/tools/validate-file-naming.sh" "docs/analysis"
 require_text "templates/spoke/tools/validate-file-naming.sh" "YYYY-MM-DD-name.md"
+require_text "tools/validate-file-naming.sh" "docs/report"
 
 # Smart Sync infrastructure (issue #207): auto-generated manifest + registry +
 # generator + sync CLI. manifest.json must never be hand-edited.
@@ -2095,6 +2112,10 @@ fi
 
 if [[ -e tests/validate-repository-structure.sh ]]; then
   fail "active tests/validate-repository-structure.sh should move to tools/"
+fi
+
+if [[ -e reports ]]; then
+  fail "root reports/ directory is not canonical; use docs/report/"
 fi
 
 if [[ "$failures" -gt 0 ]]; then

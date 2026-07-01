@@ -13,10 +13,19 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+<<<<<<< issue-310-9572ad686999
 - backlog: Moved B-038 (Reports inventory and boundaries) from TODO to review,
   linked issue #310 and PR #312, and recorded the unresolved Reports path
   spelling decision (`docs/report/` vs `docs/reports/` vs current
   `reports/report/`) as a blocker for physical migration.
+=======
+- chore: Перенесён report по гипотезе PR #303 из корневого
+  `reports/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md` в canonical
+  `docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md` по issue #311.
+  Добавлен frontmatter `owner`, `type`, `context`, `method`, source и related
+  links; корневой каталог `reports/` удалён; registry, MkDocs navigation,
+  file-naming/frontmatter validators and standards updated for `docs/report/`.
+>>>>>>> main
 - rfc: Уточнен `governance/rfc/2026-06-30-rfc-research-structure.md` по issue
   #306: добавлены явная матрица дельт A/B/C/D и таблица Boundary RFC/ADR для
   подготовки к ADR B-017. Ошибка генерации PR #303 не подтверждена; гипотеза
@@ -62,7 +71,7 @@ All notable repository governance changes are documented here.
   `research/external-knowledge/external-sources-registry.md` and the structure
   validator. Stays research-only: it does not create a Reports standard, does not
   inventory current reports and does not change directory structure.
-- report: Added `reports/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md`
+- report: Added `docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md`
   for issue #306 with a critical analysis of the attached PR #303 hypothesis,
   the no-generation-error conclusion, the confirmed minor RFC gaps and the
   applied remediation.
