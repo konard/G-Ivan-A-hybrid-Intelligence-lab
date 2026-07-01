@@ -57,6 +57,7 @@ is_active_file() {
     standards/file-naming.md | \
     standards/file-naming-convention.md | \
     standards/research-profile.md | \
+    standards/research-standard.md | \
     standards/glossary.md | \
     standards/education-profile.md | \
     standards/product-profile.md | \
@@ -498,6 +499,7 @@ required_files=(
   "standards/file-naming.md"
   "standards/file-naming-convention.md"
   "standards/research-profile.md"
+  "standards/research-standard.md"
   "standards/glossary.md"
   "standards/education-profile.md"
   "standards/product-profile.md"
@@ -775,7 +777,7 @@ require_text "mkdocs.yml" "2026-06-30-reports-industry-norms-and-standardization
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "status: accepted"
-require_text "standards/README.md" "version: 1.6"
+require_text "standards/README.md" "version: 1.7"
 require_text "standards/README.md" "updated: 2026-07-01"
 require_text "standards/README.md" "temperature: 0.1"
 require_text "standards/README.md" "owner: G-Ivan-A"
@@ -784,6 +786,7 @@ require_text "standards/README.md" "frontmatter-standard.md"
 require_text "standards/README.md" "file-naming.md"
 require_text "standards/README.md" "file-naming-convention.md"
 require_text "standards/README.md" "research-profile.md"
+require_text "standards/README.md" "research-standard.md"
 require_text "standards/README.md" "team-contract.md"
 require_text "standards/README.md" "standards/glossary.md"
 require_text "standards/README.md" "standards/education-profile.md"
@@ -838,6 +841,13 @@ require_text "standards/rfc-structure-standard.md" "owner: G-Ivan-A"
 require_text "standards/rfc-structure-standard.md" "frontmatter-docs-standard.md"
 require_text "standards/rfc-structure-standard.md" "rfc-scope"
 require_text "standards/rfc-structure-standard.md" "Open Questions"
+
+require_text "standards/research-standard.md" "status: accepted"
+require_text "standards/research-standard.md" "owner: G-Ivan-A"
+require_text "standards/research-standard.md" "frontmatter-docs-standard.md"
+require_text "standards/research-standard.md" "exp/<issue-slug>"
+require_text "standards/research-standard.md" "запрет"
+require_text "standards/research-standard.md" "Research / Analysis / Audit"
 require_text "governance/rfc/2026-06-30-rfc-research-structure.md" "## Матрица дельт A/B/C/D"
 require_text "governance/rfc/2026-06-30-rfc-research-structure.md" "## Boundary RFC/ADR"
 require_text "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "Ошибка генерации RFC не подтверждена"
@@ -1239,7 +1249,7 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.56"
+require_text "governance/artifact-map.md" "version: 1.57"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1529,7 +1539,7 @@ require_text "governance/session-digests.md" "governance/backlog.md"
 reject_text "governance/session-digests.md" "Конард"
 
 require_text "governance/backlog.md" "status: canonical"
-require_text "governance/backlog.md" "version: 1.11"
+require_text "governance/backlog.md" "version: 1.12"
 require_text "governance/backlog.md" "type: backlog"
 require_text "governance/backlog.md" "standards/glossary.md"
 require_text "governance/backlog.md" "## Открытые вопросы"
