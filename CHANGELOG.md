@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.25
-updated: 2026-06-30
+version: 1.26
+updated: 2026-07-01
 temperature: 0.1
 ---
 
@@ -13,6 +13,10 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- backlog: Moved B-038 (Reports inventory and boundaries) from TODO to review,
+  linked issue #310 and PR #312, and recorded the unresolved Reports path
+  spelling decision (`docs/report/` vs `docs/reports/` vs current
+  `reports/report/`) as a blocker for physical migration.
 - rfc: Уточнен `governance/rfc/2026-06-30-rfc-research-structure.md` по issue
   #306: добавлены явная матрица дельт A/B/C/D и таблица Boundary RFC/ADR для
   подготовки к ADR B-017. Ошибка генерации PR #303 не подтверждена; гипотеза
@@ -32,6 +36,16 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- analysis: Added `research/hub/2026-07-01-reports-artifacts-inventory.md` for
+  issue #310 (backlog B-038) plus the reproducible evidence package
+  `research/hub/exp-reports-inventory-310/`. The inventory scans Hub, Mango and
+  Clarify at fixed SHAs, classifies 47 Reports candidates by actual subtype
+  (`audit`, `report`, `statistics`) and relation (`output-for-audit`,
+  `output-for-analysis`, `standalone-report`), identifies path drift,
+  substitutions, duplicate-review candidates and modernization candidates, and
+  confirms Variant C scope: one base Report standard with light subtype profiles.
+  The change intentionally does not create a Reports standard, does not move or
+  rename files, and does not change directory structure.
 - research: Added
   `research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md`
   for issue #307 (backlog B-038). Source-backed industry benchmark of how
