@@ -66,6 +66,7 @@ is_active_file() {
     standards/file-naming-convention.md | \
     standards/research-standard.md | \
     standards/report-standard.md | \
+    standards/audit-standard.md | \
     standards/glossary.md | \
     standards/education-profile.md | \
     standards/product-profile.md | \
@@ -533,6 +534,7 @@ required_files=(
   "standards/file-naming-convention.md"
   "standards/research-standard.md"
   "standards/report-standard.md"
+  "standards/audit-standard.md"
   "standards/glossary.md"
   "standards/education-profile.md"
   "standards/product-profile.md"
@@ -841,6 +843,7 @@ require_text "standards/README.md" "file-naming.md"
 require_text "standards/README.md" "file-naming-convention.md"
 require_text "standards/README.md" "research-standard.md"
 require_text "standards/README.md" "report-standard.md"
+require_text "standards/README.md" "audit-standard.md"
 require_text "standards/README.md" "team-contract.md"
 require_text "standards/README.md" "standards/glossary.md"
 require_text "standards/README.md" "standards/education-profile.md"
@@ -909,6 +912,15 @@ require_text "standards/report-standard.md" "report-subtype"
 require_text "standards/report-standard.md" "Subtype Profiles"
 require_text "standards/report-standard.md" "docs/report/"
 require_text "standards/report-standard.md" "docs/audit/"
+require_text "standards/audit-standard.md" "status: draft"
+require_text "standards/audit-standard.md" "owner: G-Ivan-A"
+require_text "standards/audit-standard.md" "frontmatter-docs-standard.md"
+require_text "standards/audit-standard.md" "4-компонентная модель"
+require_text "standards/audit-standard.md" "audit_target"
+require_text "standards/audit-standard.md" "evidence_model"
+require_text "standards/audit-standard.md" "verdict"
+require_text "standards/audit-standard.md" "docs/audit/"
+require_text "standards/audit-standard.md" "Audit-процесс vs audit-report output"
 require_text "docs/adr/2026-06-adr-002-artifact-document-methodology.md" "version: 1.4"
 require_text "docs/adr/2026-06-adr-002-artifact-document-methodology.md" "updated: 2026-07-02"
 require_text "docs/adr/2026-06-adr-002-artifact-document-methodology.md" '## Addendum B-019: граница `exp/` vs `runs/`'
