@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.34
+version: 1.35
 updated: 2026-07-02
 temperature: 0.1
 ---
@@ -13,6 +13,25 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- analysis: Added `docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md`
+  for issue #344 (B-029). The report uses the B-024 matrix as input, reviews 29
+  Audit candidates across Hub, Mango and Clarify at fixed artifact snapshots,
+  and records for each artifact the compliance target, Audit process/report
+  boundary, evidence model, deviation handling and B-033 modernization
+  candidate. It identifies masked Audit artifacts in `docs/analysis/` and legacy
+  `research/`/`governance/` paths, clarifies Audit ↔ Research ↔ Analysis ↔
+  Report boundaries, and intentionally does not repeat the B-024 scan, does not
+  create an RFC/ADR/Standard, and does not move files.
+- analysis: Added `docs/analysis/2026-07-02-analysis-artifacts-inventory.md`
+  for issue #342 (B-024) plus the reproducible evidence package
+  `research/hub/exp/analysis-inventory-342/`. The inventory scans Hub, Mango and
+  Clarify at fixed SHAs, classifies 186 text artifacts by actual type
+  (Research / Analysis / Audit / Report / RFC / ADR / Other), identifies masked
+  `docs/analysis/` artifacts in Mango and Clarify, records boundaries Analysis ↔
+  Research ↔ Audit ↔ Report, and lists duplicate-review/modernization
+  candidates for B-028. The change intentionally does not create an Analysis
+  standard, does not create an RFC, does not move files, and does not clean up
+  existing artifacts.
 - adr: Создан `docs/adr/2026-07-adr-004-reports-structure.md` — accepted ADR
   для B-042 / issue #338. ADR фиксирует human decision по RFC B-041: принят
   Вариант C (базовый стандарт Report + лёгкие профили `audit`/`report`/
