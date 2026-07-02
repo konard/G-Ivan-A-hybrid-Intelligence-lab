@@ -14,7 +14,7 @@ All notable repository governance changes are documented here.
 ### Added
 
 - research: Создан `research/hub/2026-07-02-task-execution-modes-research.md` —
-  research-отчёт по режимам выполнения задач для ИИ-агентов (B-041, issue #330)
+  research-отчёт по режимам выполнения задач для ИИ-агентов (B-045, issue #330)
   в режиме `Research` + `Creative` + `Deep Think` от лица 4 экспертов
   (промпт-инженер, архитектор ИИ-агентов, исследователь таксономий, инженер
   процессов). Фаза 1: индустриальные нормы (Anthropic/OpenAI prompt-eng, CoT,
@@ -35,6 +35,26 @@ All notable repository governance changes are documented here.
   внешний источник (`ext-137`…`ext-157`) добавлен в
   `research/external-knowledge/external-sources-registry.md`; задача B-041 в
   `governance/backlog.md` со статусом review.
+- rfc: Создан `governance/rfc/2026-07-02-rfc-reports-structure.md` — Draft RFC
+  структуры Reports-артефактов (B-041, issue #328). Режим Hybrid: каркас — из
+  `standards/rfc-structure-standard.md`, креативная часть (формулировки
+  предложения, альтернативы, trade-offs) — авторская в рамках входных данных
+  инвентаризации B-038 и Research industry norms. Предлагает **Вариант C**: единый
+  базовый стандарт Report + лёгкие профили подтипов (`audit`/`report`/`statistics`)
+  как секции («A сейчас, B потом» с явным Trigger B против инфляции артефактов);
+  канонический routing `docs/report/` (единственное число) с флагом реконсиляции
+  дрейфа ADR-002 `docs/reports/` для будущего ADR (B-042); frontmatter Reports с
+  relation-метаданными (`based_on`/`source`/`scope`/`supersedes`/`related_artifacts`).
+  Зафиксированы 4 альтернативы (A плоский единый стандарт — отклонён; B три
+  независимых стандарта — отклонён; C базовый + профили — рекомендован; D Reports
+  как подтип Analysis — отклонён) с rationale и trade-offs, а также границы
+  Reports ↔ Analysis ↔ Audit ↔ Research evidence (через ссылки/cite, без
+  дублирования Research benchmark-норм и Analysis-инвентаря 47 кандидатов). RFC
+  только ПРЕДЛАГАЕТ: decision gate вынесен человеку (будущий ADR B-042),
+  обязательная норма делегирована в будущий `standards/report-standard.md` (B-043),
+  физическая миграция — в B-044. Зарегистрирован в `governance/artifact-map.md`,
+  `governance/rfc/README.md` и структурном валидаторе; задачи B-041..B-044
+  добавлены в `governance/backlog.md` (B-041 — статус review).
 
 - audit: Создан `docs/audit/2026-07-01-documentation-boundary-audit.md` — аудит
   коллизий интерпретации стандартов RFC/ADR/Standard (B-039, issue #320). Аудит
@@ -78,6 +98,16 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- adr: Добавлен addendum B-019 к
+  `docs/adr/2026-06-adr-002-artifact-document-methodology.md` по issue #326.
+  ADR-002 теперь явно фиксирует границу `research/<domain>/exp/<issue-slug>/`
+  (research evidence corpus, всегда связан с parent dated report) vs `runs/`
+  (operational run record, не обязан быть связан с research), включает
+  нормативный критерий «один вопрос исполнителю» и ссылается на ADR-003 как
+  источник решения и RFC B-016 как источник rationale. Routing-таблица ADR-002
+  сохранена без конфликта: строка `Run record` остаётся правилом для
+  operational records, а research evidence routing делегирован
+  `standards/research-standard.md`.
 - adr + standard: Приняты ADR-003 и RFC B-016 по issue #322 / PR #323. Устранены
   причинные дефекты F-01/F-07/F-07-parallel/F-08 из audit B-039: три structure
   standards больше не смешивают Standard и Contract; ADR standard получил
@@ -86,6 +116,17 @@ All notable repository governance changes are documented here.
   обновления `Decision record` / `Implementation link`; backlog, artifact-map,
   RFC index and CHANGELOG приведены к accepted/status и glossary-aligned
   terminology.
+- chore: Исправлены точечные последствия audit B-039 по issue #324 после
+  acceptance issue #322. RFC B-016 сохраняет `status: accepted`, `version: 0.3`
+  и `updated: 2026-07-02`; forward-refs `not yet — будущий` заменены
+  фактическими ссылками на ADR-003 и `standards/research-standard.md`. ADR-003
+  сохраняет `status: accepted` и `version: 0.3`; пометка `будущий` у
+  `standards/research-standard.md` убрана. Supersession профиля разграничена:
+  ADR фиксирует human decision, `standards/research-standard.md` задаёт
+  technical replacement, физическое удаление профиля остаётся B-021.
+  `standards/research-standard.md` переведён с `version: 1.1` на draft-aligned
+  `version: 0.1`; `governance/artifact-map.md` синхронизирован с новой
+  формулировкой replacement.
 - adr: Устранено дублирование RFC B-016 в `docs/adr/2026-07-adr-003-research-structure.md`
   по issue #316 (версия ADR `0.1` → `0.2`, решение и статус `proposed` не
   изменены). Секция `Decision` больше не пересказывает Proposal P1–P4, а кратко

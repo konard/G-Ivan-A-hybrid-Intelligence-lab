@@ -209,6 +209,7 @@ is_active_file() {
     governance/rfc/2026-06-27-rfc-adr-standard.md | \
     governance/rfc/2026-06-27-rfc-rfc-standard.md | \
     governance/rfc/2026-06-30-rfc-research-structure.md | \
+    governance/rfc/2026-07-02-rfc-reports-structure.md | \
     research/mango/2026-06-18-requirements-engineering-ai-era.md | \
     research/mango/2026-06-18-ai-classifications-formalization.md | \
     research/mango/2026-06-19-repository-structure-vision.md | \
@@ -783,6 +784,7 @@ require_text "CHANGELOG.md" "issue #288"
 require_text "CHANGELOG.md" "issue #290"
 require_text "CHANGELOG.md" "issue #297"
 require_text "CHANGELOG.md" "issue #311"
+require_text "CHANGELOG.md" "issue #326"
 require_text "CHANGELOG.md" "## [1.1] - 2026-05-26"
 require_text "CHANGELOG.md" "### Added"
 require_text "CHANGELOG.md" "### Changed"
@@ -872,8 +874,17 @@ require_text "standards/research-standard.md" "frontmatter-docs-standard.md"
 require_text "standards/research-standard.md" "exp/<issue-slug>"
 require_text "standards/research-standard.md" "запрет"
 require_text "standards/research-standard.md" "Research / Analysis / Audit"
+require_text "docs/adr/2026-06-adr-002-artifact-document-methodology.md" "version: 1.2"
+require_text "docs/adr/2026-06-adr-002-artifact-document-methodology.md" "updated: 2026-07-02"
+require_text "docs/adr/2026-06-adr-002-artifact-document-methodology.md" '## Addendum B-019: граница `exp/` vs `runs/`'
+require_text "docs/adr/2026-06-adr-002-artifact-document-methodology.md" "research/<domain>/exp/<issue-slug>/"
+require_text "docs/adr/2026-06-adr-002-artifact-document-methodology.md" "операционной/бизнес-задачи или pipeline"
+require_text "docs/adr/2026-06-adr-002-artifact-document-methodology.md" "ADR-003"
+require_text "docs/adr/2026-06-adr-002-artifact-document-methodology.md" "RFC B-016"
 require_text "governance/rfc/2026-06-30-rfc-research-structure.md" "## Матрица дельт A/B/C/D"
 require_text "governance/rfc/2026-06-30-rfc-research-structure.md" "## Boundary RFC/ADR"
+require_text "governance/rfc/2026-07-02-rfc-reports-structure.md" "## Матрица дельт A/B/C/D"
+require_text "governance/rfc/2026-07-02-rfc-reports-structure.md" "## Boundary RFC/ADR"
 require_text "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "Ошибка генерации RFC не подтверждена"
 
 require_text "standards/executable-documentation-standard.md" "status: accepted"
@@ -1282,6 +1293,8 @@ require_text "governance/artifact-map.md" "temperature: 0.1"
 require_text "governance/artifact-map.md" "governance/agent-onboarding-protocol.md"
 require_text "governance/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
 require_text "governance/artifact-map.md" "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
+require_text "governance/artifact-map.md" "addendum B-019 / issue #326"
+require_text "governance/artifact-map.md" "research/<domain>/exp/<issue-slug>/"
 require_text "governance/artifact-map.md" "governance/rfc/contract-executability-rfc.md"
 require_text "governance/artifact-map.md" "governance/rfc/repository-quality-improvement-plan.md"
 require_text "governance/artifact-map.md" "governance/rfc/draft-triage-and-exit-plan.md"
@@ -1353,7 +1366,7 @@ require_text "governance/artifact-map.md" "research/external-knowledge/external-
 require_text "governance/artifact-map.md" "governance/rfc/external-knowledge-integration.md"
 
 require_text "governance/rfc/README.md" "status: accepted"
-require_text "governance/rfc/README.md" "version: 1.15"
+require_text "governance/rfc/README.md" "version: 1.16"
 require_text "governance/rfc/README.md" "updated: 2026-07-02"
 require_text "governance/rfc/README.md" "owner: G-Ivan-A"
 require_text "governance/rfc/README.md" "adr-structure-standard.md"
