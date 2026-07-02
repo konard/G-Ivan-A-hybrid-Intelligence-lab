@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.30
-updated: 2026-07-01
+version: 1.31
+updated: 2026-07-02
 temperature: 0.1
 ---
 
@@ -55,6 +55,16 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- chore: Исправлены точечные последствия аудита B-039 по issue #324.
+  RFC B-016 обновлён с `version: 0.2` до `0.3`, `updated: 2026-07-02`, а
+  forward-refs `not yet — будущий` заменены фактическими ссылками на ADR-003 и
+  `standards/research-standard.md`. ADR-003 обновлён с `version: 0.2` до `0.3`,
+  убрана пометка `будущий` у `standards/research-standard.md`, а supersession
+  профиля разграничена: ADR фиксирует decision, technical replacement задаёт
+  `standards/research-standard.md`, удаление профиля остаётся B-021.
+  `standards/research-standard.md` переведён с `version: 1.0` на draft-aligned
+  `version: 0.1`; `governance/artifact-map.md` синхронизирован с новой
+  формулировкой replacement.
 - adr: Устранено дублирование RFC B-016 в `docs/adr/2026-07-adr-003-research-structure.md`
   по issue #316 (версия ADR `0.1` → `0.2`, решение и статус `proposed` не
   изменены). Секция `Decision` больше не пересказывает Proposal P1–P4, а кратко

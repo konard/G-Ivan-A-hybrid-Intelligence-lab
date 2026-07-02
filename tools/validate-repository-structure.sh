@@ -1253,11 +1253,11 @@ require_text "governance/agent-onboarding-protocol.md" "templates/htom/README.md
 require_text "governance/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "governance/artifact-map.md" "status: canonical"
-require_text "governance/artifact-map.md" "version: 1.58"
+require_text "governance/artifact-map.md" "version: 1.59"
 require_text "governance/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "governance/artifact-map.md" "templates/spoke/README.md"
 require_text "governance/artifact-map.md" "governance/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "governance/artifact-map.md" "updated: 2026-07-01"
+require_text "governance/artifact-map.md" "updated: 2026-07-02"
 require_text "governance/artifact-map.md" "temperature: 0.1"
 require_text "governance/artifact-map.md" "governance/agent-onboarding-protocol.md"
 require_text "governance/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"

@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-06-30
+version: 0.3
+updated: 2026-07-02
 temperature: 0.1
 owner: G-Ivan-A
 rfc-scope: A
@@ -17,8 +17,8 @@ rfc-scope: A
 | RFC status | draft (narrative summary; машиночитаемый canon — frontmatter `status`) |
 | Source issue | [#302](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/302); [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290); [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) |
 | Impacted artifacts | `standards/research-profile.md`, `docs/adr/2026-06-adr-002-artifact-document-methodology.md`, `tools/validate-repository-structure.sh`, `tools/validate-file-naming.sh`, `research/hub/exp-*`, `governance/backlog.md` (последствия, не правки в этом RFC) |
-| Decision record | not yet — будущий ADR (B-017) |
-| Implementation link | not yet — будущий `standards/research-standard.md` (B-018) |
+| Decision record | [ADR-003](../../docs/adr/2026-07-adr-003-research-structure.md) (B-017, `proposed`) |
+| Implementation link | [`standards/research-standard.md`](../../standards/research-standard.md) (B-018, `draft`) |
 | Archetype scope | A (Governance & Knowledge Hub); routing-следствия для B/C/D вынесены в downstream chain |
 
 ## Summary
@@ -32,8 +32,8 @@ rfc-scope: A
 вводит маршрутизацию Research / Analysis / Audit **по типу задачи, а не по имени
 каталога**.
 
-Это RFC, а не норма. Он становится входом для ADR (B-017) и будущего
-нормативного `standards/research-standard.md` (B-018). Физическая миграция
+Это RFC, а не норма. Он является входом для ADR-003 (B-017) и нормативного
+`standards/research-standard.md` (B-018). Физическая миграция
 legacy `exp-*` и изменение валидаторов в этом документе **не выполняются**
 (B-022, B-023).
 

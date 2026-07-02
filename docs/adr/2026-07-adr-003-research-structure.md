@@ -1,7 +1,7 @@
 ---
 status: proposed
-version: 0.2
-updated: 2026-07-01
+version: 0.3
+updated: 2026-07-02
 temperature: 0.1
 owner: G-Ivan-A
 decision-type: methodology
@@ -19,17 +19,17 @@ decision-type: methodology
 | Decision date | 2026-07-01 |
 | Owner | G-Ivan-A |
 | Source | [RFC B-016](../../governance/rfc/2026-06-30-rfc-research-structure.md); issues [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294), [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290), [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) |
-| Impacted artifacts | `standards/research-profile.md`, `standards/research-standard.md` (B-018, будущий), `docs/adr/2026-06-adr-002-artifact-document-methodology.md` (addendum B-019), `standards/glossary.md`, `tools/validate-repository-structure.sh`, `tools/validate-file-naming.sh`, `research/hub/exp-*` |
-| Supersedes | `standards/research-profile.md` (effective после удаления профиля в B-021; до этого профиль остаётся legacy-compatible) |
+| Impacted artifacts | `standards/research-profile.md`, `standards/research-standard.md` (B-018), `docs/adr/2026-06-adr-002-artifact-document-methodology.md` (addendum B-019), `standards/glossary.md`, `tools/validate-repository-structure.sh`, `tools/validate-file-naming.sh`, `research/hub/exp-*` |
+| Supersedes | none — этот ADR фиксирует решение; технический replacement профиля задаёт `standards/research-standard.md`, удаление выполняется в B-021 |
 | Superseded by | none |
 
 ## Context
 
-RFC B-016 (v0.2,
+RFC B-016 (v0.3,
 [`governance/rfc/2026-06-30-rfc-research-structure.md`](../../governance/rfc/2026-06-30-rfc-research-structure.md))
 завершён и прошёл локальную валидацию. Он предлагает единый базовый контракт
 структуры research-артефактов Хаба и является входом для этого ADR (B-017) и
-будущего нормативного стандарта `standards/research-standard.md` (B-018).
+нормативного стандарта `standards/research-standard.md` (B-018).
 
 Два входящих документа зафиксировали проблемы, которые нельзя устранить точечной
 правкой профиля:
@@ -181,7 +181,9 @@ B-018 и ADR-002 addendum B-019.
   (issue [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288)) —
   размытие типов и план трёх цепочек.
 - [`standards/research-profile.md`](../../standards/research-profile.md) — legacy
-  source коллизии; superseded этим решением после B-021.
+  source коллизии; technical replacement задаёт
+  [`standards/research-standard.md`](../../standards/research-standard.md), а
+  удаление профиля выполняется в B-021.
 - [ADR-002: Методология создания и управления артефактами](2026-06-adr-002-artifact-document-methodology.md) —
   routing `runs/` и lifecycle артефактов; получает addendum B-019.
 - [`standards/adr-structure-standard.md`](../../standards/adr-structure-standard.md) —
