@@ -13,6 +13,26 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- standard: Создан `standards/audit-standard.md` (draft) — базовый нормативный
+  стандарт Audit для B-032 / issue #362. Стандарт фиксирует базовый каркас Audit
+  (назначение, frontmatter, naming, lifecycle, минимальное ядро секций),
+  **4-компонентную модель** (`compliance target` / `evidence model` /
+  `verdict-finding` / `deviation handling`) как нормативное ядро и routing-критерий
+  (content-over-path), audit-specific frontmatter (`audit_target` /
+  `evidence_model` / `verdict` обязательны; `severity_scale` / `follow_up` /
+  `related_norm` опциональны), минимальное ядро секций (Summary/BLUF,
+  Scope/Target, Method/Evidence, Findings/Verdict, Remediation/Deviation, Related
+  Artifacts) как проекцию четырёх компонентов, routing `docs/audit/YYYY-MM-DD-name.md`,
+  knowledge-lifecycle (`draft → reviewed → canonical → superseded`), явное
+  разграничение Audit-процесс (этот стандарт) vs audit-report output (профиль
+  `audit` в `report-standard.md`, B-043) и границы Audit ↔ Research ↔ Analysis ↔
+  Report. Стандарт принимает Вариант C из ADR-005 и RFC B-030, применяет
+  section-level delegation (proposal, alternatives A/B/C/D, trade-offs остаются в
+  RFC B-030; инвентаризация 29 кандидатов — в B-029; decision rationale — в
+  ADR-005) и не мигрирует файлы (это B-033). Обновлены `standards/README.md`,
+  `governance/artifact-map.md`, `governance/backlog.md` (B-032 → review) и
+  структурный валидатор.
+
 - adr: Создан `docs/adr/2026-07-adr-006-analysis-structure.md` (accepted) —
   human decision gate по структуре Analysis для B-026 / issue #357. ADR
   фиксирует принятое человеком решение принять **Вариант C** из RFC B-025
