@@ -1,6 +1,6 @@
 ---
-status: proposed
-version: 0.1
+status: accepted
+version: 0.2
 updated: 2026-07-04
 temperature: 0.1
 owner: G-Ivan-A
@@ -16,10 +16,11 @@ decision-type: methodology
 | ADR | ADR-007 |
 | Backlog item | B-047 |
 | Decision type | methodology |
-| Status | proposed |
+| Status | accepted |
 | Decision date | 2026-07-04 |
 | Owner | G-Ivan-A |
 | Source issue | [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378) |
+| Refinement issue | [#382](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382) |
 | Primary input | [B-034 migration and root structure plan](../analysis/2026-07-04-hub-migration-and-root-structure-plan.md) |
 | Upstream decisions | [ADR-001](2026-06-adr-001-ecosystem-infrastructure-methodology.md), [ADR-002](2026-06-adr-002-artifact-document-methodology.md) |
 | Impacted artifacts | `governance/backlog.md`, `governance/artifact-map.md`, `governance/repo-model.md`, `tools/validate-repository-structure.sh`, future B-048 migration PR |
@@ -36,15 +37,83 @@ Issue #378 closes those ambiguities. The decision is already made by the
 founder, so this ADR records the accepted target and downstream consequences
 instead of proposing an RFC with alternatives. This ADR does not physically move
 files, rewrite links or cancel current entry points. Physical migration remains
-the scope of B-048 after this ADR is accepted.
+the scope of B-048 after ADR-007 acceptance.
 
 ADR-001 and ADR-002 remain the source of truth for ecosystem infrastructure and
 artifact routing. The Research/Analysis/Audit standards are not a source of root
 repository structure. The Hub remains Archetype A; Hub != Portal.
 
+PR #379 merged this ADR as the B-047 decision gate. Issue #382 refines the
+record by making the final target tree readable without opening ADR-001 in
+parallel; it does not change the accepted architecture and does not perform
+physical migration.
+
 ## Decision
 
+Полная структура Хаба = ADR-001 (универсальное ядро) + ADR-007 (дельта для архетипа A).
+Ниже приведена полная целевая структура (To-Be) с комментариями.
+
 Adopt the following To-Be root decisions for the Hub repository.
+
+### Full To-Be Repository Structure
+
+This tree is the consolidated B-048 target. It lists structural homes and
+stable anchors, not every current file. Current paths remain active until the
+physical migration PR rewrites links and registries.
+
+```text
+hybrid-Intelligence-lab/
+├── ai-governance/                 # [NEW] Политики: государство, бизнес-правила, ИБ, внешние ограничения
+├── ai-rules/                      # [NEW] Правила поведения агента и быстрая синхронизация внешнего агента
+├── pr-ops/                        # [NEW] Управление задачами, PR и review; плоско по правилу 2FA
+├── standards/                     # Плоские стандарты; provisional = lifecycle status draft/proposed
+├── docs/                          # Документация, решения и outputs по типам артефактов
+│   ├── adr/                       # ADR decision records
+│   ├── rfc/                       # Proposal-stage RFC; target for migrated governance/rfc/
+│   ├── analysis/                  # Analysis-артефакты
+│   ├── audit/                     # Audit-отчёты и conformance checks
+│   ├── report/                    # General reports and statistics
+│   ├── guides/                    # Человеко-ориентированные руководства; target from ADR-007
+│   └── concept.md                 # Target for current root CONCEPT.md
+├── kb/                            # Операционно применимые знания; вводится по факту боли
+│   ├── taxonomy/                  # Operational taxonomies
+│   ├── roles/                     # Role definitions used during execution
+│   ├── rules/                     # Reusable operational rules that are not AI-agent behavior rules
+│   ├── processes/{name}/          # Process-specific operational knowledge
+│   └── patterns/                  # Reusable execution patterns
+├── runs/                          # Execution records and reproducible run outputs
+├── research/                      # Доменный research; базовое расширение archetype A
+│   ├── hub/                       # Hub methodology and governance research
+│   ├── mango/                     # Mango domain research
+│   ├── open-ai-ru/                # Open-ai.ru project research
+│   ├── reputation-technologies/   # Reputation Technologies research
+│   ├── governance/                # Governance research corpus
+│   ├── cicd/                      # CI/CD research corpus
+│   └── external-knowledge/        # External source registry and derived insights
+├── practices/                     # Внешние практики экосистемы; специфика Хаба в корне
+│   ├── agent-work/                # Практики AI-assisted work
+│   └── ai-governance/             # External AI governance practices, not the policy bucket
+├── projects/                      # Проектные споки/подпроекты
+│   ├── education-ba-prompt/       # Education BA Prompt spoke materials
+│   └── repo-development/          # Repository-development spoke materials
+├── projects-sink/                 # [NEW] Управленческий буфер приёма из проектов; плоский intake
+├── frameworks/                    # [Зарезервировано] Future home for frameworks after research -> standard confirmation
+├── education/                     # [Зарезервировано] Cross-project education materials
+├── templates/                     # Копируемые поверхности for HTOM/spoke reuse
+│   ├── htom/                      # HTOM team template surface
+│   └── spoke/                     # Spoke repository template surface
+├── tools/                         # Валидаторы и maintenance utilities
+├── .github/                       # CI workflows and issue templates
+├── GOVERNANCE.md                  # Target org-governance anchor aligned with AI_GOVERNANCE.md
+├── README.md                      # Repository entry point
+├── CHANGELOG.md                   # Date-based governance change log
+├── CONTRIBUTING.md                # Contribution workflow and local validation commands
+├── LICENSE                        # License placeholder until final license decision
+├── .gitignore                     # Git ignore rules
+└── .gitattributes                 # Optional git attributes anchor if introduced
+
+# Удалено при миграции: website/, mkdocs.yml, experiments/
+```
 
 | Target | Decision |
 | --- | --- |
@@ -130,9 +199,9 @@ them. No alternative is under review in this ADR.
 
 | Backlog item | Consequence |
 | --- | --- |
-| B-048 | Becomes the physical migration task after ADR-007/B-047 is accepted. It implements this target structure and performs the integrity stress-test before review. |
+| B-048 | Is the physical migration task after ADR-007/B-047 acceptance. It implements this target structure and performs the integrity stress-test before review. |
 | B-054 | Remains deferred until after migration and standard-desync repair; the B-048 stress-test is execution evidence, not the future process standard itself. |
-| B-055 | Is absorbed by ADR-007/B-047 for the `ai-governance/` vs `ai-rules/` boundary. A separate post-migration ADR is not needed unless this ADR is rejected or superseded. |
+| B-055 | Is absorbed by ADR-007/B-047 for the `ai-governance/` vs `ai-rules/` boundary. A separate post-migration ADR is not needed unless this ADR is later superseded. |
 | B-056 | Uses this ADR as the policy/rule split source when physically separating current governance material. |
 | B-057 | Reserved logical follow-up for `docs/guides/` routing if migration work needs a separate backlog item. |
 | B-058 | Reserved logical follow-up for `education/` and archetype D education standardization. |
@@ -152,7 +221,7 @@ migration. This ADR changes decision state and registries only.
 
 | As-Is | To-Be | Impact |
 | --- | --- | --- |
-| `governance/backlog.md` | future `pr-ops/` backlog area | Current backlog is updated to make B-047 a review-stage ADR and B-048 the physical migration task. |
+| `governance/backlog.md` | future `pr-ops/` backlog area | Current backlog marks B-047 as the accepted ADR gate and B-048 as the physical migration task. |
 | `governance/artifact-map.md` | future registry location governed by B-048 | Current artifact-map registers this ADR and remains the active map until migration. |
 | `governance/repo-model.md` | future synchronized repo model | B-048 updates it with accepted target paths. |
 | `governance/rfc/` | `docs/rfc/` | RFC path migration happens in B-048. |
@@ -188,15 +257,16 @@ migration.
 
 ## Lifecycle
 
-This ADR is `proposed` while PR #379 is under review. If accepted, B-047 becomes
-complete and B-048 becomes the next physical migration task. If rejected, B-047
-must be reopened as a proposal gate and backlog changes that depend on ADR-007
-must be revised. Future ADRs may supersede this decision only by naming the
-scope they replace.
+This ADR is `accepted` after PR #379 was merged by the repository owner on
+2026-07-04. B-047 is complete, and B-048 is the next physical migration task.
+Issue #382 is an accepted-ADR refinement: it adds the consolidated To-Be tree
+for readability and AI-agent execution, without reopening the decision. Future
+ADRs may supersede this decision only by naming the scope they replace.
 
 ## Related Artifacts
 
 - [Issue #378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378)
+- [Issue #382](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382)
 - [B-034 migration and root structure plan](../analysis/2026-07-04-hub-migration-and-root-structure-plan.md)
 - [ADR-001: Ecosystem infrastructure methodology](2026-06-adr-001-ecosystem-infrastructure-methodology.md)
 - [ADR-002: Artifact/document methodology](2026-06-adr-002-artifact-document-methodology.md)
