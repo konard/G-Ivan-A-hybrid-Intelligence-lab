@@ -71,7 +71,6 @@ is_active_file() {
     docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md | \
     docs/report/2026-07-01-reports-inventory-placement-analysis.md | \
     docs/report/2026-07-01-rfc-adr-duplication-analysis.md | \
-    docs/report/2026-07-04-cross-standard-stress-tests.md | \
     docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md | \
     docs/adr/2026-06-adr-002-artifact-document-methodology.md | \
     docs/adr/2026-07-adr-003-research-structure.md | \
@@ -253,6 +252,7 @@ is_active_file() {
     docs/audit/2026-06-11-task-execution-audit.md | \
     docs/audit/2026-06-29-research-artifact-format-contract-audit.md | \
     docs/audit/2026-07-01-documentation-boundary-audit.md | \
+    docs/audit/2026-07-04-cross-standard-stress-tests.md | \
     guides/README.md | \
     guides/quick-start.md | \
     guides/init-spoke-repo.md | \
@@ -1158,8 +1158,8 @@ require_text "standards/file-naming-convention.md" "docs/report/"
 require_text "standards/file-naming-convention.md" "./tools/validate-file-naming.sh"
 
 require_text "standards/glossary.md" "status: accepted"
-require_text "standards/glossary.md" "version: 1.5"
-require_text "standards/glossary.md" "updated: 2026-07-02"
+require_text "standards/glossary.md" "version: 1.6"
+require_text "standards/glossary.md" "updated: 2026-07-04"
 require_text "standards/glossary.md" "Standard"
 require_text "standards/glossary.md" "Concept"
 require_text "standards/glossary.md" "Policy"

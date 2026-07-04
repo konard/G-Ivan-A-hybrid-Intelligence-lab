@@ -33,7 +33,7 @@ related_artifacts:
   - "standards/analysis-standard.md"
   - "docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md"
   - "docs/adr/2026-07-adr-007-hub-root-structure.md"
-  - "docs/report/2026-07-04-cross-standard-stress-tests.md"
+  - "docs/audit/2026-07-04-cross-standard-stress-tests.md"
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/133"
@@ -267,7 +267,7 @@ principle ([pr-ops/repo-model.md](repo-model.md)): **артефакт созда
 | **B-046** | chore: Синхронизировать `pr-ops/backlog.md` с фактическими статусами артефактов | **P1** | — | DONE (artifact: canonical) | [#364](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/364) (PR [#365](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/365)) | Issue [#364](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/364); artifact frontmatter statuses; this backlog | Предыдущий sync закрыт: статусы на момент PR #365 сверены с artifact frontmatter and merged PRs, без миграции файлов и без изменения внешних артефактов. |
 | **B-047** | adr: Целевая структура корня Хаба и provisional-механизм | **P1** | B-034 | DONE (artifact: accepted) | [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378) (PR [#379](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/379)); refinement [#382](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382) (PR [#383](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/383)) | Issue [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378); issue [#382](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382); B-034 document-plan; ADR-001/ADR-002; founder decision 2026-07-04; [ADR-007](../docs/adr/2026-07-adr-007-hub-root-structure.md) | Decision gate перед физической миграцией: ADR-007 фиксирует целевую структуру корня Хаба, `projects-sink/`, границу `ai-governance/` vs `ai-rules/`, root `practices/`, `docs/guides/`, `education/`, `frameworks/`, `docs/concept.md`, retirement `website/`/`mkdocs.yml`/`experiments/`, provisional-standards через lifecycle и стратегию B-048. Issue #382 adds the full To-Be tree (ADR-001 core + ADR-007 delta) without physical migration. |
 | **B-048** | chore: Физическая миграция репо Хаба по принятой ADR-007 | **P1** | B-047 | DONE | [#384](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/384) (PR [#388](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/388)) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); issue [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378); accepted ADR-007/B-047 | Implementation path after accepted ADR-007: file moves, link rewrites, validator/nav updates and rollback-safe sequencing. Phase 4 (Reconcile 🟡) is one task, not "one catalog = one PR"; integrity stress-test happens inside that PR before review. Выполнено: `governance/` разделён на `ai-governance/`/`ai-rules/`/`pr-ops/`/`docs/rfc/`, созданы `projects-sink/` и `docs/guides/`, `CONCEPT.md` → `docs/concept.md`, удалены `website/`/`mkdocs.yml`/`deploy-docs.yml`/`experiments/` (тесты → `tools/`), ссылки и валидаторы синхронизированы, integrity stress-test пройден внутри PR. |
-| **B-049** | audit: Переместить отчёт кросс-стресс-тестов в `docs/audit/` и модернизировать frontmatter | **P1** | B-033, B-043 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#370](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/370); [cross-standard stress-tests](../docs/report/2026-07-04-cross-standard-stress-tests.md) | Отчёт имеет audit-природу (conformance/stress test against standards), но сейчас лежит в `docs/report/` как generic report. Нужен перенос/модернизация с audit-specific frontmatter and indexes. |
+| **B-049** | audit: Переместить отчёт кросс-стресс-тестов в `docs/audit/` и модернизировать frontmatter | **P1** | B-033, B-043 | DONE | [#396](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/396) (PR [#397](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/397)) | Issue [#396](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/396); issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#370](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/370); [cross-standard stress-tests](../docs/audit/2026-07-04-cross-standard-stress-tests.md) | Выполнено: отчёт (audit-природа — conformance/stress test against standards) перемещён `docs/report/` → `docs/audit/` с audit-specific frontmatter (`audit_target`, `evidence_model`, `verdict: conditional`, `severity_scale`, `follow_up`, `related_norm`) и секцией Remediation/Deviation; содержание findings не менялось. Параллельно синхронизирован `standards/glossary.md` (v1.5→v1.6) с терминами R/A/A/Report, ADR-007 и кросс-стресс-тестов. |
 | **B-050** | analysis: Варианты решения структурного рассинхрона стандартов R/A/A/Report | **P1** | B-049 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); stress-test findings #370 | Исследует варианты: Subtype Profiles везде vs 4-компонентная модель vs явное отсутствие профилей, унификация vs разделение, impact on validators and review pain. |
 | **B-051** | adr: Принять мета-структуру стандартов | **P1** | B-050 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); future options analysis B-050 | Human decision gate: принимает/корректирует вариант мета-структуры перед созданием стандарта стандартов и массовой правкой R/A/A/Report. |
 | **B-052** | standard: Создать мета-стандарт структуры стандартов | **P1** | B-051 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); future ADR B-051 | Нормирует единый инвариантный skeleton для стандартов: разделы, порядок, profile/model block policy, frontmatter convention, boundary delegation and validation expectations. |
@@ -1848,9 +1848,9 @@ Do not start before B-047 is accepted.
 **Приоритет:** P1
 **Источник:** 🔗 [issue #374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374);
 [issue #370](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/370);
-[cross-standard stress-tests](../docs/report/2026-07-04-cross-standard-stress-tests.md)
+[cross-standard stress-tests](../docs/audit/2026-07-04-cross-standard-stress-tests.md)
 **Зависимости:** B-033, B-043
-**Статус:** TODO
+**Статус:** DONE (issue [#396](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/396), PR [#397](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/397))
 **Режим работы:** `Structured`
 
 **Контекст:**
@@ -1871,10 +1871,10 @@ as a generic report under `docs/report/`.
 - updated navigation/index/validator metadata
 
 **Критерии приёмки (DoD):**
-- [ ] Artifact lives in the Audit route and passes audit frontmatter validation.
-- [ ] Links from backlog/changelog/mkdocs/artifact-map are updated.
-- [ ] The original stress-test findings remain traceable to issue #370 / PR #371.
-- [ ] Local validation passes.
+- [x] Artifact lives in the Audit route and passes audit frontmatter validation.
+- [x] Links from backlog/changelog/mkdocs/artifact-map are updated.
+- [x] The original stress-test findings remain traceable to issue #370 / PR #371.
+- [x] Local validation passes.
 
 **Обоснование приоритета:**
 P1: the report itself documents routing/structure drift. Leaving it in the wrong
@@ -2555,7 +2555,7 @@ Human Review:
 | [standards/analysis-standard.md](../standards/analysis-standard.md) | Закрывает B-027 и разблокирует cleanup Analysis (B-028), migration planning (B-034) and standard-desync repair chain. |
 | [docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md](../docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md) | Результат B-034: upstream analysis/plan for ADR decision gate B-047, physical migration B-048 and issue #380 follow-up tracking B-057..B-062. |
 | [docs/adr/2026-07-adr-007-hub-root-structure.md](../docs/adr/2026-07-adr-007-hub-root-structure.md) | Proposed ADR for issue #378 / B-047: founder decision on Hub root To-Be structure, provisional-standard mechanism, B-048 implementation strategy and absorbed B-055/B-057/B-058 decisions. |
-| [docs/report/2026-07-04-cross-standard-stress-tests.md](../docs/report/2026-07-04-cross-standard-stress-tests.md) | Source findings for the standard-desync repair chain B-049..B-054; current route is intentionally captured as a follow-up issue in B-049. |
+| [docs/audit/2026-07-04-cross-standard-stress-tests.md](../docs/audit/2026-07-04-cross-standard-stress-tests.md) | Source findings for the standard-desync repair chain B-049..B-054; routed to the Audit class (B-049, issue #396) with audit-specific frontmatter. |
 
 ---
 
