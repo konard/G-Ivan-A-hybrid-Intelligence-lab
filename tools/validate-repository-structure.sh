@@ -2374,7 +2374,7 @@ require_text "tools/validate-frontmatter.sh" "missing required Audit body sectio
 require_text ".github/workflows/validate.yml" "Validate file naming"
 require_text ".github/workflows/validate.yml" "./tools/validate-file-naming.sh"
 require_text ".github/workflows/validate.yml" "Test frontmatter validator"
-require_text ".github/workflows/validate.yml" "bash experiments/test-frontmatter-validator.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-frontmatter-validator.sh"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"
 require_text ".github/workflows/update-manifest.yml" "templates/**"
 require_text "tools/sync-from-hub.sh" "--report"

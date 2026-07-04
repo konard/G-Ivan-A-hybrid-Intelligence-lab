@@ -55,10 +55,6 @@ temperature: 0.1
 | [docs/ecosystem-map.md](docs/ecosystem-map.md) | Экосистемная карта: полный граф проектов, их связи и принцип Need-to-Know. |
 | [guides/README.md](guides/README.md) | Библиотека человекочитаемых гайдов «как это сделать»: быстрый старт, синхронизация, развёртывание, решение проблем. |
 
-Разделы `guides/` и `research/` дополнительно публикуются как сайт MkDocs через
-GitHub Pages (см. [`mkdocs.yml`](mkdocs.yml) и
-[`.github/workflows/deploy-docs.yml`](.github/workflows/deploy-docs.yml)).
-
 ## Структура
 
 | Путь | Роль |
@@ -69,7 +65,10 @@ GitHub Pages (см. [`mkdocs.yml`](mkdocs.yml) и
 | `frameworks/` | Методологии, создаваемые только после доказанного gap с существующими подходами. |
 | `projects/` | Project knowledge bases, промпты, процессы и контекст spoke-репозиториев. |
 | `education/` | Open education: программы, учебные материалы и сценарии занятий. |
-| `governance/` | Модель репозитория, операционные решения и сквозные governance-правила. |
+| `ai-governance/` | Якорь AI-governance слоя: границы и точки входа (сквозные правила — в `AI_GOVERNANCE.md`). |
+| `ai-rules/` | Исполнимые правила рантайма AI-агента: протокол онбординга и операционные инструкции. |
+| `pr-ops/` | Операции над репозиторием и PR: модель репозитория, карта артефактов, бэклог, реестры и журнал сессий. |
+| `projects-sink/` | Приёмник контекста spoke-проектов, синхронизируемого в Хаб. |
 | `tools/` | Локальные проверки и служебные скрипты сопровождения репозитория. |
 | `.github/ISSUE_TEMPLATE/` | GitHub-native структура постановки задач. |
 

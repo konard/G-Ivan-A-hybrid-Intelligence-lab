@@ -128,7 +128,8 @@ sufficient frontmatter из
 ## Локальная проверка
 
 ```bash
-bash experiments/test-frontmatter-validator.sh
+bash tools/test-frontmatter-validator.sh
+bash tools/test-smart-sync.sh
 ./tools/validate-file-naming.sh
 ./tools/validate-frontmatter.sh .
 ./tools/validate-repository-structure.sh
