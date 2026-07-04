@@ -31,6 +31,20 @@ All notable repository governance changes are documented here.
   Обновлены `standards/README.md`, `governance/artifact-map.md`,
   `governance/backlog.md` (B-027 → review) и структурный валидатор.
 
+- audit: Modernized local Hub Audit artifacts for B-033 / issue #367. Renamed
+  legacy `docs/audit/task-execution-audit-2026-06.md` to canonical date-first
+  `docs/audit/2026-06-11-task-execution-audit.md`, added
+  `audit_target` / `evidence_model` / `verdict` frontmatter and the six-section
+  Audit core (Summary/BLUF, Scope/Target, Method/Evidence, Findings/Verdict,
+  Remediation/Deviation, Related Artifacts) to all local `docs/audit/` reports,
+  and updated MkDocs navigation, `governance/artifact-map.md`,
+  `governance/backlog.md`, `standards/frontmatter-docs-standard.md`,
+  `standards/file-naming.md` and `standards/README.md`. Validators now enforce
+  `docs/audit/` date-first filenames plus Audit-specific frontmatter and body
+  sections; the frontmatter validator regression suite covers the new failure
+  modes. External Mango/Clarify snapshot evidence remains linked/deferred; no
+  broad repository migration is performed in B-033.
+
 - standard: Создан `standards/audit-standard.md` (draft) — базовый нормативный
   стандарт Audit для B-032 / issue #362. Стандарт фиксирует базовый каркас Audit
   (назначение, frontmatter, naming, lifecycle, минимальное ядро секций),
