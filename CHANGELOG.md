@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.47
+version: 1.48
 updated: 2026-07-04
 temperature: 0.1
 ---
@@ -13,6 +13,15 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- backlog: Реструктурирован `pr-ops/backlog.md` по issue #392 / B-035:
+  active backlog теперь содержит только незавершённые задачи, сгруппированные
+  в логические спринты, и таблицы с колонками `Краткое содержание` и `Режим
+  запуска`. Правила ведения, lifecycle, sprint format, `null` policy и правила
+  закрытия спринтов вынесены в новый `pr-ops/backlog-instruction.md`. Отдельный
+  архивный файл бэклога не создаётся: история остаётся в GitHub Issues/PR,
+  `CHANGELOG.md` и артефактах. Синхронизированы `pr-ops/artifact-map.md`,
+  `pr-ops/README.md`, analysis addendum issue #297/#392 и структурный
+  валидатор; B-035 переведена в `review`.
 - chore: Физическая миграция корня Хаба по принятой ADR-007 для issue #384 /
   B-048 (PR #388). Каталог `governance/` физически разделён на `ai-governance/`
   (якорь границ AI-governance слоя), `ai-rules/` (исполнимые runtime-правила
