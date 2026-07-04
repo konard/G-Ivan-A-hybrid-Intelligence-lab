@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.44
+version: 1.45
 updated: 2026-07-04
 temperature: 0.1
 ---
@@ -12,6 +12,15 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- adr: Доработан `docs/adr/2026-07-adr-007-hub-root-structure.md`
+  для issue #382 / PR #383. ADR-007 синхронизирован как `accepted` после merge PR #379,
+  добавлена явная формула «полная структура Хаба = ADR-001 + ADR-007» и
+  полный To-Be tree с inline-комментариями для универсального ядра, дельты
+  archetype A, `projects-sink/`, `ai-governance/`, `ai-rules/`, `pr-ops/`,
+  root `practices/` и retired paths `website/`, `mkdocs.yml`, `experiments/`.
+  Обновлены `governance/backlog.md`, `governance/artifact-map.md` и
+  `tools/validate-repository-structure.sh`. Файлы физически не перемещались.
 
 - adr: Создан `docs/adr/2026-07-adr-007-hub-root-structure.md` (proposed)
   для issue #378 / B-047. ADR фиксирует founder decision по целевой структуре

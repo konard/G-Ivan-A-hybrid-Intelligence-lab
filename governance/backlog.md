@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.25
+version: 1.26
 updated: 2026-07-04
 temperature: 0.1
 type: backlog
@@ -93,6 +93,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382"
 ---
 
 # BACKLOG — единый бэклог работ Хаба
@@ -263,7 +264,7 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-044** | chore: Cleanup и модернизация Reports-артефактов (миграция кандидатов в `docs/report/`) | **P2** | B-043, B-034 | TODO | — (tech debt) | Issue [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328); [Reports inventory §5](../docs/analysis/2026-07-01-reports-artifacts-inventory.md); будущий standard B-043; план миграции репо B-034 | Пост-standard cleanup: обновить frontmatter (`report-subtype`, relation-поля), убрать дубли/замаскированные отчёты, cross-references, artifact-map и индексы; координируется с планом миграции репо (B-034). Зеркалит B-028/B-033. |
 | **B-045** | research: Режимы выполнения задач для ИИ-агентов — индустриальные нормы и паттерны классификации | **P1** | B-016, B-018 | DONE (artifact: draft) | [#330](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/330) (PR [#331](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/331)) | Видение фаундера ([research/hub/2026-06-23-repository-structure-concept.md](../research/hub/2026-06-23-repository-structure-concept.md)); `standards/glossary.md` (Operating Mode); [research-отчёт](../research/hub/2026-07-02-task-execution-modes-research.md); [experiment](../research/hub/exp/task-execution-modes-330/README.md) | Research + Creative + Deep Think от лица 4 экспертов: индустриальные нормы (Cynefin/Bloom/Cognitive Load, ReAct/Reflexion/Plan-and-Solve, CrewAI/LangGraph/MetaGPT/AutoGPT, guardrails/evals/HITL), паттерны Hub/Mango и 5 реальных тестов (rule-based классификатор v1→v2). Подтверждает триаду Creative/Structured/Hybrid и action-anchored сигнал как решающий вход. Без предложения решений, новых режимов и стандартов — только исследование, паттерны, тесты, выводы. |
 | **B-046** | chore: Синхронизировать `governance/backlog.md` с фактическими статусами артефактов | **P1** | — | DONE (artifact: canonical) | [#364](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/364) (PR [#365](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/365)) | Issue [#364](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/364); artifact frontmatter statuses; this backlog | Предыдущий sync закрыт: статусы на момент PR #365 сверены с artifact frontmatter and merged PRs, без миграции файлов и без изменения внешних артефактов. |
-| **B-047** | adr: Целевая структура корня Хаба и provisional-механизм | **P1** | B-034 | review (artifact: proposed) | [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378) (PR [#379](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/379)) | Issue [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378); B-034 document-plan; ADR-001/ADR-002; founder decision 2026-07-04; [ADR-007](../docs/adr/2026-07-adr-007-hub-root-structure.md) | Decision gate перед физической миграцией: ADR-007 фиксирует целевую структуру корня Хаба, `projects-sink/`, границу `ai-governance/` vs `ai-rules/`, root `practices/`, `docs/guides/`, `education/`, `frameworks/`, `docs/concept.md`, retirement `website/`/`mkdocs.yml`/`experiments/`, provisional-standards через lifecycle и стратегию B-048. |
+| **B-047** | adr: Целевая структура корня Хаба и provisional-механизм | **P1** | B-034 | DONE (artifact: accepted) | [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378) (PR [#379](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/379)); refinement [#382](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382) (PR [#383](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/383)) | Issue [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378); issue [#382](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382); B-034 document-plan; ADR-001/ADR-002; founder decision 2026-07-04; [ADR-007](../docs/adr/2026-07-adr-007-hub-root-structure.md) | Decision gate перед физической миграцией: ADR-007 фиксирует целевую структуру корня Хаба, `projects-sink/`, границу `ai-governance/` vs `ai-rules/`, root `practices/`, `docs/guides/`, `education/`, `frameworks/`, `docs/concept.md`, retirement `website/`/`mkdocs.yml`/`experiments/`, provisional-standards через lifecycle и стратегию B-048. Issue #382 adds the full To-Be tree (ADR-001 core + ADR-007 delta) without physical migration. |
 | **B-048** | chore: Физическая миграция репо Хаба по принятой ADR-007 | **P1** | B-047 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); issue [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378); accepted ADR-007/B-047 | Implementation path after accepted ADR-007: file moves, link rewrites, validator/nav updates and rollback-safe sequencing. Phase 4 (Reconcile 🟡) is one task, not "one catalog = one PR"; integrity stress-test happens inside that PR before review. |
 | **B-049** | audit: Переместить отчёт кросс-стресс-тестов в `docs/audit/` и модернизировать frontmatter | **P1** | B-033, B-043 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#370](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/370); [cross-standard stress-tests](../docs/report/2026-07-04-cross-standard-stress-tests.md) | Отчёт имеет audit-природу (conformance/stress test against standards), но сейчас лежит в `docs/report/` как generic report. Нужен перенос/модернизация с audit-specific frontmatter and indexes. |
 | **B-050** | analysis: Варианты решения структурного рассинхрона стандартов R/A/A/Report | **P1** | B-049 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); stress-test findings #370 | Исследует варианты: Subtype Profiles везде vs 4-компонентная модель vs явное отсутствие профилей, унификация vs разделение, impact on validators and review pain. |
@@ -271,7 +272,7 @@ principle ([governance/repo-model.md](repo-model.md)): **артефакт соз
 | **B-052** | standard: Создать мета-стандарт структуры стандартов | **P1** | B-051 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); future ADR B-051 | Нормирует единый инвариантный skeleton для стандартов: разделы, порядок, profile/model block policy, frontmatter convention, boundary delegation and validation expectations. |
 | **B-053** | chore: Привести Research/Analysis/Audit/Report standards к мета-стандарту | **P1** | B-052 | TODO | — (planned) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); future meta-standard B-052 | Исправляет рассинхрон четырёх стандартов по принятому invariant skeleton без повторного обсуждения решений, с обновлением validators/navigation where required. |
 | **B-054** | standard: Стандарт процесса стресс-тестирования связанных документов | **P3** | B-048, B-053 | TODO | — (deferred) | Issue [#374](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/374); issue [#370](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/370) | Отложенная мета-задача после миграции: нормирует периодичность, методологию и критерии проверки комплексов связанных документов. Не делать до завершения migration implementation path. |
-| **B-055** | adr: Зафиксировать разделение `ai-governance/` и `ai-rules/` как экосистемную политику | **P1** | B-047 | review (absorbed by ADR-007/B-047) | [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378) (PR [#379](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/379)) | Issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); issue [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378); B-034 document-plan; [ADR-007](../docs/adr/2026-07-adr-007-hub-root-structure.md) | Boundary decision moved into ADR-007: `ai-governance/` хранит политики/внешние ограничения, `ai-rules/` хранит правила поведения агента and quick-sync context for external agents. Separate post-migration ADR is unnecessary unless ADR-007 is rejected or superseded. |
+| **B-055** | adr: Зафиксировать разделение `ai-governance/` и `ai-rules/` как экосистемную политику | **P1** | B-047 | DONE (absorbed by ADR-007/B-047) | [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378) (PR [#379](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/379)); refinement [#382](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382) | Issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); issue [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378); issue [#382](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382); B-034 document-plan; [ADR-007](../docs/adr/2026-07-adr-007-hub-root-structure.md) | Boundary decision moved into accepted ADR-007: `ai-governance/` хранит политики/внешние ограничения, `ai-rules/` хранит правила поведения агента and quick-sync context for external agents. Separate post-migration ADR is unnecessary unless ADR-007 is later superseded. |
 | **B-056** | chore: Физически разделить `governance/` на `ai-governance/` и `ai-rules/` | **P1** | B-048, B-047 | TODO | — (planned) | Issue [#376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376); issue [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378); B-034 Phase 3; accepted ADR-007/B-047 | Downstream implementation of the accepted split: extract policy/compliance material into `ai-governance/`, agent behavior/sync rules into `ai-rules/`, update links/validators/navigation, and preserve rollback-safe sequencing. |
 
 💡 — креативные задачи, предложенные агентом-исполнителем и не упомянутые во входном
@@ -1705,8 +1706,8 @@ Recording it prevents accidental migration work from being smuggled into
 Analysis/Audit cleanup.
 
 **Риски и ограничения:**
-Do not start ADR implementation or physical migration here. B-047 creates
-ADR-007; B-048 performs implementation PRs after the ADR is accepted.
+Do not start ADR implementation or physical migration here. B-047 created and
+accepted ADR-007; B-048 performs implementation PRs after the ADR is accepted.
 
 ---
 
@@ -1714,19 +1715,22 @@ ADR-007; B-048 performs implementation PRs after the ADR is accepted.
 
 **Приоритет:** P1
 **Источник:** 🔗 [issue #378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378);
+[issue #382](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382);
 B-034 document-plan; founder decision 2026-07-04; ADR-001/ADR-002
 **Зависимости:** B-034
-**Статус:** review (artifact: proposed)
+**Статус:** DONE (artifact: accepted)
 **Режим работы:** `Hybrid`
 
 **Контекст:**
 B-034 produced an upstream analysis/plan and marked several root-structure
 targets as requiring human decision. Issue #378 records the founder decision, so
-B-047 is now an ADR decision record rather than a separate RFC. The ADR fixes
-the target structure and implementation strategy while keeping physical moves in
-B-048.
+B-047 is now an accepted ADR decision record rather than a separate RFC. The ADR
+fixes the target structure and implementation strategy while keeping physical
+moves in B-048. Issue #382 refines the record with a full To-Be tree so B-048
+executors can read ADR-007 without reconstructing the final structure from
+ADR-001 plus delta tables.
 
-**Что нужно сделать:**
+**Что сделано:**
 1. Create ADR-007 in `docs/adr/`.
 2. Cite B-034, ADR-001, ADR-002 and issue #378 as decision provenance.
 3. Record the accepted To-Be root decisions: `projects-sink/`,
@@ -1739,6 +1743,8 @@ B-048.
    strategy, including Phase 4 as one task with integrity stress-test.
 6. Update artifact-map, backlog, changelog and validator allowlists/required
    files.
+7. Add the issue #382 refinement: explicit ADR-001 + ADR-007 formula and a
+   commented full To-Be repository tree.
 
 **Ожидаемые артефакты:**
 - [docs/adr/2026-07-adr-007-hub-root-structure.md](../docs/adr/2026-07-adr-007-hub-root-structure.md)
@@ -1748,13 +1754,15 @@ B-048.
 - updated `CHANGELOG.md`
 
 **Критерии приёмки (DoD):**
-- [ ] ADR-007 follows `standards/adr-structure-standard.md` and uses
-      `status: proposed`, `version: 0.1`, `updated: 2026-07-04`.
-- [ ] ADR-007 records the founder decision without reopening alternatives.
-- [ ] ADR-007 names impacted artifacts and consequences for B-048 and
+- [x] ADR-007 follows `standards/adr-structure-standard.md`; after PR #379
+      merge it is `status: accepted`, `version: 0.2`, `updated: 2026-07-04`.
+- [x] ADR-007 records the founder decision without reopening alternatives.
+- [x] ADR-007 names impacted artifacts and consequences for B-048 and
       B-054..B-062.
-- [ ] Artifact-map, backlog, changelog and structure validator are synchronized.
-- [ ] No physical migration is performed in B-047.
+- [x] ADR-007 contains the issue #382 full To-Be tree with comments for core
+      directories, archetype A deltas and retired paths.
+- [x] Artifact-map, backlog, changelog and structure validator are synchronized.
+- [x] No physical migration is performed in B-047.
 
 **Обоснование приоритета:**
 P1: this is the decision gate after B-034. It prevents unreviewed structural file
@@ -1777,7 +1785,7 @@ accepted ADR-007/B-047
 **Режим работы:** `Structured`
 
 **Контекст:**
-Physical migration is implementation work after ADR-007/B-047 is accepted. The
+Physical migration is implementation work after ADR-007/B-047 acceptance. The
 accepted ADR controls target structure and sequencing. Phase 4 (Reconcile 🟡) is
 executed as **one task**, not as "one catalog = one PR". The executor performs
 an integrity stress-test (validators + link/cross-reference check) inside that
@@ -2071,35 +2079,36 @@ Do not create this standard before B-048 and B-053.
 **Приоритет:** P1
 **Источник:** 🔗 [issue #376](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/376);
 issue [#378](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/378);
+[issue #382](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382);
 B-034 document-plan; ADR-007/B-047
 **Зависимости:** B-047
-**Статус:** review (absorbed by ADR-007/B-047)
+**Статус:** DONE (absorbed by ADR-007/B-047)
 **Режим работы:** `Structured`
 
 **Контекст:**
 Issue #376 originally planned a separate post-migration ADR for the
 `ai-governance/` vs `ai-rules/` boundary. Issue #378 moves that human decision
-into ADR-007/B-047. If ADR-007 is accepted, this backlog item is absorbed and a
-separate post-migration ADR is unnecessary unless ADR-007 is later rejected or
-superseded.
+into ADR-007/B-047. ADR-007 is accepted, so this backlog item is absorbed and a
+separate post-migration ADR is unnecessary unless ADR-007 is later superseded.
 
-**Что нужно сделать:**
+**Что сделано:**
 1. Keep the boundary in ADR-007: `ai-governance/` = policies, state constraints,
    business rules, information security and external compliance;
    `ai-rules/` = agent behavior rules and fast external-agent synchronization
    with project context.
-2. Keep this backlog row as traceability from issue #376 to issue #378.
-3. Do not create a second ADR unless ADR-007 is rejected or superseded.
+2. Keep this backlog row as traceability from issue #376 to issue #378 and the
+   issue #382 refinement.
+3. Do not create a second ADR unless ADR-007 is later superseded.
 4. Let B-056 use ADR-007/B-047 as its decision source.
 
 **Ожидаемые артефакты:**
 - [docs/adr/2026-07-adr-007-hub-root-structure.md](../docs/adr/2026-07-adr-007-hub-root-structure.md)
 
 **Критерии приёмки (DoD):**
-- [ ] ADR-007 explicitly defines `ai-governance/` and `ai-rules/`.
-- [ ] Boundary is stated as ecosystem policy, not only Hub cleanup.
-- [ ] Decision traces to issue #376, issue #378 and B-034.
-- [ ] B-056 is clearly scoped by ADR-007/B-047.
+- [x] ADR-007 explicitly defines `ai-governance/` and `ai-rules/`.
+- [x] Boundary is stated as ecosystem policy, not only Hub cleanup.
+- [x] Decision traces to issue #376, issue #378, issue #382 and B-034.
+- [x] B-056 is clearly scoped by ADR-007/B-047.
 
 **Обоснование приоритета:**
 P1: this prevents a high-probability post-migration drift where policies,
@@ -2392,7 +2401,7 @@ Human Review:
 | [issue #296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296) | Источник sprint chains для `analysis-standard.md` и `audit-standard.md`; фиксирует, что migration plan is a separate RFC after all three standards. |
 | [standards/analysis-standard.md](../standards/analysis-standard.md) | Закрывает B-027 и разблокирует cleanup Analysis (B-028), migration planning (B-034) and standard-desync repair chain. |
 | [docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md](../docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md) | Результат B-034: upstream analysis/plan for ADR decision gate B-047 and physical migration B-048. |
-| [docs/adr/2026-07-adr-007-hub-root-structure.md](../docs/adr/2026-07-adr-007-hub-root-structure.md) | Proposed ADR for issue #378 / B-047: founder decision on Hub root To-Be structure, provisional-standard mechanism and B-048 implementation strategy. |
+| [docs/adr/2026-07-adr-007-hub-root-structure.md](../docs/adr/2026-07-adr-007-hub-root-structure.md) | Accepted ADR for issue #378 / B-047, refined by issue #382: founder decision on Hub root To-Be structure, full ADR-001 core + ADR-007 delta tree, provisional-standard mechanism and B-048 implementation strategy. |
 | [docs/report/2026-07-04-cross-standard-stress-tests.md](../docs/report/2026-07-04-cross-standard-stress-tests.md) | Source findings for the standard-desync repair chain B-049..B-054; current route is intentionally captured as a follow-up issue in B-049. |
 
 ---
@@ -2411,7 +2420,7 @@ Issue #296 довёл цепочки Analysis и Audit до стандартов
 post-standard cleanup Analysis B-028 and technical cleanup B-022/B-023.
 
 B-034 теперь явно закрыт как **analysis/plan**. Следующий migration path:
-`B-034 → B-047 → B-048`, где B-047 creates ADR-007 as the decision gate, and
+`B-034 → B-047 → B-048`, где B-047 accepted ADR-007 as the decision gate, and
 B-048 performs physical migration after acceptance. B-048 explicitly keeps
 Phase 4 Reconcile as one task with validator + cross-reference stress-test
 before review. The previously separate policy split ADR B-055 is absorbed by
@@ -2455,7 +2464,7 @@ flowchart TD
     B032["B-032 · DONE<br/>audit-standard.md<br/>structure standard"]
     B033["B-033 · DONE<br/>Audit cleanup<br/>modernization"]
     B034["B-034 · DONE<br/>Hub migration<br/>analysis/plan"]
-    B047["B-047 · review<br/>ADR-007 Hub root<br/>decision gate"]
+    B047["B-047 · DONE<br/>ADR-007 Hub root<br/>accepted decision gate"]
     B048["B-048 · P1<br/>Physical Hub migration<br/>implementation PR"]
     B049["B-049 · P1<br/>Move stress-test report<br/>to docs/audit/"]
     B050["B-050 · P1<br/>Options analysis<br/>standard desync repair"]
@@ -2463,7 +2472,7 @@ flowchart TD
     B052["B-052 · P1<br/>Meta-standard<br/>standard skeleton"]
     B053["B-053 · P1<br/>Align R/A/A/Report<br/>to meta-standard"]
     B054["B-054 · P3<br/>Stress-test process<br/>after migration"]
-    B055["B-055 · review<br/>ai-governance vs ai-rules<br/>absorbed by ADR-007"]
+    B055["B-055 · DONE<br/>ai-governance vs ai-rules<br/>absorbed by ADR-007"]
     B056["B-056 · P1<br/>Physical split<br/>ai-governance + ai-rules"]
 
     %% Критический путь
