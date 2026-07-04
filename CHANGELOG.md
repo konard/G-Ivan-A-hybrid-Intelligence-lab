@@ -13,14 +13,19 @@ All notable repository governance changes are documented here.
 
 ### Added
 
-- backlog: Обновлён `governance/backlog.md` по issue #380: добавлены недостающие
-  downstream-задачи B-057..B-062 для migration-specific ADRs (`practices/` vs
-  `docs/practice/`, стратегия `website/`/`mkdocs.yml`) и trigger-based research
-  по корневым каталогам (`docs/guides/`, `projects-sink/`, `education/`,
-  `frameworks/`). B-056 расширен до полного физического разнесения legacy
-  `governance/` по `ai-governance/`, `ai-rules/`, `pr-ops/` и `docs/rfc/`.
-  B-047/B-048, dependency diagram, related artifacts and backlog frontmatter
-  updated. Новые GitHub issues не создавались, файлы не перемещались.
+- backlog: Обновлён `governance/backlog.md` по issue #380 после ADR-007:
+  добавлены downstream-задачи B-057..B-062 for migration follow-ups and
+  trigger-based root-catalog research (`docs/guides/`, `projects-sink/`,
+  `education/`, `frameworks/`). Новые GitHub issues не создавались, файлы не
+  перемещались.
+
+- adr: Создан `docs/adr/2026-07-adr-007-hub-root-structure.md` (proposed)
+  для issue #378 / B-047. ADR фиксирует founder decision по целевой структуре
+  корня Хаба после B-034, границу `ai-governance/` vs `ai-rules/`, механизм
+  provisional-стандартов через lifecycle-статусы, стратегию B-048, impacted
+  artifacts и последствия для B-054..B-062. Обновлены `governance/backlog.md`,
+  `governance/artifact-map.md` и `tools/validate-repository-structure.sh`.
+  Файлы физически не перемещались.
 
 - backlog: Обновлён `governance/backlog.md` по issue #376: добавлены новые
   downstream-задачи B-055/B-056 для ADR по границе `ai-governance/` vs
@@ -28,8 +33,9 @@ All notable repository governance changes are documented here.
   учётом финальных решений по migration path. B-048 теперь явно фиксирует, что
   Phase 4 Reconcile выполняется одной задачей, with validator +
   cross-reference stress-test before review. Обновлены сводная таблица,
-  детальные описания and dependency diagram. Новые GitHub issues не создавались,
-  артефакты не перемещались.
+  детальные описания and dependency diagram. Issue #378 / ADR-007 later absorbs
+  B-055 as the decision source; B-056 remains the physical split task. Новые
+  GitHub issues не создавались, артефакты не перемещались.
 
 - analysis: Создан `docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md`
   (draft) — upstream document-plan для issue #372 / B-034 в режиме Deep Think
