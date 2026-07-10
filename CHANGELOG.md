@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.55
+version: 1.56
 updated: 2026-07-10
 temperature: 0.1
 ---
@@ -43,6 +43,18 @@ All notable repository governance changes are documented here.
   Дополнительно зарегистрирован самостоятельной строкой в artifact map ранее
   перемещённый audit-отчёт
   `docs/audit/2026-07-04-cross-standard-stress-tests.md`.
+
+- chore: Сверен `pr-ops/backlog.md` (v1.31 -> v1.32) со Спринтом 8 для issue
+  #413, который независимо запросил тот же набор задач B-079..B-084 (разделение
+  Mango на два репозитория), уже внесённый ранее по issue #411. Задачи не
+  продублированы — вместо этого issue #413 добавлен как второй источник
+  (`related_issues`, колонка «Источник» каждой задачи B-079..B-084, таблица
+  «Источники активного порядка»). Повторно подтверждено, что строка
+  `docs/audit/2026-07-04-cross-standard-stress-tests.md` в основной таблице
+  `pr-ops/artifact-map.md` уже зарегистрирована с 2026-07-04 (B-049, issue
+  #396), то есть вторая часть issue #413 была устаревшей на момент постановки
+  — изменений в artifact-map не потребовалось. GitHub issues не создавались,
+  стандарты и ADR не менялись.
 
 - analysis: Создан
   `docs/analysis/2026-07-10-r-a-a-report-structural-desync-options.md` для issue
