@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.53
+version: 1.54
 updated: 2026-07-10
 temperature: 0.1
 ---
@@ -12,6 +12,16 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Changed
+
+- chore: Спринт 5 закрыл три P1-пробела агентной модели (issue #406): UI-форма
+  `.github/ISSUE_TEMPLATE/task.yml` теперь предлагает режимы `hybrid` и
+  `deep-think`; `ai-rules/adversarial-stress-testing.md` нормирует повторяемую
+  adversarial-процедуру с минимум пятью независимыми тестами, единым словарём
+  вердиктов и route пробелов; `ai-governance/agent-security-checklist.md`
+  собирает базовый/SAIF-контуры и трассу покрытия OWASP LLM01–LLM10:2025 с
+  остаточными рисками и stop-условиями. Артефакты зарегистрированы в карте и
+  README, B-064–B-066 отмечены DONE, а CI regression-test фиксирует все три
+  контракта. Новые каталоги, ADR и изменения стандартов R/A/A не вносились.
 
 - backlog: B-035, B-049 и B-063 архивированы из active backlog после
   подтверждённых merge PR #393, #397 и #391 соответственно (issue #404).

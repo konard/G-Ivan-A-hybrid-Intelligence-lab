@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.73
-updated: 2026-07-09
+version: 1.74
+updated: 2026-07-10
 temperature: 0.1
 ---
 
@@ -268,7 +268,9 @@ temperature: 0.1
 | `/docs/adr/` | каталог | — | Каталог Architecture Decision Records Хаба: accepted decisions после research/RFC-review и human approval. | ✅ Да | `docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md`, `docs/adr/2026-06-adr-002-artifact-document-methodology.md`, `docs/adr/2026-07-adr-003-research-structure.md`, `docs/adr/2026-07-adr-004-reports-structure.md`, `docs/adr/2026-07-adr-005-audit-structure.md`, `docs/adr/2026-07-adr-006-analysis-structure.md`, `standards/file-naming.md`, `tools/validate-file-naming.sh` |
 | `/standards/` | каталог | — | Плоский реестр стандартов, шаблонов и правил оформления артефактов. | ✅ Да | `standards/README.md`, `pr-ops/repo-model.md` |
 | `/ai-governance/` | каталог | — | Зарезервированный якорь AI-governance слоя (ADR-007): границы и точки входа; сквозные governance-правила Хаба живут в `AI_GOVERNANCE.md`. | ✅ Да | `ai-governance/README.md`, `pr-ops/repo-model.md` |
+| `/ai-governance/agent-security-checklist.md` | правило | справка | Единый risk-based checklist agent work: базовый и SAIF-контуры, трасса правил к OWASP LLM01–LLM10:2025, residual risk и stop/conditional/pass route. | ✅ Да | `AI_GOVERNANCE.md`, `ai-rules/agent-onboarding-protocol.md`, `practices/ai-governance/google-saif-agent-security.md`, `research/hub/2026-07-04-hub-as-agent-system-global-analysis.md` |
 | `/ai-rules/` | каталог | — | Исполнимые правила рантайма AI-агента: протокол онбординга (Кейс 1) и связанные runtime-инструкции. | ✅ Да | `ai-rules/agent-onboarding-protocol.md`, `pr-ops/repo-model.md` |
+| `/ai-rules/adversarial-stress-testing.md` | правило | 🚦 да | Повторяемая процедура опровержения гипотез: минимум пять независимых тестов, единый словарь `✅/⚠️/❌`, evidence, ограничения и route пробелов. | ✅ Да | `docs/audit/2026-07-04-cross-standard-stress-tests.md`, `research/hub/2026-07-04-hub-as-agent-system-global-analysis.md`, `pr-ops/backlog.md` |
 | `/pr-ops/` | каталог | — | Операции над репозиторием и PR: модель репозитория, карта артефактов, active backlog, правила ведения бэклога, реестр исполнимых документов и журнал сессий. | ✅ Да | `pr-ops/repo-model.md`, `pr-ops/artifact-map.md`, `pr-ops/backlog.md`, `pr-ops/backlog-instruction.md` |
 | `/projects-sink/` | каталог | — | Приёмник контекста spoke-проектов: сводки контекста внешних проектов, синхронизируемые в Хаб. | ✅ Да | `projects-sink/README.md`, `pr-ops/repo-model.md` |
 | `/docs/rfc/` | каталог | — | Корпус RFC Хаба (proposals до human decision); мигрирован из `governance/rfc/` по ADR-007 (B-048). | ✅ Да | `docs/rfc/README.md`, `pr-ops/artifact-map.md`, `standards/rfc-structure-standard.md` |

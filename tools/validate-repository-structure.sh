@@ -55,8 +55,10 @@ is_active_file() {
     CONTRIBUTING.md | \
     AI_GOVERNANCE.md | \
     ai-governance/README.md | \
+    ai-governance/agent-security-checklist.md | \
     ai-rules/README.md | \
     ai-rules/agent-onboarding-protocol.md | \
+    ai-rules/adversarial-stress-testing.md | \
     pr-ops/README.md | \
     pr-ops/repo-model.md | \
     pr-ops/artifact-map.md | \
@@ -304,6 +306,7 @@ is_active_file() {
     tools/test-frontmatter-validator.sh | \
     tools/test-smart-sync.sh | \
     tools/test-post-migration-validator.sh | \
+    tools/test-sprint-5-agent-model.sh | \
     tools/validate-frontmatter.sh | \
     tools/validate-file-naming.sh | \
     tools/validate-repository-structure.sh)
@@ -531,7 +534,9 @@ required_files=(
   "CONTRIBUTING.md"
   "AI_GOVERNANCE.md"
   "ai-governance/README.md"
+  "ai-governance/agent-security-checklist.md"
   "ai-rules/README.md"
+  "ai-rules/adversarial-stress-testing.md"
   "pr-ops/README.md"
   "projects-sink/README.md"
   "docs/guides/README.md"
@@ -1429,11 +1434,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.73"
+require_text "pr-ops/artifact-map.md" "version: 1.74"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-07-09"
+require_text "pr-ops/artifact-map.md" "updated: 2026-07-10"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "ai-rules/agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2402,6 +2407,7 @@ require_text "tools/test-frontmatter-validator.sh" "valid docs/audit metadata"
 require_text "tools/test-frontmatter-validator.sh" "audit required target"
 require_text "tools/test-frontmatter-validator.sh" "valid docs/guides metadata"
 require_text "tools/test-post-migration-validator.sh" "legacy root paths"
+require_text "tools/test-sprint-5-agent-model.sh" "Sprint 5 agent-model regression tests passed."
 require_text "tools/generate-manifest.py" "templates/manifest.json"
 require_text "tools/validate-frontmatter.sh" "invalid knowledge status"
 require_text "tools/validate-frontmatter.sh" "docs/guides/*.md"
@@ -2417,6 +2423,7 @@ require_text ".github/workflows/validate.yml" "Test frontmatter validator"
 require_text ".github/workflows/validate.yml" "bash tools/test-frontmatter-validator.sh"
 require_text ".github/workflows/validate.yml" "Test post-migration validator invariants"
 require_text ".github/workflows/validate.yml" "bash tools/test-post-migration-validator.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-sprint-5-agent-model.sh"
 require_text ".github/workflows/update-manifest.yml" "chore: update manifest.json"
 require_text ".github/workflows/update-manifest.yml" "templates/**"
 require_text "tools/sync-from-hub.sh" "--report"
