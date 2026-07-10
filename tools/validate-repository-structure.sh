@@ -287,6 +287,7 @@ is_active_file() {
     docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md | \
     docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md | \
     docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md | \
+    docs/analysis/2026-07-10-r-a-a-report-structural-desync-options.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -554,6 +555,7 @@ required_files=(
   "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md"
   "docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md"
   "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md"
+  "docs/analysis/2026-07-10-r-a-a-report-structural-desync-options.md"
   "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
   "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
   "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
@@ -1491,6 +1493,7 @@ require_text "pr-ops/artifact-map.md" "research/hub/2026-06-28-research-analysis
 require_text "pr-ops/artifact-map.md" "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md"
 require_text "pr-ops/artifact-map.md" "docs/audit/2026-06-11-task-execution-audit.md"
 require_text "pr-ops/artifact-map.md" "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
+require_text "pr-ops/artifact-map.md" "| `/docs/audit/2026-07-04-cross-standard-stress-tests.md` | аудит | — |"
 require_text "pr-ops/artifact-map.md" "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
 require_text "pr-ops/artifact-map.md" "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
 require_text "pr-ops/artifact-map.md" "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
