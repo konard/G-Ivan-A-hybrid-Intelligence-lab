@@ -63,6 +63,8 @@ body:
       options:
         - structured
         - creative
+        - hybrid
+        - deep-think
       default: 0
     validations:
       required: true

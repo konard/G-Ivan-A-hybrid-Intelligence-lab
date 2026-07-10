@@ -31,6 +31,9 @@ jobs:
       - name: Test post-migration validator invariants
         run: bash tools/test-post-migration-validator.sh
 
+      - name: Test Sprint 5 agent-model contracts
+        run: bash tools/test-sprint-5-agent-model.sh
+
       - name: Validate frontmatter
         run: ./tools/validate-frontmatter.sh .
 
