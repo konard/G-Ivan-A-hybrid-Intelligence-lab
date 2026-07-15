@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.56
-updated: 2026-07-10
+version: 1.57
+updated: 2026-07-15
 temperature: 0.1
 ---
 
@@ -37,6 +37,15 @@ All notable repository governance changes are documented here.
   оставшимися активными задачами; `pr-ops/backlog.md` обновлён с v1.29 до v1.30.
 
 ### Added
+
+- adr: Создан `docs/adr/2026-07-adr-008-standard-meta-structure.md` для issue
+  #417 / B-051. Зафиксирован выбор фаундера F10 explicit: точный порядок десяти
+  инвариантных секций, `N/A + rationale` для любого пустого раздела, единый
+  `Type Model` slot (`model`/`N/A`), ADR-002 как canonical owner общей
+  routing/boundary table и Purpose/Scope cross-reference в первом абзаце
+  specific tail. ADR не создаёт meta-standard и не мигрирует R/A/A/Report — это
+  downstream B-052/B-053. Синхронизированы artifact map и backlog; B-051
+  переведена в `review`.
 
 - backlog: Внесены в `pr-ops/backlog.md` (v1.30 -> v1.31) Спринт 8 «Разделение
   Mango на два репозитория» и задачи B-079..B-084 — issue #411 (решение
