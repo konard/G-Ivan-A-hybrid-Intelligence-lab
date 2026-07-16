@@ -133,6 +133,8 @@ is_active_file() {
     research/hub/2026-07-02-task-execution-modes-research.md | \
     research/hub/2026-07-04-hub-as-agent-system-global-analysis.md | \
     research/README.md | \
+    research/education/README.md | \
+    research/education/2026-07-16-retrieval-strategies-survey.md | \
     research/hub/README.md | \
     research/hub/exp-rfc-adr-industry-norms/README.md | \
     research/hub/exp-rfc-adr-industry-norms/collect-evidence.py | \
@@ -1442,7 +1444,7 @@ require_text "pr-ops/artifact-map.md" "version: 1.76"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-07-15"
+require_text "pr-ops/artifact-map.md" "updated: 2026-07-16"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "ai-rules/agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
