@@ -106,6 +106,7 @@ is_active_file() {
     standards/htom-documentation-structure.md | \
     standards/webportal-product-concept-standard.md | \
     standards/webportal-solution-concept-standard.md | \
+    standards/evals-contract-standard.md | \
     research/mango/2026-05-26-taxonomy-concept.md | \
     research/mango/2026-05-26-requirements-lifecycle-uncertainty.md | \
     research/mango/2026-05-26-rag-mapping-roadmap.md | \
@@ -587,6 +588,7 @@ required_files=(
   "standards/htom-documentation-structure.md"
   "standards/webportal-product-concept-standard.md"
   "standards/webportal-solution-concept-standard.md"
+  "standards/evals-contract-standard.md"
   "research/README.md"
   "research/hub/README.md"
   "research/hub/2026-06-12-ecosystem-governance-audit.md"
@@ -870,8 +872,8 @@ require_text "CHANGELOG.md" "### Removed"
 
 require_text "standards/README.md" "| Стандарт | Статус | Где применяется | Источник |"
 require_text "standards/README.md" "status: accepted"
-require_text "standards/README.md" "version: 1.10"
-require_text "standards/README.md" "updated: 2026-07-03"
+require_text "standards/README.md" "version: 1.11"
+require_text "standards/README.md" "updated: 2026-07-16"
 require_text "standards/README.md" "temperature: 0.1"
 require_text "standards/README.md" "owner: G-Ivan-A"
 require_text "standards/README.md" "Как пользоваться"
@@ -892,6 +894,7 @@ require_text "standards/README.md" "adr-structure-standard.md"
 require_text "standards/README.md" "rfc-structure-standard.md"
 require_text "standards/README.md" "executable-documentation-standard.md"
 require_text "standards/README.md" "htom-documentation-structure.md"
+require_text "standards/README.md" "evals-contract-standard.md"
 require_text "standards/README.md" "artifact-map.md"
 require_text "standards/README.md" "issue-workflow.md"
 require_text "standards/README.md" "session-handover-standard.md"
