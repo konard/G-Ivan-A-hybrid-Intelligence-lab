@@ -132,6 +132,8 @@ is_active_file() {
     research/hub/2026-07-02-task-execution-modes-research.md | \
     research/hub/2026-07-04-hub-as-agent-system-global-analysis.md | \
     research/README.md | \
+    research/education/README.md | \
+    research/education/2026-07-16-retrieval-strategies-survey.md | \
     research/hub/README.md | \
     research/hub/exp-rfc-adr-industry-norms/README.md | \
     research/hub/exp-rfc-adr-industry-norms/collect-evidence.py | \
