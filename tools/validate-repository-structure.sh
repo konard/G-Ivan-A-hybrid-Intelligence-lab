@@ -92,6 +92,7 @@ is_active_file() {
     standards/report-standard.md | \
     standards/audit-standard.md | \
     standards/analysis-standard.md | \
+    standards/standard-meta-structure.md | \
     standards/glossary.md | \
     standards/education-profile.md | \
     standards/product-profile.md | \
@@ -575,6 +576,7 @@ required_files=(
   "standards/report-standard.md"
   "standards/audit-standard.md"
   "standards/analysis-standard.md"
+  "standards/standard-meta-structure.md"
   "standards/glossary.md"
   "standards/education-profile.md"
   "standards/product-profile.md"
@@ -888,6 +890,7 @@ require_text "standards/README.md" "project-structure-inheritance.md"
 require_text "standards/README.md" "frontmatter-docs-standard.md"
 require_text "standards/README.md" "adr-structure-standard.md"
 require_text "standards/README.md" "rfc-structure-standard.md"
+require_text "standards/README.md" "standard-meta-structure.md"
 require_text "standards/README.md" "executable-documentation-standard.md"
 require_text "standards/README.md" "htom-documentation-structure.md"
 require_text "standards/README.md" "artifact-map.md"
@@ -965,6 +968,21 @@ require_text "standards/analysis-standard.md" "Subtype Profiles"
 require_text "standards/analysis-standard.md" "docs/analysis/"
 require_text "standards/analysis-standard.md" "Anti-Inflation Trigger"
 require_text "standards/analysis-standard.md" "interpretation layer"
+require_text "standards/standard-meta-structure.md" "status: proposed"
+require_text "standards/standard-meta-structure.md" "owner: G-Ivan-A"
+require_text "standards/standard-meta-structure.md" "## Purpose"
+require_text "standards/standard-meta-structure.md" "## Scope"
+require_text "standards/standard-meta-structure.md" "## Identification and Placement"
+require_text "standards/standard-meta-structure.md" "## Frontmatter"
+require_text "standards/standard-meta-structure.md" "## Minimum Body Sections"
+require_text "standards/standard-meta-structure.md" "## Type Model"
+require_text "standards/standard-meta-structure.md" "## Lifecycle"
+require_text "standards/standard-meta-structure.md" "## Boundaries"
+require_text "standards/standard-meta-structure.md" "## Validation"
+require_text "standards/standard-meta-structure.md" "## Related Artifacts"
+require_text "standards/standard-meta-structure.md" '`N/A`'
+require_text "standards/standard-meta-structure.md" "specific tail"
+require_text "standards/standard-meta-structure.md" "ADR-002"
 require_text "standards/frontmatter-docs-standard.md" 'Audit | `docs/audit/*.md`'
 require_text "standards/frontmatter-docs-standard.md" "audit_target"
 require_text "standards/frontmatter-docs-standard.md" "evidence_model"
