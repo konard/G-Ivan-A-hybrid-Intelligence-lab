@@ -13,6 +13,13 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- backlog: В `pr-ops/backlog.md` (v1.33 -> v1.34) добавлена triggered-задача
+  B-088 о многоуровневой иерархии SSOT (issue #427): ADR отвечает за решения,
+  Стандарт — за исполнение. Задача имеет статус `deferred (triggered)` и не
+  запускается до повторяющихся конфликтов между свежим ADR и устоявшейся
+  практикой в стандарте; тем самым сохранён принцип Anti-Inflation. Источник
+  обсуждения 2026-07-16 и B-050 v0.2 §2 зарегистрирован в таблице активного
+  порядка; исследования, ADR и стандарты не изменялись.
 - standards: Создан `standards/evals-contract-standard.md` (B-067, issue #426) —
   контракт `evals`/golden-sets для спока, закрывающий пробел RO3 «форма evals не
   стандартизована» (Global analysis v0.4 §15.8.1) и делающий операбельным разрыв

@@ -1804,6 +1804,9 @@ require_text "pr-ops/backlog.md" "## Спринт 8: Разделение Mango 
 require_text "pr-ops/backlog.md" "**B-079**"
 require_text "pr-ops/backlog.md" "**B-084**"
 require_text "pr-ops/backlog.md" "issues #411, #413"
+require_text "pr-ops/backlog.md" "**B-088**"
+require_text "pr-ops/backlog.md" "deferred (triggered)"
+require_text "pr-ops/backlog.md" "issues/427"
 
 require_text "pr-ops/backlog-instruction.md" "status: canonical"
 require_text "pr-ops/backlog-instruction.md" "version: 1.0"
