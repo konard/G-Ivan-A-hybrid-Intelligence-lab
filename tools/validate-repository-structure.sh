@@ -315,10 +315,12 @@ is_active_file() {
     tools/generate-manifest.py | \
     tools/sync-from-hub.sh | \
     tools/test-frontmatter-validator.sh | \
+    tools/test-evidence-structure-validator.sh | \
     tools/test-smart-sync.sh | \
     tools/test-post-migration-validator.sh | \
     tools/test-sprint-5-agent-model.sh | \
     tools/validate-frontmatter.sh | \
+    tools/validate-evidence-structure.sh | \
     tools/validate-file-naming.sh | \
     tools/validate-repository-structure.sh)
       return 0
@@ -727,9 +729,11 @@ required_files=(
   "tools/generate-manifest.py"
   "tools/sync-from-hub.sh"
   "tools/test-frontmatter-validator.sh"
+  "tools/test-evidence-structure-validator.sh"
   "tools/test-smart-sync.sh"
   "tools/test-post-migration-validator.sh"
   "tools/validate-frontmatter.sh"
+  "tools/validate-evidence-structure.sh"
   "tools/validate-file-naming.sh"
   "tools/validate-repository-structure.sh"
 )
@@ -2458,6 +2462,7 @@ require_text ".github/workflows/validate.yml" "Validate file naming"
 require_text ".github/workflows/validate.yml" "./tools/validate-file-naming.sh"
 require_text ".github/workflows/validate.yml" "Test frontmatter validator"
 require_text ".github/workflows/validate.yml" "bash tools/test-frontmatter-validator.sh"
+require_text ".github/workflows/validate.yml" "bash tools/test-evidence-structure-validator.sh"
 require_text ".github/workflows/validate.yml" "Test post-migration validator invariants"
 require_text ".github/workflows/validate.yml" "bash tools/test-post-migration-validator.sh"
 require_text ".github/workflows/validate.yml" "bash tools/test-sprint-5-agent-model.sh"
