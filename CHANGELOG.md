@@ -185,6 +185,11 @@ All notable repository governance changes are documented here.
 
 ### Changed
 
+- adr: В ADR-009 исправлен несуществующий путь `kb/processes/` на полное дерево
+  `kb/` (`processed/`, `sources/`, `fragments/`, `practices/`); план миграции
+  B-080 синхронизирован: каталог переносится целиком в приватный
+  `mango-ba-prompt-library` с сохранением внутренней структуры; активные ссылки
+  в artifact map и backlog B-080/B-082 приведены к тому же контракту (issue #446).
 - standard: `standards/standard-meta-structure.md` (v0.1 -> v0.2) расширен с
   Research/Analysis/Audit/Report на **все стандарты экосистемы** для issue #435
   / B-052. Основание — ADR-008 v0.2 и решение фаундера (2026-07-16): F10

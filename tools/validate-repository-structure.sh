@@ -325,6 +325,7 @@ is_active_file() {
     tools/sync-from-hub.sh | \
     tools/test-frontmatter-validator.sh | \
     tools/test-evidence-structure-validator.sh | \
+    tools/test-mango-kb-migration-contract.sh | \
     tools/test-smart-sync.sh | \
     tools/test-post-migration-validator.sh | \
     tools/test-sprint-5-agent-model.sh | \
@@ -740,6 +741,7 @@ required_files=(
   "tools/sync-from-hub.sh"
   "tools/test-frontmatter-validator.sh"
   "tools/test-evidence-structure-validator.sh"
+  "tools/test-mango-kb-migration-contract.sh"
   "tools/test-smart-sync.sh"
   "tools/test-post-migration-validator.sh"
   "tools/validate-frontmatter.sh"
