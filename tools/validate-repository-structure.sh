@@ -296,6 +296,7 @@ is_active_file() {
     docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md | \
     docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md | \
     docs/analysis/2026-07-10-r-a-a-report-structural-desync-options.md | \
+    docs/analysis/2026-07-17-mango-artifacts-migration-plan.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -568,6 +569,7 @@ required_files=(
   "docs/analysis/2026-07-04-hub-migration-and-root-structure-plan.md"
   "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md"
   "docs/analysis/2026-07-10-r-a-a-report-structural-desync-options.md"
+  "docs/analysis/2026-07-17-mango-artifacts-migration-plan.md"
   "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
   "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
   "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
@@ -1461,11 +1463,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 1.77"
+require_text "pr-ops/artifact-map.md" "version: 1.78"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-07-16"
+require_text "pr-ops/artifact-map.md" "updated: 2026-07-17"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -1769,7 +1771,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.34"
+require_text "pr-ops/backlog.md" "version: 1.35"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"
