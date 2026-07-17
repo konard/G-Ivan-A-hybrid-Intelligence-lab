@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.58
-updated: 2026-07-16
+version: 1.59
+updated: 2026-07-17
 temperature: 0.1
 ---
 
@@ -13,6 +13,38 @@ All notable repository governance changes are documented here.
 
 ### Added
 
+- research: Исследование retrieval-стратегий реорганизовано из монолита
+  `research/education/2026-07-16-retrieval-strategies-survey.md` (1854 строки,
+  теперь `status: superseded` со ссылкой на актуальную версию) в модуль
+  `research/ai-education/retrieval/` из шести файлов (B-089, issue #437):
+  `00-introduction.md` (BLUF, карта чтения по аудиториям, граф зависимостей
+  разделов), `10-theory.md` (Conceptual Framing с формальной сигнатурой
+  `S = Decision(KB, Query, Constraints)` и расшифровкой переменных, объектная
+  модель E1–E11, точки решений D1–D9, гипотезы H1–H20), `20-taxonomy.md`
+  (K1–K6, Q1–Q10, S0–S6), `30-decision-framework.md` (матрица «БЗ × Запрос →
+  Стратегия», chunking, embeddings, reranking, evaluation, L0–L5),
+  `40-practice-and-cases.md` (индустриальные кейсы, тренды 2024–2026, память
+  агента, ДНК-метафора) и `50-open-research.md` (зависимости выбора, вход для
+  RFC-F, ранжирование гипотез, глоссарий, источники, самоаудит). Рефакторинг
+  **структурный**: содержание перенесено без сокращений, изменены только
+  членение, нумерация разделов и внутренние ссылки — `§`-ссылки заменены на
+  cross-references между файлами, ветка «Практика» явно опирается на «Теорию» и
+  рамку решений.
+- rfc: Создан `docs/rfc/2026-07-17-rfc-reference-research-pattern.md` (B-089,
+  issue #437) — предложение **Reference Research Pattern** (статус паттерна:
+  Experimental) как формы многофайлового research-модуля в
+  `research/ai-education/<domain>/`. RFC фиксирует разделение **Research Method**
+  (как мы исследуем — предмет RFC) и **Domain Methodology** (как устроен объект
+  исследования — не предмет RFC), критерий повышения статуса (validated on:
+  Retrieval; planned: Memory, Agents; ≥3 независимых домена), механизм обратной
+  связи «практика → теория» и коллизию имён модуля с
+  `tools/validate-file-naming.sh` с тремя вариантами разрешения. RFC остаётся
+  `draft`: governance-решение за фаундером (Rule 4).
+- backlog: В `pr-ops/backlog.md` (v1.34 -> v1.35) добавлена задача B-089
+  (Спринт 9, статус `review`) и зарегистрирован источник — issue #437.
+- artifact-map: В `pr-ops/artifact-map.md` (v1.77 -> v1.78) удалена строка
+  монолита retrieval-survey, добавлены шесть строк модуля
+  `research/ai-education/retrieval/` и строка нового RFC.
 - backlog: В `pr-ops/backlog.md` (v1.33 -> v1.34) добавлена triggered-задача
   B-088 о многоуровневой иерархии SSOT (issue #427): ADR отвечает за решения,
   Стандарт — за исполнение. Задача имеет статус `deferred (triggered)` и не
