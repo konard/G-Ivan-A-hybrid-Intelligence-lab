@@ -147,6 +147,18 @@ is_active_file() {
     research/education/README.md | \
     research/ai-education/README.md | \
     research/education/2026-07-16-retrieval-strategies-survey.md | \
+    research/ba-requirements/README.md | \
+    research/ba-requirements/2026-08-25-mango-runs-empirical-snapshot.md | \
+    research/ba-requirements/normalization/00-introduction.md | \
+    research/ba-requirements/normalization/10-theory.md | \
+    research/ba-requirements/normalization/20-taxonomy.md | \
+    research/ba-requirements/normalization/30-decision-framework.md | \
+    research/ba-requirements/normalization/40-practice-and-cases.md | \
+    research/ba-requirements/normalization/50-open-research.md | \
+    research/ba-requirements/exp/ba-requirements-normalization-539/README.md | \
+    research/ba-requirements/exp/ba-requirements-normalization-539/aggregate-runs.py | \
+    research/ba-requirements/exp/ba-requirements-normalization-539/aggregate-runs.log | \
+    research/ba-requirements/exp/ba-requirements-normalization-539/runs-aggregate.json | \
     research/ai-education/retrieval/00-introduction.md | \
     research/ai-education/retrieval/10-theory.md | \
     research/ai-education/retrieval/20-taxonomy.md | \

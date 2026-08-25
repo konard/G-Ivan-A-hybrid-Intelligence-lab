@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.25
-updated: 2026-07-16
+version: 1.26
+updated: 2026-08-25
 temperature: 0.1
 source: research/README-old.md
 ---
@@ -40,6 +40,7 @@ source: research/README-old.md
 | [external-knowledge/](external-knowledge/) | Интеграция внешних знаний: Base Registry внешних источников, механизм инсайтов и привязка к knowledge lifecycle (`scope: repo-wide`). |
 | [cicd/](cicd/) | Исследования практик и стандартов CI/CD для AI-native проектов: анализ шаблонов, паттернов автоматизации и применимости к нашим репозиториям (`scope: repo-wide`). |
 | [reputation-technologies/](reputation-technologies/) | Фреймворк репутационных технологий **GRA**: видение фаундера, концептуальная модель, международный стандарт, словарь, white paper, архитектура отдельного репозитория в экосистеме (`scope: repo-wide`). |
+| [ba-requirements/](ba-requirements/) | Нормализация входа BA-процессов: универсальная таксономия инициирующих артефактов и стейкхолдеров, цикл нормализации с гейтами, процесс статистики требований и Mango-специализированный срез на корпусе `runs/` (`scope: universal + mango`). |
 | [education/](education/) | Теоретическая основа для образовательных модулей Хаба: source-backed survey предметных областей, таксономии и матрицы принятия решений (`scope: repo-wide`). Учебный продукт на их основе живёт в [education/](../education/). |
 
 ### Подкаталог `hub/`
@@ -85,6 +86,13 @@ source: research/README-old.md
 | Файл | Назначение |
 | --- | --- |
 | [2026-07-16-retrieval-strategies-survey.md](education/2026-07-16-retrieval-strategies-survey.md) | Научно-теоретическое исследование retrieval-стратегий для AI-агентов (issue #418): 30 research questions, объектная модель из 10 сущностей, граф зависимостей, 9 точек принятия решений, 20 провокационных гипотез (7 от фаундера + 13 из международных практик), таксономии БЗ/запросов/стратегий, матрица «БЗ × Запрос → Стратегия», chunking, embeddings и similarity metrics, reranking, evaluation, readiness levels L0–L5, индустриальные кейсы и тренды 2024–2026, связь с архитектурой памяти агента. Теоретическая база для образовательного модуля (RFC-F). |
+
+### Подкаталог `ba-requirements/`
+
+| Файл | Назначение |
+| --- | --- |
+| [normalization/](ba-requirements/normalization/) | RRP-модуль (issue #539): теория нормализации и решение о термине «инициирующий артефакт», таксономии A–D (классы входа, оси, стейкхолдеры по контурам, универсальные процессы U1–U9, Mango-срез), матрица корреляции, цикл N1–N7 с гейтами G1–G6, три гипотезы реализации, процесс статистики требований, четыре граничных кейса на эмпирике 56 прогонов. |
+| [2026-08-25-mango-runs-empirical-snapshot.md](ba-requirements/2026-08-25-mango-runs-empirical-snapshot.md) | Датированный замер корпуса `mango_ba_prompts/runs/` (56 прогонов, `524a8eb`): состав, метрики, покрытие ключевых понятий и ограничения замера. |
 
 ## Рекомендуемая структура
 

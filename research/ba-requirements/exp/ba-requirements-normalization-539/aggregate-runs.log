@@ -1,0 +1,22 @@
+runs: 56  sha: 524a8eb
+  episodes: {'n': 41, 'sum': 1080, 'min': 1, 'median': 15, 'max': 83}
+  iterations: {'n': 37, 'sum': 1052, 'min': 1, 'median': 19, 'max': 83}
+  ba_edits: {'n': 10, 'sum': 53, 'min': 0, 'median': 6.0, 'max': 11}
+  quality: {'n': 11, 'sum': 31, 'min': 2, 'median': 3, 'max': 3}
+  success_rate: {'n': 18, 'sum': 10.75, 'min': 0.25, 'median': 0.6, 'max': 0.92}
+  hallucinations: {'n': 11, 'sum': 41, 'min': 2, 'median': 3, 'max': 8}
+  hallucinations_shipped: {'n': 11, 'sum': 12, 'min': 0, 'median': 1, 'max': 3}
+  tokens_dialog_total: {'n': 32, 'sum': 61360738, 'min': 3387, 'median': 720806.5, 'max': 9225333}
+  turns: {'n': 34, 'sum': 2084, 'min': 2, 'median': 44.0, 'max': 166}
+  duration_wall_clock_s: {'n': 11, 'sum': 1331029, 'min': 2762, 'median': 45675, 'max': 522867}
+  keyword coverage (покрыт): 41 runs
+  keyword clarification (уточнени): 23 runs
+  keyword hallucination (галлюцин): 20 runs
+  keyword custom (кастом): 10 runs
+  keyword speculation (домысл): 11 runs
+  keyword tariff (тариф): 7 runs
+  keyword access-rights (прав доступа): 5 runs
+  keyword already-implemented (уже реализован): 3 runs
+  keyword discoverability (discoverab): 0 runs
+  keyword deprecation-en (deprecat): 0 runs
+  keyword deprecation-ru (вывод из эксплуатации): 0 runs
