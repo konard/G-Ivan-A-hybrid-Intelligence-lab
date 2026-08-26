@@ -149,6 +149,7 @@ is_active_file() {
     research/education/2026-07-16-retrieval-strategies-survey.md | \
     research/ba-requirements/README.md | \
     research/ba-requirements/2026-08-25-mango-runs-empirical-snapshot.md | \
+    research/ba-requirements/2026-08-26-m0-m2-layering-hypothesis-check.md | \
     research/ba-requirements/normalization/00-introduction.md | \
     research/ba-requirements/normalization/10-theory.md | \
     research/ba-requirements/normalization/20-taxonomy.md | \
@@ -159,6 +160,10 @@ is_active_file() {
     research/ba-requirements/exp/ba-requirements-normalization-539/aggregate-runs.py | \
     research/ba-requirements/exp/ba-requirements-normalization-539/aggregate-runs.log | \
     research/ba-requirements/exp/ba-requirements-normalization-539/runs-aggregate.json | \
+    research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/README.md | \
+    research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/classify-runs.py | \
+    research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/classify-runs.log | \
+    research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/runs-routing.json | \
     research/ai-education/retrieval/00-introduction.md | \
     research/ai-education/retrieval/10-theory.md | \
     research/ai-education/retrieval/20-taxonomy.md | \
@@ -372,6 +377,7 @@ is_active_file() {
     docs/rfc/2026-07-02-rfc-analysis-structure.md | \
     docs/rfc/2026-08-06-rfc-task-statement-architecture.md | \
     docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md | \
+    docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md | \
     research/mango/2026-06-18-requirements-engineering-ai-era.md | \
     research/mango/2026-06-18-ai-classifications-formalization.md | \
     research/mango/2026-06-19-repository-structure-vision.md | \
@@ -1703,11 +1709,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 2.1"
+require_text "pr-ops/artifact-map.md" "version: 2.3"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-08-22"
+require_text "pr-ops/artifact-map.md" "updated: 2026-08-26"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -1797,10 +1803,10 @@ require_text "pr-ops/artifact-map.md" "research/external-knowledge/external-insi
 require_text "pr-ops/artifact-map.md" "docs/rfc/external-knowledge-integration.md"
 
 require_text "docs/rfc/README.md" "status: accepted"
-require_text "docs/rfc/README.md" "version: 1.23"
+require_text "docs/rfc/README.md" "version: 1.25"
 require_text "docs/rfc/README.md" "Accepted RFC структуры Reports-артефактов"
 require_text "docs/rfc/README.md" "ADR-004"
-require_text "docs/rfc/README.md" "updated: 2026-08-22"
+require_text "docs/rfc/README.md" "updated: 2026-08-26"
 require_text "docs/rfc/README.md" "owner: G-Ivan-A"
 require_text "docs/rfc/README.md" "adr-structure-standard.md"
 require_text "docs/rfc/README.md" "rfc-structure-standard.md"
@@ -1847,6 +1853,51 @@ require_text "$rfc_531" "research/hub/exp/htom-genome-rfc-531/"
 require_text "docs/rfc/README.md" "2026-08-21-rfc-htom-genome-structure-and-ci.md"
 require_text "pr-ops/artifact-map.md" '| `/docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md` | RFC | справка |'
 require_text "pr-ops/backlog.md" "**B-105**"
+
+# RFC дорожной карты RRP-исследований конвейера артефактов БА (issue #541, B-108).
+rfc_541="docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md"
+require_text "$rfc_541" "status: draft"
+require_text "$rfc_541" "rfc-scope: multi"
+require_text "$rfc_541" "owner: G-Ivan-A"
+require_text "$rfc_541" "## RFC Metadata"
+require_text "$rfc_541" "## Summary"
+require_text "$rfc_541" "## Motivation"
+require_text "$rfc_541" "## Goals and Non-goals"
+require_text "$rfc_541" "## Proposal"
+require_text "$rfc_541" "## Alternatives"
+require_text "$rfc_541" "## Trade-offs"
+require_text "$rfc_541" "## Impacted Artifacts"
+require_text "$rfc_541" "## Implementation and Validation"
+require_text "$rfc_541" "## Lifecycle and Decision Path"
+require_text "$rfc_541" "## Open Questions"
+require_text "$rfc_541" "## Related Artifacts"
+require_text "$rfc_541" "research/ba-requirements/normalization/"
+require_text "docs/rfc/README.md" "2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md"
+require_text "pr-ops/artifact-map.md" '| `/docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md` | RFC | справка |'
+require_text "pr-ops/backlog.md" "**B-108**"
+
+# Версия 0.2 RFC #541: слоевая декомпозиция, проверенная замером на корпусе.
+# Ссылки проверяются на подстроку, чтобы правка формулировок не ломала CI, но
+# сама доказательная база не могла исчезнуть из RFC незамеченной.
+require_text "$rfc_541" "version: 0.2"
+require_text "$rfc_541" "C-CORE"
+require_text "$rfc_541" "C-OUT"
+require_text "$rfc_541" "research/ba-requirements/2026-08-26-m0-m2-layering-hypothesis-check.md"
+require_text "$rfc_541" "research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541"
+
+layering_check="research/ba-requirements/2026-08-26-m0-m2-layering-hypothesis-check.md"
+require_file "$layering_check"
+require_text "$layering_check" "status: draft"
+require_text "$layering_check" "type: research"
+require_text "$layering_check" "runs-routing.json"
+
+layering_exp="research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541"
+require_file "$layering_exp/README.md"
+require_file "$layering_exp/classify-runs.py"
+require_file "$layering_exp/runs-routing.json"
+require_file "$layering_exp/classify-runs.log"
+require_text "pr-ops/artifact-map.md" '| `/research/ba-requirements/2026-08-26-m0-m2-layering-hypothesis-check.md` | исследование |'
+require_text "pr-ops/artifact-map.md" '| `/research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/` | исследование |'
 
 # Реализация RFC #532 (issue #537, B-106): геном получил resolve_one_of, запрет
 # дубликатов управляющих контрактов, классификацию каталогов и собственный CI.
@@ -2074,7 +2125,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.49"
+require_text "pr-ops/backlog.md" "version: 1.51"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"
