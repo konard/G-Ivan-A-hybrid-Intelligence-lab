@@ -1,0 +1,1123 @@
+{
+  "summary": {
+    "mango_commit": "7c92766",
+    "runs_total": 57,
+    "runs_delivering_tz": 0,
+    "runs_consuming_tz_as_input": 4,
+    "runs_delivering_any_document": 32,
+    "runs_with_audience_fan_out": 4,
+    "fan_out_runs": [
+      "RUN-0010",
+      "RUN-0055",
+      "RUN-0056",
+      "RUN-0057"
+    ],
+    "runs_with_levelled_renders": 2,
+    "share_delivering_tz": 0.0,
+    "share_delivering_any_document": 0.5614
+  },
+  "runs": [
+    {
+      "run": "RUN-0001",
+      "process": "prompt-experiment",
+      "run_type": "execution",
+      "status": "experimental",
+      "outputs": [
+        "tz-stats-prototype-2026-05.md"
+      ],
+      "artifacts": [
+        "tz-stats-prototype-2026-05.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "tz-stats-prototype-2026-05.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0002",
+      "process": "user-story-generation",
+      "run_type": "execution",
+      "status": "partial-success",
+      "outputs": [
+        "user-story_gen-from-raw-request_2026-05-26.md"
+      ],
+      "artifacts": [
+        "user-story_gen-from-raw-request_2026-05-26.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "user-story_gen-from-raw-request_2026-05-26.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0003",
+      "process": "usecase-generation",
+      "run_type": "execution",
+      "status": "partial-success",
+      "outputs": [
+        "usecase_gen-stepwise-alignment_2026-05-26.md"
+      ],
+      "artifacts": [
+        "usecase_gen-stepwise-alignment_2026-05-26.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "usecase_gen-stepwise-alignment_2026-05-26.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0004",
+      "process": "prompt-audit",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "prompts-audit-2026-05-26.md"
+      ],
+      "artifacts": [
+        "prompts-audit-2026-05-26.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "prompts-audit-2026-05-26.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0005",
+      "process": "prompt-selftest",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "prompts-selftest-2026-05-26.md"
+      ],
+      "artifacts": [
+        "prompts-selftest-2026-05-26.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "prompts-selftest-2026-05-26.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0006",
+      "process": "session-debug-documentation",
+      "run_type": "execution",
+      "status": "success",
+      "outputs": [
+        "session-debug-summarizer-2026-06-13.md"
+      ],
+      "artifacts": [
+        "session-debug-summarizer-2026-06-13.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "session-debug-summarizer-2026-06-13.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0007",
+      "process": "fr-generation",
+      "run_type": "execution",
+      "status": "works-with-edits",
+      "outputs": [
+        "fr-generation-1027-live_2026-06-16.md"
+      ],
+      "artifacts": [
+        "fr-generation-1027-live_2026-06-16.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "fr-generation-1027-live_2026-06-16.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0008",
+      "process": "kb-citation-check",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "kb-citation-check-2026-06-16.md"
+      ],
+      "artifacts": [
+        "kb-citation-check-2026-06-16.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "kb-citation-check-2026-06-16.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0009",
+      "process": "industry-standards-ab-check",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "standards-applied-ab-2026-06-16.md"
+      ],
+      "artifacts": [
+        "standards-applied-ab-2026-06-16.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "standards-applied-ab-2026-06-16.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0010",
+      "process": "bcreq-1025-email-routing",
+      "run_type": "statistics",
+      "status": "works-with-edits",
+      "outputs": [
+        "2026-06-17-bcreq-1025-email-routing.md",
+        "analysis-bcreq-1025-2026-06-17.md"
+      ],
+      "artifacts": [
+        "2026-06-17-bcreq-1025-email-routing.md",
+        "analysis-bcreq-1025-2026-06-17.md"
+      ],
+      "artifact_count": 2,
+      "levelled_renders": [],
+      "renders": [
+        "2026-06-17-bcreq-1025-email-routing.md",
+        "analysis-bcreq-1025-2026-06-17.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0011",
+      "process": "multichannel-agent-workload",
+      "run_type": "execution",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md"
+      ],
+      "artifacts": [
+        "final-artifact.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0012",
+      "process": "bcreq-1069-restricted-api-key",
+      "run_type": "execution",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md"
+      ],
+      "artifacts": [
+        "final-artifact.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0013",
+      "process": "bcreq-1059-multichannel-slots-limits",
+      "run_type": "statistics",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md"
+      ],
+      "artifacts": [
+        "final-artifact.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": true
+    },
+    {
+      "run": "RUN-0014",
+      "process": "task-1075-amocrm-deal-on-call",
+      "run_type": "statistics",
+      "status": "partial-success",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md"
+      ],
+      "artifacts": [
+        "final-artifact.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0015",
+      "process": "fr-validation-57204-ivr-scheme-amocrm-rule",
+      "run_type": "statistics",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md",
+        "quality-findings.md"
+      ],
+      "artifacts": [
+        "final-artifact.md",
+        "quality-findings.md"
+      ],
+      "artifact_count": 2,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0016",
+      "process": "fr-drafting-58093-amocrm-deal-card-new-tab",
+      "run_type": "statistics",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md",
+        "quality-findings.md"
+      ],
+      "artifacts": [
+        "final-artifact.md",
+        "quality-findings.md"
+      ],
+      "artifact_count": 2,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0017",
+      "process": "task-1076-vks-artifacts-bpmsoft",
+      "run_type": "statistics",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md",
+        "quality-findings.md"
+      ],
+      "artifacts": [
+        "final-artifact.md",
+        "quality-findings.md"
+      ],
+      "artifact_count": 2,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0018",
+      "process": "fr-validation-1079-messenger-id-search",
+      "run_type": "statistics",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md"
+      ],
+      "artifacts": [
+        "final-artifact.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0019",
+      "process": "bcreq-1064-browser-softphone-in-mis",
+      "run_type": "statistics",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "episodes.md",
+        "final-artifact.md",
+        "prompts-chain.md"
+      ],
+      "artifacts": [
+        "final-artifact.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0020",
+      "process": "task-1065-context-and-questions-a7a",
+      "run_type": "statistics",
+      "status": "needs-rework",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md",
+        "quality-findings.md"
+      ],
+      "artifacts": [
+        "final-artifact.md",
+        "quality-findings.md"
+      ],
+      "artifact_count": 2,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": true
+    },
+    {
+      "run": "RUN-0021",
+      "process": "fr-drafting-975-ineffective-call-parameters",
+      "run_type": "statistics",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md"
+      ],
+      "artifacts": [
+        "final-artifact.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0022",
+      "process": "fr-validation-765-headhunter-channel",
+      "run_type": "statistics",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md",
+        "quality-findings.md"
+      ],
+      "artifacts": [
+        "final-artifact.md",
+        "quality-findings.md"
+      ],
+      "artifact_count": 2,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0023",
+      "process": "task-59295-fr-validation-email-forward",
+      "run_type": "statistics",
+      "status": "partial-success",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md",
+        "quality-findings.md"
+      ],
+      "artifacts": [
+        "final-artifact.md",
+        "quality-findings.md"
+      ],
+      "artifact_count": 2,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0024",
+      "process": "task-1020-okdesk-mango-integration-questions",
+      "run_type": "statistics",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md",
+        "quality-findings.md"
+      ],
+      "artifacts": [
+        "final-artifact.md",
+        "quality-findings.md"
+      ],
+      "artifact_count": 2,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0025",
+      "process": "fr-validation-997-ivr-scheme-incoming-call-rules",
+      "run_type": "statistics",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md"
+      ],
+      "artifacts": [
+        "final-artifact.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0026",
+      "process": "task-1007-amocrm-outbound-campaign-funnel-stage-fr",
+      "run_type": "statistics",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md",
+        "quality-findings.md"
+      ],
+      "artifacts": [
+        "final-artifact.md",
+        "quality-findings.md"
+      ],
+      "artifact_count": 2,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0027",
+      "process": "fr-analysis-978-email-signature-in-lk",
+      "run_type": "statistics",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md"
+      ],
+      "artifacts": [
+        "final-artifact.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0028",
+      "process": "fr-validation-1040-speech-analytics-direction-filter",
+      "run_type": "statistics",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md",
+        "quality-findings.md"
+      ],
+      "artifacts": [
+        "final-artifact.md",
+        "quality-findings.md"
+      ],
+      "artifact_count": 2,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0029",
+      "process": "task-994-bitrix24-lead-title-elicitation",
+      "run_type": "statistics",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "final-artifact.md",
+        "prompts-chain.md"
+      ],
+      "artifacts": [
+        "final-artifact.md"
+      ],
+      "artifact_count": 1,
+      "levelled_renders": [],
+      "renders": [
+        "final-artifact.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0030",
+      "process": "task-599-1c-subscriber-selection-on-call",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0031",
+      "process": "task-791-unified-request-entity-deal-ticket",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0032",
+      "process": "task-792-post-call-processing-outbound",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0033",
+      "process": "task-804-speech-analytics-export-to-external-system",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0034",
+      "process": "task-804-speech-analytics-export-final",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0035",
+      "process": "task-806-elma-knowledge-base-recommendations",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0036",
+      "process": "task-817-personal-data-consent-text",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0037",
+      "process": "task-838-preset-call-block-status",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0038",
+      "process": "task-854-mtalker-conference-participants-section",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0039",
+      "process": "task-854-mtalker-conference-participants-fr",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0040",
+      "process": "task-872-proactive-chat-retrigger",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0041",
+      "process": "task-890-bitrix24-call-routing",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0042",
+      "process": "task-892-knowledge-base-page-restore",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0043",
+      "process": "task-908-open-url-on-call-answer",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0044",
+      "process": "task-908-open-url-on-call-answer-validation",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0045",
+      "process": "task-915-call-connection-sound-signal",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0046",
+      "process": "task-918-mandatory-call-topics",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0047",
+      "process": "task-920-meeting-transcript-analysis",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0048",
+      "process": "task-930-amocrm-comment-and-tag-fields",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0049",
+      "process": "task-935-speech-analytics-api-parameters",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0050",
+      "process": "task-942-email-format-painter",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0051",
+      "process": "task-960-call-records-multiselect-filter",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0052",
+      "process": "task-964-ai-robot-on-line",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0053",
+      "process": "task-977-bitrix24-call-attribution",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0054",
+      "process": "task-980-number-replacement-questions",
+      "run_type": "statistics",
+      "status": "draft",
+      "outputs": [
+        "README.md",
+        "prompt-usage.md"
+      ],
+      "artifacts": [],
+      "artifact_count": 0,
+      "levelled_renders": [],
+      "renders": [],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0055",
+      "process": "tz-feasibility-assessment-utair-chat-mango-office",
+      "run_type": "execution",
+      "status": "works-with-edits",
+      "outputs": [
+        "README.md",
+        "feasibility-assessment.md",
+        "tender-feasibility-brief.md"
+      ],
+      "artifacts": [
+        "feasibility-assessment.md",
+        "tender-feasibility-brief.md"
+      ],
+      "artifact_count": 2,
+      "levelled_renders": [],
+      "renders": [
+        "feasibility-assessment.md",
+        "tender-feasibility-brief.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": true
+    },
+    {
+      "run": "RUN-0056",
+      "process": "gap-analysis-hh-chats-mango-cc-integration-feasibility",
+      "run_type": "execution",
+      "status": "partial-success",
+      "outputs": [
+        "L1-executive-summary.md",
+        "L2-gap-matrix.md",
+        "L3-technical-spike-notes.md",
+        "README.md"
+      ],
+      "artifacts": [
+        "L1-executive-summary.md",
+        "L2-gap-matrix.md",
+        "L3-technical-spike-notes.md"
+      ],
+      "artifact_count": 3,
+      "levelled_renders": [
+        "L1-executive-summary.md",
+        "L2-gap-matrix.md",
+        "L3-technical-spike-notes.md"
+      ],
+      "renders": [
+        "L1-executive-summary.md",
+        "L2-gap-matrix.md",
+        "L3-technical-spike-notes.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": false
+    },
+    {
+      "run": "RUN-0057",
+      "process": "feasibility-assessment-tender-tz-stt-tts-nlu-dialogue-manager",
+      "run_type": "execution",
+      "status": "partial-success",
+      "outputs": [
+        "L0-customer-form-with-assessment.md",
+        "L1-executive-summary.md",
+        "L2-feasibility-matrix.md",
+        "L3-technical-notes.md",
+        "L4-requirements-statistics.md",
+        "README.md"
+      ],
+      "artifacts": [
+        "L0-customer-form-with-assessment.md",
+        "L1-executive-summary.md",
+        "L2-feasibility-matrix.md",
+        "L3-technical-notes.md",
+        "L4-requirements-statistics.md"
+      ],
+      "artifact_count": 5,
+      "levelled_renders": [
+        "L0-customer-form-with-assessment.md",
+        "L1-executive-summary.md",
+        "L2-feasibility-matrix.md",
+        "L3-technical-notes.md",
+        "L4-requirements-statistics.md"
+      ],
+      "renders": [
+        "L0-customer-form-with-assessment.md",
+        "L1-executive-summary.md",
+        "L2-feasibility-matrix.md",
+        "L3-technical-notes.md",
+        "L4-requirements-statistics.md"
+      ],
+      "tz_produced": false,
+      "tz_consumed": true
+    }
+  ]
+}

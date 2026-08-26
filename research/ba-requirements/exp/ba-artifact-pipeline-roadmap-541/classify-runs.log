@@ -1,0 +1,10 @@
+mango_commit: 7c92766
+runs_total: 57
+runs_delivering_tz: 0
+runs_consuming_tz_as_input: 4
+runs_delivering_any_document: 32
+runs_with_audience_fan_out: 4
+fan_out_runs: ['RUN-0010', 'RUN-0055', 'RUN-0056', 'RUN-0057']
+runs_with_levelled_renders: 2
+share_delivering_tz: 0.0
+share_delivering_any_document: 0.5614
