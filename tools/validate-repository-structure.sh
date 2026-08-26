@@ -157,6 +157,35 @@ is_active_file() {
     research/ba-requirements/normalization/30-decision-framework.md | \
     research/ba-requirements/normalization/40-practice-and-cases.md | \
     research/ba-requirements/normalization/50-open-research.md | \
+    research/ba-requirements/2026-08-26-rrp-full-cycle-corpus-facts.md | \
+    research/ba-requirements/solution-modeling/00-introduction.md | \
+    research/ba-requirements/solution-modeling/10-theory.md | \
+    research/ba-requirements/solution-modeling/20-taxonomy.md | \
+    research/ba-requirements/solution-modeling/30-decision-framework.md | \
+    research/ba-requirements/solution-modeling/40-practice-and-cases.md | \
+    research/ba-requirements/solution-modeling/50-open-research.md | \
+    research/ba-requirements/artifact-rendering/00-introduction.md | \
+    research/ba-requirements/artifact-rendering/10-theory.md | \
+    research/ba-requirements/artifact-rendering/20-taxonomy.md | \
+    research/ba-requirements/artifact-rendering/30-decision-framework.md | \
+    research/ba-requirements/artifact-rendering/40-practice-and-cases.md | \
+    research/ba-requirements/artifact-rendering/50-open-research.md | \
+    research/ba-requirements/feedback-and-evolution/00-introduction.md | \
+    research/ba-requirements/feedback-and-evolution/10-theory.md | \
+    research/ba-requirements/feedback-and-evolution/20-taxonomy.md | \
+    research/ba-requirements/feedback-and-evolution/30-decision-framework.md | \
+    research/ba-requirements/feedback-and-evolution/40-practice-and-cases.md | \
+    research/ba-requirements/feedback-and-evolution/50-open-research.md | \
+    research/ba-requirements/orchestration/00-introduction.md | \
+    research/ba-requirements/orchestration/10-theory.md | \
+    research/ba-requirements/orchestration/20-taxonomy.md | \
+    research/ba-requirements/orchestration/30-decision-framework.md | \
+    research/ba-requirements/orchestration/40-practice-and-cases.md | \
+    research/ba-requirements/orchestration/50-open-research.md | \
+    research/ba-requirements/exp/ba-rrp-full-cycle-545/README.md | \
+    research/ba-requirements/exp/ba-rrp-full-cycle-545/measure-pipeline.py | \
+    research/ba-requirements/exp/ba-rrp-full-cycle-545/measure-pipeline.log | \
+    research/ba-requirements/exp/ba-rrp-full-cycle-545/pipeline-facts.json | \
     research/ba-requirements/exp/ba-requirements-normalization-539/README.md | \
     research/ba-requirements/exp/ba-requirements-normalization-539/aggregate-runs.py | \
     research/ba-requirements/exp/ba-requirements-normalization-539/aggregate-runs.log | \
@@ -1714,7 +1743,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 2.4"
+require_text "pr-ops/artifact-map.md" "version: 2.5"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
@@ -1861,7 +1890,7 @@ require_text "pr-ops/backlog.md" "**B-105**"
 
 # RFC дорожной карты RRP-исследований конвейера артефактов БА (issue #541, B-108).
 rfc_541="docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md"
-require_text "$rfc_541" "status: draft"
+require_text "$rfc_541" "status: accepted"
 require_text "$rfc_541" "rfc-scope: multi"
 require_text "$rfc_541" "owner: G-Ivan-A"
 require_text "$rfc_541" "## RFC Metadata"
@@ -1884,7 +1913,7 @@ require_text "pr-ops/backlog.md" "**B-108**"
 # Версия 0.2 RFC #541: слоевая декомпозиция, проверенная замером на корпусе.
 # Ссылки проверяются на подстроку, чтобы правка формулировок не ломала CI, но
 # сама доказательная база не могла исчезнуть из RFC незамеченной.
-require_text "$rfc_541" "version: 0.2"
+require_text "$rfc_541" "version: 1.0"
 require_text "$rfc_541" "C-CORE"
 require_text "$rfc_541" "C-OUT"
 require_text "$rfc_541" "research/ba-requirements/2026-08-26-m0-m2-layering-hypothesis-check.md"
@@ -2130,7 +2159,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.51"
+require_text "pr-ops/backlog.md" "version: 1.52"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"
