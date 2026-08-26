@@ -157,6 +157,35 @@ is_active_file() {
     research/ba-requirements/normalization/30-decision-framework.md | \
     research/ba-requirements/normalization/40-practice-and-cases.md | \
     research/ba-requirements/normalization/50-open-research.md | \
+    research/ba-requirements/2026-08-26-rrp-full-cycle-corpus-facts.md | \
+    research/ba-requirements/solution-modeling/00-introduction.md | \
+    research/ba-requirements/solution-modeling/10-theory.md | \
+    research/ba-requirements/solution-modeling/20-taxonomy.md | \
+    research/ba-requirements/solution-modeling/30-decision-framework.md | \
+    research/ba-requirements/solution-modeling/40-practice-and-cases.md | \
+    research/ba-requirements/solution-modeling/50-open-research.md | \
+    research/ba-requirements/artifact-rendering/00-introduction.md | \
+    research/ba-requirements/artifact-rendering/10-theory.md | \
+    research/ba-requirements/artifact-rendering/20-taxonomy.md | \
+    research/ba-requirements/artifact-rendering/30-decision-framework.md | \
+    research/ba-requirements/artifact-rendering/40-practice-and-cases.md | \
+    research/ba-requirements/artifact-rendering/50-open-research.md | \
+    research/ba-requirements/feedback-and-evolution/00-introduction.md | \
+    research/ba-requirements/feedback-and-evolution/10-theory.md | \
+    research/ba-requirements/feedback-and-evolution/20-taxonomy.md | \
+    research/ba-requirements/feedback-and-evolution/30-decision-framework.md | \
+    research/ba-requirements/feedback-and-evolution/40-practice-and-cases.md | \
+    research/ba-requirements/feedback-and-evolution/50-open-research.md | \
+    research/ba-requirements/orchestration/00-introduction.md | \
+    research/ba-requirements/orchestration/10-theory.md | \
+    research/ba-requirements/orchestration/20-taxonomy.md | \
+    research/ba-requirements/orchestration/30-decision-framework.md | \
+    research/ba-requirements/orchestration/40-practice-and-cases.md | \
+    research/ba-requirements/orchestration/50-open-research.md | \
+    research/ba-requirements/exp/ba-rrp-full-cycle-545/README.md | \
+    research/ba-requirements/exp/ba-rrp-full-cycle-545/measure-pipeline.py | \
+    research/ba-requirements/exp/ba-rrp-full-cycle-545/measure-pipeline.log | \
+    research/ba-requirements/exp/ba-rrp-full-cycle-545/pipeline-facts.json | \
     research/ba-requirements/exp/ba-requirements-normalization-539/README.md | \
     research/ba-requirements/exp/ba-requirements-normalization-539/aggregate-runs.py | \
     research/ba-requirements/exp/ba-requirements-normalization-539/aggregate-runs.log | \
