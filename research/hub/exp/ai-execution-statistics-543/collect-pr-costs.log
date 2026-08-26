@@ -1,0 +1,62 @@
+fetching G-Ivan-A/hybrid-Intelligence-lab ...
+fetching G-Ivan-A/mango_ba_prompts ...
+Hub: закрытых PR=272 (merged=268, closed-unmerged=4), со стоимостью=263, без стоимости=9, сессий=328, сумма=$2072.03
+Mango: закрытых PR=160 (merged=159, closed-unmerged=1), со стоимостью=158, без стоимости=2, сессий=205, сумма=$1364.21
+
+модельные семейства:
+  Hub|Claude (иные модели)           сессий=   9 $22.57
+  Hub|Codex                          сессий= 166 $1155.56
+  Hub|Opus                           сессий= 153 $893.90
+  Mango|Claude (иные модели)         сессий=   9 $18.24
+  Mango|Codex                        сессий=  82 $680.06
+  Mango|Opus                         сессий= 114 $665.91
+
+модели:
+  GPT-5.5                сессий= 206 $1657.48
+  Claude Opus 4.8        сессий= 132 $779.86
+  Claude Opus            сессий=  30 $397.69
+  Claude Opus 5          сессий=  91 $336.52
+  GPT-5.6 Sol            сессий=  25 $100.46
+  GPT 5.6 Sol            сессий=  17 $77.68
+  Claude Opus 4.7        сессий=  13 $45.14
+  не указана             сессий=   3 $14.35
+  Claude Sonnet 4.6      сессий=   8 $10.69
+  Claude Fable 5         сессий=   1 $7.55
+  Claude Sonnet 5        сессий=   5 $7.52
+  Claude Sonnet          сессий=   1 $0.71
+  Claude Opus 4.6        сессий=   1 $0.60
+
+месяцы:
+  closed|2026-05|Hub     PR=  43 без стоимости=  0 сессий=  46 $214.85 Codex=$161.52/29 Opus=$51.97/16 Claude-иные=$1.36/1
+  closed|2026-06|Hub     PR= 110 без стоимости=  5 сессий= 119 $955.80 Codex=$525.62/63 Opus=$429.47/55 Claude-иные=$0.71/1
+  closed|2026-06|Mango   PR= 124 без стоимости=  2 сессий= 140 $1088.73 Codex=$652.48/79 Opus=$418.00/52 Claude-иные=$18.24/9
+  closed|2026-07|Hub     PR=  80 без стоимости=  1 сессий= 109 $678.22 Codex=$388.11/58 Opus=$274.01/45 Claude-иные=$16.10/6
+  closed|2026-07|Mango   PR=   4 без стоимости=  0 сессий=   5 $36.65 Codex=$27.58/3 Opus=$9.07/2 Claude-иные=$0.00/0
+  closed|2026-08|Hub     PR=  39 без стоимости=  3 сессий=  54 $223.16 Codex=$80.32/16 Opus=$138.45/37 Claude-иные=$4.40/1
+  closed|2026-08|Mango   PR=  32 без стоимости=  0 сессий=  60 $238.84 Codex=$0.00/0 Opus=$238.84/60 Claude-иные=$0.00/0
+  created|2025-12|Hub    PR=   1 без стоимости=  0 сессий=   1 $1.36 Codex=$0.00/0 Opus=$0.00/0 Claude-иные=$1.36/1
+  created|2026-05|Hub    PR=  42 без стоимости=  0 сессий=  45 $213.48 Codex=$161.52/29 Opus=$51.97/16 Claude-иные=$0.00/0
+  created|2026-06|Hub    PR= 112 без стоимости=  5 сессий= 121 $968.62 Codex=$533.53/64 Opus=$434.37/56 Claude-иные=$0.71/1
+  created|2026-06|Mango  PR= 124 без стоимости=  2 сессий= 140 $1088.73 Codex=$652.48/79 Opus=$418.00/52 Claude-иные=$18.24/9
+  created|2026-07|Hub    PR=  80 без стоимости=  1 сессий= 111 $690.94 Codex=$396.94/59 Opus=$273.50/45 Claude-иные=$20.50/7
+  created|2026-07|Mango  PR=   4 без стоимости=  0 сессий=   5 $36.65 Codex=$27.58/3 Opus=$9.07/2 Claude-иные=$0.00/0
+  created|2026-08|Hub    PR=  37 без стоимости=  3 сессий=  50 $197.62 Codex=$63.57/14 Opus=$134.05/36 Claude-иные=$0.00/0
+  created|2026-08|Mango  PR=  32 без стоимости=  0 сессий=  60 $238.84 Codex=$0.00/0 Opus=$238.84/60 Claude-иные=$0.00/0
+
+горизонт данных: {'earliest_created_at': '2025-12-26T14:16:35Z', 'earliest_closed_at': '2026-05-22T08:39:08Z', 'latest_closed_at': '2026-08-26T09:23:35Z'}
+статистика: {'prs_with_cost': 421, 'sessions': 533, 'total_usd': 3436.237693, 'avg_per_pr_usd': 8.162085, 'median_pr_usd': 6.611316, 'avg_per_session_usd': 6.446975, 'median_session_usd': 5.435591, 'min_session_usd': 0.073743, 'max_session_usd': 59.770849, 'prs_with_multiple_sessions': 87}
+
+источник цифры: {'provider-calculated': 71, 'public-pricing': 248, 'reported': 214}
+
+PR без данных о стоимости:
+  Hub    #148  2026-06 https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/148
+  Hub    #150  2026-06 https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/150
+  Hub    #180  2026-06 https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/180
+  Hub    #190  2026-06 https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/190
+  Hub    #273  2026-06 https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/273
+  Hub    #410  2026-07 https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/410
+  Hub    #520  2026-08 https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/520
+  Hub    #522  2026-08 https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/522
+  Hub    #524  2026-08 https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/524
+  Mango  #11   2026-06 https://github.com/G-Ivan-A/mango_ba_prompts/pull/11
+  Mango  #90   2026-06 https://github.com/G-Ivan-A/mango_ba_prompts/pull/90

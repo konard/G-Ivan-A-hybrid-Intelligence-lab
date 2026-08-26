@@ -78,6 +78,7 @@ is_active_file() {
     docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md | \
     docs/report/2026-07-01-reports-inventory-placement-analysis.md | \
     docs/report/2026-07-01-rfc-adr-duplication-analysis.md | \
+    docs/report/2026-08-26-ai-execution-statistics.md | \
     docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md | \
     docs/adr/2026-06-adr-002-artifact-document-methodology.md | \
     docs/adr/2026-07-adr-003-research-structure.md | \
@@ -164,6 +165,10 @@ is_active_file() {
     research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/classify-runs.py | \
     research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/classify-runs.log | \
     research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/runs-routing.json | \
+    research/hub/exp/ai-execution-statistics-543/README.md | \
+    research/hub/exp/ai-execution-statistics-543/collect-pr-costs.py | \
+    research/hub/exp/ai-execution-statistics-543/collect-pr-costs.log | \
+    research/hub/exp/ai-execution-statistics-543/pr-cost-dataset.json | \
     research/ai-education/retrieval/00-introduction.md | \
     research/ai-education/retrieval/10-theory.md | \
     research/ai-education/retrieval/20-taxonomy.md | \
@@ -1709,7 +1714,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 2.3"
+require_text "pr-ops/artifact-map.md" "version: 2.4"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
