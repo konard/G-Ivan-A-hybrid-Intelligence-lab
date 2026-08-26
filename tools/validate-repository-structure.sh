@@ -1861,7 +1861,7 @@ require_text "pr-ops/backlog.md" "**B-105**"
 
 # RFC дорожной карты RRP-исследований конвейера артефактов БА (issue #541, B-108).
 rfc_541="docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md"
-require_text "$rfc_541" "status: draft"
+require_text "$rfc_541" "status: accepted"
 require_text "$rfc_541" "rfc-scope: multi"
 require_text "$rfc_541" "owner: G-Ivan-A"
 require_text "$rfc_541" "## RFC Metadata"
@@ -1884,7 +1884,7 @@ require_text "pr-ops/backlog.md" "**B-108**"
 # Версия 0.2 RFC #541: слоевая декомпозиция, проверенная замером на корпусе.
 # Ссылки проверяются на подстроку, чтобы правка формулировок не ломала CI, но
 # сама доказательная база не могла исчезнуть из RFC незамеченной.
-require_text "$rfc_541" "version: 0.2"
+require_text "$rfc_541" "version: 1.0"
 require_text "$rfc_541" "C-CORE"
 require_text "$rfc_541" "C-OUT"
 require_text "$rfc_541" "research/ba-requirements/2026-08-26-m0-m2-layering-hypothesis-check.md"

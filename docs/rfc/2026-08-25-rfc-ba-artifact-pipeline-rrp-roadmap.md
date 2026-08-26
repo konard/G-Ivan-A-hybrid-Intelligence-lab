@@ -1,6 +1,6 @@
 ---
-status: draft
-version: 0.2
+status: accepted
+version: 1.0
 updated: 2026-08-26
 temperature: 0.1
 owner: G-Ivan-A
@@ -33,12 +33,12 @@ related_issues:
 | Field | Value |
 | --- | --- |
 | Owner | G-Ivan-A |
-| RFC status | `draft` — предложение на human decision gate; ни один действующий стандарт этим RFC не изменяется |
+| RFC status | `accepted` — принят на human decision gate по [issue #545](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/545); ни один действующий стандарт этим RFC не изменяется, дорожная карта переведена в исполнение |
 | Source issue | [#541](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/541); предшественник — [#539](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/539) / [PR #540](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/540) |
 | Impacted artifacts | Этим PR: [`docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md), [`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md), [`pr-ops/artifact-map.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/artifact-map.md), [`CHANGELOG.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/CHANGELOG.md), [`tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-repository-structure.sh). После принятия — четыре будущих RRP-модуля в [`research/ba-requirements/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements) |
-| Revision | `0.2` — декомпозиция `M0`–`M2` пересобрана как слои «вход → ядро → выход» по гипотезе владельца процесса ([комментарий к PR #542](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/542#issuecomment-5421560374)), проверенной на корпусе прогонов; проверка — `P.0` |
-| Decision record | not yet |
-| Implementation link | not yet |
+| Revision | `1.0` — RFC принят (`draft` → `accepted`) по [issue #545](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/545), дорожная карта исполнена четырьмя RRP-модулями; `0.2` — декомпозиция `M0`–`M2` пересобрана как слои «вход → ядро → выход» по гипотезе владельца процесса ([комментарий к PR #542](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/542#issuecomment-5421560374)), проверенной на корпусе прогонов; проверка — `P.0` |
+| Decision record | Принят владельцем процесса в постановке [issue #545](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/545) («Прими RFC: измени `status` в frontmatter RFC на `accepted`»); решение исполнено в [PR #546](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/546) вместе с полным циклом исследований `M1`–`M4` |
+| Implementation link | [PR #546](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/546): [`research/ba-requirements/solution-modeling/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/solution-modeling) (`M1`), [`research/ba-requirements/artifact-rendering/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/artifact-rendering) (`M2`), [`research/ba-requirements/feedback-and-evolution/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/feedback-and-evolution) (`M3`), [`research/ba-requirements/orchestration/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/orchestration) (`M4`) |
 | Archetype scope | multi (A — Хаб как владелец методологии; B — [`mango_ba_prompts`](https://github.com/G-Ivan-A/mango_ba_prompts) как библиотека промптов и носитель контрактов) |
 
 ## Summary
@@ -770,12 +770,18 @@ question не закрыта, число осей выбрано аналити�
 
 ## Lifecycle and Decision Path
 
-Текущее состояние: `draft`. Требуемый переход — `proposed` → human decision gate
-фаундера → `accepted` либо `rejected`.
+Текущее состояние: `accepted`. Пройденный путь — `draft` → human decision gate
+владельца процесса ([issue #545](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/545))
+→ `accepted`. Решение зафиксировано в строках `Decision record` и
+`Implementation link` таблицы `RFC Metadata`; исполнение — четыре RRP-модуля
+`M1`–`M4` в одном PR ([#546](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/546)).
 
 Human gate этого RFC (не путать с `HG-*` внутри конвейера): фаундер принимает
-решение по составу модулей, составу осей и приоритету `M4`. До решения ни один
-из четырёх будущих модулей не открывается: preemptive-исследование по
+решение по составу модулей, составу осей и приоритету `M4`. Решение принято:
+шесть осей (`Q-1`, вариант «а»), метод проверки недрейфа остаётся в `M2`
+(`Q-2`, вариант «а»), `M4` идёт сквозным треком параллельно (`Q-3`, вариант
+«а»), владелец `HG-4` определяется по `A6` (`Q-4`, вариант «в»). До этого
+решения ни один из четырёх модулей не открывался: preemptive-исследование по
 неутверждённой декомпозиции — это тот самый расход, ради экономии которого
 вводится `HG-0`.
 
@@ -800,6 +806,21 @@ Human gate этого RFC (не путать с `HG-*` внутри конвей
 | `Q-6` | Где живут будущие модули: подкаталоги `research/ba-requirements/` (как предложено) или отдельное направление? | нет | при росте числа модулей вопрос вернётся в `M3` |
 | `Q-7` | Кто выбирает набор выходных документов — маршрутизатор по `A2`/`A6` или всегда человек на `HG-0`? Владелец сформулировал это как «опционально — решение пользователя», то есть допускает оба режима. | нет | (а) всегда человек; (б) предложение маршрутизатора + подтверждение человека (предложение RFC); (в) автоматически для `A6=internal`, вручную для остальных; решается в `M4` (`RQ-4.6`) и `M2` (`RQ-2.7`) |
 | `Q-8` | Вывод `P.0` получен на предпроектном и оценочном контуре: в корпусе **нет** ни одного прогона, доставившего договорное ТЗ. Сохранится ли преимущество слоевой модели на договорном контуре? | нет | проверяется первым же реальным прогоном с `tz ∈ A1` в рамках `RQ-2.1`; до этого граница вывода зафиксирована в `P.0` |
+
+**Разрешение при принятии (issue [#545](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/545)).**
+Четыре блокирующих вопроса закрыты решением владельца процесса; остальные
+переданы в модули, которые их исследуют.
+
+| № | Решение | Где исполнено |
+| --- | --- | --- |
+| `Q-1` | Вариант «а»: принято шесть осей `A1`–`A6`. Постановка issue #545 требует «явно применить оси `A1`–`A6`» в каждом модуле, что и означает принятие полного набора. | Разделы `30-decision-framework.md` всех четырёх модулей |
+| `Q-2` | Вариант «а»: правило недрейфа остаётся инвариантом границы (`K5`), исследование метода проверки — в `M2`. | [`research/ba-requirements/artifact-rendering/30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/artifact-rendering/30-decision-framework.md) |
+| `Q-3` | Вариант «а»: `M4` идёт сквозным треком параллельно, в режиме screening. | [`research/ba-requirements/orchestration/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/orchestration) |
+| `Q-4` | Вариант «в»: владелец `HG-4` зависит от `A6` — `internal` — БА, `external-contract`/`regulated` — руководитель направления. | [`research/ba-requirements/solution-modeling/30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/solution-modeling/30-decision-framework.md) |
+| `Q-5` | Не блокирует: передан в `M1` как вопрос композиции `bcreq`. | [`research/ba-requirements/solution-modeling/50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/solution-modeling/50-open-research.md) |
+| `Q-6` | Не блокирует: модули размещены подкаталогами `research/ba-requirements/`, как предложено. | Каталоги `M1`–`M4` |
+| `Q-7` | Не блокирует: передан в `M4` (полномочия маршрутизатора против `HG-0`). | [`research/ba-requirements/orchestration/50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/orchestration/50-open-research.md) |
+| `Q-8` | Не блокирует: ограничение корпуса зафиксировано и передано в `M3` как порог данных. | [`research/ba-requirements/feedback-and-evolution/50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/feedback-and-evolution/50-open-research.md) |
 
 ## Related Artifacts
 
