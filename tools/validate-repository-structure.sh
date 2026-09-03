@@ -413,6 +413,7 @@ is_active_file() {
     docs/rfc/2026-08-06-rfc-task-statement-architecture.md | \
     docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md | \
     docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md | \
+    docs/rfc/2026-09-03-rfc-agents-md-root-contract.md | \
     research/mango/2026-06-18-requirements-engineering-ai-era.md | \
     research/mango/2026-06-18-ai-classifications-formalization.md | \
     research/mango/2026-06-19-repository-structure-vision.md | \
@@ -1746,7 +1747,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 2.6"
+require_text "pr-ops/artifact-map.md" "version: 2.7"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
