@@ -1889,7 +1889,6 @@ require_text "$rfc_531" "## Related Artifacts"
 require_text "$rfc_531" "research/hub/exp/htom-genome-rfc-531/"
 require_text "docs/rfc/README.md" "2026-08-21-rfc-htom-genome-structure-and-ci.md"
 require_text "pr-ops/artifact-map.md" '| `/docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md` | RFC | справка |'
-require_text "pr-ops/backlog.md" "**B-105**"
 
 # RFC дорожной карты RRP-исследований конвейера артефактов БА (issue #541, B-108).
 rfc_541="docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md"
@@ -1911,7 +1910,6 @@ require_text "$rfc_541" "## Related Artifacts"
 require_text "$rfc_541" "research/ba-requirements/normalization/"
 require_text "docs/rfc/README.md" "2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md"
 require_text "pr-ops/artifact-map.md" '| `/docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md` | RFC | справка |'
-require_text "pr-ops/backlog.md" "**B-108**"
 
 # Версия 0.2 RFC #541: слоевая декомпозиция, проверенная замером на корпусе.
 # Ссылки проверяются на подстроку, чтобы правка формулировок не ломала CI, но
@@ -1948,7 +1946,6 @@ require_text "$htom_validator" ".github/workflows/validate.yml"
 require_file "templates/htom/.github/workflows/validate.yml"
 require_text "templates/htom/.github/workflows/validate.yml" "./tools/validate-repository-structure.sh"
 require_text "templates/sync-metadata.json" '"htom-validate-workflow"'
-require_text "pr-ops/backlog.md" "**B-106**"
 require_text "pr-ops/artifact-map.md" '`/templates/htom/.github/workflows/validate.yml`'
 require_text "research/hub/exp/htom-genome-rfc-531/README.md" "Draft validation passed: 13/13"
 # RFC v0.2 (issue #535): классификация каталогов и декларация специфичных каталогов проекта.
@@ -2162,7 +2159,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.53"
+require_text "pr-ops/backlog.md" "version: 1.54"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"
