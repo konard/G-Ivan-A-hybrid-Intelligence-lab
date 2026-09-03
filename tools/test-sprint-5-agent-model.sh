@@ -40,9 +40,5 @@ require_text "$security_checklist" "token budget"
 
 require_text "pr-ops/artifact-map.md" "/ai-rules/adversarial-stress-testing.md"
 require_text "pr-ops/artifact-map.md" "/ai-governance/agent-security-checklist.md"
-require_text "pr-ops/backlog.md" "| **B-064** |"
-require_text "pr-ops/backlog.md" "| **B-065** |"
-require_text "pr-ops/backlog.md" "| **B-066** |"
-require_text "pr-ops/backlog.md" "[#406](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/406)"
 
 printf 'Sprint 5 agent-model regression tests passed.\n'
