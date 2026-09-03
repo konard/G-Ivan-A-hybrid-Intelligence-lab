@@ -308,6 +308,7 @@ is_active_file() {
     research/hub/2026-07-31-ops-task-strategy-validation.md | \
     research/hub/2026-08-13-rrp-cross-validation-claude-opus-4-8.md | \
     research/hub/2026-08-13-rrp-cross-validation-codex.md | \
+    research/hub/2026-09-03-ai-agent-onboarding-entrypoint-practices.md | \
     research/hub/exp/ops-task-strategy-461/README.md | \
     research/hub/exp/ops-task-strategy-461/collect-evidence.py | \
     research/hub/exp/ops-task-strategy-461/collect-evidence.log | \
@@ -466,6 +467,7 @@ is_active_file() {
     docs/analysis/2026-08-11-research-methodology-validation.md | \
     docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md | \
     docs/analysis/2026-08-17-agent-lifecycle-rrp-gap-analysis.md | \
+    docs/analysis/2026-09-03-ai-rules-compliance-failure-root-cause.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -478,6 +480,7 @@ is_active_file() {
     templates/spoke/tools/validate-file-naming.sh | \
     templates/webportal-product-concept-template.md | \
     templates/webportal-solution-concept-template.md | \
+    templates/agents-md-root-draft.md | \
     templates/sync-project-with-hub-prompt.md | \
     templates/manifest.json | \
     templates/sync-metadata.json | \
@@ -1394,8 +1397,8 @@ require_text "standards/team-contract.md" "education-profile.md"
 require_text "standards/team-contract.md" "Источники"
 
 require_text "standards/issue-workflow.md" "status: accepted"
-require_text "standards/issue-workflow.md" "version: 1.3"
-require_text "standards/issue-workflow.md" "updated: 2026-08-11"
+require_text "standards/issue-workflow.md" "version: 1.4"
+require_text "standards/issue-workflow.md" "updated: 2026-09-03"
 require_text "standards/issue-workflow.md" "temperature: 0.1"
 require_text "standards/issue-workflow.md" "executable: false"
 require_text "standards/issue-workflow.md" "## Назначение"
@@ -1434,7 +1437,7 @@ require_text "standards/project-structure-inheritance.md" "Правила свя
 require_text "standards/project-structure-inheritance.md" "scope: mango-only"
 require_text "standards/project-structure-inheritance.md" "Пример структуры проекта"
 require_text "standards/project-structure-inheritance.md" "Репозиторий-широкий стандарт НЕ должен ссылаться на проектный"
-require_text "standards/issue-workflow.md" "User Story / ФТ"
+require_text "standards/issue-workflow.md" "Пять уровней постановки задачи"
 require_text "standards/issue-workflow.md" ".github/ISSUE_TEMPLATE/task.md"
 require_text "standards/issue-workflow.md" "CHANGELOG.md"
 require_text "standards/issue-workflow.md" "pr-ops/artifact-map.md"
@@ -1743,11 +1746,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 2.5"
+require_text "pr-ops/artifact-map.md" "version: 2.6"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-08-26"
+require_text "pr-ops/artifact-map.md" "updated: 2026-09-03"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2159,7 +2162,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.52"
+require_text "pr-ops/backlog.md" "version: 1.53"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"

@@ -1,5 +1,5 @@
 name: "📋 Task"
-description: "Универсальный 5-блочный шаблон задачи: Structured, Creative или Hybrid."
+description: "Универсальный шаблон задачи: пять уровней постановки + исполнительские блоки."
 title: "[scope] Краткое описание задачи"
 labels:
   - tools
@@ -8,7 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ⚠️ **Для ИИ**: пустое поле не заполняется выдуманным значением. Универсальные контракты автономии, эскалации и верификации живут в `ai-rules/agent-work-rules.md` и здесь не дублируются. Список файлов не перечисляется: место артефакта разрешается на момент исполнения. Источник шаблона — RFC #470, §P.9.
+        ⚠️ **Для ИИ**: пустое поле не заполняется выдуманным значением. Универсальные контракты автономии, эскалации и верификации живут в `ai-rules/agent-work-rules.md` и здесь не дублируются. Список файлов не перечисляется: место артефакта разрешается на момент исполнения. Источник шаблона — RFC #470, §P.9. Пять уровней постановки не смешиваются: субъект ФТ и НФТ — СИСТЕМА, субъект «Задачи исполнителю» — исполнитель (IEEE 29148, BABOK/CBAP). Если постановка неполна, исполнитель выполняет задачу без блокирования и фиксирует пробел в артефакте.
 
   - type: dropdown
     id: operating_mode
@@ -39,12 +39,53 @@ body:
     validations:
       required: false
 
-  - type: input
+  - type: textarea
     id: user_story
     attributes:
-      label: "User Story / ФТ / НФТ"
-      description: "Одной строкой, опционально. Пусто — оставьте `—`."
-      placeholder: "—"
+      label: "Уровень 1. User Story"
+      description: "Кто и зачем — от лица пользователя системы, а не исполнителя."
+      placeholder: |
+        Как <роль>, я хочу <возможность>, чтобы <ценность>.
+    validations:
+      required: true
+
+  - type: textarea
+    id: functional_requirements
+    attributes:
+      label: "Уровень 2. ФТ к системе"
+      description: "Что СИСТЕМА должна делать для пользователя. Субъект требования — система, а не исполнитель (IEEE 29148, BABOK/CBAP)."
+      placeholder: |
+        1. Система должна ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: nonfunctional_requirements
+    attributes:
+      label: "Уровень 3. НФТ к системе"
+      description: "С какими атрибутами качества система выполняет функции: измеримые метрики и ограничения. Субъект требования — система."
+      placeholder: |
+        1. ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: executor_task
+    attributes:
+      label: "Уровень 4. Задача исполнителю"
+      description: "Какие артефакты создать или изменить. Здесь и только здесь субъект — исполнитель."
+      placeholder: |
+        1. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: process_constraints
+    attributes:
+      label: "Уровень 5. Ограничения процесса"
+      description: "Как работать: запреты, обязательные стандарты, границы PR. Пусто = действуют универсальные правила экосистемы."
+      placeholder: |
+        1. ...
     validations:
       required: false
 
