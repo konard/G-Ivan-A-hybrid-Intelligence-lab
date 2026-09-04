@@ -414,6 +414,7 @@ is_active_file() {
     docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md | \
     docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md | \
     docs/rfc/2026-09-03-rfc-agents-md-root-contract.md | \
+    docs/rfc/2026-09-04-rfc-bootstrap-environment-and-structure.md | \
     research/mango/2026-06-18-requirements-engineering-ai-era.md | \
     research/mango/2026-06-18-ai-classifications-formalization.md | \
     research/mango/2026-06-19-repository-structure-vision.md | \
@@ -1747,11 +1748,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 2.7"
+require_text "pr-ops/artifact-map.md" "version: 2.8"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-09-03"
+require_text "pr-ops/artifact-map.md" "updated: 2026-09-04"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -1841,10 +1842,10 @@ require_text "pr-ops/artifact-map.md" "research/external-knowledge/external-insi
 require_text "pr-ops/artifact-map.md" "docs/rfc/external-knowledge-integration.md"
 
 require_text "docs/rfc/README.md" "status: accepted"
-require_text "docs/rfc/README.md" "version: 1.25"
+require_text "docs/rfc/README.md" "version: 1.26"
 require_text "docs/rfc/README.md" "Accepted RFC структуры Reports-артефактов"
 require_text "docs/rfc/README.md" "ADR-004"
-require_text "docs/rfc/README.md" "updated: 2026-08-26"
+require_text "docs/rfc/README.md" "updated: 2026-09-04"
 require_text "docs/rfc/README.md" "owner: G-Ivan-A"
 require_text "docs/rfc/README.md" "adr-structure-standard.md"
 require_text "docs/rfc/README.md" "rfc-structure-standard.md"
@@ -2160,7 +2161,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.54"
+require_text "pr-ops/backlog.md" "version: 1.55"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"
