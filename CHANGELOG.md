@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.95
-updated: 2026-09-04
+version: 1.96
+updated: 2026-09-05
 temperature: 0.1
 ---
 
@@ -38,6 +38,8 @@ All notable repository governance changes are documented here.
 - audit: [Аудит структурных, нормативных и терминологических противоречий Хаба](docs/audit/2026-08-21-hub-structural-normative-contradictions-audit.md) (v0.1 `draft`, issue #529) — Gap-Report из 12 находок после реструктуризации B-048/B-056: 2 Critical, 5 Major, 5 Minor. Вердикт `fail`. Ключевое расхождение — геном `templates/htom/tools/validate-repository-structure.sh` требует `AI_GOVERNANCE.md` в корне HTOM-команды, тогда как сам Хаб (HTOM-команда по `standards/glossary.md`) вынес файл в `ai-governance/` и `ai-rules/`; это прямая причина отказа в mango PR #292. Зафиксировано, что все валидаторы Хаба и генома проходят с exit 0, то есть ни одна находка сейчас не видна CI. Evidence-контейнер: `research/hub/exp/hub-contradictions-audit-529/`. Аудит фиксирует расхождения и не исправляет их: решения по Critical-находкам требуют RFC и human decision gate.
 
 ### Changed
+
+- process: правило «место вопросов — тело PR» (issue #553, ревью PR #554). Все вопросы исполнителя, выявленные в ходе работы — блокирующие, уточняющие, архитектурные, — до перевода PR в `ready-for-merge` выносятся в тело описания PR отдельным разделом «Вопросы к фаундеру / ревьюеру»; вопрос, оставшийся только в issue или внутри артефакта (например, в секции `Open Questions` RFC), считается незаданным, а контракт эскалации — невыполненным. Закрывается системная дыра, при которой вопросы растворяются между issue, артефактом и PR: артефакт читают выборочно, а тело PR читают всегда — при ревью и при мерже, — и мерж при этом читается как согласование результата. SSOT не раздваивается: первичным остаётся артефакт, тело PR содержит копию или сжатую формулировку со ссылкой на источник. Правило нормировано в [`ai-rules/agent-work-rules.md`](ai-rules/agent-work-rules.md) v1.5 → **v1.6** (контракт эскалации + Definition of Done) и [`standards/issue-workflow.md`](standards/issue-workflow.md) v1.4 → **v1.5** (раздел «Готовность PR»), продублировано в шаблонах задачи [`task.md`](.github/ISSUE_TEMPLATE/task.md) v3.0 → **v3.1** и [`task.yml`](.github/ISSUE_TEMPLATE/task.yml) (разделы «Контракты задачи» и «Не выполнено и вопросы»). [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md) v2.8 → **v2.9**.
 
 - backlog: применение результатов валидации бэклога из [PR #359](https://github.com/G-Ivan-A/mango_ba_prompts/pull/359) ([mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts)) по [файлу анализа](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/2026-09-03-hub-backlog-sprint-validation.md) (issue #549). Удалены спринты 5, 11, 12. Обновлены статусы B-098, B-103, B-104 (review → DONE), B-081 (TODO → ЧАСТИЧНО). [`pr-ops/backlog.md`](pr-ops/backlog.md) v1.53 → **v1.54**.
 - templates: шаблоны задач [`task.md`](.github/ISSUE_TEMPLATE/task.md) и [`task.yml`](.github/ISSUE_TEMPLATE/task.yml) переведены на пять раздельных уровней постановки (v2.0 → **v3.0**, issue #547): User Story, ФТ к системе, НФТ к системе, задача исполнителю, ограничения процесса. Устранена концептуальная ошибка, при которой три уровня жили в одной необязательной строке заголовка: субъектом ФТ и НФТ является система, а не исполнитель (IEEE 29148, BABOK/CBAP).
