@@ -158,6 +158,17 @@ is_active_file() {
     research/ba-requirements/normalization/40-practice-and-cases.md | \
     research/ba-requirements/normalization/50-open-research.md | \
     research/ba-requirements/2026-08-26-rrp-full-cycle-corpus-facts.md | \
+    research/ba-requirements/2026-09-07-ecosystem-knowledge-inventory.md | \
+    research/ba-requirements/methodology-unification/00-introduction.md | \
+    research/ba-requirements/methodology-unification/10-theory.md | \
+    research/ba-requirements/methodology-unification/20-taxonomy.md | \
+    research/ba-requirements/methodology-unification/30-decision-framework.md | \
+    research/ba-requirements/methodology-unification/40-practice-and-cases.md | \
+    research/ba-requirements/methodology-unification/50-open-research.md | \
+    research/ba-requirements/exp/ba-methodology-unification-557/README.md | \
+    research/ba-requirements/exp/ba-methodology-unification-557/inventory-knowledge.py | \
+    research/ba-requirements/exp/ba-methodology-unification-557/inventory-knowledge.log | \
+    research/ba-requirements/exp/ba-methodology-unification-557/knowledge-inventory.json | \
     research/ba-requirements/solution-modeling/00-introduction.md | \
     research/ba-requirements/solution-modeling/10-theory.md | \
     research/ba-requirements/solution-modeling/20-taxonomy.md | \
@@ -1748,11 +1759,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 2.9"
+require_text "pr-ops/artifact-map.md" "version: 2.10"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-09-05"
+require_text "pr-ops/artifact-map.md" "updated: 2026-09-07"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2161,7 +2172,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.55"
+require_text "pr-ops/backlog.md" "version: 1.56"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"

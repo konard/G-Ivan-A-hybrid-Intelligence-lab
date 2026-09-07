@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-08-26
+version: 0.3
+updated: 2026-09-07
 temperature: 0.1
 ---
 
@@ -43,6 +43,16 @@ temperature: 0.1
   — сквозной модуль `M4`: маршрутизация, роли, прерывания и человеческие гейты.
   Инварианты маршрута `RT-1`…`RT-7`, типовые маршруты `RT-A`…`RT-F`, контракт
   `C-RK`, гейты `HG-0` и `HG-8`, сводный build-vs-buy по всему конвейеру.
+- [`methodology-unification/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/methodology-unification/00-introduction.md)
+  — предметная ось методологии БА: двухуровневая рамка «управление ↔ исполнение».
+  Управляющий уровень — наследование `L0` (индустрия) → `L1` (ИТ-телеком) →
+  `L2` (Манго) с правилами дельты `D1`–`D5`; исполнительный — разрешённый
+  навык `SKILL.md` с инвариантами `I-1`…`I-7`, жизненный цикл `S0`–`S7`,
+  типология гейтов `G-self`/`G-mach`/`G-human`, реестр разрывов `G-01`…`G-15`
+  и роадмап каскада `B-121`…`B-133` (issue
+  [#557](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/557)).
+  Ось ортогональна конвейеру `M0`–`M4`: те модули отвечают на вопрос «как
+  устроен артефакт», этот — «откуда берётся норма».
 
 ## Датированные снимки
 
@@ -54,6 +64,12 @@ temperature: 0.1
   — снимок корпуса `runs/` репозитория `mango_ba_prompts` на 2026-08-25.
   Модуль ссылается на снимок, а не наоборот: у модуля нет единой даты, у
   измерения она есть.
+- [`2026-09-07-ecosystem-knowledge-inventory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-07-ecosystem-knowledge-inventory.md)
+  — инвентаризация и топологическая карта знаний трёх репозиториев экосистемы
+  (368 артефактов, коммиты `c259d61` / `8cbf82a` / `96c288f`): реестр по
+  классам и статусам, граф связей, перевёрнутое наследование Манго → Хаб,
+  изоляция `clarify-engine-ai`. Доказательная база модуля
+  `methodology-unification/`.
 
 ## Эксперименты
 
@@ -63,6 +79,10 @@ temperature: 0.1
 - [`exp/ba-rrp-full-cycle-545/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/exp/ba-rrp-full-cycle-545)
   — воспроизводимый замер корпуса для модулей `M1`–`M4` (issue
   [#545](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/545)).
+- [`exp/ba-methodology-unification-557/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/exp/ba-methodology-unification-557)
+  — воспроизводимый сканер трёх репозиториев: реестр артефактов, классы,
+  статусы и граф ссылок (issue
+  [#557](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/557)).
 
 ## Политика ссылок
 
