@@ -169,6 +169,7 @@ is_active_file() {
     research/ba-requirements/exp/ba-methodology-unification-557/inventory-knowledge.py | \
     research/ba-requirements/exp/ba-methodology-unification-557/inventory-knowledge.log | \
     research/ba-requirements/exp/ba-methodology-unification-557/knowledge-inventory.json | \
+    research/ba-requirements/exp/ba-methodology-unification-557/2026-09-07-clarify-relevance-review.md | \
     research/ba-requirements/solution-modeling/00-introduction.md | \
     research/ba-requirements/solution-modeling/10-theory.md | \
     research/ba-requirements/solution-modeling/20-taxonomy.md | \
