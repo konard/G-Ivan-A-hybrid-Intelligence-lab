@@ -1,12 +1,12 @@
 ---
 status: proposed
-version: 0.2
+version: 0.3
 updated: 2026-09-07
 temperature: 0.1
 owner: G-Ivan-A
 rfc-scope: multi
 type: rfc
-context: [bootstrap, environment-axis, archetype, repository-structure, ai-rules, commands, skills, pr-ops, ops, gigacode, serverless, agents-md, adr-001, adr-007, hub-profile, migration, issue-553]
+context: [bootstrap, environment-axis, archetype, repository-structure, ai-rules, commands, skills, pr-ops, ops, gigacode, serverless, agents-md, adr-001, adr-007, hub-profile, migration, issue-553, issue-559]
 method: analysis-delegation + decision-draft
 scope: ecosystem
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/553"
@@ -555,33 +555,38 @@ Grandfathering: спицы, не прошедшие `M7`, продолжают �
 
 #### P.9.2. Каталоги планирования `plans/` и `tasks/` (`Q-7`)
 
-**Решение исполнителя: отдельный запрет-правило не вводится; вводится одно
-предложение-исключение к уже действующему механизму.** Обоснование фактическое,
-а не умозрительное.
+> **Пересмотрено решением фаундера в issue
+> [#559](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/559).**
+> Ранее этот раздел вводил машинный denylist деклараций для имён `plans/` и
+> `tasks/`. Норма отменена: поимённые denylist-ы каталогов запрещены,
+> легализация выполняется общим механизмом декларации (правило `R8`, см.
+> [RFC корневого контракта `AGENTS.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-03-rfc-agents-md-root-contract.md)
+> и [ADR-012](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-012-agents-md-root-contract.md)).
+> Правка допустима без нового ADR: RFC находится в статусе `proposed`, то есть
+> до decision gate.
+
+**Решение: отдельного правила для `plans/` и `tasks/` не вводится — ни
+разрешающего, ни запрещающего.** Обоснование фактическое, а не умозрительное.
 
 1. Структура экосистемы уже закрыта по умолчанию, а не открыта. Валидатор генома
    [`templates/htom/tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/htom/tools/validate-repository-structure.sh)
    обходит `find . -maxdepth 1 -type d` и даёт `FAIL` с текстом «недекларированный
    каталог: `<name>/` — он не входит в каноническую структуру генома» для любого
-   корневого каталога вне канонического списка. `plans/` и `tasks/` — корневые
-   каталоги, то есть они уже запрещены как частный случай общего правила.
-   Отдельное правило «запрещено создавать `plans/` и `tasks/`» было бы вторым
+   корневого каталога вне канонического списка. `plans/` и `tasks/` покрываются
+   этим общим правилом как частный случай. Отдельное правило было бы вторым
    выражением одной и той же нормы: при следующем изменении механизма два
    выражения разойдутся, и возникнет вопрос, какое из них SSOT.
-2. Ровно одна дыра в этом покрытии реальна и требует закрытия: каталог можно
-   легализовать декларацией `project_specific_directories` в `.hub-profile.json`
-   с произвольным `reason`. Этот канал общее правило не закрывает.
-
-**Норма (минимальная, закрывающая п. 2).** Имена `plans/` и `tasks/` вносятся в
-машинный denylist деклараций: они **не могут** быть объявлены через
-`project_specific_directories` ни в одном репозитории экосистемы. Планы и задачи
-живут в трекере задач (GitHub Issues) и в бэклоге
-[`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md);
-собственный дом планирования в репозитории — это второй SSOT состояния работ.
-Проверка добавляется задачей B-120 вместе с чтением `environment`; норма
-формулируется стандартом бутстрапа на шаге `M1`. Декларативное отражение нормы
-для агента — строка в `<forbidden>` черновика
-[`templates/agents-md-root-draft.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/agents-md-root-draft.md).
+2. Канал легализации через `project_specific_directories` **не** закрывается
+   поимённым denylist-ом. Действует правило `R8`: каталог вне канонического
+   набора допустим, если объявлен в `.hub-profile.json` с непустым `reason`;
+   отсутствие каталога в каноническом наборе не равно его запрету. Внесение
+   `plans/` и `tasks/` в какой-либо denylist **категорически запрещено**.
+3. Требование «планы и задачи не образуют второго SSOT состояния работ»
+   сохраняется как содержательная норма: обоснование в `reason` обязано
+   объяснять, почему каталог не дублирует трекер задач и бэклог
+   [`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md).
+   Проверка этого — контрактный гейт (human review при принятии декларации),
+   а не машинный: машинно проверяется только наличие непустого `reason`.
 
 Вопрос интеграции планирования с внешними системами через MCP вместо
 `ops/backlog.md` выносится в отдельный RFC (`Q-7`, отложено, задача B-122).
@@ -684,7 +689,7 @@ python3 tools/generate-manifest.py --check
 | `V-7` | После `M4` ни одна ссылка в репозитории не указывает на `pr-ops/`, кроме редирект-заглушки и записей `CHANGELOG.md`. | `M4` |
 | `V-8` | Ручная правка сгенерированного адаптера среды даёт `FAIL` в check-режиме синхронизации (`R4`). | `M5` |
 | `V-9` | Файл в `ai-rules/skills/` вне структуры `<slug>/SKILL.md` даёт `FAIL`. | `M1` |
-| `V-10` | Декларация каталога `plans/` или `tasks/` через `project_specific_directories` даёт `FAIL` (`P.9.2`). | `M5` |
+| `V-10` | Декларация каталога через `project_specific_directories` с пустым или отсутствующим `reason` даёт `FAIL`; поимённый denylist имён каталогов в валидаторах отсутствует (`P.9.2`, правило `R8`). | `M5` |
 | `V-11` | Репозиторий, созданный базовым шаблоном бутстрапа под целевую среду, содержит `ai-rules/commands/README.md` и `ai-rules/skills/README.md` со `status: placeholder`; создание пустого каталога отдельным PR в существующем репозитории даёт `FAIL` (`P.9.1`). | `M1`, `M5` |
 
 ## Lifecycle and Decision Path

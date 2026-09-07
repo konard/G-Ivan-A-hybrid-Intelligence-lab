@@ -5,7 +5,7 @@
     {
       "id": "agents-md-root-draft",
       "path": "templates/agents-md-root-draft.md",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "target_type": [
         "HTOM",
         "Spoke"
