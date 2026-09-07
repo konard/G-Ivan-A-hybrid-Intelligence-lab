@@ -1,7 +1,7 @@
 ---
-status: draft
-version: 0.1
-updated: 2026-09-04
+status: proposed
+version: 0.2
+updated: 2026-09-07
 temperature: 0.1
 owner: G-Ivan-A
 rfc-scope: multi
@@ -28,6 +28,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/553"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/551"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/547"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/555"
 ---
 
 # RFC: Ось «Среда», рефакторинг базовых структур и актуализация `AGENTS.md`
@@ -37,7 +38,7 @@ related_issues:
 | Field | Value |
 | --- | --- |
 | Owner | G-Ivan-A |
-| RFC status | draft (совпадает с frontmatter; narrative summary) |
+| RFC status | proposed (совпадает с frontmatter; решения фаундера по `Q-1`…`Q-8` получены, см. `Open Questions`) |
 | Source issue | [#553](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/553) |
 | Impacted artifacts | [`docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md), [`docs/adr/2026-07-adr-007-hub-root-structure.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-07-adr-007-hub-root-structure.md), [`pr-ops/repo-model.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/repo-model.md), [`standards/project-structure-inheritance.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/project-structure-inheritance.md), `standards/bootstrap-environment-standard.md` (предлагается), [`docs/rfc/2026-09-03-rfc-agents-md-root-contract.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-03-rfc-agents-md-root-contract.md), [`tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-repository-structure.sh), [`templates/htom/tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/htom/tools/validate-repository-structure.sh), [`tools/validate-historical-immutable.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-historical-immutable.sh), [`tools/sync-from-hub.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/sync-from-hub.sh), `.hub-profile.json` спиц |
 | Decision record | not yet |
@@ -196,7 +197,7 @@ cross-repository последствиями требует RFC до ADR или �
 | --- | --- | --- | --- |
 | `local` | Локальная разработка и универсальные агентные CLI/IDE (Claude Code, Codex, Cursor, Copilot). Значение по умолчанию. | Агент общего назначения по корневому `AGENTS.md`. | [`hybrid-Intelligence-lab`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab) |
 | `gigacode` | GigaCode CLI/IDE, подключаемый к репозиторию в контуре компании. | Агент GigaCode по нативной поверхности среды. | [`mango_ba_prompts`](https://github.com/G-Ivan-A/mango_ba_prompts) |
-| `serverless` | Серверный агент на VPS/serverless, вызываемый из внешнего интерфейса. Репозиторий читается процессом, а не человеком в IDE. | Бэкенд-роутер, формирующий системный промпт из markdown. | `ai-ba-playbooks` |
+| `serverless` (рабочее имя; переименование — `P.9.3`) | Серверный агент на VPS/serverless, вызываемый из внешнего интерфейса. Репозиторий читается процессом, а не человеком в IDE. | Бэкенд-роутер, формирующий системный промпт из markdown. | `ai-ba-playbooks` |
 
 Ортогональность формулируется как проверяемое утверждение, а не как декларация:
 **значение оси «Среда» не сокращает и не переопределяет ни одного дома
@@ -515,6 +516,98 @@ Grandfathering: спицы, не прошедшие `M7`, продолжают �
 ([RFC генома HTOM](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md),
 `P.10`) — новый механизм льготы не вводится.
 
+### P.9. Нормы бутстрапа, следующие из решений фаундера
+
+Раздел добавлен в `v0.2` по решениям фаундера
+(issue [#555](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/555)).
+Он не вводит новых предложений сверх `P.1`–`P.8`, а доопределяет три нормы,
+которые обязаны попасть в стандарт бутстрапа на шаге `M1` (задача B-117).
+
+#### P.9.1. Заглушки `commands/` и `skills/` при бутстрапе под целевую среду (`Q-6`)
+
+**Норма.** При создании репозитория под проект в целевой среде базовый шаблон
+бутстрапа создаёт каталоги `ai-rules/commands/` и `ai-rules/skills/` с файлом
+`README.md`, во frontmatter которого стоит `status: placeholder`, а тело
+называет класс артефакта, различающий тест «кто инициирует применение» и
+условие наполнения. Цель — явно обозначить среде и агенту доступную поверхность,
+а не оставлять её выводимой из текста стандарта.
+
+**Граница нормы.** Норма адресована *бутстрапу нового репозитория*, а не
+существующим репозиториям экосистемы. Для Хаба сохраняется решение `P.5`:
+каталоги не создаются, пока в классе нет не менее двух артефактов, — иначе
+принцип Anti-Inflation нарушается ровно в том репозитории, где он объявлен.
+Противоречия между двумя правилами нет: в новом репозитории заглушка является
+частью поставляемого генома (единица поставки — шаблон целиком), в живом
+репозитории пустой каталог является инфляцией структуры. Разграничение
+формулируется проверяемо: **заглушка допустима только в момент бутстрапа и
+только как часть шаблона; создание пустого каталога отдельным PR в
+существующем репозитории запрещено**.
+
+**Где живёт норма.** В стандарте бутстрапа
+(`standards/bootstrap-environment-standard.md`, шаг `M1`, задача B-117), а не в
+[`standards/issue-workflow.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/issue-workflow.md):
+последний нормирует жизненный цикл задачи (статусы, переходы, связи с
+`CHANGELOG.md` и `artifact-map.md`) и не является домом правил структуры
+репозитория. Размещение структурной нормы в стандарте процесса создало бы
+второй SSOT структуры — ровно тот дефект, против которого направлено правило
+`R4`. До создания стандарта бутстрапа действующей формулировкой нормы является
+этот раздел RFC.
+
+#### P.9.2. Каталоги планирования `plans/` и `tasks/` (`Q-7`)
+
+**Решение исполнителя: отдельный запрет-правило не вводится; вводится одно
+предложение-исключение к уже действующему механизму.** Обоснование фактическое,
+а не умозрительное.
+
+1. Структура экосистемы уже закрыта по умолчанию, а не открыта. Валидатор генома
+   [`templates/htom/tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/htom/tools/validate-repository-structure.sh)
+   обходит `find . -maxdepth 1 -type d` и даёт `FAIL` с текстом «недекларированный
+   каталог: `<name>/` — он не входит в каноническую структуру генома» для любого
+   корневого каталога вне канонического списка. `plans/` и `tasks/` — корневые
+   каталоги, то есть они уже запрещены как частный случай общего правила.
+   Отдельное правило «запрещено создавать `plans/` и `tasks/`» было бы вторым
+   выражением одной и той же нормы: при следующем изменении механизма два
+   выражения разойдутся, и возникнет вопрос, какое из них SSOT.
+2. Ровно одна дыра в этом покрытии реальна и требует закрытия: каталог можно
+   легализовать декларацией `project_specific_directories` в `.hub-profile.json`
+   с произвольным `reason`. Этот канал общее правило не закрывает.
+
+**Норма (минимальная, закрывающая п. 2).** Имена `plans/` и `tasks/` вносятся в
+машинный denylist деклараций: они **не могут** быть объявлены через
+`project_specific_directories` ни в одном репозитории экосистемы. Планы и задачи
+живут в трекере задач (GitHub Issues) и в бэклоге
+[`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md);
+собственный дом планирования в репозитории — это второй SSOT состояния работ.
+Проверка добавляется задачей B-120 вместе с чтением `environment`; норма
+формулируется стандартом бутстрапа на шаге `M1`. Декларативное отражение нормы
+для агента — строка в `<forbidden>` черновика
+[`templates/agents-md-root-draft.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/agents-md-root-draft.md).
+
+Вопрос интеграции планирования с внешними системами через MCP вместо
+`ops/backlog.md` выносится в отдельный RFC (`Q-7`, отложено, задача B-122).
+
+#### P.9.3. Наименование среды вместо `serverless` (`Q-8`а)
+
+Термин `serverless` описывает модель тарификации и эксплуатации вычислений
+(FaaS, оплата за вызов, отсутствие управляемого сервера), а не то, что этой
+средой обозначается в оси: **комплексное развёртывание агента на управляемой
+инфраструктуре, где репозиторий читается процессом, а не человеком в IDE**.
+Термин к тому же ложно сужает: развёртывание на VPS сервером управляет, то есть
+serverless не является. Исполнитель предлагает три альтернативы; решение —
+за фаундером, до решения в тексте RFC остаётся рабочее имя `serverless`.
+
+| Кандидат | Что называет | За | Против |
+| --- | --- | --- | --- |
+| `hosted-agent` (**рекомендация исполнителя**) | Агент, развёрнутый и исполняемый на управляемой инфраструктуре; читатель репозитория — процесс. | Называет предмет оси точно: *кто читает репозиторий*, а не как оплачивается вычисление. Нейтрально к стеку (VPS, контейнер, FaaS) и потому переживает выбор стека в RFC Трека Б. Симметрично значению `local` по той же оси «где исполняется агент». | Не отражает, что развёртывание комплексное (манифест + API-контракт). |
+| `vps-runtime` | Контур исполнения на виртуальном сервере. | Конкретно и узнаваемо для инфраструктурной команды. | Привязано к одному способу размещения: переезд на контейнерную платформу или FaaS сделает имя неверным, а переименование значения закрытого словаря — breaking change по `R7`. |
+| `standalone-agent` | Автономный агент, не встроенный в IDE-инструмент. | Подчёркивает главное отличие от `local` и `gigacode` — отсутствие человека-оператора в контуре чтения. | Определяет через отрицание («не встроенный»); слово `standalone` в индустрии чаще означает «без внешних зависимостей», что здесь неверно. |
+
+Смена имени — правка закрытого словаря `P.1`, поэтому исполняется тем же ADR,
+что легализует ось (шаг `M2`), и до её принятия ни одна спица значение
+`serverless` в профиле не объявляет. Детальный состав дельты этой среды
+(`serverless.yml` либо эквивалент) отложен до RFC Трека Б (`Q-8`б, задача
+B-123).
+
 ## Alternatives
 
 | Вариант | Суть | Причина отклонения |
@@ -550,8 +643,8 @@ Grandfathering: спицы, не прошедшие `M7`, продолжают �
 | `standards/bootstrap-environment-standard.md` | Создаётся: определение оси, словарь, `R1`–`R7`, контракт классов, поля профиля. | `M1` |
 | [`pr-ops/repo-model.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/repo-model.md) | Таблица «Структура» дополняется строкой оси «Среда»; путь `pr-ops/` → `ops/`. | `M2`, `M4` |
 | [`standards/project-structure-inheritance.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/project-structure-inheritance.md) | Наследование структуры проектом дополняется дельтой среды. | `M2` |
-| [`docs/rfc/2026-09-03-rfc-agents-md-root-contract.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-03-rfc-agents-md-root-contract.md) | Правки `A-1`…`A-5` (`P.7`) при переводе в `v0.3`. | `M6` |
-| [`templates/agents-md-root-draft.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/agents-md-root-draft.md) | Секции `<scope>` и `<forbidden>` по правкам `A-1`…`A-3`. | `M6` |
+| [`docs/rfc/2026-09-03-rfc-agents-md-root-contract.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-03-rfc-agents-md-root-contract.md) | Правки `A-1`…`A-5` (`P.7`) внесены в `v0.3` по решению `Q-5`. | `M6`, issue [#555](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/555) |
+| [`templates/agents-md-root-draft.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/agents-md-root-draft.md) | Секции `<scope>`, `<forbidden>`, `<routing>`, `<artifact_homes>`, `<models>` по правкам `A-1`…`A-3`, `A-5`(б) и по `P.9.2`. | `M6`, issue [#555](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/555) |
 | [`tools/validate-historical-immutable.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-historical-immutable.sh) | Третье исключение — path-миграция; парный тест. | `M3` |
 | [`tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-repository-structure.sh) | 224 строки `pr-ops` → `ops`; чтение `environment` перед проверкой требуемого набора. | `M4`, `M5` |
 | [`templates/htom/tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/htom/tools/validate-repository-structure.sh) | Каноничность каталогов среды: каталог, предусмотренный объявленной средой, не требует `project_specific_directories`. | `M5` |
@@ -591,13 +684,16 @@ python3 tools/generate-manifest.py --check
 | `V-7` | После `M4` ни одна ссылка в репозитории не указывает на `pr-ops/`, кроме редирект-заглушки и записей `CHANGELOG.md`. | `M4` |
 | `V-8` | Ручная правка сгенерированного адаптера среды даёт `FAIL` в check-режиме синхронизации (`R4`). | `M5` |
 | `V-9` | Файл в `ai-rules/skills/` вне структуры `<slug>/SKILL.md` даёт `FAIL`. | `M1` |
+| `V-10` | Декларация каталога `plans/` или `tasks/` через `project_specific_directories` даёт `FAIL` (`P.9.2`). | `M5` |
+| `V-11` | Репозиторий, созданный базовым шаблоном бутстрапа под целевую среду, содержит `ai-rules/commands/README.md` и `ai-rules/skills/README.md` со `status: placeholder`; создание пустого каталога отдельным PR в существующем репозитории даёт `FAIL` (`P.9.1`). | `M1`, `M5` |
 
 ## Lifecycle and Decision Path
 
-Документ находится в статусе `draft` и является proposal-stage этапом: решение
-принимает фаундер. Переход `draft → proposed` возможен после ответов на
-`Q-1`…`Q-3`; переход в `accepted` — только решением человека и только при
-закрытых блокирующих вопросах
+Документ переведён в статус `proposed` в версии `v0.2`: фаундер ответил на все
+восемь вопросов (issue [#555](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/555)),
+ответы зафиксированы в разделе `Open Questions` → «Решения фаундера», ни один
+блокирующий вопрос не остаётся открытым. Переход в `accepted` — только отдельным
+решением человека и с заполнением полей `Decision record` и `Implementation link`
 ([стандарт структуры RFC](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/rfc-structure-standard.md),
 раздел `Lifecycle`).
 
@@ -614,7 +710,25 @@ python3 tools/generate-manifest.py --check
 
 ## Open Questions
 
-Блокирующие принятие:
+### Решения фаундера (issue [#555](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/555), 2026-09-07)
+
+Ответы получены по всем восьми вопросам. Открытых блокирующих вопросов нет;
+исходные формулировки сохранены ниже как история постановки.
+
+| № | Статус | Решение | Следствие |
+| --- | --- | --- | --- |
+| `Q-1` | **принято** | Ось «Среда» принимается вместе с правилом аддитивности. Правило `R1` утверждается как базовый принцип композиции: среда только добавляет пути и не отменяет дома ядра или архетипа. | `P.1`–`P.4` идут в стандарт бутстрапа без изменений (`M1`, B-117). Вариант `D` из `Alternatives` окончательно отклонён. |
+| `Q-2` | **отложено, применяется запасной путь** | Проверенной документации по механизму обнаружения навыков в GigaCode нет. До её получения применяется правило `R4` — сгенерированный адаптер на нативном пути среды. Исследование механизма заводится задачей бэклога. | Дельта `gigacode` в `P.2` остаётся условной. Задача B-121 (исследование). Трек А не блокируется: `R4` даёт корректное исполнение при любом ответе. |
+| `Q-3` | **подтверждено** | Гипотеза «структура без `ai-rules/` для среды GigaCode» **отклоняется**. `ai-rules/` сохраняется, реорганизуется его внутренняя структура — по мере появления боли в спицах. | Разрешение противоречия между текстом issue #553 и приложенным диалогом, выполненное исполнителем в `P.5`, подтверждено явно. Варианты `D` и `E` отклонены окончательно. |
+| `Q-4` | **принято** | Все три условия переименования `pr-ops/` → `ops/` принимаются: машинно-проверяемое исключение path-миграции из гейта иммутабельности, редирект-заглушка, один PR на всю миграцию. | Разблокирует цепочку B-118 → B-119. Порядок обязателен: B-119 без B-118 даёт либо красный гейт, либо 74 битые ссылки. |
+| `Q-5` | **решено** | Правки `A-1`…`A-5` вносит исполнитель — в черновик [`templates/agents-md-root-draft.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/agents-md-root-draft.md) и в текст [RFC корневого контракта `AGENTS.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-03-rfc-agents-md-root-contract.md), а не владелец документа отдельным циклом `v0.3`. | Исполнено в рамках issue [#555](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/555): RFC `AGENTS.md` переведён в `v0.3`, черновик — в `v0.2`. Блокировка Трека А правкой `A-1` снята. |
+| `Q-6` | **решено** | При бутстрапе репозитория под целевую среду базовый шаблон по умолчанию создаёт `commands/` и `skills/` с заглушкой (`README.md`, `status: placeholder`), чтобы явно обозначить среде доступную поверхность. | Норма и её граница (бутстрап нового репозитория ≠ живой Хаб) сформулированы в `P.9.1`; дом нормы — стандарт бутстрапа (`M1`, B-117). Порог «не менее двух артефактов» в `P.5` продолжает действовать для существующих репозиториев. |
+| `Q-7` | **решено, с уточнением исполнителя** | Собственные каталоги планирования (`plans/`, `tasks/`) в репозиториях не заводятся. Вопрос интеграции с внешними системами планирования через MCP выносится в отдельный RFC позже. | Исполнитель обосновал в `P.9.2`, что отдельное правило-запрет избыточно: недекларированный корневой каталог уже даёт `FAIL` в валидаторе генома. Вводится минимальная норма, закрывающая единственную реальную дыру, — запрет объявлять `plans/`/`tasks/` через `project_specific_directories`. Отдельный RFC по внешнему трекеру — задача B-122 (отложенная). |
+| `Q-8` | **а) на решении фаундера; б) отложено** | а) Исполнитель предлагает альтернативы имени `serverless`, отражающие комплексное развёртывание агента на управляемой инфраструктуре. б) Детальный состав дельты этой среды откладывается до RFC Трека Б. | а) Три кандидата и рекомендация (`hosted-agent`) — в `P.9.3`; смена имени исполняется тем же ADR, что легализует ось (`M2`). б) Задача B-123 (отложенная). |
+
+### История вопросов
+
+Блокирующие принятие (все закрыты решениями выше):
 
 | № | Вопрос | Почему блокирует |
 | --- | --- | --- |
@@ -624,7 +738,7 @@ python3 tools/generate-manifest.py --check
 | `Q-4` | Принимаются ли три условия переименования `pr-ops/` → `ops/` (`P.6`), в первую очередь исключение path-миграции из гейта иммутабельности? | Без Условия 1 переименование не имеет корректного исполнения: любой сценарий даёт либо красный гейт, либо 74 битые ссылки в принятых решениях. |
 | `Q-5` | Кто вносит правки `A-1`…`A-5` в RFC `AGENTS.md`: владелец документа при `v0.3`, или они переносятся сразу в ADR/стандарт бутстрапа, минуя правку RFC? | `A-1` блокирует Трек А: до её внесения корневой контракт запрещает нативную поверхность GigaCode. |
 
-Неблокирующие:
+Неблокирующие (все закрыты решениями выше):
 
 | № | Вопрос |
 | --- | --- |
