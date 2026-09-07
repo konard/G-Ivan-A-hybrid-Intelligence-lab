@@ -90,6 +90,7 @@ is_active_file() {
     docs/adr/2026-07-adr-009-mango-repo-split.md | \
     docs/adr/2026-08-adr-010-agent-autonomy-principles.md | \
     docs/adr/2026-08-adr-011-research-models.md | \
+    docs/adr/2026-09-adr-012-agents-md-root-contract.md | \
     docs/adr/README.md | \
     standards/README.md | \
     standards/frontmatter-standard.md | \
@@ -765,6 +766,7 @@ required_files=(
   "docs/adr/2026-07-adr-009-mango-repo-split.md"
   "docs/adr/2026-08-adr-010-agent-autonomy-principles.md"
   "docs/adr/2026-08-adr-011-research-models.md"
+  "docs/adr/2026-09-adr-012-agents-md-root-contract.md"
   "docs/adr/README.md"
   "docs/analysis/2026-06-30-backlog-and-artifact-change-policy-analysis.md"
   "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
@@ -1235,6 +1237,14 @@ require_text "docs/adr/2026-08-adr-011-research-models.md" "2026-07-17-rfc-refer
 require_text "docs/adr/2026-08-adr-011-research-models.md" "Analysis не является моделью research"
 require_text "docs/adr/2026-08-adr-011-research-models.md" "отдельной задачей после мержа этого ADR"
 require_text "docs/adr/2026-08-adr-011-research-models.md" "D6. Повысить статус RRP (M2)"
+
+# ADR-012: корневой AGENTS.md как обязательный артефакт бутстрапа (issue #559).
+require_text "docs/adr/2026-09-adr-012-agents-md-root-contract.md" "status: accepted"
+require_text "docs/adr/2026-09-adr-012-agents-md-root-contract.md" "decision-type: governance"
+require_text "docs/adr/2026-09-adr-012-agents-md-root-contract.md" "# ADR-012:"
+require_text "docs/adr/2026-09-adr-012-agents-md-root-contract.md" "2026-09-03-rfc-agents-md-root-contract.md"
+require_text "docs/adr/2026-09-adr-012-agents-md-root-contract.md" "agents-md-bootstrap-standard.md"
+require_text "docs/adr/2026-09-adr-012-agents-md-root-contract.md" "Размер нормируется в токенах"
 require_text "standards/glossary.md" "Discussion Paper / Survey"
 require_text "standards/research-standard.md" "## Три модели research-артефакта"
 require_text "standards/research-standard.md" "## Gate выбора модели исследования"
@@ -2173,7 +2183,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.56"
+require_text "pr-ops/backlog.md" "version: 1.57"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"
