@@ -159,6 +159,18 @@ is_active_file() {
     research/ba-requirements/normalization/40-practice-and-cases.md | \
     research/ba-requirements/normalization/50-open-research.md | \
     research/ba-requirements/2026-08-26-rrp-full-cycle-corpus-facts.md | \
+    research/ba-requirements/2026-09-07-ecosystem-knowledge-inventory.md | \
+    research/ba-requirements/methodology-unification/00-introduction.md | \
+    research/ba-requirements/methodology-unification/10-theory.md | \
+    research/ba-requirements/methodology-unification/20-taxonomy.md | \
+    research/ba-requirements/methodology-unification/30-decision-framework.md | \
+    research/ba-requirements/methodology-unification/40-practice-and-cases.md | \
+    research/ba-requirements/methodology-unification/50-open-research.md | \
+    research/ba-requirements/exp/ba-methodology-unification-557/README.md | \
+    research/ba-requirements/exp/ba-methodology-unification-557/inventory-knowledge.py | \
+    research/ba-requirements/exp/ba-methodology-unification-557/inventory-knowledge.log | \
+    research/ba-requirements/exp/ba-methodology-unification-557/knowledge-inventory.json | \
+    research/ba-requirements/exp/ba-methodology-unification-557/2026-09-07-clarify-relevance-review.md | \
     research/ba-requirements/solution-modeling/00-introduction.md | \
     research/ba-requirements/solution-modeling/10-theory.md | \
     research/ba-requirements/solution-modeling/20-taxonomy.md | \

@@ -1,0 +1,142 @@
+{
+  "heads": {
+    "hub": "c259d61",
+    "mango": "8cbf82a",
+    "clarify": "96c288f"
+  },
+  "total": 368,
+  "by_repo": {
+    "hub": 251,
+    "mango": 64,
+    "clarify": 53
+  },
+  "by_class": {
+    "ADR": 37,
+    "Analysis": 31,
+    "Audit": 21,
+    "Report": 7,
+    "RFC": 39,
+    "Research": 173,
+    "Standard": 53,
+    "Backlog": 7
+  },
+  "by_repo_class": {
+    "clarify/ADR": 11,
+    "clarify/Analysis": 11,
+    "clarify/Audit": 6,
+    "clarify/Backlog": 7,
+    "clarify/Research": 10,
+    "clarify/Standard": 8,
+    "hub/ADR": 11,
+    "hub/Analysis": 13,
+    "hub/Audit": 6,
+    "hub/RFC": 28,
+    "hub/Report": 4,
+    "hub/Research": 163,
+    "hub/Standard": 26,
+    "mango/ADR": 15,
+    "mango/Analysis": 7,
+    "mango/Audit": 9,
+    "mango/RFC": 11,
+    "mango/Report": 3,
+    "mango/Standard": 19
+  },
+  "by_status": {
+    "accepted": 41,
+    "proposed": 17,
+    "draft": 242,
+    "superseded": 1,
+    "canonical": 7,
+    "reviewed": 5,
+    "review": 1,
+    "complete": 1,
+    "None": 53
+  },
+  "without_frontmatter": 53,
+  "ba_relevant": 175,
+  "ba_relevant_by_repo": {
+    "hub": 114,
+    "mango": 41,
+    "clarify": 20
+  },
+  "edges_internal": 3361,
+  "edges_cross_repo": 200,
+  "isolated_nodes": 19,
+  "top_referenced": [
+    {
+      "repo": "hub",
+      "path": "standards/glossary.md",
+      "indegree": 39
+    },
+    {
+      "repo": "hub",
+      "path": "standards/research-standard.md",
+      "indegree": 37
+    },
+    {
+      "repo": "hub",
+      "path": "docs/adr/2026-06-adr-002-artifact-document-methodology.md",
+      "indegree": 36
+    },
+    {
+      "repo": "hub",
+      "path": "standards/file-naming.md",
+      "indegree": 31
+    },
+    {
+      "repo": "clarify",
+      "path": "docs/ADR/001-rag-architecture.md",
+      "indegree": 29
+    },
+    {
+      "repo": "hub",
+      "path": "research/ai-education/retrieval/00-introduction.md",
+      "indegree": 25
+    },
+    {
+      "repo": "hub",
+      "path": "standards/frontmatter-docs-standard.md",
+      "indegree": 23
+    },
+    {
+      "repo": "clarify",
+      "path": "docs/standards/naming-convention.md",
+      "indegree": 21
+    },
+    {
+      "repo": "hub",
+      "path": "docs/adr/2026-07-adr-003-research-structure.md",
+      "indegree": 19
+    },
+    {
+      "repo": "hub",
+      "path": "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md",
+      "indegree": 19
+    },
+    {
+      "repo": "hub",
+      "path": "docs/rfc/2026-07-17-rfc-reference-research-pattern.md",
+      "indegree": 18
+    },
+    {
+      "repo": "hub",
+      "path": "research/ai-education/task-processing/00-introduction.md",
+      "indegree": 17
+    },
+    {
+      "repo": "hub",
+      "path": "standards/adr-structure-standard.md",
+      "indegree": 16
+    },
+    {
+      "repo": "mango",
+      "path": "standards/ba-ontology.md",
+      "indegree": 16
+    },
+    {
+      "repo": "hub",
+      "path": "research/external-knowledge/external-sources-registry.md",
+      "indegree": 16
+    }
+  ]
+}
