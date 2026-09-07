@@ -1,12 +1,12 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-09-03
+version: 0.3
+updated: 2026-09-07
 temperature: 0.1
 owner: G-Ivan-A
 rfc-scope: multi
 type: rfc
-context: [agents-md, onboarding, routing, escalation, governance, archetypes, validator, ci, adr-007, b-110, b-116, issue-547, issue-551, contributing-md, governance-md, ssot-boundary]
+context: [agents-md, onboarding, routing, escalation, governance, archetypes, environment-axis, validator, ci, adr-007, b-110, b-116, b-120, issue-547, issue-551, issue-555, contributing-md, governance-md, ssot-boundary]
 method: analysis-delegation + research-delegation + executable-draft
 scope: ecosystem
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/551"
@@ -21,6 +21,7 @@ related_artifacts:
   - "tools/validate-repository-structure.sh"
   - "pr-ops/backlog.md"
   - "pr-ops/artifact-map.md"
+  - "docs/rfc/2026-09-04-rfc-bootstrap-environment-and-structure.md"
   - "CONTRIBUTING.md"
   - "GOVERNANCE.md"
   - "standards/team-contract.md"
@@ -28,6 +29,7 @@ related_artifacts:
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/551"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/547"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/555"
 ---
 
 # RFC: Корневой контракт `AGENTS.md` — онбординг и маршрутизация ИИ-агентов
@@ -162,9 +164,9 @@ RFC фиксирует обязательные XML-секции (парсинг
 
 | Секция | Назначение | Слой |
 | --- | --- | --- |
-| `<scope>` | Единая точка входа; файл единый для всех моделей; модель-специфичные файлы правил запрещены. | мягкий |
+| `<scope>` | Единая точка входа; файл единый для всех моделей; **копия** правил в модель- или среда-специфичном файле запрещена (`A-1`). **Обязательные строки `archetype` и `environment`** со значениями из `.hub-profile.json`: SSOT — профиль, `AGENTS.md` его отражает, расхождение = `FAIL` (`A-2`). | мягкий (строки `archetype`/`environment` — жёсткий) |
 | `<hard_rules>` | Критические запреты и обязанности до первого действия (PR-only, валидаторы, запрет вымыслов, «неполная постановка → исполняй без блокирования + зафиксируй пробел»). | жёсткий (декларация) |
-| `<forbidden>` | Явный закрытый перечень запретов (`docs/contracts/`, модель-специфичные файлы, `ai-generated`, новые top-level каталоги без ADR, относительные ссылки на Хаб из спиц). | жёсткий (декларация) |
+| `<forbidden>` | Явный закрытый перечень запретов (`docs/contracts/`, **копия** правил в модель- или среда-специфичном файле, `ai-generated`, новые top-level каталоги **не предусмотренные ядром, архетипом, объявленной средой или декларацией `project_specific_directories`** без ADR (`A-3`), собственные каталоги планирования `plans/`/`tasks/`, относительные ссылки на Хаб из спиц). | жёсткий (декларация) |
 | `<routing>` | Таблица маршрутизации: тема → **абсолютный URL** каноничного документа. Диспетчер, не дубликат. | мягкий |
 | `<artifact_homes>` | Дома артефактов и правила именования. | мягкий |
 | `<issue_levels>` | Пять уровней постановки. | мягкий |
@@ -177,6 +179,17 @@ RFC фиксирует обязательные XML-секции (парсинг
 Инвариант размера: `AGENTS.md` остаётся коротким диспетчером (ориентир практики
 ~200 строк); правила по существу живут в `ai-rules/`, `AGENTS.md` только ссылается.
 
+**Правка `A-1` (внесена по решению фаундера, issue [#555](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/555)).**
+Запрет формулируется по существу, а не по имени файла: **копия** правил в модель-
+или среда-специфичном файле запрещена; **сгенерированный указатель** на каноничный
+артефакт разрешён при двух условиях — файл помечен как сгенерированный, и его
+ручная правка падает в валидаторе. Прежняя формулировка «модель-специфичные файлы
+правил запрещены» буквально запрещала нативную поверхность среды `gigacode` и тем
+самым блокировала Трек А
+([RFC оси «Среда»](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-04-rfc-bootstrap-environment-and-structure.md),
+`P.7`, правка `A-1`; правило `R4` — «адаптер, а не второй SSOT»). Предмет запрета
+не ослабляется: он направлен против второго SSOT и остаётся ровно там же.
+
 ### P.3. Связанные файлы
 
 **`ai-rules/agent-work-routing.md` (новый).** Выносит таблицу `<routing>` из
@@ -184,6 +197,13 @@ RFC фиксирует обязательные XML-секции (парсинг
 режимам исполнения, с тегами, **абсолютными путями** и краткой суммаризацией, куда
 ведёт каждая ссылка (чтобы агент выбирал, не открывая всё). `AGENTS.md` даёт
 минимальную таблицу и ссылку на `agent-work-routing.md` как на полный маршрутизатор.
+
+**Правка `A-5`(б).** Таблица маршрутизации дополняется двумя маршрутами по
+контракту классов `ai-rules/`: «вызываемая человеком процедура → `ai-rules/commands/`»
+и «навык под класс задачи → `ai-rules/skills/`». Маршруты `pr-ops/*` переписываются
+в `ops/*` **тем же PR, что и физическая миграция каталога** (задача B-119): до её
+мержа действующим адресом остаётся `pr-ops/`, иначе маршрутизатор указывает в
+несуществующий путь.
 
 **`ai-rules/agent-work-rules.md` (существует).** Дополняется/подтверждается как SSOT
 правил эскалации и двухфакторного подтверждения в контексте задач:
@@ -224,21 +244,35 @@ flowchart LR
 предположением. Согласуется с `<hard_rules>` пункт «неполная постановка →
 исполняй без блокирования + зафиксируй пробел».
 
-### P.6. Архетипы репозиториев
+### P.6. Архетипы и среды
 
-`AGENTS.md` **обязателен для всех архетипов** (A/B/C/D). База (`<hard_rules>`,
-`<forbidden>`, инвариант абсолютных ссылок, `<validation>`) задаётся в Хабе и
-доставляется в спицы (B-111). Архетип-специфичная дельта добавляется в спице
-(например, для C — команды сборки/тесты продукта; для D — учебная маршрутизация),
-но не переопределяет `<hard_rules>` и `<forbidden>` Хаба. Скрипт синхронизации /
-валидатор генома проверяет **наличие** `AGENTS.md` в корне каждого репозитория.
+`AGENTS.md` **обязателен для всех архетипов** (A/B/C/D) и для всех сред. База
+(`<hard_rules>`, `<forbidden>`, инвариант абсолютных ссылок, `<validation>`)
+задаётся в Хабе и доставляется в спицы (B-111).
+
+**Правка `A-4`.** Дельта спицы двумерна: `Δархетип ⊕ Δсреда`. `Δархетип`
+добавляет дома *содержания* (например, для C — команды сборки и тесты продукта;
+для D — учебная маршрутизация), `Δсреда` — *поверхность инструмента* (реестры,
+конфигурации подключения, точки автозагрузки). Ни одна из двух дельт не
+переопределяет `<hard_rules>` и `<forbidden>` Хаба и не изымает дом, заданный
+ядром или архетипом, — это правило `R1` (аддитивность)
+[RFC оси «Среда»](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-04-rfc-bootstrap-environment-and-structure.md).
+
+Скрипт синхронизации / валидатор генома проверяет **наличие** `AGENTS.md` в
+корне каждого репозитория.
 
 ### P.7. Машинный гейт (жёсткий слой)
 
 Расширить
 [`tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-repository-structure.sh):
 добавить `AGENTS.md` в `required_files` и в allowlist активных корневых файлов,
-чтобы **валидатор падал при отсутствии** `AGENTS.md`. Полный набор запретов
+чтобы **валидатор падал при отсутствии** `AGENTS.md`.
+
+**Правка `A-5`(а).** Наличие-гейт не может проверять один и тот же фиксированный
+корневой набор для всех репозиториев: при разных `Δсреда` требуемые наборы
+различаются. Гейт обязан сначала прочитать `environment` из `.hub-profile.json`
+(отсутствие поля = `local`, `R6`) и лишь затем проверять требуемый набор;
+значение вне закрытого словаря даёт `FAIL` (`R7`). Реализация — задача B-120. Полный набор запретов
 (`docs/contracts/`, модель-специфичные файлы, `ai-generated`) и валидация пяти
 уровней постановки — за B-116; RFC предлагает только наличие-гейт как минимальный
 жёсткий слой, без которого `AGENTS.md` остаётся рекомендацией.
@@ -446,6 +480,8 @@ ADR (исторические документы иммутабельны), сн
 - [`templates/htom/AI_QUICK_RULES.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/htom/AI_QUICK_RULES.md), [`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/htom/AI_SESSION_HANDOVER_PROMPT.md) — снятие указания читать `CONTRIBUTING.md` как governance-чек-лист (B-111).
 - Тонкие указатели: `CLAUDE.md`, `.github/copilot-instructions.md`, `.cursor/rules/` (реализация B-110).
 
+- [`docs/rfc/2026-09-04-rfc-bootstrap-environment-and-structure.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-04-rfc-bootstrap-environment-and-structure.md) — источник правок `A-1`…`A-5`, внесённых в `v0.3`.
+
 Этот RFC ничего из перечисленного не внедряет — только предлагает решение.
 
 ## Implementation and Validation
@@ -471,7 +507,14 @@ ADR (исторические документы иммутабельны), сн
 
 ## Lifecycle and Decision Path
 
-Текущий статус — `draft`. Требуемый человеческий гейт — решение фаундера по
+Текущий статус — `draft`. В версии `v0.3` внесены правки `A-1`…`A-5` из раздела
+`P.7` [RFC оси «Среда»](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-04-rfc-bootstrap-environment-and-structure.md)
+по решению фаундера `Q-5` (issue [#555](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/555)):
+правки вносит исполнитель в текст RFC и в черновик
+[`templates/agents-md-root-draft.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/agents-md-root-draft.md),
+а не владелец документа отдельным циклом. Правки текстовые: они сужают
+формулировки, не ослабляя ни одного запрета, и не меняют принятой конструкции
+корневого контракта. Требуемый человеческий гейт — решение фаундера по
 `Open Questions` (в первую очередь Q-1 путь легализации). После решения:
 `draft → proposed → accepted`; при `accepted` заполняются `Decision record`
 (ADR/принятый RFC) и `Implementation link` (PR B-110). Пост-акцепт делегирование:

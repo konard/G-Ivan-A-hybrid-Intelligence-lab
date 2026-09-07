@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-09-03
+version: 0.2
+updated: 2026-09-07
 temperature: 0.1
 level: ecosystem
 ---
@@ -24,7 +24,15 @@ level: ecosystem
 Этот файл — единственная точка входа для любого ИИ-агента, работающего с этим репозиторием.
 Он обязателен к прочтению до первого действия и является диспетчером: правила живут в каноничных
 документах, ссылки на них — ниже. Все ссылки абсолютные, потому что агент может работать из спицы.
-Файл единый для всех моделей. Модель-специфичные файлы правил (CODEX.md, OPUS.md и подобные) ЗАПРЕЩЕНЫ.
+Файл единый для всех моделей. Копия правил в модель- или среда-специфичном файле (CODEX.md, OPUS.md
+и подобные) ЗАПРЕЩЕНА; сгенерированный указатель на каноничный артефакт РАЗРЕШЁН — см. <forbidden>.
+
+Архетип и среда репозитория (SSOT — `.hub-profile.json`, этот файл только отражает его значения;
+расхождение между профилем и `AGENTS.md` = FAIL):
+
+- archetype: `<A | B | C | D>` — поле `archetype` из `.hub-profile.json`
+- environment: `<local | gigacode | serverless>` — поле `environment` из `.hub-profile.json`
+  (отсутствие поля читается как `local`)
 </scope>
 
 <hard_rules>
@@ -42,9 +50,15 @@ level: ecosystem
 <forbidden>
 - ЗАПРЕЩЕНО создавать каталог `docs/contracts/` в любом репозитории экосистемы.
   Контрактные документы живут в `ai-rules/`.
-- ЗАПРЕЩЕНО создавать модель-специфичные файлы правил: CODEX.md, OPUS.md, QWEN.md, DEEPSEEK.md и т. п.
+- ЗАПРЕЩЕНО создавать **копию** правил в модель- или среда-специфичном файле: CODEX.md, OPUS.md,
+  QWEN.md, DEEPSEEK.md и т. п. **Сгенерированный указатель** на каноничный артефакт разрешён при
+  двух условиях: файл помечен как сгенерированный, и его ручная правка падает в валидаторе.
+  Запрет направлен против второго SSOT, а не против нативной поверхности среды.
 - ЗАПРЕЩЕНО указывать `ai-generated` во frontmatter любого документа.
-- ЗАПРЕЩЕНО создавать новые каталоги верхнего уровня без ADR.
+- ЗАПРЕЩЕНО создавать новые каталоги верхнего уровня, не предусмотренные ядром, архетипом,
+  объявленной средой или декларацией `project_specific_directories`, — без ADR.
+- ЗАПРЕЩЕНО заводить собственные каталоги планирования (`plans/`, `tasks/`) и объявлять их через
+  `project_specific_directories`: планы и задачи живут в трекере задач и в бэклоге.
 - ЗАПРЕЩЕНО заводить issue без пяти уровней постановки (см. <issue_levels>).
 - ЗАПРЕЩЕНО менять файлы в `standards/` и `docs/adr/` без задачи, явно разрешающей это.
 - ЗАПРЕЩЕНО удалять или перезаписывать чужие артефакты вместо создания новой версии.
@@ -57,6 +71,8 @@ level: ecosystem
 | Правила работы агента (SSOT, режимы, автономия, DoD) | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-work-rules.md |
 | Протокол онбординга (выполнить до старта) | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-onboarding-protocol.md |
 | Все правила агента | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/ai-rules |
+| Вызываемая человеком процедура (команда) | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/ai-rules/commands |
+| Навык под класс задачи (выбирается агентом) | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/ai-rules/skills |
 | Дома артефактов и структура репозитория | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/repo-model.md |
 | Реестр артефактов | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/artifact-map.md |
 | Бэклог и правила его ведения | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog-instruction.md |
@@ -72,6 +88,14 @@ level: ecosystem
 | Все стандарты | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/standards |
 | Governance | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/GOVERNANCE.md |
 | Правила вклада | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/CONTRIBUTING.md |
+
+Два примечания к таблице, снимаемые соответствующими задачами бэклога
+(https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md):
+
+1. Маршруты `ai-rules/commands/` и `ai-rules/skills/` объявлены заранее; сами каталоги создаются
+   задачей B-117 при появлении не менее двух артефактов класса.
+2. Маршруты `pr-ops/*` переписываются в `ops/*` тем же PR, что и миграция каталога (B-119).
+   До мержа того PR действующим адресом остаётся `pr-ops/`.
 </routing>
 
 <artifact_homes>
@@ -83,7 +107,9 @@ level: ecosystem
 | Отчёт (фиксация результата) | `docs/report/YYYY-MM-DD-name.md` |
 | Решение об архитектуре | `docs/adr/YYYY-MM-adr-NNN-name.md` |
 | Норма, обязательная к исполнению | `standards/<name>.md` |
-| Правила для ИИ-агента | `ai-rules/<name>.md` |
+| Правило для ИИ-агента (загружается всегда) | `ai-rules/<name>.md` |
+| Команда (вызывается человеком) | `ai-rules/commands/<slug>.md` |
+| Навык (выбирается агентом под класс задачи) | `ai-rules/skills/<slug>/SKILL.md` |
 | Операционные артефакты процесса | `pr-ops/<name>.md` |
 
 Имена файлов: в корне — UPPERCASE, во вложенных каталогах — lowercase-with-hyphens,
@@ -117,7 +143,8 @@ level: ecosystem
 
 <models>
 Содержание правил одинаково для всех моделей. Различается только способ, которым инструмент
-подхватывает этот файл. Дублировать правила в перечисленные ниже файлы ЗАПРЕЩЕНО — только ссылка.
+подхватывает этот файл. Дублировать правила в перечисленные ниже файлы ЗАПРЕЩЕНО — только ссылка
+или сгенерированный указатель, помеченный как сгенерированный.
 
 | Инструмент / модель | Как подхватывается | Что требуется в репозитории |
 |---|---|---|
