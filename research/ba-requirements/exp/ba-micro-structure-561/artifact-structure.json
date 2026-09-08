@@ -1,0 +1,5453 @@
+{
+  "corpus": {
+    "repo": "mango_ba_prompts",
+    "commit": "8cbf82aa73129ec5747af07f790aaf438b0fb6e9",
+    "runs_scanned": 67,
+    "markdown_with_requirement_lexicon": 125,
+    "doc_kind_frequency": {
+      "run-journal": 63,
+      "analysis-note": 45,
+      "requirement-document": 17
+    },
+    "requirement_documents": 17
+  },
+  "slot_frequency": {
+    "S-OTHER": 33,
+    "S-SCENARIO": 14,
+    "S-FR": 14,
+    "S-PROBLEM": 10,
+    "S-LIMITS": 9,
+    "S-PROCESS": 8,
+    "S-SOLUTION": 8,
+    "S-OPEN": 7,
+    "S-VERDICT": 7,
+    "S-GLOSSARY": 6,
+    "S-TRACE": 5,
+    "S-PROPOSAL": 4,
+    "S-DEFECT": 4,
+    "S-TEST": 3,
+    "S-PURPOSE": 2,
+    "S-AC": 1,
+    "S-METRIC": 1,
+    "S-UI": 1
+  },
+  "label_variants_per_slot": {
+    "S-AC": {
+      "сводка проверенных критериев": 1
+    },
+    "S-DEFECT": {
+      "замечание к промпту (вход для эксперимента/rfc)": 1,
+      "замечание к промптам (вход для эксперимента)": 1,
+      "ошибки исполнения: разбор артефакта первичного исполнителя": 1,
+      "служебные замечания к процессу": 1
+    },
+    "S-FR": {
+      "функциональные требования и сценарии использования": 3,
+      "нефункциональные требования": 3,
+      "функциональные требования": 1,
+      "функциональные требования (v1.1, свод)": 1,
+      "таблица 1. функциональные требования (fr-1 … fr-10)": 1,
+      "таблица 2. нефункциональные требования": 1,
+      "приложение № 1 — функциональные требования к модулю распознавания речи (stt)": 1,
+      "приложение № 2 — функциональные требования к модулю синтеза речи (tts)": 1,
+      "приложение № 3 — функциональные требования к модулю nlu": 1,
+      "приложение № 4 — функциональные требования к управлению диалогом (dialogue manager)": 1
+    },
+    "S-GLOSSARY": {
+      "термины и определения": 2,
+      "глоссарий": 2,
+      "терминология": 1,
+      "термины и определения (ключевые правки прогона)": 1
+    },
+    "S-LIMITS": {
+      "ограничения": 2,
+      "особенности реализации": 2,
+      "уточняющий вопрос заказчику по риску": 1,
+      "дополнительные технические ограничения": 1,
+      "пробелы, противоречия и риски тз": 1,
+      "риски и ограничения": 1,
+      "риски": 1
+    },
+    "S-METRIC": {
+      "сводная статистика по уровням покрытия": 1
+    },
+    "S-OPEN": {
+      "❓ вопросы для согласования": 2,
+      "вопросы заказчику": 2,
+      "открытые вопросы (блокирующие финализацию)": 1,
+      "что осталось незакрытым (open items)": 1,
+      "вопросы владельцу продукта": 1
+    },
+    "S-OTHER": {
+      "🔗 мета-данные": 2,
+      "фт-04 — фильтрация входящих сообщений по вакансии": 2,
+      "фт-06 — двусторонняя синхронизация в реальном времени": 2,
+      "фт-07 — склейка сообщений нескольких акторов в одно обращение": 2,
+      "фт-09 — автосопоставление кандидата с адресной книгой": 2,
+      "фт-10 — отчётность и выгрузка": 2,
+      "декомпозиция сырого требования на атомарные утверждения": 1,
+      "5 whys (до корневой причины)": 1,
+      "нормализованное требование (бизнес-уровень, без система должна)": 1,
+      "актёры": 1,
+      "gate": 1,
+      "та же матрица одной таблицей": 1,
+      "короткая выжимка текстом": 1,
+      "как читать оценки": 1,
+      "таблица 4. последовательность взаимодействия систем (9 шагов)": 1,
+      "таблица 5. нестандартные ситуации (12 строк)": 1,
+      "суммаризация покрытия": 1,
+      "фт-01 — oauth-авторизация в headhunter при настройке канала": 1,
+      "фт-02 — подключение и настройка канала hh в лк": 1,
+      "обходные пути": 1,
+      "что закрывается уверенно": 1,
+      "расхождения с уже заполненными ответами участника": 1,
+      "легенда уровней покрытия": 1,
+      "расхождения с колонкой комментарий участника": 1,
+      "что именно опубликовано: раздел чаты": 1,
+      "gap-r1 — чат виден только менеджерам-участникам (high risk)": 1,
+      "сравнение путей получения сообщений и выбор для кц mango": 1
+    },
+    "S-PROBLEM": {
+      "проблема, цель, задачи": 2,
+      "фт-08 — передача контекста при создании обращения": 2,
+      "матрица сценарий → задача раздела 2 → узел фт": 1,
+      "фт-05 — создание обращения по первому входящему сообщению и перенос контекста сессии": 1,
+      "фт-05 — создание обращения по первому входящему сообщению и контекст сессии": 1,
+      "проблема, цели и задачи": 1,
+      "проблема, цель и границы изменения": 1,
+      "проблема, цель, задача": 1
+    },
+    "S-PROCESS": {
+      "📋 логи выполнения": 2,
+      "метод": 1,
+      "🔍 детекция входа": 1,
+      "шаг 0: детекция готовности": 1,
+      "🤝 логи согласования": 1,
+      "фт-03 — маршрутизация созданных обращений": 1,
+      "фт-01 — oauth-авторизация; фт-02 — подключение канала; фт-03 — маршрутизация": 1
+    },
+    "S-PROPOSAL": {
+      "🚀 предложения по улучшению": 2,
+      "рекомендация ба и следующий шаг": 1,
+      "рекомендация": 1
+    },
+    "S-PURPOSE": {
+      "назначение": 2
+    },
+    "S-SCENARIO": {
+      "👤 user story (если сгенерирована)": 1,
+      "📘 user story (входная)": 1,
+      "📗 use case (выходная)": 1,
+      "📗 дополнительные итоговые use case по тестам": 1,
+      "user story (job story)": 1,
+      "use case (cockburn)": 1,
+      "модель потребности (сценарии)": 1,
+      "основной сценарий (happy path)": 1,
+      "альтернативные сценарии": 1,
+      "сценарии исключений (exception paths)": 1,
+      "сценарии обработки очередей": 1,
+      "матрица сценариев (сгруппированная, блоки a–k)": 1,
+      "таблица 3. пользовательский сценарий заказчика": 1,
+      "влияние gap-r1 на сценарии кц mango": 1
+    },
+    "S-SOLUTION": {
+      "описание разрабатываемого решения": 2,
+      "моделирование верхнеуровневых фт": 2,
+      "разведение боль vs заявленное решение": 1,
+      "таблица 6. модель данных обмена": 1,
+      "красные зоны (решение принимать с их учётом)": 1,
+      "ограничения и открытые решения": 1
+    },
+    "S-TEST": {
+      "тестовые входы": 1,
+      "зафиксированные тестовые прогоны": 1,
+      "🧪 тестовые кейсы": 1
+    },
+    "S-TRACE": {
+      "источники": 3,
+      "входные источники": 1,
+      "реестр источников": 1
+    },
+    "S-UI": {
+      "ui-логика и сценарии использования": 1
+    },
+    "S-VERDICT": {
+      "сводка": 2,
+      "📐 чек-лист валидации результата": 1,
+      "gap-анализ требование ↔ as-is (резюме)": 1,
+      "резюме для заказчика (одна страница)": 1,
+      "вывод": 1,
+      "сводка разрывов": 1
+    }
+  },
+  "format_frequency": {
+    "F-NARRATIVE": 7,
+    "F-CLASSIC": 6,
+    "F-MIXED": 3,
+    "F-SHORT": 1
+  },
+  "product_frequency": {
+    "contact-center": 15,
+    "billing-finance": 15,
+    "voice-ucaas": 14,
+    "analytics-reporting": 12,
+    "integration": 12,
+    "self-service-lk": 11
+  },
+  "positional_slot_distribution": {
+    "pos-1": {
+      "S-PURPOSE": 2,
+      "S-OTHER": 4,
+      "S-SCENARIO": 2,
+      "S-VERDICT": 4,
+      "S-GLOSSARY": 5
+    },
+    "pos-2": {
+      "S-PROCESS": 1,
+      "S-TRACE": 1,
+      "S-SOLUTION": 1,
+      "S-SCENARIO": 2,
+      "S-GLOSSARY": 1,
+      "S-PROBLEM": 4,
+      "S-OTHER": 4,
+      "S-FR": 3
+    },
+    "pos-3": {
+      "S-TEST": 1,
+      "S-PROCESS": 2,
+      "S-OTHER": 3,
+      "S-DEFECT": 1,
+      "S-PROBLEM": 1,
+      "S-SCENARIO": 1,
+      "S-SOLUTION": 5,
+      "S-OPEN": 1,
+      "S-FR": 2
+    },
+    "pos-4": {
+      "S-SCENARIO": 5,
+      "S-OTHER": 3,
+      "S-TRACE": 1,
+      "S-FR": 4,
+      "S-LIMITS": 1,
+      "S-PROCESS": 1,
+      "S-UI": 1
+    },
+    "pos-5": {
+      "S-OTHER": 3,
+      "S-TEST": 1,
+      "S-VERDICT": 1,
+      "S-FR": 5,
+      "S-PROBLEM": 2,
+      "S-SCENARIO": 1,
+      "S-PROPOSAL": 1
+    },
+    "pos-6": {
+      "S-PROCESS": 2,
+      "S-DEFECT": 1,
+      "S-OPEN": 1,
+      "S-OTHER": 3,
+      "S-LIMITS": 3,
+      "S-PROBLEM": 1,
+      "S-METRIC": 1,
+      "S-SOLUTION": 1
+    }
+  },
+  "variance_by_bcreq": [
+    {
+      "key": "1074",
+      "artifacts": 3,
+      "runs": [
+        "RUN-0063",
+        "RUN-0064",
+        "RUN-0067"
+      ],
+      "distinct_slot_skeletons": 3,
+      "distinct_label_skeletons": 3,
+      "mean_slot_jaccard": 0.69,
+      "min_slot_jaccard": 0.571,
+      "format_classes": [
+        "F-CLASSIC",
+        "F-MIXED"
+      ]
+    }
+  ],
+  "variance_by_process": [
+    {
+      "key": "bcreq-1059-multichannel-slots-limits",
+      "artifacts": 2,
+      "runs": [
+        "RUN-0013"
+      ],
+      "distinct_slot_skeletons": 2,
+      "distinct_label_skeletons": 2,
+      "mean_slot_jaccard": 0.286,
+      "min_slot_jaccard": 0.286,
+      "format_classes": [
+        "F-CLASSIC",
+        "F-MIXED"
+      ]
+    },
+    {
+      "key": "bcreq-1069-restricted-api-key",
+      "artifacts": 2,
+      "runs": [
+        "RUN-0012"
+      ],
+      "distinct_slot_skeletons": 2,
+      "distinct_label_skeletons": 2,
+      "mean_slot_jaccard": 0.2,
+      "min_slot_jaccard": 0.2,
+      "format_classes": [
+        "F-NARRATIVE"
+      ]
+    },
+    {
+      "key": "feasibility-assessment-tender-tz-stt-tts-nlu-dialogue-manager",
+      "artifacts": 2,
+      "runs": [
+        "RUN-0057"
+      ],
+      "distinct_slot_skeletons": 2,
+      "distinct_label_skeletons": 2,
+      "mean_slot_jaccard": 0.167,
+      "min_slot_jaccard": 0.167,
+      "format_classes": [
+        "F-NARRATIVE"
+      ]
+    },
+    {
+      "key": "multichannel-agent-workload",
+      "artifacts": 2,
+      "runs": [
+        "RUN-0011"
+      ],
+      "distinct_slot_skeletons": 2,
+      "distinct_label_skeletons": 2,
+      "mean_slot_jaccard": 0.333,
+      "min_slot_jaccard": 0.333,
+      "format_classes": [
+        "F-MIXED",
+        "F-NARRATIVE"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "run_id": "RUN-0001",
+      "path": "runs/2026/RUN-0001/outputs/tz-stats-prototype-2026-05.md",
+      "process": "prompt-experiment",
+      "date": "2026-05-26",
+      "status": "experimental",
+      "model": "not-recorded",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "Назначение",
+        "Входные артефакты",
+        "Структура хранения истории",
+        "Контракт отчета",
+        "Правила накопления",
+        "Формат логирования",
+        "Системный промпт-прототип",
+        "Тест промпта на TZ #15 и TZ #22",
+        "Предложения по улучшению",
+        "Вопросы для согласования"
+      ],
+      "slots": [
+        "S-PURPOSE",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER",
+        "S-PROCESS",
+        "S-PROCESS",
+        "S-TEST",
+        "S-PROPOSAL",
+        "S-OPEN"
+      ],
+      "slot_set": [
+        "S-OPEN",
+        "S-OTHER",
+        "S-PROCESS",
+        "S-PROPOSAL",
+        "S-PURPOSE",
+        "S-TEST"
+      ],
+      "heading_count": 10,
+      "word_count": 2054,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Входные артефакты",
+        "Структура хранения истории",
+        "Контракт отчета",
+        "Правила накопления"
+      ]
+    },
+    {
+      "run_id": "RUN-0002",
+      "path": "runs/2026/RUN-0002/outputs/user-story_gen-from-raw-request_2026-05-26.md",
+      "process": "user-story-generation",
+      "date": "2026-05-26",
+      "status": "partial-success",
+      "model": "not-recorded",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "Назначение",
+        "Метод",
+        "Тестовые входы",
+        "👤 User Story (если сгенерирована)",
+        "🔗 Мета-данные",
+        "🔍 Детекция входа",
+        "📋 Логи выполнения",
+        "Зафиксированные тестовые прогоны",
+        "🚀 Предложения по улучшению",
+        "❓ Вопросы для согласования"
+      ],
+      "slots": [
+        "S-PURPOSE",
+        "S-PROCESS",
+        "S-TEST",
+        "S-SCENARIO",
+        "S-OTHER",
+        "S-PROCESS",
+        "S-PROCESS",
+        "S-TEST",
+        "S-PROPOSAL",
+        "S-OPEN"
+      ],
+      "slot_set": [
+        "S-OPEN",
+        "S-OTHER",
+        "S-PROCESS",
+        "S-PROPOSAL",
+        "S-PURPOSE",
+        "S-SCENARIO",
+        "S-TEST"
+      ],
+      "heading_count": 10,
+      "word_count": 1957,
+      "requirement_ids": 0,
+      "doc_kind": "requirement-document",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "🔗 Мета-данные"
+      ]
+    },
+    {
+      "run_id": "RUN-0003",
+      "path": "runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md",
+      "process": "usecase-generation",
+      "date": "2026-05-26",
+      "status": "partial-success",
+      "model": "not-recorded",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "Назначение",
+        "Входные источники",
+        "Шаг 0: детекция готовности",
+        "📘 User Story (входная)",
+        "🧪 Тестовые кейсы",
+        "🤝 Логи согласования",
+        "📗 Use Case (выходная)",
+        "📗 Дополнительные итоговые Use Case по тестам",
+        "🔗 Мета-данные",
+        "📋 Логи выполнения",
+        "📐 Чек-лист валидации результата",
+        "🚀 Предложения по улучшению",
+        "❓ Вопросы для согласования"
+      ],
+      "slots": [
+        "S-PURPOSE",
+        "S-TRACE",
+        "S-PROCESS",
+        "S-SCENARIO",
+        "S-TEST",
+        "S-PROCESS",
+        "S-SCENARIO",
+        "S-SCENARIO",
+        "S-OTHER",
+        "S-PROCESS",
+        "S-VERDICT",
+        "S-PROPOSAL",
+        "S-OPEN"
+      ],
+      "slot_set": [
+        "S-OPEN",
+        "S-OTHER",
+        "S-PROCESS",
+        "S-PROPOSAL",
+        "S-PURPOSE",
+        "S-SCENARIO",
+        "S-TEST",
+        "S-TRACE",
+        "S-VERDICT"
+      ],
+      "heading_count": 13,
+      "word_count": 2317,
+      "requirement_ids": 0,
+      "doc_kind": "requirement-document",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "🔗 Мета-данные"
+      ]
+    },
+    {
+      "run_id": "RUN-0004",
+      "path": "runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md",
+      "process": "prompt-audit",
+      "date": "2026-05-26",
+      "status": "draft",
+      "model": "not-recorded",
+      "bcreq": null,
+      "products": [
+        "analytics-reporting",
+        "billing-finance"
+      ],
+      "headings": [
+        "Назначение",
+        "Проверенные источники",
+        "`tz-stats-prototype-2026-05.md`",
+        "`user-story_gen-from-raw-request_2026-05-26.md`",
+        "`usecase_gen-stepwise-alignment_2026-05-26.md`",
+        "Общие выводы",
+        "Проверка готовности к переносу"
+      ],
+      "slots": [
+        "S-PURPOSE",
+        "S-TRACE",
+        "S-OTHER",
+        "S-OTHER",
+        "S-SCENARIO",
+        "S-VERDICT",
+        "S-TEST"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-PURPOSE",
+        "S-SCENARIO",
+        "S-TEST",
+        "S-TRACE",
+        "S-VERDICT"
+      ],
+      "heading_count": 7,
+      "word_count": 950,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "`tz-stats-prototype-2026-05.md`",
+        "`user-story_gen-from-raw-request_2026-05-26.md`"
+      ]
+    },
+    {
+      "run_id": "RUN-0005",
+      "path": "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md",
+      "process": "prompt-selftest",
+      "date": "2026-05-26",
+      "status": "draft",
+      "model": "not-recorded",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "Назначение",
+        "Тестовые входы",
+        "Результаты self-test",
+        "Проверка лимитов",
+        "Идеи на будущее",
+        "Вопросы для согласования",
+        "Итог"
+      ],
+      "slots": [
+        "S-PURPOSE",
+        "S-TEST",
+        "S-VERDICT",
+        "S-TEST",
+        "S-PROPOSAL",
+        "S-OPEN",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-OPEN",
+        "S-PROPOSAL",
+        "S-PURPOSE",
+        "S-TEST",
+        "S-VERDICT"
+      ],
+      "heading_count": 7,
+      "word_count": 709,
+      "requirement_ids": 3,
+      "doc_kind": "analysis-note",
+      "format_class": "F-CLASSIC",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0006",
+      "path": "runs/2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md",
+      "process": "session-debug-documentation",
+      "date": "2026-06-13",
+      "status": "success",
+      "model": "not-recorded",
+      "bcreq": null,
+      "products": [
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Назначение",
+        "Метод",
+        "Тестовый вход (обезличенный)",
+        "Полученный результат (зафиксированный прогон)",
+        "YYYY-MM-DD — Раздел 4 ФТ: массовая рассылка SMS из карточки сделки",
+        "Оценка прогона",
+        "Предложения по улучшению",
+        "Вопросы для согласования"
+      ],
+      "slots": [
+        "S-PURPOSE",
+        "S-PROCESS",
+        "S-TEST",
+        "S-VERDICT",
+        "S-TRACE",
+        "S-VERDICT",
+        "S-PROPOSAL",
+        "S-OPEN"
+      ],
+      "slot_set": [
+        "S-OPEN",
+        "S-PROCESS",
+        "S-PROPOSAL",
+        "S-PURPOSE",
+        "S-TEST",
+        "S-TRACE",
+        "S-VERDICT"
+      ],
+      "heading_count": 8,
+      "word_count": 644,
+      "requirement_ids": 1,
+      "doc_kind": "analysis-note",
+      "format_class": "F-MIXED",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0007",
+      "path": "runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md",
+      "process": "fr-generation",
+      "date": "2026-06-16",
+      "status": "works-with-edits",
+      "model": "not-recorded",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Метрики",
+        "Что генерировали",
+        "Что сработало (с цитатами)",
+        "Что не сработало / правки БА (с цитатами)",
+        "Предложения по промптам",
+        "Вопросы для согласования"
+      ],
+      "slots": [
+        "S-METRIC",
+        "S-OTHER",
+        "S-OTHER",
+        "S-DEFECT",
+        "S-PROPOSAL",
+        "S-OPEN"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-METRIC",
+        "S-OPEN",
+        "S-OTHER",
+        "S-PROPOSAL"
+      ],
+      "heading_count": 6,
+      "word_count": 496,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Что генерировали",
+        "Что сработало (с цитатами)"
+      ]
+    },
+    {
+      "run_id": "RUN-0008",
+      "path": "runs/2026/RUN-0008/outputs/kb-citation-check-2026-06-16.md",
+      "process": "kb-citation-check",
+      "date": "2026-06-16",
+      "status": "draft",
+      "model": "not-recorded",
+      "bcreq": null,
+      "products": [
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Назначение",
+        "Дизайн A/B",
+        "Тестовые входы",
+        "Результаты",
+        "Наблюдаемый эффект",
+        "Метрики (на 2 входах)",
+        "Вывод",
+        "Воспроизведение",
+        "Источники"
+      ],
+      "slots": [
+        "S-PURPOSE",
+        "S-METRIC",
+        "S-TEST",
+        "S-VERDICT",
+        "S-OTHER",
+        "S-METRIC",
+        "S-VERDICT",
+        "S-EPISODE",
+        "S-TRACE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-METRIC",
+        "S-OTHER",
+        "S-PURPOSE",
+        "S-TEST",
+        "S-TRACE",
+        "S-VERDICT"
+      ],
+      "heading_count": 9,
+      "word_count": 428,
+      "requirement_ids": 1,
+      "doc_kind": "run-journal",
+      "format_class": "F-MIXED",
+      "unmapped_headings": [
+        "Наблюдаемый эффект"
+      ]
+    },
+    {
+      "run_id": "RUN-0009",
+      "path": "runs/2026/RUN-0009/outputs/standards-applied-ab-2026-06-16.md",
+      "process": "industry-standards-ab-check",
+      "date": "2026-06-16",
+      "status": "draft",
+      "model": "not-recorded",
+      "bcreq": null,
+      "products": [
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Назначение",
+        "Контролируемый вход",
+        "Варианты",
+        "Результаты",
+        "Метрики (на входе RAW-1)",
+        "Вывод",
+        "Воспроизведение",
+        "Источники"
+      ],
+      "slots": [
+        "S-PURPOSE",
+        "S-OTHER",
+        "S-OTHER",
+        "S-VERDICT",
+        "S-METRIC",
+        "S-VERDICT",
+        "S-EPISODE",
+        "S-TRACE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-METRIC",
+        "S-OTHER",
+        "S-PURPOSE",
+        "S-TRACE",
+        "S-VERDICT"
+      ],
+      "heading_count": 8,
+      "word_count": 408,
+      "requirement_ids": 4,
+      "doc_kind": "run-journal",
+      "format_class": "F-CLASSIC",
+      "unmapped_headings": [
+        "Контролируемый вход",
+        "Варианты"
+      ]
+    },
+    {
+      "run_id": "RUN-0010",
+      "path": "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+      "process": "bcreq-1025-email-routing",
+      "date": "2026-06-17",
+      "status": "works-with-edits",
+      "model": "qwen3.7 plus",
+      "bcreq": "1025",
+      "products": [
+        "contact-center",
+        "self-service-lk"
+      ],
+      "headings": [
+        "Метаданные",
+        "Использованные промпты (ЦЕПОЧКА)",
+        "Входные данные",
+        "Ключевые результаты",
+        "Что сработало (успешные паттерны)",
+        "Выявленные проблемы промптов",
+        "Инсайты для онтологии",
+        "RFC на улучшение промптов",
+        "Полный лог"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER",
+        "S-VERDICT",
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-PROCESS",
+        "S-OTHER",
+        "S-PROCESS"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-PROCESS",
+        "S-VERDICT"
+      ],
+      "heading_count": 9,
+      "word_count": 951,
+      "requirement_ids": 1,
+      "doc_kind": "analysis-note",
+      "format_class": "F-MIXED",
+      "unmapped_headings": [
+        "Метаданные",
+        "Использованные промпты (ЦЕПОЧКА)",
+        "Входные данные",
+        "Что сработало (успешные паттерны)",
+        "RFC на улучшение промптов"
+      ]
+    },
+    {
+      "run_id": "RUN-0010",
+      "path": "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md",
+      "process": "bcreq-1025-email-routing",
+      "date": "2026-06-17",
+      "status": "works-with-edits",
+      "model": "qwen3.7 plus",
+      "bcreq": "1025",
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "billing-finance"
+      ],
+      "headings": [
+        "1. Назначение",
+        "2. Паттерны ошибок LLM (классификация)",
+        "3. Успешные паттерны",
+        "4. Анализ взаимодействия БА + LLM",
+        "5. Инсайты для онтологии (ADR #003–#010)",
+        "6. Рекомендации по улучшению промптов (→ RFC)",
+        "7. Связь с экспериментом 1027",
+        "8. Дополнительные инсайты (зона свободы)"
+      ],
+      "slots": [
+        "S-PURPOSE",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER",
+        "S-PROCESS",
+        "S-PROPOSAL",
+        "S-METRIC",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-METRIC",
+        "S-OTHER",
+        "S-PROCESS",
+        "S-PROPOSAL",
+        "S-PURPOSE"
+      ],
+      "heading_count": 8,
+      "word_count": 2524,
+      "requirement_ids": 1,
+      "doc_kind": "analysis-note",
+      "format_class": "F-MIXED",
+      "unmapped_headings": [
+        "2. Паттерны ошибок LLM (классификация)",
+        "3. Успешные паттерны",
+        "4. Анализ взаимодействия БА + LLM",
+        "8. Дополнительные инсайты (зона свободы)"
+      ]
+    },
+    {
+      "run_id": "RUN-0011",
+      "path": "runs/2026/RUN-0011/outputs/final-artifact.md",
+      "process": "multichannel-agent-workload",
+      "date": "2026-06-18",
+      "status": "works-with-edits",
+      "model": "not-recorded",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "billing-finance"
+      ],
+      "headings": [
+        "1. Резюме для заказчика (одна страница)",
+        "2. Нормализованная потребность",
+        "3. Ключевые вопросы заказчику (блокирующие)",
+        "4. Модель потребности",
+        "5. Варианты доработки (Раздел 3)",
+        "6. Рекомендация БА",
+        "7. Ограничения достоверности",
+        "Источники"
+      ],
+      "slots": [
+        "S-VERDICT",
+        "S-OTHER",
+        "S-OPEN",
+        "S-OTHER",
+        "S-OTHER",
+        "S-PROPOSAL",
+        "S-LIMITS",
+        "S-TRACE"
+      ],
+      "slot_set": [
+        "S-LIMITS",
+        "S-OPEN",
+        "S-OTHER",
+        "S-PROPOSAL",
+        "S-TRACE",
+        "S-VERDICT"
+      ],
+      "heading_count": 8,
+      "word_count": 536,
+      "requirement_ids": 4,
+      "doc_kind": "analysis-note",
+      "format_class": "F-CLASSIC",
+      "unmapped_headings": [
+        "2. Нормализованная потребность",
+        "4. Модель потребности",
+        "5. Варианты доработки (Раздел 3)"
+      ]
+    },
+    {
+      "run_id": "RUN-0011",
+      "path": "runs/2026/RUN-0011/outputs/prompts-chain.md",
+      "process": "multichannel-agent-workload",
+      "date": "2026-06-18",
+      "status": "works-with-edits",
+      "model": "not-recorded",
+      "bcreq": null,
+      "products": [],
+      "headings": [
+        "Где задача стоит в карте процессов",
+        "Цепочка (в порядке запуска)",
+        "Обоснование выбора каждого звена",
+        "Что осознанно НЕ запускалось и почему",
+        "Источники"
+      ],
+      "slots": [
+        "S-PROBLEM",
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-OTHER",
+        "S-TRACE"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-TRACE"
+      ],
+      "heading_count": 5,
+      "word_count": 671,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Цепочка (в порядке запуска)",
+        "Что осознанно НЕ запускалось и почему"
+      ]
+    },
+    {
+      "run_id": "RUN-0011",
+      "path": "runs/2026/RUN-0011/outputs/steps/step-1-glossary.md",
+      "process": "multichannel-agent-workload",
+      "date": "2026-06-18",
+      "status": "works-with-edits",
+      "model": "not-recorded",
+      "bcreq": "1025",
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas"
+      ],
+      "headings": [
+        "ШАГ 0. Контекст As-Is (из выжимки БЗ)",
+        "ШАГ 1. Глоссарий",
+        "Открытые замечания к промпту (вход для эксперимента/RFC)",
+        "Источники"
+      ],
+      "slots": [
+        "S-PROBLEM",
+        "S-GLOSSARY",
+        "S-OPEN",
+        "S-TRACE"
+      ],
+      "slot_set": [
+        "S-GLOSSARY",
+        "S-OPEN",
+        "S-PROBLEM",
+        "S-TRACE"
+      ],
+      "heading_count": 4,
+      "word_count": 696,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0011",
+      "path": "runs/2026/RUN-0011/outputs/steps/step-2-normalization.md",
+      "process": "multichannel-agent-workload",
+      "date": "2026-06-18",
+      "status": "works-with-edits",
+      "model": "not-recorded",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "billing-finance"
+      ],
+      "headings": [
+        "2.1. Декомпозиция сырого требования на атомарные утверждения",
+        "2.2. Разведение «боль» vs «заявленное решение»",
+        "2.3. 5 Whys (до корневой причины)",
+        "2.4. Нормализованное требование (бизнес-уровень, без «Система должна»)",
+        "2.5. Gap-анализ «требование ↔ As-Is» (резюме)",
+        "Замечание к промпту (вход для эксперимента/RFC)",
+        "Источники"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-SOLUTION",
+        "S-OTHER",
+        "S-OTHER",
+        "S-VERDICT",
+        "S-DEFECT",
+        "S-TRACE"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-OTHER",
+        "S-SOLUTION",
+        "S-TRACE",
+        "S-VERDICT"
+      ],
+      "heading_count": 7,
+      "word_count": 662,
+      "requirement_ids": 0,
+      "doc_kind": "requirement-document",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "2.1. Декомпозиция сырого требования на атомарные утверждения",
+        "2.3. 5 Whys (до корневой причины)",
+        "2.4. Нормализованное требование (бизнес-уровень, без «Система должна»)"
+      ]
+    },
+    {
+      "run_id": "RUN-0011",
+      "path": "runs/2026/RUN-0011/outputs/steps/step-3-questions.md",
+      "process": "multichannel-agent-workload",
+      "date": "2026-06-18",
+      "status": "works-with-edits",
+      "model": "not-recorded",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "billing-finance"
+      ],
+      "headings": [
+        "3.1. Проверка существующих решений (перед тем как спрашивать)",
+        "3.2. Вопросы заказчику",
+        "3.3. Резюме «что блокирует движение дальше»",
+        "Замечание к промпту (вход для эксперимента)",
+        "Источники"
+      ],
+      "slots": [
+        "S-SOLUTION",
+        "S-OPEN",
+        "S-VERDICT",
+        "S-DEFECT",
+        "S-TRACE"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-OPEN",
+        "S-SOLUTION",
+        "S-TRACE",
+        "S-VERDICT"
+      ],
+      "heading_count": 5,
+      "word_count": 688,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0011",
+      "path": "runs/2026/RUN-0011/outputs/steps/step-4-story.md",
+      "process": "multichannel-agent-workload",
+      "date": "2026-06-18",
+      "status": "works-with-edits",
+      "model": "not-recorded",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "billing-finance"
+      ],
+      "headings": [
+        "4.1. User Story (Job Story)",
+        "4.2. Use Case (Cockburn)",
+        "Замечание к промптам (вход для эксперимента)",
+        "Источники"
+      ],
+      "slots": [
+        "S-SCENARIO",
+        "S-SCENARIO",
+        "S-DEFECT",
+        "S-TRACE"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-SCENARIO",
+        "S-TRACE"
+      ],
+      "heading_count": 4,
+      "word_count": 690,
+      "requirement_ids": 4,
+      "doc_kind": "requirement-document",
+      "format_class": "F-MIXED",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0011",
+      "path": "runs/2026/RUN-0011/outputs/steps/step-5-options.md",
+      "process": "multichannel-agent-workload",
+      "date": "2026-06-18",
+      "status": "works-with-edits",
+      "model": "not-recorded",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "Закрываемый gap (из [Шага 2](./step-2-normalization.md))",
+        "Вариант A — «Расширение существующего лимита» (минимальный)",
+        "Вариант B — «Единый диспетчер нагрузки с приоритетом» (целевой)",
+        "Вариант C — «Приоритетное резервирование под реальное время» (компромисс)",
+        "Сравнительная матрица",
+        "Предварительная рекомендация БА (не решение)",
+        "Замечание к промпту (вход для эксперимента/RFC)",
+        "Источники"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER",
+        "S-SOLUTION",
+        "S-DEFECT",
+        "S-TRACE"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-OTHER",
+        "S-SOLUTION",
+        "S-TRACE"
+      ],
+      "heading_count": 8,
+      "word_count": 643,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Закрываемый gap (из [Шага 2](./step-2-normalization.md))",
+        "Вариант A — «Расширение существующего лимита» (минимальный)",
+        "Вариант B — «Единый диспетчер нагрузки с приоритетом» (целевой)",
+        "Вариант C — «Приоритетное резервирование под реальное время» (компромисс)",
+        "Сравнительная матрица"
+      ]
+    },
+    {
+      "run_id": "RUN-0012",
+      "path": "runs/2026/RUN-0012/outputs/final-artifact.md",
+      "process": "bcreq-1069-restricted-api-key",
+      "date": "2026-07-14",
+      "status": "works-with-edits",
+      "model": "claude-opus-4-8",
+      "bcreq": "1069",
+      "products": [
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "0. Резюме для Заказчика (одна страница)",
+        "1. Терминология",
+        "2. Проблема, Цель, Задачи",
+        "3. Модель потребности (сценарии)",
+        "4. Функциональные требования",
+        "5. Открытые вопросы (блокирующие финализацию)",
+        "6. Ограничения",
+        "7. Рекомендация БА и следующий шаг",
+        "Источники"
+      ],
+      "slots": [
+        "S-VERDICT",
+        "S-GLOSSARY",
+        "S-PROBLEM",
+        "S-SCENARIO",
+        "S-FR",
+        "S-OPEN",
+        "S-LIMITS",
+        "S-PROPOSAL",
+        "S-TRACE"
+      ],
+      "slot_set": [
+        "S-FR",
+        "S-GLOSSARY",
+        "S-LIMITS",
+        "S-OPEN",
+        "S-PROBLEM",
+        "S-PROPOSAL",
+        "S-SCENARIO",
+        "S-TRACE",
+        "S-VERDICT"
+      ],
+      "heading_count": 9,
+      "word_count": 677,
+      "requirement_ids": 0,
+      "doc_kind": "requirement-document",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0012",
+      "path": "runs/2026/RUN-0012/outputs/prompts-chain.md",
+      "process": "bcreq-1069-restricted-api-key",
+      "date": "2026-07-14",
+      "status": "works-with-edits",
+      "model": "claude-opus-4-8",
+      "bcreq": "1069",
+      "products": [
+        "integration"
+      ],
+      "headings": [
+        "Маппинг на конвейер BCREQ ([ADR-009](../../../../docs/adr/009-bcreq-formation-process.md))",
+        "Порядок и обоснование",
+        "Принципы прогона"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-PROBLEM"
+      ],
+      "heading_count": 3,
+      "word_count": 387,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Маппинг на конвейер BCREQ ([ADR-009](../../../../docs/adr/009-bcreq-formation-process.md))",
+        "Принципы прогона"
+      ]
+    },
+    {
+      "run_id": "RUN-0012",
+      "path": "runs/2026/RUN-0012/outputs/steps/step-1-glossary.md",
+      "process": "bcreq-1069-restricted-api-key",
+      "date": "2026-07-14",
+      "status": "works-with-edits",
+      "model": "claude-opus-4-8",
+      "bcreq": null,
+      "products": [
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "1. Термины и определения",
+        "2. Предложенные термины (обоснование)",
+        "3. Термины вне глоссария (сознательно не вводим)",
+        "Gate"
+      ],
+      "slots": [
+        "S-GLOSSARY",
+        "S-GLOSSARY",
+        "S-GLOSSARY",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-GLOSSARY",
+        "S-OTHER"
+      ],
+      "heading_count": 4,
+      "word_count": 413,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Gate"
+      ]
+    },
+    {
+      "run_id": "RUN-0012",
+      "path": "runs/2026/RUN-0012/outputs/steps/step-2-normalization.md",
+      "process": "bcreq-1069-restricted-api-key",
+      "date": "2026-07-14",
+      "status": "works-with-edits",
+      "model": "claude-opus-4-8",
+      "bcreq": "1069",
+      "products": [
+        "self-service-lk",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "2.1. Проблема",
+        "2.2. Цель",
+        "2.3. Задачи",
+        "Разведение «боль ↔ решение»",
+        "Gate — human G1 ([ADR-009](../../../../../docs/adr/009-bcreq-formation-process.md))"
+      ],
+      "slots": [
+        "S-PROBLEM",
+        "S-PROBLEM",
+        "S-PROBLEM",
+        "S-SOLUTION",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-SOLUTION"
+      ],
+      "heading_count": 5,
+      "word_count": 394,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Gate — human G1 ([ADR-009](../../../../../docs/adr/009-bcreq-formation-process.md))"
+      ]
+    },
+    {
+      "run_id": "RUN-0012",
+      "path": "runs/2026/RUN-0012/outputs/steps/step-3-questions.md",
+      "process": "bcreq-1069-restricted-api-key",
+      "date": "2026-07-14",
+      "status": "works-with-edits",
+      "model": "claude-opus-4-8",
+      "bcreq": null,
+      "products": [
+        "analytics-reporting",
+        "billing-finance"
+      ],
+      "headings": [
+        "Блокирующие (без ответа Раздел 4 неполон)",
+        "Уточняющие (влияют на детализацию, не блокируют каркас)",
+        "Принятые допущения на время прогона (до ответов)"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-OTHER",
+        "S-LIMITS"
+      ],
+      "slot_set": [
+        "S-LIMITS",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 446,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Блокирующие (без ответа Раздел 4 неполон)",
+        "Уточняющие (влияют на детализацию, не блокируют каркас)"
+      ]
+    },
+    {
+      "run_id": "RUN-0012",
+      "path": "runs/2026/RUN-0012/outputs/steps/step-4-scenarios.md",
+      "process": "bcreq-1069-restricted-api-key",
+      "date": "2026-07-14",
+      "status": "works-with-edits",
+      "model": "claude-opus-4-8",
+      "bcreq": null,
+      "products": [
+        "self-service-lk",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Актёры",
+        "Основной сценарий (Happy Path)",
+        "Альтернативные сценарии",
+        "Сценарии исключений (Exception Paths)",
+        "Матрица «сценарий → задача Раздела 2 → узел ФТ»",
+        "Gate"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-SCENARIO",
+        "S-SCENARIO",
+        "S-SCENARIO",
+        "S-PROBLEM",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-SCENARIO"
+      ],
+      "heading_count": 6,
+      "word_count": 493,
+      "requirement_ids": 0,
+      "doc_kind": "requirement-document",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Актёры",
+        "Gate"
+      ]
+    },
+    {
+      "run_id": "RUN-0012",
+      "path": "runs/2026/RUN-0012/outputs/steps/step-5-fr.md",
+      "process": "bcreq-1069-restricted-api-key",
+      "date": "2026-07-14",
+      "status": "works-with-edits",
+      "model": "claude-opus-4-8",
+      "bcreq": null,
+      "products": [
+        "self-service-lk",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "4.1. Жизненный цикл ограниченного API-ключа",
+        "4.2. Ограничение области действия по методу",
+        "4.3. Ограничение области действия по источникам записей",
+        "4.4. [ОПЦИЯ — отдельная оценка] Наблюдаемость использования ключа",
+        "4.5. [ОПЦИЯ — отдельная оценка] Временная деактивация ключа",
+        "Матрица приоритетов",
+        "Валидация через ODA Capability Map (Шаг 4 промпта)"
+      ],
+      "slots": [
+        "S-LIMITS",
+        "S-LIMITS",
+        "S-LIMITS",
+        "S-VERDICT",
+        "S-VERDICT",
+        "S-OTHER",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-LIMITS",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "heading_count": 7,
+      "word_count": 636,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Матрица приоритетов",
+        "Валидация через ODA Capability Map (Шаг 4 промпта)"
+      ]
+    },
+    {
+      "run_id": "RUN-0013",
+      "path": "runs/2026/RUN-0013/outputs/final-artifact.md",
+      "process": "bcreq-1059-multichannel-slots-limits",
+      "date": "2026-07-31",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": "1059",
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "billing-finance"
+      ],
+      "headings": [
+        "1. Термины и определения",
+        "2. Проблема, цель, задачи",
+        "3. Описание разрабатываемого решения",
+        "4. Функциональные требования и сценарии использования",
+        "5. Сценарии обработки очередей",
+        "6. Особенности реализации"
+      ],
+      "slots": [
+        "S-GLOSSARY",
+        "S-PROBLEM",
+        "S-SOLUTION",
+        "S-FR",
+        "S-SCENARIO",
+        "S-LIMITS"
+      ],
+      "slot_set": [
+        "S-FR",
+        "S-GLOSSARY",
+        "S-LIMITS",
+        "S-PROBLEM",
+        "S-SCENARIO",
+        "S-SOLUTION"
+      ],
+      "heading_count": 6,
+      "word_count": 1805,
+      "requirement_ids": 7,
+      "doc_kind": "requirement-document",
+      "format_class": "F-CLASSIC",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0013",
+      "path": "runs/2026/RUN-0013/outputs/steps/step-1-research-and-questions.md",
+      "process": "bcreq-1059-multichannel-slots-limits",
+      "date": "2026-07-31",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [
+        "contact-center"
+      ],
+      "headings": [
+        "Что делали",
+        "Результат эпизода",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-EPISODE",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 300,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что делали"
+      ]
+    },
+    {
+      "run_id": "RUN-0013",
+      "path": "runs/2026/RUN-0013/outputs/steps/step-2-state-matrix.md",
+      "process": "bcreq-1059-multichannel-slots-limits",
+      "date": "2026-07-31",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [],
+      "headings": [
+        "Что делали",
+        "Результат эпизода",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-EPISODE",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 305,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что делали"
+      ]
+    },
+    {
+      "run_id": "RUN-0013",
+      "path": "runs/2026/RUN-0013/outputs/steps/step-5-top-level-fr.md",
+      "process": "bcreq-1059-multichannel-slots-limits",
+      "date": "2026-07-31",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [
+        "voice-ucaas"
+      ],
+      "headings": [
+        "Что делали",
+        "Результат эпизода",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-EPISODE",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 237,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что делали"
+      ]
+    },
+    {
+      "run_id": "RUN-0013",
+      "path": "runs/2026/RUN-0013/outputs/steps/step-6-fr-detail-and-constraints.md",
+      "process": "bcreq-1059-multichannel-slots-limits",
+      "date": "2026-07-31",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [
+        "voice-ucaas"
+      ],
+      "headings": [
+        "Что делали",
+        "Результат эпизода",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-EPISODE",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 273,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что делали"
+      ]
+    },
+    {
+      "run_id": "RUN-0013",
+      "path": "runs/2026/RUN-0013/outputs/steps/step-7-rework-after-meeting.md",
+      "process": "bcreq-1059-multichannel-slots-limits",
+      "date": "2026-07-31",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "billing-finance"
+      ],
+      "headings": [
+        "Что делали",
+        "Результат эпизода",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-EPISODE",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 424,
+      "requirement_ids": 7,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что делали"
+      ]
+    },
+    {
+      "run_id": "RUN-0013",
+      "path": "runs/2026/RUN-0013/outputs/steps/step-8-usecase-matrix.md",
+      "process": "bcreq-1059-multichannel-slots-limits",
+      "date": "2026-07-31",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "billing-finance"
+      ],
+      "headings": [
+        "8.1. Матрица сценариев (сгруппированная, блоки A–K)",
+        "8.2. Та же матрица одной таблицей",
+        "8.3. Короткая выжимка текстом",
+        "8.4. Уточняющий вопрос Заказчику по риску"
+      ],
+      "slots": [
+        "S-SCENARIO",
+        "S-OTHER",
+        "S-OTHER",
+        "S-LIMITS"
+      ],
+      "slot_set": [
+        "S-LIMITS",
+        "S-OTHER",
+        "S-SCENARIO"
+      ],
+      "heading_count": 4,
+      "word_count": 5005,
+      "requirement_ids": 39,
+      "doc_kind": "requirement-document",
+      "format_class": "F-MIXED",
+      "unmapped_headings": [
+        "8.2. Та же матрица одной таблицей",
+        "8.3. Короткая выжимка текстом"
+      ]
+    },
+    {
+      "run_id": "RUN-0014",
+      "path": "runs/2026/RUN-0014/outputs/final-artifact.md",
+      "process": "task-1075-amocrm-deal-on-call",
+      "date": "2026-07-24",
+      "status": "partial-success",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Что получено",
+        "Реестр противоречий (консолидация)",
+        "Зоны неопределённости (вход для следующей итерации)",
+        "Что нужно сделать, чтобы прогон стал доказательной базой"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OTHER"
+      ],
+      "heading_count": 4,
+      "word_count": 512,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Что получено",
+        "Реестр противоречий (консолидация)",
+        "Зоны неопределённости (вход для следующей итерации)",
+        "Что нужно сделать, чтобы прогон стал доказательной базой"
+      ]
+    },
+    {
+      "run_id": "RUN-0014",
+      "path": "runs/2026/RUN-0014/outputs/prompts-chain.md",
+      "process": "task-1075-amocrm-deal-on-call",
+      "date": "2026-07-24",
+      "status": "partial-success",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "voice-ucaas",
+        "integration"
+      ],
+      "headings": [
+        "Цепочка из одного промпта",
+        "Шаги промпта vs фактические шаги",
+        "Наблюдения по маршруту"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-PROPOSAL",
+        "S-PROCESS"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-PROCESS",
+        "S-PROPOSAL"
+      ],
+      "heading_count": 3,
+      "word_count": 470,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Цепочка из одного промпта"
+      ]
+    },
+    {
+      "run_id": "RUN-0014",
+      "path": "runs/2026/RUN-0014/outputs/steps/step-0-as-is.md",
+      "process": "task-1075-amocrm-deal-on-call",
+      "date": "2026-07-24",
+      "status": "partial-success",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "integration"
+      ],
+      "headings": [
+        "Результат модели (дословно)",
+        "Разметка достоверности (БА, добавлено при фиксации прогона)"
+      ],
+      "slots": [
+        "S-VERDICT",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "heading_count": 2,
+      "word_count": 432,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Разметка достоверности (БА, добавлено при фиксации прогона)"
+      ]
+    },
+    {
+      "run_id": "RUN-0014",
+      "path": "runs/2026/RUN-0014/outputs/steps/step-2-contradictions.md",
+      "process": "task-1075-amocrm-deal-on-call",
+      "date": "2026-07-24",
+      "status": "partial-success",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "integration"
+      ],
+      "headings": [
+        "Результат модели (дословно)",
+        "Разметка достоверности (БА, добавлено при фиксации прогона)"
+      ],
+      "slots": [
+        "S-VERDICT",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "heading_count": 2,
+      "word_count": 767,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Разметка достоверности (БА, добавлено при фиксации прогона)"
+      ]
+    },
+    {
+      "run_id": "RUN-0015",
+      "path": "runs/2026/RUN-0015/outputs/final-artifact.md",
+      "process": "fr-validation-57204-ivr-scheme-amocrm-rule",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "integration"
+      ],
+      "headings": [
+        "Термины и определения (ключевые правки прогона)",
+        "Функциональные требования (v1.1, свод)",
+        "Что осталось незакрытым (open items)"
+      ],
+      "slots": [
+        "S-GLOSSARY",
+        "S-FR",
+        "S-OPEN"
+      ],
+      "slot_set": [
+        "S-FR",
+        "S-GLOSSARY",
+        "S-OPEN"
+      ],
+      "heading_count": 3,
+      "word_count": 509,
+      "requirement_ids": 0,
+      "doc_kind": "requirement-document",
+      "format_class": "F-SHORT",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0015",
+      "path": "runs/2026/RUN-0015/outputs/prompts-chain.md",
+      "process": "fr-validation-57204-ivr-scheme-amocrm-rule",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Системный промпт (реплика 0)",
+        "Отличия от библиотеки промптов",
+        "Карта эпизодов (что просил БА → что вернула модель)"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 468,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Отличия от библиотеки промптов"
+      ]
+    },
+    {
+      "run_id": "RUN-0015",
+      "path": "runs/2026/RUN-0015/outputs/quality-findings.md",
+      "process": "fr-validation-57204-ivr-scheme-amocrm-rule",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "integration"
+      ],
+      "headings": [
+        "1. Дефекты достоверности (grounding)",
+        "2. Механика промпта (human gate)",
+        "3. Расхождения БА ↔ модель",
+        "4. Итоговая оценка"
+      ],
+      "slots": [
+        "S-DEFECT",
+        "S-OTHER",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "heading_count": 4,
+      "word_count": 713,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "2. Механика промпта (human gate)",
+        "3. Расхождения БА ↔ модель"
+      ]
+    },
+    {
+      "run_id": "RUN-0016",
+      "path": "runs/2026/RUN-0016/outputs/final-artifact.md",
+      "process": "fr-drafting-58093-amocrm-deal-card-new-tab",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Раздел 4. Функциональные требования — в редакции БА (реплика 34)",
+        "Раздел 6. Ограничения — машинная редакция (реплика 33, принято «да»)",
+        "Расхождение резюме с фиксацией"
+      ],
+      "slots": [
+        "S-FR",
+        "S-LIMITS",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-FR",
+        "S-LIMITS",
+        "S-VERDICT"
+      ],
+      "heading_count": 3,
+      "word_count": 496,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-SHORT",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0016",
+      "path": "runs/2026/RUN-0016/outputs/prompts-chain.md",
+      "process": "fr-drafting-58093-amocrm-deal-card-new-tab",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Что использовалось на самом деле",
+        "Сопоставление с библиотекой",
+        "Раздел 6 «Ограничения»",
+        "Предложение по библиотеке"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-OTHER",
+        "S-LIMITS",
+        "S-PROPOSAL"
+      ],
+      "slot_set": [
+        "S-LIMITS",
+        "S-OTHER",
+        "S-PROPOSAL"
+      ],
+      "heading_count": 4,
+      "word_count": 286,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Что использовалось на самом деле",
+        "Сопоставление с библиотекой"
+      ]
+    },
+    {
+      "run_id": "RUN-0016",
+      "path": "runs/2026/RUN-0016/outputs/quality-findings.md",
+      "process": "fr-drafting-58093-amocrm-deal-card-new-tab",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Дефекты достоверности",
+        "Прочие дефекты процесса",
+        "Удачные ходы",
+        "Сводка"
+      ],
+      "slots": [
+        "S-DEFECT",
+        "S-DEFECT",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "heading_count": 4,
+      "word_count": 506,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Удачные ходы"
+      ]
+    },
+    {
+      "run_id": "RUN-0016",
+      "path": "runs/2026/RUN-0016/outputs/steps/step-18-ba-final-section-4.md",
+      "process": "fr-drafting-58093-amocrm-deal-card-new-tab",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [],
+      "headings": [
+        "Что происходило",
+        "Что зафиксировано",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 85,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что зафиксировано"
+      ]
+    },
+    {
+      "run_id": "RUN-0016",
+      "path": "runs/2026/RUN-0016/outputs/steps/step-19-stop-and-summary.md",
+      "process": "fr-drafting-58093-amocrm-deal-card-new-tab",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [],
+      "headings": [
+        "Что происходило",
+        "Что зафиксировано",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 86,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что зафиксировано"
+      ]
+    },
+    {
+      "run_id": "RUN-0016",
+      "path": "runs/2026/RUN-0016/outputs/steps/step-2-etom-oda-prompt-fr-v1.md",
+      "process": "fr-drafting-58093-amocrm-deal-card-new-tab",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "integration"
+      ],
+      "headings": [
+        "Что происходило",
+        "Что зафиксировано",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 95,
+      "requirement_ids": 1,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что зафиксировано"
+      ]
+    },
+    {
+      "run_id": "RUN-0016",
+      "path": "runs/2026/RUN-0016/outputs/steps/step-4-integration-settings-audit.md",
+      "process": "fr-drafting-58093-amocrm-deal-card-new-tab",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "integration"
+      ],
+      "headings": [
+        "Что происходило",
+        "Что зафиксировано",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 78,
+      "requirement_ids": 1,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что зафиксировано"
+      ]
+    },
+    {
+      "run_id": "RUN-0016",
+      "path": "runs/2026/RUN-0016/outputs/steps/step-5-consolidated-list.md",
+      "process": "fr-drafting-58093-amocrm-deal-card-new-tab",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [],
+      "headings": [
+        "Что происходило",
+        "Что зафиксировано",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 58,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что зафиксировано"
+      ]
+    },
+    {
+      "run_id": "RUN-0016",
+      "path": "runs/2026/RUN-0016/outputs/steps/step-7-drop-current-behaviour.md",
+      "process": "fr-drafting-58093-amocrm-deal-card-new-tab",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [],
+      "headings": [
+        "Что происходило",
+        "Что зафиксировано",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 72,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что зафиксировано"
+      ]
+    },
+    {
+      "run_id": "RUN-0017",
+      "path": "runs/2026/RUN-0017/outputs/final-artifact.md",
+      "process": "task-1076-vks-artifacts-bpmsoft",
+      "date": "2026-07-24",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "Незакрытые замечания к тексту ниже (реплика 53)",
+        "Документ (редакция БА, реплика 52, дословно)"
+      ],
+      "slots": [
+        "S-OPEN",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OPEN"
+      ],
+      "heading_count": 2,
+      "word_count": 1352,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0017",
+      "path": "runs/2026/RUN-0017/outputs/prompts-chain.md",
+      "process": "task-1076-vks-artifacts-bpmsoft",
+      "date": "2026-07-24",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Маршрут",
+        "Отличия от «чистого» прогона библиотеки (важно для статистики)"
+      ],
+      "slots": [
+        "S-PROCESS",
+        "S-METRIC"
+      ],
+      "slot_set": [
+        "S-METRIC",
+        "S-PROCESS"
+      ],
+      "heading_count": 2,
+      "word_count": 377,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0017",
+      "path": "runs/2026/RUN-0017/outputs/quality-findings.md",
+      "process": "task-1076-vks-artifacts-bpmsoft",
+      "date": "2026-07-24",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "1. Галлюцинации",
+        "2. Реальные дефекты модели",
+        "3. Что сработало",
+        "4. Что стоит перенести в библиотеку промптов (гипотезы, не решения)"
+      ],
+      "slots": [
+        "S-DEFECT",
+        "S-DEFECT",
+        "S-OTHER",
+        "S-SOLUTION"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-OTHER",
+        "S-SOLUTION"
+      ],
+      "heading_count": 4,
+      "word_count": 636,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "3. Что сработало"
+      ]
+    },
+    {
+      "run_id": "RUN-0017",
+      "path": "runs/2026/RUN-0017/outputs/steps/step-1-as-is-and-glossary.md",
+      "process": "task-1076-vks-artifacts-bpmsoft",
+      "date": "2026-07-24",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [
+        "self-service-lk",
+        "integration"
+      ],
+      "headings": [
+        "Что происходило",
+        "Что зафиксировано",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 278,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что зафиксировано"
+      ]
+    },
+    {
+      "run_id": "RUN-0017",
+      "path": "runs/2026/RUN-0017/outputs/steps/step-10-doc-verification.md",
+      "process": "task-1076-vks-artifacts-bpmsoft",
+      "date": "2026-07-24",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "Вход (реплика 52)",
+        "Отчёт модели (реплика 53)",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE"
+      ],
+      "heading_count": 3,
+      "word_count": 338,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0017",
+      "path": "runs/2026/RUN-0017/outputs/steps/step-11-manager-comment.md",
+      "process": "task-1076-vks-artifacts-bpmsoft",
+      "date": "2026-07-24",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [
+        "integration"
+      ],
+      "headings": [
+        "Задание (реплика 54)",
+        "Разбор модели (реплика 55)",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE"
+      ],
+      "heading_count": 3,
+      "word_count": 170,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0017",
+      "path": "runs/2026/RUN-0017/outputs/steps/step-3-section-2-agreed.md",
+      "process": "task-1076-vks-artifacts-bpmsoft",
+      "date": "2026-07-24",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [
+        "self-service-lk",
+        "integration"
+      ],
+      "headings": [
+        "Что происходило",
+        "Согласованный результат",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-VERDICT",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-VERDICT"
+      ],
+      "heading_count": 3,
+      "word_count": 122,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0017",
+      "path": "runs/2026/RUN-0017/outputs/steps/step-4-scenarios.md",
+      "process": "task-1076-vks-artifacts-bpmsoft",
+      "date": "2026-07-24",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [],
+      "headings": [
+        "Что происходило",
+        "Сценарии первой редакции",
+        "Дефект, замеченный позже",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-SCENARIO",
+        "S-DEFECT",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-EPISODE",
+        "S-SCENARIO"
+      ],
+      "heading_count": 4,
+      "word_count": 273,
+      "requirement_ids": 5,
+      "doc_kind": "run-journal",
+      "format_class": "F-MIXED",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0017",
+      "path": "runs/2026/RUN-0017/outputs/steps/step-6-fr-v1-and-rework.md",
+      "process": "task-1076-vks-artifacts-bpmsoft",
+      "date": "2026-07-24",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [
+        "self-service-lk",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Раздел 4, первая редакция (реплика 29)",
+        "Критика БА (реплика 30, 13 376 символов — самая длинная реплика прогона)",
+        "Реакция модели (реплика 31)",
+        "Проверка «командой из трёх экспертов» (реплики 32–33)",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE"
+      ],
+      "heading_count": 5,
+      "word_count": 268,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0017",
+      "path": "runs/2026/RUN-0017/outputs/steps/step-7-fr-detailed.md",
+      "process": "task-1076-vks-artifacts-bpmsoft",
+      "date": "2026-07-24",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [
+        "self-service-lk"
+      ],
+      "headings": [
+        "Расширение сценарной матрицы (реплики 34–35)",
+        "Согласование верхнего уровня (реплики 36–40)",
+        "Детализация и оформление (реплики 41–43)",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE"
+      ],
+      "heading_count": 4,
+      "word_count": 232,
+      "requirement_ids": 2,
+      "doc_kind": "run-journal",
+      "format_class": "F-MIXED",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0017",
+      "path": "runs/2026/RUN-0017/outputs/steps/step-8-constraints-and-matrix.md",
+      "process": "task-1076-vks-artifacts-bpmsoft",
+      "date": "2026-07-24",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [
+        "billing-finance"
+      ],
+      "headings": [
+        "Ограничения (реплики 44–45)",
+        "Матрица покрытия ФТ × UC (реплики 46–47)",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-LIMITS",
+        "S-EPISODE",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-LIMITS"
+      ],
+      "heading_count": 3,
+      "word_count": 268,
+      "requirement_ids": 2,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0017",
+      "path": "runs/2026/RUN-0017/outputs/steps/step-9-responsibility-boundary.md",
+      "process": "task-1076-vks-artifacts-bpmsoft",
+      "date": "2026-07-24",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus + qwen3.8-max-preview",
+      "bcreq": null,
+      "products": [
+        "self-service-lk",
+        "integration"
+      ],
+      "headings": [
+        "Вопрос БА (реплика 48)",
+        "Ответ модели (реплика 49)",
+        "Реакция БА (реплика 50)",
+        "Исправление (реплика 51)",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-OPEN",
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OPEN"
+      ],
+      "heading_count": 5,
+      "word_count": 339,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0018",
+      "path": "runs/2026/RUN-0018/outputs/final-artifact.md",
+      "process": "fr-validation-1079-messenger-id-search",
+      "date": "2026-07-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Как получен",
+        "Текст v1.3 (дословно, как выдала модель)",
+        "Источники"
+      ],
+      "slots": [
+        "S-PROCESS",
+        "S-OTHER",
+        "S-TRACE"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-PROCESS",
+        "S-TRACE"
+      ],
+      "heading_count": 3,
+      "word_count": 1070,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Текст v1.3 (дословно, как выдала модель)"
+      ]
+    },
+    {
+      "run_id": "RUN-0018",
+      "path": "runs/2026/RUN-0018/outputs/prompts-chain.md",
+      "process": "fr-validation-1079-messenger-id-search",
+      "date": "2026-07-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Один промпт, восемь эпизодов",
+        "Раскладка по эпизодам",
+        "Наблюдение о покрытии промпта"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 340,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Наблюдение о покрытии промпта"
+      ]
+    },
+    {
+      "run_id": "RUN-0018",
+      "path": "runs/2026/RUN-0018/outputs/steps/step-2-audit-report.md",
+      "process": "fr-validation-1079-messenger-id-search",
+      "date": "2026-07-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Что нашла модель",
+        "Сверка с независимым разбором входа",
+        "Соответствие промпту",
+        "Вердикт БА"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-OTHER",
+        "S-PROCESS",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-PROCESS",
+        "S-VERDICT"
+      ],
+      "heading_count": 4,
+      "word_count": 269,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Что нашла модель",
+        "Сверка с независимым разбором входа"
+      ]
+    },
+    {
+      "run_id": "RUN-0018",
+      "path": "runs/2026/RUN-0018/outputs/steps/step-3-fr-v1.1.md",
+      "process": "fr-validation-1079-messenger-id-search",
+      "date": "2026-07-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Результат",
+        "Что важно для аналитики",
+        "Вердикт БА"
+      ],
+      "slots": [
+        "S-VERDICT",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "heading_count": 3,
+      "word_count": 164,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что важно для аналитики"
+      ]
+    },
+    {
+      "run_id": "RUN-0018",
+      "path": "runs/2026/RUN-0018/outputs/steps/step-4-check-multiple-ids.md",
+      "process": "fr-validation-1079-messenger-id-search",
+      "date": "2026-07-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas"
+      ],
+      "headings": [
+        "Что ответила модель",
+        "Сверка с БЗ репозитория",
+        "Оценка",
+        "Вердикт БА"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-VERDICT",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "heading_count": 4,
+      "word_count": 372,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Сверка с БЗ репозитория"
+      ]
+    },
+    {
+      "run_id": "RUN-0018",
+      "path": "runs/2026/RUN-0018/outputs/steps/step-5-contradiction-check.md",
+      "process": "fr-validation-1079-messenger-id-search",
+      "date": "2026-07-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [],
+      "headings": [
+        "Что ответила модель",
+        "Оценка",
+        "Вердикт БА"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-VERDICT",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-VERDICT"
+      ],
+      "heading_count": 3,
+      "word_count": 204,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0018",
+      "path": "runs/2026/RUN-0018/outputs/steps/step-6-terminology-check.md",
+      "process": "fr-validation-1079-messenger-id-search",
+      "date": "2026-07-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas"
+      ],
+      "headings": [
+        "Что ответила модель",
+        "Сверка с БЗ репозитория",
+        "Почему это дефект с последствиями, а не просто неточность",
+        "Корневая причина",
+        "Вердикт БА (постфактум)"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-DEFECT",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-EPISODE",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "heading_count": 5,
+      "word_count": 390,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Сверка с БЗ репозитория",
+        "Корневая причина"
+      ]
+    },
+    {
+      "run_id": "RUN-0018",
+      "path": "runs/2026/RUN-0018/outputs/steps/step-7-proofreading-v1.2.md",
+      "process": "fr-validation-1079-messenger-id-search",
+      "date": "2026-07-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Что исправлено верно",
+        "Что модель испортила или пропустила",
+        "Вердикт БА"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "heading_count": 3,
+      "word_count": 319,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что исправлено верно",
+        "Что модель испортила или пропустила"
+      ]
+    },
+    {
+      "run_id": "RUN-0018",
+      "path": "runs/2026/RUN-0018/outputs/steps/step-8-constraint-v1.3.md",
+      "process": "fr-validation-1079-messenger-id-search",
+      "date": "2026-07-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "voice-ucaas"
+      ],
+      "headings": [
+        "Результат",
+        "Соответствие промпту",
+        "Побочный эффект структуры v1.3",
+        "Вердикт БА"
+      ],
+      "slots": [
+        "S-VERDICT",
+        "S-PROCESS",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-PROCESS",
+        "S-VERDICT"
+      ],
+      "heading_count": 4,
+      "word_count": 239,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Побочный эффект структуры v1.3"
+      ]
+    },
+    {
+      "run_id": "RUN-0019",
+      "path": "runs/2026/RUN-0019/outputs/final-artifact.md",
+      "process": "bcreq-1064-browser-softphone-in-mis",
+      "date": "2026-07-15",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "Контекст кейса",
+        "Список вопросов Заказчику (10 вопросов, все открытые)",
+        "Что уже закрыто ответами Заказчика (на 2026-07-15)",
+        "Что осталось открытым",
+        "Подтверждённая гипотеза"
+      ],
+      "slots": [
+        "S-PROBLEM",
+        "S-OPEN",
+        "S-OTHER",
+        "S-OPEN",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OPEN",
+        "S-OTHER",
+        "S-PROBLEM"
+      ],
+      "heading_count": 5,
+      "word_count": 830,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Что уже закрыто ответами Заказчика (на 2026-07-15)",
+        "Подтверждённая гипотеза"
+      ]
+    },
+    {
+      "run_id": "RUN-0020",
+      "path": "runs/2026/RUN-0020/outputs/final-artifact.md",
+      "process": "task-1065-context-and-questions-a7a",
+      "date": "2026-07-10",
+      "status": "needs-rework",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Что получено",
+        "Что осталось незакрытым",
+        "Проверяемые факты о продукте, полученные в прогоне"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-OPEN",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OPEN",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 505,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что получено",
+        "Проверяемые факты о продукте, полученные в прогоне"
+      ]
+    },
+    {
+      "run_id": "RUN-0020",
+      "path": "runs/2026/RUN-0020/outputs/prompts-chain.md",
+      "process": "task-1065-context-and-questions-a7a",
+      "date": "2026-07-10",
+      "status": "needs-rework",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center"
+      ],
+      "headings": [
+        "Что подавалось в диалог",
+        "Отличия от библиотеки",
+        "Правила, заданные человеком по ходу диалога",
+        "Наблюдение по устойчивости правил"
+      ],
+      "slots": [
+        "S-PROCESS",
+        "S-OTHER",
+        "S-PROCESS",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-PROCESS"
+      ],
+      "heading_count": 4,
+      "word_count": 392,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Отличия от библиотеки",
+        "Наблюдение по устойчивости правил"
+      ]
+    },
+    {
+      "run_id": "RUN-0020",
+      "path": "runs/2026/RUN-0020/outputs/quality-findings.md",
+      "process": "task-1065-context-and-questions-a7a",
+      "date": "2026-07-10",
+      "status": "needs-rework",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Галлюцинации",
+        "Дефекты (не галлюцинации)",
+        "Что сработало хорошо",
+        "Основной вывод"
+      ],
+      "slots": [
+        "S-DEFECT",
+        "S-DEFECT",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "heading_count": 4,
+      "word_count": 616,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Что сработало хорошо"
+      ]
+    },
+    {
+      "run_id": "RUN-0020",
+      "path": "runs/2026/RUN-0020/outputs/steps/step-1-prompt-and-glossary.md",
+      "process": "task-1065-context-and-questions-a7a",
+      "date": "2026-07-10",
+      "status": "needs-rework",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Что происходило",
+        "Что зафиксировано",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 252,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что зафиксировано"
+      ]
+    },
+    {
+      "run_id": "RUN-0020",
+      "path": "runs/2026/RUN-0020/outputs/steps/step-11-factcheck-bitrix-fcr-fte.md",
+      "process": "task-1065-context-and-questions-a7a",
+      "date": "2026-07-10",
+      "status": "needs-rework",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "Что происходило",
+        "Что зафиксировано",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 298,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что зафиксировано"
+      ]
+    },
+    {
+      "run_id": "RUN-0020",
+      "path": "runs/2026/RUN-0020/outputs/steps/step-7-numbering-and-regression.md",
+      "process": "task-1065-context-and-questions-a7a",
+      "date": "2026-07-10",
+      "status": "needs-rework",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [],
+      "headings": [
+        "Что происходило",
+        "Что зафиксировано",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 213,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что зафиксировано"
+      ]
+    },
+    {
+      "run_id": "RUN-0021",
+      "path": "runs/2026/RUN-0021/outputs/prompts-chain.md",
+      "process": "fr-drafting-975-ineffective-call-parameters",
+      "date": "2026-07-10",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "integration"
+      ],
+      "headings": [
+        "Что из механики промптов сработало",
+        "Что механика промптов не покрыла"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OTHER"
+      ],
+      "heading_count": 2,
+      "word_count": 286,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что из механики промптов сработало",
+        "Что механика промптов не покрыла"
+      ]
+    },
+    {
+      "run_id": "RUN-0022",
+      "path": "runs/2026/RUN-0022/outputs/final-artifact.md",
+      "process": "fr-validation-765-headhunter-channel",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "Раздел 4 — версия БА (реплика 24, дословно)",
+        "Предложение модели по п. 4.5.7 (реплика 25, принято к рассмотрению)",
+        "Незакрытые вопросы на момент обрыва"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-OPEN"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OPEN"
+      ],
+      "heading_count": 3,
+      "word_count": 1195,
+      "requirement_ids": 11,
+      "doc_kind": "run-journal",
+      "format_class": "F-MIXED",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0022",
+      "path": "runs/2026/RUN-0022/outputs/prompts-chain.md",
+      "process": "fr-validation-765-headhunter-channel",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Какой промпт применён",
+        "Маршрут",
+        "Отличия от «чистого» прогона библиотеки (важно для статистики)",
+        "Предложения по промпту (вход для правок)"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-PROCESS",
+        "S-METRIC",
+        "S-PROPOSAL"
+      ],
+      "slot_set": [
+        "S-METRIC",
+        "S-OTHER",
+        "S-PROCESS",
+        "S-PROPOSAL"
+      ],
+      "heading_count": 4,
+      "word_count": 527,
+      "requirement_ids": 5,
+      "doc_kind": "run-journal",
+      "format_class": "F-MIXED",
+      "unmapped_headings": [
+        "Какой промпт применён"
+      ]
+    },
+    {
+      "run_id": "RUN-0022",
+      "path": "runs/2026/RUN-0022/outputs/quality-findings.md",
+      "process": "fr-validation-765-headhunter-channel",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "billing-finance"
+      ],
+      "headings": [
+        "1. Дефекты достоверности (grounding)",
+        "2. Дефекты формы",
+        "3. Успехи модели (с цитатами)",
+        "4. Что модель не нашла",
+        "5. Сводка по достоверности"
+      ],
+      "slots": [
+        "S-DEFECT",
+        "S-DEFECT",
+        "S-OTHER",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "heading_count": 5,
+      "word_count": 625,
+      "requirement_ids": 2,
+      "doc_kind": "run-journal",
+      "format_class": "F-MIXED",
+      "unmapped_headings": [
+        "3. Успехи модели (с цитатами)",
+        "4. Что модель не нашла"
+      ]
+    },
+    {
+      "run_id": "RUN-0022",
+      "path": "runs/2026/RUN-0022/outputs/steps/step-1-init-strategy.md",
+      "process": "fr-validation-765-headhunter-channel",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [],
+      "headings": [
+        "Что происходило",
+        "Что зафиксировано",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 152,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что зафиксировано"
+      ]
+    },
+    {
+      "run_id": "RUN-0022",
+      "path": "runs/2026/RUN-0022/outputs/steps/step-12-cross-check-2025.md",
+      "process": "fr-validation-765-headhunter-channel",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "voice-ucaas",
+        "analytics-reporting",
+        "billing-finance"
+      ],
+      "headings": [
+        "Что происходило",
+        "Блок Б: что модель нашла (все ссылки проверены и точны)",
+        "Что сделал БА (реплика 24)",
+        "Незамеченное моделью",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-TRACE",
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-TRACE"
+      ],
+      "heading_count": 5,
+      "word_count": 313,
+      "requirement_ids": 5,
+      "doc_kind": "run-journal",
+      "format_class": "F-CLASSIC",
+      "unmapped_headings": [
+        "Незамеченное моделью"
+      ]
+    },
+    {
+      "run_id": "RUN-0022",
+      "path": "runs/2026/RUN-0022/outputs/steps/step-2-inputs-glossary-draft.md",
+      "process": "fr-validation-765-headhunter-channel",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "integration"
+      ],
+      "headings": [
+        "Что происходило",
+        "Что зафиксировано",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 164,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что зафиксировано"
+      ]
+    },
+    {
+      "run_id": "RUN-0022",
+      "path": "runs/2026/RUN-0022/outputs/steps/step-3-hybrid-strategy-audit.md",
+      "process": "fr-validation-765-headhunter-channel",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Что происходило",
+        "Что зафиксировано",
+        "Реакция БА (реплика 6)",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 4,
+      "word_count": 222,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Что зафиксировано"
+      ]
+    },
+    {
+      "run_id": "RUN-0022",
+      "path": "runs/2026/RUN-0022/outputs/steps/step-4-decisions-and-v1.1.md",
+      "process": "fr-validation-765-headhunter-channel",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Что происходило",
+        "Что зафиксировано",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 177,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что зафиксировано"
+      ]
+    },
+    {
+      "run_id": "RUN-0022",
+      "path": "runs/2026/RUN-0022/outputs/steps/step-5-fr02-fr03-fr09-v1.2.md",
+      "process": "fr-validation-765-headhunter-channel",
+      "date": "2026-08-21",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Что происходило",
+        "Что зафиксировано",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 140,
+      "requirement_ids": 3,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что зафиксировано"
+      ]
+    },
+    {
+      "run_id": "RUN-0023",
+      "path": "runs/2026/RUN-0023/outputs/final-artifact.md",
+      "process": "task-59295-fr-validation-email-forward",
+      "date": "2026-05-25",
+      "status": "partial-success",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center"
+      ],
+      "headings": [
+        "Что осталось на входе",
+        "Что предложено моделью и не согласовано",
+        "Что нужно человеку для доведения до финала"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 515,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что осталось на входе",
+        "Что предложено моделью и не согласовано",
+        "Что нужно человеку для доведения до финала"
+      ]
+    },
+    {
+      "run_id": "RUN-0023",
+      "path": "runs/2026/RUN-0023/outputs/prompts-chain.md",
+      "process": "task-59295-fr-validation-email-forward",
+      "date": "2026-05-25",
+      "status": "partial-success",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Один промпт, три эпизода",
+        "Раскладка по эпизодам",
+        "Наблюдение о покрытии промпта"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 466,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Наблюдение о покрытии промпта"
+      ]
+    },
+    {
+      "run_id": "RUN-0023",
+      "path": "runs/2026/RUN-0023/outputs/quality-findings.md",
+      "process": "task-59295-fr-validation-email-forward",
+      "date": "2026-05-25",
+      "status": "partial-success",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center"
+      ],
+      "headings": [
+        "Галлюцинации",
+        "Дефекты (не галлюцинации)",
+        "Что сработало хорошо",
+        "Основной вывод"
+      ],
+      "slots": [
+        "S-DEFECT",
+        "S-DEFECT",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "heading_count": 4,
+      "word_count": 708,
+      "requirement_ids": 1,
+      "doc_kind": "run-journal",
+      "format_class": "F-MIXED",
+      "unmapped_headings": [
+        "Что сработало хорошо"
+      ]
+    },
+    {
+      "run_id": "RUN-0023",
+      "path": "runs/2026/RUN-0023/outputs/steps/step-1-prompt-and-role-ack.md",
+      "process": "task-59295-fr-validation-email-forward",
+      "date": "2026-05-25",
+      "status": "partial-success",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Что происходило",
+        "Что зафиксировано",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 254,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что зафиксировано"
+      ]
+    },
+    {
+      "run_id": "RUN-0023",
+      "path": "runs/2026/RUN-0023/outputs/steps/step-2-source-fr-audit.md",
+      "process": "task-59295-fr-validation-email-forward",
+      "date": "2026-05-25",
+      "status": "partial-success",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Что происходило",
+        "Что сработало",
+        "Что зафиксировано как дефект",
+        "Соблюдение процесса",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-DEFECT",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 5,
+      "word_count": 726,
+      "requirement_ids": 2,
+      "doc_kind": "run-journal",
+      "format_class": "F-MIXED",
+      "unmapped_headings": [
+        "Что сработало",
+        "Соблюдение процесса"
+      ]
+    },
+    {
+      "run_id": "RUN-0023",
+      "path": "runs/2026/RUN-0023/outputs/steps/step-3-constraint-6-1-8.md",
+      "process": "task-59295-fr-validation-email-forward",
+      "date": "2026-05-25",
+      "status": "partial-success",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center"
+      ],
+      "headings": [
+        "Что происходило",
+        "Что сработало",
+        "Что зафиксировано как дефект",
+        "Чем закончилась сессия",
+        "Вердикт эпизода"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-DEFECT",
+        "S-OTHER",
+        "S-EPISODE"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 5,
+      "word_count": 370,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Что сработало",
+        "Чем закончилась сессия"
+      ]
+    },
+    {
+      "run_id": "RUN-0025",
+      "path": "runs/2026/RUN-0025/outputs/prompts-chain.md",
+      "process": "fr-validation-997-ivr-scheme-incoming-call-rules",
+      "date": "2026-05-12",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "integration"
+      ],
+      "headings": [
+        "Что из механики промпта сработало",
+        "Что механика промпта не покрыла"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OTHER"
+      ],
+      "heading_count": 2,
+      "word_count": 397,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что из механики промпта сработало",
+        "Что механика промпта не покрыла"
+      ]
+    },
+    {
+      "run_id": "RUN-0026",
+      "path": "runs/2026/RUN-0026/outputs/final-artifact.md",
+      "process": "task-1007-amocrm-outbound-campaign-funnel-stage-fr",
+      "date": "2026-05-04",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Что зафиксировано как итог",
+        "Эволюция артефакта по версиям",
+        "Пригодные к переиспользованию части",
+        "Незакрытые замечания к итогу",
+        "Что делать с этим артефактом дальше (вне границ прогона)"
+      ],
+      "slots": [
+        "S-VERDICT",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OPEN",
+        "S-SCOPE"
+      ],
+      "slot_set": [
+        "S-OPEN",
+        "S-OTHER",
+        "S-SCOPE",
+        "S-VERDICT"
+      ],
+      "heading_count": 5,
+      "word_count": 628,
+      "requirement_ids": 1,
+      "doc_kind": "analysis-note",
+      "format_class": "F-MIXED",
+      "unmapped_headings": [
+        "Эволюция артефакта по версиям",
+        "Пригодные к переиспользованию части"
+      ]
+    },
+    {
+      "run_id": "RUN-0026",
+      "path": "runs/2026/RUN-0026/outputs/prompts-chain.md",
+      "process": "task-1007-amocrm-outbound-campaign-funnel-stage-fr",
+      "date": "2026-05-04",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "self-service-lk",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Что было применено фактически",
+        "Сопоставление с библиотечным промптом",
+        "Гипотезы для Пользователя (не реализованы)"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 717,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Что было применено фактически",
+        "Сопоставление с библиотечным промптом",
+        "Гипотезы для Пользователя (не реализованы)"
+      ]
+    },
+    {
+      "run_id": "RUN-0026",
+      "path": "runs/2026/RUN-0026/outputs/quality-findings.md",
+      "process": "task-1007-amocrm-outbound-campaign-funnel-stage-fr",
+      "date": "2026-05-04",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "1. Галлюцинации",
+        "2. Смысловые дефекты (не галлюцинации)",
+        "3. Что сработало",
+        "4. Сводка"
+      ],
+      "slots": [
+        "S-DEFECT",
+        "S-DEFECT",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "heading_count": 4,
+      "word_count": 1011,
+      "requirement_ids": 1,
+      "doc_kind": "run-journal",
+      "format_class": "F-MIXED",
+      "unmapped_headings": [
+        "3. Что сработало"
+      ]
+    },
+    {
+      "run_id": "RUN-0026",
+      "path": "runs/2026/RUN-0026/outputs/steps/step-1-frame-and-context-request.md",
+      "process": "task-1007-amocrm-outbound-campaign-funnel-stage-fr",
+      "date": "2026-05-04",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Что подал БА",
+        "Что вернула модель",
+        "Оценка"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-VERDICT"
+      ],
+      "heading_count": 3,
+      "word_count": 182,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0026",
+      "path": "runs/2026/RUN-0026/outputs/steps/step-10-classic-wording-v1-1.md",
+      "process": "task-1007-amocrm-outbound-campaign-funnel-stage-fr",
+      "date": "2026-05-04",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [],
+      "headings": [
+        "Что подал БА",
+        "Что вернула модель",
+        "Почему `fails`",
+        "Приёмки нет"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-OTHER",
+        "S-AC"
+      ],
+      "slot_set": [
+        "S-AC",
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 4,
+      "word_count": 262,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Почему `fails`"
+      ]
+    },
+    {
+      "run_id": "RUN-0026",
+      "path": "runs/2026/RUN-0026/outputs/steps/step-3-first-fr-draft.md",
+      "process": "task-1007-amocrm-outbound-campaign-funnel-stage-fr",
+      "date": "2026-05-04",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "self-service-lk",
+        "integration"
+      ],
+      "headings": [
+        "Что подал БА",
+        "Что вернула модель",
+        "Оценка и правка БА"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-VERDICT"
+      ],
+      "heading_count": 3,
+      "word_count": 214,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0026",
+      "path": "runs/2026/RUN-0026/outputs/steps/step-6-redundancy-check.md",
+      "process": "task-1007-amocrm-outbound-campaign-funnel-stage-fr",
+      "date": "2026-05-04",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [],
+      "headings": [
+        "Что подал БА",
+        "Что вернула модель",
+        "Оценка"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-VERDICT"
+      ],
+      "heading_count": 3,
+      "word_count": 179,
+      "requirement_ids": 1,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0026",
+      "path": "runs/2026/RUN-0026/outputs/steps/step-7-final-assembly-v1.md",
+      "process": "task-1007-amocrm-outbound-campaign-funnel-stage-fr",
+      "date": "2026-05-04",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [],
+      "headings": [
+        "Что подал БА",
+        "Что вернула модель",
+        "Оценка"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-VERDICT"
+      ],
+      "heading_count": 3,
+      "word_count": 197,
+      "requirement_ids": 1,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0026",
+      "path": "runs/2026/RUN-0026/outputs/steps/step-9-api-removal.md",
+      "process": "task-1007-amocrm-outbound-campaign-funnel-stage-fr",
+      "date": "2026-05-04",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "integration"
+      ],
+      "headings": [
+        "Что подал БА",
+        "Что вернула модель",
+        "Оценка и правка БА"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-EPISODE",
+        "S-VERDICT"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-VERDICT"
+      ],
+      "heading_count": 3,
+      "word_count": 215,
+      "requirement_ids": 0,
+      "doc_kind": "run-journal",
+      "format_class": "F-SHORT",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0027",
+      "path": "runs/2026/RUN-0027/outputs/final-artifact.md",
+      "process": "fr-analysis-978-email-signature-in-lk",
+      "date": "2026-04-10",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "1. Что подтверждено внешними источниками (эпизод 3)",
+        "2. Что модель предложила без источника (требует решения БА)",
+        "3. Что вошло в постановку из предложения модели",
+        "4. Что выяснено про текущую реализацию (не проверено)",
+        "5. Открытые вопросы на момент обрыва диалога"
+      ],
+      "slots": [
+        "S-TRACE",
+        "S-SOLUTION",
+        "S-PROPOSAL",
+        "S-OTHER",
+        "S-OPEN"
+      ],
+      "slot_set": [
+        "S-OPEN",
+        "S-OTHER",
+        "S-PROPOSAL",
+        "S-SOLUTION",
+        "S-TRACE"
+      ],
+      "heading_count": 5,
+      "word_count": 541,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "4. Что выяснено про текущую реализацию (не проверено)"
+      ]
+    },
+    {
+      "run_id": "RUN-0027",
+      "path": "runs/2026/RUN-0027/outputs/prompts-chain.md",
+      "process": "fr-analysis-978-email-signature-in-lk",
+      "date": "2026-04-10",
+      "status": "works-with-edits",
+      "model": "qwen3.6-plus",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Что сработало без промпта-каркаса",
+        "Чего не хватило (в отсутствие каркаса)"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OTHER"
+      ],
+      "heading_count": 2,
+      "word_count": 429,
+      "requirement_ids": 2,
+      "doc_kind": "analysis-note",
+      "format_class": "F-SHORT",
+      "unmapped_headings": [
+        "Что сработало без промпта-каркаса",
+        "Чего не хватило (в отсутствие каркаса)"
+      ]
+    },
+    {
+      "run_id": "RUN-0028",
+      "path": "runs/2026/RUN-0028/outputs/prompts-chain.md",
+      "process": "fr-validation-1040-speech-analytics-direction-filter",
+      "date": "2026-07-01",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Использован один промпт",
+        "Точность передачи промпта: 100 %",
+        "Исполнение правил промпта",
+        "Наблюдение о взаимном противоречии правил"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OTHER"
+      ],
+      "heading_count": 4,
+      "word_count": 434,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Использован один промпт",
+        "Точность передачи промпта: 100 %",
+        "Исполнение правил промпта",
+        "Наблюдение о взаимном противоречии правил"
+      ]
+    },
+    {
+      "run_id": "RUN-0028",
+      "path": "runs/2026/RUN-0028/outputs/quality-findings.md",
+      "process": "fr-validation-1040-speech-analytics-direction-filter",
+      "date": "2026-07-01",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus",
+      "bcreq": null,
+      "products": [
+        "voice-ucaas",
+        "analytics-reporting"
+      ],
+      "headings": [
+        "Сводка",
+        "Разбор с цитатами",
+        "Что модель сделала верно"
+      ],
+      "slots": [
+        "S-VERDICT",
+        "S-OTHER",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-VERDICT"
+      ],
+      "heading_count": 3,
+      "word_count": 1259,
+      "requirement_ids": 2,
+      "doc_kind": "analysis-note",
+      "format_class": "F-MIXED",
+      "unmapped_headings": [
+        "Разбор с цитатами",
+        "Что модель сделала верно"
+      ]
+    },
+    {
+      "run_id": "RUN-0055",
+      "path": "runs/2026/RUN-0055/outputs/feasibility-assessment.md",
+      "process": "tz-feasibility-assessment-utair-chat-mango-office",
+      "date": "2026-08-23",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus (первичный исполнитель) + claude-opus-5 (верификация по БЗ)",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "Как читать оценки",
+        "Таблица 1. Функциональные требования (FR-1 … FR-10)",
+        "Таблица 2. Нефункциональные требования",
+        "Таблица 3. Пользовательский сценарий Заказчика",
+        "Таблица 4. Последовательность взаимодействия систем (9 шагов)",
+        "Таблица 5. Нестандартные ситуации (12 строк)",
+        "Таблица 6. Модель данных обмена",
+        "Дополнительные технические ограничения",
+        "Суммаризация покрытия",
+        "Реестр источников",
+        "Сводка проверенных критериев",
+        "Пробелы, противоречия и риски ТЗ",
+        "Ошибки исполнения: разбор артефакта первичного исполнителя",
+        "Служебные замечания к процессу"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-FR",
+        "S-FR",
+        "S-SCENARIO",
+        "S-OTHER",
+        "S-OTHER",
+        "S-SOLUTION",
+        "S-LIMITS",
+        "S-OTHER",
+        "S-TRACE",
+        "S-AC",
+        "S-LIMITS",
+        "S-DEFECT",
+        "S-DEFECT"
+      ],
+      "slot_set": [
+        "S-AC",
+        "S-DEFECT",
+        "S-FR",
+        "S-LIMITS",
+        "S-OTHER",
+        "S-SCENARIO",
+        "S-SOLUTION",
+        "S-TRACE"
+      ],
+      "heading_count": 14,
+      "word_count": 8717,
+      "requirement_ids": 15,
+      "doc_kind": "requirement-document",
+      "format_class": "F-CLASSIC",
+      "unmapped_headings": [
+        "Как читать оценки",
+        "Таблица 4. Последовательность взаимодействия систем (9 шагов)",
+        "Таблица 5. Нестандартные ситуации (12 строк)",
+        "Суммаризация покрытия"
+      ]
+    },
+    {
+      "run_id": "RUN-0055",
+      "path": "runs/2026/RUN-0055/outputs/tender-feasibility-brief.md",
+      "process": "tz-feasibility-assessment-utair-chat-mango-office",
+      "date": "2026-08-23",
+      "status": "works-with-edits",
+      "model": "qwen3.7-plus (первичный исполнитель) + claude-opus-5 (верификация по БЗ)",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "1. Вердикт",
+        "2. Что именно закрывается стандартными методами API",
+        "3. Сводка покрытия",
+        "4. Ключевые ограничения, которые нужно объявить до подписания",
+        "5. Риски тендерной приёмки",
+        "6. Границы оценки",
+        "7. Открытые вопросы к Заказчику"
+      ],
+      "slots": [
+        "S-VERDICT",
+        "S-INTEGRATION",
+        "S-VERDICT",
+        "S-LIMITS",
+        "S-AC",
+        "S-SCOPE",
+        "S-OPEN"
+      ],
+      "slot_set": [
+        "S-AC",
+        "S-INTEGRATION",
+        "S-LIMITS",
+        "S-OPEN",
+        "S-SCOPE",
+        "S-VERDICT"
+      ],
+      "heading_count": 7,
+      "word_count": 1119,
+      "requirement_ids": 1,
+      "doc_kind": "analysis-note",
+      "format_class": "F-MIXED",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0056",
+      "path": "runs/2026/RUN-0056/outputs/L1-executive-summary.md",
+      "process": "gap-analysis-hh-chats-mango-cc-integration-feasibility",
+      "date": "2026-08-25",
+      "status": "partial-success",
+      "model": "claude-opus-5",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Вердикт",
+        "Покрытие требований",
+        "Семь критических разрывов",
+        "Что можно делать уже сейчас",
+        "Ограничение достоверности",
+        "Рекомендуемые шаги"
+      ],
+      "slots": [
+        "S-VERDICT",
+        "S-METRIC",
+        "S-OTHER",
+        "S-OTHER",
+        "S-LIMITS",
+        "S-PROPOSAL"
+      ],
+      "slot_set": [
+        "S-LIMITS",
+        "S-METRIC",
+        "S-OTHER",
+        "S-PROPOSAL",
+        "S-VERDICT"
+      ],
+      "heading_count": 6,
+      "word_count": 503,
+      "requirement_ids": 10,
+      "doc_kind": "analysis-note",
+      "format_class": "F-CLASSIC",
+      "unmapped_headings": [
+        "Семь критических разрывов",
+        "Что можно делать уже сейчас"
+      ]
+    },
+    {
+      "run_id": "RUN-0056",
+      "path": "runs/2026/RUN-0056/outputs/L2-gap-matrix.md",
+      "process": "gap-analysis-hh-chats-mango-cc-integration-feasibility",
+      "date": "2026-08-25",
+      "status": "partial-success",
+      "model": "claude-opus-5",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "0. Сводка",
+        "1. ФТ-01 — OAuth-авторизация в HeadHunter при настройке канала",
+        "2. ФТ-02 — Подключение и настройка канала HH в ЛК",
+        "3. ФТ-03 — Маршрутизация созданных обращений",
+        "4. ФТ-04 — Фильтрация входящих сообщений по вакансии",
+        "5. ФТ-05 — Создание обращения по первому входящему сообщению и перенос контекста сессии",
+        "6. ФТ-06 — Двусторонняя синхронизация в реальном времени",
+        "7. ФТ-07 — Склейка сообщений нескольких Акторов в одно обращение",
+        "8. ФТ-08 — Передача контекста при создании обращения",
+        "9. ФТ-09 — Автосопоставление кандидата с Адресной книгой",
+        "10. ФТ-10 — Отчётность и выгрузка",
+        "11. Обходные пути",
+        "12. Риски и ограничения",
+        "13. Вопросы Заказчику"
+      ],
+      "slots": [
+        "S-VERDICT",
+        "S-OTHER",
+        "S-OTHER",
+        "S-PROCESS",
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-OTHER",
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER",
+        "S-LIMITS",
+        "S-OPEN"
+      ],
+      "slot_set": [
+        "S-LIMITS",
+        "S-OPEN",
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-PROCESS",
+        "S-VERDICT"
+      ],
+      "heading_count": 14,
+      "word_count": 2406,
+      "requirement_ids": 10,
+      "doc_kind": "requirement-document",
+      "format_class": "F-CLASSIC",
+      "unmapped_headings": [
+        "1. ФТ-01 — OAuth-авторизация в HeadHunter при настройке канала",
+        "2. ФТ-02 — Подключение и настройка канала HH в ЛК",
+        "4. ФТ-04 — Фильтрация входящих сообщений по вакансии",
+        "6. ФТ-06 — Двусторонняя синхронизация в реальном времени",
+        "7. ФТ-07 — Склейка сообщений нескольких Акторов в одно обращение",
+        "9. ФТ-09 — Автосопоставление кандидата с Адресной книгой",
+        "10. ФТ-10 — Отчётность и выгрузка",
+        "11. Обходные пути"
+      ]
+    },
+    {
+      "run_id": "RUN-0056",
+      "path": "runs/2026/RUN-0056/outputs/L3-technical-spike-notes.md",
+      "process": "gap-analysis-hh-chats-mango-cc-integration-feasibility",
+      "date": "2026-08-25",
+      "status": "partial-success",
+      "model": "claude-opus-5",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "1. Неизвестные, требующие проверки на реальном доступе",
+        "2. Подтверждённые ограничения — закладывать в архитектуру сразу",
+        "3. Гипотезы (документацией не подтверждены)",
+        "4. Порядок выполнения spike"
+      ],
+      "slots": [
+        "S-TEST",
+        "S-SOLUTION",
+        "S-OTHER",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-SOLUTION",
+        "S-TEST"
+      ],
+      "heading_count": 4,
+      "word_count": 786,
+      "requirement_ids": 6,
+      "doc_kind": "analysis-note",
+      "format_class": "F-MIXED",
+      "unmapped_headings": [
+        "3. Гипотезы (документацией не подтверждены)",
+        "4. Порядок выполнения spike"
+      ]
+    },
+    {
+      "run_id": "RUN-0057",
+      "path": "runs/2026/RUN-0057/outputs/L0-customer-form-with-assessment.md",
+      "process": "feasibility-assessment-tender-tz-stt-tts-nlu-dialogue-manager",
+      "date": "2026-08-25",
+      "status": "partial-success",
+      "model": "claude-opus-5",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "Как воспроизвести",
+        "Лист «STT» — файл `1._STT.xls`",
+        "Лист «TTS» — файл `2._TTS.xls`",
+        "Лист «NLU» — файл `3._NLU.xls`",
+        "Лист «Dialogue Manager» — файл `4._Dialogue.Manager.xls`"
+      ],
+      "slots": [
+        "S-EPISODE",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-OTHER"
+      ],
+      "heading_count": 5,
+      "word_count": 9381,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Лист «STT» — файл `1._STT.xls`",
+        "Лист «TTS» — файл `2._TTS.xls`",
+        "Лист «NLU» — файл `3._NLU.xls`",
+        "Лист «Dialogue Manager» — файл `4._Dialogue.Manager.xls`"
+      ]
+    },
+    {
+      "run_id": "RUN-0057",
+      "path": "runs/2026/RUN-0057/outputs/L1-executive-summary.md",
+      "process": "feasibility-assessment-tender-tz-stt-tts-nlu-dialogue-manager",
+      "date": "2026-08-25",
+      "status": "partial-success",
+      "model": "claude-opus-5",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "Вывод",
+        "Что закрывается уверенно",
+        "Красные зоны (решение принимать с их учётом)",
+        "Расхождения с уже заполненными ответами участника",
+        "Рекомендация"
+      ],
+      "slots": [
+        "S-VERDICT",
+        "S-OTHER",
+        "S-SOLUTION",
+        "S-OTHER",
+        "S-PROPOSAL"
+      ],
+      "slot_set": [
+        "S-OTHER",
+        "S-PROPOSAL",
+        "S-SOLUTION",
+        "S-VERDICT"
+      ],
+      "heading_count": 5,
+      "word_count": 713,
+      "requirement_ids": 0,
+      "doc_kind": "requirement-document",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Что закрывается уверенно",
+        "Расхождения с уже заполненными ответами участника"
+      ]
+    },
+    {
+      "run_id": "RUN-0057",
+      "path": "runs/2026/RUN-0057/outputs/L2-feasibility-matrix.md",
+      "process": "feasibility-assessment-tender-tz-stt-tts-nlu-dialogue-manager",
+      "date": "2026-08-25",
+      "status": "partial-success",
+      "model": "claude-opus-5",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "Легенда уровней покрытия",
+        "Приложение № 1 — Функциональные требования к модулю распознавания речи (STT)",
+        "Приложение № 2 — Функциональные требования к модулю синтеза речи (TTS)",
+        "Приложение № 3 — Функциональные требования к модулю NLU",
+        "Приложение № 4 — Функциональные требования к управлению диалогом (Dialogue Manager)",
+        "Сводная статистика по уровням покрытия",
+        "Расхождения с колонкой «Комментарий участника»"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-FR",
+        "S-FR",
+        "S-FR",
+        "S-FR",
+        "S-METRIC",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-FR",
+        "S-METRIC",
+        "S-OTHER"
+      ],
+      "heading_count": 7,
+      "word_count": 8391,
+      "requirement_ids": 0,
+      "doc_kind": "requirement-document",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Легенда уровней покрытия",
+        "Расхождения с колонкой «Комментарий участника»"
+      ]
+    },
+    {
+      "run_id": "RUN-0057",
+      "path": "runs/2026/RUN-0057/outputs/L3-technical-notes.md",
+      "process": "feasibility-assessment-tender-tz-stt-tts-nlu-dialogue-manager",
+      "date": "2026-08-25",
+      "status": "partial-success",
+      "model": "claude-opus-5",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "1. Вопросы вендору Mango Office",
+        "2. Проверки на пилоте (spike)",
+        "3. Проектные ограничения, влияющие на архитектуру решения",
+        "4. Что делать с расхождениями по ответам участника"
+      ],
+      "slots": [
+        "S-OPEN",
+        "S-TEST",
+        "S-SOLUTION",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-OPEN",
+        "S-OTHER",
+        "S-SOLUTION",
+        "S-TEST"
+      ],
+      "heading_count": 4,
+      "word_count": 1096,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "4. Что делать с расхождениями по ответам участника"
+      ]
+    },
+    {
+      "run_id": "RUN-0057",
+      "path": "runs/2026/RUN-0057/outputs/L4-requirements-statistics.md",
+      "process": "feasibility-assessment-tender-tz-stt-tts-nlu-dialogue-manager",
+      "date": "2026-08-25",
+      "status": "partial-success",
+      "model": "claude-opus-5",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "Отношение к первичному исследованию",
+        "Ограничение достоверности (главное)",
+        "Как воспроизвести",
+        "1. Объём наблюдений",
+        "2. Модальность формулировок (детерминированно)",
+        "3. Ответы участника в исходной форме (детерминированно)",
+        "4. Ответ участника × уровень покрытия по итогам анализа",
+        "5. Тематические классы второго уровня (эвристика)",
+        "6. Что практика показала",
+        "7. Вход в отдельный анализ методологии"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-LIMITS",
+        "S-EPISODE",
+        "S-OTHER",
+        "S-GLOSSARY",
+        "S-GLOSSARY",
+        "S-VERDICT",
+        "S-OTHER",
+        "S-OTHER",
+        "S-PROCESS"
+      ],
+      "slot_set": [
+        "S-EPISODE",
+        "S-GLOSSARY",
+        "S-LIMITS",
+        "S-OTHER",
+        "S-PROCESS",
+        "S-VERDICT"
+      ],
+      "heading_count": 10,
+      "word_count": 1877,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Отношение к первичному исследованию",
+        "1. Объём наблюдений",
+        "5. Тематические классы второго уровня (эвристика)",
+        "6. Что практика показала"
+      ]
+    },
+    {
+      "run_id": "RUN-0058",
+      "path": "runs/2026/RUN-0058/outputs/L1-executive-summary.md",
+      "process": "Re-evaluation: HH.ru Chat API Feasibility",
+      "date": "2026-08-26",
+      "status": "partial-success",
+      "model": "claude-opus-5",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Вердикт: изменился",
+        "Покрытие требований",
+        "Главный риск: чат виден только менеджерам-участникам",
+        "Разрывы: что закрылось, что осталось, что появилось",
+        "Предпочтительный путь получения сообщений",
+        "Рекомендуемые шаги"
+      ],
+      "slots": [
+        "S-VERDICT",
+        "S-METRIC",
+        "S-LIMITS",
+        "S-OTHER",
+        "S-OTHER",
+        "S-PROPOSAL"
+      ],
+      "slot_set": [
+        "S-LIMITS",
+        "S-METRIC",
+        "S-OTHER",
+        "S-PROPOSAL",
+        "S-VERDICT"
+      ],
+      "heading_count": 6,
+      "word_count": 915,
+      "requirement_ids": 10,
+      "doc_kind": "analysis-note",
+      "format_class": "F-CLASSIC",
+      "unmapped_headings": [
+        "Разрывы: что закрылось, что осталось, что появилось",
+        "Предпочтительный путь получения сообщений"
+      ]
+    },
+    {
+      "run_id": "RUN-0058",
+      "path": "runs/2026/RUN-0058/outputs/L2-gap-matrix.md",
+      "process": "Re-evaluation: HH.ru Chat API Feasibility",
+      "date": "2026-08-26",
+      "status": "partial-success",
+      "model": "claude-opus-5",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "0. Сводка",
+        "1. Что именно опубликовано: раздел «Чаты»",
+        "2. ФТ-01 — OAuth-авторизация; ФТ-02 — подключение канала; ФТ-03 — маршрутизация",
+        "3. ФТ-04 — Фильтрация входящих сообщений по вакансии",
+        "4. ФТ-05 — Создание обращения по первому входящему сообщению и контекст сессии",
+        "5. ФТ-06 — Двусторонняя синхронизация в реальном времени",
+        "6. ФТ-07 — Склейка сообщений нескольких Акторов в одно обращение",
+        "7. GAP-R1 — чат виден только менеджерам-участникам (High Risk)",
+        "8. ФТ-08 — Передача контекста при создании обращения",
+        "9. ФТ-09 — Автосопоставление кандидата с Адресной книгой",
+        "10. ФТ-10 — Отчётность и выгрузка",
+        "11. Сравнение путей получения сообщений и выбор для КЦ Mango",
+        "12. Влияние GAP-R1 на сценарии КЦ Mango",
+        "13. Сводка разрывов",
+        "14. Риски",
+        "15. Вопросы Заказчику"
+      ],
+      "slots": [
+        "S-VERDICT",
+        "S-OTHER",
+        "S-PROCESS",
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER",
+        "S-SCENARIO",
+        "S-VERDICT",
+        "S-LIMITS",
+        "S-OPEN"
+      ],
+      "slot_set": [
+        "S-LIMITS",
+        "S-OPEN",
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-PROCESS",
+        "S-SCENARIO",
+        "S-VERDICT"
+      ],
+      "heading_count": 16,
+      "word_count": 3986,
+      "requirement_ids": 10,
+      "doc_kind": "requirement-document",
+      "format_class": "F-CLASSIC",
+      "unmapped_headings": [
+        "1. Что именно опубликовано: раздел «Чаты»",
+        "3. ФТ-04 — Фильтрация входящих сообщений по вакансии",
+        "5. ФТ-06 — Двусторонняя синхронизация в реальном времени",
+        "6. ФТ-07 — Склейка сообщений нескольких Акторов в одно обращение",
+        "7. GAP-R1 — чат виден только менеджерам-участникам (High Risk)",
+        "9. ФТ-09 — Автосопоставление кандидата с Адресной книгой",
+        "10. ФТ-10 — Отчётность и выгрузка",
+        "11. Сравнение путей получения сообщений и выбор для КЦ Mango"
+      ]
+    },
+    {
+      "run_id": "RUN-0058",
+      "path": "runs/2026/RUN-0058/outputs/L3-integration-architecture-notes.md",
+      "process": "Re-evaluation: HH.ru Chat API Feasibility",
+      "date": "2026-08-26",
+      "status": "partial-success",
+      "model": "claude-opus-5",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "integration"
+      ],
+      "headings": [
+        "1. Целевая схема обмена",
+        "2. Гипотезы, требующие проверки на реальном доступе",
+        "3. Приём вебхуков: требования к реализации",
+        "4. Отправка сообщений: идемпотентность и ошибки",
+        "5. Сверка (reconciliation)",
+        "6. Учётные записи и доступ",
+        "7. Что осталось за пределами прогона"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-TEST",
+        "S-OTHER",
+        "S-DEFECT",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-DEFECT",
+        "S-OTHER",
+        "S-TEST"
+      ],
+      "heading_count": 7,
+      "word_count": 1002,
+      "requirement_ids": 3,
+      "doc_kind": "analysis-note",
+      "format_class": "F-CLASSIC",
+      "unmapped_headings": [
+        "1. Целевая схема обмена",
+        "3. Приём вебхуков: требования к реализации",
+        "5. Сверка (reconciliation)",
+        "6. Учётные записи и доступ",
+        "7. Что осталось за пределами прогона"
+      ]
+    },
+    {
+      "run_id": "RUN-0059",
+      "path": "runs/2026/RUN-0059/outputs/architecture-spike.md",
+      "process": "Architecture Spike: HH.ru Chats ↔ Mango CC data mapping",
+      "date": "2026-08-26",
+      "status": "partial-success",
+      "model": "claude-opus-5",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "1. Контекст и рамки",
+        "2. Что уже установлено по SSOT",
+        "3. Критический путь: диаграммы последовательности",
+        "4. Матрица маппинга данных",
+        "5. Примеры JSON",
+        "6. Варианты решения",
+        "7. Рекомендация и митигация GAP-R1",
+        "8. Последствия и открытые вопросы"
+      ],
+      "slots": [
+        "S-PROBLEM",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER",
+        "S-SOLUTION",
+        "S-PROPOSAL",
+        "S-OPEN"
+      ],
+      "slot_set": [
+        "S-OPEN",
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-PROPOSAL",
+        "S-SOLUTION"
+      ],
+      "heading_count": 8,
+      "word_count": 3545,
+      "requirement_ids": 6,
+      "doc_kind": "analysis-note",
+      "format_class": "F-CLASSIC",
+      "unmapped_headings": [
+        "2. Что уже установлено по SSOT",
+        "3. Критический путь: диаграммы последовательности",
+        "4. Матрица маппинга данных",
+        "5. Примеры JSON"
+      ]
+    },
+    {
+      "run_id": "RUN-0060",
+      "path": "runs/2026/RUN-0060/outputs/L4-combined-gap-report.md",
+      "process": "Combined L4 gap report: BA verdicts + SA models + footnoted hh.ru API sources",
+      "date": "2026-08-27",
+      "status": "success",
+      "model": "claude-opus-5",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "Что такое уровень L4",
+        "Источник фактов и его версия",
+        "0. Сводка",
+        "1. Опорный состав операций",
+        "2. ФТ-01 — Авторизация во Внешней системе",
+        "3. ФТ-02 — Подключение канала",
+        "4. ФТ-03 — Маршрутизация обращений",
+        "5. ФТ-04 — Фильтрация по признаку вакансии",
+        "6. ФТ-05 — Создание обращения и контекст сессии",
+        "7. ФТ-06 — Двусторонняя синхронизация в реальном времени",
+        "8. ФТ-07 — Учёт нескольких Акторов в чате",
+        "9. ФТ-08 — Передача контекста при создании обращения",
+        "10. ФТ-09 — Автосопоставление кандидата с Адресной книгой",
+        "11. ФТ-10 — Отчётность и выгрузка",
+        "12. GAP-R1 — сквозное ограничение видимости чатов",
+        "13. Пути получения сообщений и выбор для КЦ",
+        "14. Сводка разрывов",
+        "15. Что исправлено относительно L2 (RUN-0058)",
+        "16. Риски",
+        "17. Вопросы Заказчику",
+        "Как проверять этот отчёт"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-TRACE",
+        "S-VERDICT",
+        "S-OTHER",
+        "S-OTHER",
+        "S-OTHER",
+        "S-PROCESS",
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-OTHER",
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-OTHER",
+        "S-OTHER",
+        "S-LIMITS",
+        "S-OTHER",
+        "S-VERDICT",
+        "S-OTHER",
+        "S-LIMITS",
+        "S-OPEN",
+        "S-OTHER"
+      ],
+      "slot_set": [
+        "S-LIMITS",
+        "S-OPEN",
+        "S-OTHER",
+        "S-PROBLEM",
+        "S-PROCESS",
+        "S-TRACE",
+        "S-VERDICT"
+      ],
+      "heading_count": 21,
+      "word_count": 11161,
+      "requirement_ids": 14,
+      "doc_kind": "analysis-note",
+      "format_class": "F-CLASSIC",
+      "unmapped_headings": [
+        "Что такое уровень L4",
+        "1. Опорный состав операций",
+        "2. ФТ-01 — Авторизация во Внешней системе",
+        "3. ФТ-02 — Подключение канала",
+        "5. ФТ-04 — Фильтрация по признаку вакансии",
+        "7. ФТ-06 — Двусторонняя синхронизация в реальном времени",
+        "8. ФТ-07 — Учёт нескольких Акторов в чате",
+        "10. ФТ-09 — Автосопоставление кандидата с Адресной книгой",
+        "11. ФТ-10 — Отчётность и выгрузка",
+        "13. Пути получения сообщений и выбор для КЦ",
+        "15. Что исправлено относительно L2 (RUN-0058)",
+        "Как проверять этот отчёт"
+      ]
+    },
+    {
+      "run_id": "RUN-0062",
+      "path": "runs/2026/RUN-0062/outputs/L0-customer-form-with-assessment.md",
+      "process": "feasibility-assessment-tender-appendices-5-7",
+      "date": "2026-09-01",
+      "status": "draft",
+      "model": "gpt-5.6-sol",
+      "bcreq": null,
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration"
+      ],
+      "headings": [
+        "Лист «Телефония» — файл `appendix-5-telephony.xls`",
+        "Лист «Quality Control» — файл `appendix-6-quality-control.xls`",
+        "Лист «Нефункциональные требования» — файл `appendix-7-nfr.xls`"
+      ],
+      "slots": [
+        "S-OTHER",
+        "S-OTHER",
+        "S-FR"
+      ],
+      "slot_set": [
+        "S-FR",
+        "S-OTHER"
+      ],
+      "heading_count": 3,
+      "word_count": 7200,
+      "requirement_ids": 0,
+      "doc_kind": "analysis-note",
+      "format_class": "F-NARRATIVE",
+      "unmapped_headings": [
+        "Лист «Телефония» — файл `appendix-5-telephony.xls`",
+        "Лист «Quality Control» — файл `appendix-6-quality-control.xls`"
+      ]
+    },
+    {
+      "run_id": "RUN-0063",
+      "path": "runs/2026/RUN-0063/outputs/functional-requirements-bcreq-1074.md",
+      "process": "feature-specification-bcreq-1074-communication-expenses-report",
+      "date": "2026-08-31",
+      "status": "invalid",
+      "model": "gpt-5.6-sol",
+      "bcreq": "1074",
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "1. Глоссарий",
+        "2. Проблема, цели и задачи",
+        "3. Моделирование верхнеуровневых ФТ",
+        "4. Функциональные требования и сценарии использования",
+        "5. Нефункциональные требования",
+        "6. Ограничения"
+      ],
+      "slots": [
+        "S-GLOSSARY",
+        "S-PROBLEM",
+        "S-SOLUTION",
+        "S-FR",
+        "S-FR",
+        "S-LIMITS"
+      ],
+      "slot_set": [
+        "S-FR",
+        "S-GLOSSARY",
+        "S-LIMITS",
+        "S-PROBLEM",
+        "S-SOLUTION"
+      ],
+      "heading_count": 6,
+      "word_count": 1457,
+      "requirement_ids": 9,
+      "doc_kind": "requirement-document",
+      "format_class": "F-CLASSIC",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0064",
+      "path": "runs/2026/RUN-0064/outputs/functional-requirements.md",
+      "process": "error-analysis-and-feature-specification-bcreq-1074-report-view",
+      "date": "2026-08-31",
+      "status": "draft",
+      "model": "gpt-5.6-sol",
+      "bcreq": "1074",
+      "products": [
+        "contact-center",
+        "voice-ucaas",
+        "analytics-reporting",
+        "billing-finance"
+      ],
+      "headings": [
+        "1. Глоссарий",
+        "2. Проблема, цель и границы изменения",
+        "3. Моделирование верхнеуровневых ФТ",
+        "4. UI-логика и сценарии использования",
+        "5. Нефункциональные требования",
+        "6. Ограничения и открытые решения"
+      ],
+      "slots": [
+        "S-GLOSSARY",
+        "S-PROBLEM",
+        "S-SOLUTION",
+        "S-UI",
+        "S-FR",
+        "S-SOLUTION"
+      ],
+      "slot_set": [
+        "S-FR",
+        "S-GLOSSARY",
+        "S-PROBLEM",
+        "S-SOLUTION",
+        "S-UI"
+      ],
+      "heading_count": 6,
+      "word_count": 957,
+      "requirement_ids": 3,
+      "doc_kind": "requirement-document",
+      "format_class": "F-CLASSIC",
+      "unmapped_headings": []
+    },
+    {
+      "run_id": "RUN-0067",
+      "path": "runs/2026/RUN-0067/outputs/functional-requirements-bcreq-1074.md",
+      "process": "feature-specification-bcreq-1074-detailed-export (rework of RUN-0063 by audit)",
+      "date": "2026-09-03",
+      "status": "draft",
+      "model": "claude-opus-5",
+      "bcreq": "1074",
+      "products": [
+        "contact-center",
+        "self-service-lk",
+        "voice-ucaas",
+        "analytics-reporting",
+        "integration",
+        "billing-finance"
+      ],
+      "headings": [
+        "1. Термины и определения",
+        "2. Проблема, цель, задача",
+        "3. Описание разрабатываемого решения",
+        "4. Функциональные требования и сценарии использования",
+        "5. Нефункциональные требования",
+        "6. Особенности реализации",
+        "Вопросы владельцу продукта"
+      ],
+      "slots": [
+        "S-GLOSSARY",
+        "S-PROBLEM",
+        "S-SOLUTION",
+        "S-FR",
+        "S-FR",
+        "S-LIMITS",
+        "S-OPEN"
+      ],
+      "slot_set": [
+        "S-FR",
+        "S-GLOSSARY",
+        "S-LIMITS",
+        "S-OPEN",
+        "S-PROBLEM",
+        "S-SOLUTION"
+      ],
+      "heading_count": 7,
+      "word_count": 1174,
+      "requirement_ids": 2,
+      "doc_kind": "requirement-document",
+      "format_class": "F-MIXED",
+      "unmapped_headings": []
+    }
+  ]
+}
