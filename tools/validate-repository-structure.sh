@@ -172,6 +172,7 @@ is_active_file() {
     research/ba-requirements/exp/ba-methodology-unification-557/knowledge-inventory.json | \
     research/ba-requirements/exp/ba-methodology-unification-557/2026-09-07-clarify-relevance-review.md | \
     research/ba-requirements/2026-09-08-artifact-structure-variance-facts.md | \
+    research/ba-requirements/2026-09-08-kb-slot-fit-facts.md | \
     research/ba-requirements/artifact-micro-structure/00-introduction.md | \
     research/ba-requirements/artifact-micro-structure/10-theory.md | \
     research/ba-requirements/artifact-micro-structure/20-taxonomy.md | \
@@ -184,6 +185,14 @@ is_active_file() {
     research/ba-requirements/exp/ba-micro-structure-561/artifact-structure.json | \
     research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-golden-set-contact-center-ivr-settings.md | \
     research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-golden-set-self-service-lk.md | \
+    research/ba-requirements/exp/ba-micro-structure-561/probe-kb-slot-fit.py | \
+    research/ba-requirements/exp/ba-micro-structure-561/probe-kb-slot-fit.log | \
+    research/ba-requirements/exp/ba-micro-structure-561/kb-slot-fit.json | \
+    research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-golden-set-vpbx-api.md | \
+    research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-golden-set-hardware-gateway.md | \
+    research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-golden-set-security-access.md | \
+    research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-golden-set-multi-product.md | \
+    research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-bcreq-document-skeleton.md | \
     research/ba-requirements/solution-modeling/00-introduction.md | \
     research/ba-requirements/solution-modeling/10-theory.md | \
     research/ba-requirements/solution-modeling/20-taxonomy.md | \
