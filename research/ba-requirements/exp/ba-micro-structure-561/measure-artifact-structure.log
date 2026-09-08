@@ -1,0 +1,58 @@
+# Замер микро-структуры артефактов БА
+корпус: mango_ba_prompts @ 8cbf82aa73129ec5747af07f790aaf438b0fb6e9; прогонов просмотрено: 67; markdown с лексикой требований: 125; из них результирующих документов: 17
+
+## Классы документов в outputs/
+run-journal            63
+analysis-note          45
+requirement-document   17
+
+## Частота слотов
+S-OTHER          разделов:  33   различных подписей: 27
+S-SCENARIO       разделов:  14   различных подписей: 14
+S-FR             разделов:  14   различных подписей: 10
+S-PROBLEM        разделов:  10   различных подписей: 8
+S-LIMITS         разделов:   9   различных подписей: 7
+S-PROCESS        разделов:   8   различных подписей: 7
+S-SOLUTION       разделов:   8   различных подписей: 6
+S-OPEN           разделов:   7   различных подписей: 5
+S-VERDICT        разделов:   7   различных подписей: 6
+S-GLOSSARY       разделов:   6   различных подписей: 4
+S-TRACE          разделов:   5   различных подписей: 3
+S-PROPOSAL       разделов:   4   различных подписей: 3
+S-DEFECT         разделов:   4   различных подписей: 4
+S-TEST           разделов:   3   различных подписей: 3
+S-PURPOSE        разделов:   2   различных подписей: 1
+S-AC             разделов:   1   различных подписей: 1
+S-METRIC         разделов:   1   различных подписей: 1
+S-UI             разделов:   1   различных подписей: 1
+
+## Классы формата
+F-NARRATIVE  7
+F-CLASSIC    6
+F-MIXED      3
+F-SHORT      1
+
+## Продуктовые классы (множественная разметка)
+contact-center         15
+billing-finance        15
+voice-ucaas            14
+analytics-reporting    12
+integration            12
+self-service-lk        11
+
+## Вариативность внутри одной задачи (BCREQ)
+BCREQ-1074: артефактов 3, скелетов по слотам 3, скелетов по подписям 3, средний Жаккар 0.69, минимальный 0.571, прогоны RUN-0063, RUN-0064, RUN-0067
+
+## Вариативность внутри одного процесса
+bcreq-1059-multichannel-slots-limits: артефактов 2, скелетов по слотам 2, средний Жаккар 0.286
+bcreq-1069-restricted-api-key: артефактов 2, скелетов по слотам 2, средний Жаккар 0.2
+feasibility-assessment-tender-tz-stt-tts-nlu-dialogue-manager: артефактов 2, скелетов по слотам 2, средний Жаккар 0.167
+multichannel-agent-workload: артефактов 2, скелетов по слотам 2, средний Жаккар 0.333
+
+## Позиционное распределение слотов (первые шесть разделов)
+pos-1: S-GLOSSARY=5, S-OTHER=4, S-VERDICT=4, S-PURPOSE=2, S-SCENARIO=2
+pos-2: S-PROBLEM=4, S-OTHER=4, S-FR=3, S-SCENARIO=2, S-PROCESS=1, S-TRACE=1, S-SOLUTION=1, S-GLOSSARY=1
+pos-3: S-SOLUTION=5, S-OTHER=3, S-PROCESS=2, S-FR=2, S-TEST=1, S-DEFECT=1, S-PROBLEM=1, S-SCENARIO=1, S-OPEN=1
+pos-4: S-SCENARIO=5, S-FR=4, S-OTHER=3, S-TRACE=1, S-LIMITS=1, S-PROCESS=1, S-UI=1
+pos-5: S-FR=5, S-OTHER=3, S-PROBLEM=2, S-TEST=1, S-VERDICT=1, S-SCENARIO=1, S-PROPOSAL=1
+pos-6: S-OTHER=3, S-LIMITS=3, S-PROCESS=2, S-DEFECT=1, S-OPEN=1, S-PROBLEM=1, S-METRIC=1, S-SOLUTION=1

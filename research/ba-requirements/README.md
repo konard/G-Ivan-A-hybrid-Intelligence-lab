@@ -54,6 +54,19 @@ temperature: 0.1
   Ось ортогональна конвейеру `M0`–`M4`: те модули отвечают на вопрос «как
   устроен артефакт», этот — «откуда берётся норма».
 
+- [`artifact-micro-structure/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/artifact-micro-structure/00-introduction.md)
+  — микро-уровень той же оси: как индустриальный базис и продуктовые дельты
+  сводятся к **одной** структуре результирующего документа. Словарь слотов
+  `S-*` с ровно одной канонической подписью, классы формата `F-*`, проекции
+  `V-BIZ`/`V-APPROVE`/`V-DEV` одного размеченного ядра, профили продукта
+  `P-SETTINGS`/`P-NO-SETTINGS`/`P-DEVICE`/`P-API`, правила сведения `R-1`…`R-6`,
+  разделение операции и навыка (`OP-1`, `OP-2`), контракт скомпилированного
+  артефакта `CA-1`…`CA-6`, Golden Set как обязательный элемент гейта `G-mach`
+  (`GS-1`…`GS-5`), 12 граничных кейсов `E-1`…`E-12` и задачи `B-136`…`B-143`
+  (issue [#561](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/561)).
+  Модуль `methodology-unification/` намеренно **не переписывается**: поправки
+  к нему оформлены как `П-1`…`П-5` и заведены задачей `B-141`.
+
 ## Датированные снимки
 
 - [`2026-08-26-rrp-full-cycle-corpus-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-08-26-rrp-full-cycle-corpus-facts.md)
@@ -73,6 +86,14 @@ temperature: 0.1
   механизмов, переносимых в методологию. Доказательная база модуля
   `methodology-unification/`.
 
+- [`2026-09-08-artifact-structure-variance-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-08-artifact-structure-variance-facts.md)
+  — замер структуры результирующих артефактов корпуса `runs/` на коммите
+  `8cbf82a`: 67 прогонов, 17 результирующих документов и **17 различных
+  скелетов** — ни одного совпадения, в том числе внутри одной задачи. Слот
+  «сценарии» встретился 14 раз под 14 подписями, «UI-логика» и «критерии
+  приёмки» — по одному разу на 17 документов. Доказательная база модуля
+  `artifact-micro-structure/` и основание обязательного синтеза Golden Set.
+
 ## Эксперименты
 
 - [`exp/ba-requirements-normalization-539/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/exp/ba-requirements-normalization-539)
@@ -85,6 +106,12 @@ temperature: 0.1
   — воспроизводимый сканер трёх репозиториев: реестр артефактов, классы,
   статусы и граф ссылок (issue
   [#557](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/557)).
+
+- [`exp/ba-micro-structure-561/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/exp/ba-micro-structure-561)
+  — воспроизводимый замер структуры результирующих документов и два
+  синтетических эталона Golden Set для классов `contact-center` и
+  `self-service-lk` (issue
+  [#561](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/561)).
 
 ## Политика ссылок
 
