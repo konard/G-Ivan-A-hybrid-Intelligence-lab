@@ -91,6 +91,7 @@ is_active_file() {
     docs/adr/2026-08-adr-010-agent-autonomy-principles.md | \
     docs/adr/2026-08-adr-011-research-models.md | \
     docs/adr/2026-09-adr-012-agents-md-root-contract.md | \
+    docs/adr/2026-09-adr-013-run-modes-deprecation.md | \
     docs/adr/README.md | \
     standards/README.md | \
     standards/frontmatter-standard.md | \
@@ -119,6 +120,7 @@ is_active_file() {
     standards/webportal-solution-concept-standard.md | \
     standards/evals-contract-standard.md | \
     standards/artifact-deprecation-standard.md | \
+    standards/product-taxonomy-reference.md | \
     research/mango/2026-05-26-taxonomy-concept.md | \
     research/mango/2026-05-26-requirements-lifecycle-uncertainty.md | \
     research/mango/2026-05-26-rag-mapping-roadmap.md | \
@@ -193,6 +195,17 @@ is_active_file() {
     research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-golden-set-security-access.md | \
     research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-golden-set-multi-product.md | \
     research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-bcreq-document-skeleton.md | \
+    research/ba-requirements/2026-09-08-meta-model-inputs-facts.md | \
+    research/ba-requirements/ba-meta-model/00-introduction.md | \
+    research/ba-requirements/ba-meta-model/10-theory.md | \
+    research/ba-requirements/ba-meta-model/20-taxonomy.md | \
+    research/ba-requirements/ba-meta-model/30-decision-framework.md | \
+    research/ba-requirements/ba-meta-model/40-practice-and-cases.md | \
+    research/ba-requirements/ba-meta-model/50-open-research.md | \
+    research/ba-requirements/exp/ba-meta-model-563/README.md | \
+    research/ba-requirements/exp/ba-meta-model-563/measure-meta-model-inputs.py | \
+    research/ba-requirements/exp/ba-meta-model-563/measure-meta-model-inputs.log | \
+    research/ba-requirements/exp/ba-meta-model-563/meta-model-inputs.json | \
     research/ba-requirements/solution-modeling/00-introduction.md | \
     research/ba-requirements/solution-modeling/10-theory.md | \
     research/ba-requirements/solution-modeling/20-taxonomy.md | \
@@ -1792,11 +1805,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 2.10"
+require_text "pr-ops/artifact-map.md" "version: 2.11"
 require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
 require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-09-07"
+require_text "pr-ops/artifact-map.md" "updated: 2026-09-08"
 require_text "pr-ops/artifact-map.md" "temperature: 0.1"
 require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2205,7 +2218,7 @@ require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
 reject_text "pr-ops/session-digests.md" "Конард"
 
 require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.57"
+require_text "pr-ops/backlog.md" "version: 1.58"
 require_text "pr-ops/backlog.md" "type: backlog"
 require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
 require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"

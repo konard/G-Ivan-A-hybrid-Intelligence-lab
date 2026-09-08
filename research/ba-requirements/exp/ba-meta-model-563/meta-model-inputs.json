@@ -1,0 +1,1400 @@
+{
+  "corpus": {
+    "path": "/tmp/ctx/mango",
+    "commit": "8cbf82aa73129ec5747af07f790aaf438b0fb6e9",
+    "runs": 67,
+    "prompts": 24
+  },
+  "prompts": {
+    "active": 24,
+    "unparsed_names": [],
+    "by_mode": {
+      "stepwise": 10,
+      "oneshot": 9,
+      "legacy": 5
+    },
+    "capabilities": 13,
+    "capabilities_with_multiple_modes": 9,
+    "duplication_factor": 1.85,
+    "mode_pairs": 13,
+    "mean_skeleton_jaccard": 0.077,
+    "identical_skeleton_pairs": 0,
+    "never_referenced_by_runs": [
+      "asr-ingestion-legacy.md",
+      "asr-ingestion-oneshot.md",
+      "fr-validation-oneshot.md",
+      "glossary-context-understanding-oneshot.md",
+      "letter-customer-documentation-legacy.md",
+      "meeting-team-documentation-stepwise.md",
+      "technical-details-solution-design-legacy.md",
+      "technical-details-solution-design-oneshot.md",
+      "technical-details-solution-design-stepwise.md",
+      "uc-modeling-oneshot.md",
+      "us-modeling-oneshot.md"
+    ]
+  },
+  "runs": {
+    "total": 67,
+    "by_mode": {
+      "stepwise": 14,
+      "oneshot": 3,
+      "legacy": 3
+    },
+    "without_prompt_reference": 50,
+    "distinct_prompts_referenced": 13
+  },
+  "operations": {
+    "declared": 13,
+    "covered_by_prompts": [
+      "documentation",
+      "ingestion",
+      "modeling",
+      "solution_design",
+      "understanding",
+      "validation"
+    ],
+    "declared_without_prompt": [
+      "governance",
+      "impact_analysis",
+      "quality",
+      "release_readiness",
+      "research",
+      "reverse_requirements",
+      "risk_analysis"
+    ],
+    "used_outside_dictionary": []
+  },
+  "processes": {
+    "declared": 9,
+    "declared_seen_in_runs": [
+      "fr-generation"
+    ],
+    "declared_never_run": [
+      "fr-validation",
+      "impact-analysis",
+      "po-pm-support",
+      "risk-analysis",
+      "statistics",
+      "tender-analysis",
+      "uc-us-modeling",
+      "uml-bpmn-visualization"
+    ],
+    "run_labels_outside_dictionary": 65,
+    "run_labels_outside_dictionary_sample": [
+      "Architecture Spike: HH.ru Chats ↔ Mango CC data mapping",
+      "Combined L4 gap report: BA verdicts + SA models + footnoted hh.ru API sources",
+      "Re-evaluation: HH.ru Chat API Feasibility",
+      "bcreq-1025-email-routing",
+      "bcreq-1059-multichannel-slots-limits",
+      "bcreq-1064-browser-softphone-in-mis",
+      "bcreq-1069-restricted-api-key",
+      "error-analysis-and-feature-specification-bcreq-1074-report-view",
+      "feasibility-assessment-telephony-requirements-task-1099",
+      "feasibility-assessment-tender-appendices-5-7"
+    ]
+  },
+  "products": {
+    "domains": [
+      "voice-ucaas",
+      "contact-center",
+      "digital-channels",
+      "ai-automation",
+      "analytics",
+      "hardware",
+      "security"
+    ],
+    "runs_with_declared_domain": 5,
+    "runs_with_single_lexical_domain": 1,
+    "runs_with_multiple_lexical_domains": 66,
+    "runs_without_lexical_domain": 0
+  },
+  "detail": {
+    "capability_rows": [
+      {
+        "capability": "asr-ingestion",
+        "operation": "ingestion",
+        "modes": [
+          "legacy",
+          "oneshot"
+        ],
+        "variant_count": 2,
+        "pairs": [
+          {
+            "modes": [
+              "legacy",
+              "oneshot"
+            ],
+            "skeleton_jaccard": 0.0,
+            "same_order": false,
+            "size_ratio": 3.3
+          }
+        ]
+      },
+      {
+        "capability": "constraints-documentation",
+        "operation": "documentation",
+        "modes": [
+          "oneshot",
+          "stepwise"
+        ],
+        "variant_count": 2,
+        "pairs": [
+          {
+            "modes": [
+              "oneshot",
+              "stepwise"
+            ],
+            "skeleton_jaccard": 0.167,
+            "same_order": false,
+            "size_ratio": 1.65
+          }
+        ]
+      },
+      {
+        "capability": "fr-documentation",
+        "operation": "documentation",
+        "modes": [
+          "oneshot",
+          "stepwise"
+        ],
+        "variant_count": 2,
+        "pairs": [
+          {
+            "modes": [
+              "oneshot",
+              "stepwise"
+            ],
+            "skeleton_jaccard": 0.2,
+            "same_order": false,
+            "size_ratio": 2.08
+          }
+        ]
+      },
+      {
+        "capability": "fr-validation",
+        "operation": "validation",
+        "modes": [
+          "legacy",
+          "oneshot",
+          "stepwise"
+        ],
+        "variant_count": 3,
+        "pairs": [
+          {
+            "modes": [
+              "legacy",
+              "oneshot"
+            ],
+            "skeleton_jaccard": 0.0,
+            "same_order": false,
+            "size_ratio": 2.3
+          },
+          {
+            "modes": [
+              "legacy",
+              "stepwise"
+            ],
+            "skeleton_jaccard": 0.0,
+            "same_order": false,
+            "size_ratio": 1.32
+          },
+          {
+            "modes": [
+              "oneshot",
+              "stepwise"
+            ],
+            "skeleton_jaccard": 0.4,
+            "same_order": false,
+            "size_ratio": 1.74
+          }
+        ]
+      },
+      {
+        "capability": "glossary-context-understanding",
+        "operation": "understanding",
+        "modes": [
+          "oneshot",
+          "stepwise"
+        ],
+        "variant_count": 2,
+        "pairs": [
+          {
+            "modes": [
+              "oneshot",
+              "stepwise"
+            ],
+            "skeleton_jaccard": 0.0,
+            "same_order": false,
+            "size_ratio": 2.05
+          }
+        ]
+      },
+      {
+        "capability": "letter-customer-documentation",
+        "operation": "documentation",
+        "modes": [
+          "legacy"
+        ],
+        "variant_count": 1,
+        "pairs": []
+      },
+      {
+        "capability": "meeting-customer-documentation",
+        "operation": "documentation",
+        "modes": [
+          "stepwise"
+        ],
+        "variant_count": 1,
+        "pairs": []
+      },
+      {
+        "capability": "meeting-team-documentation",
+        "operation": "documentation",
+        "modes": [
+          "stepwise"
+        ],
+        "variant_count": 1,
+        "pairs": []
+      },
+      {
+        "capability": "questions-customer-understanding",
+        "operation": "understanding",
+        "modes": [
+          "legacy",
+          "stepwise"
+        ],
+        "variant_count": 2,
+        "pairs": [
+          {
+            "modes": [
+              "legacy",
+              "stepwise"
+            ],
+            "skeleton_jaccard": 0.0,
+            "same_order": false,
+            "size_ratio": 1.39
+          }
+        ]
+      },
+      {
+        "capability": "session-debug-documentation",
+        "operation": "documentation",
+        "modes": [
+          "oneshot"
+        ],
+        "variant_count": 1,
+        "pairs": []
+      },
+      {
+        "capability": "technical-details-solution_design",
+        "operation": "solution_design",
+        "modes": [
+          "legacy",
+          "oneshot",
+          "stepwise"
+        ],
+        "variant_count": 3,
+        "pairs": [
+          {
+            "modes": [
+              "legacy",
+              "oneshot"
+            ],
+            "skeleton_jaccard": 0.0,
+            "same_order": false,
+            "size_ratio": 1.61
+          },
+          {
+            "modes": [
+              "legacy",
+              "stepwise"
+            ],
+            "skeleton_jaccard": 0.0,
+            "same_order": false,
+            "size_ratio": 1.22
+          },
+          {
+            "modes": [
+              "oneshot",
+              "stepwise"
+            ],
+            "skeleton_jaccard": 0.231,
+            "same_order": false,
+            "size_ratio": 1.97
+          }
+        ]
+      },
+      {
+        "capability": "uc-modeling",
+        "operation": "modeling",
+        "modes": [
+          "oneshot",
+          "stepwise"
+        ],
+        "variant_count": 2,
+        "pairs": [
+          {
+            "modes": [
+              "oneshot",
+              "stepwise"
+            ],
+            "skeleton_jaccard": 0.0,
+            "same_order": false,
+            "size_ratio": 1.33
+          }
+        ]
+      },
+      {
+        "capability": "us-modeling",
+        "operation": "modeling",
+        "modes": [
+          "oneshot",
+          "stepwise"
+        ],
+        "variant_count": 2,
+        "pairs": [
+          {
+            "modes": [
+              "oneshot",
+              "stepwise"
+            ],
+            "skeleton_jaccard": 0.0,
+            "same_order": false,
+            "size_ratio": 1.51
+          }
+        ]
+      }
+    ],
+    "run_rows": [
+      {
+        "run": "RUN-0001",
+        "process": "prompt-experiment",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0002",
+        "process": "user-story-generation",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0003",
+        "process": "usecase-generation",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0004",
+        "process": "prompt-audit",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0005",
+        "process": "prompt-selftest",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0006",
+        "process": "session-debug-documentation",
+        "prompts": [
+          "session-debug-documentation-oneshot.md"
+        ],
+        "modes": [
+          "oneshot"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0007",
+        "process": "fr-generation",
+        "prompts": [
+          "constraints-documentation-oneshot.md",
+          "fr-documentation-stepwise.md"
+        ],
+        "modes": [
+          "oneshot",
+          "stepwise"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "contact-center",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0008",
+        "process": "kb-citation-check",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0009",
+        "process": "industry-standards-ab-check",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0010",
+        "process": "bcreq-1025-email-routing",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0011",
+        "process": "multichannel-agent-workload",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0012",
+        "process": "bcreq-1069-restricted-api-key",
+        "prompts": [
+          "constraints-documentation-stepwise.md",
+          "fr-documentation-stepwise.md",
+          "glossary-context-understanding-stepwise.md"
+        ],
+        "modes": [
+          "stepwise"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0013",
+        "process": "bcreq-1059-multichannel-slots-limits",
+        "prompts": [
+          "constraints-documentation-stepwise.md",
+          "fr-documentation-stepwise.md",
+          "glossary-context-understanding-stepwise.md",
+          "meeting-customer-documentation-stepwise.md",
+          "questions-customer-understanding-stepwise.md",
+          "uc-modeling-stepwise.md",
+          "us-modeling-stepwise.md"
+        ],
+        "modes": [
+          "stepwise"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0014",
+        "process": "task-1075-amocrm-deal-on-call",
+        "prompts": [
+          "glossary-context-understanding-stepwise.md"
+        ],
+        "modes": [
+          "stepwise"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0015",
+        "process": "fr-validation-57204-ivr-scheme-amocrm-rule",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0016",
+        "process": "fr-drafting-58093-amocrm-deal-card-new-tab",
+        "prompts": [
+          "constraints-documentation-stepwise.md",
+          "fr-documentation-stepwise.md"
+        ],
+        "modes": [
+          "stepwise"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0017",
+        "process": "task-1076-vks-artifacts-bpmsoft",
+        "prompts": [
+          "fr-documentation-stepwise.md",
+          "glossary-context-understanding-stepwise.md"
+        ],
+        "modes": [
+          "stepwise"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0018",
+        "process": "fr-validation-1079-messenger-id-search",
+        "prompts": [
+          "fr-validation-stepwise.md"
+        ],
+        "modes": [
+          "stepwise"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0019",
+        "process": "bcreq-1064-browser-softphone-in-mis",
+        "prompts": [
+          "questions-customer-understanding-stepwise.md"
+        ],
+        "modes": [
+          "stepwise"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0020",
+        "process": "task-1065-context-and-questions-a7a",
+        "prompts": [
+          "glossary-context-understanding-stepwise.md"
+        ],
+        "modes": [
+          "stepwise"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0021",
+        "process": "fr-drafting-975-ineffective-call-parameters",
+        "prompts": [
+          "fr-validation-stepwise.md",
+          "glossary-context-understanding-stepwise.md"
+        ],
+        "modes": [
+          "stepwise"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0022",
+        "process": "fr-validation-765-headhunter-channel",
+        "prompts": [
+          "fr-validation-stepwise.md"
+        ],
+        "modes": [
+          "stepwise"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0023",
+        "process": "task-59295-fr-validation-email-forward",
+        "prompts": [
+          "fr-validation-legacy.md"
+        ],
+        "modes": [
+          "legacy"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0024",
+        "process": "task-1020-okdesk-mango-integration-questions",
+        "prompts": [
+          "questions-customer-understanding-legacy.md",
+          "questions-customer-understanding-stepwise.md"
+        ],
+        "modes": [
+          "legacy",
+          "stepwise"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0025",
+        "process": "fr-validation-997-ivr-scheme-incoming-call-rules",
+        "prompts": [
+          "fr-validation-stepwise.md",
+          "glossary-context-understanding-stepwise.md"
+        ],
+        "modes": [
+          "stepwise"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0026",
+        "process": "task-1007-amocrm-outbound-campaign-funnel-stage-fr",
+        "prompts": [
+          "fr-documentation-oneshot.md",
+          "fr-documentation-stepwise.md"
+        ],
+        "modes": [
+          "oneshot",
+          "stepwise"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0027",
+        "process": "fr-analysis-978-email-signature-in-lk",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "hardware",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0028",
+        "process": "fr-validation-1040-speech-analytics-direction-filter",
+        "prompts": [
+          "fr-validation-legacy.md"
+        ],
+        "modes": [
+          "legacy"
+        ],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": [
+          "analytics"
+        ]
+      },
+      {
+        "run": "RUN-0029",
+        "process": "task-994-bitrix24-lead-title-elicitation",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0030",
+        "process": "task-599-1c-subscriber-selection-on-call",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0031",
+        "process": "task-791-unified-request-entity-deal-ticket",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0032",
+        "process": "task-792-post-call-processing-outbound",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0033",
+        "process": "task-804-speech-analytics-export-to-external-system",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": [
+          "analytics"
+        ]
+      },
+      {
+        "run": "RUN-0034",
+        "process": "task-804-speech-analytics-export-final",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": [
+          "analytics"
+        ]
+      },
+      {
+        "run": "RUN-0035",
+        "process": "task-806-elma-knowledge-base-recommendations",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0036",
+        "process": "task-817-personal-data-consent-text",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0037",
+        "process": "task-838-preset-call-block-status",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0038",
+        "process": "task-854-mtalker-conference-participants-section",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0039",
+        "process": "task-854-mtalker-conference-participants-fr",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0040",
+        "process": "task-872-proactive-chat-retrigger",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0041",
+        "process": "task-890-bitrix24-call-routing",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0042",
+        "process": "task-892-knowledge-base-page-restore",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0043",
+        "process": "task-908-open-url-on-call-answer",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0044",
+        "process": "task-908-open-url-on-call-answer-validation",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0045",
+        "process": "task-915-call-connection-sound-signal",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0046",
+        "process": "task-918-mandatory-call-topics",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0047",
+        "process": "task-920-meeting-transcript-analysis",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0048",
+        "process": "task-930-amocrm-comment-and-tag-fields",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0049",
+        "process": "task-935-speech-analytics-api-parameters",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": [
+          "analytics"
+        ]
+      },
+      {
+        "run": "RUN-0050",
+        "process": "task-942-email-format-painter",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0051",
+        "process": "task-960-call-records-multiselect-filter",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0052",
+        "process": "task-964-ai-robot-on-line",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0053",
+        "process": "task-977-bitrix24-call-attribution",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0054",
+        "process": "task-980-number-replacement-questions",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0055",
+        "process": "tz-feasibility-assessment-utair-chat-mango-office",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "hardware",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0056",
+        "process": "gap-analysis-hh-chats-mango-cc-integration-feasibility",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "hardware",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0057",
+        "process": "feasibility-assessment-tender-tz-stt-tts-nlu-dialogue-manager",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "hardware",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": [
+          "analytics"
+        ]
+      },
+      {
+        "run": "RUN-0058",
+        "process": "Re-evaluation: HH.ru Chat API Feasibility",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0059",
+        "process": "Architecture Spike: HH.ru Chats ↔ Mango CC data mapping",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0060",
+        "process": "Combined L4 gap report: BA verdicts + SA models + footnoted hh.ru API sources",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0061",
+        "process": "task-1090-human-review-of-twin-links",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0062",
+        "process": "feasibility-assessment-tender-appendices-5-7",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0063",
+        "process": "feature-specification-bcreq-1074-communication-expenses-report",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0064",
+        "process": "error-analysis-and-feature-specification-bcreq-1074-report-view",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0065",
+        "process": "feasibility-assessment-telephony-requirements-task-1099",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "hardware",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0066",
+        "process": "feasibility-assessment-telephony-requirements-task-1099",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "hardware",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      },
+      {
+        "run": "RUN-0067",
+        "process": "feature-specification-bcreq-1074-detailed-export (rework of RUN-0063 by audit)",
+        "prompts": [],
+        "modes": [],
+        "lexical_domains": [
+          "ai-automation",
+          "analytics",
+          "contact-center",
+          "digital-channels",
+          "security",
+          "voice-ucaas"
+        ],
+        "declared_domains": []
+      }
+    ]
+  }
+}
