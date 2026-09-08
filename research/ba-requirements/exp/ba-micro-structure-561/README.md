@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-09-08
 temperature: 0.1
 type: experiment
@@ -46,6 +46,14 @@ issue [#561](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/561).
 | [`measure-artifact-structure.log`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-micro-structure-561/measure-artifact-structure.log) | вывод прогона, фиксирующий опубликованные цифры и коммит корпуса |
 | [`2026-09-08-golden-set-contact-center-ivr-settings.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-golden-set-contact-center-ivr-settings.md) | синтетический эталон, продуктовый класс `contact-center` (функция с настройками) |
 | [`2026-09-08-golden-set-self-service-lk.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-golden-set-self-service-lk.md) | синтетический эталон, продуктовый класс `self-service-lk` (функция без настроек) |
+| [`probe-kb-slot-fit.py`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-micro-structure-561/probe-kb-slot-fit.py) | проба словаря слотов на корпусе `kb/processed`: отображение разделов, доли по профилям, порядковые утверждения |
+| [`kb-slot-fit.json`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-micro-structure-561/kb-slot-fit.json) | результат пробы: сводка, запись на каждый документ, полный список разделов, ушедших в слот по умолчанию |
+| [`probe-kb-slot-fit.log`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-micro-structure-561/probe-kb-slot-fit.log) | вывод прогона пробы, фиксирующий опубликованные цифры и коммит корпуса |
+| [`2026-09-08-golden-set-vpbx-api.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-golden-set-vpbx-api.md) | синтетический эталон, профиль `P-API`, продуктовый класс `voice-ucaas` |
+| [`2026-09-08-golden-set-hardware-gateway.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-golden-set-hardware-gateway.md) | синтетический эталон, профиль `P-DEVICE`, продуктовый класс `hardware` |
+| [`2026-09-08-golden-set-security-access.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-golden-set-security-access.md) | синтетический эталон, продуктовый класс `security` (профиль `P-SETTINGS`) |
+| [`2026-09-08-golden-set-multi-product.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-golden-set-multi-product.md) | синтетический эталон на два продукта с разными профилями в одной задаче (`MP-1`…`MP-6`) |
+| [`2026-09-08-bcreq-document-skeleton.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-micro-structure-561/2026-09-08-bcreq-document-skeleton.md) | единый скелет документа BCREQ: слоты × классы формата × проекции в одном файле, словарь причин пустоты |
 
 ## Воспроизведение
 
@@ -58,9 +66,24 @@ python3 measure-artifact-structure.py --mango /tmp/mango
 `corpus.commit` результата: `8cbf82aa73129ec5747af07f790aaf438b0fb6e9`.
 На других коммитах цифры будут другими — это ожидаемо, отчёт датирован.
 
-## Статус двух Golden Set
+## Воспроизведение пробы на корпусе знаний
 
-Эталоны в этом каталоге **синтетические**. Они не извлечены из корпуса и не
+```bash
+python3 probe-kb-slot-fit.py --mango /tmp/mango
+```
+
+Проба отвечает на пункт 3 комментария фаундера к PR
+[#562](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/562):
+проверяет словарь слотов на **независимом** корпусе `kb/processed`, из которого
+словарь не выводился. Интерпретация — в отчёте
+[`../../2026-09-08-kb-slot-fit-facts.md`](../../2026-09-08-kb-slot-fit-facts.md).
+
+## Статус Golden Set
+
+Шесть эталонов в этом каталоге **синтетические**. Они покрывают все четыре
+профиля (`P-SETTINGS`, `P-NO-SETTINGS`, `P-API`, `P-DEVICE`), классы `security`
+и `hardware`, для которых исторических данных нет вовсе, и случай двух
+продуктов с разными профилями в одной задаче. Эталоны не извлечены из корпуса и не
 являются поставленными заказчику документами: замер (§6 родительского отчёта)
 показал, что чистых продуктовых выборок в `runs/` нет, поэтому индукция по
 истории невозможна. Эталоны собраны как модель ожидаемой структуры по правилам

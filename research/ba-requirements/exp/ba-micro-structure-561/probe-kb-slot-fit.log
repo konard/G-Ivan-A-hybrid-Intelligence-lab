@@ -1,0 +1,72 @@
+— mango-cc-manual (P-SETTINGS): 139 разделов
+    S-GLOSSARY         1  0.7%
+    S-SCOPE           61  43.9%
+    S-FR              23  16.5%
+    S-SETTINGS        25  18.0%
+    S-UI              19  13.7%
+    S-SCENARIO         3  2.2%
+    S-NFR              2  1.4%
+    S-LIMITS           4  2.9%
+    S-INTEGRATION      1  0.7%
+    [OK  ] S-UI: предсказано 10%–100%, замерено 13.7%
+    [OK  ] S-SETTINGS: предсказано 10%–100%, замерено 18.0%
+— mango-lk-manual (P-SETTINGS): 351 разделов
+    S-GLOSSARY         3  0.9%
+    S-SCOPE          144  41.0%
+    S-FR              56  16.0%
+    S-SETTINGS        37  10.5%
+    S-UI              43  12.3%
+    S-SCENARIO        12  3.4%
+    S-NFR              4  1.1%
+    S-LIMITS          17  4.8%
+    S-INTEGRATION     35  10.0%
+    [OK  ] S-UI: предсказано 10%–100%, замерено 12.3%
+    [OK  ] S-SETTINGS: предсказано 10%–100%, замерено 10.5%
+— vpbx-api (P-API): 255 разделов
+    S-GLOSSARY         3  1.2%
+    S-SCOPE          150  58.8%
+    S-FR              39  15.3%
+    S-SETTINGS         5  2.0%
+    S-UI               1  0.4%
+    S-SCENARIO         3  1.2%
+    S-LIMITS           5  2.0%
+    S-INTEGRATION     49  19.2%
+    [OK  ] S-UI: предсказано 0%–10%, замерено 0.4%
+    [FAIL] S-INTEGRATION: предсказано 30%–100%, замерено 19.2%
+— sip-trunk (P-DEVICE): 39 разделов
+    S-GLOSSARY         2  5.1%
+    S-SCOPE           13  33.3%
+    S-FR               5  12.8%
+    S-SETTINGS         4  10.3%
+    S-SCENARIO         1  2.6%
+    S-LIMITS           1  2.6%
+    S-INTEGRATION     13  33.3%
+    [OK  ] S-UI: предсказано 0%–15%, замерено 0.0%
+    [OK  ] S-INTEGRATION: предсказано 20%–100%, замерено 33.3%
+— speech-analytics/user-guide (P-SETTINGS): 76 разделов
+    S-GLOSSARY         3  3.9%
+    S-SCOPE           35  46.1%
+    S-FR              11  14.5%
+    S-SETTINGS        11  14.5%
+    S-UI               3  3.9%
+    S-SCENARIO         3  3.9%
+    S-LIMITS           1  1.3%
+    S-INTEGRATION      9  11.8%
+    [FAIL] S-UI: предсказано 10%–100%, замерено 3.9%
+    [OK  ] S-SETTINGS: предсказано 10%–100%, замерено 14.5%
+
+Порядковые утверждения о профилях:
+    [OK  ] доля S-UI у P-API < чем у P-SETTINGS  (3 пар документов)
+    [OK  ] доля S-UI у P-DEVICE < чем у P-SETTINGS  (3 пар документов)
+    [OK  ] доля S-INTEGRATION у P-API > чем у P-SETTINGS  (3 пар документов)
+    [OK  ] доля S-INTEGRATION у P-DEVICE > чем у P-SETTINGS  (3 пар документов)
+    [OK  ] доля S-SETTINGS у P-API < чем у P-SETTINGS  (3 пар документов)
+
+Документов:                        5
+Разделов всего:                    860
+Распознано правилом слота:         457
+Отошло слоту по умолчанию S-SCOPE: 403
+Потребовалось слотов вне словаря:  0
+Абсолютных предсказаний не подтвердилось: 2
+Порядковых утверждений не подтвердилось:  0
+Результат: /tmp/gh-issue-solver-1788877431045/research/ba-requirements/exp/ba-micro-structure-561/kb-slot-fit.json
