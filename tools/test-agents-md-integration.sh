@@ -120,10 +120,13 @@ if [[ -d "$ROOT_DIR/ops" ]]; then
     ':(exclude)CHANGELOG.md' \
     ':(exclude)pr-ops/README.md' \
     ':(exclude)docs/superpowers/plans/2026-09-09-agents-md-physical-integration.md' \
+    ':(exclude)docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md' \
     ':(exclude)docs/rfc/2026-09-03-rfc-agents-md-root-contract.md' \
     ':(exclude).hub-profile.json' \
     ':(exclude)tools/test-agents-md-integration.sh' \
     ':(exclude)tools/test-historical-immutable.sh' \
+    ':(exclude)tools/test-post-migration-validator.sh' \
+    ':(exclude)tools/validate-repository-structure.sh' \
     ':(exclude)ops/backlog.md' \
     ':(exclude)ops/artifact-map.md' \
     >"$TMP_DIR/stale-pr-ops.log"; then
