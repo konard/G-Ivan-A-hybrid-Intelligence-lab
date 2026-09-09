@@ -1,0 +1,722 @@
+{
+  "corpus": {
+    "repo": "mango_ba_prompts",
+    "commit": "8cbf82aa73129ec5747af07f790aaf438b0fb6e9",
+    "prompts": 24,
+    "runs": 67
+  },
+  "constructs": {
+    "declared": 12,
+    "absent_in_prompts": [
+      "Contract объявленный контракт",
+      "G-human человеческий гейт",
+      "G-mach машинный гейт",
+      "G-self самопроверка",
+      "MM-1 объявленный входной артефакт",
+      "MM-3 след прогона",
+      "MM-4 объявленный продуктовый класс",
+      "OPS-2 объявленный выходной артефакт",
+      "SK-4 условие отказа",
+      "T-1 закрытый словарь"
+    ],
+    "absent_everywhere": [
+      "Contract объявленный контракт",
+      "MM-4 объявленный продуктовый класс",
+      "OPS-2 объявленный выходной артефакт",
+      "T-1 закрытый словарь"
+    ],
+    "per_construct": {
+      "MM-1 объявленный входной артефакт": {
+        "purpose": "шаг не начинается без объявленного входа",
+        "prompts": 0,
+        "runs": 1
+      },
+      "MM-4 объявленный продуктовый класс": {
+        "purpose": "продуктовый класс объявлен до начала шага",
+        "prompts": 0,
+        "runs": 0
+      },
+      "G-self самопроверка": {
+        "purpose": "чек-лист самопроверки агента до выдачи результата",
+        "prompts": 0,
+        "runs": 7
+      },
+      "G-mach машинный гейт": {
+        "purpose": "проверка валидатором по схеме",
+        "prompts": 0,
+        "runs": 9
+      },
+      "G-human человеческий гейт": {
+        "purpose": "точка приёмки человеком",
+        "prompts": 0,
+        "runs": 7
+      },
+      "SK-4 условие отказа": {
+        "purpose": "условия, при которых навык обязан остановиться",
+        "prompts": 0,
+        "runs": 1
+      },
+      "Contract объявленный контракт": {
+        "purpose": "контракт как проверяемое обязательство артефакта",
+        "prompts": 0,
+        "runs": 0
+      },
+      "MM-3 след прогона": {
+        "purpose": "происхождение выхода: вход, актор, гейты",
+        "prompts": 0,
+        "runs": 8
+      },
+      "EP-G1 эталон (Golden Set)": {
+        "purpose": "эталон структуры как элемент гейта",
+        "prompts": 1,
+        "runs": 15
+      },
+      "T-1 закрытый словарь": {
+        "purpose": "значение вне словаря — отказ на входе",
+        "prompts": 0,
+        "runs": 0
+      },
+      "SK-5 версионирование во frontmatter": {
+        "purpose": "версия объявлена в метаданных, а не в имени файла",
+        "prompts": 24,
+        "runs": 67
+      },
+      "OPS-2 объявленный выходной артефакт": {
+        "purpose": "навык объявляет свои выходные артефакты",
+        "prompts": 0,
+        "runs": 0
+      }
+    }
+  },
+  "coverage": {
+    "prompts_without_any_construct": 0,
+    "max_constructs_in_one_prompt": 2,
+    "mean_constructs_per_prompt": 1.04,
+    "runs_without_any_construct": 0
+  },
+  "detail": {
+    "prompt_rows": [
+      {
+        "file": "asr-ingestion-legacy.md",
+        "mode": "legacy",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "asr-ingestion-oneshot.md",
+        "mode": "oneshot",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "constraints-documentation-oneshot.md",
+        "mode": "oneshot",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "constraints-documentation-stepwise.md",
+        "mode": "stepwise",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "fr-documentation-oneshot.md",
+        "mode": "oneshot",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "fr-documentation-stepwise.md",
+        "mode": "stepwise",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "fr-validation-legacy.md",
+        "mode": "legacy",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "fr-validation-oneshot.md",
+        "mode": "oneshot",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "fr-validation-stepwise.md",
+        "mode": "stepwise",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "glossary-context-understanding-oneshot.md",
+        "mode": "oneshot",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "glossary-context-understanding-stepwise.md",
+        "mode": "stepwise",
+        "constructs": [
+          "EP-G1 эталон (Golden Set)",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "letter-customer-documentation-legacy.md",
+        "mode": "legacy",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "meeting-customer-documentation-stepwise.md",
+        "mode": "stepwise",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "meeting-team-documentation-stepwise.md",
+        "mode": "stepwise",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "questions-customer-understanding-legacy.md",
+        "mode": "legacy",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "questions-customer-understanding-stepwise.md",
+        "mode": "stepwise",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "session-debug-documentation-oneshot.md",
+        "mode": "oneshot",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "technical-details-solution-design-legacy.md",
+        "mode": "legacy",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "technical-details-solution-design-oneshot.md",
+        "mode": "oneshot",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "technical-details-solution-design-stepwise.md",
+        "mode": "stepwise",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "uc-modeling-oneshot.md",
+        "mode": "oneshot",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "uc-modeling-stepwise.md",
+        "mode": "stepwise",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "us-modeling-oneshot.md",
+        "mode": "oneshot",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "file": "us-modeling-stepwise.md",
+        "mode": "stepwise",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      }
+    ],
+    "run_rows": [
+      {
+        "run": "RUN-0001",
+        "constructs": [
+          "MM-1 объявленный входной артефакт",
+          "EP-G1 эталон (Golden Set)",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0002",
+        "constructs": [
+          "MM-3 след прогона",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0003",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0004",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0005",
+        "constructs": [
+          "G-mach машинный гейт",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0006",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0007",
+        "constructs": [
+          "EP-G1 эталон (Golden Set)",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0008",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0009",
+        "constructs": [
+          "MM-3 след прогона",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0010",
+        "constructs": [
+          "G-human человеческий гейт",
+          "EP-G1 эталон (Golden Set)",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0011",
+        "constructs": [
+          "G-human человеческий гейт",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0012",
+        "constructs": [
+          "G-human человеческий гейт",
+          "EP-G1 эталон (Golden Set)",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0013",
+        "constructs": [
+          "G-self самопроверка",
+          "EP-G1 эталон (Golden Set)",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0014",
+        "constructs": [
+          "EP-G1 эталон (Golden Set)",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0015",
+        "constructs": [
+          "G-mach машинный гейт",
+          "G-human человеческий гейт",
+          "MM-3 след прогона",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0016",
+        "constructs": [
+          "G-self самопроверка",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0017",
+        "constructs": [
+          "G-self самопроверка",
+          "G-human человеческий гейт",
+          "EP-G1 эталон (Golden Set)",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0018",
+        "constructs": [
+          "G-self самопроверка",
+          "EP-G1 эталон (Golden Set)",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0019",
+        "constructs": [
+          "G-self самопроверка",
+          "G-mach машинный гейт",
+          "EP-G1 эталон (Golden Set)",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0020",
+        "constructs": [
+          "G-mach машинный гейт",
+          "EP-G1 эталон (Golden Set)",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0021",
+        "constructs": [
+          "G-mach машинный гейт",
+          "EP-G1 эталон (Golden Set)",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0022",
+        "constructs": [
+          "G-human человеческий гейт",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0023",
+        "constructs": [
+          "G-mach машинный гейт",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0024",
+        "constructs": [
+          "EP-G1 эталон (Golden Set)",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0025",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0026",
+        "constructs": [
+          "EP-G1 эталон (Golden Set)",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0027",
+        "constructs": [
+          "G-self самопроверка",
+          "MM-3 след прогона",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0028",
+        "constructs": [
+          "MM-3 след прогона",
+          "EP-G1 эталон (Golden Set)",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0029",
+        "constructs": [
+          "G-self самопроверка",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0030",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0031",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0032",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0033",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0034",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0035",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0036",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0037",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0038",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0039",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0040",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0041",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0042",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0043",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0044",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0045",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0046",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0047",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0048",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0049",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0050",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0051",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0052",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0053",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0054",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0055",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0056",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0057",
+        "constructs": [
+          "MM-3 след прогона",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0058",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0059",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0060",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0061",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0062",
+        "constructs": [
+          "G-mach машинный гейт",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0063",
+        "constructs": [
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0064",
+        "constructs": [
+          "G-human человеческий гейт",
+          "SK-4 условие отказа",
+          "MM-3 след прогона",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0065",
+        "constructs": [
+          "G-mach машинный гейт",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0066",
+        "constructs": [
+          "G-mach машинный гейт",
+          "SK-5 версионирование во frontmatter"
+        ]
+      },
+      {
+        "run": "RUN-0067",
+        "constructs": [
+          "MM-3 след прогона",
+          "EP-G1 эталон (Golden Set)",
+          "SK-5 версионирование во frontmatter"
+        ]
+      }
+    ]
+  }
+}

@@ -67,6 +67,20 @@ temperature: 0.1
   Модуль `methodology-unification/` намеренно **не переписывается**: поправки
   к нему оформлены как `П-1`…`П-5` и заведены задачей `B-141`.
 
+- [`ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/00-introduction.md)
+  — синтез накопленной базы в каноническую мета-модель БА (issue
+  [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)):
+  девять канонических сущностей и закон производства `MM-1`…`MM-4`, четыре
+  канонические таксономии (артефакты `A-*`, операции, процессы, продуктовые
+  классы) плюс служебная таксономия гейтов и контрактов, депрекация режимов
+  запуска `stepwise`/`oneshot`/`legacy` (`DP-1`…`DP-4`, ADR-013), правила
+  использования исторического наследия `LG-1`…`LG-6` (ADR-014: наследие —
+  свидетельство о прошлом, а не базис новой нормы), контракт
+  скомпилированного `SKILL.md` (`SK-1`…`SK-6`), маршрутный лист (`EP-R1`…`EP-R4`),
+  Golden Set (`EP-G1`…`EP-G5`), Mermaid-модель производства BCREQ и план
+  вертикального MVP-среза с метриками `M-1`…`M-5`. Модули `M0`–`M4` и осевые
+  модули **не переписываются**: расхождения сведены отображениями.
+
 ## Датированные снимки
 
 - [`2026-08-26-rrp-full-cycle-corpus-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-08-26-rrp-full-cycle-corpus-facts.md)
@@ -94,6 +108,23 @@ temperature: 0.1
   приёмки» — по одному разу на 17 документов. Доказательная база модуля
   `artifact-micro-structure/` и основание обязательного синтеза Golden Set.
 
+- [`2026-09-08-meta-model-inputs-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-08-meta-model-inputs-facts.md)
+  — замер входных данных мета-модели на коммите `8cbf82a`: режим запуска входит
+  в идентичность 24 промптов (13 способностей, дублирование 1.85), но варианты
+  одного и того же не разделяют скелет (13 пар, средний Жаккар **0.077**, ни
+  одной идентичной пары), а маршрутизации по режиму в метаданных прогонов не
+  наблюдается (50 из 67 прогонов без ссылки на промпт). Покрыто 6 операций из
+  13, из девяти процессов наблюдается один. Доказательная база модуля
+  `ba-meta-model/` и решения ADR-013.
+
+- [`2026-09-09-legacy-normative-influence-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-09-legacy-normative-influence-facts.md)
+  — замер влияния исторического наследия на новую норму на том же коммите
+  `8cbf82a`: из двенадцати нормативных конструкций мета-модели **десять не
+  встречаются ни в одном из 24 активных промптов**, четыре — ни в промптах, ни
+  в 67 прогонах, среднее — 1.04 конструкции на промпт. Плюс сплошной аудит
+  происхождения одиннадцати нормативных блоков модуля `ba-meta-model/`.
+  Доказательная база решения ADR-014 «наследие — свидетельство, а не базис».
+
 ## Эксперименты
 
 - [`exp/ba-requirements-normalization-539/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/exp/ba-requirements-normalization-539)
@@ -112,6 +143,12 @@ temperature: 0.1
   синтетических эталона Golden Set для классов `contact-center` и
   `self-service-lk` (issue
   [#561](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/561)).
+
+- [`exp/ba-meta-model-563/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/exp/ba-meta-model-563)
+  — воспроизводимый замер входных данных мета-модели: идентичность промптов,
+  расхождение скелетов вариантов режима, наблюдаемость маршрутизации, покрытие
+  операций и процессов, продуктовая разметка (issue
+  [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)).
 
 ## Политика ссылок
 
