@@ -88,6 +88,7 @@ unexpected_matches="$({
   rg -n -i 'mental[ -]model|mental_model' \
     --glob '*.md' \
     --glob '!tools/**' \
+    --glob '!CHANGELOG.md' \
     --glob '!ops/backlog.md' \
     --glob '!standards/glossary.md' \
     --glob '!research/ai-education/retrieval/10-theory.md' \

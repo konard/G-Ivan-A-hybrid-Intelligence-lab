@@ -814,7 +814,7 @@ required_directories=(
   "education"
   "ai-governance"
   "ai-rules"
-  "pr-ops"
+  "ops"
   "projects-sink"
   "docs/rfc"
   "docs/guides"
@@ -1115,6 +1115,12 @@ while IFS= read -r file; do
   # Historical links in RFC/ADR snapshots still target this path. PR #491
   # keeps it as a disabled compatibility redirect, not an active template.
   if [[ "$file" == ".github/ISSUE_TEMPLATE/task-creative.md" ]]; then
+    continue
+  fi
+
+  # B-119 keeps this deprecated pointer for one synchronization cycle so
+  # incoming links survive the pr-ops/ -> ops/ migration.
+  if [[ "$file" == "pr-ops/README.md" ]]; then
     continue
   fi
 

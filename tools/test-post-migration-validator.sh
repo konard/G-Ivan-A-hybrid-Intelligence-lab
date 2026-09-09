@@ -59,6 +59,10 @@ if grep -nF 'governance/rfc/' tools/validate-file-naming.sh; then
   fail "file-naming validator must not keep stale governance/rfc/ comments"
 fi
 
+if ! grep -Fq '"pr-ops/README.md"' tools/validate-repository-structure.sh; then
+  fail "structure validator must preserve the declared pr-ops compatibility pointer"
+fi
+
 for required_path in \
   "projects-sink" \
   "ai-governance" \
