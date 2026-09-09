@@ -5,7 +5,10 @@ updated: {{date}}
 temperature: 0.1
 ---
 
-# Contributing - {{project_name}}
+# Contributing — {{project_name}}
+
+ИИ-агент начинает с `/AGENTS.md`; этот файл описывает человеческий workflow
+вклада и не является конкурирующей точкой входа.
 
 Вклад в HTOM-команду `{{project_name}}` сохраняет малый размер активных
 контрактов, traceability и практическую полезность для hybrid human + AI work.
