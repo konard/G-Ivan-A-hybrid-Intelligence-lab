@@ -5,6 +5,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
 ./tools/validate-evidence-structure.sh
+./tools/validate-agents-bootstrap.sh
 
 failures=0
 

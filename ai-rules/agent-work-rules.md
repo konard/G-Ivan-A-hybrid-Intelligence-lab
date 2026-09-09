@@ -37,8 +37,9 @@ SHA или конкретный файл-результат предыдущей
 | Постановка задач | RFC #470 | [`docs/rfc/2026-08-06-rfc-task-statement-architecture.md`](../docs/rfc/2026-08-06-rfc-task-statement-architecture.md) | Архитектура постановки: 5-блочный шаблон, размещение правил, бюджет точки входа. |
 | Процесс | GOVERNANCE.md | [`GOVERNANCE.md`](../GOVERNANCE.md) | Операционный контракт ролей и порядок принятия изменений. |
 | Процесс | CONTRIBUTING.md | [`CONTRIBUTING.md`](../CONTRIBUTING.md) | Правила участия, локальные валидаторы, ожидания к review. |
-| Структура репозитория | Repo Model | [`pr-ops/repo-model.md`](../pr-ops/repo-model.md) | Модель каталогов и Anti-Inflation правило. |
-| Структура репозитория | Artifact Map | [`pr-ops/artifact-map.md`](../pr-ops/artifact-map.md) | Где живёт артефакт и уровни L1–L4 (Framework vs Methodology). |
+| Маршрутизация | Agent Work Routing | [`agent-work-routing.md`](agent-work-routing.md) | Полный роутер по классам задач и граф приоритетов. |
+| Структура репозитория | Repo Model | [`ops/repo-model.md`](../ops/repo-model.md) | Модель каталогов и Anti-Inflation правило. |
+| Структура репозитория | Artifact Map | [`ops/artifact-map.md`](../ops/artifact-map.md) | Где живёт артефакт и уровни L1–L4 (Framework vs Methodology). |
 | Артефакты | ADR-002 | [`docs/adr/2026-06-adr-002-artifact-document-methodology.md`](../docs/adr/2026-06-adr-002-artifact-document-methodology.md) | Методология артефактных документов. |
 | Артефакты | ADR-008 | [`docs/adr/2026-07-adr-008-standard-meta-structure.md`](../docs/adr/2026-07-adr-008-standard-meta-structure.md) | Стандартная Мета-структура документа. |
 | Артефакты | Standards | [`standards/README.md`](../standards/README.md) | Точка входа в стандарты, включая file naming и frontmatter. |
@@ -58,7 +59,7 @@ AI-агент достраивает отсутствующий контекст
 2. Operating Mode;
 3. [`GOVERNANCE.md`](../GOVERNANCE.md), [`CONTRIBUTING.md`](../CONTRIBUTING.md),
    [Standards](../standards/README.md),
-   [Artifact Map](../pr-ops/artifact-map.md) и
+   [Artifact Map](../ops/artifact-map.md) и
    [Knowledge Lifecycle](../docs/rfc/knowledge-lifecycle-proposal.md);
 4. [artifact resolver](../docs/rfc/resolve-artifact-location-proposal.md).
 
@@ -72,16 +73,17 @@ Framework (L1-L2) задаёт границы, видение и продукт�
 указывает переход к Methodology; Methodology не переопределяет L1-L2.
 
 Канонический источник соответствия уровней и артефактов — один:
-[Уровни документации: Framework vs Methodology](../pr-ops/artifact-map.md#уровни-документации-framework-vs-methodology).
+[Уровни документации: Framework vs Methodology](../ops/artifact-map.md#уровни-документации-framework-vs-methodology).
 Таблица здесь не дублируется.
 
 ## Правила
 
-1. Работа начинается с issue или явного maintainer request.
+1. Работа начинается с чтения корневого [`/AGENTS.md`](../AGENTS.md), затем issue
+   или явного maintainer request и выбранного им маршрута.
 2. До изменения файлов агент читает issue, последние comments, relevant files и
    текущий PR context по [предполётному протоколу](agent-onboarding-protocol.md).
 3. Изменения следуют [concept](../docs/concept.md),
-   [repository model](../pr-ops/repo-model.md) и
+   [repository model](../ops/repo-model.md) и
    [standards](../standards/README.md).
 4. Агент работает внутри прав решений и ограничений из
    [AI Governance](../ai-governance/ai-governance.md).

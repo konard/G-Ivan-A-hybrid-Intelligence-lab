@@ -16,7 +16,7 @@
 - `.hub-profile.json` is the SSOT for `archetype` and `environment`; validator/profile disagreement is a failure.
 - Remove named `plans/` and `tasks/` prohibitions as a class; do not add an allow rule that compensates for a deny rule.
 - Preserve `CONTRIBUTING.md` and `GOVERNANCE.md` for human workflow/governance, but neither may compete with `/AGENTS.md` as the AI bootstrap.
-- Rename `pr-ops/` to `ops/` atomically and update active, historical, template, generated-manifest, and validator references so no repository-local reference remains stale.
+- Rename `pr-ops/` to `ops/` atomically, retain only a deprecated `pr-ops/README.md` pointer for one synchronization cycle, leave append-only `CHANGELOG.md` history unchanged, and update all other references through the accepted path-migration mechanism.
 - Work only on `issue-567-f41623e824fb`, commit atomic green steps, and push only that branch.
 
 ---
@@ -33,7 +33,7 @@
 
 - [ ] **Step 1: Write failing tests**
 
-Create isolated cases that assert: root `AGENTS.md` and `.hub-profile.json` are required; `archetype`/`environment` values must agree; HTOM and Spoke templates include `AGENTS.md` plus profiles; `plans/` and `tasks/` are not rejected by name; `pr-ops/` no longer exists; active paths and validator contracts use `ops/`.
+Create isolated cases that assert: root `AGENTS.md` and `.hub-profile.json` are required; `archetype`/`environment` values must agree; HTOM and Spoke templates include `AGENTS.md` plus profiles; `plans/` and `tasks/` are not rejected by name; only the deprecated `pr-ops/README.md` compatibility pointer remains; active paths and validator contracts use `ops/`.
 
 - [ ] **Step 2: Verify RED**
 
@@ -153,12 +153,12 @@ Run: `git add templates tools .github/workflows/validate.yml && git commit -m "f
 ### Task 4: Atomic `pr-ops/` to `ops/` migration
 
 **Files:**
-- Move: `pr-ops/` to `ops/`
-- Modify: every tracked text file containing `pr-ops/`, including active contracts, historical artifacts, templates, tests, validators, and generated manifest entries
+- Move: `pr-ops/` to `ops/`, then create deprecated pointer `pr-ops/README.md`
+- Modify: tracked text files containing `pr-ops/`, including active contracts, eligible path-only historical artifacts, templates, tests, validators, and generated manifest entries; exclude append-only `CHANGELOG.md`
 
 **Interfaces:**
 - Consumes: all repository-local `pr-ops/` path references.
-- Produces: one canonical `/ops/` home and zero stale `pr-ops/` path references.
+- Produces: one canonical `/ops/` home, a single compatibility pointer at `/pr-ops/README.md`, and no other stale active `pr-ops/` path references.
 
 - [ ] **Step 1: Move the directory with history**
 
@@ -170,9 +170,9 @@ Mechanically rewrite `pr-ops/` to `ops/` in tracked textual files, preserving ex
 
 - [ ] **Step 3: Audit stale and broken references**
 
-Run: `git grep -n 'pr-ops/'`
+Run an allowlisted `git grep -n 'pr-ops/'` audit.
 
-Expected: no matches.
+Expected: matches only in append-only `CHANGELOG.md`, the migration plan, and the deprecated compatibility pointer.
 
 Run a Markdown-link path audit for relative links affected by the move and correct changed relative depths where necessary.
 

@@ -1,17 +1,15 @@
 ---
-status: draft
-version: 0.3
-updated: 2026-09-07
+status: canonical
+version: 1.0
+updated: 2026-09-09
 temperature: 0.1
 level: ecosystem
 ---
 
-# Черновик корневого `AGENTS.md`
+# Шаблон корневого `AGENTS.md`
 
-> Это **черновик** артефакта, предназначенного для размещения по пути `/AGENTS.md` в корне каждого
-> репозитория экосистемы (Хаб и все спицы). Размещение в корне и легализация выполняются задачей
-> B-110, принудительная инъекция в спицы — задачей B-111
-> (https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md).
+> Это каноническая база артефакта `/AGENTS.md` для репозиториев экосистемы.
+> При инъекции обязательные значения `archetype` и `environment` берутся из `.hub-profile.json`.
 > Обоснование структуры: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/hub/2026-09-03-ai-agent-onboarding-entrypoint-practices.md
 >
 > Ниже — содержание файла «как есть», без заголовка этого черновика.
@@ -77,9 +75,10 @@ level: ecosystem
 | Все правила агента | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/ai-rules |
 | Вызываемая человеком процедура (команда) | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/ai-rules/commands |
 | Навык под класс задачи (выбирается агентом) | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/ai-rules/skills |
-| Дома артефактов и структура репозитория | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/repo-model.md |
-| Реестр артефактов | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/artifact-map.md |
-| Бэклог и правила его ведения | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog-instruction.md |
+| Полный маршрутизатор | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-work-routing.md |
+| Дома артефактов и структура репозитория | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/repo-model.md |
+| Реестр артефактов | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/artifact-map.md |
+| Бэклог и правила его ведения | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog-instruction.md |
 | Жизненный цикл задачи и статусы | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/issue-workflow.md |
 | Шаблон задачи (Markdown) | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/.github/ISSUE_TEMPLATE/task.md |
 | Именование файлов | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/file-naming.md |
@@ -93,13 +92,10 @@ level: ecosystem
 | Governance | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/GOVERNANCE.md |
 | Правила вклада | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/CONTRIBUTING.md |
 
-Два примечания к таблице, снимаемые соответствующими задачами бэклога
-(https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md):
+Примечание к таблице:
 
 1. Маршруты `ai-rules/commands/` и `ai-rules/skills/` объявлены заранее; сами каталоги создаются
    задачей B-117 при появлении не менее двух артефактов класса.
-2. Маршруты `pr-ops/*` переписываются в `ops/*` тем же PR, что и миграция каталога (B-119).
-   До мержа того PR действующим адресом остаётся `pr-ops/`.
 </routing>
 
 <artifact_homes>
@@ -114,7 +110,7 @@ level: ecosystem
 | Правило для ИИ-агента (загружается всегда) | `ai-rules/<name>.md` |
 | Команда (вызывается человеком) | `ai-rules/commands/<slug>.md` |
 | Навык (выбирается агентом под класс задачи; может быть вызван и человеком через `/<slug>`) | `ai-rules/skills/<slug>/SKILL.md` |
-| Операционные артефакты процесса | `pr-ops/<name>.md` |
+| Операционные артефакты процесса | `ops/<name>.md` |
 
 Имена файлов: в корне — UPPERCASE, во вложенных каталогах — lowercase-with-hyphens,
 хронологические артефакты начинаются с даты `YYYY-MM-DD-`.

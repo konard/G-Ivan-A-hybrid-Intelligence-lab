@@ -36,11 +36,10 @@ traceability и практическую полезность для hybrid huma
 
 ## AI-Assisted Work
 
-AI agents начинают с [GOVERNANCE.md](GOVERNANCE.md), затем применяют
-[AI Governance](ai-governance/ai-governance.md) и
-[Agent Work Rules](ai-rules/agent-work-rules.md): читают issue и
-последние комментарии, сохраняют human decision rights, не публикуют sensitive
-data и работают внутри requested scope.
+ИИ-агент начинает с обязательного корневого
+[`/AGENTS.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/AGENTS.md).
+Он маршрутизирует к каноничным governance, rules и standards; этот документ
+остаётся человеческим workflow вклада и не является конкурирующей точкой входа.
 
 ### Правило авто-заполнения Мета
 

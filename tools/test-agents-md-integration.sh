@@ -17,15 +17,15 @@ assert_file() {
   [[ -f "$ROOT_DIR/$path" ]] || fail "required integration artifact is missing: $path"
 }
 
-assert_dir_absent() {
+assert_deprecated_pointer_only() {
   local path="$1"
-  [[ ! -e "$ROOT_DIR/$path" ]] || fail "legacy integration path is still present: $path"
-}
-
-copy_repository() {
-  local target="$1"
-  mkdir -p "$target"
-  tar -C "$ROOT_DIR" --exclude=.git -cf - . | tar -C "$target" -xf -
+  local entries
+  [[ -d "$ROOT_DIR/$path" ]] || {
+    fail "deprecated compatibility directory is missing: $path"
+    return
+  }
+  entries="$(find "$ROOT_DIR/$path" -mindepth 1 -maxdepth 1 -printf '%f\n' | sort)"
+  [[ "$entries" == "README.md" ]] || fail "$path must contain only README.md during the compatibility cycle"
 }
 
 expect_validator_failure() {
@@ -33,7 +33,7 @@ expect_validator_failure() {
   local repo="$2"
   local expected="$3"
   local output="$TMP_DIR/${name}.log"
-  if (cd "$repo" && ./tools/validate-repository-structure.sh) >"$output" 2>&1; then
+  if "$ROOT_DIR/tools/validate-agents-bootstrap.sh" "$repo" >"$output" 2>&1; then
     fail "$name: validator unexpectedly passed"
     return
   fi
@@ -50,21 +50,23 @@ assert_file "templates/htom/AGENTS.md"
 assert_file "templates/htom/.hub-profile.json"
 assert_file "templates/spoke/AGENTS.md"
 assert_file "templates/spoke/.hub-profile.json"
-assert_dir_absent "pr-ops"
+assert_deprecated_pointer_only "pr-ops"
 
 if [[ -f "$ROOT_DIR/AGENTS.md" && -f "$ROOT_DIR/.hub-profile.json" ]]; then
   missing_agents="$TMP_DIR/missing-agents"
-  copy_repository "$missing_agents"
-  rm "$missing_agents/AGENTS.md"
+  mkdir -p "$missing_agents"
+  cp "$ROOT_DIR/.hub-profile.json" "$missing_agents/.hub-profile.json"
   expect_validator_failure "missing-agents" "$missing_agents" "missing file: AGENTS.md"
 
   missing_profile="$TMP_DIR/missing-profile"
-  copy_repository "$missing_profile"
-  rm "$missing_profile/.hub-profile.json"
+  mkdir -p "$missing_profile"
+  cp "$ROOT_DIR/AGENTS.md" "$missing_profile/AGENTS.md"
   expect_validator_failure "missing-profile" "$missing_profile" "missing file: .hub-profile.json"
 
   environment_mismatch="$TMP_DIR/environment-mismatch"
-  copy_repository "$environment_mismatch"
+  mkdir -p "$environment_mismatch"
+  cp "$ROOT_DIR/AGENTS.md" "$environment_mismatch/AGENTS.md"
+  cp "$ROOT_DIR/.hub-profile.json" "$environment_mismatch/.hub-profile.json"
   python3 - "$environment_mismatch/.hub-profile.json" <<'PY'
 import json
 import sys
@@ -83,7 +85,9 @@ PY
     "AGENTS.md environment must match .hub-profile.json"
 
   declared_directories="$TMP_DIR/declared-directories"
-  copy_repository "$declared_directories"
+  mkdir -p "$declared_directories"
+  cp "$ROOT_DIR/AGENTS.md" "$declared_directories/AGENTS.md"
+  cp "$ROOT_DIR/.hub-profile.json" "$declared_directories/.hub-profile.json"
   mkdir "$declared_directories/plans" "$declared_directories/tasks"
   python3 - "$declared_directories/.hub-profile.json" <<'PY'
 import json
@@ -100,15 +104,20 @@ with open(path, "w", encoding="utf-8") as target:
     json.dump(profile, target, ensure_ascii=False, indent=2)
     target.write("\n")
 PY
-  if ! (cd "$declared_directories" && ./tools/validate-repository-structure.sh) \
+  if ! "$ROOT_DIR/tools/validate-agents-bootstrap.sh" "$declared_directories" \
     >"$TMP_DIR/declared-directories.log" 2>&1; then
     fail "generic directory declarations rejected plans/ or tasks/"
   fi
 fi
 
-if git -C "$ROOT_DIR" grep -n 'pr-ops/' -- . ':(exclude)docs/superpowers/plans/2026-09-09-agents-md-physical-integration.md' \
-  >"$TMP_DIR/stale-pr-ops.log"; then
-  fail "tracked files still contain stale pr-ops/ references"
+if [[ -d "$ROOT_DIR/ops" ]]; then
+  if git -C "$ROOT_DIR" grep -n 'pr-ops/' -- . \
+    ':(exclude)CHANGELOG.md' \
+    ':(exclude)pr-ops/README.md' \
+    ':(exclude)docs/superpowers/plans/2026-09-09-agents-md-physical-integration.md' \
+    >"$TMP_DIR/stale-pr-ops.log"; then
+    fail "active tracked files still contain stale pr-ops/ references"
+  fi
 fi
 
 if ((failures > 0)); then
