@@ -54,6 +54,7 @@ is_active_file() {
     README.md | \
     .gitignore | \
     docs/concept.md | \
+    docs/ba-meta-model-overview.md | \
     CONTRIBUTING.md | \
     GOVERNANCE.md | \
     ai-governance/README.md | \
@@ -551,6 +552,7 @@ is_active_file() {
     tools/test-agent-onboarding-authorization.sh | \
     tools/test-operating-mode-contract.sh | \
     tools/test-check-agent-work-rules-size.sh | \
+    tools/test-ba-meta-model-overview.sh | \
     tools/check-agent-work-rules-size.sh | \
     tools/test-nonempty-diff.sh | \
     tools/validate-nonempty-diff.sh | \

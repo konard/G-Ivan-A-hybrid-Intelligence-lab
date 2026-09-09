@@ -78,6 +78,7 @@ temperature: 0.1
 | --- | --- | --- | --- | --- | --- |
 | `/README.md` | навигация | — | Визитка репозитория, ключевые документы и структура. | ✅ Да | `docs/concept.md`, `standards/README.md`, `pr-ops/artifact-map.md`, `ai-rules/agent-onboarding-protocol.md` |
 | `/docs/concept.md` | концепция | — | Актуальная концепция, аудитории, границы и модель hub-and-spoke. | ✅ Да | `pr-ops/repo-model.md`, `standards/README.md` |
+| `/docs/ba-meta-model-overview.md` | презентация | — | Человекочитаемый обзор Мета-модели БА для stakeholder alignment: проблема prompt-only подхода, сущности, таксономии, производство BCREQ, GigaCode mapping, Evidence Map и первый MVP. | ✅ Да | `research/ba-requirements/ba-meta-model/`, `docs/adr/2026-09-adr-013-run-modes-deprecation.md`, `docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md`, `tools/test-ba-meta-model-overview.sh` |
 | `/GOVERNANCE.md` | навигация | — | Root-anchor ADR-007: маршрутизирует к policy, agent rules, PR operations и standards без дублирования нормативного текста. | ✅ Да | `ai-governance/ai-governance.md`, `ai-rules/agent-work-rules.md`, `pr-ops/README.md`, `standards/README.md` |
 | `/CONTRIBUTING.md` | руководство | — | Workflow вклада, единый task template, локальные проверки и PR checklist. | ✅ Да | `GOVERNANCE.md`, `pr-ops/repo-model.md`, `standards/README.md`, `.github/ISSUE_TEMPLATE/task.md`, `tools/validate-nonempty-diff.sh` |
 | `/CHANGELOG.md` | журнал | — | Date-based журнал governance-изменений репозитория. | ✅ Да | `README.md`, `docs/concept.md` |

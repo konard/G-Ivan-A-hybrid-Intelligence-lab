@@ -67,6 +67,9 @@ jobs:
       - name: Test RRP link validator
         run: bash tools/test-validate-rrp-links.sh
 
+      - name: Test BA meta-model stakeholder overview
+        run: bash tools/test-ba-meta-model-overview.sh
+
       - name: Resolve no-diff-expected label authorization
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'no-diff-expected')
         env:
