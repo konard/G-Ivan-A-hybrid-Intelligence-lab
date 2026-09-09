@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.58
-updated: 2026-09-08
+version: 1.59
+updated: 2026-09-09
 temperature: 0.1
 type: backlog
 context: [governance, backlog, active-sprints, pr-ops, synchronization]
@@ -464,6 +464,12 @@ Execution Package для опытной эксплуатации: навыки, 
 «`M-1` высокий, `M-2` = 0» трактуется как неработающий гейт, а не как успех, и рамка
 пересматривается.
 
+**Поправка по комментарию фаундера к [PR #564](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/564).**
+Депрекация режимов (ADR-013) закрывает только ось маршрутизации. Второй контур —
+[ADR-014](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md):
+историческое наследие допускается как свидетельство и не допускается как базис новой нормы
+(`LG-1`…`LG-6`). Машинная часть контура заведена задачей `B-153`.
+
 **Точка останова.** Human Gate после `B-148`: базовая линия метрик снимается до внедрения
 пакета. `B-146` и `B-147` могут выполняться параллельно, но отчёт по срезу без базовой линии
 не принимается — сравнивать будет не с чем.
@@ -477,6 +483,7 @@ Execution Package для опытной эксплуатации: навыки, 
 | **B-150** | Сквозной рефакторинг упоминаний режимов запуска | **P2** | B-149 | todo | [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563) | [§6 20-taxonomy.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md) | Привести упоминания `stepwise`/`oneshot`/`legacy` в модулях `M0`–`M4` и осевых модулях к статусу исторического свидетельства согласно ADR-013. Исторические артефакты не удаляются и не переписываются: меняется только их роль в активных схемах маршрутизации. | Structured |
 | **B-151** | Подтверждение продуктовой таксономии и синхронизация со спицей | **P1** | — | todo | [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563) | [standards/product-taxonomy-reference.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/product-taxonomy-reference.md) | Перевести справочник продуктовой таксономии из `draft` в утверждённый статус и согласовать с `product-classification-contract.md` спицы: Хаб владеет формой уровней, спица — каталогом значений. До подтверждения сопоставление «обращение → продуктовый класс» остаётся ручным. | Structured |
 | **B-152** | Подтверждение синтетических эталонов владельцами продуктовых классов | **P1** | B-146 | todo | [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563) | [§5 30-decision-framework.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/30-decision-framework.md) | Провести `G-human` по шести синтетическим эталонам `exp/ba-micro-structure-561/`: до подтверждения они применяются только структурно (`EP-G4`) и нормой не являются. | Structured |
+| **B-153** | Валидатор происхождения нормы (`derived_from`) | **P1** | B-146 | todo | [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563) | [ADR-014](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md) | Исполнимая проверка `LG-4`/`EP-C6`/`SK-7`: поле `derived_from` скомпилированного артефакта непусто и не содержит путей `prompts/`, `runs/` и депрекированных документов. До валидатора правило соблюдается на ревью, то есть выборочно. Основание измеренное: 10 из 12 нормативных конструкций мета-модели отсутствуют во всех 24 промптах — наследие способно передать форму, но не норму. | Structured |
 
 
 ## Отложенные задачи с триггером

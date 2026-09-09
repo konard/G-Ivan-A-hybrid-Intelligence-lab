@@ -54,7 +54,7 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
 добавляет нового слоя поверх существующих — он объявляет, какие сущности
 канонические, а какие являются их проекциями.
 
-## BLUF: десять утверждений
+## BLUF: одиннадцать утверждений
 
 1. **Мета-модель состоит из девяти сущностей.** `Product`, `Artifact`,
    `Operation`, `Process`, `Route`, `Actor`, `Gate`, `Contract`, `Trace`. Всё
@@ -101,6 +101,15 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
     метрик. Расширение начинается только после накопления эмпирики на нём
     ([`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/40-practice-and-cases.md), §4).
 
+11. **Историческое наследие — свидетельство о прошлом, а не базис новой
+    нормы.** Промпты и прогоны дают факты о практике и не задают структуру и
+    логику новых процессов: правила `LG-1`…`LG-6`, объявленное происхождение
+    (`derived_from`, `EP-C6`, `SK-7`) и запрет обосновывать контракт ссылкой
+    «так сделано в промпте»
+    ([ADR-014](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md)).
+    Основание измеримо: 10 из 12 нормативных конструкций мета-модели
+    отсутствуют во всех 24 активных промптах.
+
 ## Что закрывают файлы модуля
 
 | Контракт issue #563 | Где закрыт |
@@ -111,6 +120,7 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
 | 4. Состав Execution Package для GigaCode | [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/30-decision-framework.md) §2–§5 |
 | 5. Автономия исполнителя: выбор артефактов и их дома | [`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/50-open-research.md) §2 |
 | План вертикального среза и сбора эмпирики | [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/40-practice-and-cases.md) §4–§5 |
+| Защита новой нормы от диктата наследия ([комментарий фаундера к PR #564](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/564)) | [ADR-014](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md), §6.1 [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md), §7 [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md), `EP-C6`/`SK-7` [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/30-decision-framework.md) |
 | Не выполнено и вопросы | [`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/50-open-research.md) §4 |
 
 ## Доказательная база
@@ -119,8 +129,12 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
   — датированный замер входов мета-модели на коммите `8cbf82a`: режимы,
   дублирование способностей, покрытие словарей операций и процессов,
   продуктовая привязка прогонов.
+- [`2026-09-09-legacy-normative-influence-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-09-legacy-normative-influence-facts.md)
+  — замер присутствия нормативных конструкций мета-модели в историческом
+  корпусе и сплошной аудит происхождения нормативных блоков модуля; основание
+  ADR-014.
 - [`exp/ba-meta-model-563/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/exp/ba-meta-model-563)
-  — измеритель, сырой результат и лог прогона.
+  — два измерителя, сырые результаты и логи прогонов.
 - [`2026-09-08-artifact-structure-variance-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-08-artifact-structure-variance-facts.md)
   — замер структуры результирующих документов (issue #561), основание для слоя
   артефакта в мета-модели.

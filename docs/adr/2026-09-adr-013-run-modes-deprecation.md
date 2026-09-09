@@ -1,7 +1,7 @@
 ---
 status: proposed
-version: 1.0
-updated: 2026-09-08
+version: 1.1
+updated: 2026-09-09
 temperature: 0.1
 owner: G-Ivan-A
 decision-type: methodology
@@ -21,6 +21,7 @@ decision-type: methodology
 | Source | issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563) (постановка и решение фаундера); доказательная база — [снимок входов BA Meta-Model](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-08-meta-model-inputs-facts.md) |
 | Impacted artifacts | [`research/ba-requirements/ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-meta-model), [`research/ba-requirements/orchestration/00-introduction.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/orchestration/00-introduction.md), [`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md), [`mango_ba_prompts/prompts/`](https://github.com/G-Ivan-A/mango_ba_prompts/tree/main/prompts), [`mango_ba_prompts/docs/ba-processes/00-index.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md) |
 | Supersedes | none |
+| Дополнено | [ADR-014](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md): режимы — только одна ось влияния наследия; правила `LG-1`…`LG-6` закрывают вторую (перенос **содержания** и формы старых промптов и прогонов в новую норму). |
 | Superseded by | none |
 
 ## Context
@@ -72,7 +73,14 @@ decision-type: methodology
 4. **Режим не является ограничением будущей модели.** Отсутствие режима в
    мета-модели не требует обоснования; появление режима в новом активном
    артефакте — требует и блокируется на ревью.
-5. **Область решения — методология и Хаб.** Физический переход спицы (сведение
+5. **Предмет решения — имена и ось маршрутизации, а не содержание наследия.**
+   Депрекация режимов не защищает новую норму от переноса **формы** старых
+   промптов: статус относится к артефакту, а перенос происходит при его чтении.
+   Этот второй контур вынесен в
+   [ADR-014](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md)
+   («наследие — свидетельство, а не базис»), и без него настоящее решение
+   неполно.
+6. **Область решения — методология и Хаб.** Физический переход спицы (сведение
    режимных вариантов к одной способности) выполняется отдельной задачей в
    репозитории спицы и не входит в это решение.
 
@@ -151,5 +159,7 @@ decision-type: methodology
   — канонические таксономии, в которых режим отсутствует как класс.
 - [`standards/artifact-deprecation-standard.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/artifact-deprecation-standard.md)
   — ось депрекации артефакта во времени.
+- [`docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md)
+  — второй контур: правила использования исторического наследия `LG-1`…`LG-6`.
 - [`standards/adr-structure-standard.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/adr-structure-standard.md)
   — форма и обязательные секции ADR.
