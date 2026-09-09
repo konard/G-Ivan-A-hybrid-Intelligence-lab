@@ -146,7 +146,7 @@ def temporal_control(records: list[dict]) -> dict:
     """Unresolved rate is an era property before it is a detail property.
 
     The Hub restructured itself during 2026-06 (`governance/` folded into
-    `pr-ops/`, research artifacts renamed date-first). Task statements written
+    `ops/`, research artifacts renamed date-first). Task statements written
     in that window cite paths that the restructure invalidated days later, so
     comparing detail groups without holding the month fixed measures the
     migration, not the specification style. Detailed issues cluster in July and

@@ -15,7 +15,7 @@ based_on:
 related_artifacts:
   - "research/ba-requirements/methodology-unification/00-introduction.md"
   - "research/ba-requirements/artifact-rendering/00-introduction.md"
-  - "pr-ops/backlog.md"
+  - "ops/backlog.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/561"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/557"
@@ -98,7 +98,7 @@ issue #561 (переименование слоёв, размещение опе
 | 2. Классификация формулировок и форматов | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/artifact-micro-structure/20-taxonomy.md) §3–§4, [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/artifact-micro-structure/30-decision-framework.md) §2 |
 | 3. Синтез Golden Set и восполнение пробелов | [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/artifact-micro-structure/30-decision-framework.md) §4, [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/artifact-micro-structure/40-practice-and-cases.md) §3 |
 | 4. Моделирование граничных кейсов | [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/artifact-micro-structure/40-practice-and-cases.md) §5 |
-| 5. Связь с бэклогом | [`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/artifact-micro-structure/50-open-research.md) §3, [`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md) |
+| 5. Связь с бэклогом | [`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/artifact-micro-structure/50-open-research.md) §3, [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md) |
 
 ## Доказательная база
 

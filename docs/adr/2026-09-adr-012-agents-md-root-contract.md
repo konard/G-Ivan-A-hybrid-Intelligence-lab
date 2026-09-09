@@ -19,7 +19,7 @@ decision-type: governance
 | Decision date | 2026-09-07 |
 | Owner | G-Ivan-A |
 | Source | [RFC: Корневой контракт `AGENTS.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-03-rfc-agents-md-root-contract.md) (`v1.0`, `accepted`); issue [#551](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/551) (постановка RFC), issue [#559](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/559) (принятие) |
-| Impacted artifacts | `AGENTS.md` (новый корневой), `standards/agents-md-bootstrap-standard.md` (создаётся B-117), [`ai-rules/agent-work-routing.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/ai-rules) (создаётся B-110), [`templates/agents-md-root-draft.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/agents-md-root-draft.md), [`tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-repository-structure.sh), [`CONTRIBUTING.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/CONTRIBUTING.md), [`.github/ISSUE_TEMPLATE/task.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/.github/ISSUE_TEMPLATE/task.md), [`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md) |
+| Impacted artifacts | `AGENTS.md` (новый корневой), `standards/agents-md-bootstrap-standard.md` (создаётся B-117), [`ai-rules/agent-work-routing.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/ai-rules) (создаётся B-110), [`templates/agents-md-root-draft.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/agents-md-root-draft.md), [`tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-repository-structure.sh), [`CONTRIBUTING.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/CONTRIBUTING.md), [`.github/ISSUE_TEMPLATE/task.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/.github/ISSUE_TEMPLATE/task.md), [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md) |
 | Supersedes | none |
 | Superseded by | none |
 
@@ -173,7 +173,7 @@ ADR не пересказывает их.
   `require_text`-проверок тем же PR.
 
 Состав внедренческих работ не дублируется здесь: он живёт в
-[`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md)
+[`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md)
 (B-110, B-111, B-116, B-117, B-120) и в разделе
 [`Impacted Artifacts`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-03-rfc-agents-md-root-contract.md#impacted-artifacts)
 источного RFC.
@@ -251,5 +251,5 @@ flowchart LR
 - [Индустриальные практики онбординга ИИ-агентов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/hub/2026-09-03-ai-agent-onboarding-entrypoint-practices.md) — доказательная база, включая ограничение внимания в длинном контексте (`A-6`).
 - [`templates/agents-md-root-draft.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/agents-md-root-draft.md) — исполнимый черновик принятой структуры.
 - [`standards/adr-structure-standard.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/adr-structure-standard.md) — стандарт структуры ADR.
-- [`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md) — задачи B-110, B-111, B-116, B-117, B-120.
+- [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md) — задачи B-110, B-111, B-116, B-117, B-120.
 - Issue [#551](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/551) — постановка RFC; issue [#559](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/559) — принятие и создание этого ADR.

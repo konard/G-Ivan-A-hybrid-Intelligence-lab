@@ -75,6 +75,8 @@ status: accepted
 # RFC: историческое решение
 
 Тело исторического RFC.
+
+Операционный реестр: [backlog](../../pr-ops/backlog.md).
 EOF
 cat >"$repo/docs/adr/2026-01-adr-001-historical.md" <<'EOF'
 ---
@@ -202,6 +204,37 @@ expect_pass "явный allowlist пропускает изменение" "$rep
 expect_fail "посторонний allowlist не пропускает изменение" "$repo" \
   "изменение существующего исторического документа" \
   BASE_REF=main HISTORICAL_IMMUTABLE_ALLOWLIST="docs/rfc/other-*.md"
+
+# 9a. Объявленная path-миграция разрешает только механическую подстановку.
+git_in checkout --quiet -b path-migration main
+cat >"$repo/.hub-profile.json" <<'EOF'
+{
+  "path_migrations": [
+    {"from": "pr-ops/", "to": "ops/", "issue": "https://example.test/issues/1"}
+  ]
+}
+EOF
+sed -i 's#pr-ops/#ops/#g' "$repo/docs/rfc/2026-01-01-rfc-historical.md"
+git_in add .hub-profile.json docs/rfc/2026-01-01-rfc-historical.md
+git_in commit --quiet -m "apply declared path migration"
+
+expect_pass "объявленная path-миграция разрешает чистую подстановку" "$repo" BASE_REF=main
+
+git_in checkout --quiet -b path-migration-with-rewrite main
+cat >"$repo/.hub-profile.json" <<'EOF'
+{
+  "path_migrations": [
+    {"from": "pr-ops/", "to": "ops/", "issue": "https://example.test/issues/1"}
+  ]
+}
+EOF
+sed -i 's#pr-ops/#ops/#g' "$repo/docs/rfc/2026-01-01-rfc-historical.md"
+printf '\nСодержательная правка под видом миграции.\n' >>"$repo/docs/rfc/2026-01-01-rfc-historical.md"
+git_in add .hub-profile.json docs/rfc/2026-01-01-rfc-historical.md
+git_in commit --quiet -m "mix path migration and content rewrite"
+
+expect_fail "path-миграция не скрывает содержательную правку" "$repo" \
+  "изменение существующего исторического документа" BASE_REF=main
 
 # 9b. Переименование существующего RFC — падение (оба пути защищены).
 git_in checkout --quiet -b rename-rfc main

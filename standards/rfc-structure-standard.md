@@ -247,4 +247,4 @@ Local checks:
 ```
 
 Validator expansion beyond frontmatter, naming and registry checks is tracked as
-tech debt in [pr-ops/backlog.md](../pr-ops/backlog.md).
+tech debt in [ops/backlog.md](../ops/backlog.md).

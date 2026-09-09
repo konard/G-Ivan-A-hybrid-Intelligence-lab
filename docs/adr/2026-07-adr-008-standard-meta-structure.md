@@ -165,5 +165,5 @@ record; календарный срок сам по себе не являетс
 - [Report Standard](../../standards/report-standard.md)
 - [Evals Contract Standard](../../standards/evals-contract-standard.md)
 - [ADR Structure Standard](../../standards/adr-structure-standard.md)
-- [Backlog](../../pr-ops/backlog.md)
-- [Artifact Map](../../pr-ops/artifact-map.md)
+- [Backlog](../../ops/backlog.md)
+- [Artifact Map](../../ops/artifact-map.md)

@@ -53,9 +53,12 @@ reject_text() {
 is_active_file() {
   case "$1" in
     README.md | \
+    AGENTS.md | \
+    .hub-profile.json | \
     .gitignore | \
     docs/concept.md | \
     docs/ba-meta-model-overview.md | \
+    docs/superpowers/plans/2026-09-09-agents-md-physical-integration.md | \
     CONTRIBUTING.md | \
     GOVERNANCE.md | \
     ai-governance/README.md | \
@@ -65,13 +68,14 @@ is_active_file() {
     ai-rules/agent-work-rules.md | \
     ai-rules/agent-onboarding-protocol.md | \
     ai-rules/adversarial-stress-testing.md | \
-    pr-ops/README.md | \
-    pr-ops/repo-model.md | \
-    pr-ops/artifact-map.md | \
-    pr-ops/backlog.md | \
-    pr-ops/backlog-instruction.md | \
-    pr-ops/executable-documents-issues.md | \
-    pr-ops/session-digests.md | \
+    ai-rules/agent-work-routing.md | \
+    ops/README.md | \
+    ops/repo-model.md | \
+    ops/artifact-map.md | \
+    ops/backlog.md | \
+    ops/backlog-instruction.md | \
+    ops/executable-documents-issues.md | \
+    ops/session-digests.md | \
     projects-sink/README.md | \
     projects-sink/AI_PROJECT_CONTEXT-Summary.md | \
     docs/guides/README.md | \
@@ -97,6 +101,7 @@ is_active_file() {
     docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md | \
     docs/adr/README.md | \
     standards/README.md | \
+    standards/agents-md-bootstrap-standard.md | \
     standards/frontmatter-standard.md | \
     standards/file-naming.md | \
     standards/file-naming-convention.md | \
@@ -538,12 +543,18 @@ is_active_file() {
     templates/webportal-product-concept-template.md | \
     templates/webportal-solution-concept-template.md | \
     templates/agents-md-root-draft.md | \
+    templates/htom/AGENTS.md | \
+    templates/htom/.hub-profile.json | \
+    templates/htom/tools/validate-agents-bootstrap.sh | \
+    templates/spoke/AGENTS.md | \
+    templates/spoke/.hub-profile.json | \
     templates/sync-project-with-hub-prompt.md | \
     templates/manifest.json | \
     templates/sync-metadata.json | \
     tools/generate-manifest.py | \
     tools/sync-from-hub.sh | \
     tools/test-frontmatter-validator.sh | \
+    tools/test-agents-md-integration.sh | \
     tools/test-evidence-structure-validator.sh | \
     tools/test-reference-research-terminology.sh | \
     tools/test-mango-kb-migration-contract.sh | \
@@ -559,6 +570,7 @@ is_active_file() {
     tools/validate-nonempty-diff.sh | \
     tools/test-historical-immutable.sh | \
     tools/validate-historical-immutable.sh | \
+    tools/validate-agents-bootstrap.sh | \
     tools/test-validate-rrp-links.sh | \
     tools/validate-rrp-links.sh | \
     tools/validate-frontmatter.sh | \
@@ -644,7 +656,33 @@ validate_metadata_single_source() {
     ' "$file"; then
       fail "Metadata duplicated in body of $file. Keep it only in frontmatter."
     fi
-  done < <(find standards pr-ops ai-rules ai-governance projects-sink docs/rfc docs/guides research -type f -name '*.md' | sort)
+  done < <(find standards ops ai-rules ai-governance projects-sink docs/rfc docs/guides research -type f -name '*.md' | sort)
+}
+
+resolve_declared_path_migration() {
+  local target_path="$1"
+  [[ -f .hub-profile.json ]] || return 1
+  python3 - "$target_path" .hub-profile.json <<'PY'
+import json
+import os
+import sys
+
+target, profile_path = sys.argv[1:]
+with open(profile_path, encoding="utf-8") as source:
+    profile = json.load(source)
+for migration in profile.get("path_migrations", []):
+    if not isinstance(migration, dict):
+        continue
+    old, new = migration.get("from"), migration.get("to")
+    if isinstance(old, str) and old and isinstance(new, str) and new and old != new:
+        normalized = os.path.normpath(target)
+        old_normalized = os.path.normpath(old)
+        if normalized == old_normalized or normalized.startswith(old_normalized + os.sep):
+            candidate = new.rstrip("/") + normalized[len(old_normalized):]
+            if os.path.isfile(candidate):
+                raise SystemExit(0)
+raise SystemExit(1)
+PY
 }
 
 validate_internal_markdown_links() {
@@ -681,7 +719,7 @@ validate_internal_markdown_links() {
         target_path="$file_dir/$target_without_anchor"
       fi
 
-      if [[ ! -f "$target_path" ]]; then
+      if [[ ! -f "$target_path" ]] && ! resolve_declared_path_migration "$target_path"; then
         fail "Broken link in $file -> $link_target"
       fi
     done < <(perl -ne 'while (/\[[^\]]+\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g) { print "$1\n" }' "$file")
@@ -725,7 +763,7 @@ validate_artifact_map_paths() {
         gsub(/`/, "", path)
         print path
       }
-    ' pr-ops/artifact-map.md
+    ' ops/artifact-map.md
   )
 }
 
@@ -794,7 +832,7 @@ required_files=(
   "ai-rules/README.md"
   "ai-rules/agent-work-rules.md"
   "ai-rules/adversarial-stress-testing.md"
-  "pr-ops/README.md"
+  "ops/README.md"
   "projects-sink/README.md"
   "docs/guides/README.md"
   "CHANGELOG.md"
@@ -957,12 +995,12 @@ required_files=(
   "projects/repo-development/docs/contract-violations-self-report-2026-06.md"
   "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md"
   "ai-rules/agent-onboarding-protocol.md"
-  "pr-ops/repo-model.md"
-  "pr-ops/artifact-map.md"
-  "pr-ops/backlog.md"
-  "pr-ops/backlog-instruction.md"
-  "pr-ops/executable-documents-issues.md"
-  "pr-ops/session-digests.md"
+  "ops/repo-model.md"
+  "ops/artifact-map.md"
+  "ops/backlog.md"
+  "ops/backlog-instruction.md"
+  "ops/executable-documents-issues.md"
+  "ops/session-digests.md"
   "docs/rfc/README.md"
   "docs/rfc/rfc-two-cases-of-project-initialization.md"
   "docs/rfc/contract-executability-rfc.md"
@@ -1040,16 +1078,16 @@ for file in "${required_files[@]}"; do
 done
 
 reject_file "standards/research-profile.md"
-reject_file "pr-ops/backlog-archive.md"
-reject_file "pr-ops/backlog/archive.md"
-reject_file "pr-ops/backlog/archive"
+reject_file "ops/backlog-archive.md"
+reject_file "ops/backlog/archive.md"
+reject_file "ops/backlog/archive"
 reject_path "governance"
 reject_file "AI_GOVERNANCE.md"
 reject_path "website"
 reject_path "experiments"
 reject_path "mkdocs.yml"
 
-for kebab_case_dir in standards pr-ops ai-rules ai-governance docs/rfc docs/guides; do
+for kebab_case_dir in standards ops ai-rules ai-governance docs/rfc docs/guides; do
   validate_kebab_case_file_naming "$kebab_case_dir"
 done
 
@@ -1094,8 +1132,8 @@ require_text "README.md" "standards/file-naming.md"
 require_text "README.md" "standards/glossary.md"
 require_text "README.md" "standards/team-contract.md"
 require_text "README.md" "agent-onboarding-protocol.md"
-require_text "README.md" "pr-ops/repo-model.md"
-require_text "README.md" "pr-ops/artifact-map.md"
+require_text "README.md" "ops/repo-model.md"
+require_text "README.md" "ops/artifact-map.md"
 require_text "README.md" "projects/education-ba-prompt/README.md"
 require_text "README.md" "research/mango/README.md"
 require_text "README.md" "practices/README.md"
@@ -1104,7 +1142,7 @@ require_text "README.md" "./tools/validate-file-naming.sh"
 require_text "README.md" "./tools/validate-repository-structure.sh"
 require_text "README.md" "Человек задаёт смысл, AI ускоряет путь — вместе по правилам"
 
-require_text "docs/concept.md" "pr-ops/repo-model.md"
+require_text "docs/concept.md" "ops/repo-model.md"
 require_text "docs/concept.md" "standards/README.md"
 require_text "docs/concept.md" "Anti-Inflation"
 require_text "docs/concept.md" "status: canonical"
@@ -1118,13 +1156,13 @@ require_text "docs/concept.md" "Шаблон командного соглаше
 require_text "docs/concept.md" "glossary.md"
 require_text "docs/concept.md" "единой терминологии"
 
-require_text "CONTRIBUTING.md" "GOVERNANCE.md"
+require_text "CONTRIBUTING.md" "/AGENTS.md"
 require_text "CONTRIBUTING.md" "standards/README.md"
 require_text "CONTRIBUTING.md" "status: canonical"
 require_text "CONTRIBUTING.md" "version: 1.14"
 require_text "CONTRIBUTING.md" "Консолидация открытых вопросов"
 require_text "CONTRIBUTING.md" "Работа с внешними источниками"
-require_text "CONTRIBUTING.md" "pr-ops/backlog.md"
+require_text "CONTRIBUTING.md" "ops/backlog.md"
 require_text "CONTRIBUTING.md" "updated: 2026-08-17"
 require_text "CONTRIBUTING.md" "temperature: 0.1"
 require_text "CONTRIBUTING.md" ".github/ISSUE_TEMPLATE/task.md"
@@ -1394,7 +1432,7 @@ require_text "docs/adr/2026-07-adr-007-hub-root-structure.md" "Управлен�
 require_text "docs/adr/2026-07-adr-007-hub-root-structure.md" "projects-sink/"
 require_text "docs/adr/2026-07-adr-007-hub-root-structure.md" "ai-governance/"
 require_text "docs/adr/2026-07-adr-007-hub-root-structure.md" "ai-rules/"
-require_text "docs/adr/2026-07-adr-007-hub-root-structure.md" "pr-ops/"
+require_text "docs/adr/2026-07-adr-007-hub-root-structure.md" "ops/"
 require_text "docs/adr/2026-07-adr-007-hub-root-structure.md" "Политики: государство, бизнес-правила, ИБ, внешние ограничения"
 require_text "docs/adr/2026-07-adr-007-hub-root-structure.md" "Правила поведения агента и быстрая синхронизация внешнего агента"
 require_text "docs/adr/2026-07-adr-007-hub-root-structure.md" "Удалено при миграции: website/, mkdocs.yml, experiments/"
@@ -1507,7 +1545,7 @@ require_text "standards/project-structure-inheritance.md" "Репозитори�
 require_text "standards/issue-workflow.md" "Пять уровней постановки задачи"
 require_text "standards/issue-workflow.md" ".github/ISSUE_TEMPLATE/task.md"
 require_text "standards/issue-workflow.md" "CHANGELOG.md"
-require_text "standards/issue-workflow.md" "pr-ops/artifact-map.md"
+require_text "standards/issue-workflow.md" "ops/artifact-map.md"
 require_text "standards/issue-workflow.md" "validate-frontmatter.sh"
 require_text "standards/issue-workflow.md" "validate-repository-structure.sh"
 require_text "standards/file-naming.md" "status: accepted"
@@ -1517,7 +1555,7 @@ require_text "standards/file-naming.md" "Корень репозитория"
 require_text "standards/file-naming.md" "UPPERCASE_WITH_HYPHENS.md"
 require_text "standards/file-naming.md" "Вложенные каталоги"
 require_text "standards/file-naming.md" "lowercase-with-hyphens.md"
-require_text "standards/file-naming.md" "Правила именования файлов в standards/, pr-ops/, ai-rules/ и docs/rfc/"
+require_text "standards/file-naming.md" "Правила именования файлов в standards/, ops/, ai-rules/ и docs/rfc/"
 require_text "standards/file-naming.md" '`CAPS_LOCK` запрещён'
 require_text "standards/file-naming.md" "classification-glossary.md"
 require_text "standards/file-naming.md" "agent-onboarding-protocol.md"
@@ -1681,15 +1719,15 @@ require_text "docs/ecosystem-map.md" "Knowledge Lifecycle"
 require_text "docs/ecosystem-map.md" "docs/rfc/resolve-artifact-location-proposal.md"
 require_text "docs/ecosystem-map.md" "Связь L1-L4"
 
-require_text "pr-ops/repo-model.md" "Артефакт только при операционной боли"
-require_text "pr-ops/repo-model.md" "Anti-Inflation"
-require_text "pr-ops/repo-model.md" "tools/"
-require_text "pr-ops/repo-model.md" "practices/"
-require_text "pr-ops/repo-model.md" "status: canonical"
-require_text "pr-ops/repo-model.md" "version: 1.5"
-require_text "pr-ops/repo-model.md" "updated: 2026-08-11"
-require_text "pr-ops/repo-model.md" "executable: false"
-require_text "pr-ops/repo-model.md" "Decision Rules — исполнимая часть справочного документа"
+require_text "ops/repo-model.md" "Артефакт только при операционной боли"
+require_text "ops/repo-model.md" "Anti-Inflation"
+require_text "ops/repo-model.md" "tools/"
+require_text "ops/repo-model.md" "practices/"
+require_text "ops/repo-model.md" "status: canonical"
+require_text "ops/repo-model.md" "version: 1.5"
+require_text "ops/repo-model.md" "updated: 2026-08-11"
+require_text "ops/repo-model.md" "executable: false"
+require_text "ops/repo-model.md" "Decision Rules — исполнимая часть справочного документа"
 
 require_text "docs/rfc/rfc-two-cases-of-project-initialization.md" "status: accepted"
 require_text "docs/rfc/rfc-two-cases-of-project-initialization.md" "owner: G-Ivan-A"
@@ -1713,7 +1751,7 @@ require_text "docs/rfc/contract-executability-rfc.md" "rfc-scope: A"
 require_text "docs/rfc/contract-executability-rfc.md" "## Decision Status"
 require_text "docs/rfc/contract-executability-rfc.md" '| Executable markers | accepted | `standards/executable-contract-standard.md` |'
 require_text "docs/rfc/contract-executability-rfc.md" '| Directive block | accepted | `ai-rules/agent-onboarding-protocol.md` |'
-require_text "docs/rfc/contract-executability-rfc.md" '| Rollout plan | implemented | `pr-ops/backlog.md` |'
+require_text "docs/rfc/contract-executability-rfc.md" '| Rollout plan | implemented | `ops/backlog.md` |'
 require_text "docs/rfc/contract-executability-rfc.md" "| Open questions | deferred | — |"
 require_text "docs/rfc/contract-executability-rfc.md" "Решения Пользователя по RFC"
 require_text "docs/rfc/contract-executability-rfc.md" "executable: true|false"
@@ -1802,7 +1840,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "EXPLANATION"
 require_text "ai-rules/agent-onboarding-protocol.md" "Handover Prompt"
 require_text "ai-rules/agent-onboarding-protocol.md" "{{REPO_NAME}}"
 require_text "ai-rules/agent-onboarding-protocol.md" "Readback"
-require_text "ai-rules/agent-onboarding-protocol.md" "Определи тип проекта"
+require_text "ai-rules/agent-onboarding-protocol.md" "AGENTS.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "Контекст чата диалога"
 require_text "ai-rules/agent-onboarding-protocol.md" "Проверка шаблонов"
 require_text "ai-rules/agent-onboarding-protocol.md" "Что может пойти не так"
@@ -1812,99 +1850,99 @@ require_text "ai-rules/agent-onboarding-protocol.md" "rfc-two-cases-of-project-i
 require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
-require_text "pr-ops/artifact-map.md" "status: canonical"
-require_text "pr-ops/artifact-map.md" "version: 2.12"
-require_text "pr-ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
-require_text "pr-ops/artifact-map.md" "templates/spoke/README.md"
-require_text "pr-ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "pr-ops/artifact-map.md" "updated: 2026-09-09"
-require_text "pr-ops/artifact-map.md" "temperature: 0.1"
-require_text "pr-ops/artifact-map.md" "agent-onboarding-protocol.md"
-require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
-require_text "pr-ops/artifact-map.md" "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
-require_text "pr-ops/artifact-map.md" "docs/adr/2026-07-adr-004-reports-structure.md"
-require_text "pr-ops/artifact-map.md" "docs/adr/2026-07-adr-006-analysis-structure.md"
-require_text "pr-ops/artifact-map.md" "docs/adr/2026-07-adr-007-hub-root-structure.md"
-require_text "pr-ops/artifact-map.md" "addendum B-019 / issue #326"
-require_text "pr-ops/artifact-map.md" "routing reconciliation ADR-004 / issues #338/#348"
-require_text "pr-ops/artifact-map.md" "research/<domain>/exp/<issue-slug>/"
-require_text "pr-ops/artifact-map.md" "docs/rfc/contract-executability-rfc.md"
-require_text "pr-ops/artifact-map.md" "docs/rfc/repository-quality-improvement-plan.md"
-require_text "pr-ops/artifact-map.md" "docs/rfc/draft-triage-and-exit-plan.md"
-require_text "pr-ops/artifact-map.md" "| Путь | Тип | 🚦 Исполнимый? | Назначение | Обязательный? | Связанные артефакты |"
-require_text "pr-ops/artifact-map.md" "🚦 entrypoint"
-require_text "pr-ops/artifact-map.md" "standards/project-structure-inheritance.md"
-require_text "pr-ops/artifact-map.md" "Как использовать карту"
-require_text "pr-ops/artifact-map.md" "Как обновлять карту"
-require_text "pr-ops/artifact-map.md" "glossary.md"
-require_text "pr-ops/artifact-map.md" "research/mango/2026-05-22-classification.md"
-require_text "pr-ops/artifact-map.md" "research/mango/2026-05-26-rag-mapping-roadmap.md"
-require_text "pr-ops/artifact-map.md" "research/hub/2026-05-28-project-context-and-bootstrap-patterns.md"
-require_text "pr-ops/artifact-map.md" "research/hub/2026-06-01-team-c-governance-strategy-audit.md"
-require_text "pr-ops/artifact-map.md" "research/hub/2026-05-28-user-prompts-analysis.md"
-require_text "pr-ops/artifact-map.md" "mango_ba_prompts"
-require_text "pr-ops/artifact-map.md" "projects/README.md"
-require_text "pr-ops/artifact-map.md" "pr-ops/backlog.md"
-require_text "pr-ops/artifact-map.md" "pr-ops/backlog-instruction.md"
-require_text "pr-ops/artifact-map.md" "pr-ops/executable-documents-issues.md"
-require_text "pr-ops/artifact-map.md" "standards/frontmatter-standard.md"
-require_text "pr-ops/artifact-map.md" "standards/frontmatter-docs-standard.md"
-require_text "pr-ops/artifact-map.md" "standards/adr-structure-standard.md"
-require_text "pr-ops/artifact-map.md" "standards/rfc-structure-standard.md"
-require_text "pr-ops/artifact-map.md" "standards/file-naming-convention.md"
-require_text "pr-ops/artifact-map.md" "standards/executable-documentation-standard.md"
-require_text "pr-ops/artifact-map.md" "standards/htom-documentation-structure.md"
-require_text "pr-ops/artifact-map.md" "research/hub/2026-06-12-ecosystem-governance-audit.md"
-require_text "pr-ops/artifact-map.md" "research/hub/2026-06-20-ecosystem-architecture-research.md"
-require_text "pr-ops/artifact-map.md" "research/hub/2026-06-12-external-practice-intake.md"
-require_text "pr-ops/artifact-map.md" "research/hub/2026-06-12-international-ai-governance-practices.md"
-require_text "pr-ops/artifact-map.md" "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
-require_text "pr-ops/artifact-map.md" "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"
-require_text "pr-ops/artifact-map.md" "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md"
-require_text "pr-ops/artifact-map.md" "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md"
-require_text "pr-ops/artifact-map.md" "research/hub/exp/reports-inventory-310/README.md"
-require_text "pr-ops/artifact-map.md" "research/hub/exp/analysis-inventory-342/README.md"
-require_text "pr-ops/artifact-map.md" "research/hub/2026-06-27-rfc-industry-norms-and-variants.md"
-require_text "pr-ops/artifact-map.md" "research/hub/2026-06-27-adr-industry-norms-and-variants.md"
-require_text "pr-ops/artifact-map.md" "research/hub/2026-06-28-research-analysis-audit-inventory.md"
-require_text "pr-ops/artifact-map.md" "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md"
-require_text "pr-ops/artifact-map.md" "docs/audit/2026-06-11-task-execution-audit.md"
-require_text "pr-ops/artifact-map.md" "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
-require_text "pr-ops/artifact-map.md" '| `/docs/audit/2026-07-04-cross-standard-stress-tests.md` | аудит | — |'
-require_text "pr-ops/artifact-map.md" "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
-require_text "pr-ops/artifact-map.md" "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
-require_text "pr-ops/artifact-map.md" "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
-require_text "pr-ops/artifact-map.md" "research/hub/exp/rfc-adr-industry-norms-278/"
-require_text "pr-ops/artifact-map.md" "research/hub/exp/research-analysis-audit-288/"
-require_text "pr-ops/artifact-map.md" "research/hub/exp/reports-inventory-310/"
-require_text "pr-ops/artifact-map.md" "research/hub/exp/analysis-inventory-342/"
-require_text "pr-ops/artifact-map.md" "practices/README.md"
-require_text "pr-ops/artifact-map.md" "practices/ai-governance/nist-ai-rmf-profile-loop.md"
-require_text "pr-ops/artifact-map.md" ".github/ISSUE_TEMPLATE/task.md"
-require_text "pr-ops/artifact-map.md" "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md"
-require_text "pr-ops/artifact-map.md" "templates/spoke/docs/README.md"
-require_text "pr-ops/artifact-map.md" "templates/spoke/tools/validate-file-naming.sh"
-require_text "pr-ops/artifact-map.md" "templates/sync-project-with-hub-prompt.md"
-require_text "pr-ops/artifact-map.md" "tools/test-post-migration-validator.sh"
-require_text "pr-ops/artifact-map.md" "tools/validate-file-naming.sh"
-require_text "pr-ops/artifact-map.md" ".github/workflows/validate.yml"
-require_text "pr-ops/artifact-map.md" "Уровни документации: Framework vs Methodology"
-require_text "pr-ops/artifact-map.md" "docs/rfc/knowledge-lifecycle-proposal.md"
-require_text "pr-ops/artifact-map.md" "docs/rfc/resolve-artifact-location-proposal.md"
-require_text "pr-ops/artifact-map.md" "docs/rfc/product-concept-template-proposal.md"
-require_text "pr-ops/artifact-map.md" "docs/rfc/solution-concept-template-proposal.md"
-require_text "pr-ops/artifact-map.md" "явного подтверждения"
-require_text "pr-ops/artifact-map.md" "Обратная трассируемость"
-require_text "pr-ops/artifact-map.md" "Framework vs Template"
-require_text "pr-ops/artifact-map.md" "Scope Resolver-а"
-require_text "pr-ops/artifact-map.md" "pr-ops/session-digests.md"
-reject_text "pr-ops/artifact-map.md" "Конард"
-reject_text "pr-ops/artifact-map.md" "Фаундера"
+require_text "ops/artifact-map.md" "status: canonical"
+require_text "ops/artifact-map.md" "version: 2.12"
+require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
+require_text "ops/artifact-map.md" "templates/spoke/README.md"
+require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
+require_text "ops/artifact-map.md" "updated: 2026-09-09"
+require_text "ops/artifact-map.md" "temperature: 0.1"
+require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
+require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
+require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
+require_text "ops/artifact-map.md" "docs/adr/2026-07-adr-004-reports-structure.md"
+require_text "ops/artifact-map.md" "docs/adr/2026-07-adr-006-analysis-structure.md"
+require_text "ops/artifact-map.md" "docs/adr/2026-07-adr-007-hub-root-structure.md"
+require_text "ops/artifact-map.md" "addendum B-019 / issue #326"
+require_text "ops/artifact-map.md" "routing reconciliation ADR-004 / issues #338/#348"
+require_text "ops/artifact-map.md" "research/<domain>/exp/<issue-slug>/"
+require_text "ops/artifact-map.md" "docs/rfc/contract-executability-rfc.md"
+require_text "ops/artifact-map.md" "docs/rfc/repository-quality-improvement-plan.md"
+require_text "ops/artifact-map.md" "docs/rfc/draft-triage-and-exit-plan.md"
+require_text "ops/artifact-map.md" "| Путь | Тип | 🚦 Исполнимый? | Назначение | Обязательный? | Связанные артефакты |"
+require_text "ops/artifact-map.md" "🚦 entrypoint"
+require_text "ops/artifact-map.md" "standards/project-structure-inheritance.md"
+require_text "ops/artifact-map.md" "Как использовать карту"
+require_text "ops/artifact-map.md" "Как обновлять карту"
+require_text "ops/artifact-map.md" "glossary.md"
+require_text "ops/artifact-map.md" "research/mango/2026-05-22-classification.md"
+require_text "ops/artifact-map.md" "research/mango/2026-05-26-rag-mapping-roadmap.md"
+require_text "ops/artifact-map.md" "research/hub/2026-05-28-project-context-and-bootstrap-patterns.md"
+require_text "ops/artifact-map.md" "research/hub/2026-06-01-team-c-governance-strategy-audit.md"
+require_text "ops/artifact-map.md" "research/hub/2026-05-28-user-prompts-analysis.md"
+require_text "ops/artifact-map.md" "mango_ba_prompts"
+require_text "ops/artifact-map.md" "projects/README.md"
+require_text "ops/artifact-map.md" "ops/backlog.md"
+require_text "ops/artifact-map.md" "ops/backlog-instruction.md"
+require_text "ops/artifact-map.md" "ops/executable-documents-issues.md"
+require_text "ops/artifact-map.md" "standards/frontmatter-standard.md"
+require_text "ops/artifact-map.md" "standards/frontmatter-docs-standard.md"
+require_text "ops/artifact-map.md" "standards/adr-structure-standard.md"
+require_text "ops/artifact-map.md" "standards/rfc-structure-standard.md"
+require_text "ops/artifact-map.md" "standards/file-naming-convention.md"
+require_text "ops/artifact-map.md" "standards/executable-documentation-standard.md"
+require_text "ops/artifact-map.md" "standards/htom-documentation-structure.md"
+require_text "ops/artifact-map.md" "research/hub/2026-06-12-ecosystem-governance-audit.md"
+require_text "ops/artifact-map.md" "research/hub/2026-06-20-ecosystem-architecture-research.md"
+require_text "ops/artifact-map.md" "research/hub/2026-06-12-external-practice-intake.md"
+require_text "ops/artifact-map.md" "research/hub/2026-06-12-international-ai-governance-practices.md"
+require_text "ops/artifact-map.md" "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
+require_text "ops/artifact-map.md" "docs/analysis/2026-07-02-analysis-artifacts-inventory.md"
+require_text "ops/artifact-map.md" "docs/analysis/2026-07-02-audit-artifacts-deep-analysis.md"
+require_text "ops/artifact-map.md" "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md"
+require_text "ops/artifact-map.md" "research/hub/exp/reports-inventory-310/README.md"
+require_text "ops/artifact-map.md" "research/hub/exp/analysis-inventory-342/README.md"
+require_text "ops/artifact-map.md" "research/hub/2026-06-27-rfc-industry-norms-and-variants.md"
+require_text "ops/artifact-map.md" "research/hub/2026-06-27-adr-industry-norms-and-variants.md"
+require_text "ops/artifact-map.md" "research/hub/2026-06-28-research-analysis-audit-inventory.md"
+require_text "ops/artifact-map.md" "research/hub/2026-06-30-reports-industry-norms-and-standardization-scope.md"
+require_text "ops/artifact-map.md" "docs/audit/2026-06-11-task-execution-audit.md"
+require_text "ops/artifact-map.md" "docs/audit/2026-06-29-research-artifact-format-contract-audit.md"
+require_text "ops/artifact-map.md" '| `/docs/audit/2026-07-04-cross-standard-stress-tests.md` | аудит | — |'
+require_text "ops/artifact-map.md" "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md"
+require_text "ops/artifact-map.md" "docs/report/2026-07-01-reports-inventory-placement-analysis.md"
+require_text "ops/artifact-map.md" "docs/report/2026-07-01-rfc-adr-duplication-analysis.md"
+require_text "ops/artifact-map.md" "research/hub/exp/rfc-adr-industry-norms-278/"
+require_text "ops/artifact-map.md" "research/hub/exp/research-analysis-audit-288/"
+require_text "ops/artifact-map.md" "research/hub/exp/reports-inventory-310/"
+require_text "ops/artifact-map.md" "research/hub/exp/analysis-inventory-342/"
+require_text "ops/artifact-map.md" "practices/README.md"
+require_text "ops/artifact-map.md" "practices/ai-governance/nist-ai-rmf-profile-loop.md"
+require_text "ops/artifact-map.md" ".github/ISSUE_TEMPLATE/task.md"
+require_text "ops/artifact-map.md" "templates/htom/.github/ISSUE_TEMPLATE/task-creative.md"
+require_text "ops/artifact-map.md" "templates/spoke/docs/README.md"
+require_text "ops/artifact-map.md" "templates/spoke/tools/validate-file-naming.sh"
+require_text "ops/artifact-map.md" "templates/sync-project-with-hub-prompt.md"
+require_text "ops/artifact-map.md" "tools/test-post-migration-validator.sh"
+require_text "ops/artifact-map.md" "tools/validate-file-naming.sh"
+require_text "ops/artifact-map.md" ".github/workflows/validate.yml"
+require_text "ops/artifact-map.md" "Уровни документации: Framework vs Methodology"
+require_text "ops/artifact-map.md" "docs/rfc/knowledge-lifecycle-proposal.md"
+require_text "ops/artifact-map.md" "docs/rfc/resolve-artifact-location-proposal.md"
+require_text "ops/artifact-map.md" "docs/rfc/product-concept-template-proposal.md"
+require_text "ops/artifact-map.md" "docs/rfc/solution-concept-template-proposal.md"
+require_text "ops/artifact-map.md" "явного подтверждения"
+require_text "ops/artifact-map.md" "Обратная трассируемость"
+require_text "ops/artifact-map.md" "Framework vs Template"
+require_text "ops/artifact-map.md" "Scope Resolver-а"
+require_text "ops/artifact-map.md" "ops/session-digests.md"
+reject_text "ops/artifact-map.md" "Конард"
+reject_text "ops/artifact-map.md" "Фаундера"
 
-require_text "pr-ops/artifact-map.md" "research/external-knowledge/README.md"
-require_text "pr-ops/artifact-map.md" "research/external-knowledge/external-sources-registry.md"
-require_text "pr-ops/artifact-map.md" "research/external-knowledge/external-insights/README.md"
-require_text "pr-ops/artifact-map.md" "docs/rfc/external-knowledge-integration.md"
+require_text "ops/artifact-map.md" "research/external-knowledge/README.md"
+require_text "ops/artifact-map.md" "research/external-knowledge/external-sources-registry.md"
+require_text "ops/artifact-map.md" "research/external-knowledge/external-insights/README.md"
+require_text "ops/artifact-map.md" "docs/rfc/external-knowledge-integration.md"
 
 require_text "docs/rfc/README.md" "status: accepted"
 require_text "docs/rfc/README.md" "version: 1.26"
@@ -1934,7 +1972,7 @@ require_text "$rfc_469" "## Open Questions"
 require_text "$rfc_469" "## Related Artifacts"
 require_text "$rfc_469" "research/hub/2026-07-31-ops-task-strategy-validation.md"
 require_text "docs/rfc/README.md" "2026-08-06-rfc-task-statement-architecture.md"
-require_text "pr-ops/artifact-map.md" '| `/docs/rfc/2026-08-06-rfc-task-statement-architecture.md` | RFC | справка |'
+require_text "ops/artifact-map.md" '| `/docs/rfc/2026-08-06-rfc-task-statement-architecture.md` | RFC | справка |'
 
 # RFC генома HTOM (issue #531, B-105): размещение управляющих контрактов и CI.
 rfc_531="docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md"
@@ -1955,7 +1993,7 @@ require_text "$rfc_531" "## Open Questions"
 require_text "$rfc_531" "## Related Artifacts"
 require_text "$rfc_531" "research/hub/exp/htom-genome-rfc-531/"
 require_text "docs/rfc/README.md" "2026-08-21-rfc-htom-genome-structure-and-ci.md"
-require_text "pr-ops/artifact-map.md" '| `/docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md` | RFC | справка |'
+require_text "ops/artifact-map.md" '| `/docs/rfc/2026-08-21-rfc-htom-genome-structure-and-ci.md` | RFC | справка |'
 
 # RFC дорожной карты RRP-исследований конвейера артефактов БА (issue #541, B-108).
 rfc_541="docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md"
@@ -1976,7 +2014,7 @@ require_text "$rfc_541" "## Open Questions"
 require_text "$rfc_541" "## Related Artifacts"
 require_text "$rfc_541" "research/ba-requirements/normalization/"
 require_text "docs/rfc/README.md" "2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md"
-require_text "pr-ops/artifact-map.md" '| `/docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md` | RFC | справка |'
+require_text "ops/artifact-map.md" '| `/docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md` | RFC | справка |'
 
 # Версия 0.2 RFC #541: слоевая декомпозиция, проверенная замером на корпусе.
 # Ссылки проверяются на подстроку, чтобы правка формулировок не ломала CI, но
@@ -1998,8 +2036,8 @@ require_file "$layering_exp/README.md"
 require_file "$layering_exp/classify-runs.py"
 require_file "$layering_exp/runs-routing.json"
 require_file "$layering_exp/classify-runs.log"
-require_text "pr-ops/artifact-map.md" '| `/research/ba-requirements/2026-08-26-m0-m2-layering-hypothesis-check.md` | исследование |'
-require_text "pr-ops/artifact-map.md" '| `/research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/` | исследование |'
+require_text "ops/artifact-map.md" '| `/research/ba-requirements/2026-08-26-m0-m2-layering-hypothesis-check.md` | исследование |'
+require_text "ops/artifact-map.md" '| `/research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/` | исследование |'
 
 # Реализация RFC #532 (issue #537, B-106): геном получил resolve_one_of, запрет
 # дубликатов управляющих контрактов, классификацию каталогов и собственный CI.
@@ -2013,7 +2051,7 @@ require_text "$htom_validator" ".github/workflows/validate.yml"
 require_file "templates/htom/.github/workflows/validate.yml"
 require_text "templates/htom/.github/workflows/validate.yml" "./tools/validate-repository-structure.sh"
 require_text "templates/sync-metadata.json" '"htom-validate-workflow"'
-require_text "pr-ops/artifact-map.md" '`/templates/htom/.github/workflows/validate.yml`'
+require_text "ops/artifact-map.md" '`/templates/htom/.github/workflows/validate.yml`'
 require_text "research/hub/exp/htom-genome-rfc-531/README.md" "Draft validation passed: 13/13"
 # RFC v0.2 (issue #535): классификация каталогов и декларация специфичных каталогов проекта.
 require_text "$rfc_531" "### P.7. Классификация каталогов"
@@ -2076,7 +2114,7 @@ require_text "docs/rfc/external-knowledge-integration.md" "clarify-engine-ai"
 require_text "docs/rfc/external-knowledge-integration.md" "Open Decision"
 
 # Documentation architecture balance (issue #231): Index/Summary/Full framework.
-require_text "pr-ops/artifact-map.md" "docs/rfc/documentation-architecture-balance.md"
+require_text "ops/artifact-map.md" "docs/rfc/documentation-architecture-balance.md"
 require_text "docs/rfc/README.md" "documentation-architecture-balance.md"
 require_text "docs/rfc/documentation-architecture-balance.md" "status: draft"
 require_text "docs/rfc/documentation-architecture-balance.md" "version: 0.1"
@@ -2087,7 +2125,7 @@ require_text "docs/rfc/documentation-architecture-balance.md" "clarify-engine-ai
 require_text "docs/rfc/documentation-architecture-balance.md" "Open Decision"
 
 # Research Memory & Source Intelligence (issue #239): object-centric memory layer.
-require_text "pr-ops/artifact-map.md" "docs/rfc/research-memory-source-intelligence.md"
+require_text "ops/artifact-map.md" "docs/rfc/research-memory-source-intelligence.md"
 require_text "docs/rfc/README.md" "research-memory-source-intelligence.md"
 require_text "docs/rfc/research-memory-source-intelligence.md" "status: draft"
 require_text "docs/rfc/research-memory-source-intelligence.md" "version: 0.1"
@@ -2106,7 +2144,7 @@ require_text "docs/rfc/research-memory-source-intelligence.md" "clarify-engine-a
 require_text "docs/rfc/research-memory-source-intelligence.md" "Open Decisions"
 
 # Repository archetypes, Prompt & Pattern Library template and release strategy (issue #240).
-require_text "pr-ops/artifact-map.md" "docs/rfc/repository-archetypes-template-release.md"
+require_text "ops/artifact-map.md" "docs/rfc/repository-archetypes-template-release.md"
 require_text "docs/rfc/README.md" "repository-archetypes-template-release.md"
 require_text "docs/rfc/repository-archetypes-template-release.md" "status: draft"
 require_text "docs/rfc/repository-archetypes-template-release.md" "version: 0.2"
@@ -2123,7 +2161,7 @@ require_text "docs/rfc/repository-archetypes-template-release.md" "Trunk-Based D
 require_text "docs/rfc/repository-archetypes-template-release.md" "GitHub Pages"
 
 # Methodology research & proposals for Hub/Mango/Open-AI (issue #245): six methodologies + three proposals.
-require_text "pr-ops/artifact-map.md" "docs/rfc/methodology-research-and-proposals.md"
+require_text "ops/artifact-map.md" "docs/rfc/methodology-research-and-proposals.md"
 require_text "docs/rfc/README.md" "methodology-research-and-proposals.md"
 require_text "docs/rfc/methodology-research-and-proposals.md" "status: draft"
 require_text "docs/rfc/methodology-research-and-proposals.md" "version: 0.1"
@@ -2144,8 +2182,8 @@ require_text "docs/rfc/methodology-research-and-proposals.md" "open-ai.ru"
 require_text "docs/rfc/methodology-research-and-proposals.md" "Open Decisions"
 
 # Wigers requirements research + AI-era RFC (issue #247): independent extraction + mango sync.
-require_text "pr-ops/artifact-map.md" "research/external-knowledge/2026-06-18-wigers-requirements-analysis.md"
-require_text "pr-ops/artifact-map.md" "research/mango/2026-06-18-requirements-engineering-ai-era.md"
+require_text "ops/artifact-map.md" "research/external-knowledge/2026-06-18-wigers-requirements-analysis.md"
+require_text "ops/artifact-map.md" "research/mango/2026-06-18-requirements-engineering-ai-era.md"
 require_text "research/external-knowledge/README.md" "2026-06-18-wigers-requirements-analysis.md"
 require_text "research/mango/README.md" "2026-06-18-requirements-engineering-ai-era.md"
 # Research doc: independent bilingual Wiegers extraction (FT-1..FT-4).
@@ -2210,85 +2248,85 @@ require_text "projects-sink/AI_PROJECT_CONTEXT-Summary.md" "Горизонты /
 require_text "projects-sink/AI_PROJECT_CONTEXT-Summary.md" "мультиагент"
 require_text "projects-sink/AI_PROJECT_CONTEXT-Summary.md" "графовой структуре связей"
 
-require_text "pr-ops/session-digests.md" "status: draft"
-require_text "pr-ops/session-digests.md" "version: 0.3"
-require_text "pr-ops/session-digests.md" "updated: 2026-06-13"
-require_text "pr-ops/session-digests.md" "temperature: 0.1"
-require_text "pr-ops/session-digests.md" "Контекст"
-require_text "pr-ops/session-digests.md" "Решения"
-require_text "pr-ops/session-digests.md" "Открытые вопросы"
-require_text "pr-ops/session-digests.md" "Следующие шаги"
-require_text "pr-ops/session-digests.md" "Индекс"
-require_text "pr-ops/session-digests.md" "2026-06-13"
-require_text "pr-ops/session-digests.md" "Anti-Inflation"
-require_text "pr-ops/session-digests.md" "Разложение на проектные репо"
-require_text "pr-ops/session-digests.md" "pr-ops/backlog.md"
-reject_text "pr-ops/session-digests.md" "Конард"
+require_text "ops/session-digests.md" "status: draft"
+require_text "ops/session-digests.md" "version: 0.3"
+require_text "ops/session-digests.md" "updated: 2026-06-13"
+require_text "ops/session-digests.md" "temperature: 0.1"
+require_text "ops/session-digests.md" "Контекст"
+require_text "ops/session-digests.md" "Решения"
+require_text "ops/session-digests.md" "Открытые вопросы"
+require_text "ops/session-digests.md" "Следующие шаги"
+require_text "ops/session-digests.md" "Индекс"
+require_text "ops/session-digests.md" "2026-06-13"
+require_text "ops/session-digests.md" "Anti-Inflation"
+require_text "ops/session-digests.md" "Разложение на проектные репо"
+require_text "ops/session-digests.md" "ops/backlog.md"
+reject_text "ops/session-digests.md" "Конард"
 
-require_text "pr-ops/backlog.md" "status: canonical"
-require_text "pr-ops/backlog.md" "version: 1.59"
-require_text "pr-ops/backlog.md" "type: backlog"
-require_text "pr-ops/backlog.md" "pr-ops/backlog-instruction.md"
-require_text "pr-ops/backlog.md" "# BACKLOG - активные спринты Хаба"
-require_text "pr-ops/backlog.md" "История остаётся в GitHub Issues/PR"
-require_text "pr-ops/backlog.md" "архивный файл бэклога не создаётся"
-require_text "pr-ops/backlog.md" "## Спринт 3: Ремонт структуры стандартов"
-require_text "pr-ops/backlog.md" "## Спринт 4: Post-migration границы корня Хаба"
-require_text "pr-ops/backlog.md" "| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |"
-reject_text "pr-ops/backlog.md" "**B-035**"
-require_text "pr-ops/backlog.md" "GitHub Issues/PR"
-require_text "pr-ops/backlog.md" "Creative"
-reject_text "pr-ops/backlog.md" "**B-049**"
-require_text "pr-ops/backlog.md" "audit-standard.md"
-require_text "pr-ops/backlog.md" "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296"
-require_text "pr-ops/backlog.md" "**B-054**"
-require_text "pr-ops/backlog.md" "**B-056**"
-require_text "pr-ops/backlog.md" "B-034"
-reject_text "pr-ops/backlog.md" "**B-063**"
-require_text "pr-ops/backlog.md" "docs/adr/2026-07-adr-007-hub-root-structure.md"
-require_text "pr-ops/backlog.md" "issue #378"
-require_text "pr-ops/backlog.md" "absorbed by ADR-007/B-047"
-require_text "pr-ops/backlog.md" "**B-062**"
-require_text "pr-ops/backlog.md" '`null`'
-require_text "pr-ops/backlog.md" "## Спринт 8: Разделение Mango на два репозитория"
-require_text "pr-ops/backlog.md" "**B-079**"
-require_text "pr-ops/backlog.md" "**B-084**"
-require_text "pr-ops/backlog.md" "issues #411, #413"
-require_text "pr-ops/backlog.md" "**B-088**"
-require_text "pr-ops/backlog.md" "deferred (triggered)"
-require_text "pr-ops/backlog.md" "issues/427"
-require_text "pr-ops/backlog.md" "## Спринт 10: Эволюция методологии инженерных исследований"
-require_text "pr-ops/backlog.md" "**B-089**"
-require_text "pr-ops/backlog.md" "**B-090**"
-require_text "pr-ops/backlog.md" "**B-091**"
-require_text "pr-ops/backlog.md" "Conceptual Framing"
+require_text "ops/backlog.md" "status: canonical"
+require_text "ops/backlog.md" "version: 1.59"
+require_text "ops/backlog.md" "type: backlog"
+require_text "ops/backlog.md" "ops/backlog-instruction.md"
+require_text "ops/backlog.md" "# BACKLOG - активные спринты Хаба"
+require_text "ops/backlog.md" "История остаётся в GitHub Issues/PR"
+require_text "ops/backlog.md" "архивный файл бэклога не создаётся"
+require_text "ops/backlog.md" "## Спринт 3: Ремонт структуры стандартов"
+require_text "ops/backlog.md" "## Спринт 4: Post-migration границы корня Хаба"
+require_text "ops/backlog.md" "| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |"
+reject_text "ops/backlog.md" "**B-035**"
+require_text "ops/backlog.md" "GitHub Issues/PR"
+require_text "ops/backlog.md" "Creative"
+reject_text "ops/backlog.md" "**B-049**"
+require_text "ops/backlog.md" "audit-standard.md"
+require_text "ops/backlog.md" "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296"
+require_text "ops/backlog.md" "**B-054**"
+require_text "ops/backlog.md" "**B-056**"
+require_text "ops/backlog.md" "B-034"
+reject_text "ops/backlog.md" "**B-063**"
+require_text "ops/backlog.md" "docs/adr/2026-07-adr-007-hub-root-structure.md"
+require_text "ops/backlog.md" "issue #378"
+require_text "ops/backlog.md" "absorbed by ADR-007/B-047"
+require_text "ops/backlog.md" "**B-062**"
+require_text "ops/backlog.md" '`null`'
+require_text "ops/backlog.md" "## Спринт 8: Разделение Mango на два репозитория"
+require_text "ops/backlog.md" "**B-079**"
+require_text "ops/backlog.md" "**B-084**"
+require_text "ops/backlog.md" "issues #411, #413"
+require_text "ops/backlog.md" "**B-088**"
+require_text "ops/backlog.md" "deferred (triggered)"
+require_text "ops/backlog.md" "issues/427"
+require_text "ops/backlog.md" "## Спринт 10: Эволюция методологии инженерных исследований"
+require_text "ops/backlog.md" "**B-089**"
+require_text "ops/backlog.md" "**B-090**"
+require_text "ops/backlog.md" "**B-091**"
+require_text "ops/backlog.md" "Conceptual Framing"
 require_text "docs/rfc/2026-07-17-rfc-reference-research-pattern.md" "Theory → Taxonomy → Decision Framework → Practice"
 require_text "docs/rfc/2026-07-17-rfc-reference-research-pattern.md" "Conceptual Framing → Object Model → Decision Space"
 require_text "standards/glossary.md" "| Conceptual Framing |"
 require_text "standards/glossary.md" "| Mental Model | **Deprecated:**"
-require_text "pr-ops/backlog.md" "Reference Pattern (Experimental)"
+require_text "ops/backlog.md" "Reference Pattern (Experimental)"
 
-require_text "pr-ops/backlog-instruction.md" "status: canonical"
-require_text "pr-ops/backlog-instruction.md" "version: 1.0"
-require_text "pr-ops/backlog-instruction.md" "type: instruction"
-require_text "pr-ops/backlog-instruction.md" "# Инструкция по ведению бэклога"
-require_text "pr-ops/backlog-instruction.md" "Архивный файл бэклога не создаётся"
-require_text "pr-ops/backlog-instruction.md" "| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |"
-require_text "pr-ops/backlog-instruction.md" "Колонка «Краткое содержание»"
-require_text "pr-ops/backlog-instruction.md" '`Structured`, `Hybrid`, `Creative` или'
-require_text "pr-ops/backlog-instruction.md" '`null`'
-require_text "pr-ops/backlog-instruction.md" "## Правила архивации спринтов"
-require_text "pr-ops/backlog-instruction.md" "Отдельный archive/backlog file не создаётся."
+require_text "ops/backlog-instruction.md" "status: canonical"
+require_text "ops/backlog-instruction.md" "version: 1.0"
+require_text "ops/backlog-instruction.md" "type: instruction"
+require_text "ops/backlog-instruction.md" "# Инструкция по ведению бэклога"
+require_text "ops/backlog-instruction.md" "Архивный файл бэклога не создаётся"
+require_text "ops/backlog-instruction.md" "| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |"
+require_text "ops/backlog-instruction.md" "Колонка «Краткое содержание»"
+require_text "ops/backlog-instruction.md" '`Structured`, `Hybrid`, `Creative` или'
+require_text "ops/backlog-instruction.md" '`null`'
+require_text "ops/backlog-instruction.md" "## Правила архивации спринтов"
+require_text "ops/backlog-instruction.md" "Отдельный archive/backlog file не создаётся."
 
-require_text "pr-ops/executable-documents-issues.md" "status: canonical"
-require_text "pr-ops/executable-documents-issues.md" "type: registry"
-require_text "pr-ops/executable-documents-issues.md" "contract-executability-rfc.md"
-require_text "pr-ops/executable-documents-issues.md" "CE-001"
-require_text "pr-ops/executable-documents-issues.md" "CE-010"
-require_text "pr-ops/executable-documents-issues.md" "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/138"
-require_text "pr-ops/executable-documents-issues.md" "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/147"
-reject_text "pr-ops/backlog.md" "Конард"
-reject_text "pr-ops/backlog-instruction.md" "Конард"
+require_text "ops/executable-documents-issues.md" "status: canonical"
+require_text "ops/executable-documents-issues.md" "type: registry"
+require_text "ops/executable-documents-issues.md" "contract-executability-rfc.md"
+require_text "ops/executable-documents-issues.md" "CE-001"
+require_text "ops/executable-documents-issues.md" "CE-010"
+require_text "ops/executable-documents-issues.md" "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/138"
+require_text "ops/executable-documents-issues.md" "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/147"
+reject_text "ops/backlog.md" "Конард"
+reject_text "ops/backlog-instruction.md" "Конард"
 
 require_text "research/README.md" "status: canonical"
 require_text "research/README.md" "standards/research-standard.md"
@@ -2418,7 +2456,7 @@ require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "A
 require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "Mango"
 require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "Clarify"
 require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "не вводить"
-require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "pr-ops/repo-model.md"
+require_text "docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md" "ops/repo-model.md"
 
 require_text "docs/audit/2026-06-11-task-execution-audit.md" "audit_target:"
 require_text "docs/audit/2026-06-11-task-execution-audit.md" "evidence_model:"
@@ -2465,9 +2503,9 @@ require_text "$audit_465" "## Remediation / Deviation"
 require_text "$audit_465" "## Related Artifacts"
 require_text "$audit_465" "research/hub/2026-07-31-ops-task-strategy-validation.md"
 require_text "$audit_465" "research/hub/exp/ops-task-strategy-461/"
-require_text "pr-ops/artifact-map.md" '| `/research/hub/2026-07-31-ops-task-strategy-validation.md` | исследование | — |'
-require_text "pr-ops/artifact-map.md" '| `/research/hub/exp/ops-task-strategy-461/` | исследование | — |'
-require_text "pr-ops/artifact-map.md" '| `/docs/audit/2026-08-01-ops-artifact-placement-review.md` | аудит | — |'
+require_text "ops/artifact-map.md" '| `/research/hub/2026-07-31-ops-task-strategy-validation.md` | исследование | — |'
+require_text "ops/artifact-map.md" '| `/research/hub/exp/ops-task-strategy-461/` | исследование | — |'
+require_text "ops/artifact-map.md" '| `/docs/audit/2026-08-01-ops-artifact-placement-review.md` | аудит | — |'
 
 require_text "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "status: draft"
 require_text "docs/report/2026-06-30-pr-303-rfc-hypothesis-analysis.md" "version: 0.1"
@@ -2770,7 +2808,7 @@ for tool_use_file in \
   require_file "research/ai-education/tool-use/$tool_use_file"
 done
 require_text "research/ai-education/README.md" "tool-use/00-introduction.md"
-require_text "pr-ops/artifact-map.md" "/research/ai-education/tool-use/00-introduction.md"
+require_text "ops/artifact-map.md" "/research/ai-education/tool-use/00-introduction.md"
 require_text "CHANGELOG.md" "research/ai-education/tool-use/"
 require_text "practices/ai-governance/anthropic-capability-thresholds.md" "status: canonical"
 require_text "practices/ai-governance/anthropic-capability-thresholds.md" "Responsible Scaling Policy"
@@ -2794,13 +2832,13 @@ require_text "projects/repo-development/docs/mango-ba-prompts-repository-migrati
 require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "scripts/validation/"
 require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "prompts/experiments/"
 require_text "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md" "PR #90"
-require_text "pr-ops/artifact-map.md" "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md"
+require_text "ops/artifact-map.md" "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md"
 
 require_text "education/README.md" "status: canonical"
 require_text "education/README.md" "standards/education-profile.md"
 
 require_text "frameworks/README.md" "status: canonical"
-require_text "frameworks/README.md" "pr-ops/repo-model.md"
+require_text "frameworks/README.md" "ops/repo-model.md"
 
 require_text "projects/education-ba-prompt/README.md" "status: draft"
 require_text "projects/education-ba-prompt/README.md" "version: 0.1"
@@ -2861,14 +2899,14 @@ require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "{{REPO_NAME}}"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "agent-onboarding-protocol.md"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "version: 0.9"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Периодическая суммаризация сессии"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "pr-ops/session-digests.md"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "pr-ops/backlog.md"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ops/session-digests.md"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ops/backlog.md"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "executable: true"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ЭТО АРТЕФАКТ ДЛЯ КОПИРОВАНИЯ. Скопируйте в новый чат."
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "EXECUTION"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "EXPLANATION"
-require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Определи тип проекта"
+require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "/AGENTS.md"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Контекст чата диалога"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "Проверка шаблонов"
 require_text "templates/htom/AI_SESSION_HANDOVER_PROMPT.md" "standards/session-handover-standard.md"
@@ -3002,7 +3040,7 @@ if [[ -e templates/spoke/research ]]; then
 fi
 
 if [[ -e meta/README.md ]]; then
-  fail "active meta/README.md should move to pr-ops/"
+  fail "active meta/README.md should move to ops/"
 fi
 
 if [[ -e tests/validate-repository-structure.sh ]]; then

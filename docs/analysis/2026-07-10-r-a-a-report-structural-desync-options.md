@@ -21,7 +21,7 @@ related_artifacts:
   - "standards/analysis-standard.md"
   - "standards/audit-standard.md"
   - "standards/report-standard.md"
-  - "pr-ops/backlog.md"
+  - "ops/backlog.md"
 ---
 
 # Варианты решения структурного рассинхрона стандартов R/A/A/Report
@@ -406,4 +406,4 @@ Sibling standards содержат только локальную delta + сс�
 - [Analysis Standard](../../standards/analysis-standard.md)
 - [Audit Standard](../../standards/audit-standard.md)
 - [Report Standard](../../standards/report-standard.md)
-- [Backlog B-050..B-054](../../pr-ops/backlog.md)
+- [Backlog B-050..B-054](../../ops/backlog.md)

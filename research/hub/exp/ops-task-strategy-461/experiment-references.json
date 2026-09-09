@@ -51,7 +51,7 @@
     }
   ],
   "temporal_control": {
-    "note": "Unresolved rate is an era property before it is a detail property.\n\nThe Hub restructured itself during 2026-06 (`governance/` folded into\n`pr-ops/`, research artifacts renamed date-first). Task statements written\nin that window cite paths that the restructure invalidated days later, so\ncomparing detail groups without holding the month fixed measures the\nmigration, not the specification style. Detailed issues cluster in July and\nshort ones in May-June, which is exactly the shape that would manufacture a\nspurious result.",
+    "note": "Unresolved rate is an era property before it is a detail property.\n\nThe Hub restructured itself during 2026-06 (`governance/` folded into\n`ops/`, research artifacts renamed date-first). Task statements written\nin that window cite paths that the restructure invalidated days later, so\ncomparing detail groups without holding the month fixed measures the\nmigration, not the specification style. Detailed issues cluster in July and\nshort ones in May-June, which is exactly the shape that would manufacture a\nspurious result.",
     "by_month": [
       {
         "month": "2026-05",
@@ -3372,7 +3372,7 @@
       "refs_unresolved": 1,
       "unresolved_rate": 0.333,
       "unresolved_sample": [
-        "pr-ops/backlog-instruction.md"
+        "ops/backlog-instruction.md"
       ]
     },
     {

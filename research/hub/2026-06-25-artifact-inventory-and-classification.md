@@ -13,8 +13,8 @@ related_artifacts:
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
   - "research/hub/2026-06-23-repository-structure-concept.md"
   - "research/hub/2026-06-20-ecosystem-architecture-research.md"
-  - "pr-ops/artifact-map.md"
-  - "pr-ops/repo-model.md"
+  - "ops/artifact-map.md"
+  - "ops/repo-model.md"
   - "standards/project-structure-inheritance.md"
   - "standards/file-naming.md"
   - "standards/research-standard.md"
@@ -104,7 +104,7 @@ trade-off, финальное решение за Пользователем.
 **Связанные артефакты.**
 - [`research/hub/2026-06-23-repository-structure-concept.md`](2026-06-23-repository-structure-concept.md)
   — концепция базовых каталогов и четырёхслойная семантическая модель (база §6–§8).
-- [`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md) — контролируемый
+- [`ops/artifact-map.md`](../../ops/artifact-map.md) — контролируемый
   словарь типов артефактов Хаба (переиспользуется в §4).
 - [`standards/glossary.md`](../../standards/glossary.md) — термины уровней и типов.
 - mango: `docs/analysis/{artifact-chain-hypothesis-research, approval-contract-test-industry-rfc, bcreq-fr-contract-process-analysis}.md`
@@ -223,7 +223,7 @@ PDF-первоисточники инвентаризируются **агрег
 их 11 000+, индивидуальная ценность каждого = «фрагмент знания» (L4, §6).
 
 **Контролируемый словарь типов.** Берётся из
-[`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md): `навигация`,
+[`ops/artifact-map.md`](../../ops/artifact-map.md): `навигация`,
 `концепция`, `контракт`, `правило`, `руководство`, `стандарт`, `профиль`,
 `шаблон`, `исследование`, `утилита`, `журнал`, `лицензия`, `каталог`. Для mango
 добавлены типы спока: `промпт`, `паттерн`, `run`, `kb-реестр`, `kb-фрагмент`,
@@ -888,9 +888,9 @@ flowchart LR
   — «две лестницы L1–L4» (фундамент проблемы четырёх лестниц §6.1).
 - [research/mango/2026-05-22-classification.md](../mango/2026-05-22-classification.md) — таксономия δ
   (Domain→Capability→Feature→Atomic Function).
-- [pr-ops/artifact-map.md](../../pr-ops/artifact-map.md) — контролируемый
+- [ops/artifact-map.md](../../ops/artifact-map.md) — контролируемый
   словарь типов (метод §3).
-- [pr-ops/repo-model.md](../../pr-ops/repo-model.md),
+- [ops/repo-model.md](../../ops/repo-model.md),
   [standards/project-structure-inheritance.md](../../standards/project-structure-inheritance.md),
   [standards/glossary.md](../../standards/glossary.md).
 

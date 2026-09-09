@@ -9,7 +9,7 @@ temperature: 0.6
 
 ## 1. Отношение к deferred-триггеру B-091
 
-Триггер [B-091](../../../pr-ops/backlog.md) («Проверить Reference Pattern на
+Триггер [B-091](../../../ops/backlog.md) («Проверить Reference Pattern на
 не-AI доменах», P2, deferred (triggered)) называет среди доменов проверки
 **Prompt Engineering**. Этот модуль его **не закрывает** и не отменяет — предметы
 разные:

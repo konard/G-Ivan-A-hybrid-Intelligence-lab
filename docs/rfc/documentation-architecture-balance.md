@@ -15,14 +15,14 @@ rfc-scope: A
 **Index → Summary → Full** — как способ примирить два уже принятых принципа Хаба,
 которые в пределе тянут в разные стороны:
 
-- **Anti-Inflation** ([pr-ops/repo-model.md](../../pr-ops/repo-model.md)) — «артефакт
+- **Anti-Inflation** ([ops/repo-model.md](../../ops/repo-model.md)) — «артефакт
   только при операционной боли», не плодить документы → склонность *сливать*
   связанное в один файл;
 - **Atomicity** ([standards/executable-documentation-standard.md](../../standards/executable-documentation-standard.md),
   раздел «Atomization») — один артефакт = один файл → склонность *дробить*.
 
 RFC фиксирует **решение и rationale**. Обязательная норма (если она потребуется)
-делегируется в active artifact — `pr-ops/repo-model.md` (Decision Rules) или
+делегируется в active artifact — `ops/repo-model.md` (Decision Rules) или
 отдельный standard. До такой делегации downstream-проект ссылается на RFC как на
 обоснование, но не обязан выполнять его механически
 ([docs/rfc/README.md](README.md)).
@@ -30,7 +30,7 @@ RFC фиксирует **решение и rationale**. Обязательная
 > 🧭 **Index / Summary / Full — это уровни *детализации одного знания*, а НЕ
 > уровни документации L1–L4.** Framework L1–L2 (`docs/`) и Methodology L3–L4
 > (`governance/`, `standards/`, …) описаны в
-> [pr-ops/artifact-map.md](../../pr-ops/artifact-map.md) и
+> [ops/artifact-map.md](../../ops/artifact-map.md) и
 > [docs/rfc/knowledge-lifecycle-proposal.md](knowledge-lifecycle-proposal.md).
 > Чтобы избежать путаницы, здесь сознательно не используются «L0/L1/L2».
 
@@ -58,7 +58,7 @@ RFC предлагает **рамку классификации и навига
 
 - НЕ вводит CI-скраперы, авто-парсинг документов или `artifact-graph.json`
   (прямой запрет НФТ; Anti-Inflation). Навигация — markdown-ссылки + якоря +
-  [pr-ops/artifact-map.md](../../pr-ops/artifact-map.md);
+  [ops/artifact-map.md](../../ops/artifact-map.md);
 - НЕ добавляет обязательных полей frontmatter сверх четырёх
   ([standards/frontmatter-standard.md](../../standards/frontmatter-standard.md));
 - НЕ переименовывает и не дробит файлы сам по себе — повышение/понижение класса
@@ -168,7 +168,7 @@ A (Index) --атом перестали запрашивать--> C (Full): сл
    (Anti-Inflation).
 2. **Навигация — без новой инфраструктуры.** Используем то, что есть: markdown-
    ссылки в теле, устойчивые заголовки-якоря и
-   [pr-ops/artifact-map.md](../../pr-ops/artifact-map.md). Запрет на `artifact-graph.json`
+   [ops/artifact-map.md](../../ops/artifact-map.md). Запрет на `artifact-graph.json`
    и авто-парсинг сохраняется.
 3. **Frontmatter остаётся минимальным.** RFC сознательно **не** добавляет
    навигационные поля во frontmatter: это противоречило бы
@@ -202,7 +202,7 @@ A (Index) --атом перестали запрашивать--> C (Full): сл
   (например, mango ADR → якоря; clarify research → Summary-вход + чистка
   версий-копий). Замерить эффект на одном агенте-запросе.
 - **Фаза 2 (опционально, после пилота).** Если рамка подтверждается — делегировать
-  норму в `pr-ops/repo-model.md` (Decision Rules) или отдельный standard и
+  норму в `ops/repo-model.md` (Decision Rules) или отдельный standard и
   отразить в `artifact-map.md`. Только тогда RFC может быть повышен.
 
 ## 7. Оценка эффекта
@@ -219,7 +219,7 @@ A (Index) --атом перестали запрашивать--> C (Full): сл
 ## Follow-up (инициированные исследования/RFC)
 
 1. **Pattern «document granularity»** — после Фазы 1 оформить подтверждённую
-   рамку как Pattern → кандидат в `pr-ops/repo-model.md` (lifecycle:
+   рамку как Pattern → кандидат в `ops/repo-model.md` (lifecycle:
    RFC → Pattern → Standard).
 2. **Smart Sync чек «whole-file versioning»** — предложить в гайд
    [guides/sync-from-hub.md](../../guides/sync-from-hub.md) лёгкую проверку-напоминание
@@ -238,7 +238,7 @@ A (Index) --атом перестали запрашивать--> C (Full): сл
 - Описан гибкий подход без бюрократии (Index/Summary/Full, навигация без новой
   инфраструктуры, lazy loading), отделённый от Framework L1–L4.
 - Предложены решения для каждого из 4 проектов и поэтапный план.
-- Артефакт зарегистрирован в `pr-ops/artifact-map.md`, навигации RFC и
+- Артефакт зарегистрирован в `ops/artifact-map.md`, навигации RFC и
   валидаторе; CI-скраперы и `artifact-graph.json` отсутствуют (Anti-Inflation).
 
 ## Open Decision (за человеком)
@@ -247,13 +247,13 @@ A (Index) --атом перестали запрашивать--> C (Full): сл
    якорях (рекомендация RFC, минимум бюрократии) — или всё же ввести
    опциональное поле `related:` во frontmatter, изменив
    `standards/frontmatter-standard.md`?
-2. Делегировать норму в `pr-ops/repo-model.md` сразу или после пилота Фазы 1?
+2. Делегировать норму в `ops/repo-model.md` сразу или после пилота Фазы 1?
 3. Сделать ли чистку поверсионных копий в `clarify-engine-ai` обязательным
    правилом Smart Sync или оставить рекомендацией?
 
 ## Связанные артефакты
 
-- [pr-ops/repo-model.md](../../pr-ops/repo-model.md) — Anti-Inflation principle и Decision Rules.
+- [ops/repo-model.md](../../ops/repo-model.md) — Anti-Inflation principle и Decision Rules.
 - [standards/executable-documentation-standard.md](../../standards/executable-documentation-standard.md) — Atomization и practice graph через body links.
 - [standards/frontmatter-standard.md](../../standards/frontmatter-standard.md) — минимальный frontmatter; навигация вне frontmatter.
 - [docs/rfc/external-knowledge-integration.md](external-knowledge-integration.md) — PR #229, внешние источники (развивается, не дублируется).

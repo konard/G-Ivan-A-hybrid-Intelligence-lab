@@ -132,4 +132,4 @@ https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/547).
 
 - https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/analysis/2026-09-03-ai-rules-compliance-failure-root-cause.md
 - https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/agents-md-root-draft.md
-- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md
+- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md

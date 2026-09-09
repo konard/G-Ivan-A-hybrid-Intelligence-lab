@@ -264,7 +264,7 @@ Accepted impact:
 - promote this RFC to `accepted` governance status;
 - create [ADR Structure Standard](../../standards/adr-structure-standard.md);
 - register the RFC and standard in [Governance RFC README](README.md),
-  [Standards README](../../standards/README.md), [Artifact Map](../../pr-ops/artifact-map.md)
+  [Standards README](../../standards/README.md), [Artifact Map](../../ops/artifact-map.md)
   and `tools/validate-repository-structure.sh`;
 - keep `tools/validate-frontmatter.sh` as-is because it already enforces ADR
   `owner` and `decision-type` requirements from

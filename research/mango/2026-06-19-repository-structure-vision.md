@@ -223,7 +223,7 @@ Private: `runs/`, feedback, артефакты, аудит. Object Storage: сы
 **Вариант C — мульти-репо «по доменам» (framework + operations + knowledge-vault
 как отдельный repo) или монорепо с строгими CODEOWNERS.**
 - *Минусы:* избыточная дробность (нарушает Anti-Inflation,
-  [pr-ops/repo-model.md](../../pr-ops/repo-model.md)); knowledge-vault логичнее как
+  [ops/repo-model.md](../../ops/repo-model.md)); knowledge-vault логичнее как
   Object Storage, а не Git-репо (бинарные PDF/DOCX/транскрипты).
 
 ### 3.2. Независимое решение / Decision
@@ -393,7 +393,7 @@ s3://mango-vault/                   # доступ по аутентификац
 - **Служебный промпт синхронизации:** `governance/prompts/hub-sync-prompt.md` —
   governance-инструмент, **не** в каталоге `prompts/` (там только БА-методология).
 - Хаб остаётся источником рекомендаций, а не блокирующих правил
-  ([AI_GOVERNANCE.md](../../ai-governance/ai-governance.md), [pr-ops/repo-model.md](../../pr-ops/repo-model.md)).
+  ([AI_GOVERNANCE.md](../../ai-governance/ai-governance.md), [ops/repo-model.md](../../ops/repo-model.md)).
 
 ### 5.2. Связь с порталом `open-ai.ru` / Portal Integration (последовательно)
 
@@ -546,7 +546,7 @@ Index/Summary/Full уровни) — следующая задача, опира
 - Дерево `G-Ivan-A/mango_ba_prompts@main` (снимок 2026-06-19).
 - 4 видения: команды C, Q, G, фаундера (вложения issue
   [#253](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/253)).
-- Hub-контекст: [pr-ops/repo-model.md](../../pr-ops/repo-model.md) (Anti-Inflation),
+- Hub-контекст: [ops/repo-model.md](../../ops/repo-model.md) (Anti-Inflation),
   [docs/rfc/README.md](../../docs/rfc/README.md) (статус RFC),
   [research/mango/README.md](README.md),
   [projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md](../../projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md),

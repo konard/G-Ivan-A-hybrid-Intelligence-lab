@@ -288,7 +288,7 @@ Local checks:
 `docs/audit/`, knowledge-lifecycle) кодифицируется обновлением валидаторов в
 цепочке cleanup B-033, не в этом стандарте. Расширение валидаторов за пределы
 frontmatter, naming и registry checks отслеживается как tech debt в
-[pr-ops/backlog.md](../pr-ops/backlog.md).
+[ops/backlog.md](../ops/backlog.md).
 
 ## Related Artifacts
 
@@ -320,7 +320,7 @@ frontmatter, naming и registry checks отслеживается как tech de
 - [frontmatter-docs-standard.md](frontmatter-docs-standard.md) — контракт
   frontmatter по классам документов.
 - [file-naming.md](file-naming.md) — дата-первое именование.
-- [pr-ops/backlog.md](../pr-ops/backlog.md) — цепочка Audit B-029, B-030,
+- [ops/backlog.md](../ops/backlog.md) — цепочка Audit B-029, B-030,
   B-031, B-032 (этот стандарт), B-033.
 - Issues
   [#362](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/362)

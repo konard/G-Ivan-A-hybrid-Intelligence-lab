@@ -19,15 +19,15 @@ related_artifacts:
   - "standards/analysis-standard.md"
   - "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md"
   - "research/mango/2026-06-19-repository-structure-vision.md"
-  - "pr-ops/backlog.md"
-  - "pr-ops/artifact-map.md"
+  - "ops/backlog.md"
+  - "ops/artifact-map.md"
 ---
 
 # План миграции артефактов Mango при разделении репозиториев (B-080)
 
 > Режим: **Analysis (recommendation)** для issue
 > [#436](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/436) и
-> backlog [B-080](../../pr-ops/backlog.md).
+> backlog [B-080](../../ops/backlog.md).
 > Граница: **этот документ не создаёт репозитории (B-081/B-082), не переносит
 > файлы (B-083) и не настраивает синхронизацию (B-084).** Он фиксирует
 > исполнимый контракт миграции как upstream-вход для этих задач.
@@ -415,8 +415,8 @@ CHANGELOG, а не git-историей приватного репо. Это с
   ранняя структурная интерпретация Mango.
 - [`standards/evals-contract-standard.md`](../../standards/evals-contract-standard.md) (B-067) —
   форма golden-sets для greenfield-каталога `evals/`.
-- [`pr-ops/backlog.md`](../../pr-ops/backlog.md) — B-079..B-084, Спринт 8.
-- [`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md) — регистрация этого артефакта.
+- [`ops/backlog.md`](../../ops/backlog.md) — B-079..B-084, Спринт 8.
+- [`ops/artifact-map.md`](../../ops/artifact-map.md) — регистрация этого артефакта.
 - Issue [#436](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/436) —
   постановка B-080.
 - Issues [#411](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/411),

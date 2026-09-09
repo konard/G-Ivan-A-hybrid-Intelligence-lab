@@ -23,7 +23,7 @@ executable: false
 | `education/` | Open education programs, course materials и teaching scenarios. | Использовать для материалов, пригодных для обучения или partner delivery. |
 | `ai-governance/` | Policy bucket: human decision rights, security/compliance, внешние ограничения и эскалация. | Добавлять только обязательства уровня политики по границе ADR-007. |
 | `ai-rules/` | Правила поведения агента и быстрой синхронизации с контекстом проекта. | Добавлять только правила, которые уточняют поведение или quick-sync агента. |
-| `pr-ops/` | Операции над репозиторием и PR: repo model, artifact map, backlog, реестры и session digests. | Добавлять operating files только когда они уточняют active decision-making. |
+| `ops/` | Операции над репозиторием и PR: repo model, artifact map, backlog, реестры и session digests. | Добавлять operating files только когда они уточняют active decision-making. |
 | `projects-sink/` | Приёмник контекста spoke-проектов, синхронизируемого в Хаб. | Добавлять только синхронизируемый из spoke контекст, не production-код. |
 | `docs/rfc/` | RFC-предложения об изменении структуры, lifecycle и правил Хаба. | Создавать RFC только для активно обсуждаемого изменения, требующего review. |
 | `tools/` | Локальные validation и maintenance scripts. | Добавлять scripts, которые делают проверки воспроизводимыми. |
@@ -52,8 +52,8 @@ ADR-001 задает универсальное ядро экосистемы, �
 
 | Каталог ADR-001 | Статус в текущем Хабе | Активные дома в Хабе | Триггер пересмотра |
 | --- | --- | --- | --- |
-| `kb/` | Не создается в корне Хаба. | `ai-rules/`, `pr-ops/`, `standards/`, `practices/`, `docs/guides/`; при необходимости проект-специфичный `projects/<project>/kb/`. | Появились как минимум 2-3 reusable operational knowledge artifacts, которые регулярно потребляет агент/процесс и которые нельзя без дублирования разместить в существующих домах. |
-| `runs/` | Не создается в корне Хаба. | GitHub issue/PR/CI records, `pr-ops/session-digests.md`, `docs/report/`, `research/<domain>/exp/<issue-slug>/` для research evidence. | Появились повторяющиеся non-research operational/business/pipeline runs, которым нужны стабильные repo-hosted metadata, inputs, outputs, feedback и logs. |
+| `kb/` | Не создается в корне Хаба. | `ai-rules/`, `ops/`, `standards/`, `practices/`, `docs/guides/`; при необходимости проект-специфичный `projects/<project>/kb/`. | Появились как минимум 2-3 reusable operational knowledge artifacts, которые регулярно потребляет агент/процесс и которые нельзя без дублирования разместить в существующих домах. |
+| `runs/` | Не создается в корне Хаба. | GitHub issue/PR/CI records, `ops/session-digests.md`, `docs/report/`, `research/<domain>/exp/<issue-slug>/` для research evidence. | Появились повторяющиеся non-research operational/business/pipeline runs, которым нужны стабильные repo-hosted metadata, inputs, outputs, feedback и logs. |
 
 Обоснование и сравнение с экосистемными репозиториями зафиксированы в
 [docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md](../docs/analysis/2026-07-04-kb-runs-hub-applicability-analysis.md).

@@ -52,6 +52,11 @@ assert_file "templates/spoke/AGENTS.md"
 assert_file "templates/spoke/.hub-profile.json"
 assert_deprecated_pointer_only "pr-ops"
 
+if ! "$ROOT_DIR/tools/validate-repository-structure.sh" \
+  >"$TMP_DIR/repository-structure.log" 2>&1; then
+  fail "repository structure validator rejects the integrated bootstrap or path migration"
+fi
+
 if [[ -f "$ROOT_DIR/AGENTS.md" && -f "$ROOT_DIR/.hub-profile.json" ]]; then
   missing_agents="$TMP_DIR/missing-agents"
   mkdir -p "$missing_agents"
@@ -115,6 +120,11 @@ if [[ -d "$ROOT_DIR/ops" ]]; then
     ':(exclude)CHANGELOG.md' \
     ':(exclude)pr-ops/README.md' \
     ':(exclude)docs/superpowers/plans/2026-09-09-agents-md-physical-integration.md' \
+    ':(exclude).hub-profile.json' \
+    ':(exclude)tools/test-agents-md-integration.sh' \
+    ':(exclude)tools/test-historical-immutable.sh' \
+    ':(exclude)ops/backlog.md' \
+    ':(exclude)ops/artifact-map.md' \
     >"$TMP_DIR/stale-pr-ops.log"; then
     fail "active tracked files still contain stale pr-ops/ references"
   fi

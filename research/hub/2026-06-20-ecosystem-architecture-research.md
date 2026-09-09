@@ -9,9 +9,9 @@ method: comparative-analysis
 scope: repo-wide
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/257"
 related_artifacts:
-  - "pr-ops/repo-model.md"
-  - "pr-ops/artifact-map.md"
-  - "pr-ops/backlog.md"
+  - "ops/repo-model.md"
+  - "ops/artifact-map.md"
+  - "ops/backlog.md"
   - "docs/rfc/methodology-research-and-proposals.md"
   - "research/hub/2026-06-12-ecosystem-governance-audit.md"
   - "research/mango/2026-06-19-repository-structure-vision.md"
@@ -193,8 +193,8 @@ flowchart TB
 
 | Артефакт | Наблюдение | Архитектурный риск |
 | --- | --- | --- |
-| `pr-ops/artifact-map.md` | Самый крупный навигационный документ, содержит почти полную карту активных артефактов. | При использовании как runtime-контекста превращается в глобальный prompt overload. |
-| `pr-ops/backlog.md` | Сводит множество задач, источников, приоритетов и открытых вопросов. | Становится вторым "центром правды" рядом с GitHub Issues и artifact-map. |
+| `ops/artifact-map.md` | Самый крупный навигационный документ, содержит почти полную карту активных артефактов. | При использовании как runtime-контекста превращается в глобальный prompt overload. |
+| `ops/backlog.md` | Сводит множество задач, источников, приоритетов и открытых вопросов. | Становится вторым "центром правды" рядом с GitHub Issues и artifact-map. |
 | `ai-rules/agent-onboarding-protocol.md` | Одновременно instruction, rationale, checklist и troubleshooting. | Агент получает больше объяснения, чем нужно для конкретной операции. |
 | `standards/research-profile.md` | Нужен для качества research, но объемен для простого создания отчета. | Требуется краткая executable версия или summary entrypoint. |
 | `AI_GOVERNANCE.md` | Важный высокий уровень правил. | Частично пересекается с onboarding и team contracts. |
@@ -634,9 +634,9 @@ flowchart TB
 
 - Issue #257: <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/257>
 - PR #258: <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/258>
-- `pr-ops/repo-model.md`
-- `pr-ops/artifact-map.md`
-- `pr-ops/backlog.md`
+- `ops/repo-model.md`
+- `ops/artifact-map.md`
+- `ops/backlog.md`
 - `docs/rfc/methodology-research-and-proposals.md`
 - `research/hub/2026-06-12-ecosystem-governance-audit.md`
 - `research/mango/2026-06-19-repository-structure-vision.md`

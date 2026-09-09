@@ -20,8 +20,8 @@ related_artifacts:
   - "ai-rules/agent-onboarding-protocol.md"
   - "standards/rfc-structure-standard.md"
   - "tools/validate-repository-structure.sh"
-  - "pr-ops/backlog.md"
-  - "pr-ops/artifact-map.md"
+  - "ops/backlog.md"
+  - "ops/artifact-map.md"
   - "docs/rfc/2026-09-04-rfc-bootstrap-environment-and-structure.md"
   - "CONTRIBUTING.md"
   - "GOVERNANCE.md"
@@ -45,7 +45,7 @@ related_issues:
 | Source issue | [#551](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/551) |
 | Impacted artifacts | `docs/adr/2026-09-adr-012-agents-md-root-contract.md` (decision record), `AGENTS.md` (новый корневой), `ai-rules/agent-work-routing.md` (новый), `ai-rules/agent-work-rules.md`, `docs/adr/2026-07-adr-007-hub-root-structure.md`, `standards/agents-md-bootstrap-standard.md` (предлагается), `tools/validate-repository-structure.sh`, `templates/agents-md-root-draft.md`, `CONTRIBUTING.md`, `GOVERNANCE.md` |
 | Decision record | [ADR-012: Корневой контракт `AGENTS.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-012-agents-md-root-contract.md) |
-| Implementation link | Задача **B-110** в [`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md) (легализация и размещение `AGENTS.md`); принятие оформлено issue [#559](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/559) |
+| Implementation link | Задача **B-110** в [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md) (легализация и размещение `AGENTS.md`); принятие оформлено issue [#559](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/559) |
 | Archetype scope | multi (A / B / C / D) |
 
 ## Summary
@@ -246,9 +246,9 @@ U-образное распределение качества: информац
 
 **Правка `A-5`(б).** Таблица маршрутизации дополняется двумя маршрутами по
 контракту классов `ai-rules/`: «вызываемая человеком процедура → `ai-rules/commands/`»
-и «навык под класс задачи → `ai-rules/skills/`». Маршруты `pr-ops/*` переписываются
+и «навык под класс задачи → `ai-rules/skills/`». Маршруты `ops/*` переписываются
 в `ops/*` **тем же PR, что и физическая миграция каталога** (задача B-119): до её
-мержа действующим адресом остаётся `pr-ops/`, иначе маршрутизатор указывает в
+мержа действующим адресом остаётся `ops/`, иначе маршрутизатор указывает в
 несуществующий путь.
 
 **Правка `A-7` (решение фаундера, issue [#559](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/559)).**
@@ -412,7 +412,7 @@ flowchart LR
 | ADR-007, To-Be дерево корня | Оба файла присутствуют в целевой структуре: `GOVERNANCE.md` — «Target org-governance anchor aligned with `AI_GOVERNANCE.md`», `CONTRIBUTING.md` — «Contribution workflow and local validation commands». Сохранение `GOVERNANCE.md` названо осознанным расхождением с ADR-001. | [ADR-007](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-07-adr-007-hub-root-structure.md) |
 | `tools/validate-repository-structure.sh` | Оба файла — в массиве `required_files`; отсутствие любого из них уже сегодня даёт красный валидатор. Дополнительно на `CONTRIBUTING.md` навешено **около тридцати** проверок `require_text` (включая version-pin `version: 1.14`), на `GOVERNANCE.md` — две. | [validate-repository-structure.sh](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-repository-structure.sh) |
 
-Уточнение по второму вопросу постановки: `pr-ops/repo-model.md` **не** нормирует
+Уточнение по второму вопросу постановки: `ops/repo-model.md` **не** нормирует
 набор корневых файлов — его таблица «Структура» описывает только каталоги, а
 именование корня делегировано
 [`standards/file-naming.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/file-naming.md)
@@ -457,7 +457,7 @@ date-first-именования). Источник обязательности 
 | K-1 | `CONTRIBUTING.md`, раздел «AI-Assisted Work»: «AI agents начинают с `GOVERNANCE.md`, затем применяют `AI Governance` и `Agent Work Rules`». | **Конфликт маршрутизации** | Прямое противоречие модели «`AGENTS.md` — SSOT №0». Два корневых файла объявляют разные точки входа агента; агент, прочитавший `CONTRIBUTING.md` первым, уходит по устаревшему маршруту. Требует правки при принятии RFC. |
 | K-2 | `CONTRIBUTING.md` содержит агент-нормативные разделы, а не только человеческий workflow: «Правило авто-заполнения Мета», «Специфика работы с AI-агентами», «Работа с внешними источниками», «Консолидация открытых вопросов», запрет агенту ставить метку `no-diff-expected`. | **Риск раздвоения SSOT** | Правила поведения агента живут вне `ai-rules/`. Противоречий с `ai-rules/agent-work-rules.md` сейчас нет, но два дома одного класса правил гарантируют дрейф. Это и есть настоящая проблема, а не само существование файла. |
 | K-3 | `templates/htom/AI_QUICK_RULES.md` и `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` предписывают агенту читать локальный `CONTRIBUTING.md` как governance-чек-лист. | **Риск раздвоения SSOT** | Тот же дефект, воспроизведённый в шаблонах спиц. Правится в B-111 вместе с инъекцией `AGENTS.md`. |
-| K-4 | `GOVERNANCE.md` — 23 строки, ноль нормативного текста: перенаправляет в `ai-governance/`, `ai-rules/`, `pr-ops/`, `standards/` и прямо декларирует «остаётся тонкой стабильной точкой входа и не дублирует нормативные тексты». | **Конфликта нет** | Целевые адреса совпадают с маршрутизацией `AGENTS.md`. Файл уже является ровно тем «тонким корневым якорем», который описан в варианте фаундера. |
+| K-4 | `GOVERNANCE.md` — 23 строки, ноль нормативного текста: перенаправляет в `ai-governance/`, `ai-rules/`, `ops/`, `standards/` и прямо декларирует «остаётся тонкой стабильной точкой входа и не дублирует нормативные тексты». | **Конфликта нет** | Целевые адреса совпадают с маршрутизацией `AGENTS.md`. Файл уже является ровно тем «тонким корневым якорем», который описан в варианте фаундера. |
 | K-5 | Тематические пересечения `AGENTS.md` ↔ `CONTRIBUTING.md`: Operating Mode, именование файлов, frontmatter, локальная проверка. | **Конфликта нет** | Оба файла ссылаются на одни и те же стандарты (`standards/frontmatter-standard.md`, `standards/file-naming.md`), а не задают собственные правила. Дублируется повествование, а не норма. |
 
 Проверка НФТ об абсолютных путях на этом же материале: `CONTRIBUTING.md` и
@@ -483,7 +483,7 @@ date-first-именования). Источник обязательности 
    `CONTRIBUTING.md` убирает человеческую точку входа, ничего не давая агенту.
 3. **`GOVERNANCE.md` уже минимален.** 23 строки без нормативного текста — это не
    избыточный артефакт по
-   [Anti-Inflation Principle](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/repo-model.md);
+   [Anti-Inflation Principle](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/repo-model.md);
    он снимает наблюдаемую боль (стабильный корневой адрес governance-слоя,
    зафиксированный ADR-007).
 4. **Стоимость несоразмерна scope.** Удаление затрагивает ADR-007, валидатор,
@@ -497,7 +497,7 @@ date-first-именования). Источник обязательности 
 | --- | --- | --- | --- |
 | `AGENTS.md` | ИИ-агент | Единственная точка входа и маршрутизатор: критические запреты, онбординг, ссылки на `ai-rules/`, правила эскалации, правило набора контекста. SSOT №0. | Полных текстов правил, человеческого PR-workflow. |
 | `CONTRIBUTING.md` | Человек | Workflow вклада: issue → PR → review, PR checklist, локальные команды проверки, ожидания к диффу. | Нормативных правил поведения агента: они переезжают в `ai-rules/`, остаётся ссылка. Раздел «AI-Assisted Work» заменяется одной строкой-указателем на `/AGENTS.md`. |
-| `GOVERNANCE.md` | Человек, внешний читатель | Тонкий корневой якорь governance-слоя: редирект в `ai-governance/`, `ai-rules/`, `pr-ops/`, `standards/`. Уже соответствует. | Нормативных текстов (и сейчас не содержит). Изменений не требует. |
+| `GOVERNANCE.md` | Человек, внешний читатель | Тонкий корневой якорь governance-слоя: редирект в `ai-governance/`, `ai-rules/`, `ops/`, `standards/`. Уже соответствует. | Нормативных текстов (и сейчас не содержит). Изменений не требует. |
 
 **Инвариант, вытекающий из разделения:** ни один корневой файл, кроме
 `AGENTS.md`, не содержит нормативных правил для ИИ-агента; такие правила живут в
@@ -525,7 +525,7 @@ date-first-именования). Источник обязательности 
 `Alternatives` с причиной отклонения. Если фаундер выберет его вопреки
 рекомендации (Q-6), обязательными предусловиями являются: правка ADR-007 с новым
 ADR (исторические документы иммутабельны), снятие обоих файлов из `required_files`
-и всех `require_text`, перенос человеческого workflow в `pr-ops/`, переработка
+и всех `require_text`, перенос человеческого workflow в `ops/`, переработка
 `standards/team-contract.md` и `standards/product-profile.md`, чистка шаблонных
 поверхностей. Это отдельная задача бэклога с собственным decision gate.
 
@@ -717,7 +717,7 @@ ADR (исторические документы иммутабельны), сн
 - Исследование практик: [`research/hub/2026-09-03-ai-agent-onboarding-entrypoint-practices.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/hub/2026-09-03-ai-agent-onboarding-entrypoint-practices.md)
 - Decision record: [`docs/adr/2026-09-adr-012-agents-md-root-contract.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-012-agents-md-root-contract.md)
 - ADR-007: [`docs/adr/2026-07-adr-007-hub-root-structure.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-07-adr-007-hub-root-structure.md)
-- Бэклог B-110…B-116: [`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md)
+- Бэклог B-110…B-116: [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md)
 - Стандарт структуры RFC: [`standards/rfc-structure-standard.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/rfc-structure-standard.md)
 - Правила агента: [`ai-rules/agent-work-rules.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-work-rules.md), [`ai-rules/agent-onboarding-protocol.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-onboarding-protocol.md)
 - Корневые файлы, разобранные в P.9: [`CONTRIBUTING.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/CONTRIBUTING.md), [`GOVERNANCE.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/GOVERNANCE.md), [`standards/team-contract.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/team-contract.md), [`standards/product-profile.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/product-profile.md)

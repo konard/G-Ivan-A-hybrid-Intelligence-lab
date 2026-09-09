@@ -22,15 +22,15 @@ related_artifacts:
   - "research/hub/2026-06-23-repository-structure-concept.md"
   - "standards/analysis-standard.md"
   - "standards/project-structure-inheritance.md"
-  - "pr-ops/repo-model.md"
-  - "pr-ops/backlog.md#b-034-rfc-план-миграции-репо-хаба-после-стандартов-researchanalysisaudit"
+  - "ops/repo-model.md"
+  - "ops/backlog.md#b-034-rfc-план-миграции-репо-хаба-после-стандартов-researchanalysisaudit"
 ---
 
 # Hub migration and root-structure plan (документ-план для B-034)
 
 > Режим: **Analysis (recommendation / matrix)** для issue
 > [#372](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/372) и
-> backlog [B-034](../../pr-ops/backlog.md).
+> backlog [B-034](../../ops/backlog.md).
 > Deep Think, три экспертные оптики: **Ecosystem Architect**,
 > **Data Migration Specialist**, **Governance Auditor**.
 > Короткая граница: **этот документ не переносит файлы, не переделывает
@@ -68,7 +68,7 @@ DoD B-034).
    Значительная часть текущего дерева уже совпадает с целью (`standards/`,
    `docs/adr/`, `docs/analysis/`, `docs/audit/`, `docs/report/`, `templates/`,
    `tools/`, `research/`, `practices/`, `projects/`). Основная дельта — расщепить
-   `governance/` на `ai-governance/` + `pr-ops/` (+ `GOVERNANCE.md`), ввести
+   `governance/` на `ai-governance/` + `ops/` (+ `GOVERNANCE.md`), ввести
    `kb/`, `runs/`, `ai-rules/` и мигрировать `docs/rfc/` → `docs/rfc/`.
 4. Часть маппингов **однозначна** (fixed decision в ADR-001/002), часть —
    **неоднозначна** и вынесена на человеческое решение (`frameworks/`, `guides/`,
@@ -145,7 +145,7 @@ rationale и не нормирует внутреннюю форму одног�
 | [ADR-001](../adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md) | ADR, `accepted` | **Источник истины.** Фиксирует универсальное ядро, архетипы A–D, правила размещения и переходный режим Хаба. |
 | [ADR-002](../adr/2026-06-adr-002-artifact-document-methodology.md) | ADR, `accepted` v1.4 | **Спутник по маршрутизации артефактов** (target-каталог по типу). Не про физическую структуру корня. |
 | [ADR-003](../adr/2026-07-adr-003-research-structure.md)/[004](../adr/2026-07-adr-004-reports-structure.md)/[005](../adr/2026-07-adr-005-audit-structure.md)/[006](../adr/2026-07-adr-006-analysis-structure.md) + R/A/A-стандарты | ADR/standard | **Нормируют внутреннюю форму и routing по типу** (`docs/analysis/`, `docs/audit/`, `docs/report/`, `research/<domain>/`), но **не** предписывают реструктуризацию корня. Уточняют ADR-002, не заменяют ADR-001. |
-| [pr-ops/repo-model.md](../../pr-ops/repo-model.md) | canonical (описание) | **Описывает ДЕЙСТВУЮЩУЮ структуру** (As-Is), не целевую. Полезен как baseline для дельты. |
+| [ops/repo-model.md](../../ops/repo-model.md) | canonical (описание) | **Описывает ДЕЙСТВУЮЩУЮ структуру** (As-Is), не целевую. Полезен как baseline для дельты. |
 
 Вывод: **источник истины о целевой структуре корня — ADR-001**; ADR-002 —
 источник целевого каталога по типу артефакта. R/A/A-цепочка — не источник
@@ -160,7 +160,7 @@ rationale и не нормирует внутреннюю форму одног�
    доменных research-направлений.
 3. **Web Portal и Library/SDK — профили архетипа C, а не отдельные архетипы.**
    Это прямая опора против галлюцинации «Хаб → Portal».
-4. **Правило 2FA** для плоских каталогов (`ai-rules/`, `standards/`, `pr-ops/`):
+4. **Правило 2FA** для плоских каталогов (`ai-rules/`, `standards/`, `ops/`):
    подкаталог только при операционной боли + повторяемом использовании.
 5. **Переходный режим Хаба:** исторические пути (`governance/`, `AI_GOVERNANCE.md`,
    `practices/`, `standards/`, `templates/htom/`, `docs/rfc/`) остаются
@@ -176,7 +176,7 @@ rationale и не нормирует внутреннюю форму одног�
 | --- | --- | --- | --- |
 | `ai-rules/` | Правила поведения AI-агента, плоско (2FA) | Разбросано в `AI_GOVERNANCE.md`, `practices/agent-work/` | 🟠 Ввести; наполнить при выделении явных AI-правил |
 | `ai-governance/` | Политики, compliance, риски AI | `AI_GOVERNANCE.md` (root), `practices/ai-governance/` | 🟠 Расщепить из `governance/` + root-файла |
-| `pr-ops/` | Управление задачами, PR, review, плоско (2FA) | `pr-ops/backlog.md`, часть `governance/` | 🟠 Расщепить из `governance/` |
+| `ops/` | Управление задачами, PR, review, плоско (2FA) | `ops/backlog.md`, часть `governance/` | 🟠 Расщепить из `governance/` |
 | `standards/` | Стандарты формата/качества/review, плоско | `standards/` | 🟢 Совпадает |
 | `docs/analysis/` | Analysis-артефакты | `docs/analysis/` | 🟢 Совпадает |
 | `docs/reports/` *(ADR-001 набросок)* → **`docs/report/` + `docs/audit/`** *(реконсилировано ADR-004/ADR-002 v1.4)* | Reports и Audit-reports | `docs/report/`, `docs/audit/` | 🟢 Совпадает с реконсилированной целью |
@@ -256,7 +256,7 @@ rejected → deprecated → superseded` (frontmatter-валидатор enforce'
 
 **Рекомендация.** Базово — **Опция A** (статус `draft`/`proposed` как маркер
 provisional), при желании дополненная строкой в реестре/`README` стандартов и
-пометкой в [artifact-map](../../pr-ops/artifact-map.md). Опция C
+пометкой в [artifact-map](../../ops/artifact-map.md). Опция C
 резервируется как эскалация **только** при доказанной review-pain (порог 2FA),
 по тому же принципу anti-inflation, что и профили в
 [analysis-standard.md](../../standards/analysis-standard.md) (триггер B).
@@ -284,7 +284,7 @@ provisional), при желании дополненная строкой в р�
 | RFC (Хаб) | `docs/rfc/…` | `docs/rfc/…` | ADR-002 (RFC → `docs/rfc/`; Хаб держит `docs/rfc/` до миграции) | 🟠 Мигрировать |
 | AI rule | `AI_GOVERNANCE.md`, `practices/agent-work/*` | `ai-rules/` | ADR-002 (AI rule → `ai-rules/`); ADR-001 ядро | 🟠 Выделить |
 | AI policy / compliance | `AI_GOVERNANCE.md`, `practices/ai-governance/*` | `ai-governance/` (+ `GOVERNANCE.md`) | ADR-001 ядро | 🟠 Расщепить |
-| Task/PR/review mgmt | `pr-ops/backlog.md`, часть `governance/` | `pr-ops/` | ADR-001 ядро (`pr-ops/`) | 🟠 Расщепить |
+| Task/PR/review mgmt | `ops/backlog.md`, часть `governance/` | `ops/` | ADR-001 ядро (`ops/`) | 🟠 Расщепить |
 | Operational knowledge | — / рассыпано | `kb/` (`taxonomy/roles/rules/processes/{name}/patterns/`) | ADR-002 (Operational knowledge → `kb/`) | 🟠 Ввести по факту |
 | Run record | `experiments/`, `projects/*/` частично | `runs/` | ADR-002 (Run record → `runs/`); граница `exp/` vs `runs/` (B-019) | 🟡 Уточнить пофайлово |
 | Template | `templates/…` | `templates/…` | ADR-002; ADR-001 ядро | 🟢 Совпадает |
@@ -319,7 +319,7 @@ physical migration PRs»). Рекомендуемая последователь
    массовым rewrite ссылок; `docs/rfc/` держать как алиас/редирект до
    стабилизации ссылок.
 4. **Фаза 3 — Governance split.** Расщепить `governance/` на `ai-governance/` +
-   `pr-ops/`; перенести `backlog.md`, `artifact-map.md`, политики согласно §6.
+   `ops/`; перенести `backlog.md`, `artifact-map.md`, политики согласно §6.
 5. **Фаза 4 — Reconcile 🟡-сущностей.** Практики (`practices/` ↔ `docs/practice/`),
    `knowledge/` ↔ `kb/`, `guides/`, `frameworks/`, `education/`, `experiments/`,
    root-документы — каждая по принятому в Фазе 0 решению, отдельными PR.
@@ -393,11 +393,11 @@ physical migration PRs»). Рекомендуемая последователь
   — формат этого Analysis-документа (interpretation layer, границы).
 - [standards/project-structure-inheritance.md](../../standards/project-structure-inheritance.md)
   — правила подкаталогов в `projects/{project}/`.
-- [pr-ops/repo-model.md](../../pr-ops/repo-model.md)
+- [ops/repo-model.md](../../ops/repo-model.md)
   — описание действующей (As-Is) структуры и anti-inflation.
-- [pr-ops/artifact-map.md](../../pr-ops/artifact-map.md)
+- [ops/artifact-map.md](../../ops/artifact-map.md)
   — карта артефактов, синхронизируемая при миграции.
-- [pr-ops/backlog.md](../../pr-ops/backlog.md)
+- [ops/backlog.md](../../ops/backlog.md)
   — B-034 (этот план), зависимости B-018/B-027/B-032, координация с B-028/B-033/B-044.
 - Issues
   [#372](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/372) (эта задача),

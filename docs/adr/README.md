@@ -48,4 +48,4 @@ frontmatter и девять обязательных секций. Машино�
 - [ADR Structure Standard](../../standards/adr-structure-standard.md) — форма и обязательные секции.
 - [docs/rfc/README.md](../rfc/README.md) — proposal-стадия и decision path.
 - [AI Governance](../../ai-governance/ai-governance.md) — Amendment policy и права решений.
-- [pr-ops/artifact-map.md](../../pr-ops/artifact-map.md) — карта артефактов и связей.
+- [ops/artifact-map.md](../../ops/artifact-map.md) — карта артефактов и связей.

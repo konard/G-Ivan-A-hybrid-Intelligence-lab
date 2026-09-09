@@ -22,7 +22,7 @@ related_artifacts:
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
   - "standards/research-standard.md"
   - "standards/glossary.md"
-  - "pr-ops/backlog.md"
+  - "ops/backlog.md"
   - "research/external-knowledge/external-sources-registry.md"
 external_artifacts:
   - "https://diataxis.fr/"
@@ -89,7 +89,7 @@ Audit.
 параллельно цепочке `Analysis -> RFC -> Standard` для Research/Analysis/Audit,
 зафиксированной в
 [2026-06-28-research-analysis-audit-inventory.md](2026-06-28-research-analysis-audit-inventory.md)
-и в задачах B-024..B-034 ([pr-ops/backlog.md](../../pr-ops/backlog.md)),
+и в задачах B-024..B-034 ([ops/backlog.md](../../ops/backlog.md)),
 но смотрит на **четвёртый** тип артефакта — Report.
 
 ### 1.2. Рабочие термины
@@ -134,7 +134,7 @@ assessment report, model card, annual report. Термин «Report-like» пр�
 3. **Но эти доменные стандарты — тяжёлые.** Они рассчитаны на регуляторов,
    сертификацию и межорганизационный обмен. Механический перенос трёх полных
    стандартов в небольшой knowledge-репозиторий нарушает Anti-Inflation principle
-   ([pr-ops/repo-model.md](../../pr-ops/repo-model.md)).
+   ([ops/repo-model.md](../../ops/repo-model.md)).
 4. **Доминирующий масштабируемый паттерн — «базовая структура + специализация».**
    DITA строит документ-типы через специализацию одного базового topic; ГОСТ 7.32
    задаёт единую структуру общего отчёта; governance-репозитории применяют один
@@ -580,7 +580,7 @@ B), сохраняя индустриально доминирующий пат�
   — образец формата industry-norms research и A/B/C/D-вариантов.
 - [standards/research-standard.md](../../standards/research-standard.md) — правила
   research-артефактов.
-- [pr-ops/backlog.md](../../pr-ops/backlog.md) — задача B-038 и цепочки
+- [ops/backlog.md](../../ops/backlog.md) — задача B-038 и цепочки
   стандартизации B-024..B-034.
 
 ### 14.2. Фреймворки документации

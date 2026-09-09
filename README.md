@@ -41,8 +41,8 @@ temperature: 0.1
 | [practices/README.md](practices/README.md) | Каталог фиксированных практик: отдельный KB-слой между research, templates и проектными адаптациями. |
 | [standards/team-contract.md](standards/team-contract.md) | Шаблон и инструкция для создания project-level `CONTRIBUTING.md` и `AI_GOVERNANCE.md`. |
 | [ai-rules/agent-onboarding-protocol.md](ai-rules/agent-onboarding-protocol.md) | Обязательный предполётный протокол для нового ИИ-агента (*Runtime-онбординг*, Кейс 1): Handover Prompt, Readback, исполнение мандата issue и согласование результата через PR. |
-| [pr-ops/repo-model.md](pr-ops/repo-model.md) | Модель структуры репозитория и Anti-Inflation правило. |
-| [pr-ops/artifact-map.md](pr-ops/artifact-map.md) | Карта артефактов: где что лежит, зачем нужно и как связано. |
+| [ops/repo-model.md](ops/repo-model.md) | Модель структуры репозитория и Anti-Inflation правило. |
+| [ops/artifact-map.md](ops/artifact-map.md) | Карта артефактов: где что лежит, зачем нужно и как связано. |
 | [templates/htom/](templates/htom/) | Геном **HTOM-команды** — минимальный governance-скелет для гибридной human + AI работы (*Bootstrap-клонирование*, Кейс 2). Точка входа: `templates/htom/README.md`. |
 | [templates/spoke/](templates/spoke/) | Шаблон **production-спока** — репозитория с собственным кодом и жизненным циклом. Точка входа: `templates/spoke/README.md`. Различие HTOM-команда vs spoke — в [RFC](docs/rfc/htom-vs-spoke-clarification-2026-06.md). |
 
@@ -68,7 +68,7 @@ temperature: 0.1
 | `education/` | Open education: программы, учебные материалы и сценарии занятий. |
 | `ai-governance/` | Политики: human decision rights, security/compliance и эскалация. |
 | `ai-rules/` | Правила поведения AI-агента: operating modes, онбординг и операционные инструкции. |
-| `pr-ops/` | Операции над репозиторием и PR: модель репозитория, карта артефактов, бэклог, реестры и журнал сессий. |
+| `ops/` | Операции над репозиторием и PR: модель репозитория, карта артефактов, бэклог, реестры и журнал сессий. |
 | `projects-sink/` | Приёмник контекста spoke-проектов, синхронизируемого в Хаб. |
 | `tools/` | Локальные проверки и служебные скрипты сопровождения репозитория. |
 | `.github/ISSUE_TEMPLATE/` | GitHub-native структура постановки задач. |

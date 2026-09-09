@@ -284,7 +284,7 @@ Accepted impact:
 - promote this RFC to `accepted` governance status;
 - create [RFC Structure Standard](../../standards/rfc-structure-standard.md);
 - register the RFC and standard in [Governance RFC README](README.md),
-  [Standards README](../../standards/README.md), [Artifact Map](../../pr-ops/artifact-map.md)
+  [Standards README](../../standards/README.md), [Artifact Map](../../ops/artifact-map.md)
   and `tools/validate-repository-structure.sh`;
 - keep `tools/validate-frontmatter.sh` as-is because it already enforces RFC
   `owner`, `rfc-scope` and governance status vocabulary from

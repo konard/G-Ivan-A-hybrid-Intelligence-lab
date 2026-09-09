@@ -20,7 +20,7 @@ executable: false
 работе гибридных команд. Он не вводит enterprise-процесс ради полноты дерева
 статусов: каждый статус и переход существует, потому что снижает конкретную
 операционную боль (см. Anti-Inflation principle в
-[pr-ops/repo-model.md](../pr-ops/repo-model.md)).
+[ops/repo-model.md](../ops/repo-model.md)).
 
 Терминология сверяется с [standards/glossary.md](glossary.md). Важно различать
 несколько независимых понятий:
@@ -154,7 +154,7 @@ stateDiagram-v2
 
 Правила формулирования Story/ФТ/НФТ отдельным стандартом пока не
 зафиксированы; задача на его инициирование - B-114 в
-[pr-ops/backlog.md](../pr-ops/backlog.md).
+[ops/backlog.md](../ops/backlog.md).
 
 ### Готовность PR
 
@@ -190,12 +190,12 @@ SSOT не раздваивается: первичным остаётся арт
 но ответственность за формулировку остаётся за исполнителем, потому что
 changelog объясняет смысл изменения, а не только факт коммита.
 
-### Связь с `pr-ops/artifact-map.md`
+### Связь с `ops/artifact-map.md`
 
-Карта артефактов (`pr-ops/artifact-map.md`) - активная навигационная точка
+Карта артефактов (`ops/artifact-map.md`) - активная навигационная точка
 для traceability. Она дополняет:
 
-- [pr-ops/repo-model.md](../pr-ops/repo-model.md) - где размещается
+- [ops/repo-model.md](../ops/repo-model.md) - где размещается
   артефакт и по какому правилу он создаётся;
 - [standards/README.md](README.md) - реестр активных и планируемых стандартов.
 
@@ -204,7 +204,7 @@ changelog объясняет смысл изменения, а не только
 
 1. размещает артефакт в каталоге по `repo-model.md`;
 2. регистрирует его в реестре `standards/README.md` (для стандартов);
-3. добавляет или обновляет строку в `pr-ops/artifact-map.md`;
+3. добавляет или обновляет строку в `ops/artifact-map.md`;
 4. обновляет навигацию в `README.md`, если артефакт становится частью
    публичного контракта.
 
@@ -250,7 +250,7 @@ changelog объясняет смысл изменения, а не только
 
 - [standards/README.md](README.md)
 - [standards/glossary.md](glossary.md)
-- [pr-ops/repo-model.md](../pr-ops/repo-model.md)
+- [ops/repo-model.md](../ops/repo-model.md)
 - [AI Governance](../ai-governance/ai-governance.md)
 - [CONTRIBUTING.md](../CONTRIBUTING.md)
 - [CHANGELOG.md](../CHANGELOG.md)

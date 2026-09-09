@@ -63,7 +63,7 @@ for required_path in \
   "projects-sink" \
   "ai-governance" \
   "ai-rules" \
-  "pr-ops" \
+  "ops" \
   "docs/rfc" \
   "docs/guides"; do
   if ! grep -Fq "\"$required_path\"" tools/validate-repository-structure.sh; then
@@ -71,7 +71,7 @@ for required_path in \
   fi
 done
 
-backlog_file="pr-ops/backlog.md"
+backlog_file="ops/backlog.md"
 
 b053_line="$(grep -F '| **B-053** |' "$backlog_file")"
 [[ "$b053_line" == *'| DONE |'* ]] ||

@@ -178,7 +178,7 @@ reviewable, Pattern и Standard закрепляют повторяемость,
 Карта экосистемы завершает Framework-слой **L1-L2**: Vision объясняет зачем,
 Product Concept описывает что, а карта показывает как проекты связаны вокруг
 Хаба. Methodology-слой **L3-L4** находится в
-[governance/](../pr-ops/artifact-map.md),
+[governance/](../ops/artifact-map.md),
 [standards/](../standards/README.md), [practices/](../practices/README.md) и
 [Resolve Artifact Location proposal](rfc/resolve-artifact-location-proposal.md). Проект берёт
 из L3-L4 только то, что подходит его контексту, и возвращает обратную связь

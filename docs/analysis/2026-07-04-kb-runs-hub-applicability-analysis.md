@@ -19,8 +19,8 @@ related_artifacts:
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
   - "docs/adr/2026-07-adr-007-hub-root-structure.md"
   - "standards/research-standard.md"
-  - "pr-ops/repo-model.md"
-  - "pr-ops/artifact-map.md"
+  - "ops/repo-model.md"
+  - "ops/artifact-map.md"
   - "projects/README.md"
   - "standards/project-structure-inheritance.md"
   - "projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md"
@@ -45,7 +45,7 @@ ADR-001 оставляет `kb/` и `runs/` в universal core экосистем
 не сняли бы операционную боль и нарушили бы Anti-Inflation principle.
 
 Исключение нужно зафиксировать в
-[pr-ops/repo-model.md](../../pr-ops/repo-model.md) с явными future triggers.
+[ops/repo-model.md](../../ops/repo-model.md) с явными future triggers.
 
 ## Scope
 
@@ -67,7 +67,7 @@ ADR-001 оставляет `kb/` и `runs/` в universal core экосистем
 разделены:
 
 - `ai-rules/` для executable runtime rules и agent onboarding;
-- `pr-ops/` для repository operations, backlog, artifact map, executable-doc
+- `ops/` для repository operations, backlog, artifact map, executable-doc
   registers и session digests;
 - `standards/` для reusable norms и artifact formats;
 - `practices/` для reusable practice nodes после evidence и review pain;
@@ -76,7 +76,7 @@ ADR-001 оставляет `kb/` и `runs/` в universal core экосистем
 - `projects/` и `projects-sink/` для project-scoped и synchronized spoke context.
 
 Ни один найденный Hub artifact не является orphan из-за отсутствия root `kb/`.
-Операционное знание уже маршрутизируется в `ai-rules/`, `pr-ops/`,
+Операционное знание уже маршрутизируется в `ai-rules/`, `ops/`,
 `standards/`, `practices/`, `docs/guides/` или project-local homes. Перенос этих
 материалов в root `kb/` добавил бы вторую маршрутизацию вместо снятия
 неоднозначности.
@@ -89,7 +89,7 @@ ADR-001 оставляет `kb/` и `runs/` в universal core экосистем
 отделяют такой evidence corpus от operational run record.
 
 Операционные следы также живут в GitHub issues, pull requests, CI logs и
-[pr-ops/session-digests.md](../../pr-ops/session-digests.md). Эти следы пока не
+[ops/session-digests.md](../../ops/session-digests.md). Эти следы пока не
 образуют стабильный повторяющийся корпус, которому нужен root `runs/`: это либо
 GitHub-native records, либо repository-operation notes, либо research evidence.
 
@@ -128,11 +128,11 @@ input/output evidence и локальным knowledge reuse. Такой operatin
 
 | ADR-001 catalog | Current Hub status | Current homes | Reconsideration trigger |
 | --- | --- | --- | --- |
-| `kb/` | Не создается в корне Хаба. | `ai-rules/`, `pr-ops/`, `standards/`, `practices/`, `docs/guides/`; при необходимости project-local `projects/<project>/kb/`. | Появились как минимум 2-3 reusable operational knowledge artifacts, которые регулярно потребляет агент/процесс и которые нельзя без дублирования разместить в существующих домах. |
-| `runs/` | Не создается в корне Хаба. | GitHub issue/PR/CI records, `pr-ops/session-digests.md`, `docs/report/`, `research/<domain>/exp/<issue-slug>/` для research evidence. | Появились повторяющиеся non-research operational/business/pipeline runs, которым нужны стабильные repo-hosted metadata, inputs, outputs, feedback и logs. |
+| `kb/` | Не создается в корне Хаба. | `ai-rules/`, `ops/`, `standards/`, `practices/`, `docs/guides/`; при необходимости project-local `projects/<project>/kb/`. | Появились как минимум 2-3 reusable operational knowledge artifacts, которые регулярно потребляет агент/процесс и которые нельзя без дублирования разместить в существующих домах. |
+| `runs/` | Не создается в корне Хаба. | GitHub issue/PR/CI records, `ops/session-digests.md`, `docs/report/`, `research/<domain>/exp/<issue-slug>/` для research evidence. | Появились повторяющиеся non-research operational/business/pipeline runs, которым нужны стабильные repo-hosted metadata, inputs, outputs, feedback и logs. |
 
 Так ADR-001 остается ecosystem-level methodology, а ADR-007 и
-`pr-ops/repo-model.md` задают physical exception для Hub archetype A.
+`ops/repo-model.md` задают physical exception для Hub archetype A.
 
 ## Impact on ADR-007
 
@@ -147,7 +147,7 @@ criteria выше.
 | --- | --- |
 | Analyze operational pain | Текущие orphan operational knowledge и repeated run-record pain не найдены. |
 | Give recommendation | Recommendation: не вводить root `kb/` и root `runs/` сейчас. |
-| If excluding, record exception in `repo-model.md` | Required: update `pr-ops/repo-model.md` with the archetype A exception and triggers. |
+| If excluding, record exception in `repo-model.md` | Required: update `ops/repo-model.md` with the archetype A exception and triggers. |
 | Compare ecosystem usage | Mango использует оба каталога из-за repeated prompt/process execution и local KB needs; OpenAI.ru и Clarify не создают требования к Hub root. |
 
 ## Related Artifacts
@@ -156,8 +156,8 @@ criteria выше.
 - [ADR-002](../adr/2026-06-adr-002-artifact-document-methodology.md)
 - [ADR-007](../adr/2026-07-adr-007-hub-root-structure.md)
 - [Research standard](../../standards/research-standard.md)
-- [Repository model](../../pr-ops/repo-model.md)
-- [Artifact map](../../pr-ops/artifact-map.md)
+- [Repository model](../../ops/repo-model.md)
+- [Artifact map](../../ops/artifact-map.md)
 - [Projects index](../../projects/README.md)
 - [Project structure inheritance](../../standards/project-structure-inheritance.md)
 - [Mango migration plan](../../projects/repo-development/docs/mango-ba-prompts-repository-migration-plan-2026-06.md)

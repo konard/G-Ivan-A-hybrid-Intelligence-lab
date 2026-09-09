@@ -16,7 +16,7 @@ rfc-scope: A
 | Owner | G-Ivan-A |
 | RFC status | accepted (narrative summary; машиночитаемый canon — frontmatter `status`) |
 | Source issue | [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328); decision gate [#338](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/338); контекст [#310](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/310), [#307](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/307), [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) |
-| Impacted artifacts | future `standards/report-standard.md` (B-043), [ADR-004](../adr/2026-07-adr-004-reports-structure.md) (B-042), `docs/adr/2026-06-adr-002-artifact-document-methodology.md` (реконсиляция routing `docs/reports/` → `docs/report/`), `docs/report/*`, `docs/audit/*`, `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `pr-ops/backlog.md` (регистрация и lifecycle updates) |
+| Impacted artifacts | future `standards/report-standard.md` (B-043), [ADR-004](../adr/2026-07-adr-004-reports-structure.md) (B-042), `docs/adr/2026-06-adr-002-artifact-document-methodology.md` (реконсиляция routing `docs/reports/` → `docs/report/`), `docs/report/*`, `docs/audit/*`, `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `ops/backlog.md` (регистрация и lifecycle updates) |
 | Decision record | [ADR-004](../adr/2026-07-adr-004-reports-structure.md) (B-042) |
 | Implementation link | not yet (future `standards/report-standard.md`, B-043) |
 | Archetype scope | A (Governance & Knowledge Hub); routing-следствия для B/C/D вынесены в downstream chain |
@@ -155,7 +155,7 @@ Boundary RFC/ADR). Полный бенчмарк и полная матрица 
 | `statistics` | период, **методология**, источник данных, единицы | SDMX (ISO 17369) / DDI | inventory / matrix / scan / sync outputs, machine-readable evidence summaries |
 
 **Триггер B (Anti-Inflation,
-[`pr-ops/repo-model.md`](../../pr-ops/repo-model.md)).** Профиль выделяется в
+[`ops/repo-model.md`](../../ops/repo-model.md)).** Профиль выделяется в
 отдельный стандарт (`audit-report-standard.md` и т.п.) **только** когда накопит
 достаточно собственных правил и повторяющихся кейсов — по тому же принципу, по
 которому Хаб откладывает `product-profile`/`education-profile`. Это даёт
@@ -331,7 +331,7 @@ non-blocking.
   relation-метаданные (последствие для B-043).
 - `standards/glossary.md` — термин Report и подтипы (последствие; B-020 покрывает
   Research/Analysis/Audit/RFC/ADR/Standard, Report добавляется в цепочке Reports).
-- `pr-ops/backlog.md`, `pr-ops/artifact-map.md`,
+- `ops/backlog.md`, `ops/artifact-map.md`,
   [`docs/rfc/README.md`](README.md), `CHANGELOG.md`,
   `tools/validate-repository-structure.sh` — постановка этого RFC на учёт (в этом
   PR).
@@ -352,9 +352,9 @@ non-blocking.
 
 - Создан `docs/rfc/2026-07-02-rfc-reports-structure.md` (этот документ).
 - RFC поставлен на учёт: запись в [Governance RFC README](README.md),
-  [`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md), allowlist + required-text в
+  [`ops/artifact-map.md`](../../ops/artifact-map.md), allowlist + required-text в
   `tools/validate-repository-structure.sh`, добавление цепочки B-041..B-044 и
-  статус `DONE` для B-041 в [`pr-ops/backlog.md`](../../pr-ops/backlog.md), запись в
+  статус `DONE` для B-041 в [`ops/backlog.md`](../../ops/backlog.md), запись в
   `CHANGELOG.md`.
 
 Локальная проверка:
@@ -450,4 +450,4 @@ ADR-004 закрыл decision-gate вопросы, которые были от�
   [`standards/file-naming.md`](../../standards/file-naming.md).
 - [RFC: Структура research](2026-06-30-rfc-research-structure.md) — sibling RFC
   той же цепочки стандартизации (граница `exp/` vs `runs/`, routing по типу задачи).
-- [`pr-ops/backlog.md`](../../pr-ops/backlog.md) — цепочка B-038, B-041..B-044.
+- [`ops/backlog.md`](../../ops/backlog.md) — цепочка B-038, B-041..B-044.

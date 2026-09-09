@@ -206,7 +206,7 @@ open-ai.ru. Уровень L4 (ADR) описан тоньше: стандарт 
 - **Геном управления:** `AI_GOVERNANCE.md` (human-in-control, provider-agnostic,
   scope-first, traceability, minimal structure, flagship-first).
 - **Frontmatter и file-naming** Хаба.
-- **Модель hub-and-spoke** (`pr-ops/repo-model.md` Хаба).
+- **Модель hub-and-spoke** (`ops/repo-model.md` Хаба).
 - **Жизненный цикл знаний** для входящих идей.
 - **Anti-Inflation principle** — не вводить инфраструктуру «на вырост».
 

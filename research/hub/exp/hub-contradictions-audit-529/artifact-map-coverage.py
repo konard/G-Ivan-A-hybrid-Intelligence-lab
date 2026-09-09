@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Сверка pr-ops/artifact-map.md с фактическим деревом Хаба (issue #529, контракт 2).
+"""Сверка ops/artifact-map.md с фактическим деревом Хаба (issue #529, контракт 2).
 
 Первая колонка таблицы artifact-map содержит путь вида `/path/to/file`.
 Скрипт печатает:
@@ -15,7 +15,7 @@ ROOT = Path(subprocess.run(["git", "rev-parse", "--show-toplevel"],
 ROW = re.compile(r'^\|\s*`(/[^`]+)`\s*\|')
 
 registered = []
-for line in (ROOT / "pr-ops/artifact-map.md").read_text(encoding="utf-8").splitlines():
+for line in (ROOT / "ops/artifact-map.md").read_text(encoding="utf-8").splitlines():
     m = ROW.match(line)
     if m:
         registered.append(m.group(1).lstrip("/"))

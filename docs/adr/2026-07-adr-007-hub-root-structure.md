@@ -23,7 +23,7 @@ decision-type: methodology
 | Refinement issue | [#382](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/382), [#385](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/385), [#386](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/386) |
 | Primary input | [B-034 migration and root structure plan](../analysis/2026-07-04-hub-migration-and-root-structure-plan.md) |
 | Upstream decisions | [ADR-001](2026-06-adr-001-ecosystem-infrastructure-methodology.md), [ADR-002](2026-06-adr-002-artifact-document-methodology.md) |
-| Impacted artifacts | `pr-ops/backlog.md`, `pr-ops/artifact-map.md`, `pr-ops/repo-model.md`, `tools/validate-repository-structure.sh`, future B-048 migration PR |
+| Impacted artifacts | `ops/backlog.md`, `ops/artifact-map.md`, `ops/repo-model.md`, `tools/validate-repository-structure.sh`, future B-048 migration PR |
 | Supersedes | none |
 | Superseded by | none |
 
@@ -55,7 +55,7 @@ ADR-001, уточнение `docs/guides/`, сохранение `GOVERNANCE.md`
 Issue #386 закрыл отложенное исследование целесообразности `kb/` и `runs/`:
 операционная боль для root-каталогов в Хабе не обнаружена, рекомендация — не
 вводить их сейчас, а исключение архетипа A и триггеры пересмотра зафиксировать в
-`pr-ops/repo-model.md`.
+`ops/repo-model.md`.
 
 ## Decision
 
@@ -67,7 +67,7 @@ Issue #386 закрыл отложенное исследование целес
 **Расхождение с ADR-001:** Универсальное ядро ADR-001 содержит `kb/` и `runs/`.
 Для Хаба эти каталоги **не вводятся** до явного указания. Обоснование:
 анти-инфляция, отсутствие операционной боли. Issue #386 подтвердил это
-расхождение и перенес условия будущего пересмотра в `pr-ops/repo-model.md`.
+расхождение и перенес условия будущего пересмотра в `ops/repo-model.md`.
 
 ### Full To-Be Repository Structure
 
@@ -77,10 +77,9 @@ Issue #386 закрыл отложенное исследование целес
 
 ```text
 hybrid-Intelligence-lab/
-├── AGENTS.md                      # Обязательная точка входа ИИ-агента по ADR-012
 ├── ai-governance/                 # [NEW] Политики: государство, бизнес-правила, ИБ, внешние ограничения
 ├── ai-rules/                      # [NEW] Правила поведения агента и быстрая синхронизация внешнего агента
-├── pr-ops/                        # [NEW] Управление задачами, PR и review; плоско по правилу 2FA
+├── ops/                        # [NEW] Управление задачами, PR и review; плоско по правилу 2FA
 ├── standards/                     # Плоские стандарты; provisional = lifecycle status draft/proposed
 ├── docs/                          # Документация, решения и outputs по типам артефактов
 │   ├── adr/                       # ADR decision records
@@ -134,7 +133,7 @@ hybrid-Intelligence-lab/
 | `education/` | Использовать для cross-project education-материалов. Follow-up-стандарт для archetype D может быть добавлен или перенумерован после миграции. |
 | `frameworks/` | Зарезервировать как будущий дом для frameworks после подтверждения scope через путь research -> standard. |
 | `docs/concept.md` | Использовать как цель для текущего корневого `docs/concept.md`. |
-| `kb/`, `runs/` | Не вводить в Хаб. Универсальное ядро ADR-001 содержит эти каталоги, но issue #386 подтвердил отсутствие текущей операционной боли в Хабе. Исключение архетипа A и trigger-based условия пересмотра записаны в `pr-ops/repo-model.md`. |
+| `kb/`, `runs/` | Не вводить в Хаб. Универсальное ядро ADR-001 содержит эти каталоги, но issue #386 подтвердил отсутствие текущей операционной боли в Хабе. Исключение архетипа A и trigger-based условия пересмотра записаны в `ops/repo-model.md`. |
 
 Удалить или вывести из эксплуатации следующие корневые артефакты при физической
 миграции:
@@ -150,7 +149,7 @@ hybrid-Intelligence-lab/
 | Current area | To-Be route |
 | --- | --- |
 | политики, compliance и внешние ограничения | `ai-governance/` |
-| операции PR/task/review | `pr-ops/` |
+| операции PR/task/review | `ops/` |
 | RFC-документы | `docs/rfc/` |
 | `docs/rfc/` | `docs/rfc/` |
 
@@ -166,7 +165,7 @@ hybrid-Intelligence-lab/
 1. Phase 0: принять этот ADR как decision gate B-047.
 2. Phase 1: ввести нейтральные целевые якоря без изменения семантики.
 3. Phase 2: перенести `docs/rfc/` в `docs/rfc/` с переписыванием ссылок.
-4. Phase 3: разделить `governance/` на `ai-governance/`, `ai-rules/`, `pr-ops/`
+4. Phase 3: разделить `governance/` на `ai-governance/`, `ai-rules/`, `ops/`
    и `docs/rfc/`.
 5. Phase 4: согласовать все ранее неоднозначные сущности как one task/PR, а не как
    один PR на каталог. Исполнитель запускает валидаторы и cross-reference
@@ -220,7 +219,7 @@ hybrid-Intelligence-lab/
 | B-060 | Зарезервированный логический follow-up для `docs/concept.md` -> `docs/concept.md`. |
 | B-061 | Зарезервированный логический follow-up для `projects-sink/AI_PROJECT_CONTEXT-Summary.md` -> `projects-sink/`. |
 | B-062 | Зарезервированный логический follow-up для вывода из эксплуатации `website/`, `mkdocs.yml` и корневого `experiments/`. |
-| issue #386: kb/, runs/ applicability | Исследование целесообразности завершено: root `kb/` и `runs/` не вводятся в Хаб; исключение архетипа A и trigger-based условия пересмотра записаны в `pr-ops/repo-model.md`. |
+| issue #386: kb/, runs/ applicability | Исследование целесообразности завершено: root `kb/` и `runs/` не вводятся в Хаб; исключение архетипа A и trigger-based условия пересмотра записаны в `ops/repo-model.md`. |
 
 B-057..B-062 названы здесь как слоты последствий, а не как созданные строки
 бэклога. Если текущая нумерация бэклога отличается на момент миграции, они могут
@@ -233,9 +232,9 @@ B-057..B-062 названы здесь как слоты последствий,
 
 | As-Is | To-Be | Impact |
 | --- | --- | --- |
-| `pr-ops/backlog.md` | future `pr-ops/` backlog area | Текущий бэклог отмечает B-047 как принятый ADR-gate и B-048 как задачу физической миграции. |
-| `pr-ops/artifact-map.md` | future registry location governed by B-048 | Текущий artifact-map регистрирует этот ADR и остаётся активной картой до миграции. |
-| `pr-ops/repo-model.md` | future synchronized repo model | B-048 обновляет его принятыми целевыми путями. |
+| `ops/backlog.md` | future `ops/` backlog area | Текущий бэклог отмечает B-047 как принятый ADR-gate и B-048 как задачу физической миграции. |
+| `ops/artifact-map.md` | future registry location governed by B-048 | Текущий artifact-map регистрирует этот ADR и остаётся активной картой до миграции. |
+| `ops/repo-model.md` | future synchronized repo model | B-048 обновляет его принятыми целевыми путями. |
 | `docs/rfc/` | `docs/rfc/` | Миграция пути RFC происходит в B-048. |
 | `AI_GOVERNANCE.md` and policy material | `ai-governance/` | Policy/compliance-материал переносится согласно границе в этом ADR. |
 | agent behavior and sync material | `ai-rules/` | Правила поведения агента и quick-sync-контекст переносятся согласно границе в этом ADR. |
@@ -245,7 +244,7 @@ B-057..B-062 названы здесь как слоты последствий,
 | framework material | `frameworks/` | Будущий framework-дом принят после подтверждения research -> standard. |
 | `docs/concept.md` | `docs/concept.md` | Физический перенос остаётся B-048 или downstream consequence-задачей. |
 | `projects-sink/AI_PROJECT_CONTEXT-Summary.md` | `projects-sink/` | Физический перенос остаётся B-048 или downstream consequence-задачей. |
-| `kb/`, `runs/` (ADR-001 core) | не вводятся в Хаб | Расхождение с ADR-001 подтверждено issue #386: каталоги универсального ядра не вводятся в Хаб до trigger-based пересмотра в `pr-ops/repo-model.md`. |
+| `kb/`, `runs/` (ADR-001 core) | не вводятся в Хаб | Расхождение с ADR-001 подтверждено issue #386: каталоги универсального ядра не вводятся в Хаб до trigger-based пересмотра в `ops/repo-model.md`. |
 | `website/` | removed | Веб-стратегия Хаба отменена. |
 | `mkdocs.yml` | removed | Удалён как следствие отмены website. |
 | `experiments/` | removed; validator tests in `tools/` | Корневой каталог experiments выводится из эксплуатации. |
@@ -280,7 +279,7 @@ repo-model, валидаторы, manifest и навигацию в том же 
 документ на русский; принятая архитектура не переоткрывается. Issue #386 —
 доработка v0.4: она закрывает исследование `kb/`/`runs/`, подтверждает не вводить
 root-каталоги в Хаб и синхронизирует exception/trigger модель с
-`pr-ops/repo-model.md`. Будущие ADR могут superseded это решение, только называя
+`ops/repo-model.md`. Будущие ADR могут superseded это решение, только называя
 scope, который они заменяют.
 
 ## Related Artifacts
@@ -298,5 +297,5 @@ scope, который они заменяют.
 - [ADR-005: Audit structure](2026-07-adr-005-audit-structure.md)
 - [ADR-006: Analysis structure](2026-07-adr-006-analysis-structure.md)
 - [ADR structure standard](../../standards/adr-structure-standard.md)
-- [Backlog](../../pr-ops/backlog.md)
-- [Artifact map](../../pr-ops/artifact-map.md)
+- [Backlog](../../ops/backlog.md)
+- [Artifact map](../../ops/artifact-map.md)

@@ -10,9 +10,9 @@ context: [repository-quality, audit, cleanup, governance, traceability, archive]
 method: repository-audit + validator-baseline + link-scan + duplicate-scan
 scope: repo-wide
 related_artifacts:
-  - "pr-ops/artifact-map.md"
-  - "pr-ops/backlog.md"
-  - "pr-ops/repo-model.md"
+  - "ops/artifact-map.md"
+  - "ops/backlog.md"
+  - "ops/repo-model.md"
   - "standards/file-naming.md"
   - "standards/research-standard.md"
   - "tools/validate-repository-structure.sh"
@@ -104,7 +104,7 @@ Baseline validation до удаления PR-заглушки:
 | `standards/` | Нарушений нет. Все `.md` кроме `README.md` используют kebab-case. | P0 закрыт | Ничего не менять. |
 | `docs/rfc/` | Нарушений нет: все RFC используют kebab-case. | P0 закрыт | Ничего не менять. |
 | `research/` | Нарушений lowercase/hyphen для tracked `.md`/`.html` нет. | P0 закрыт | Ничего не менять. |
-| broader nested governance | `ai-rules/agent-onboarding-protocol.md`, `pr-ops/artifact-map.md`, `pr-ops/backlog.md`, `pr-ops/executable-documents-issues.md`, `pr-ops/repo-model.md` остаются CAPS style inside nested directory. | P1 | Human decision: либо переименовать в kebab-case, либо явно закрепить legacy/governance exception в `file-naming.md` и validator. |
+| broader nested governance | `ai-rules/agent-onboarding-protocol.md`, `ops/artifact-map.md`, `ops/backlog.md`, `ops/executable-documents-issues.md`, `ops/repo-model.md` остаются CAPS style inside nested directory. | P1 | Human decision: либо переименовать в kebab-case, либо явно закрепить legacy/governance exception в `file-naming.md` и validator. |
 | templates/htom root-like files | `templates/htom/AI_GOVERNANCE.md`, `AI_SESSION_HANDOVER_PROMPT.md`, `AI_QUICK_RULES.md`, `CONTRIBUTING.md` выглядят как violations во вложенном каталоге, но при копировании в spoke становятся root files. | P2 | Зафиксировать template-root exception явно, чтобы scanner не считал это silent violation. |
 | `archive/projects/mango/` | 8 файлов с `_` в имени (`*_exp`, `*_simple`, `user-story_gen...`, `usecase_gen...`). | P1 | Не переименовывать архив; удалить весь `archive/projects/mango/` после approval. |
 
@@ -176,12 +176,12 @@ Artifact map and validator inconsistencies:
 
 | Файл | Строки | Проблема | Приоритет |
 | --- | --- | --- | --- |
-| `pr-ops/artifact-map.md` | 128 | Related artifacts include deleted `projects/mango/README.md`. | P1 |
-| `pr-ops/artifact-map.md` | 136-149, 175 | Archive Mango is documented as present and mostly mandatory. | P1 |
+| `ops/artifact-map.md` | 128 | Related artifacts include deleted `projects/mango/README.md`. | P1 |
+| `ops/artifact-map.md` | 136-149, 175 | Archive Mango is documented as present and mostly mandatory. | P1 |
 | `tools/validate-repository-structure.sh` | 187-192, 244-260 | Archive Mango directories and files are required by validation. | P1 |
 | `README.md` | 58 | Root README points reviewers to archive copy. | P1 |
 | `projects/README.md` | 65 | Project index says archive copy exists. | P1 |
-| `pr-ops/artifact-map.md` | none for `projects/education-ba-prompt/*` | `README.md` and validator know this project, but artifact map has no row for `projects/education-ba-prompt/README.md` or `docs/course-ideas.md`. | P2 |
+| `ops/artifact-map.md` | none for `projects/education-ba-prompt/*` | `README.md` and validator know this project, but artifact map has no row for `projects/education-ba-prompt/README.md` or `docs/course-ideas.md`. | P2 |
 
 Scanner false positives excluded from the problem list:
 
@@ -350,7 +350,7 @@ Reasoning:
 - keeping both archive and external spoke blurs source of truth.
 
 Deletion is not a standalone `rm -rf`: it must update at least
-`README.md`, `projects/README.md`, `pr-ops/artifact-map.md`,
+`README.md`, `projects/README.md`, `ops/artifact-map.md`,
 `tools/validate-repository-structure.sh`, and affected research/frontmatter links.
 
 ## 3. План Исправлений
@@ -370,7 +370,7 @@ Deletion is not a standalone `rm -rf`: it must update at least
 
 5. Remove body-level duplication of `Версия`, `Дата`, `Статус` where the same
    data is already in frontmatter.
-6. Update `pr-ops/artifact-map.md` to reflect actual state, including the
+6. Update `ops/artifact-map.md` to reflect actual state, including the
    education project decision.
 7. Strengthen validators:
    - nested naming check beyond `standards/`;
@@ -394,7 +394,7 @@ Deletion is not a standalone `rm -rf`: it must update at least
 | Step | Что сделать | Файлы | Зависимости | Риски | Rollback |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Approve this RFC and choose archive decision. | This RFC, issue #171 | Human approval | Without decision, cleanup tasks should not start. | Keep RFC draft. |
-| 2 | Delete `archive/projects/mango/` and update archive references. | `archive/projects/mango/**`, `README.md`, `projects/README.md`, `pr-ops/artifact-map.md`, `tools/validate-repository-structure.sh`, selected research docs | Step 1 | Broken references if partial. | Revert deletion commit or restore from git history. |
+| 2 | Delete `archive/projects/mango/` and update archive references. | `archive/projects/mango/**`, `README.md`, `projects/README.md`, `ops/artifact-map.md`, `tools/validate-repository-structure.sh`, selected research docs | Step 1 | Broken references if partial. | Revert deletion commit or restore from git history. |
 | 3 | Fix stale links and relation values. | Files in section 2.4 | Step 1 | Portal links require scope discipline. | Revert link-only commit. |
 | 4 | Resolve naming exception strategy. | `standards/file-naming.md`, validator, possibly renamed governance/template files | Step 1 | Renames touch many links. | Use `git mv` and revert if validation fails. |
 | 5 | Resolve research-profile split. | `standards/research-profile.md`, `standards/README.md`, map/validator | Step 1 | Removing a draft too early may lose useful body-order standard. | Restore from git history if review requests a separate standard. |

@@ -33,7 +33,7 @@ Sync проверяется локальным experiment script без fixture-
 | 2 | Нет fixture-spoke проверки Smart Sync для HTOM/spoke templates | P1 | M |
 | 3 | Не создан `templates/task-for-executor.md` | P2 | S |
 | 4 | Политика generated HTML/PNG artifacts не формализована | P2 | S |
-| 5 | `pr-ops/backlog.md` может не отражать уже закрытые CE-задачи | P2 | M |
+| 5 | `ops/backlog.md` может не отражать уже закрытые CE-задачи | P2 | M |
 | 6 | Выводы JS CI/CD research не связаны с минимальным spoke CI contract | P3 | M |
 
 ## Анализ проблем
@@ -89,7 +89,7 @@ review screenshots смешаны в одну категорию "generated file
 
 ### Проблема 5: Backlog может быть неактуален
 
-**Описание:** `pr-ops/backlog.md` содержит CE-задачи со статусом TODO, хотя
+**Описание:** `ops/backlog.md` содержит CE-задачи со статусом TODO, хотя
 часть соответствующих issues уже закрыта и замержена.
 
 **Влияние:** backlog перестаёт быть источником фактического состояния и требует
@@ -177,7 +177,7 @@ generated files.
 
 ### Решение 5: Backlog status refresh
 
-**Описание:** отдельной задачей сверить `pr-ops/backlog.md` с закрытыми
+**Описание:** отдельной задачей сверить `ops/backlog.md` с закрытыми
 issues/merged PR и обновить только статусы/ссылки, без добавления новых
 архитектурных планов.
 
@@ -212,7 +212,7 @@ install policy, provider-neutral defaults, extension points.
 **Фаза 2 (важно):**
 
 - Формализовать generated artifacts policy.
-- Обновить `pr-ops/backlog.md` по фактически закрытым issues.
+- Обновить `ops/backlog.md` по фактически закрытым issues.
 - Создать `templates/task-for-executor.md` только если он будет ссылочным, без
   копирования всего issue template.
 

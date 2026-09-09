@@ -293,4 +293,4 @@ $7.88 (июнь) до $3.97 (август) на фоне полного пере
 - [`standards/report-standard.md`](../../standards/report-standard.md) — норма формы Report, профиль `statistics`
 - [`docs/adr/2026-07-adr-004-reports-structure.md`](../adr/2026-07-adr-004-reports-structure.md) — routing statistics-отчётов в `docs/report/`
 - [`research/ba-requirements/2026-08-25-mango-runs-empirical-snapshot.md`](../../research/ba-requirements/2026-08-25-mango-runs-empirical-snapshot.md) — смежный количественный срез по корпусу прогонов Mango
-- [`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md) — реестр артефактов Хаба
+- [`ops/artifact-map.md`](../../ops/artifact-map.md) — реестр артефактов Хаба

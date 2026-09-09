@@ -16,7 +16,7 @@ rfc-scope: A
 | Owner | G-Ivan-A |
 | RFC status | accepted (narrative summary; машиночитаемый canon — frontmatter `status`) |
 | Source issue | [#302](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/302); [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294); [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290); [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) |
-| Impacted artifacts | `standards/research-profile.md`, `docs/adr/2026-06-adr-002-artifact-document-methodology.md`, `tools/validate-repository-structure.sh`, `tools/validate-file-naming.sh`, `research/hub/exp-*`, `pr-ops/backlog.md` (последствия, не правки в этом RFC) |
+| Impacted artifacts | `standards/research-profile.md`, `docs/adr/2026-06-adr-002-artifact-document-methodology.md`, `tools/validate-repository-structure.sh`, `tools/validate-file-naming.sh`, `research/hub/exp-*`, `ops/backlog.md` (последствия, не правки в этом RFC) |
 | Decision record | [ADR-003](../adr/2026-07-adr-003-research-structure.md) (B-017, accepted) |
 | Implementation link | [`standards/research-standard.md`](../../standards/research-standard.md) (B-018, standard in review) |
 | Archetype scope | A (Governance & Knowledge Hub); routing-следствия для B/C/D вынесены в downstream chain |
@@ -157,7 +157,7 @@ research/<domain>/
 (например, `data/`), но **никогда не обязательная папка `outputs/`**. Дефолт —
 плоско; группировка появляется только при реальной операционной боли
 (Anti-Inflation principle,
-[`pr-ops/repo-model.md`](../../pr-ops/repo-model.md)).
+[`ops/repo-model.md`](../../ops/repo-model.md)).
 
 ### P3. Граница `exp/` vs `runs/`
 
@@ -321,7 +321,7 @@ Questions как non-blocking.
   (B-022).
 - `standards/glossary.md` — фиксация терминов Research / Analysis / Audit / RFC /
   ADR / Standard (B-020).
-- `pr-ops/backlog.md`, `pr-ops/artifact-map.md`,
+- `ops/backlog.md`, `ops/artifact-map.md`,
   [`docs/rfc/README.md`](README.md) — постановка этого RFC на учёт
   (в этом PR).
 
@@ -343,9 +343,9 @@ Questions как non-blocking.
 
 - Создан `docs/rfc/2026-06-30-rfc-research-structure.md` (этот документ).
 - RFC поставлен на учёт: запись в [Governance RFC README](README.md),
-  [`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md), allowlist/required-files в
+  [`ops/artifact-map.md`](../../ops/artifact-map.md), allowlist/required-files в
   `tools/validate-repository-structure.sh`, обновление статуса B-016 в
-  [`pr-ops/backlog.md`](../../pr-ops/backlog.md) и запись в `CHANGELOG.md`.
+  [`ops/backlog.md`](../../ops/backlog.md) и запись в `CHANGELOG.md`.
 
 Локальная проверка:
 
@@ -426,7 +426,7 @@ Post-acceptance делегирование: обязательная норма 
   стандарт структуры RFC; [RFC стандарта структуры RFC](2026-06-27-rfc-rfc-standard.md).
 - [`standards/file-naming.md`](../../standards/file-naming.md) — дата-первое
   именование.
-- [`pr-ops/backlog.md`](../../pr-ops/backlog.md) — цепочка B-016..B-023.
+- [`ops/backlog.md`](../../ops/backlog.md) — цепочка B-016..B-023.
 - [Knowledge Lifecycle proposal](knowledge-lifecycle-proposal.md),
   [Resolve Artifact Location proposal](resolve-artifact-location-proposal.md) —
   смежные governance-контуры.

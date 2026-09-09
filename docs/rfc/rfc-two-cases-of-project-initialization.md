@@ -15,7 +15,7 @@ related_artifacts:
   - "research/hub/2026-06-02-ai-collaboration-retrospective.md"
   - "research/hub/2026-06-02-external-governance-patterns-review.md"
   - "standards/glossary.md"
-  - "pr-ops/repo-model.md"
+  - "ops/repo-model.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/99"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/116"
@@ -247,7 +247,7 @@ flowchart TD
 > ⚠️ **Это не новый формат и не обёртка.** Манифест сознательно **не вводит**
 > JSON-обёртку (Governance Metadata Envelope из external-review отнесена в
 > «отклонить») и не создаёт новых артефактов. По принципу Anti-Inflation
-> ([pr-ops/repo-model.md](../../pr-ops/repo-model.md)) задача — *назвать* уже
+> ([ops/repo-model.md](../../ops/repo-model.md)) задача — *назвать* уже
 > работающую способность, а не нарастить структуру.
 
 ---
@@ -276,7 +276,7 @@ flowchart TD
 ## 🏗️ Следствие для структуры Хаба: какие README и где
 
 Манифест **не создаёт** README в этой задаче (Anti-Inflation,
-[pr-ops/repo-model.md](../../pr-ops/repo-model.md)). Он лишь фиксирует, что после
+[ops/repo-model.md](../../ops/repo-model.md)). Он лишь фиксирует, что после
 утверждения должны появиться **ровно два** входных документа, по одному на кейс:
 
 | README | Кейс | Где | Что содержит | Перекрёстные ссылки |
@@ -298,7 +298,7 @@ flowchart TD
    процесса» со ссылками на глоссарий и на этот манифест, параметризовать
    *Handover Prompt* плейсхолдером `{{REPO_NAME}}`. *(Выполнено в canonical
    executable-контракте.)*
-2. **Обновить [pr-ops/repo-model.md](../../pr-ops/repo-model.md)** — зафиксировать
+2. **Обновить [ops/repo-model.md](../../ops/repo-model.md)** — зафиксировать
    двухкейсовую модель инициализации как часть описания жизненного цикла spoke.
 3. **Поддерживать `ai-rules/agent-onboarding-protocol.md`** (Кейс 1) как canonical
    executable-контракт после утверждения решений по онбордингу.
@@ -325,7 +325,7 @@ governance). Прошу:
 
 > **Что мне НЕ создавать без твоего слова:** сами README (`templates/htom/README.md`
 > наполнять инструкцией Кейса 2, `ai-rules/agent-onboarding-protocol.md`), изменения
-> `pr-ops/repo-model.md`. Этот PR добавляет только данный манифест, раздел
+> `ops/repo-model.md`. Этот PR добавляет только данный манифест, раздел
 > «Модель процесса» в онбординг-RFC и 6 терминов в глоссарий.
 
 ## ✅ Решения Пользователя (Human Review 2026-06)
@@ -353,7 +353,7 @@ Bootstrap-клонирование (Кейс 2) утверждено как ко
 
 - ✅ Создать `ai-rules/agent-onboarding-protocol.md` — выполнено (v1.1, 2026-06-04)
 - ✅ Создать `templates/htom/README.md` — выполнено
-- ✅ Обновить `pr-ops/repo-model.md` — выполнено (v1.1, 2026-06-04)
+- ✅ Обновить `ops/repo-model.md` — выполнено (v1.1, 2026-06-04)
 - ⚠️ Добавить ссылки из `README.md` и `GOVERNANCE.md` — выполняется в
   рамках текущей задачи
 - ✅ Создать дубль промпта в `templates/htom/` — выполнено

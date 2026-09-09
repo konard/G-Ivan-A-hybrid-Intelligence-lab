@@ -47,7 +47,7 @@ related_issues:
 
 ## 3. Задачи бэклога
 
-Задачи заведены в [`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md),
+Задачи заведены в [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md),
 спринт 15.
 
 | ID | Название | Что закрывает |

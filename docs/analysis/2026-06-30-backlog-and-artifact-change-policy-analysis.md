@@ -15,8 +15,8 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288"
 related_artifacts:
-  - "pr-ops/backlog.md"
-  - "pr-ops/backlog-instruction.md"
+  - "ops/backlog.md"
+  - "ops/backlog-instruction.md"
   - "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
   - "research/hub/2026-06-28-research-analysis-audit-inventory.md"
@@ -38,7 +38,7 @@ related_artifacts:
 
 Диалог из issue #297 фиксирует две связанные гипотезы:
 
-1. текущий `pr-ops/backlog.md` стал неудобен как рабочий backlog для
+1. текущий `ops/backlog.md` стал неудобен как рабочий backlog для
    AI-агента: он объединяет правила, активные спринты, исторические данные и
    объяснения в одном файле;
 2. для изменений в согласованных артефактах не хватает легкой политики
@@ -51,8 +51,8 @@ related_artifacts:
 работ, а смешанный planning + contract + history artifact.
 
 Актуализация issue #392 от 2026-07-04 принимает backlog-specific часть этого
-анализа: `pr-ops/backlog.md` остаётся active backlog, правила вынесены в
-`pr-ops/backlog-instruction.md`, а история выполненных задач остаётся в GitHub
+анализа: `ops/backlog.md` остаётся active backlog, правила вынесены в
+`ops/backlog-instruction.md`, а история выполненных задач остаётся в GitHub
 Issues/PR, `CHANGELOG.md` и самих артефактах. Отдельный архивный файл бэклога
 не создаётся.
 
@@ -67,9 +67,9 @@ Issues/PR, `CHANGELOG.md` и самих артефактах. Отдельный
 
 | Артефакт | Роль в анализе |
 | --- | --- |
-| [pr-ops/backlog.md](../../pr-ops/backlog.md) | До issue #392: доказательство смешения contract/data/history; после issue #392: active backlog. |
-| [pr-ops/backlog-instruction.md](../../pr-ops/backlog-instruction.md) | Правила ведения бэклога, созданные по issue #392. |
-| [ADR-001](../adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md) | Целевая структура с `pr-ops/` для задач, PR и review. |
+| [ops/backlog.md](../../ops/backlog.md) | До issue #392: доказательство смешения contract/data/history; после issue #392: active backlog. |
+| [ops/backlog-instruction.md](../../ops/backlog-instruction.md) | Правила ведения бэклога, созданные по issue #392. |
+| [ADR-001](../adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md) | Целевая структура с `ops/` для задач, PR и review. |
 | [ADR-002](../adr/2026-06-adr-002-artifact-document-methodology.md) | Lifecycle artifact changes и правило human decision gate. |
 | [Research / Analysis / Audit inventory](../../research/hub/2026-06-28-research-analysis-audit-inventory.md) | Контекст различения research, analysis и audit. |
 | [Research artifact format audit](../audit/2026-06-29-research-artifact-format-contract-audit.md) | Пример, где audit выявил drift между профилем и ADR-002. |
@@ -80,7 +80,7 @@ Issues/PR, `CHANGELOG.md` и самих артефактах. Отдельный
 Анализ основан на:
 
 - полном чтении диалога из attachment issue #297;
-- review текущего `pr-ops/backlog.md`, ADR-001, ADR-002, issue #288/#290/#294
+- review текущего `ops/backlog.md`, ADR-001, ADR-002, issue #288/#290/#294
   и PR #289/#291/#295;
 - сопоставлении с industry patterns: native issue/project trackers, sprint
   backlog separation, small change review, ADR/RFC decision records and tiered
@@ -98,8 +98,8 @@ issue #392 фиксирует отдельное принятое решение
 
 Проблема backlog подтверждена как **role overload**, а не как поломка
 исполнения. В рамках issue #297 разбиение не выполнялось, но issue #392 позже
-приняло минимальную декомпозицию без нового каталога: `pr-ops/backlog.md`
-показывает только активные задачи, а `pr-ops/backlog-instruction.md` хранит
+приняло минимальную декомпозицию без нового каталога: `ops/backlog.md`
+показывает только активные задачи, а `ops/backlog-instruction.md` хранит
 правила ведения. Исторический слой не дублируется в отдельном Markdown-файле:
 источником истории остаются GitHub Issues/PR, `CHANGELOG.md` и сами артефакты.
 
@@ -114,7 +114,7 @@ standard/policy/template/validator/practice -> operational artifact/run`, но �
 
 | # | Проблема | Подтверждение | Вывод |
 | --- | --- | --- | --- |
-| 1 | Backlog смешивает contract, active work и history. | В одном `pr-ops/backlog.md` находятся правила обновления, открытые вопросы, активные задачи, закрытые элементы и детальные описания. | Нужна будущая декомпозиция, но не в этом PR. |
+| 1 | Backlog смешивает contract, active work и history. | В одном `ops/backlog.md` находятся правила обновления, открытые вопросы, активные задачи, закрытые элементы и детальные описания. | Нужна будущая декомпозиция, но не в этом PR. |
 | 2 | Backlog не является native execution tracker. | Для B-016..B-023 есть planned rows, но нет отдельных issues; статусы живут в Markdown, а не в GitHub-native workflow. | Markdown backlog лучше держать как planning/rationale layer, execution вести issue/project-native. |
 | 3 | Физический SSOT ошибочно приравнивается к одному файлу. | Диалог корректно указывает: logical SSOT может быть парой active file + instruction, если роли файлов явно закреплены. | Issue #392 изменяет правило "backlog = one file" на минимальную пару `backlog.md` + `backlog-instruction.md`, без архивного файла. |
 | 4 | Нет amendment policy для правок канонических документов. | Последние задачи #288/#290/#294 показывают разный вес изменений: analysis-only, audit-only, backlog-only, future RFC/ADR/standard chain. | Нужна tiered policy, иначе один процесс пытается покрыть все случаи. |
@@ -125,7 +125,7 @@ standard/policy/template/validator/practice -> operational artifact/run`, но �
 | Гипотеза | Почему не подтверждена |
 | --- | --- |
 | "SSOT теряется, если backlog перестаёт быть одним файлом." | SSOT - логическое свойство. Issue #392 сохраняет один active backlog и выносит только правила в соседний instruction-файл. |
-| "Любой перенос backlog в `pr-ops/` требует нового RFC." | Если перенос только исполняет уже принятое ADR-001/ADR-007 target decision и меняет ссылки/пути без изменения смысла, это механическая поправка. Разделение ролей backlog всё равно требует явного human-approved решения; issue #392 стало таким решением. |
+| "Любой перенос backlog в `ops/` требует нового RFC." | Если перенос только исполняет уже принятое ADR-001/ADR-007 target decision и меняет ссылки/пути без изменения смысла, это механическая поправка. Разделение ролей backlog всё равно требует явного human-approved решения; issue #392 стало таким решением. |
 | "Нужен отдельный новый standard только для amendment process." | Сейчас достаточно будущего легкого policy section в существующем governance artifact after review. Новый стандарт будет оправдан только если правило начнет повторно применяться и вызывать review pain. |
 | "Надо было менять backlog прямо в issue #297." | Issue #297 просил analysis report, а не миграцию. Backlog split корректно выполнен позже отдельным issue #392. |
 
@@ -133,9 +133,9 @@ standard/policy/template/validator/practice -> operational artifact/run`, но �
 
 | # | Рекомендация | Куда фиксировать дальше | Почему |
 | --- | --- | --- | --- |
-| 1 | Не менять `pr-ops/backlog.md` в рамках issue #297. | PR #299 body | Scope issue: только analysis report. |
+| 1 | Не менять `ops/backlog.md` в рамках issue #297. | PR #299 body | Scope issue: только analysis report. |
 | 2 | Добавить future backlog item на модернизацию backlog после стабилизации research/routing chain. | Выполнено issue #392 как B-035 | Избегает смешения restructuring repo и restructuring task management в issue #297. |
-| 3 | Для backlog выбрать hybrid model: GitHub Issues/PR для execution/history, `pr-ops/backlog.md` для active planning, `pr-ops/backlog-instruction.md` для правил. | Принято issue #392 | Совмещает native workflow и docs-as-code traceability без отдельного backlog archive file. |
+| 3 | Для backlog выбрать hybrid model: GitHub Issues/PR для execution/history, `ops/backlog.md` для active planning, `ops/backlog-instruction.md` для правил. | Принято issue #392 | Совмещает native workflow и docs-as-code traceability без отдельного backlog archive file. |
 | 4 | Ввести tiered amendment policy как правило в существующем governance artifact, не как новый standard. | `AI_GOVERNANCE.md` или `CONTRIBUTING.md` after review | Закрывает governance paralysis без artifact inflation. |
 | 5 | Установить stop criteria: новый каталог, новый artifact class, новый lifecycle/status или изменение validator semantics переводят изменение в полный decision path. | Future policy text | Защищает от тихого drift. |
 
@@ -166,8 +166,8 @@ standard/policy/template/validator/practice -> operational artifact/run`, но �
 модель без нового каталога:
 
 ```text
-pr-ops/backlog.md              # текущие незавершенные спринты и задачи
-pr-ops/backlog-instruction.md  # правила, определения, lifecycle, routing
+ops/backlog.md              # текущие незавершенные спринты и задачи
+ops/backlog-instruction.md  # правила, определения, lifecycle, routing
 GitHub Issues/PR + CHANGELOG.md + артефакты  # history and implementation evidence
 ```
 
@@ -197,7 +197,7 @@ execution tracker:
 | Validation | Можно проверять shell validators. | Нужны GitHub API checks или manual discipline. |
 
 Вывод: future state должен быть hybrid. После issue #392
-`pr-ops/backlog.md` хранит active planning, `pr-ops/backlog-instruction.md`
+`ops/backlog.md` хранит active planning, `ops/backlog-instruction.md`
 хранит правила, а GitHub Issues/PR хранят execution state and discussion
 history. Это не отменяет backlog Markdown, а уточняет его роль.
 
@@ -265,9 +265,9 @@ Issue #392 supersedes the earlier future-item draft for backlog modernization.
 
 | Решение | Статус | Evidence |
 | --- | --- | --- |
-| Active backlog отделён от правил ведения | implemented | `pr-ops/backlog.md`, `pr-ops/backlog-instruction.md`, issue #392 |
-| Отдельный архивный файл бэклога не создаётся | accepted | `pr-ops/backlog-instruction.md`, issue #392 |
-| Amendment policy остаётся отдельной governance-задачей | active | B-036 в `pr-ops/backlog.md` |
+| Active backlog отделён от правил ведения | implemented | `ops/backlog.md`, `ops/backlog-instruction.md`, issue #392 |
+| Отдельный архивный файл бэклога не создаётся | accepted | `ops/backlog-instruction.md`, issue #392 |
+| Amendment policy остаётся отдельной governance-задачей | active | B-036 в `ops/backlog.md` |
 
 ## 4. Industry practices
 
@@ -301,7 +301,7 @@ classification. Ни один внешний подход не надо копи
 - Issue #297:
   <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/297>
 - Current backlog:
-  [pr-ops/backlog.md](../../pr-ops/backlog.md)
+  [ops/backlog.md](../../ops/backlog.md)
 - ADR-001:
   [docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md](../adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md)
 - ADR-002:

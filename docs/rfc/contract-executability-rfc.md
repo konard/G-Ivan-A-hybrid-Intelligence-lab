@@ -12,7 +12,7 @@ scope: repo-wide
 related_artifacts:
   - standards/executable-contract-standard.md
   - ai-rules/agent-onboarding-protocol.md
-  - pr-ops/backlog.md
+  - ops/backlog.md
 related_issues:
   - "#129"
   - "#132"
@@ -44,7 +44,7 @@ related_issues:
 | --- | --- | --- |
 | Executable markers | accepted | `standards/executable-contract-standard.md` |
 | Directive block | accepted | `ai-rules/agent-onboarding-protocol.md` |
-| Rollout plan | implemented | `pr-ops/backlog.md` |
+| Rollout plan | implemented | `ops/backlog.md` |
 | Open questions | deferred | — |
 
 Решения из RFC считаются закрытыми для Phase 1: обсуждение и rationale остаются
@@ -185,7 +185,7 @@ governance-файлы, выполнить [Readback](../../standards/glossary.md
 | --- | --- | --- | --- | --- |
 | [`ai-rules/agent-onboarding-protocol.md`](../../ai-rules/agent-onboarding-protocol.md) | **Исполнимый** (рабочая инструкция, *Runtime-онбординг*) | Машинного маркера нет. Прозой в шапке: «рабочая инструкция… до первого изменения файлов»; есть Handover Prompt в блоке ` ```text `. | Часть A (Handover Prompt) и Часть B (4-шаговый протокол), **после** ~40 строк пояснений (frontmatter → заголовок → 2 вводных абзаца → «Модель процесса» → лишь затем Часть A). | **Высокий.** Ровно этот инцидент: пояснительный текст идёт раньше команды; агент принял документ за объект анализа. |
 | [`GOVERNANCE.md`](../../ai-governance/ai-governance.md) | **Смешанный**: описательный контракт + исполнимый pre-flight | Блок-цитата сверху «🛫 Pre-flight (обязательно перед любой работой)» со ссылкой на онбординг. **Frontmatter отсутствует.** | Pre-flight-нота сверху (команда «пройди онбординг»); остальное — описательный контракт (роли, правила, Operating Modes, эскалация, DoD). | **Средний.** Pre-flight можно прочитать как справку, а не как команду немедленно перейти к онбордингу; нет машинного маркера и frontmatter-якоря. |
-| [`pr-ops/repo-model.md`](../../pr-ops/repo-model.md) | **Описательный** (правило-референс) с исполнимыми Decision Rules | Маркера нет. **Frontmatter отсутствует.** | Раздел «Decision Rules» (если ситуация → действие) и команда валидации структуры. | **Низкий–средний.** По природе справочный, но Decision Rules фактически исполнимы и никак не помечены. |
+| [`ops/repo-model.md`](../../ops/repo-model.md) | **Описательный** (правило-референс) с исполнимыми Decision Rules | Маркера нет. **Frontmatter отсутствует.** | Раздел «Decision Rules» (если ситуация → действие) и команда валидации структуры. | **Низкий–средний.** По природе справочный, но Decision Rules фактически исполнимы и никак не помечены. |
 | [`standards/project-structure-inheritance.md`](../../standards/project-structure-inheritance.md) | **Описательный** (стандарт) с исполнимыми проверками | `frontmatter status: canonical`; маркера исполнимости нет. | Раздел «Проверка» (если X → действие в ревью). | **Низкий.** Стандарт-референс; проверки исполнимы, но риск перепутать «учесть» и «выполнить» невелик. |
 | [`standards/issue-workflow.md`](../../standards/issue-workflow.md) | **Описательный** (стандарт процесса) | `frontmatter status: canonical`; маркера исполнимости нет. | «Точки автоматизации» + команды локальной проверки перед `review`. | **Низкий.** Справочник жизненного цикла задач; исполнимый только в части локальных проверок. |
 | [`templates/htom/AI_QUICK_RULES.md`](../../templates/htom/AI_QUICK_RULES.md) | **Исполнимый** («инструкция по выживанию» агента) | `frontmatter status: draft`; маркера исполнимости нет; заголовок «инструкция по выживанию» — человекочитаемый намёк. | Весь файл: «🧭 Куда смотреть первым», «⛔ Чего не делать», «🆘 Как звать человека». | **Средний–высокий.** Наследуется в *каждый* спок; те же грабли, что у онбординга: выглядит как памятка для чтения, а не как набор команд к соблюдению. |
@@ -458,11 +458,11 @@ executable: true
 | 2 | `templates/htom/AI_QUICK_RULES.md` | Маркер `executable: true` + директивный блок + EXECUTION/EXPLANATION (пример 5.2). | P0 (наследуется споками) |
 | 3 | `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` | Маркер `executable: true` + директивный блок над «🛂 Готовый промпт». | P1 |
 | 4 | `GOVERNANCE.md` | Сначала **добавить frontmatter** (сейчас отсутствует); затем `executable: false` (контракт-справка) и оформить pre-flight как директиву-указатель на онбординг. | P1 |
-| 5 | `pr-ops/repo-model.md` | Добавить frontmatter; пометить `executable: false`; пометить раздел Decision Rules как исполнимую часть. | P2 |
+| 5 | `ops/repo-model.md` | Добавить frontmatter; пометить `executable: false`; пометить раздел Decision Rules как исполнимую часть. | P2 |
 | 6 | `standards/project-structure-inheritance.md`, `standards/issue-workflow.md` | `executable: false` (стандарты-справки) — для единообразия. | P3 |
 | 7 | `standards/glossary.md` | Добавить термины **«Исполнимый документ» (Executable Contract)** и **«Директивный блок»**; bump версии. | P1 |
 | 8 | `tools/validate-frontmatter.sh` | (опц.) валидировать поле `executable` (`true`/`false`) — мягкое предупреждение, как у прочих полей. | P2 |
-| 9 | `pr-ops/artifact-map.md` | Добавить колонку/пометку «🚦 исполнимый» и зарегистрировать этот RFC после решения о его финальном размещении. | P2 |
+| 9 | `ops/artifact-map.md` | Добавить колонку/пометку «🚦 исполнимый» и зарегистрировать этот RFC после решения о его финальном размещении. | P2 |
 
 ### 6.2. Изменения в `README.md` для маркировки исполнимых документов
 
@@ -540,7 +540,7 @@ entrypoint: true
 
 - [ai-rules/agent-onboarding-protocol.md](../../ai-rules/agent-onboarding-protocol.md) — контракт в центре инцидента.
 - [AI Governance](../../ai-governance/ai-governance.md) — операционный контракт и pre-flight.
-- [pr-ops/repo-model.md](../../pr-ops/repo-model.md) — Anti-Inflation principle.
+- [ops/repo-model.md](../../ops/repo-model.md) — Anti-Inflation principle.
 - [standards/project-structure-inheritance.md](../../standards/project-structure-inheritance.md), [standards/issue-workflow.md](../../standards/issue-workflow.md) — стандарты-справки.
 - [templates/htom/AI_QUICK_RULES.md](../../templates/htom/AI_QUICK_RULES.md), [templates/htom/AI_SESSION_HANDOVER_PROMPT.md](../../templates/htom/AI_SESSION_HANDOVER_PROMPT.md) — наследуемые споками исполнимые артефакты.
 - [standards/glossary.md](../../standards/glossary.md) — единый источник терминов.

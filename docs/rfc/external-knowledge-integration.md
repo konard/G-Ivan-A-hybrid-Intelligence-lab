@@ -148,7 +148,7 @@ Local Extension без обращения к Хабу за каждой узко
 - Модель Base + Local Extension и роль Smart Sync описаны без новой
   инфраструктуры.
 - Применение для 4 проектов экосистемы предложено.
-- Артефакты зарегистрированы в `pr-ops/artifact-map.md`, навигации и
+- Артефакты зарегистрированы в `ops/artifact-map.md`, навигации и
   валидаторе; lifecycle-привязка явная.
 - CI-скраперы и автосбор контента отсутствуют (Anti-Inflation).
 
@@ -169,5 +169,5 @@ Local Extension без обращения к Хабу за каждой узко
 - [research/external-knowledge/external-insights/README.md](../../research/external-knowledge/external-insights/README.md) — механизм инсайтов.
 - [docs/rfc/knowledge-lifecycle-proposal.md](knowledge-lifecycle-proposal.md) — жизненный цикл знаний.
 - [docs/rfc/resolve-artifact-location-proposal.md](resolve-artifact-location-proposal.md) — выбор расположения артефакта.
-- [pr-ops/repo-model.md](../../pr-ops/repo-model.md) — Anti-Inflation principle.
+- [ops/repo-model.md](../../ops/repo-model.md) — Anti-Inflation principle.
 - [practices/README.md](../../practices/README.md) — fixed practices KB.

@@ -48,7 +48,7 @@ AI-подпроцессы устроены внутри (операции / ар
   Хаба и заготовки для issue, не правки.
 - **Не** заменяет классические операции AI-версиями (см. §«Что мы отвергли»).
 - **Не** создаёт новые каталоги или стандарты «впрок» (Anti-Inflation,
-  [pr-ops/repo-model.md](../../pr-ops/repo-model.md)).
+  [ops/repo-model.md](../../ops/repo-model.md)).
 
 ## Терминологическая рамка (двуязычие)
 
@@ -469,5 +469,5 @@ AI-ассистированная операция требует осознан
   — ось доверия E0–E4.
 - [research/mango/2026-05-26-rag-mapping-roadmap.md](2026-05-26-rag-mapping-roadmap.md)
   — roadmap автоматизации БА и RAG-навигатор Mango (контекст RAG-подпроцесса).
-- [pr-ops/repo-model.md](../../pr-ops/repo-model.md) — Anti-Inflation
+- [ops/repo-model.md](../../ops/repo-model.md) — Anti-Inflation
   principle.

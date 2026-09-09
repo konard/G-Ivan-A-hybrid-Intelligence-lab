@@ -19,7 +19,7 @@ decision-type: methodology
 | Decision date | 2026-09-09 |
 | Owner | G-Ivan-A |
 | Source | комментарий фаундера к PR [#564](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/564) по issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563); доказательная база — [замер влияния наследия](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-09-legacy-normative-influence-facts.md) |
-| Impacted artifacts | [`research/ba-requirements/ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-meta-model), [`docs/adr/2026-09-adr-013-run-modes-deprecation.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-013-run-modes-deprecation.md), [`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md), будущий Execution Package |
+| Impacted artifacts | [`research/ba-requirements/ba-meta-model/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-meta-model), [`docs/adr/2026-09-adr-013-run-modes-deprecation.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-013-run-modes-deprecation.md), [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md), будущий Execution Package |
 | Supersedes | none |
 | Superseded by | none |
 | Дополняет | [ADR-013](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-013-run-modes-deprecation.md) — расширяет предмет с имён режимов на **содержание** исторических артефактов |

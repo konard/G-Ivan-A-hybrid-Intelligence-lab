@@ -10,7 +10,7 @@ scope: repo-wide
 source: docs/rfc/contract-executability-rfc.md
 related_artifacts:
   - "docs/rfc/contract-executability-rfc.md"
-  - "pr-ops/backlog.md"
+  - "ops/backlog.md"
   - "standards/glossary.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/133"
@@ -49,12 +49,12 @@ related_issues:
 | CE-002 | [#139](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/139) | `templates/htom/AI_QUICK_RULES.md` | P0 | CE-008 | TODO |
 | CE-003 | [#140](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/140) | `templates/htom/AI_SESSION_HANDOVER_PROMPT.md` | P1 | CE-001, CE-008 | TODO |
 | CE-004 | [#141](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/141) | `AI_GOVERNANCE.md` | P1 | CE-001, CE-008 | TODO |
-| CE-005 | [#142](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/142) | `pr-ops/repo-model.md` | P2 | CE-008 | TODO |
+| CE-005 | [#142](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/142) | `ops/repo-model.md` | P2 | CE-008 | TODO |
 | CE-006 | [#143](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/143) | `standards/project-structure-inheritance.md` | P3 | CE-008 | TODO |
 | CE-007 | [#144](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/144) | `standards/issue-workflow.md` | P3 | CE-008 | TODO |
 | CE-008 | [#145](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/145) | `standards/glossary.md` | P1 | — | TODO |
 | CE-009 | [#146](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/146) | `tools/validate-frontmatter.sh` | P2 | CE-008 | TODO |
-| CE-010 | [#147](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/147) | `pr-ops/artifact-map.md` | P2 | CE-001, CE-002, CE-003, CE-004, CE-008 | TODO |
+| CE-010 | [#147](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/147) | `ops/artifact-map.md` | P2 | CE-001, CE-002, CE-003, CE-004, CE-008 | TODO |
 
 ## Обязательные метки
 
@@ -81,4 +81,4 @@ related_issues:
       «один issue = один файл».
 - [x] Созданы отдельные issues CE-001..CE-010.
 - [x] Все URLs созданных issues зафиксированы в этом реестре.
-- [x] Сводная таблица добавлена в [`pr-ops/backlog.md`](backlog.md).
+- [x] Сводная таблица добавлена в [`ops/backlog.md`](backlog.md).

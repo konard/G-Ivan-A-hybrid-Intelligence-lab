@@ -436,7 +436,7 @@ Addendum → Glossary → Delete-profile → Migrate → Validators → …).
   обязательный **контракт** RFC-like документов»; стр. 17: «Стандарт является
   нормативным **контрактом**.»
 - Распространение (вторичные жертвы): `CHANGELOG.md` стр. 16 «нормативный контракт
-  (IL-3)»; `pr-ops/artifact-map.md` стр. 160 «Нормативный контракт (IL-3)».
+  (IL-3)»; `ops/artifact-map.md` стр. 160 «Нормативный контракт (IL-3)».
 
 **Почему это ошибка.** Canonical глоссарий
 [`standards/glossary.md`](../../standards/glossary.md) определяет термины как
@@ -539,7 +539,7 @@ effects, trade-offs, and **follow-up work**» (стр. 129).
   «Стандарт является нормативным контрактом» на согласованную с глоссарием: стандарт
   — **IL-3 переиспользуемое правило о форме** артефактов; он **не является**
   контрактом, но контракт (IL-1) **может включать** стандарты. Синхронно вычистить
-  распространение в `CHANGELOG.md` (стр. 16) и `pr-ops/artifact-map.md`
+  распространение в `CHANGELOG.md` (стр. 16) и `ops/artifact-map.md`
   (стр. 160). Скоординировать с **B-020** (обновление глоссария Research/Analysis/
   Audit/RFC/ADR/Standard). Заодно уточнить IL-уровень контракта (canon: IL-1).
 
@@ -584,7 +584,7 @@ effects, trade-offs, and **follow-up work**» (стр. 129).
 ```bash
 # F-01 — терминологическая конфляция «Стандарт = контракт» (3 стандарта + распространение)
 grep -rn "является нормативным контрактом\|задаёт обязательный контракт" standards/
-grep -rn "нормативный контракт" CHANGELOG.md pr-ops/artifact-map.md
+grep -rn "нормативный контракт" CHANGELOG.md ops/artifact-map.md
 
 # F-07 — шаблон ADR приглашает наполнение (заполненная таблица + follow-up work)
 sed -n '121,129p' standards/adr-structure-standard.md

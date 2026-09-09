@@ -344,10 +344,10 @@ flowchart LR
   нормативный словарь RFC 2119
 - [RAGAS (Es et al.), `ext-153`](../research/external-knowledge/external-sources-registry.md)
   — индустриальный ориентир rubric/metric-based оценки
-- [Backlog](../pr-ops/backlog.md) — B-067 (этот стандарт), B-068 (правило
+- [Backlog](../ops/backlog.md) — B-067 (этот стандарт), B-068 (правило
   изменения библиотеки), B-069 (инфраструктура первого Агента), B-070
   (наблюдаемость)
-- [Artifact map](../pr-ops/artifact-map.md) — навигация
+- [Artifact map](../ops/artifact-map.md) — навигация
 
 ## Open Questions
 

@@ -1,11 +1,11 @@
 {
   "manifest_version": "1.0",
-  "last_updated": "2026-09-07",
+  "last_updated": "2026-09-09",
   "templates": [
     {
       "id": "agents-md-root-draft",
       "path": "templates/agents-md-root-draft.md",
-      "version": "0.3.0",
+      "version": "1.0.0",
       "target_type": [
         "HTOM",
         "Spoke"
@@ -74,6 +74,44 @@
         "validation"
       ],
       "description": "CI-воркфлоу HTOM-команды: запуск валидатора структуры на pull_request."
+    },
+    {
+      "id": "htom-hub-profile",
+      "path": "templates/htom/.hub-profile.json",
+      "version": "1.0.0",
+      "target_type": [
+        "HTOM"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "CORE",
+      "tags": [
+        "bootstrap",
+        "profile",
+        "environment"
+      ],
+      "description": "Машиночитаемый профиль архетипа и среды HTOM-команды."
+    },
+    {
+      "id": "htom-agents-bootstrap",
+      "path": "templates/htom/AGENTS.md",
+      "version": "1.0.0",
+      "target_type": [
+        "HTOM"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "CORE",
+      "tags": [
+        "bootstrap",
+        "agents",
+        "routing"
+      ],
+      "description": "Единая точка входа ИИ-агента в HTOM-команде."
     },
     {
       "id": "htom-ai-governance",
@@ -204,6 +242,25 @@
       "description": "Скрипт инициализации генома: замена плейсхолдеров при клонировании из Хаба."
     },
     {
+      "id": "htom-validate-agents-bootstrap",
+      "path": "templates/htom/tools/validate-agents-bootstrap.sh",
+      "version": "1.0.0",
+      "target_type": [
+        "HTOM"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "CORE",
+      "tags": [
+        "validation",
+        "bootstrap",
+        "environment"
+      ],
+      "description": "Проверка единственной точки входа AGENTS.md и согласованности профиля."
+    },
+    {
       "id": "htom-validate-repository-structure",
       "path": "templates/htom/tools/validate-repository-structure.sh",
       "version": "1.1.0",
@@ -238,6 +295,44 @@
         "github-actions"
       ],
       "description": "Базовый CI workflow для spoke-репозитория."
+    },
+    {
+      "id": "spoke-hub-profile",
+      "path": "templates/spoke/.hub-profile.json",
+      "version": "1.0.0",
+      "target_type": [
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "CORE",
+      "tags": [
+        "bootstrap",
+        "profile",
+        "environment"
+      ],
+      "description": "Машиночитаемый профиль архетипа и среды production-спока."
+    },
+    {
+      "id": "spoke-agents-bootstrap",
+      "path": "templates/spoke/AGENTS.md",
+      "version": "1.0.0",
+      "target_type": [
+        "Spoke"
+      ],
+      "stack": [
+        "all"
+      ],
+      "min_phase": 0,
+      "criticality": "CORE",
+      "tags": [
+        "bootstrap",
+        "agents",
+        "routing"
+      ],
+      "description": "Единая точка входа ИИ-агента в production-споке."
     },
     {
       "id": "spoke-contributing",

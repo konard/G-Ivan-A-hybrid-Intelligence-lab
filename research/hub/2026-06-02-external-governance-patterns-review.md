@@ -47,7 +47,7 @@ related_issues:
 
 Принцип фильтрации всего документа — **«практика первична, документация растёт
 по факту боли»**. Это прямое следствие Anti-Inflation principle
-([pr-ops/repo-model.md](../../pr-ops/repo-model.md)) и вывода аудита
+([ops/repo-model.md](../../ops/repo-model.md)) и вывода аудита
 Команды С: «нет governance-артефакта без операционной боли»
 ([research/hub/2026-06-01-team-c-governance-strategy-audit.md](2026-06-01-team-c-governance-strategy-audit.md)).
 

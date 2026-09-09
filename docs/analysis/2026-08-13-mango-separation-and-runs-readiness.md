@@ -6,7 +6,7 @@ temperature: 0.1
 analysis-subtype: recommendation
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/507"
 scope: ecosystem
-based_on: "G-Ivan-A/mango_ba_prompts@295b65d (снимок 2026-07-14) + Хаб @f10c927 + research/hub/exp/mango-separation-readiness-507/scan-2026-08-13.log + docs/adr/2026-07-adr-009-mango-repo-split.md + docs/analysis/2026-07-17-mango-artifacts-migration-plan.md + research/ai-education/ + pr-ops/backlog.md"
+based_on: "G-Ivan-A/mango_ba_prompts@295b65d (снимок 2026-07-14) + Хаб @f10c927 + research/hub/exp/mango-separation-readiness-507/scan-2026-08-13.log + docs/adr/2026-07-adr-009-mango-repo-split.md + docs/analysis/2026-07-17-mango-artifacts-migration-plan.md + research/ai-education/ + ops/backlog.md"
 related_artifacts:
   - "docs/adr/2026-07-adr-009-mango-repo-split.md"
   - "docs/analysis/2026-07-17-mango-artifacts-migration-plan.md"
@@ -15,7 +15,7 @@ related_artifacts:
   - "standards/evals-contract-standard.md"
   - "research/ai-education/evaluation/2026-08-11-source-intelligence-evals-contract.md"
   - "research/hub/exp/mango-separation-readiness-507/README.md"
-  - "pr-ops/backlog.md"
+  - "ops/backlog.md"
 ---
 
 # Разделение Mango и готовность к серии BA-прогонов
@@ -645,5 +645,5 @@ B-081 с фактом существования `ai-ba-playbooks` (T-13).
 - [Контракт evals для source intelligence](../../research/ai-education/evaluation/2026-08-11-source-intelligence-evals-contract.md)
 - [Analysis Standard](../../standards/analysis-standard.md)
 - [Evidence: exp/mango-separation-readiness-507](../../research/hub/exp/mango-separation-readiness-507/README.md)
-- [Backlog: B-067..B-070, B-079..B-084](../../pr-ops/backlog.md)
+- [Backlog: B-067..B-070, B-079..B-084](../../ops/backlog.md)
 - [Issue #507: постановка](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/507)
