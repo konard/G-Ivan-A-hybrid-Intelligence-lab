@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-09-07
+version: 0.4
+updated: 2026-09-10
 temperature: 0.1
 ---
 
@@ -80,6 +80,34 @@ temperature: 0.1
   Golden Set (`EP-G1`…`EP-G5`), Mermaid-модель производства BCREQ и план
   вертикального MVP-среза с метриками `M-1`…`M-5`. Модули `M0`–`M4` и осевые
   модули **не переписываются**: расхождения сведены отображениями.
+  **Версия 0.2** (issue [#571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571)):
+  сущностей одиннадцать — добавлены `Система` (объект изменения, `SY-1`…`SY-3`)
+  и `Актор` (обобщение исполнителя и пользователя, `AC-1`…`AC-3`); навык
+  переопределён как подпроцесс (`Процесс → навыки 1:N → операции 1:N`,
+  `OPS-1`…`OPS-5`); маршрут — направленный граф с условными переходами, а
+  прогон — одна траектория по нему (`EP-R5`, `EP-R6`); человеческий гейт
+  требует ссылок на источник (`GT-5`); заявка на универсальность снята и
+  заменена проверяемой гипотезой переносимости (`scope: mango-only`).
+
+- [`ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-process-taxonomy/00-introduction.md)
+  — таксономия процессов БА на индустриальном базисе (issue
+  [#571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571)):
+  четыре уровня `L0` (шесть областей знаний BABOK v3) → `L1` (шесть семейств
+  работ) → `L2` (десять процессов КК Манго `P-01`…`P-10`) → `L3` (33
+  навыка-подпроцесса), где `L0`/`L1` **наследуются** из BABOK, а `L2`/`L3`
+  объявлены дельтой с обоснованием каждого отклонения. Прежние девять процессов
+  депрекированы: граница процесса — смена класса артефакта, а не состояние
+  документа, поэтому `fr-generation` «от сырого запроса до черновика ФТ/ТЗ»
+  распадается на три процесса. Ярусы контроля `G1`–`G7` заимствованы из
+  [`research/ai-education/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ai-education/task-processing/00-introduction.md),
+  метрики `MP-1`…`MP-6`.
+- [`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-operation-taxonomy/00-introduction.md)
+  — таксономия операций той же пересборки: операция как **атомарное, но
+  семантически завершённое** когнитивное действие с шестиполевым контрактом,
+  31 операция в пяти классах (`extract`, `transform`, `generate`, `check`,
+  `assess`), правила атомарности `OA-1`…`OA-6` (ветвление или
+  последовательность — признак навыка, а не операции), разложение всех 33
+  навыков `L3` на операции, ярусы `OG-1`…`OG-5` и метрики `MO-1`…`MO-5`.
 
 ## Датированные снимки
 
@@ -125,6 +153,17 @@ temperature: 0.1
   происхождения одиннадцати нормативных блоков модуля `ba-meta-model/`.
   Доказательная база решения ADR-014 «наследие — свидетельство, а не базис».
 
+- [`2026-09-10-process-taxonomy-defects-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md)
+  — замер дефектов действующей таксономии на коммитах `8cbf82a` (спица) и
+  `15aa76f` (Хаб): `D1` — 29 мест склейки «ФТ/ТЗ» в один артефакт; `D2` — 4
+  границы процесса, заданные состоянием документа; `D3` — 7 операций из 13 без
+  единого промпта; `D4` — 8 операций из 13 требуют ветвления; `D5` — 6
+  подпроцессов в спице против 0 упоминаний подпроцесса в Хабе; `D6` —
+  отсутствие сущностей `Система`, `Пользователь`, `Подпроцесс`; `D7` — 66 из 67
+  прогонов размечены вне словаря процессов; `D8` — одно упоминание ветвления
+  против двух утверждений о неизменности маршрута. Доказательная база модулей
+  `ba-process-taxonomy/`, `ba-operation-taxonomy/` и решения ADR-015.
+
 ## Эксперименты
 
 - [`exp/ba-requirements-normalization-539/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/exp/ba-requirements-normalization-539)
@@ -149,6 +188,12 @@ temperature: 0.1
   расхождение скелетов вариантов режима, наблюдаемость маршрутизации, покрытие
   операций и процессов, продуктовая разметка (issue
   [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)).
+
+- [`exp/ba-process-taxonomy-571/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/exp/ba-process-taxonomy-571)
+  — воспроизводимый аудит восьми дефектов таксономии, семь синтетических кейсов
+  с эталонными траекториями и валидатор новой таксономии: разбирает `20-*.md`
+  обоих модулей и проверяет покрытие процессов, навыков и операций кейсами
+  (issue [#571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571)).
 
 ## Политика ссылок
 
