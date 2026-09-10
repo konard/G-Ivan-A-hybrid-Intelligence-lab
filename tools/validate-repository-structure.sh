@@ -100,6 +100,7 @@ is_active_file() {
     docs/adr/2026-09-adr-013-run-modes-deprecation.md | \
     docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md | \
     docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md | \
+    docs/adr/2026-09-adr-016-skill-form-and-contract-format.md | \
     docs/adr/README.md | \
     standards/README.md | \
     standards/agents-md-bootstrap-standard.md | \
@@ -221,6 +222,7 @@ is_active_file() {
     research/ba-requirements/exp/ba-meta-model-563/legacy-normative-influence.json | \
     research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md | \
     research/ba-requirements/2026-09-10-gigacode-environment-facts.md | \
+    research/ba-requirements/2026-09-10-skill-granularity-format-facts.md | \
     research/ba-requirements/exp/ba-process-taxonomy-571/README.md | \
     research/ba-requirements/exp/ba-process-taxonomy-571/audit-taxonomy-defects.py | \
     research/ba-requirements/exp/ba-process-taxonomy-571/audit-taxonomy-defects.log | \
@@ -232,6 +234,9 @@ is_active_file() {
     research/ba-requirements/exp/ba-process-taxonomy-571/fetch-gigacode-docs.py | \
     research/ba-requirements/exp/ba-process-taxonomy-571/fetch-gigacode-docs.log | \
     research/ba-requirements/exp/ba-process-taxonomy-571/gigacode-docs.json | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/measure-skill-format.py | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/measure-skill-format.log | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/skill-format.json | \
     research/ba-requirements/ba-process-taxonomy/00-introduction.md | \
     research/ba-requirements/ba-process-taxonomy/10-theory.md | \
     research/ba-requirements/ba-process-taxonomy/20-taxonomy.md | \
