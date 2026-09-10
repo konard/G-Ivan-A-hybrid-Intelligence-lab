@@ -19,7 +19,7 @@ decision-type: methodology
 | Decision date | 2026-08-17 (решение фаундера в issue [#523](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/523): внедрение моделей в стандарт и повышение статуса RRP) |
 | Owner | G-Ivan-A |
 | Source | Issue [#515](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/515); Issue [#523](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/523) (амендмент D6); [ADR-003](2026-07-adr-003-research-structure.md); [RFC Reference Research Pattern](../rfc/2026-07-17-rfc-reference-research-pattern.md) |
-| Impacted artifacts | `standards/research-standard.md` (внедрение моделей — B-104, issue #523), `standards/glossary.md`, `docs/rfc/2026-07-17-rfc-reference-research-pattern.md` (`Validation status` — статус паттерна, D6), `tools/test-reference-research-terminology.sh`, `pr-ops/backlog.md` |
+| Impacted artifacts | `standards/research-standard.md` (внедрение моделей — B-104, issue #523), `standards/glossary.md`, `docs/rfc/2026-07-17-rfc-reference-research-pattern.md` (`Validation status` — статус паттерна, D6), `tools/test-reference-research-terminology.sh`, `ops/backlog.md` |
 | Supersedes | none |
 | Superseded by | none |
 
@@ -118,7 +118,7 @@ M2, ни к M3 без искажения смысла, — и только че�
 **D5. Внедрение — отдельная задача.** Внесение M1–M3 в
 `standards/research-standard.md` (включая перевод раздела `Type Model` из `N/A`
 в форму модели) выполняется **отдельной задачей после мержа этого ADR** (B-104 в
-[`pr-ops/backlog.md`](../../pr-ops/backlog.md)). До этого момента нормой остаётся
+[`ops/backlog.md`](../../ops/backlog.md)). До этого момента нормой остаётся
 действующая редакция стандарта. B-104 выполнена по issue
 [#523](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/523) вместе с
 переводом этого ADR в `accepted`.
@@ -215,7 +215,7 @@ Decision Tree стандарта, а M1 остаётся моделью по у�
 **Архитектурное следствие для downstream:** нормативный enforcement делегируется
 вниз по цепочке — правка `standards/research-standard.md` и `standards/glossary.md`
 в B-104, ratchet-проверки валидаторов там же. Этот ADR — decision record, а не
-план работ; состав задач живёт в [`pr-ops/backlog.md`](../../pr-ops/backlog.md).
+план работ; состав задач живёт в [`ops/backlog.md`](../../ops/backlog.md).
 
 ## Compliance and Validation
 
@@ -235,7 +235,7 @@ Decision Tree стандарта, а M1 остаётся моделью по у�
 - ADR подчиняется [`standards/adr-structure-standard.md`](../../standards/adr-structure-standard.md):
   необходимый frontmatter, девять обязательных секций, идентификация `ADR-011`.
 - Регистрация ADR как active artifact (allowlist структуры, `docs/adr/README.md`,
-  `pr-ops/artifact-map.md`, `CHANGELOG.md`) — постановка на учёт, а не изменение
+  `ops/artifact-map.md`, `CHANGELOG.md`) — постановка на учёт, а не изменение
   research-логики. Валидаторы research-формата этот ADR не меняет.
 - Локальная проверка в этом PR:
 
@@ -294,7 +294,7 @@ flowchart LR
   `Reference Research Pattern (RRP)`.
 - [`standards/adr-structure-standard.md`](../../standards/adr-structure-standard.md) —
   стандарт структуры ADR.
-- [`pr-ops/backlog.md`](../../pr-ops/backlog.md) — задачи B-103 (этот ADR) и
+- [`ops/backlog.md`](../../ops/backlog.md) — задачи B-103 (этот ADR) и
   B-104 (внесение моделей в стандарт).
 - [Валидация методологий исследований на корпусе завершённых кейсов](../analysis/2026-08-11-research-methodology-validation.md)
   и [перекрёстная проверка модулей RRP](../../research/hub/2026-08-13-rrp-cross-validation-codex.md) —

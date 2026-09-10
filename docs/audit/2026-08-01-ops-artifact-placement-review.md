@@ -8,7 +8,7 @@ context: [hub, routing, research, analysis, audit, artifact-placement, pr-462, o
 method: contract-reading + registry-scan + precedent-comparison
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/465"
 scope: repo
-audit_target: "Маршрутизация Research / Analysis / Audit: `standards/research-standard.md` §«Маршрутизация Research / Analysis / Audit» и §«Классификация на этапе создания задачи»; `standards/analysis-standard.md` §Boundaries; `standards/audit-standard.md` §Boundaries; `standards/report-standard.md` §Boundaries; `standards/glossary.md` (Research / Analysis / Audit); ADR-007 §структура корня; `pr-ops/artifact-map.md` §«Как обновлять карту»"
+audit_target: "Маршрутизация Research / Analysis / Audit: `standards/research-standard.md` §«Маршрутизация Research / Analysis / Audit» и §«Классификация на этапе создания задачи»; `standards/analysis-standard.md` §Boundaries; `standards/audit-standard.md` §Boundaries; `standards/report-standard.md` §Boundaries; `standards/glossary.md` (Research / Analysis / Audit); ADR-007 §структура корня; `ops/artifact-map.md` §«Как обновлять карту»"
 evidence_model: "contract-reading + registry-scan (grep по репозиторию) + прогон локальных валидаторов + сравнение с прецедентом"
 verdict: pass
 severity_scale: "Critical/Major/Minor/Info"
@@ -28,7 +28,7 @@ related_artifacts:
   - "standards/report-standard.md"
   - "standards/glossary.md"
   - "docs/adr/2026-07-adr-007-hub-root-structure.md"
-  - "pr-ops/artifact-map.md"
+  - "ops/artifact-map.md"
 ---
 
 # Аудит размещения артефактов PR #462: `research/hub/` vs `docs/`
@@ -53,7 +53,7 @@ pass/fail по норме), Analysis — по доминирующему deliver
 а не интерпретация локального состояния без внешнего знания).
 
 Найдено одно отклонение вне вопроса размещения: артефакты PR #462 не были
-зарегистрированы в `pr-ops/artifact-map.md` (Minor). Оно устранено в этом PR;
+зарегистрированы в `ops/artifact-map.md` (Minor). Оно устранено в этом PR;
 содержание артефактов PR #462 не изменялось.
 
 ## Scope / Target
@@ -72,7 +72,7 @@ pass/fail по норме), Analysis — по доминирующему deliver
 | N4 | [`standards/report-standard.md`](../../standards/report-standard.md) | §Boundaries, граница Report ↔ Research/Analysis |
 | N5 | [`standards/glossary.md`](../../standards/glossary.md) | канонические определения Research / Analysis / Audit и Evidence-контейнер |
 | N6 | [ADR-007](../adr/2026-07-adr-007-hub-root-structure.md) | структура корня: `research/hub/` — Hub methodology and governance research; `docs/analysis/`, `docs/audit/` |
-| N7 | [`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md) | §«Как обновлять карту»: новый активный артефакт регистрируется в карте и в валидаторе структуры |
+| N7 | [`ops/artifact-map.md`](../../ops/artifact-map.md) | §«Как обновлять карту»: новый активный артефакт регистрируется в карте и в валидаторе структуры |
 
 Объекты проверки:
 
@@ -93,7 +93,7 @@ pass/fail по норме), Analysis — по доминирующему deliver
 4. **Registry-scan.** `grep` по репозиторию на упоминания обоих путей:
    `research/hub/README.md`, `CHANGELOG.md`,
    `tools/validate-repository-structure.sh` (`is_active_file`, `required_files`),
-   `pr-ops/artifact-map.md`, `pr-ops/backlog.md`.
+   `ops/artifact-map.md`, `ops/backlog.md`.
 5. **Валидаторы.** `./tools/validate-frontmatter.sh .`,
    `./tools/validate-file-naming.sh`, `./tools/validate-evidence-structure.sh`,
    `./tools/validate-repository-structure.sh` — до и после изменений этого PR.
@@ -211,7 +211,7 @@ parent dated report в `research/`, что прямо нарушает N1: «К�
 
 ### F5 — Артефакты PR #462 не зарегистрированы в artifact-map (Minor, устранено)
 
-`pr-ops/artifact-map.md` §«Как обновлять карту» требует: «При создании нового
+`ops/artifact-map.md` §«Как обновлять карту» требует: «При создании нового
 активного артефакта → добавь строку в таблицу, укажи тип, обязательность и связи,
 и зарегистрируй файл в `tools/validate-repository-structure.sh`». Registry-scan
 показал:
@@ -221,7 +221,7 @@ parent dated report в `research/`, что прямо нарушает N1: «К�
 | `research/hub/README.md` | ✅ зарегистрирован | ✅ зарегистрирован |
 | `tools/validate-repository-structure.sh` (`is_active_file`, `required_files`) | ✅ зарегистрирован | ✅ зарегистрирован |
 | `CHANGELOG.md` | ✅ запись есть | ✅ запись есть |
-| `pr-ops/artifact-map.md` | ❌ строка отсутствовала | ❌ строка отсутствовала |
+| `ops/artifact-map.md` | ❌ строка отсутствовала | ❌ строка отсутствовала |
 
 Отклонение не связано с размещением и не влияет на вердикт F1: оно одинаково
 проявилось бы в любом каталоге. Severity Minor — карта отражает фактическое
@@ -247,7 +247,7 @@ parent dated report в `research/`, что прямо нарушает N1: «К�
 | --- | --- | --- |
 | F1–F3 | Ремедиация не требуется; обоснование зафиксировано в этом отчёте (DoD 3 issue #465). | — |
 | F4 | **Отклонение принято.** Ремедиация не выполняется: содержание артефактов PR #462 изменять запрещено (⛔ issue #465). Нормы не нарушено. Пересматривается, если в `frontmatter-docs-standard.md` появится контролируемый словарь `type`. | — |
-| F5 | **Устранено в этом PR:** добавлены строки для отчёта, контейнера `exp/` и этого аудита в `pr-ops/artifact-map.md`; этот аудит зарегистрирован в `tools/validate-repository-structure.sh` (`is_active_file`) с проверками структуры (`audit_target`, `evidence_model`, `verdict`, обязательные секции). | `pr-ops/artifact-map.md`, `tools/validate-repository-structure.sh` |
+| F5 | **Устранено в этом PR:** добавлены строки для отчёта, контейнера `exp/` и этого аудита в `ops/artifact-map.md`; этот аудит зарегистрирован в `tools/validate-repository-structure.sh` (`is_active_file`) с проверками структуры (`audit_target`, `evidence_model`, `verdict`, обязательные секции). | `ops/artifact-map.md`, `tools/validate-repository-structure.sh` |
 
 Файлы PR #462 не перемещались и не редактировались; `git` не содержит изменений
 в `research/hub/2026-07-31-ops-task-strategy-validation.md` и
@@ -270,5 +270,5 @@ parent dated report в `research/`, что прямо нарушает N1: «К�
 - [`standards/glossary.md`](../../standards/glossary.md) — N5, канонические определения.
 - [ADR-007: структура корня Хаба](../adr/2026-07-adr-007-hub-root-structure.md) — N6.
 - [ADR-003: структура research и маршрутизация](../adr/2026-07-adr-003-research-structure.md) — источник принятого routing-решения.
-- [`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md) — N7, реестр артефактов.
+- [`ops/artifact-map.md`](../../ops/artifact-map.md) — N7, реестр артефактов.
 - [`docs/audit/2026-07-04-cross-standard-stress-tests.md`](2026-07-04-cross-standard-stress-tests.md) — смежный аудит цепочки R/A/A/Report.

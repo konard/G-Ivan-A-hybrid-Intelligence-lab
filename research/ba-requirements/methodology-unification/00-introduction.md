@@ -15,7 +15,7 @@ related_artifacts:
   - "docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md"
   - "docs/rfc/2026-09-04-rfc-bootstrap-environment-and-structure.md"
   - "docs/rfc/2026-07-17-rfc-reference-research-pattern.md"
-  - "pr-ops/backlog.md"
+  - "ops/backlog.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/557"
 ---
@@ -84,7 +84,7 @@ related_issues:
    слагаемым, а не переписывается.
 10. **Роадмап каскада — 15 задач `B-121`…`B-135`** в трёх этапах с двумя
     человеческими гейтами и двумя задачами вне этапов (`B-134`, `B-135`); зарегистрированы в
-    [`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md),
+    [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md),
     обоснование — в
     [`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/methodology-unification/50-open-research.md).
     **Мерж PR по issue #557 = утверждение роадмапа** (условие фаундера).

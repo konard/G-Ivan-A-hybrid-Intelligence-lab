@@ -17,9 +17,9 @@ related_artifacts:
   - "docs/rfc/2026-09-03-rfc-agents-md-root-contract.md"
   - "standards/project-structure-inheritance.md"
   - "standards/rfc-structure-standard.md"
-  - "pr-ops/repo-model.md"
-  - "pr-ops/artifact-map.md"
-  - "pr-ops/backlog.md"
+  - "ops/repo-model.md"
+  - "ops/artifact-map.md"
+  - "ops/backlog.md"
   - "ai-rules/agent-work-rules.md"
   - "tools/validate-repository-structure.sh"
   - "tools/validate-historical-immutable.sh"
@@ -40,7 +40,7 @@ related_issues:
 | Owner | G-Ivan-A |
 | RFC status | proposed (совпадает с frontmatter; решения фаундера по `Q-1`…`Q-8` получены, см. `Open Questions`) |
 | Source issue | [#553](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/553) |
-| Impacted artifacts | [`docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md), [`docs/adr/2026-07-adr-007-hub-root-structure.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-07-adr-007-hub-root-structure.md), [`pr-ops/repo-model.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/repo-model.md), [`standards/project-structure-inheritance.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/project-structure-inheritance.md), `standards/bootstrap-environment-standard.md` (предлагается), [`docs/rfc/2026-09-03-rfc-agents-md-root-contract.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-03-rfc-agents-md-root-contract.md), [`tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-repository-structure.sh), [`templates/htom/tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/htom/tools/validate-repository-structure.sh), [`tools/validate-historical-immutable.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-historical-immutable.sh), [`tools/sync-from-hub.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/sync-from-hub.sh), `.hub-profile.json` спиц |
+| Impacted artifacts | [`docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md), [`docs/adr/2026-07-adr-007-hub-root-structure.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-07-adr-007-hub-root-structure.md), [`ops/repo-model.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/repo-model.md), [`standards/project-structure-inheritance.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/project-structure-inheritance.md), `standards/bootstrap-environment-standard.md` (предлагается), [`docs/rfc/2026-09-03-rfc-agents-md-root-contract.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-03-rfc-agents-md-root-contract.md), [`tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-repository-structure.sh), [`templates/htom/tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/htom/tools/validate-repository-structure.sh), [`tools/validate-historical-immutable.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-historical-immutable.sh), [`tools/sync-from-hub.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/sync-from-hub.sh), `.hub-profile.json` спиц |
 | Decision record | not yet |
 | Implementation link | not yet |
 | Archetype scope | multi (A / B / C / D) |
@@ -61,7 +61,7 @@ RFC предлагает три связанных решения бутстра
    а не новый файл.
 2. **Рефакторинг базовых структур** — с явной позицией исполнителя по каждому
    пункту (раздел `P.5`, `P.6`). Переименование
-   [`pr-ops/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/pr-ops)
+   [`ops/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/pr-ops)
    в `ops/` — **согласие с условиями**: имя `pr-ops` уже семантически неверно, но
    цена измерена (1 087 вхождений в 140 markdown-файлах, 224 строки валидатора,
    247 вхождений в 35 иммутабельных документах), поэтому предлагается миграция
@@ -74,7 +74,7 @@ RFC предлагает три связанных решения бутстра
    прямо нарушило бы собственное двухфакторное правило
    [ADR-001](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md)
    и Anti-Inflation Principle
-   [`pr-ops/repo-model.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/repo-model.md).
+   [`ops/repo-model.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/repo-model.md).
    Контракт классов вводится в Хабе, каталоги создаются там, где есть боль, —
    в [`mango_ba_prompts`](https://github.com/G-Ivan-A/mango_ba_prompts).
 3. **Актуализация `AGENTS.md`** — правки **нужны**, и их пять; они перечислены в
@@ -151,7 +151,7 @@ cross-repository последствиями требует RFC до ADR или �
    архетип).
 4. Позицию исполнителя по разделению `ai-rules/` на `commands/`/`skills/` — с
    архитектурной аргументацией и альтернативным предложением.
-5. Позицию исполнителя по переименованию `pr-ops/` → `ops/` — с измеренной ценой
+5. Позицию исполнителя по переименованию `ops/` → `ops/` — с измеренной ценой
    и планом, снимающим главный риск (обрыв ссылок в иммутабельных документах).
 6. Перечень конкретных правок в
    [RFC корневого контракта `AGENTS.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-03-rfc-agents-md-root-contract.md),
@@ -171,7 +171,7 @@ cross-repository последствиями требует RFC до ADR или �
 - Рефакторинг самих промптов Mango в `SKILL.md` (Трек А) — отдельная задача
   спицы; здесь фиксируется только контракт классов.
 - Подключение MCP-интеграции с внешними трекерами задач вместо
-  `pr-ops/backlog.md` — зафиксировано как направление в `Open Questions`, но не
+  `ops/backlog.md` — зафиксировано как направление в `Open Questions`, но не
   предлагается к решению.
 - Ревизию решения об отсутствии `kb/` и `runs/` в Хабе
   ([issue #386](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/386)).
@@ -223,7 +223,7 @@ cross-repository последствиями требует RFC до ADR или �
 | `R1` | **Аддитивность.** `Δсреда` может только добавлять обязательные или разрешённые пути. Изъятие или переименование дома, заданного ядром либо архетипом, средой запрещено; такое изменение делается только через ADR по соответствующей оси. | Снимает комбинаторный взрыв: правил `N + M`, а не клеток `N × M`. Без `R1` каждая новая среда потребовала бы переписать все архетипы. |
 | `R2` | **Разделение предметов.** `Δархетип` описывает дома *содержания* (`research/`, `prompts/`, `src/`). `Δсреда` описывает *поверхность инструмента*: реестры, конфигурации подключения, точки автозагрузки. | Пересечение предметов и есть источник конфликта; при разделении конфликта нет по построению. |
 | `R3` | **Приоритет при конфликте.** Если предложенная `Δсреда` нарушает `R1`/`R2` — это не конфликт, а ошибка определения среды: он эскалируется фаундеру, а не разрешается автоматически. Дефолт до решения — строгий вариант (обязательность сохраняется). | Согласуется с правилом `M4-R5` [RFC конвейера RRP](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md): конфликт осей разрешается всегда в сторону строгости. |
-| `R4` | **Адаптер, а не второй SSOT.** Файлы `Δсреда` — сгенерированные указатели на каноничный артефакт, а не его копия. Ручная правка сгенерированного файла = `FAIL`. | Тот же принцип, что уже принят для `CLAUDE.md`/`.github/copilot-instructions.md` в [B-110](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md): «дублирование правил в модель-специфичные файлы запрещено». |
+| `R4` | **Адаптер, а не второй SSOT.** Файлы `Δсреда` — сгенерированные указатели на каноничный артефакт, а не его копия. Ручная правка сгенерированного файла = `FAIL`. | Тот же принцип, что уже принят для `CLAUDE.md`/`.github/copilot-instructions.md` в [B-110](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md): «дублирование правил в модель-специфичные файлы запрещено». |
 | `R5` | **Ровно одна первичная среда.** Репозиторий объявляет одну `environment`; дополнительные — списком `secondary_environments`, и их дельты также обязаны быть аддитивными. | Иначе «первичность» становится неопределимой, а валидатор — недетерминированным. |
 | `R6` | **Дефолт.** Отсутствие поля `environment` читается как `local`, а не как ошибка. | Обратная совместимость: ни один существующий репозиторий не краснеет от введения оси. |
 | `R7` | **Закрытый словарь.** Значение вне словаря `P.1` = `FAIL`. Новая среда вводится ADR, а не полем в профиле спицы. | Без этого ось выродится в свободный текст и перестанет быть машинно-проверяемой. |
@@ -317,7 +317,7 @@ cross-repository последствиями требует RFC до ADR или �
    «`ai-rules/` — правила AI-агента, **плоско**; подкаталоги через
    2FA-обоснование», где двухфакторность — «есть операционная боль **и** есть
    повторяемое использование».
-2. [`pr-ops/repo-model.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/repo-model.md),
+2. [`ops/repo-model.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/repo-model.md),
    Anti-Inflation Principle: «Артефакт не оправдан, если он только делает дерево
    визуально полным».
 
@@ -381,7 +381,7 @@ issue #553 отдаёт приоритет согласованиям в диа�
 закрыт документацией среды **до** шага `M4` плана миграции. Рекомендация по
 умолчанию — вариант (а): он сохраняет один SSOT при любом ответе.
 
-### P.6. `pr-ops/` → `ops/`
+### P.6. `ops/` → `ops/`
 
 #### Анализ и обоснование (позиция исполнителя)
 
@@ -390,7 +390,7 @@ issue #553 отдаёт приоритет согласованиям в диа�
 семантически неверно уже сегодня.**
 
 Содержимое каталога
-[`pr-ops/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/pr-ops)
+[`ops/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/pr-ops)
 — модель репозитория, карта артефактов, бэклог, инструкция бэклога, реестр
 исполнимых документов, дайджесты сессий. Операции над pull request — в лучшем
 случае один из шести предметов. Имя обещает узкий смысл и получает широкий, а
@@ -432,19 +432,19 @@ path-миграции.** Расширить
 третьим исключением (к двум существующим — совместимый редирект и pre-decision
 документ): изменение иммутабельного файла допускается, если дифф содержит
 **только** подстановки объявленной path-миграции и ничего больше. Проверка
-механическая: применить обратную подстановку `ops/` → `pr-ops/` к HEAD-версии и
+механическая: применить обратную подстановку `ops/` → `ops/` к HEAD-версии и
 потребовать побайтового совпадения с base-версией. Смысловая правка исторического
 решения под видом миграции при этом остаётся невозможной — а именно её и защищает
 иммутабельность. Список подстановок берётся из журнала `path_migrations`, уже
 предписанного задаче
-[B-113](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md)
+[B-113](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md)
 для Aether-Orbis.
 
-**Условие 2. Совместимый редирект на старом пути.** `pr-ops/README.md`
+**Условие 2. Совместимый редирект на старом пути.** `ops/README.md`
 сохраняется как заглушка со `status: deprecated` и ссылкой на `ops/README.md` на
 один цикл синхронизации. Это покрывает внешние входящие ссылки — из issue, PR и
 внешних чатов, — которые переписать невозможно в принципе. Валидатор запрещает
-любой другой файл в `pr-ops/`, чтобы каталог не ожил как второй дом.
+любой другой файл в `ops/`, чтобы каталог не ожил как второй дом.
 
 **Условие 3. Один PR на всю миграцию.** Перенос файлов, переписывание ссылок,
 224 строки валидатора, `require_text`-проверки, version-pin, `templates/htom/`,
@@ -454,11 +454,11 @@ path-миграции.** Расширить
 
 **Что я предлагаю не делать.** Не переписывать `CHANGELOG.md` (158 вхождений):
 changelog — append-only летопись, историческая запись «обновлён
-`pr-ops/artifact-map.md`» остаётся верной для своей даты. Достаточно записи о
+`ops/artifact-map.md`» остаётся верной для своей даты. Достаточно записи о
 самой миграции. Это сокращает дифф примерно на 15 % без потери смысла.
 
 **Оценка обратимости.** Миграция обратима до момента удаления редиректа
-(Условие 2). После — необратима: внешние permalink-ссылки на `blob/main/pr-ops/`
+(Условие 2). После — необратима: внешние permalink-ссылки на `blob/main/ops/`
 из issue, PR и внешних систем сломаются при любом сценарии; это принимается как
 неустранимая цена, а не как решаемая задача.
 
@@ -475,7 +475,7 @@ changelog — append-only летопись, историческая запис�
 | `A-2` | `P.2`, секция `<scope>` | `AGENTS.md` не объявляет, к какой среде и архетипу относится репозиторий, — агент не может выбрать правильную дельту. | Добавить в `<scope>` две обязательные строки: `archetype` и `environment`, со значениями из `.hub-profile.json` и явным указанием, что SSOT — профиль, а `AGENTS.md` его отражает. Расхождение = `FAIL`. |
 | `A-3` | `P.2`, секция `<forbidden>`: «новые top-level каталоги без ADR» | Каталог, канонический для объявленной среды, легален по определению, но под текущей формулировкой требует ADR в каждой спице. | Уточнить: «новые top-level каталоги, **не предусмотренные ядром, архетипом, объявленной средой или декларацией `project_specific_directories`**, — без ADR запрещены». |
 | `A-4` | `P.6` «Архетипы репозиториев» | Модель дельты одномерна: «база в Хабе + дельта архетипа в спице». С введением оси дельта становится двумерной. | Переименовать раздел в «Архетипы и среды» и записать: дельта спицы = `Δархетип ⊕ Δсреда`; ни одна из них не переопределяет `<hard_rules>` и `<forbidden>` Хаба (это согласуется с `R1`). |
-| `A-5` | `P.7` «Машинный гейт» и `P.3` `agent-work-routing.md` | (а) Наличие-гейт проверяет фиксированный корневой набор, одинаковый для всех сред, — при разных дельтах это неверно. (б) Таблица маршрутизации содержит пути `pr-ops/`, которые изменятся при `P.6`, и не содержит маршрутов к классам `commands`/`skills` из `P.5`. | (а) Гейт обязан сначала прочитать `environment` из профиля и лишь затем проверять требуемый набор. (б) Маршруты `pr-ops/*` переписываются в `ops/*` тем же PR, что и миграция; добавляются два маршрута: «вызываемая человеком процедура → `ai-rules/commands/`», «навык под класс задачи → `ai-rules/skills/`». |
+| `A-5` | `P.7` «Машинный гейт» и `P.3` `agent-work-routing.md` | (а) Наличие-гейт проверяет фиксированный корневой набор, одинаковый для всех сред, — при разных дельтах это неверно. (б) Таблица маршрутизации содержит пути `ops/`, которые изменятся при `P.6`, и не содержит маршрутов к классам `commands`/`skills` из `P.5`. | (а) Гейт обязан сначала прочитать `environment` из профиля и лишь затем проверять требуемый набор. (б) Маршруты `ops/*` переписываются в `ops/*` тем же PR, что и миграция; добавляются два маршрута: «вызываемая человеком процедура → `ai-rules/commands/`», «навык под класс задачи → `ai-rules/skills/`». |
 
 Правки `A-1`…`A-4` — текстовые и не меняют принятой конструкции корневого
 контракта: `AGENTS.md` остаётся коротким диспетчером, жёсткий слой не
@@ -497,13 +497,13 @@ changelog — append-only летопись, историческая запис�
 | --- | --- | --- | --- |
 | `M0` | Решение фаундера по `Q-1`…`Q-6`; перевод этого RFC в `accepted` | Хаб | — |
 | `M1` | Стандарт бутстрапа `standards/bootstrap-environment-standard.md`: ось «Среда», словарь, правила `R1`–`R7`, контракт классов `P.5`, поля профиля | Хаб | `M0` |
-| `M2` | Синхронизация решений: `ADR-001` (ось «Среда» как третий слой, легализация подкаталогов `ai-rules/`), `ADR-007` (корень Хаба, среда `local`), [`pr-ops/repo-model.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/repo-model.md), [`standards/project-structure-inheritance.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/project-structure-inheritance.md). Новые ADR, а не правка принятых | Хаб | `M1` |
+| `M2` | Синхронизация решений: `ADR-001` (ось «Среда» как третий слой, легализация подкаталогов `ai-rules/`), `ADR-007` (корень Хаба, среда `local`), [`ops/repo-model.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/repo-model.md), [`standards/project-structure-inheritance.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/project-structure-inheritance.md). Новые ADR, а не правка принятых | Хаб | `M1` |
 | `M3` | Исключение path-миграции в [`validate-historical-immutable.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-historical-immutable.sh) + тест в [`tools/test-historical-immutable.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/test-historical-immutable.sh). **Обязателен до `M4`** | Хаб | `M1` |
-| `M4` | `pr-ops/` → `ops/` одним PR: перенос, ссылки, 224 строки валидатора, `require_text`, version-pin, `templates/htom/`, `templates/spoke/`, `templates/manifest.json`, редирект-заглушка, журнал `path_migrations` | Хаб | `M3` |
+| `M4` | `ops/` → `ops/` одним PR: перенос, ссылки, 224 строки валидатора, `require_text`, version-pin, `templates/htom/`, `templates/spoke/`, `templates/manifest.json`, редирект-заглушка, журнал `path_migrations` | Хаб | `M3` |
 | `M5` | Валидаторы читают `environment` из `.hub-profile.json`: [`tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-repository-structure.sh) и геном [`templates/htom/tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/htom/tools/validate-repository-structure.sh); [`tools/sync-from-hub.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/sync-from-hub.sh) учитывает среду при раскладке | Хаб | `M1` |
 | `M6` | `AGENTS.md`: правки `A-1`…`A-5` (`P.7`) в RFC `v0.3` и в черновике [`templates/agents-md-root-draft.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/agents-md-root-draft.md); B-111 делает скрипт инъекции чувствительным к среде | Хаб | `M4`, `M5` |
-| `M7a` | [`mango_ba_prompts`](https://github.com/G-Ivan-A/mango_ba_prompts): профиль `{B, gigacode}`, `pr-ops/` → `ops/` через тот же журнал миграции, `ai-rules/skills/` под фактические навыки, адаптер среды по решению `Q-2` | Mango | `M6` |
-| `M7b` | [`aether-orbis`](https://github.com/G-Ivan-A/aether-orbis): профиль `{C, local}`; выполняется в составе [B-113](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md), отдельной миграции не требует | Aether-Orbis | `M6` |
+| `M7a` | [`mango_ba_prompts`](https://github.com/G-Ivan-A/mango_ba_prompts): профиль `{B, gigacode}`, `ops/` → `ops/` через тот же журнал миграции, `ai-rules/skills/` под фактические навыки, адаптер среды по решению `Q-2` | Mango | `M6` |
+| `M7b` | [`aether-orbis`](https://github.com/G-Ivan-A/aether-orbis): профиль `{C, local}`; выполняется в составе [B-113](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md), отдельной миграции не требует | Aether-Orbis | `M6` |
 | `M7c` | `ai-ba-playbooks`: профиль `{B, serverless}` при создании репозитория; структура — по отдельному RFC Трека Б | Новый репозиторий | `M6` |
 
 Правило отката: до `M4` включительно каждый шаг обратим revert-ом PR. После
@@ -584,7 +584,7 @@ Grandfathering: спицы, не прошедшие `M7`, продолжают �
 3. Требование «планы и задачи не образуют второго SSOT состояния работ»
    сохраняется как содержательная норма: обоснование в `reason` обязано
    объяснять, почему каталог не дублирует трекер задач и бэклог
-   [`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md).
+   [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md).
    Проверка этого — контрактный гейт (human review при принятии декларации),
    а не машинный: машинно проверяется только наличие непустого `reason`.
 
@@ -623,8 +623,8 @@ B-123).
 | `D`. Приоритет среды над архетипом с правом отмены каталогов | Прямое прочтение формулировки постановки «структура прежде всего выстраивается под среду». | Среда получила бы право отменять дома содержания; «структура без `ai-rules/`» — пример такой отмены. Ломает ортогональность: оси перестают быть независимыми, а матрица становится обязательной к поклеточному заполнению (вариант `C`). Кроме того, отклонено самим фаундером в диалоге. |
 | `E`. Переименовать `ai-rules/` → `skills/` под GigaCode | Стопроцентное следование нативной практике среды. | Breaking change для всей экосистемы (434 вхождения `ai-rules` в 66 markdown-файлах Хаба, плюс спицы); при этом правила и протоколы навыками не являются, то есть имя стало бы неверным для трёх из четырёх текущих файлов. Явно отклонено фаундером в диалоге. |
 | `F`. Создать `ai-rules/commands/` и `ai-rules/skills/` в Хабе немедленно | Единообразие структуры во всех репозиториях сразу. | Две пустые директории; нарушение 2FA-правила ADR-001 и Anti-Inflation Principle. Разобрано в `P.5`. |
-| `G`. Оставить `pr-ops/` как есть | Ноль стоимости миграции. | Имя не описывает содержимое (шесть предметов, из них один про PR); расхождение имени и содержания — зафиксированный класс операционной боли. Решение фаундера — переименовать. |
-| `H`. Переименовать `pr-ops/` без исключения из иммутабельности | Меньше изменений в инструментах. | 74 ссылки в 35 иммутабельных документах указывают в пустоту либо гейт иммутабельности падает. Разобрано в `P.6`. |
+| `G`. Оставить `ops/` как есть | Ноль стоимости миграции. | Имя не описывает содержимое (шесть предметов, из них один про PR); расхождение имени и содержания — зафиксированный класс операционной боли. Решение фаундера — переименовать. |
+| `H`. Переименовать `ops/` без исключения из иммутабельности | Меньше изменений в инструментах. | 74 ссылки в 35 иммутабельных документах указывают в пустоту либо гейт иммутабельности падает. Разобрано в `P.6`. |
 
 ## Trade-offs
 
@@ -633,7 +633,7 @@ B-123).
 | Введение второй оси | Бутстрап требует двух параметров вместо одного; растёт порог входа. | `R6`: `local` по умолчанию, отсутствие поля — не ошибка. Ни один существующий репозиторий не краснеет. |
 | Аддитивность `R1` | Среда не может «упростить» структуру, даже если для неё часть домов бессмысленна. | Осознанный размен: предсказуемость и `N + M` правил вместо гибкости и `N × M` клеток. Изъятие возможно, но только ADR по оси «Архетип». |
 | Ослабление гейта иммутабельности (`M3`) | Появляется легальный способ изменить исторический документ. | Исключение машинно-узкое: обратная подстановка обязана дать побайтовое совпадение с base-версией. Смысловая правка остаётся невозможной. |
-| Переименование `pr-ops/` → `ops/` | ~1 087 вхождений; необратимый обрыв внешних permalink-ссылок. | Один PR (Условие 3), редирект-заглушка (Условие 2), `CHANGELOG.md` не переписывается. Внешние permalink — принятая неустранимая цена. |
+| Переименование `ops/` → `ops/` | ~1 087 вхождений; необратимый обрыв внешних permalink-ссылок. | Один PR (Условие 3), редирект-заглушка (Условие 2), `CHANGELOG.md` не переписывается. Внешние permalink — принятая неустранимая цена. |
 | Подкаталоги в `ai-rules/` | Ослабляется правило «плоско» ADR-001. | Ослабление точечное: разрешены ровно два имени, `commands/` и `skills/`, с машинно-проверяемым различающим тестом; произвольные подкаталоги по-прежнему требуют 2FA. |
 | Адаптеры среды (`R4`) | Сгенерированные файлы в репозитории, риск ручной правки. | Пометка «сгенерировано» + check-режим скрипта синхронизации, падающий при расхождении. Тот же механизм, что предписан B-111. |
 | Отложенное создание `skills/` в Хабе (`P.5`) | Структура Хаба и Mango некоторое время различаются. | Различие легально по построению: дельта среды. Контракт классов при этом един и живёт в стандарте с шага `M1`. |
@@ -644,9 +644,9 @@ B-123).
 | Артефакт | Влияние | Шаг |
 | --- | --- | --- |
 | [`docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md) | Требуется новый ADR: ось «Среда» как третий слой композиции; легализация подкаталогов `ai-rules/commands/`, `ai-rules/skills/`. Принятый ADR не переписывается. | `M2` |
-| [`docs/adr/2026-07-adr-007-hub-root-structure.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-07-adr-007-hub-root-structure.md) | Новый ADR: среда Хаба = `local`; `pr-ops/` → `ops/` в To-Be дереве корня. | `M2`, `M4` |
+| [`docs/adr/2026-07-adr-007-hub-root-structure.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-07-adr-007-hub-root-structure.md) | Новый ADR: среда Хаба = `local`; `ops/` → `ops/` в To-Be дереве корня. | `M2`, `M4` |
 | `standards/bootstrap-environment-standard.md` | Создаётся: определение оси, словарь, `R1`–`R7`, контракт классов, поля профиля. | `M1` |
-| [`pr-ops/repo-model.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/repo-model.md) | Таблица «Структура» дополняется строкой оси «Среда»; путь `pr-ops/` → `ops/`. | `M2`, `M4` |
+| [`ops/repo-model.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/repo-model.md) | Таблица «Структура» дополняется строкой оси «Среда»; путь `ops/` → `ops/`. | `M2`, `M4` |
 | [`standards/project-structure-inheritance.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/project-structure-inheritance.md) | Наследование структуры проектом дополняется дельтой среды. | `M2` |
 | [`docs/rfc/2026-09-03-rfc-agents-md-root-contract.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-03-rfc-agents-md-root-contract.md) | Правки `A-1`…`A-5` (`P.7`) внесены в `v0.3` по решению `Q-5`. | `M6`, issue [#555](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/555) |
 | [`templates/agents-md-root-draft.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/agents-md-root-draft.md) | Секции `<scope>`, `<forbidden>`, `<routing>`, `<artifact_homes>`, `<models>` по правкам `A-1`…`A-3`, `A-5`(б) и по `P.9.2`. | `M6`, issue [#555](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/555) |
@@ -655,7 +655,7 @@ B-123).
 | [`templates/htom/tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/htom/tools/validate-repository-structure.sh) | Каноничность каталогов среды: каталог, предусмотренный объявленной средой, не требует `project_specific_directories`. | `M5` |
 | [`tools/sync-from-hub.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/sync-from-hub.sh), [`templates/sync-metadata.json`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/sync-metadata.json), [`templates/manifest.json`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/manifest.json) | Раскладка артефактов с учётом среды; регенерация манифеста. | `M5` |
 | `.hub-profile.json` спиц | Поля `archetype`, `environment`, `secondary_environments`. | `M7a`–`M7c` |
-| [`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md), [`pr-ops/artifact-map.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/artifact-map.md), [`CHANGELOG.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/CHANGELOG.md) | Регистрация этого RFC и задач `B-117`–`B-120`. | этот PR |
+| [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md), [`ops/artifact-map.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/artifact-map.md), [`CHANGELOG.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/CHANGELOG.md) | Регистрация этого RFC и задач `B-117`–`B-120`. | этот PR |
 
 ## Implementation and Validation
 
@@ -686,7 +686,7 @@ python3 tools/generate-manifest.py --check
 | `V-4` | Каталог, канонический для объявленной среды, проходит без записи в `project_specific_directories`. | `M5` |
 | `V-5` | Расхождение `environment` между `.hub-profile.json` и `AGENTS.md` даёт `FAIL`. | `M6` |
 | `V-6` | Изменение файла в `docs/rfc/`/`docs/adr/`, не сводимое к объявленной path-миграции обратной подстановкой, по-прежнему даёт `FAIL`. | `M3` |
-| `V-7` | После `M4` ни одна ссылка в репозитории не указывает на `pr-ops/`, кроме редирект-заглушки и записей `CHANGELOG.md`. | `M4` |
+| `V-7` | После `M4` ни одна ссылка в репозитории не указывает на `ops/`, кроме редирект-заглушки и записей `CHANGELOG.md`. | `M4` |
 | `V-8` | Ручная правка сгенерированного адаптера среды даёт `FAIL` в check-режиме синхронизации (`R4`). | `M5` |
 | `V-9` | Файл в `ai-rules/skills/` вне структуры `<slug>/SKILL.md` даёт `FAIL`. | `M1` |
 | `V-10` | Декларация каталога через `project_specific_directories` с пустым или отсутствующим `reason` даёт `FAIL`; поимённый denylist имён каталогов в валидаторах отсутствует (`P.9.2`, правило `R8`). | `M5` |
@@ -709,7 +709,7 @@ python3 tools/generate-manifest.py --check
 
 Три предложения RFC независимы и **могут быть приняты по отдельности**: ось
 «Среда» (`P.1`–`P.4`), контракт классов `ai-rules/` (`P.5`) и переименование
-`pr-ops/` (`P.6`) не связаны обязательными зависимостями. Правки `AGENTS.md`
+`ops/` (`P.6`) не связаны обязательными зависимостями. Правки `AGENTS.md`
 (`P.7`) зависят от того, какие из трёх приняты: `A-1`, `A-2`, `A-4` — от оси
 среды, `A-3` — от оси среды, `A-5` — от `P.5` и `P.6`.
 
@@ -725,7 +725,7 @@ python3 tools/generate-manifest.py --check
 | `Q-1` | **принято** | Ось «Среда» принимается вместе с правилом аддитивности. Правило `R1` утверждается как базовый принцип композиции: среда только добавляет пути и не отменяет дома ядра или архетипа. | `P.1`–`P.4` идут в стандарт бутстрапа без изменений (`M1`, B-117). Вариант `D` из `Alternatives` окончательно отклонён. |
 | `Q-2` | **отложено, применяется запасной путь** | Проверенной документации по механизму обнаружения навыков в GigaCode нет. До её получения применяется правило `R4` — сгенерированный адаптер на нативном пути среды. Исследование механизма заводится задачей бэклога. | Дельта `gigacode` в `P.2` остаётся условной. Задача B-121 (исследование). Трек А не блокируется: `R4` даёт корректное исполнение при любом ответе. |
 | `Q-3` | **подтверждено** | Гипотеза «структура без `ai-rules/` для среды GigaCode» **отклоняется**. `ai-rules/` сохраняется, реорганизуется его внутренняя структура — по мере появления боли в спицах. | Разрешение противоречия между текстом issue #553 и приложенным диалогом, выполненное исполнителем в `P.5`, подтверждено явно. Варианты `D` и `E` отклонены окончательно. |
-| `Q-4` | **принято** | Все три условия переименования `pr-ops/` → `ops/` принимаются: машинно-проверяемое исключение path-миграции из гейта иммутабельности, редирект-заглушка, один PR на всю миграцию. | Разблокирует цепочку B-118 → B-119. Порядок обязателен: B-119 без B-118 даёт либо красный гейт, либо 74 битые ссылки. |
+| `Q-4` | **принято** | Все три условия переименования `ops/` → `ops/` принимаются: машинно-проверяемое исключение path-миграции из гейта иммутабельности, редирект-заглушка, один PR на всю миграцию. | Разблокирует цепочку B-118 → B-119. Порядок обязателен: B-119 без B-118 даёт либо красный гейт, либо 74 битые ссылки. |
 | `Q-5` | **решено** | Правки `A-1`…`A-5` вносит исполнитель — в черновик [`templates/agents-md-root-draft.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/agents-md-root-draft.md) и в текст [RFC корневого контракта `AGENTS.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-09-03-rfc-agents-md-root-contract.md), а не владелец документа отдельным циклом `v0.3`. | Исполнено в рамках issue [#555](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/555): RFC `AGENTS.md` переведён в `v0.3`, черновик — в `v0.2`. Блокировка Трека А правкой `A-1` снята. |
 | `Q-6` | **решено** | При бутстрапе репозитория под целевую среду базовый шаблон по умолчанию создаёт `commands/` и `skills/` с заглушкой (`README.md`, `status: placeholder`), чтобы явно обозначить среде доступную поверхность. | Норма и её граница (бутстрап нового репозитория ≠ живой Хаб) сформулированы в `P.9.1`; дом нормы — стандарт бутстрапа (`M1`, B-117). Порог «не менее двух артефактов» в `P.5` продолжает действовать для существующих репозиториев. |
 | `Q-7` | **решено, с уточнением исполнителя** | Собственные каталоги планирования (`plans/`, `tasks/`) в репозиториях не заводятся. Вопрос интеграции с внешними системами планирования через MCP выносится в отдельный RFC позже. | Исполнитель обосновал в `P.9.2`, что отдельное правило-запрет избыточно: недекларированный корневой каталог уже даёт `FAIL` в валидаторе генома. Вводится минимальная норма, закрывающая единственную реальную дыру, — запрет объявлять `plans/`/`tasks/` через `project_specific_directories`. Отдельный RFC по внешнему трекеру — задача B-122 (отложенная). |
@@ -740,7 +740,7 @@ python3 tools/generate-manifest.py --check
 | `Q-1` | Принимается ли ось «Среда» с правилом аддитивности `R1`, то есть **без** права среды отменять дома ядра и архетипа? Формулировка постановки «структура прежде всего выстраивается под среду» допускает и вычитающее прочтение (вариант `D` в `Alternatives`). | Ответ определяет, вычисляется матрица или заполняется поклеточно; от него зависит весь `P.2`. |
 | `Q-2` | Каков фактический механизм обнаружения навыков в GigaCode: путь конфигурируется или жёстко задан средой? Требуется ссылка на документацию среды. | Определяет, достаточно ли `ai-rules/skills/` (`P.5`) или обязателен сгенерированный адаптер на нативном пути. Проверенного источника у исполнителя нет. |
 | `Q-3` | Подтверждается ли разрешение расхождения в постановке: гипотеза «структура без `ai-rules/` для GigaCode» отклоняется в пользу согласования в диалоге («оставить `ai-rules/`, реорганизовать внутреннюю структуру»)? | Прямое противоречие между контрактом issue и приложенным диалогом; исполнитель разрешил его по правилу приоритета диалога, но решение должно быть подтверждено явно. |
-| `Q-4` | Принимаются ли три условия переименования `pr-ops/` → `ops/` (`P.6`), в первую очередь исключение path-миграции из гейта иммутабельности? | Без Условия 1 переименование не имеет корректного исполнения: любой сценарий даёт либо красный гейт, либо 74 битые ссылки в принятых решениях. |
+| `Q-4` | Принимаются ли три условия переименования `ops/` → `ops/` (`P.6`), в первую очередь исключение path-миграции из гейта иммутабельности? | Без Условия 1 переименование не имеет корректного исполнения: любой сценарий даёт либо красный гейт, либо 74 битые ссылки в принятых решениях. |
 | `Q-5` | Кто вносит правки `A-1`…`A-5` в RFC `AGENTS.md`: владелец документа при `v0.3`, или они переносятся сразу в ADR/стандарт бутстрапа, минуя правку RFC? | `A-1` блокирует Трек А: до её внесения корневой контракт запрещает нативную поверхность GigaCode. |
 
 Неблокирующие (все закрыты решениями выше):
@@ -763,6 +763,6 @@ python3 tools/generate-manifest.py --check
 - [RFC: Два случая инициализации проекта](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/rfc-two-cases-of-project-initialization.md)
 - [RFC: Таксономия архетипов репозиториев](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/repository-archetypes-template-release.md)
 - [Стандарт структуры RFC](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/rfc-structure-standard.md)
-- [Repository Model и Anti-Inflation Principle](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/repo-model.md)
+- [Repository Model и Anti-Inflation Principle](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/repo-model.md)
 - [Project Structure Inheritance](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/project-structure-inheritance.md)
-- [Backlog](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md) — `B-110`…`B-116`, `B-117`…`B-120`
+- [Backlog](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md) — `B-110`…`B-116`, `B-117`…`B-120`

@@ -11,8 +11,8 @@ method: "document-audit + relation-scan + exit-planning"
 scope: repo-wide
 related_artifacts:
   - "docs/rfc/repository-quality-improvement-plan.md"
-  - "pr-ops/artifact-map.md"
-  - "pr-ops/backlog.md"
+  - "ops/artifact-map.md"
+  - "ops/backlog.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/186"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/171"
@@ -122,7 +122,7 @@ describes a sandbox of ideas.
 
 | Document | Current state, links, and specific problems | Exit plan |
 | --- | --- | --- |
-| `projects/education-ba-prompt/README.md` | Draft navigation for a future BA prompt-engineering course sandbox. It links to `standards/education-profile.md`, project structure rules, and issue workflow. Problem: `pr-ops/artifact-map.md` treats the file as required/active, while `projects/README.md` active project list currently emphasizes repo-development and migration history. | `approval_target`: project scope decision. `dependencies`: User choice: public project area vs internal sandbox. `required_changes`: if public, list it consistently in `projects/README.md`; if sandbox, label scope explicitly and decide whether artifact-map "required" is appropriate. `estimated_effort`: S. |
+| `projects/education-ba-prompt/README.md` | Draft navigation for a future BA prompt-engineering course sandbox. It links to `standards/education-profile.md`, project structure rules, and issue workflow. Problem: `ops/artifact-map.md` treats the file as required/active, while `projects/README.md` active project list currently emphasizes repo-development and migration history. | `approval_target`: project scope decision. `dependencies`: User choice: public project area vs internal sandbox. `required_changes`: if public, list it consistently in `projects/README.md`; if sandbox, label scope explicitly and decide whether artifact-map "required" is appropriate. `estimated_effort`: S. |
 | `projects/education-ba-prompt/docs/course-ideas.md` | Draft raw material for course modules, terms, exercises, and prompt templates. Links to education profile are current. Problem: it is useful raw input, but not a curriculum artifact and has no exit criteria for becoming one. | `approval_target`: raw-ideas backlog or first reviewed course concept. `dependencies`: education project scope decision and course owner. `required_changes`: add a "not curriculum yet" boundary and a conversion checklist, or split accepted items into course artifacts per education profile. `estimated_effort`: M. |
 
 Recommended decision: keep the education area as a sandbox unless User
@@ -167,7 +167,7 @@ draft cleanup reviewable and prevent metadata inflation:
    if a major standard bump needs rationale traceability, record that link in
    the changelog or body history instead.
 2. **Index over Frontmatter.** Deep relation matrices belong in
-   `pr-ops/artifact-map.md` or catalog `README.md` files. Frontmatter
+   `ops/artifact-map.md` or catalog `README.md` files. Frontmatter
    `related_artifacts` should stay at three or fewer critical links and should
    use path-only local values or explicit external URLs.
 3. **Lazy Reconciliation.** Moving research to `reviewed` does not force

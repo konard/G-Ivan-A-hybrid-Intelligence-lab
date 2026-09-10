@@ -12,7 +12,7 @@ related_artifacts:
   - "docs/rfc/README.md"
   - "standards/file-naming.md"
   - "standards/project-structure-inheritance.md"
-  - "pr-ops/artifact-map.md"
+  - "ops/artifact-map.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165"
 ---
@@ -34,7 +34,7 @@ best practice, а не принято «потому что так сказал�
 - [standards/file-naming.md](../../standards/file-naming.md) — правила именования (ключевой аргумент для Q2).
 - [standards/project-structure-inheritance.md](../../standards/project-structure-inheritance.md) — действующее правило опциональности проектных каталогов после cleanup issue #199.
 - [docs/rfc/README.md](../../docs/rfc/README.md) — навигация по переименованному каталогу (Q1).
-- [pr-ops/artifact-map.md](../../pr-ops/artifact-map.md) — карта артефактов, обновляется вслед за переименованием.
+- [ops/artifact-map.md](../../ops/artifact-map.md) — карта артефактов, обновляется вслед за переименованием.
 
 **Метод.** Для каждого вопроса: (1) дословная рекомендация Q; (2) проверка против
 действующих стандартов Хаба и внешних практик; (3) решение с обоснованием.
@@ -57,7 +57,7 @@ best practice, а не принято «потому что так сказал�
 | A2 | Создать `docs/rfc/README.md` (навигация по каталогу). | `docs/rfc/README.md` |
 | A3 | `git mv` концепции портала в `research/portal/open-ai-portal-concept-rfc.md`; обновить ссылки. | `research/portal/` |
 | A4 | Зафиксировать `docs/rfc/` как опциональный наследуемый каталог. | `standards/portal-repository-structure.md` |
-| A5 | Обновить карту артефактов и реестр путей валидатора. | `pr-ops/artifact-map.md`, `tools/validate-repository-structure.sh` |
+| A5 | Обновить карту артефактов и реестр путей валидатора. | `ops/artifact-map.md`, `tools/validate-repository-structure.sh` |
 | A6 | Исторические записи (CHANGELOG, dated-аудиты, инциденты) **не править**: они фиксируют состояние на момент события. | — |
 
 ### 2.3. Открытые вопросы
@@ -123,7 +123,7 @@ design drafts) — часть из них уже носит суффикс `-rfc
 описывает концепцию/исследование конкретного проекта → `research/{project-name}/`».
 
 **Анализ принципа.** Принцип корректен и совпадает с моделью Хаба
-([repo-model.md](../../pr-ops/repo-model.md)): governance-предложения
+([repo-model.md](../../ops/repo-model.md)): governance-предложения
 уровня Хаба и проектные концепции — разные классы артефактов. Концепция портала
 `open-ai.ru` описывает *конкретный проект-витрину*, не меняет конституцию Хаба →
 её место в `research/`, а не в `docs/rfc/`. С этим **согласны**.
@@ -155,7 +155,7 @@ design drafts) — часть из них уже носит суффикс `-rfc
 **Анализ.** Вопрос — должен ли каждый спок/портал обязательно иметь `rfc/`. Ответ
 следует из двух действующих принципов Хаба:
 
-- **Anti-Inflation** ([repo-model.md](../../pr-ops/repo-model.md)): артефакт
+- **Anti-Inflation** ([repo-model.md](../../ops/repo-model.md)): артефакт
   (в т.ч. каталог) создаётся только под операционную боль. Спок без собственных
   RFC не обязан носить пустой `rfc/`.
 - **Наследование структуры**
@@ -195,6 +195,6 @@ design drafts) — часть из них уже носит суффикс `-rfc
 - IETF RFC process; Python PEP; Rust RFC; React RFC — культура «RFC» как механизма предложений (обоснование Q1).
 - [standards/file-naming.md](../../standards/file-naming.md) — запрет точки в имени каталога (обоснование корректировки Q2).
 - [standards/project-structure-inheritance.md](../../standards/project-structure-inheritance.md) — опциональность наследуемых каталогов (обоснование Q3).
-- [pr-ops/repo-model.md](../../pr-ops/repo-model.md) — Anti-Inflation principle.
+- [ops/repo-model.md](../../ops/repo-model.md) — Anti-Inflation principle.
 - [standards/project-structure-inheritance.md](../../standards/project-structure-inheritance.md) — действующее правило опциональности проектных каталогов после cleanup issue #199.
 - issue #165 (раздел «Спорные вопросы», рекомендации команды Q).

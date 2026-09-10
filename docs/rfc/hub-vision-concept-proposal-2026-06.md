@@ -63,8 +63,8 @@ related_issues:
 
 ### Что уже есть
 
-- Зрелый governance-слой: `docs/concept.md`, `pr-ops/repo-model.md`,
-  `pr-ops/artifact-map.md`, набор RFC, стандарты в `standards/`.
+- Зрелый governance-слой: `docs/concept.md`, `ops/repo-model.md`,
+  `ops/artifact-map.md`, набор RFC, стандарты в `standards/`.
 - «ДНК-шаблон» проекта в `templates/spoke/` со скриптом инициализации.
 - Слоган «Человек задаёт смысл, AI ускоряет путь — вместе по правилам».
 - Исследования в `research/` и валидаторы структуры и frontmatter.
@@ -223,5 +223,5 @@ Human-in-control, Separation of concerns.
 - [guides/README.md](../../guides/README.md) — библиотека гайдов (Draft).
 - [guides/sync-with-projects.md](../../guides/sync-with-projects.md) — гайд синхронизации с проектами (Draft).
 - [docs/concept.md](../concept.md) — canonical концепция репозитория.
-- [pr-ops/repo-model.md](../../pr-ops/repo-model.md) — модель структуры и Anti-Inflation.
+- [ops/repo-model.md](../../ops/repo-model.md) — модель структуры и Anti-Inflation.
 - [AI Governance](../../ai-governance/ai-governance.md) — правила AI-assisted work и решение человеком.

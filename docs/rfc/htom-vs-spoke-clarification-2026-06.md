@@ -12,7 +12,7 @@ scope: repo-wide
 related_artifacts:
   - "templates/htom/README.md"
   - "templates/spoke/README.md"
-  - "pr-ops/repo-model.md"
+  - "ops/repo-model.md"
   - "docs/rfc/rfc-two-cases-of-project-initialization.md"
   - "standards/glossary.md"
   - "projects/README.md"
@@ -169,7 +169,7 @@ spoke Хаба — портал `open-ai.ru`.
 - Термины — единый источник истины [standards/glossary.md](../../standards/glossary.md)
   (термины «HTOM-команда» и «Spoke-репозиторий» добавлены туда).
 - Два кейса инициализации — [rfc-two-cases-of-project-initialization.md](rfc-two-cases-of-project-initialization.md).
-- Модель репозитория — [pr-ops/repo-model.md](../../pr-ops/repo-model.md).
+- Модель репозитория — [ops/repo-model.md](../../ops/repo-model.md).
 - Когда выносить проект в отдельный spoke — [projects/README.md](../../projects/README.md).
 
 ## 10. Решение за человеком

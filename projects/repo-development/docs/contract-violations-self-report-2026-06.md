@@ -67,7 +67,7 @@ source-backed analysis**, а не для операционных отчётов
 
 | Контракт | Что он говорит | Вывод для размещения |
 | --- | --- | --- |
-| [`pr-ops/repo-model.md`](../../../pr-ops/repo-model.md) (таблица «Структура») | `research/` = «Domain-based research и source-backed analysis». `projects/` = «Project knowledge bases, prompts, process context… когда работа относится к scoped initiative, но не к production code». | Операционный self-report о работе над самим Хабом — не доменное исследование. Это process context конкретного scoped initiative (развитие репозитория). |
+| [`ops/repo-model.md`](../../../ops/repo-model.md) (таблица «Структура») | `research/` = «Domain-based research и source-backed analysis». `projects/` = «Project knowledge bases, prompts, process context… когда работа относится к scoped initiative, но не к production code». | Операционный self-report о работе над самим Хабом — не доменное исследование. Это process context конкретного scoped initiative (развитие репозитория). |
 | [`research/README.md`](../../../research/README.md) | `research/` — «независимые исследования рынка, технологий, стандартов и доменных задач»; требует traceability к источникам, сравнение вариантов, ru/en пару при публикации. | Self-report нарушений исполнения не является независимым исследованием и не претендует на роль источника истины для многих проектов. |
 | [`projects/repo-development/README.md`](../README.md) | Проект «рассматривает сам hub как объект развития»; назначение — «аудит согласованности… и сбор предложений по оптимизации без их немедленной реализации». | Self-report исполнения контрактов + системные выводы для контрактов = ровно «аудит согласованности» и «сбор предложений» по самому Хабу. |
 | Прецедент: [`projects/repo-development/docs/migration-audit-2026-05.md`](migration-audit-2026-05.md) | Единственный операционный `*-audit` артефакт о структуре Хаба уже лежит в `projects/repo-development/docs/`. | Размещение нового аудита рядом сохраняет согласованность и ownership. |
@@ -88,8 +88,8 @@ source-backed analysis**, а не для операционных отчётов
 | № | Кейс | Какой контракт нарушен | Что произошло |
 | --- | --- | --- | --- |
 | 1 | Размещение глоссария в `kb/` | Наследование структуры ([`standards/project-structure-inheritance.md`](../../../standards/project-structure-inheritance.md)): глоссарий-как-стандарт является term-контрактом и относится к `standards/` | Предложил `kb/glossary.md` вместо `standards/glossary.md`, спутав предметный RAG-глоссарий проекта с term-контрактом стандарта. |
-| 2 | Создание `research/` в споке | Принцип hub-and-spoke ([`pr-ops/repo-model.md`](../../../pr-ops/repo-model.md)): фундаментальные исследования остаются в Хабе; в геноме спока нет `research/` (см. [`artifact-map.md`](../../../pr-ops/artifact-map.md), строка `/templates/htom/`) | Предложил создать папку исследований внутри spoke-репозитория Mango. |
-| 3 | Дублирование исследований | Принцип «ссылаться, а не дублировать» ([`pr-ops/repo-model.md`](../../../pr-ops/repo-model.md), Decision Rules) | Предложил копировать исследования Хаба в спок вместо ссылок на них через `docs/hub-research-dependencies.md`. |
+| 2 | Создание `research/` в споке | Принцип hub-and-spoke ([`ops/repo-model.md`](../../../ops/repo-model.md)): фундаментальные исследования остаются в Хабе; в геноме спока нет `research/` (см. [`artifact-map.md`](../../../ops/artifact-map.md), строка `/templates/htom/`) | Предложил создать папку исследований внутри spoke-репозитория Mango. |
+| 3 | Дублирование исследований | Принцип «ссылаться, а не дублировать» ([`ops/repo-model.md`](../../../ops/repo-model.md), Decision Rules) | Предложил копировать исследования Хаба в спок вместо ссылок на них через `docs/hub-research-dependencies.md`. |
 | 4 | CAPS LOCK для контракта | [`standards/file-naming.md`](../../../standards/file-naming.md): kebab-case для документов внутри вложенных каталогов, включая `standards/` | Предложил имя `MANGO_CLASSIFICATION_CONTRACT.md` вместо `product-classification-contract.md`. |
 
 ### Процессные нарушения
@@ -109,14 +109,14 @@ source-backed analysis**, а не для операционных отчётов
 
 | № | Кейс | Какой контракт нарушен | Что произошло |
 | --- | --- | --- | --- |
-| 8 | Создание RFC в `docs/analysis/` вместо `docs/rfc/` | [`pr-ops/artifact-map.md`](../../../pr-ops/artifact-map.md): RFC лежат в `docs/rfc/` | Исполнитель получил задачу с явным указанием пути `docs/analysis/contract-executability-rfc.md`. Распознал противоречие с контрактом, но создал файл по пути из задачи вместо следования контракту. Запросил подтверждение у фаундера. |
+| 8 | Создание RFC в `docs/analysis/` вместо `docs/rfc/` | [`ops/artifact-map.md`](../../../ops/artifact-map.md): RFC лежат в `docs/rfc/` | Исполнитель получил задачу с явным указанием пути `docs/analysis/contract-executability-rfc.md`. Распознал противоречие с контрактом, но создал файл по пути из задачи вместо следования контракту. Запросил подтверждение у фаундера. |
 | 9 | Запрос подтверждения по вопросу, решённому контрактом | Принцип автономии исполнителя (см. раздел «Выбор размещения» выше) + «контракт первичен» | Вместо того чтобы действовать по контракту (создать файл в `docs/rfc/`), исполнитель запросил подтверждение у фаундера. Это нарушает принцип автономии и создаёт лишнюю нагрузку на фаундера. |
 
 ### Ошибки постановки задач (дополнение версии 1.1)
 
 | № | Кейс | Какой контракт нарушен | Что произошло |
 | --- | --- | --- | --- |
-| 10 | Указание пути, противоречащего контракту, без override | [`pr-ops/artifact-map.md`](../../../pr-ops/artifact-map.md) + отсутствие двух факторов override | В задаче на создание RFC был указан путь `docs/analysis/contract-executability-rfc.md`, который противоречит контракту. При этом не было указано `contract-override: true` с причиной. Это создало ловушку для исполнителя: следовать задаче или контракту? Задача должна либо соответствовать контракту, либо явно указывать override двух факторов. |
+| 10 | Указание пути, противоречащего контракту, без override | [`ops/artifact-map.md`](../../../ops/artifact-map.md) + отсутствие двух факторов override | В задаче на создание RFC был указан путь `docs/analysis/contract-executability-rfc.md`, который противоречит контракту. При этом не было указано `contract-override: true` с причиной. Это создало ловушку для исполнителя: следовать задаче или контракту? Задача должна либо соответствовать контракту, либо явно указывать override двух факторов. |
 | 11 | Отсутствие механизма override в шаблоне задач | [`standards/issue-workflow.md`](../../../standards/issue-workflow.md) | Шаблон задачи не содержит поля для явного указания override контракта. Это приводит к тому, что постановщики задач не имеют стандартизированного способа указать осознанный отход от контракта. |
 
 > **Замечание о приоритете контракта в самой постановке.** В issue #134 поле
@@ -171,8 +171,8 @@ review; governance-файлы в рамках этой задачи **не ме�
 **Для [`AI_GOVERNANCE.md`](../../../ai-governance/ai-governance.md):**
 
 6. **Контракт первичен.** Зафиксировать правило: если задача противоречит
-   контракту репозитория ([`pr-ops/artifact-map.md`](../../../pr-ops/artifact-map.md),
-   [`pr-ops/repo-model.md`](../../../pr-ops/repo-model.md),
+   контракту репозитория ([`ops/artifact-map.md`](../../../ops/artifact-map.md),
+   [`ops/repo-model.md`](../../../ops/repo-model.md),
    [`standards/project-structure-inheritance.md`](../../../standards/project-structure-inheritance.md)
    и др.) — следовать контракту, а не задаче. Не запрашивать подтверждение по
    вопросам, уже решённым контрактом (адресует кейсы 8 и 9).
@@ -230,7 +230,7 @@ review; governance-файлы в рамках этой задачи **не ме�
    «вероятно, размещены некорректно».
 
 2. **Но обнаружен латентный конфликт контрактов.** Определение `research/` в
-   [`pr-ops/repo-model.md`](../../../pr-ops/repo-model.md) и
+   [`ops/repo-model.md`](../../../ops/repo-model.md) и
    [`research/README.md`](../../../research/README.md) («доменные исследования и
    source-backed analysis», «независимые исследования рынка, технологий,
    стандартов и доменных задач») концептуально расходится с записью `glossary.md`,

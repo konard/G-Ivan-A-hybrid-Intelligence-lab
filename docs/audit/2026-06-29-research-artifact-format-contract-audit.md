@@ -91,7 +91,7 @@ ADR-001/002 и `standards/file-naming.md` говорят о хронологич
 `docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md`,
 `docs/adr/2026-06-adr-002-artifact-document-methodology.md`,
 `AI_GOVERNANCE.md`, `research/README.md`, `research/hub/README.md`,
-`pr-ops/artifact-map.md`, issue #278, issue #284, issue #288, PR #279,
+`ops/artifact-map.md`, issue #278, issue #284, issue #288, PR #279,
 PR #285 and PR #289.
 
 **Метод.** Manual review of active standards, templates, AI governance files, ADR,
@@ -245,6 +245,6 @@ gh pr view 289 --repo G-Ivan-A/hybrid-Intelligence-lab --json number,title,body,
   lifecycle and routing rules.
 - `AI_GOVERNANCE.md` - AI-assisted work traceability and source/experiment
   requirements.
-- `research/README.md`, `research/hub/README.md` and `pr-ops/artifact-map.md`
+- `research/README.md`, `research/hub/README.md` and `ops/artifact-map.md`
   - active repository navigation and artifact registry.
 - PR #279, PR #285 and PR #289 - first concrete Hub uses of `research/hub/exp-*`.

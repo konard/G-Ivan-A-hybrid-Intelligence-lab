@@ -19,8 +19,8 @@ related_artifacts:
   - "research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/README.md"
   - "standards/rfc-structure-standard.md"
   - "docs/rfc/2026-07-17-rfc-reference-research-pattern.md"
-  - "pr-ops/backlog.md"
-  - "pr-ops/artifact-map.md"
+  - "ops/backlog.md"
+  - "ops/artifact-map.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/541"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/539"
@@ -35,7 +35,7 @@ related_issues:
 | Owner | G-Ivan-A |
 | RFC status | `accepted` — принят на human decision gate по [issue #545](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/545); ни один действующий стандарт этим RFC не изменяется, дорожная карта переведена в исполнение |
 | Source issue | [#541](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/541); предшественник — [#539](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/539) / [PR #540](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/540) |
-| Impacted artifacts | Этим PR: [`docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md), [`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md), [`pr-ops/artifact-map.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/artifact-map.md), [`CHANGELOG.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/CHANGELOG.md), [`tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-repository-structure.sh). После принятия — четыре будущих RRP-модуля в [`research/ba-requirements/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements) |
+| Impacted artifacts | Этим PR: [`docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/rfc/2026-08-25-rfc-ba-artifact-pipeline-rrp-roadmap.md), [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md), [`ops/artifact-map.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/artifact-map.md), [`CHANGELOG.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/CHANGELOG.md), [`tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-repository-structure.sh). После принятия — четыре будущих RRP-модуля в [`research/ba-requirements/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements) |
 | Revision | `1.0` — RFC принят (`draft` → `accepted`) по [issue #545](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/545), дорожная карта исполнена четырьмя RRP-модулями; `0.2` — декомпозиция `M0`–`M2` пересобрана как слои «вход → ядро → выход» по гипотезе владельца процесса ([комментарий к PR #542](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/542#issuecomment-5421560374)), проверенной на корпусе прогонов; проверка — `P.0` |
 | Decision record | Принят владельцем процесса в постановке [issue #545](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/545) («Прими RFC: измени `status` в frontmatter RFC на `accepted`»); решение исполнено в [PR #546](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/546) вместе с полным циклом исследований `M1`–`M4` |
 | Implementation link | [PR #546](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/546): [`research/ba-requirements/solution-modeling/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/solution-modeling) (`M1`), [`research/ba-requirements/artifact-rendering/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/artifact-rendering) (`M2`), [`research/ba-requirements/feedback-and-evolution/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/feedback-and-evolution) (`M3`), [`research/ba-requirements/orchestration/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/orchestration) (`M4`) |
@@ -702,8 +702,8 @@ M0 нормализация (гейты G1–G6, уточняющие вопро
 - [`research/ba-requirements/2026-08-26-m0-m2-layering-hypothesis-check.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-08-26-m0-m2-layering-hypothesis-check.md) — проверка гипотезы владельца на корпусе;
 - [`research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541) — evidence-контейнер замера (классификатор, JSON, лог);
 - [`tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-repository-structure.sh) — регистрация нового файла `docs/rfc/`;
-- [`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md) — спринт 12 с задачами `B-107` (модуль `M0`, ретроспективная регистрация) и `B-108` (этот RFC);
-- [`pr-ops/artifact-map.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/artifact-map.md) — строки RFC и модуля нормализации;
+- [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md) — спринт 12 с задачами `B-107` (модуль `M0`, ретроспективная регистрация) и `B-108` (этот RFC);
+- [`ops/artifact-map.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/artifact-map.md) — строки RFC и модуля нормализации;
 - [`CHANGELOG.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/CHANGELOG.md) — запись Unreleased.
 
 Затрагиваются после принятия (этим PR **не** создаются):
@@ -761,7 +761,7 @@ python3 research/ba-requirements/exp/ba-artifact-pipeline-roadmap-541/classify-r
 | Учесть готовые открытые решения индустрии | `P.7`: шесть слоёв кандидатов, вердикт обязателен | выполнено как **screening-контракт**; ни один кандидат не проверен на данных Mango — это работа модулей |
 | Приоритет мнения пользователя из приложенного диалога | `P.3` (`C2`), `P.4` (`F3`, `F4`, `F6`), `P.5` (`HG-0`, `HG-4`), `P.6` | выполнено; формулировки владельца («отклонение = стоп», «избыточность US/UC заранее не определима») перенесены в правила |
 | Гипотеза владельца о слоях `M0`–`M2` ([комментарий к PR #542](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/542#issuecomment-5421560374)) | `P.0`, `P.1`, `P.2` (`K5`), `P.3` (`A1` как набор), `P.4` (`F3`), `P.5` (`HG-4`/`HG-5`), альтернатива `H` | проверена на корпусе, а не принята на слово: 100 % против 0 % при пороге 80 %; принята **с уточнением** формулировки `M2`; три потери названы и компенсированы |
-| Метаданные обновлены | `pr-ops/backlog.md`, `pr-ops/artifact-map.md`, `CHANGELOG.md` | выполнено; попутно закрыт пробел регистрации модуля `M0` из PR [#540](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/540) |
+| Метаданные обновлены | `ops/backlog.md`, `ops/artifact-map.md`, `CHANGELOG.md` | выполнено; попутно закрыт пробел регистрации модуля `M0` из PR [#540](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/540) |
 | Задача в статусе `review` | `B-108` в спринте 12 | выполнено |
 
 Чего этот RFC не доказывает: ни одна цифра `P.7` не измерена, ни одна research

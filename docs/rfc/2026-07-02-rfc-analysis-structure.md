@@ -16,7 +16,7 @@ rfc-scope: A
 | Owner | G-Ivan-A |
 | RFC status | accepted (narrative summary; машиночитаемый canon — frontmatter `status`) |
 | Source issue | [#350](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/350); контекст [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296), [#342](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/342), [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) |
-| Impacted artifacts | future `standards/analysis-standard.md` (B-027), future ADR B-026, `docs/analysis/*`, `research/**` (legacy Analysis), `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `standards/research-standard.md` (routing R/A/A уже задан), `pr-ops/backlog.md`, `pr-ops/artifact-map.md`, `docs/rfc/README.md`, `CHANGELOG.md`, `tools/validate-repository-structure.sh` (постановка на учёт) |
+| Impacted artifacts | future `standards/analysis-standard.md` (B-027), future ADR B-026, `docs/analysis/*`, `research/**` (legacy Analysis), `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `standards/research-standard.md` (routing R/A/A уже задан), `ops/backlog.md`, `ops/artifact-map.md`, `docs/rfc/README.md`, `CHANGELOG.md`, `tools/validate-repository-structure.sh` (постановка на учёт) |
 | Decision record | [ADR-006](../adr/2026-07-adr-006-analysis-structure.md) (B-026, issue [#357](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/357)) — принят Вариант C |
 | Implementation link | not yet (future `standards/analysis-standard.md`, B-027) |
 | Archetype scope | A (Governance & Knowledge Hub); routing-следствия для B/C/D вынесены в downstream chain |
@@ -304,7 +304,7 @@ B-029 и B-041. Сводно (совместимо с content-over-path, issue #
 | `recommendation` | интерпретация, рекомендация, обоснование, границы | repository-state / recommendation Analysis |
 
 **Триггер B (Anti-Inflation,
-[`pr-ops/repo-model.md`](../../pr-ops/repo-model.md)).** Профиль выделяется в отдельный
+[`ops/repo-model.md`](../../ops/repo-model.md)).** Профиль выделяется в отдельный
 стандарт (`analysis-inventory-standard.md` и т.п.) **только** когда накопит
 достаточно собственных обязательных правил или review pain — по тому же принципу,
 по которому Хаб откладывает `product-profile`/`education-profile`, а Reports RFC
@@ -397,7 +397,7 @@ B-026.
   relation-метаданные (последствие для B-027).
 - `standards/glossary.md` — каноническое определение Analysis (без правок; RFC
   цитирует B-020).
-- `pr-ops/backlog.md`, `pr-ops/artifact-map.md`,
+- `ops/backlog.md`, `ops/artifact-map.md`,
   [`docs/rfc/README.md`](README.md), `CHANGELOG.md`,
   `tools/validate-repository-structure.sh` — постановка этого RFC на учёт (в этом
   PR).
@@ -418,9 +418,9 @@ B-026.
 
 - Создан `docs/rfc/2026-07-02-rfc-analysis-structure.md` (этот документ).
 - RFC поставлен на учёт: запись в [Governance RFC README](README.md),
-  [`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md), allowlist + required-text в
+  [`ops/artifact-map.md`](../../ops/artifact-map.md), allowlist + required-text в
   `tools/validate-repository-structure.sh`, статус B-025 в
-  [`pr-ops/backlog.md`](../../pr-ops/backlog.md), запись в `CHANGELOG.md`.
+  [`ops/backlog.md`](../../ops/backlog.md), запись в `CHANGELOG.md`.
 
 Локальная проверка:
 
@@ -515,4 +515,4 @@ Post-acceptance делегирование: обязательная норма 
   routing и knowledge-lifecycle артефактов;
   [ADR-003](../adr/2026-07-adr-003-research-structure.md) — принятая модель
   research.
-- [`pr-ops/backlog.md`](../../pr-ops/backlog.md) — цепочка B-024..B-028.
+- [`ops/backlog.md`](../../ops/backlog.md) — цепочка B-024..B-028.

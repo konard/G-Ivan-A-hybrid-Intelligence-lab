@@ -19,7 +19,7 @@ decision-type: methodology
 | Decision date | 2026-07-02 |
 | Owner | G-Ivan-A |
 | Source | [RFC B-041](../rfc/2026-07-02-rfc-reports-structure.md); issue [#338](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/338); clarification issue [#348](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/348); upstream issue [#328](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/328) |
-| Impacted artifacts | `standards/report-standard.md` (B-043), `docs/adr/2026-06-adr-002-artifact-document-methodology.md`, `docs/report/*`, `docs/audit/*`, `research/<domain>/exp/*`, `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `pr-ops/backlog.md`, `pr-ops/artifact-map.md` |
+| Impacted artifacts | `standards/report-standard.md` (B-043), `docs/adr/2026-06-adr-002-artifact-document-methodology.md`, `docs/report/*`, `docs/audit/*`, `research/<domain>/exp/*`, `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `ops/backlog.md`, `ops/artifact-map.md` |
 | Supersedes | ADR-002 routing table row `Report -> docs/reports/` for Reports routing only; replacement routes are `docs/audit/` for audit-reports and `docs/report/` for general/statistics reports |
 | Superseded by | none |
 
@@ -135,8 +135,8 @@ B-029) и уникальной 4-компонентной модели (target/e
   acceptance review для ADR.
 - ADR явно избегает копирования proposal-деталей RFC B-041, таблицы альтернатив и
   матрицы downstream-задач.
-- Регистрация в репозитории валидируется через `pr-ops/artifact-map.md`,
-  `pr-ops/backlog.md`, `CHANGELOG.md` и
+- Регистрация в репозитории валидируется через `ops/artifact-map.md`,
+  `ops/backlog.md`, `CHANGELOG.md` и
   `tools/validate-repository-structure.sh`.
 - Локальная проверка в этом PR:
 
@@ -189,5 +189,5 @@ flowchart LR
   — видение фаундера о Reports как отдельном типе с routing `docs/report/`.
 - [`standards/adr-structure-standard.md`](../../standards/adr-structure-standard.md)
   — структура ADR и правила section-level delegation.
-- [`pr-ops/backlog.md`](../../pr-ops/backlog.md) — цепочка Reports B-038,
+- [`ops/backlog.md`](../../ops/backlog.md) — цепочка Reports B-038,
   B-041, B-042, B-043 и B-044.

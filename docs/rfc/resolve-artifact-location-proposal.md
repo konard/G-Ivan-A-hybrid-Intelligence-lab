@@ -54,12 +54,12 @@ guesswork, skip lifecycle stages, or create duplicate standards/templates.
 
 The resolver must read:
 
-- [artifact-map.md](../../pr-ops/artifact-map.md) as the factual map of active artifacts;
+- [artifact-map.md](../../ops/artifact-map.md) as the factual map of active artifacts;
 - [htom-documentation-structure.md](../../standards/htom-documentation-structure.md)
   for HTOM docs structure;
 - [knowledge-lifecycle-proposal.md](knowledge-lifecycle-proposal.md) for the
   proposed lifecycle stage and transition rules;
-- [repo-model.md](../../pr-ops/repo-model.md) for Anti-Inflation and folder boundaries.
+- [repo-model.md](../../ops/repo-model.md) for Anti-Inflation and folder boundaries.
 
 ## Two-Factor Confirmation
 

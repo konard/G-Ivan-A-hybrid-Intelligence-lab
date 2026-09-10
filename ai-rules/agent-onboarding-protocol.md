@@ -61,12 +61,13 @@ entrypoint: true
 - Если доступа нет, попроси меня вставить нужные фрагменты или дать ссылки.
 
 Сделай ровно по шагам:
-1. Контекст проекта. Определи тип проекта по README/AI_GOVERNANCE: HTOM-команда,
+1. Точка входа. Прочитай корневой [`/AGENTS.md`](../AGENTS.md), затем определи
+   тип проекта по `.hub-profile.json` и README: HTOM-команда,
    Spoke-репозиторий или Хаб. Не применяй правила spoke к HTOM-команде без
    явного основания.
-2. Чек-лист governance. Прочитай локальные AI_GOVERNANCE.md, CONTRIBUTING.md и
-   README.md. Если доступны, прочитай pr-ops/repo-model.md,
-   pr-ops/artifact-map.md, standards/project-structure-inheritance.md и
+2. Чек-лист governance. По маршруту `/AGENTS.md` прочитай локальные
+   AI_GOVERNANCE.md, CONTRIBUTING.md и README.md. Если доступны, прочитай
+   ops/repo-model.md, ops/artifact-map.md, standards/project-structure-inheritance.md и
    standards/session-handover-standard.md в Хабе или текущем репозитории.
 3. Чек-лист контекста. Прочитай текст issue и последние комментарии, ближайший
    README (репозитория и затронутого проекта/команды) и блок «Быстрый контекст»,
@@ -109,9 +110,9 @@ entrypoint: true
 - [AI Governance](../ai-governance/ai-governance.md) — роли, правила, operating modes,
   эскалация, Definition of Done.
 - [CONTRIBUTING.md](../CONTRIBUTING.md) — workflow вклада и локальные проверки.
-- [pr-ops/repo-model.md](../pr-ops/repo-model.md) — модель структуры и Anti-Inflation
+- [ops/repo-model.md](../ops/repo-model.md) — модель структуры и Anti-Inflation
   principle.
-- [pr-ops/artifact-map.md](../pr-ops/artifact-map.md) — навигация по артефактам.
+- [ops/artifact-map.md](../ops/artifact-map.md) — навигация по артефактам.
 - [standards/project-structure-inheritance.md](../standards/project-structure-inheritance.md)
   — что можно, а что нельзя создавать.
 
@@ -264,7 +265,7 @@ maintainer request мандата. Отдельное разрешение на 
 | Отсутствие маршрута «идея → задача» | Согласованное знание теряется между сессиями | След в issue/PR |
 
 Аудит команды C дал прямое правило: агент должен прочитать `GOVERNANCE.md`,
-`CONTRIBUTING.md`, `pr-ops/repo-model.md` и ближайший `README` **до создания
+`/AGENTS.md`, `CONTRIBUTING.md`, `ops/repo-model.md` и ближайший `README` **до создания
 артефактов**. Этот файл делает правило исполнимым ритуалом, а не справочной
 рекомендацией.
 

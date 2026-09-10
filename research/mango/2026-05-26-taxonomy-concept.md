@@ -223,7 +223,7 @@ discipline, а TOGAF/ArchiMate - как слой связи с архитект�
 | Deprecation / merge / split capability | Taxonomy owner | PO council / Founder if strategic | Квартальный release. |
 
 После пилота можно создать `standards/feature-taxonomy.md`, но сейчас это было
-бы преждевременно: по [pr-ops/repo-model.md](../../pr-ops/repo-model.md)
+бы преждевременно: по [ops/repo-model.md](../../ops/repo-model.md)
 новый standard оправдан только после повторяющейся операционной боли и review.
 
 ## План пилота на 1-2 спринта
@@ -270,9 +270,9 @@ AI, аналитику, интеграции и compliance.
 
 - [standards/glossary.md](../../standards/glossary.md) - контролируемый словарь
   governance и AI-assisted terms.
-- [pr-ops/repo-model.md](../../pr-ops/repo-model.md) - правило
+- [ops/repo-model.md](../../ops/repo-model.md) - правило
   размещения и Anti-Inflation principle.
-- [pr-ops/artifact-map.md](../../pr-ops/artifact-map.md) - навигация
+- [ops/artifact-map.md](../../ops/artifact-map.md) - навигация
   по активным артефактам.
 - `standards/research-profile.md` -
   профиль research-артефактов и правила source-backed analysis.

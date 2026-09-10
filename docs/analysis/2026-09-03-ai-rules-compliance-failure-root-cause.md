@@ -16,7 +16,7 @@ related_artifacts:
   - "templates/agents-md-root-draft.md"
   - "ai-rules/agent-work-rules.md"
   - "ai-rules/agent-onboarding-protocol.md"
-  - "pr-ops/repo-model.md"
+  - "ops/repo-model.md"
   - "standards/contract-documentation-standard.md"
   - "standards/issue-workflow.md"
 external_artifacts:
@@ -106,7 +106,7 @@ external_artifacts:
 [`ai-rules/agent-work-rules.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-work-rules.md),
 [`ai-rules/agent-onboarding-protocol.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-onboarding-protocol.md)
 (помеченный `executable: true`, `entrypoint: true`),
-[`pr-ops/repo-model.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/repo-model.md),
+[`ops/repo-model.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/repo-model.md),
 корпус стандартов и валидаторы в
 [`tools/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/tools).
 
@@ -135,7 +135,7 @@ external_artifacts:
 
 Корневая причина: `standards/contract-documentation-standard.md` задаёт формат контрактного
 документа и словарь RFC 2119, но не отвечает на вопрос «где такой документ живёт». В
-`pr-ops/repo-model.md` строки для класса «контракт» тоже нет. При отсутствии правила маршрутизации
+`ops/repo-model.md` строки для класса «контракт» тоже нет. При отсутствии правила маршрутизации
 агент действует по наиболее вероятному индустриальному паттерну — `docs/<class>/` — и получает
 `docs/contracts/`. Это ровно тот сбой, который явный запрет плюс явный роутинг («контракты живут в
 `ai-rules/`; ЗАПРЕЩЕНО создавать `docs/contracts/`») закрывает одной строкой.
@@ -144,7 +144,7 @@ external_artifacts:
 
 Проверено: в [aether-orbis](https://github.com/G-Ivan-A/aether-orbis) отсутствует каталог
 `.github/ISSUE_TEMPLATE` (запрос к API возвращает 404), а также отсутствуют `ai-rules/`,
-`pr-ops/`, `standards/`. Issues репозитория используют самодельную структуру
+`ops/`, `standards/`. Issues репозитория используют самодельную структуру
 («Описание / Definition of Done / Зависимости / Контекст») вместо структуры Хаба.
 
 Корневая причина: геном экосистемы распространяется вручную и не проверяется. Формулировка
@@ -340,6 +340,6 @@ done < <(find . -maxdepth 1 -type d ! -name '.')
 - https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/547
 - https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/hub/2026-09-03-ai-agent-onboarding-entrypoint-practices.md
 - https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/agents-md-root-draft.md
-- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md
+- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md
 - https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/contract-documentation-standard.md
 - https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/issue-workflow.md

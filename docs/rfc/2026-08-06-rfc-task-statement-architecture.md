@@ -22,7 +22,7 @@ related_artifacts:
   - "ai-governance/ai-governance.md"
   - "standards/executable-contract-standard.md"
   - "standards/rfc-structure-standard.md"
-  - "pr-ops/artifact-map.md"
+  - "ops/artifact-map.md"
   - ".github/ISSUE_TEMPLATE/task.md"
   - ".github/ISSUE_TEMPLATE/task-creative.md"
   - ".github/workflows/validate.yml"
@@ -40,7 +40,7 @@ related_issues:
 | Owner | G-Ivan-A |
 | RFC status | draft — предложение, решение за фаундером |
 | Source issue | [#469](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/469) |
-| Impacted artifacts | При принятии: `ai-rules/agent-work-rules.md`, `.github/ISSUE_TEMPLATE/task.md`, `.github/ISSUE_TEMPLATE/task.yml`, `.github/ISSUE_TEMPLATE/task-creative.md`, `.github/workflows/validate.yml`, `tools/`, `pr-ops/backlog.md`. В рамках этого PR не изменяется ничего из перечисленного. |
+| Impacted artifacts | При принятии: `ai-rules/agent-work-rules.md`, `.github/ISSUE_TEMPLATE/task.md`, `.github/ISSUE_TEMPLATE/task.yml`, `.github/ISSUE_TEMPLATE/task-creative.md`, `.github/workflows/validate.yml`, `tools/`, `ops/backlog.md`. В рамках этого PR не изменяется ничего из перечисленного. |
 | Decision record | not yet |
 | Implementation link | not yet |
 | Archetype scope | A |
@@ -263,7 +263,7 @@ RFC ничего не внедряет: изменения правил, шаб�
 `abandoned` с реальным диффом (§4.3 источника), не покрытый ничем. Предлагается
 паллиатив: такой PR получает метку `needs-human-decision`, а по истечении
 согласованного срока вопрос попадает в
-[`pr-ops/backlog.md`](../../pr-ops/backlog.md), а не тихо умирает вместе с PR.
+[`ops/backlog.md`](../../ops/backlog.md), а не тихо умирает вместе с PR.
 
 ### §P.3. Контракт верификации
 
@@ -304,7 +304,7 @@ RFC ничего не внедряет: изменения правил, шаб�
 потому что они дают разные ответы и оба нужны для внедрения.
 
 **Ось 1 — Framework/Methodology (L1–L4),
-[`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md).**
+[`ops/artifact-map.md`](../../ops/artifact-map.md).**
 
 | Уровень | Содержание оси | Подходит ли `agent-work-rules.md` |
 | --- | --- | --- |
@@ -417,7 +417,7 @@ MAST ([рамка решений §5](../../research/ai-education/task-processin
 **Что обязательно к просмотру** (закрытый минимум, чтобы не воспроизвести
 замыкание в 232 файла из §3.2):
 
-1. [`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md) — карта артефактов;
+1. [`ops/artifact-map.md`](../../ops/artifact-map.md) — карта артефактов;
 2. последние комментарии issue и PR;
 3. открытые PR, затрагивающие те же пути;
 4. явно названные в постановке SSOT (после сверки §P.7).
@@ -516,7 +516,7 @@ Operating Mode `hybrid` и `deep-think`, которых нет в таблице
 
 **Q-9. Что делать, если человек не отвечает на PR-с-вопросами?**
 Ответ: «merge = согласие» не работает при молчании. Предлагается метка
-`needs-human-decision` и перенос вопроса в `pr-ops/backlog.md` по истечении
+`needs-human-decision` и перенос вопроса в `ops/backlog.md` по истечении
 срока. Это паллиатив: класс `abandoned` с реальным диффом (§4.3) остаётся
 непокрытым.
 
@@ -724,7 +724,7 @@ security-оптику в узком смысле (права среды, изо�
 
 - `docs/rfc/2026-08-06-rfc-task-statement-architecture.md` — новый RFC (этот файл);
 - `docs/rfc/README.md` — строка навигации;
-- `pr-ops/artifact-map.md` — строка карты артефактов;
+- `ops/artifact-map.md` — строка карты артефактов;
 - `CHANGELOG.md` — запись `Unreleased / Added`.
 
 **Будет затронуто при принятии (отдельной задачей, не здесь):**
@@ -737,7 +737,7 @@ security-оптику в узком смысле (права среды, изо�
 | `tools/` (валидатор ссылок постановки) | Механическая проверка SSOT (§P.7) | Tier 2 |
 | `.github/ISSUE_TEMPLATE/task.md`, `task.yml`, `task-creative.md` | Шаблон §P.9; устранение рассинхрона Operating Modes | Tier 2 |
 | Branch protection / ruleset для `main` | required status check | Tier 3 (решение человека) |
-| `pr-ops/backlog.md` | Строки для непокрытых классов и найденных дефектов | Tier 1 |
+| `ops/backlog.md` | Строки для непокрытых классов и найденных дефектов | Tier 1 |
 
 ## Implementation and Validation
 
@@ -778,7 +778,7 @@ python3 tools/generate-manifest.py --check
    `ai-rules/adversarial-stress-testing.md` при четырёх политиках.
 2. Рассинхрон `operating_mode` в `.github/ISSUE_TEMPLATE/task.yml`
    (`hybrid`, `deep-think`) с таблицей Operating Modes.
-3. Дублирование таблицы уровней L1–L4 в `pr-ops/artifact-map.md` и
+3. Дублирование таблицы уровней L1–L4 в `ops/artifact-map.md` и
    `ai-rules/agent-work-rules.md` — два места правды об одном.
 4. Две битые ссылки, найденные в §3.2 источника, — самостоятельный дефект.
 
@@ -845,7 +845,7 @@ bypass — решение владельца репозитория, не аге
   — права решений, Amendment policy, эскалация;
 - [`standards/rfc-structure-standard.md`](../../standards/rfc-structure-standard.md),
   [`standards/executable-contract-standard.md`](../../standards/executable-contract-standard.md);
-- [`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md) — уровни L1–L4 и карта артефактов;
+- [`ops/artifact-map.md`](../../ops/artifact-map.md) — уровни L1–L4 и карта артефактов;
 - [`docs/rfc/contract-executability-rfc.md`](contract-executability-rfc.md)
   — архитектура исполнимых документов;
 - [`docs/rfc/resolve-artifact-location-proposal.md`](resolve-artifact-location-proposal.md)

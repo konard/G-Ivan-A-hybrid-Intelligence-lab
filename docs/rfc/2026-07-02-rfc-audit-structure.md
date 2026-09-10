@@ -16,7 +16,7 @@ rfc-scope: A
 | Owner | G-Ivan-A |
 | RFC status | draft (narrative summary; машиночитаемый canon — frontmatter `status`) |
 | Source issue | [#352](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/352); контекст [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296), [#344](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/344), [#290](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/290), [#288](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/288) |
-| Impacted artifacts | future `standards/audit-standard.md` (B-032), future ADR audit-structure (B-031), future `standards/report-standard.md` (B-043, audit-report profile), `docs/audit/*`, замаскированные Audit под `docs/analysis/` и `research/` (из B-029), `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `pr-ops/backlog.md` (регистрация и lifecycle updates) |
+| Impacted artifacts | future `standards/audit-standard.md` (B-032), future ADR audit-structure (B-031), future `standards/report-standard.md` (B-043, audit-report profile), `docs/audit/*`, замаскированные Audit под `docs/analysis/` и `research/` (из B-029), `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `ops/backlog.md` (регистрация и lifecycle updates) |
 | Decision record | not yet (future ADR audit-structure, B-031) |
 | Implementation link | not yet (future `standards/audit-standard.md`, B-032) |
 | Archetype scope | A (Governance & Knowledge Hub); routing-следствия для B/C/D вынесены в downstream chain |
@@ -347,7 +347,7 @@ downstream input, а не как немедленная норма.
   audit-specific метаданные (последствие для B-032).
 - `standards/glossary.md` — термин Audit уже канонизирован (B-020); RFC цитирует,
   не переписывает.
-- `pr-ops/backlog.md`, `pr-ops/artifact-map.md`,
+- `ops/backlog.md`, `ops/artifact-map.md`,
   [`docs/rfc/README.md`](README.md), `CHANGELOG.md`,
   `tools/validate-repository-structure.sh` — постановка этого RFC на учёт (в этом
   PR).
@@ -368,9 +368,9 @@ downstream input, а не как немедленная норма.
 
 - Создан `docs/rfc/2026-07-02-rfc-audit-structure.md` (этот документ).
 - RFC поставлен на учёт: запись в [Governance RFC README](README.md),
-  [`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md), allowlist + required-text в
+  [`ops/artifact-map.md`](../../ops/artifact-map.md), allowlist + required-text в
   `tools/validate-repository-structure.sh`, статус B-030 → `review` в
-  [`pr-ops/backlog.md`](../../pr-ops/backlog.md), запись в `CHANGELOG.md`.
+  [`ops/backlog.md`](../../ops/backlog.md), запись в `CHANGELOG.md`.
 
 Локальная проверка:
 
@@ -461,4 +461,4 @@ Post-acceptance делегирование: обязательная норма 
 - [`standards/rfc-structure-standard.md`](../../standards/rfc-structure-standard.md) —
   стандарт структуры RFC; [`standards/frontmatter-docs-standard.md`](../../standards/frontmatter-docs-standard.md);
   [`standards/file-naming.md`](../../standards/file-naming.md).
-- [`pr-ops/backlog.md`](../../pr-ops/backlog.md) — цепочка B-029, B-030..B-033.
+- [`ops/backlog.md`](../../ops/backlog.md) — цепочка B-029, B-030..B-033.

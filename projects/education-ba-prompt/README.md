@@ -64,4 +64,4 @@ roadmap.
 - [standards/education-profile.md](../../standards/education-profile.md)
 - [standards/file-naming.md](../../standards/file-naming.md)
 - [standards/issue-workflow.md](../../standards/issue-workflow.md)
-- [pr-ops/repo-model.md](../../pr-ops/repo-model.md)
+- [ops/repo-model.md](../../ops/repo-model.md)

@@ -25,7 +25,7 @@ related_artifacts:
   - "docs/rfc/2026-07-02-rfc-reports-structure.md"
   - "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
   - "docs/adr/2026-06-adr-002-artifact-document-methodology.md"
-  - "pr-ops/backlog.md#b-029-analysis-сквозной-анализ-артефактов-audit-хаб-mango-clarify"
+  - "ops/backlog.md#b-029-analysis-сквозной-анализ-артефактов-audit-хаб-mango-clarify"
 external_artifacts:
   - "G-Ivan-A/mango_ba_prompts@52bc8b72419abb9548d9b6091623f18c080efae4"
   - "G-Ivan-A/clarify-engine-ai@96c288fd13a2d7cc7c3e3cdd52574944858e6255"

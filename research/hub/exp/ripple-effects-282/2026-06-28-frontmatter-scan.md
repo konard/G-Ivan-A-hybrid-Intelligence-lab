@@ -126,8 +126,8 @@ Fields outside `status`, `version`, `updated` and `temperature`:
 - `docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md`
 - `docs/adr/2026-06-adr-002-artifact-document-methodology.md`
 - `ai-rules/agent-onboarding-protocol.md`
-- `pr-ops/artifact-map.md`
-- `pr-ops/backlog.md`
-- `pr-ops/executable-documents-issues.md`
-- `pr-ops/repo-model.md`
+- `ops/artifact-map.md`
+- `ops/backlog.md`
+- `ops/executable-documents-issues.md`
+- `ops/repo-model.md`
 - `docs/rfc/README.md`

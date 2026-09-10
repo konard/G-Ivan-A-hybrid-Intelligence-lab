@@ -23,6 +23,20 @@
     "templates/sync-metadata.json"
   ],
   "overrides": {
+    "templates/htom/AGENTS.md": {
+      "id": "htom-agents-bootstrap",
+      "target_type": ["HTOM"],
+      "criticality": "CORE",
+      "tags": ["bootstrap", "agents", "routing"],
+      "description": "Единая точка входа ИИ-агента в HTOM-команде."
+    },
+    "templates/htom/.hub-profile.json": {
+      "id": "htom-hub-profile",
+      "target_type": ["HTOM"],
+      "criticality": "CORE",
+      "tags": ["bootstrap", "profile", "environment"],
+      "description": "Машиночитаемый профиль архетипа и среды HTOM-команды."
+    },
     "templates/htom/AI_GOVERNANCE.md": {
       "id": "htom-ai-governance",
       "target_type": ["HTOM"],
@@ -80,6 +94,28 @@
       "criticality": "CORE",
       "tags": ["validation", "tooling"],
       "description": "Валидатор структуры HTOM-репозитория."
+    },
+    "templates/htom/tools/validate-agents-bootstrap.sh": {
+      "id": "htom-validate-agents-bootstrap",
+      "version": "1.0.0",
+      "target_type": ["HTOM"],
+      "criticality": "CORE",
+      "tags": ["validation", "bootstrap", "environment"],
+      "description": "Проверка единственной точки входа AGENTS.md и согласованности профиля."
+    },
+    "templates/spoke/AGENTS.md": {
+      "id": "spoke-agents-bootstrap",
+      "target_type": ["Spoke"],
+      "criticality": "CORE",
+      "tags": ["bootstrap", "agents", "routing"],
+      "description": "Единая точка входа ИИ-агента в production-споке."
+    },
+    "templates/spoke/.hub-profile.json": {
+      "id": "spoke-hub-profile",
+      "target_type": ["Spoke"],
+      "criticality": "CORE",
+      "tags": ["bootstrap", "profile", "environment"],
+      "description": "Машиночитаемый профиль архетипа и среды production-спока."
     },
     "templates/htom/.github/workflows/validate.yml": {
       "id": "htom-validate-workflow",

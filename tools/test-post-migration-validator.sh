@@ -59,11 +59,15 @@ if grep -nF 'governance/rfc/' tools/validate-file-naming.sh; then
   fail "file-naming validator must not keep stale governance/rfc/ comments"
 fi
 
+if ! grep -Fq '"pr-ops/README.md"' tools/validate-repository-structure.sh; then
+  fail "structure validator must preserve the declared pr-ops compatibility pointer"
+fi
+
 for required_path in \
   "projects-sink" \
   "ai-governance" \
   "ai-rules" \
-  "pr-ops" \
+  "ops" \
   "docs/rfc" \
   "docs/guides"; do
   if ! grep -Fq "\"$required_path\"" tools/validate-repository-structure.sh; then
@@ -71,7 +75,7 @@ for required_path in \
   fi
 done
 
-backlog_file="pr-ops/backlog.md"
+backlog_file="ops/backlog.md"
 
 b053_line="$(grep -F '| **B-053** |' "$backlog_file")"
 [[ "$b053_line" == *'| DONE |'* ]] ||

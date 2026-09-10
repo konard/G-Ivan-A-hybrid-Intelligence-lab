@@ -34,7 +34,7 @@ related_issues:
 | Owner | G-Ivan-A |
 | RFC status | draft (предложение; решение принимает фаундер) |
 | Source issue | [#437](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/437); [#418](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/418) |
-| Impacted artifacts | `research/ai-education/<domain>/`, `tools/validate-file-naming.sh`, `tools/validate-repository-structure.sh`, `pr-ops/artifact-map.md`, `docs/rfc/2026-06-30-rfc-research-structure.md` (соотношение, не правка) |
+| Impacted artifacts | `research/ai-education/<domain>/`, `tools/validate-file-naming.sh`, `tools/validate-repository-structure.sh`, `ops/artifact-map.md`, `docs/rfc/2026-06-30-rfc-research-structure.md` (соотношение, не правка) |
 | Decision record | [ADR-011](../adr/2026-08-adr-011-research-models.md) — фиксирует RRP как модель M2 и повышает статус паттерна до `Validated` (D6, 2026-08-17). Сам RFC остаётся `draft` как rationale-документ |
 | Implementation link | [`research/ai-education/retrieval/`](../../research/ai-education/retrieval/00-introduction.md) — первая реализация (B-089); на 2026-08-17 реализаций восемь (см. «Validation status») |
 | Archetype scope | A (Governance & Knowledge Hub) |
@@ -311,7 +311,7 @@ research-артефактов и модульная адресуемость и�
 | --- | --- |
 | `research/ai-education/retrieval/*` (6 файлов) | реализация паттерна (B-089) |
 | `research/education/2026-07-16-retrieval-strategies-survey.md` | `status: superseded`, ссылка на модуль |
-| `pr-ops/artifact-map.md` | строка монолита удалена, добавлены 6 + 1 |
+| `ops/artifact-map.md` | строка монолита удалена, добавлены 6 + 1 |
 | `tools/validate-file-naming.sh` | добавлено узкое исключение для файлов модуля (P6, вариант 1, минимальный объём); выбор итогового варианта — за фаундером (Q1) |
 | `docs/rfc/2026-06-30-rfc-research-structure.md` | не изменяется; соотношение описано в Non-goals |
 

@@ -49,15 +49,15 @@ history создания файла; если достоверно извест�
 `CODE_OF_CONDUCT.md`, `LICENSE`, `LICENSE.md`, `GOVERNANCE.md`,
 `*-registry.md`, `*-index.md` и существующий суффикс уровня `*-Index.md`.
 
-## Правила именования файлов в standards/, pr-ops/, ai-rules/ и docs/rfc/
+## Правила именования файлов в standards/, ops/, ai-rules/ и docs/rfc/
 
-- Все файлы в `standards/`, `pr-ops/`, `ai-rules/` и `docs/rfc/` должны быть в
+- Все файлы в `standards/`, `ops/`, `ai-rules/` и `docs/rfc/` должны быть в
   `kebab-case`: строчные буквы, цифры и дефисы.
 - Исключения: только системные файлы `README.md`, `LICENSE`, `CHANGELOG.md`.
-- `CAPS_LOCK` запрещён для документов внутри `standards/`, `pr-ops/`, `ai-rules/`
+- `CAPS_LOCK` запрещён для документов внутри `standards/`, `ops/`, `ai-rules/`
   и `docs/rfc/`.
 
-### Примеры для standards/, pr-ops/, ai-rules/ и docs/rfc/
+### Примеры для standards/, ops/, ai-rules/ и docs/rfc/
 
 - Правильно: `research-profile.md`
 - Правильно: `agent-onboarding-protocol.md`

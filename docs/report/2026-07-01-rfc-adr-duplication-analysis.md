@@ -109,7 +109,7 @@ Considered` делегирует в RFC; `Consequences` — только арх�
 
 **Validator-инженер.** Валидаторы по стандарту проверяют только frontmatter,
 именование и реестры; расширение зафиксировано как tech debt в
-`pr-ops/backlog.md`. Проверки RFC↔ADR overlap нет. Поэтому дублирование
+`ops/backlog.md`. Проверки RFC↔ADR overlap нет. Поэтому дублирование
 прошло локальную валидацию и CI молча, а человеческое review на B-017 его не
 поймало. Граница enforced только людьми — и здесь человек её не проверил
 посекционно.
@@ -146,7 +146,7 @@ Considered` делегирует в RFC; `Consequences` — только арх�
    зафиксировать: при наличии source RFC `Decision` = короткое «что принято» +
    ссылка на RFC за моделью; `Alternatives Considered` = «см. RFC, раздел
    Alternatives»; `Consequences` = только архитектурные последствия, без списка
-   задач (он живёт в RFC Impacted Artifacts и `pr-ops/backlog.md`).
+   задач (он живёт в RFC Impacted Artifacts и `ops/backlog.md`).
 2. **Шаблон «ADR с source RFC».** Дать вариант шаблона, где секции предзаполнены
    delegation-указателями, а не пустыми таблицами, чтобы форма не приглашала
    пересказ.

@@ -13,7 +13,7 @@ temperature: 0.1
 | Скрипт | Что проверяет | Результат (базовая линия 2026-08-21, до добавления самого отчёта) |
 | --- | --- | --- |
 | `link-check.py` | Все относительные markdown-ссылки в отслеживаемых `*.md` | `BROKEN=19 FILES=313`; 18 из 19 — легитимные `{{hub_url}}`-плейсхолдеры шаблонов, 1 реальная поломка (`templates/spoke/README.md:29`, находка G-03) |
-| `artifact-map-coverage.py` | Сверка `pr-ops/artifact-map.md` с `git ls-files '*.md'` в обе стороны | `MISSING = 0` (висящих путей в карте нет), `UNREGISTERED = 62 из 313` (находка G-09) |
+| `artifact-map-coverage.py` | Сверка `ops/artifact-map.md` с `git ls-files '*.md'` в обе стороны | `MISSING = 0` (висящих путей в карте нет), `UNREGISTERED = 62 из 313` (находка G-09) |
 
 Запуск из любого каталога репозитория:
 

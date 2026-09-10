@@ -55,7 +55,7 @@ traceable.
   rules и reviewed knowledge artifacts.
 
 Операционная модель структуры зафиксирована в
-[pr-ops/repo-model.md](../pr-ops/repo-model.md).
+[ops/repo-model.md](../ops/repo-model.md).
 
 ## Границы
 
@@ -83,7 +83,7 @@ traceable.
 | [AI Governance](../ai-governance/ai-governance.md) | Правила AI-assisted work. |
 | [CONTRIBUTING.md](../CONTRIBUTING.md) | Contribution workflow и PR expectations. |
 | [standards/README.md](../standards/README.md) | Реестр standards и инструкция применения. |
-| [pr-ops/repo-model.md](../pr-ops/repo-model.md) | Правила структуры и Anti-Inflation. |
+| [ops/repo-model.md](../ops/repo-model.md) | Правила структуры и Anti-Inflation. |
 | [standards/team-contract.md](../standards/team-contract.md) | Шаблон командного соглашения для spoke-проектов; не является контрактом для прямого использования в этом репозитории. |
 | [standards/glossary.md](../standards/glossary.md) | Canonical источник единой терминологии для standards, governance и AI-assisted work. |
 

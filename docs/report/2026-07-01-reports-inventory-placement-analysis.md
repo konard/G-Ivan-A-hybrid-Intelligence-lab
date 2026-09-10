@@ -19,7 +19,7 @@ related_artifacts:
   - "docs/analysis/2026-07-01-reports-artifacts-inventory.md"
   - "research/hub/exp/reports-inventory-310/README.md"
   - "standards/research-standard.md"
-  - "pr-ops/backlog.md"
+  - "ops/backlog.md"
   - "standards/report-standard.md"
 ---
 
@@ -110,9 +110,9 @@ research (RFC B-016 v0.2) в двух местах: формат exp-конте�
    (P4). Обновлены внутренние ссылки на матрицу и скрипт корпуса, на research
    Variant-C и обратные ссылки из корпуса.
 
-3. **Синхронизация реестров и навигации.** Обновлены `pr-ops/artifact-map.md`
+3. **Синхронизация реестров и навигации.** Обновлены `ops/artifact-map.md`
    (строки инвентаризации и exp-контейнера перенесены в блоки `docs/analysis` и
-   `research/hub/exp/`, добавлена строка этого отчёта), `pr-ops/backlog.md`
+   `research/hub/exp/`, добавлена строка этого отчёта), `ops/backlog.md`
    (frontmatter `related_artifacts` и ссылка B-038), `research/README.md`,
    `research/hub/README.md`, `mkdocs.yml` (инвентаризация в раздел «Анализы»,
    отчёт в «Отчёты», удалена запись из Hub), `CHANGELOG.md` и

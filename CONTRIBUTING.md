@@ -23,7 +23,7 @@ traceability и практическую полезность для hybrid huma
    описывайте цель, constraints и Definition of Done, не предписывая исполнителю
    лишние шаги реализации.
 4. Выбирайте целевой каталог по
-   [pr-ops/repo-model.md](pr-ops/repo-model.md),
+   [ops/repo-model.md](ops/repo-model.md),
    [docs/rfc/knowledge-lifecycle-proposal.md](docs/rfc/knowledge-lifecycle-proposal.md) и
    [docs/rfc/resolve-artifact-location-proposal.md](docs/rfc/resolve-artifact-location-proposal.md),
    если место артефакта не очевидно.
@@ -36,11 +36,10 @@ traceability и практическую полезность для hybrid huma
 
 ## AI-Assisted Work
 
-AI agents начинают с [GOVERNANCE.md](GOVERNANCE.md), затем применяют
-[AI Governance](ai-governance/ai-governance.md) и
-[Agent Work Rules](ai-rules/agent-work-rules.md): читают issue и
-последние комментарии, сохраняют human decision rights, не публикуют sensitive
-data и работают внутри requested scope.
+ИИ-агент начинает с обязательного корневого
+[`/AGENTS.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/AGENTS.md).
+Он маршрутизирует к каноничным governance, rules и standards; этот документ
+остаётся человеческим workflow вклада и не является конкурирующей точкой входа.
 
 ### Правило авто-заполнения Мета
 
@@ -53,7 +52,7 @@ Operating Mode одновременно регулирует ширину авт
 
 | Что отсутствует | Как достраивается |
 | --- | --- |
-| Target artifact | По `pr-ops/artifact-map.md`, `pr-ops/repo-model.md` и resolver prompt. |
+| Target artifact | По `ops/artifact-map.md`, `ops/repo-model.md` и resolver prompt. |
 | Lifecycle stage | По `docs/rfc/knowledge-lifecycle-proposal.md`; сомнительный переход записывается как gap. |
 | L1-L4 link | Product docs дают L1-L2, governance/standards/templates дают L3-L4. |
 | Validation | Минимум: frontmatter, structure validator, manifest check when templates changed. |
@@ -72,7 +71,7 @@ audit, PR history или явно указанный `source` path. Новый a
 ### Консолидация открытых вопросов
 
 При создании дайджеста сессии, если в ней есть открытые вопросы, Исполнитель
-должен добавить их в [`pr-ops/backlog.md`](pr-ops/backlog.md), секция
+должен добавить их в [`ops/backlog.md`](ops/backlog.md), секция
 «Открытые вопросы». Если вопрос уже есть в BACKLOG — не дублировать, добавить
 ссылку на дайджест в колонку «Связанные дайджесты».
 

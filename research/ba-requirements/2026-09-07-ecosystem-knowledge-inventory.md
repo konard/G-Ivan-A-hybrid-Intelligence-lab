@@ -15,7 +15,7 @@ based_on:
 related_artifacts:
   - "research/ba-requirements/methodology-unification/20-taxonomy.md"
   - "research/ba-requirements/2026-08-26-rrp-full-cycle-corpus-facts.md"
-  - "pr-ops/artifact-map.md"
+  - "ops/artifact-map.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/557"
 ---

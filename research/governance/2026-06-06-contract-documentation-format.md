@@ -11,7 +11,7 @@ source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165"
 related_artifacts:
   - "standards/contract-documentation-standard.md"
   - "standards/glossary.md"
-  - "pr-ops/repo-model.md"
+  - "ops/repo-model.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/165"
 ---
@@ -33,7 +33,7 @@ governance documents) и зафиксировать формат в
 
 **Связанные артефакты.**
 - [standards/glossary.md](../../standards/glossary.md) — нормативные термины Хаба.
-- [pr-ops/repo-model.md](../../pr-ops/repo-model.md), [AI_GOVERNANCE.md](../../ai-governance/ai-governance.md) — действующие контракты, к которым применяется формат.
+- [ops/repo-model.md](../../ops/repo-model.md), [AI_GOVERNANCE.md](../../ai-governance/ai-governance.md) — действующие контракты, к которым применяется формат.
 - Соседние форматы: [2026-06-06-research-documentation-format.md](2026-06-06-research-documentation-format.md) (исследования) и [2026-06-06-executable-contract-format.md](2026-06-06-executable-contract-format.md) (исполнимые) — этот формат закрывает «третий» класс.
 
 **Метод.** Сравнительный анализ контрактных дисциплин (OpenAPI, RFC 2119/BCP 14,
@@ -165,7 +165,7 @@ Issue #165 разделяет документы на три класса; фо�
 - B. Meyer, *Design by Contract* — предусловия/постусловия/инварианты.
 - M. Nygard, Architecture Decision Records — Decision → Consequences.
 - Pact / Consumer-Driven Contracts — проверяемые контракты в CI.
-- Внутренние: [standards/glossary.md](../../standards/glossary.md), [pr-ops/repo-model.md](../../pr-ops/repo-model.md), [AI_GOVERNANCE.md](../../ai-governance/ai-governance.md), issue #165 (Блок 3).
+- Внутренние: [standards/glossary.md](../../standards/glossary.md), [ops/repo-model.md](../../ops/repo-model.md), [AI_GOVERNANCE.md](../../ai-governance/ai-governance.md), issue #165 (Блок 3).
 
 > Внешние стандарты версионно-чувствительны; ссылки помечены как требующие
 > проверки перед переводом документа в `reviewed`.

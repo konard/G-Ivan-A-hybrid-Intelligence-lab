@@ -23,7 +23,7 @@ rfc-scope: A
 
 RFC фиксирует стандарт и rationale. Обязательная норма после human decision
 должна быть делегирована в active artifact: `templates/`, `standards/`,
-`pr-ops/repo-model.md`, Smart Sync metadata или CI templates. До такой
+`ops/repo-model.md`, Smart Sync metadata или CI templates. До такой
 делегации этот документ является draft-рекомендацией
 ([docs/rfc/README.md](README.md)).
 
@@ -36,7 +36,7 @@ RFC фиксирует стандарт и rationale. Обязательная �
   минимальна: она должна классифицировать новый проект без бюрократии.
 - Это **не** требование держать пустые директории. Anti-Inflation principle
   сохраняется: каталог появляется только под реальный артефакт
-  ([pr-ops/repo-model.md](../../pr-ops/repo-model.md)).
+  ([ops/repo-model.md](../../ops/repo-model.md)).
 - Это **не** решение в пользу долгоживущей `dev`-ветки. Модель ветвления
   выбирается ниже на основе сравнения GitHub Flow, GitFlow и Trunk-Based
   Development.
@@ -128,7 +128,7 @@ artifact — RAG application runtime, значит это Product Spoke.
 | --- | --- | --- |
 | `README.md` | Product/library entrypoint, scope, quickstart, navigation. | Всегда. |
 | `GOVERNANCE.md`, `CONTRIBUTING.md`, `CHANGELOG.md` | Inherited HTOM governance, contribution workflow, change history. | Всегда для самостоятельного repo. |
-| `pr-ops/artifact-map.md` | Local map of active artifacts and sync state. | Всегда после выделения в standalone repo. |
+| `ops/artifact-map.md` | Local map of active artifacts and sync state. | Всегда после выделения в standalone repo. |
 | `prompts/` | Active prompt assets. `drafts/` and `archive/` are subareas, not root peers. | Если библиотека поставляет prompts. |
 | `patterns/` | Reusable patterns/classes of work used by prompts. | Если prompts are pattern-backed. |
 | `docs/` | Taxonomy, process map, domain model, hub dependency register, ADR/RFC/audit. | Всегда, если выбор prompt зависит от доменного контекста. |
@@ -198,8 +198,8 @@ from Hub + Local Extension in project**.
 
 | Группа | Где живёт | Правило |
 | --- | --- | --- |
-| Local backlog and open questions | `pr-ops/backlog.md` or project equivalent | Owned by project; not overwritten from Hub. |
-| Local artifact map | `pr-ops/artifact-map.md` | Uses Hub format, but entries describe local artifacts and sync snapshot. |
+| Local backlog and open questions | `ops/backlog.md` or project equivalent | Owned by project; not overwritten from Hub. |
+| Local artifact map | `ops/artifact-map.md` | Uses Hub format, but entries describe local artifacts and sync snapshot. |
 | Migration manifests and project decisions | `governance/`, `docs/adr/`, `docs/rfc/` | Owned by project; may link to Hub RFCs. |
 | Domain standards | `standards/` in project | Allowed when domain-specific. Must state whether it is local, synced, or forked from Hub. |
 
@@ -320,7 +320,7 @@ and add deploy only after product readiness is explicit.
 
 ## Связанные артефакты
 
-- [pr-ops/repo-model.md](../../pr-ops/repo-model.md) — Anti-Inflation principle and
+- [ops/repo-model.md](../../ops/repo-model.md) — Anti-Inflation principle and
   repository structure rules.
 - [docs/rfc/documentation-architecture-balance.md](documentation-architecture-balance.md)
   — Index/Summary/Full and lazy loading framework.

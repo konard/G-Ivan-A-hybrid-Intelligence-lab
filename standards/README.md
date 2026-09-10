@@ -21,7 +21,8 @@ owner: G-Ivan-A
 | Education project profile | Active | `education/{course}/`, course materials, workshops и учебная документация | [standards/education-profile.md](education-profile.md) |
 | Концепция репозитория | Active | Root concept и назначение репозитория | [docs/concept.md](../docs/concept.md) |
 | AI governance contract | Active | AI-assisted issues, PRs и reviews | [AI Governance](../ai-governance/ai-governance.md) |
-| Repository model | Active | Размещение артефактов и правила создания | [pr-ops/repo-model.md](../pr-ops/repo-model.md) |
+| AGENTS.md bootstrap | Accepted | Единая точка входа ИИ-агента для архетипов и сред | [agents-md-bootstrap-standard.md](agents-md-bootstrap-standard.md) |
+| Repository model | Active | Размещение артефактов и правила создания | [ops/repo-model.md](../ops/repo-model.md) |
 | Frontmatter standard | Canonical | Минимальное metadata rule для Markdown-артефактов и шаблонов | [frontmatter-standard.md](frontmatter-standard.md) |
 | Frontmatter docs standard | Canonical | Necessary and sufficient frontmatter по классам документов: Standard, Guide, RFC, ADR, Research/report, Audit, Template, Practice | [frontmatter-docs-standard.md](frontmatter-docs-standard.md) |
 | ADR structure standard | Active | Единая структура ADR: frontmatter, stable id, required body sections, lifecycle, section-level delegation, archetype deltas and Boundary RFC/ADR | [adr-structure-standard.md](adr-structure-standard.md) |
@@ -54,9 +55,9 @@ owner: G-Ivan-A
 ## Как пользоваться
 
 1. Определите тип артефакта и целевой каталог по
-   [pr-ops/repo-model.md](../pr-ops/repo-model.md). Для навигации по
+   [ops/repo-model.md](../ops/repo-model.md). Для навигации по
    существующим артефактам и их связям используйте
-   [pr-ops/artifact-map.md](../pr-ops/artifact-map.md).
+   [ops/artifact-map.md](../ops/artifact-map.md).
 2. Выберите имя файла или каталога по
    [standards/file-naming.md](file-naming.md); compatibility entry для
    date-first правила — [standards/file-naming-convention.md](file-naming-convention.md).

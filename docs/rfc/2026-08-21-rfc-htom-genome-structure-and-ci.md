@@ -21,8 +21,8 @@ related_artifacts:
   - "standards/rfc-structure-standard.md"
   - "standards/glossary.md"
   - "research/hub/exp/htom-genome-rfc-531/README.md"
-  - "pr-ops/artifact-map.md"
-  - "pr-ops/backlog.md"
+  - "ops/artifact-map.md"
+  - "ops/backlog.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/531"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/535"
@@ -40,7 +40,7 @@ related_issues:
 | RFC status | accepted — принят фаундером без замечаний (issue [#537](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/537)); технические изменения применены к геному |
 | Source issue | [#531](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/531); доработка — [#535](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/535) |
 | Version history | v0.1 (2026-08-21, issue #531) — P.1–P.6: размещение управляющих контрактов и CI-валидация. **v0.2 (2026-08-22, issue #535) — P.7–P.10: классификация каталогов, декларация специфичных каталогов проекта в `.hub-profile.json`, правило валидации и grandfathering.** |
-| Impacted artifacts | Применено реализацией (PR [#538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/538)): `templates/htom/tools/validate-repository-structure.sh`, новый `templates/htom/.github/workflows/validate.yml`, `templates/sync-metadata.json`, `templates/manifest.json`, `templates/htom/README.md`, `templates/htom/CHANGELOG.md`, `tools/sync-from-hub.sh` (схема `.hub-profile.json`), `pr-ops/backlog.md`. Исходные исполнимые черновики остаются в [`research/hub/exp/htom-genome-rfc-531/`](../../research/hub/exp/htom-genome-rfc-531/README.md). |
+| Impacted artifacts | Применено реализацией (PR [#538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/538)): `templates/htom/tools/validate-repository-structure.sh`, новый `templates/htom/.github/workflows/validate.yml`, `templates/sync-metadata.json`, `templates/manifest.json`, `templates/htom/README.md`, `templates/htom/CHANGELOG.md`, `tools/sync-from-hub.sh` (схема `.hub-profile.json`), `ops/backlog.md`. Исходные исполнимые черновики остаются в [`research/hub/exp/htom-genome-rfc-531/`](../../research/hub/exp/htom-genome-rfc-531/README.md). |
 | Decision record | Принятие без изменений — сам этот `accepted` RFC является решением (`standards/rfc-structure-standard.md`, boundary RFC/ADR). Ответы фаундера на Q-1 — Q-5 зафиксированы в разделе [Open Questions](#open-questions). |
 | Implementation link | Issue [#537](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/537), PR [#538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/538) |
 | Archetype scope | A |
@@ -415,7 +415,7 @@ change** по правилу размещения; breaking-эффект воз�
 | `templates/manifest.json` | Регенерация `tools/generate-manifest.py` | нет |
 | `templates/htom/README.md`, `templates/htom/CHANGELOG.md` | Описание раскладки и CI | нет |
 | Существующие спицы (`mango_ba_prompts` и др.) | Разблокирован перенос управляющих файлов; появляется обязательство завести CI-воркфлоу | нет |
-| `pr-ops/backlog.md`, `pr-ops/artifact-map.md`, `docs/rfc/README.md`, `CHANGELOG.md` | Регистрация этого RFC | **да** |
+| `ops/backlog.md`, `ops/artifact-map.md`, `docs/rfc/README.md`, `CHANGELOG.md` | Регистрация этого RFC | **да** |
 | `research/hub/exp/htom-genome-rfc-531/` | Исполнимый черновик и лог прогона | **да** |
 
 **Impact на существующие спицы — по шагам.**
@@ -784,4 +784,4 @@ Q-1, Q-2 и Q-4. Аудит прямо классифицировал G-01 ка�
 - Геном: [templates/htom/README.md](../../templates/htom/README.md), [templates/htom/tools/validate-repository-structure.sh](../../templates/htom/tools/validate-repository-structure.sh)
 - Исполнимый черновик: [research/hub/exp/htom-genome-rfc-531/README.md](../../research/hub/exp/htom-genome-rfc-531/README.md)
 - Профиль проекта и Smart Sync: [tools/sync-from-hub.sh](../../tools/sync-from-hub.sh), [guides/sync-from-hub.md](../../guides/sync-from-hub.md)
-- Реестры: [pr-ops/artifact-map.md](../../pr-ops/artifact-map.md), [pr-ops/backlog.md](../../pr-ops/backlog.md)
+- Реестры: [ops/artifact-map.md](../../ops/artifact-map.md), [ops/backlog.md](../../ops/backlog.md)

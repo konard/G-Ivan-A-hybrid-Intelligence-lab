@@ -6,7 +6,7 @@ temperature: 0.1
 analysis-subtype: options
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/499"
 scope: repo
-based_on: "research/ (весь корпус на f0a5326) + research/hub/exp/research-methodology-validation-499/research-inventory.json + research/hub/exp/research-methodology-validation-499/spoke-inventory.json (mango_ba_prompts @295b65d, clarify-engine-ai @96c288f) + pr-ops/backlog.md + pr-ops/artifact-map.md"
+based_on: "research/ (весь корпус на f0a5326) + research/hub/exp/research-methodology-validation-499/research-inventory.json + research/hub/exp/research-methodology-validation-499/spoke-inventory.json (mango_ba_prompts @295b65d, clarify-engine-ai @96c288f) + ops/backlog.md + ops/artifact-map.md"
 related_artifacts:
   - "docs/rfc/2026-07-17-rfc-reference-research-pattern.md"
   - "docs/rfc/2026-06-30-rfc-research-structure.md"
@@ -89,8 +89,8 @@ scope-зависима, H1/H2/H6 не подтверждаются, H3 подт�
 **Дата.** 2026-08-11. **Исполнитель.** AI-агент по issue
 [#499](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/499)
 (Operating Mode: Creative). **Охват.** Весь корпус `research/` Хаба на коммите
-`f0a5326` плюс регистрирующие артефакты `pr-ops/backlog.md`,
-`pr-ops/artifact-map.md` и валидаторы `tools/`.
+`f0a5326` плюс регистрирующие артефакты `ops/backlog.md`,
+`ops/artifact-map.md` и валидаторы `tools/`.
 
 **Расширение охвата в v0.2.** Комментарий к
 [PR #502](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/502) требует
@@ -371,7 +371,7 @@ issue #499 («простая — для точечных исследовани�
 | Кто инициирует | Все 8 модулей и все 22 одиночных отчёта заведены человеком через issue. Ни одного исследования, запущенного агентом по триггеру, в корпусе нет. |
 | Триггеры | Фактических два: постановка фаундера (issue) и явная ссылка из RFC/бэклога на недостающую проверку (B-085 → B-086/B-087, B-089 → B-091). Автоматических триггеров нет. |
 | Оформление задачи | Единый 5-блочный шаблон [`.github/ISSUE_TEMPLATE/task.md`](../../.github/ISSUE_TEMPLATE/task.md) плюс `Operating Mode`; форму результата задаёт issue, а не отдельный контракт методологии. |
-| Связь с бэклогом | **Разорвана.** В [`pr-ops/backlog.md`](../../pr-ops/backlog.md) есть строки только для retrieval (B-085) и task-processing (B-092). Шесть последующих модулей — memory, IE & graph, evaluation, tool-use, observability, multi-agent orchestration — в бэклоге не зарегистрированы ни одной строкой, хотя в [`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md) зарегистрированы все. |
+| Связь с бэклогом | **Разорвана.** В [`ops/backlog.md`](../../ops/backlog.md) есть строки только для retrieval (B-085) и task-processing (B-092). Шесть последующих модулей — memory, IE & graph, evaluation, tool-use, observability, multi-agent orchestration — в бэклоге не зарегистрированы ни одной строкой, хотя в [`ops/artifact-map.md`](../../ops/artifact-map.md) зарегистрированы все. |
 
 Разрыв с бэклогом — самое проверяемое наблюдение этого раздела и он двусторонний.
 Спринт 10 «Эволюция методологии инженерных исследований» содержит задачу **B-091**
@@ -436,7 +436,7 @@ Analysis/Audit/Report standards). Две методологии не проти�
 
 Симметричный риск противоположного решения — введение третьей и последующих
 методологий — прямо противоречит Anti-Inflation правилу
-[`pr-ops/repo-model.md`](../../pr-ops/repo-model.md): каждая новая методология
+[`ops/repo-model.md`](../../ops/repo-model.md): каждая новая методология
 требует своего контракта, валидатора и реестра, а корпус даёт **один**
 неохваченный случай на 62 артефакта. Это слишком тонкое основание для нового
 контракта — и именно поэтому вопрос упирается не в число методологий, а в
@@ -564,7 +564,7 @@ PR #502 названы прогонами подтверждения воспр�
 
 P5 объявляет триггер обязательным: воспроизведённое расхождение практики с
 рамкой решений — дефект рамки, и по нему заводится задача. Заведённых по этому
-триггеру задач в `pr-ops/backlog.md` нет ни одной. Отличить «расхождений не
+триггеру задач в `ops/backlog.md` нет ни одной. Отличить «расхождений не
 было» от «триггер не исполняется» по артефактам нельзя, но у пяти модулей без
 связи `40 → 30` (§7.2) расхождение не могло быть замечено **по построению**:
 сравнивать практику с рамкой там структурно не с чем. Собственный вопрос RFC
@@ -838,7 +838,7 @@ RFC (§«Стратегия стандартизации»), а не закры�
 | | Вариант A: расширить `research-standard.md` | Вариант B: отдельный стандарт паттерна |
 | --- | --- | --- |
 | Что делает | добавляет модуль второй легитимной формой в существующий стандарт | выносит Reference Research Pattern в самостоятельный документ |
-| За | одно место принятия решения о форме; routing Research / Analysis / Audit не раздваивается; соответствует Anti-Inflation `pr-ops/repo-model.md` | границы паттерна описываются полно, включая P2 и P5, без утяжеления общего стандарта |
+| За | одно место принятия решения о форме; routing Research / Analysis / Audit не раздваивается; соответствует Anti-Inflation `ops/repo-model.md` | границы паттерна описываются полно, включая P2 и P5, без утяжеления общего стандарта |
 | Против | стандарт получает подтип, хотя сам объявляет «Type Model: N/A» — потребуется пересмотр этого раздела | два документа о форме research неизбежно расходятся; §6 показывает, что уже существующая норма не была распространена даже на спицы |
 | Цена по корпусу | правка одного draft-документа и `validate-evidence-structure.sh` (снять требование датированного родителя для модуля) | новый стандарт + свой валидатор + строка в реестре на 8 артефактов одного контейнера |
 | Блокирующее условие | Q4 (независимость доменов) может остаться открытым: A не требует зрелости паттерна | требует закрытия Q1 и Q4 RFC: отдельный стандарт фиксирует паттерн как зрелый, а он `Experimental` |
@@ -990,4 +990,4 @@ RFC (§«Стратегия стандартизации»), а не закры�
   источник наблюдения о фактических Analysis под `research/`.
 - [Анализ пробелов контрактов последовательных задач](2026-08-11-sequential-task-contract-ambiguity-analysis.md) —
   пример hub-работы, вышедшей в `docs/analysis/` (§2.5).
-- [`pr-ops/backlog.md`](../../pr-ops/backlog.md) — B-085, B-089, B-091, B-092.
+- [`ops/backlog.md`](../../ops/backlog.md) — B-085, B-089, B-091, B-092.

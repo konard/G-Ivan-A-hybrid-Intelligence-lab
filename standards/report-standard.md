@@ -180,7 +180,7 @@ related_artifacts:
 | `statistics` | период, **методология**, источник данных, единицы | SDMX (ISO 17369) / DDI | inventory / matrix / scan / sync outputs, machine-readable evidence summaries | `docs/report/` |
 
 **Триггер выделения профиля (Anti-Inflation,
-[`pr-ops/repo-model.md`](../pr-ops/repo-model.md)).** Профиль выделяется в
+[`ops/repo-model.md`](../ops/repo-model.md)).** Профиль выделяется в
 отдельный стандарт (`audit-report-standard.md` и т.п.) **только** когда накопит
 достаточно собственных повторяющихся обязательных правил или когда review pain
 делает базовый Report standard неясным (критерий ADR-004). До этого порога
@@ -273,7 +273,7 @@ Local checks:
 routing split `docs/report/` / `docs/audit/`, knowledge-lifecycle) кодифицируется
 обновлением валидаторов в цепочке cleanup B-044, не в этом стандарте. Расширение
 валидаторов за пределы frontmatter, naming и registry checks отслеживается как
-tech debt в [pr-ops/backlog.md](../pr-ops/backlog.md).
+tech debt в [ops/backlog.md](../ops/backlog.md).
 
 ## Related Artifacts
 
@@ -298,7 +298,7 @@ tech debt в [pr-ops/backlog.md](../pr-ops/backlog.md).
 - [frontmatter-docs-standard.md](frontmatter-docs-standard.md) — контракт
   frontmatter по классам документов.
 - [file-naming.md](file-naming.md) — дата-первое именование.
-- [pr-ops/backlog.md](../pr-ops/backlog.md) — цепочка Reports B-038,
+- [ops/backlog.md](../ops/backlog.md) — цепочка Reports B-038,
   B-041, B-042, B-043 (этот стандарт), B-044.
 - Issues
   [#354](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/354)

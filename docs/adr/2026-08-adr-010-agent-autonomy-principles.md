@@ -22,7 +22,7 @@ decision-type: governance
 | Source | Решение фаундера от 2026-08-01, уточнённое 2026-08-06 при согласовании Q-1 [RFC #470](../rfc/2026-08-06-rfc-task-statement-architecture.md); постановка — issue [#476](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/476) |
 | Primary input | [RFC: архитектура постановки задач](../rfc/2026-08-06-rfc-task-statement-architecture.md) (§P.1, §P.2, Q-1, `Lifecycle and Decision Path`) |
 | Upstream decisions | [ADR-002](2026-06-adr-002-artifact-document-methodology.md), [ADR-008](2026-07-adr-008-standard-meta-structure.md) |
-| Impacted artifacts | `ai-rules/agent-work-rules.md`, `ai-governance/ai-governance.md`, `.github/ISSUE_TEMPLATE/task.md`, `.github/ISSUE_TEMPLATE/task.yml`, `.github/ISSUE_TEMPLATE/task-creative.md`, `standards/glossary.md`, `standards/issue-workflow.md`, `pr-ops/repo-model.md`, `docs/concept.md`, `CONTRIBUTING.md`, `templates/htom/AI_GOVERNANCE.md`, `standards/team-contract.md` |
+| Impacted artifacts | `ai-rules/agent-work-rules.md`, `ai-governance/ai-governance.md`, `.github/ISSUE_TEMPLATE/task.md`, `.github/ISSUE_TEMPLATE/task.yml`, `.github/ISSUE_TEMPLATE/task-creative.md`, `standards/glossary.md`, `standards/issue-workflow.md`, `ops/repo-model.md`, `docs/concept.md`, `CONTRIBUTING.md`, `templates/htom/AI_GOVERNANCE.md`, `standards/team-contract.md` |
 | Depends on | issue [#473](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/473) — устранение рассинхрона Operating Modes (блокирует переход в `canonical` у следствий Принципа 3) |
 | Supersedes | none |
 | Superseded by | none |
@@ -211,7 +211,7 @@ proposal и не переписывается.
 | [`.github/ISSUE_TEMPLATE/task.yml`](../../.github/ISSUE_TEMPLATE/task.yml) | `structured`, `creative`, `hybrid`, `deep-think` | Два значения (`hybrid`, `deep-think`) отсутствуют в таблице режимов. |
 | [`ai-rules/agent-work-rules.md`](../../ai-rules/agent-work-rules.md) | `Structured`, `Creative`, `Research`, `Education` | Два значения (`Research`, `Education`) отсутствуют в форме задачи. |
 | [`standards/glossary.md`](../../standards/glossary.md) | `structured`, `creative`, `research`, `education` | Наследует набор из agent-work-rules, не из формы. |
-| [`pr-ops/repo-model.md`](../../pr-ops/repo-model.md) | `Structured`, `Project` | Значение `Project` не встречается больше нигде. |
+| [`ops/repo-model.md`](../../ops/repo-model.md) | `Structured`, `Project` | Значение `Project` не встречается больше нигде. |
 
 Пересечение всех наборов — фактически одно значение `Structured`, и именно на нём
 держится Принцип 3. Пока рассинхрон не устранён, «явное указание
@@ -238,12 +238,12 @@ Ripple scan по репозиторию (без `research/`, `projects/` и `CHA
 | [`.github/ISSUE_TEMPLATE/task.yml`](../../.github/ISSUE_TEMPLATE/task.yml), [`task.md`](../../.github/ISSUE_TEMPLATE/task.md), [`task-creative.md`](../../.github/ISSUE_TEMPLATE/task-creative.md) | Три значения Operating Mode; поле/секция для блока отклонений и блока «Не выполнено и вопросы». | #473 + задача внедрения |
 | [`standards/glossary.md`](../../standards/glossary.md) | Определение Operating Mode перечисляет `research`/`education`; требуется синхронизация со словарём и упоминание роли мета-контракта. | #473 |
 | [`standards/issue-workflow.md`](../../standards/issue-workflow.md) | Критерий готовности `ready` требует «выбран Operating Mode» — критерий станет проверяемым только после фиксации словаря. | #473 |
-| [`pr-ops/repo-model.md`](../../pr-ops/repo-model.md) | Значение `Project` в таблице кейсов инициализации не входит ни в один словарь режимов. | #473 |
+| [`ops/repo-model.md`](../../ops/repo-model.md) | Значение `Project` в таблице кейсов инициализации не входит ни в один словарь режимов. | #473 |
 | [`docs/concept.md`](../../docs/concept.md) | Строка «Operating Mode» описывает только `structured`/`creative`. | #473 |
 | [`CONTRIBUTING.md`](../../CONTRIBUTING.md) | Правило авто-заполнения Меты ссылается на Operating Mode как на источник приоритета; после ADR Mode становится ещё и регулятором автономии. | задача внедрения |
 | [`ai-rules/agent-onboarding-protocol.md`](../../ai-rules/agent-onboarding-protocol.md) | Pre-flight должен предъявлять агенту три принципа до первого изменения файлов. | задача внедрения |
 | [`templates/htom/AI_GOVERNANCE.md`](../../templates/htom/AI_GOVERNANCE.md), [`standards/team-contract.md`](../../standards/team-contract.md) | Downstream-шаблоны содержат собственные таблицы Operating Modes (включая режим `Incident`), расходящиеся с Хабом; распространение принципов на HTOM-команды — отдельное решение. | задача внедрения |
-| [`pr-ops/backlog.md`](../../pr-ops/backlog.md) | Регистрация задач внедрения и паллиатива для PR с меткой `needs-human-decision` (Q-4 RFC #470). | задача внедрения |
+| [`ops/backlog.md`](../../ops/backlog.md) | Регистрация задач внедрения и паллиатива для PR с меткой `needs-human-decision` (Q-4 RFC #470). | задача внедрения |
 
 Downstream-работа здесь не планируется и не дублируется: ADR фиксирует решение,
 задачи внедрения ведутся отдельно.
@@ -359,7 +359,7 @@ ADR находится в статусе `proposed`. Решение фаунде
   [`standards/issue-workflow.md`](../../standards/issue-workflow.md),
   [`standards/executable-contract-standard.md`](../../standards/executable-contract-standard.md)
   — ортогональность `executable` и Operating Mode;
-- [`pr-ops/repo-model.md`](../../pr-ops/repo-model.md),
+- [`ops/repo-model.md`](../../ops/repo-model.md),
   [`docs/concept.md`](../../docs/concept.md),
   [`CONTRIBUTING.md`](../../CONTRIBUTING.md),
   [`GOVERNANCE.md`](../../GOVERNANCE.md);
@@ -390,8 +390,8 @@ Issues и PR:
   эмпирический анализ;
 - PR [#462](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/462),
   [#466](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/466);
-- [`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md),
-  [`pr-ops/backlog.md`](../../pr-ops/backlog.md).
+- [`ops/artifact-map.md`](../../ops/artifact-map.md),
+  [`ops/backlog.md`](../../ops/backlog.md).
 
 ## Decision Boundary Map
 

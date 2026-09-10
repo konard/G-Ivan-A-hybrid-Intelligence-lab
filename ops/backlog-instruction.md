@@ -8,9 +8,9 @@ context: [governance, backlog, pr-ops, synchronization]
 method: operating-contract
 scope: repo-wide
 related_artifacts:
-  - "pr-ops/backlog.md"
-  - "pr-ops/artifact-map.md"
-  - "pr-ops/repo-model.md"
+  - "ops/backlog.md"
+  - "ops/artifact-map.md"
+  - "ops/repo-model.md"
   - "CHANGELOG.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/392"
@@ -18,7 +18,7 @@ related_issues:
 
 # Инструкция по ведению бэклога
 
-`pr-ops/backlog.md` отвечает на вопрос: что делать, в какой логической
+`ops/backlog.md` отвечает на вопрос: что делать, в какой логической
 последовательности и с каким текущим статусом. Он не описывает подробно, как
 выполнять задачу: детали живут в issue, PR, RFC, ADR, стандартах и changelog.
 
@@ -26,11 +26,11 @@ related_issues:
 
 | Файл или система | Роль |
 | --- | --- |
-| `pr-ops/backlog.md` | Только активные задачи, сгруппированные в логические спринты. |
-| `pr-ops/backlog-instruction.md` | Правила ведения бэклога, статусы, формат спринтов и archiving policy. |
+| `ops/backlog.md` | Только активные задачи, сгруппированные в логические спринты. |
+| `ops/backlog-instruction.md` | Правила ведения бэклога, статусы, формат спринтов и archiving policy. |
 | GitHub Issues/PR | Источник истины для выполненной истории, обсуждений, review and implementation evidence. |
 | `CHANGELOG.md` | Историческая запись governance-изменений после merge. |
-| `pr-ops/artifact-map.md` | Навигация по активным артефактам и связям. |
+| `ops/artifact-map.md` | Навигация по активным артефактам и связям. |
 
 Архивный файл бэклога не создаётся. Дублировать GitHub history в отдельном
 Markdown-архиве не нужно.
@@ -124,9 +124,9 @@ idea -> backlog -> in-progress -> review -> DONE -> archived
 При изменении backlog structure или task set проверь:
 
 - `CHANGELOG.md`: есть запись о governance/change-management изменении.
-- `pr-ops/artifact-map.md`: новые или изменённые active artifacts отражены в
+- `ops/artifact-map.md`: новые или изменённые active artifacts отражены в
   карте.
-- `pr-ops/README.md`: список PR-Ops artifacts актуален.
+- `ops/README.md`: список PR-Ops artifacts актуален.
 - `tools/validate-repository-structure.sh`: active/required files and pinned
   text синхронизированы.
 - `updated` and `version` в frontmatter изменённых Markdown-файлов обновлены.

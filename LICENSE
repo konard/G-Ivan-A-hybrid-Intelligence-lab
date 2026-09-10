@@ -5,7 +5,7 @@ Copyright (c) 2026 hybrid-Intelligence-lab contributors.
 SPDX-License-Identifier: CC-BY-4.0 AND Apache-2.0
 
 Репозиторий — база знаний и методологий, а не production-кодовая база
-(см. [docs/concept.md](docs/concept.md), [pr-ops/repo-model.md](pr-ops/repo-model.md)).
+(см. [docs/concept.md](docs/concept.md), [ops/repo-model.md](ops/repo-model.md)).
 Основной актив — текстовые артефакты; скрипты вторичны и обслуживают репозиторий.
 Поэтому применяются две стандартные лицензии, разделённые по типу артефакта.
 Самописных или модифицированных лицензий в проекте нет: ниже приведены

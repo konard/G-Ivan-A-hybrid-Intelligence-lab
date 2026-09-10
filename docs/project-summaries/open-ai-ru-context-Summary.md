@@ -20,7 +20,7 @@ temperature: 0.1
 - **Текущий фокус:** Phase 0 «Planning & Vision» — bootstrap-состояние: оформлены
   vision и геном управления, продуктовый код ещё не пишется (`src/.gitkeep`).
 - **Активные стандарты:** наследует геном Хаба (`AI_GOVERNANCE.md`), frontmatter
-  и file-naming Хаба, модель hub-and-spoke (`pr-ops/repo-model.md` Хаба),
+  и file-naming Хаба, модель hub-and-spoke (`ops/repo-model.md` Хаба),
   жизненный цикл знаний для входящих идей.
 - **Границы (НЕ делаем сейчас):** минимальный bootstrap — не пишем продуктовый код
   до утверждения Vision/Concept; не вводим инфраструктуру и каталоги «на вырост»

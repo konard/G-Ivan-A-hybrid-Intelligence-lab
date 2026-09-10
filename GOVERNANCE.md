@@ -14,7 +14,7 @@ temperature: 0.1
   decision rights, security/compliance-ограничения и эскалация;
 - [Agent Work Rules](ai-rules/agent-work-rules.md) — правила поведения
   AI-агента, Operating Modes, pre-flight и Definition of Done;
-- [PR Operations](pr-ops/README.md) — операции issue/task/PR/review;
+- [PR Operations](ops/README.md) — операции issue/task/PR/review;
 - [Standards](standards/README.md) — требования к форме и готовности
   артефактов.
 

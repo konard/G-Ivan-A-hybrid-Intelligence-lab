@@ -70,6 +70,9 @@ jobs:
       - name: Test BA meta-model stakeholder overview
         run: bash tools/test-ba-meta-model-overview.sh
 
+      - name: Test AGENTS.md physical integration
+        run: bash tools/test-agents-md-integration.sh
+
       - name: Resolve no-diff-expected label authorization
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'no-diff-expected')
         env:

@@ -24,8 +24,8 @@ related_artifacts:
   - "standards/adr-structure-standard.md"
   - "standards/rfc-structure-standard.md"
   - "standards/issue-workflow.md"
-  - "pr-ops/repo-model.md"
-  - "pr-ops/backlog.md"
+  - "ops/repo-model.md"
+  - "ops/backlog.md"
   - "research/external-knowledge/external-sources-registry.md"
 external_artifacts:
   - "mango_ba_prompts/standards/"
@@ -231,7 +231,7 @@ Structured / Hybrid) → выполнить. Реальные срывы это�
 артефактов.
 
 **P1. Тип и режим кодируются в префиксе задачи.** Бэклог
-([pr-ops/backlog.md](../../pr-ops/backlog.md)) использует префиксы
+([ops/backlog.md](../../ops/backlog.md)) использует префиксы
 `rfc:`, `adr:`, `analysis:`, `audit:`, `chore:`. Практика: человек уже несёт
 метку типа — исполнитель без контекста этого префикса восстанавливает её из
 формулировки. Это и есть предмет Test 1/Test 2.
@@ -445,7 +445,7 @@ Cynefin (Clear/Complicated/Complex), Bloom и с осью автономия↔�
 - [standards/research-standard.md](../../standards/research-standard.md) — детерминированная маршрутизация типов.
 - [standards/glossary.md](../../standards/glossary.md) — определение Operating Mode.
 - [standards/issue-workflow.md](../../standards/issue-workflow.md) — статусы и человеческие gate.
-- [pr-ops/backlog.md](../../pr-ops/backlog.md) — задачи B-016..B-039.
+- [ops/backlog.md](../../ops/backlog.md) — задачи B-016..B-039.
 
 > ⚠️ **Что этот отчёт НЕ делает:** не предлагает финальных решений, не вводит и не
 > меняет режимы, не создаёт стандартов/контрактов. Любое внедрение (например,

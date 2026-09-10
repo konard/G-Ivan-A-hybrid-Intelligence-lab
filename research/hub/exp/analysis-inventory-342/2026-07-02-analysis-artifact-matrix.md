@@ -106,10 +106,10 @@ analysis document performs the final synthesis and recommendations.
 | `docs/report/2026-07-01-reports-inventory-placement-analysis.md` | `docs/report` | Report | `analysis-named-report` | route by Reports standard / docs/report profile, not Analysis | Отчёт: анализ размещения deliverables инвентаризации Reports (issue #310) |
 | `docs/report/2026-07-01-rfc-adr-duplication-analysis.md` | `docs/report` | Report | `analysis-named-report` | route by Reports standard / docs/report profile, not Analysis | Отчёт: анализ причины дублирования RFC B-016 ↔ ADR-003 |
 | `ai-rules/agent-onboarding-protocol.md` | `governance` | Other | `adjacent-not-analysis` | no B-028 move candidate unless a future standard names it | Agent Onboarding — Протокол бесшовной передачи проекта |
-| `pr-ops/artifact-map.md` | `governance` | Other | `adjacent-not-analysis` | no B-028 move candidate unless a future standard names it | Artifact Map |
-| `pr-ops/backlog.md` | `governance` | Other | `adjacent-not-analysis` | no B-028 move candidate unless a future standard names it | BACKLOG — единый бэклог работ Хаба |
-| `pr-ops/executable-documents-issues.md` | `governance` | Other | `adjacent-not-analysis` | no B-028 move candidate unless a future standard names it | Реестр issues: внедрение стандарта исполнимых документов |
-| `pr-ops/repo-model.md` | `governance` | Other | `adjacent-not-analysis` | no B-028 move candidate unless a future standard names it | Repository Model |
+| `ops/artifact-map.md` | `governance` | Other | `adjacent-not-analysis` | no B-028 move candidate unless a future standard names it | Artifact Map |
+| `ops/backlog.md` | `governance` | Other | `adjacent-not-analysis` | no B-028 move candidate unless a future standard names it | BACKLOG — единый бэклог работ Хаба |
+| `ops/executable-documents-issues.md` | `governance` | Other | `adjacent-not-analysis` | no B-028 move candidate unless a future standard names it | Реестр issues: внедрение стандарта исполнимых документов |
+| `ops/repo-model.md` | `governance` | Other | `adjacent-not-analysis` | no B-028 move candidate unless a future standard names it | Repository Model |
 | `docs/rfc/2026-06-27-rfc-adr-standard.md` | `governance/rfc` | RFC | `adjacent-not-analysis` | keep as proposal/RFC; Analysis can cite it as downstream or upstream context | RFC: Стандарт структуры ADR |
 | `docs/rfc/2026-06-27-rfc-rfc-standard.md` | `governance/rfc` | RFC | `adjacent-not-analysis` | keep as proposal/RFC; Analysis can cite it as downstream or upstream context | RFC: Стандарт структуры RFC |
 | `docs/rfc/2026-06-30-rfc-research-structure.md` | `governance/rfc` | RFC | `adjacent-not-analysis` | keep as proposal/RFC; Analysis can cite it as downstream or upstream context | RFC: Структура research, контейнер `exp/` и маршрутизация Research / Analysis / Audit |
@@ -131,7 +131,7 @@ analysis document performs the final synthesis and recommendations.
 | `docs/rfc/rfc-two-cases-of-project-initialization.md` | `governance/rfc` | RFC | `adjacent-not-analysis` | keep as proposal/RFC; Analysis can cite it as downstream or upstream context | RFC-манифест: два ортогональных кейса инициализации проекта |
 | `docs/rfc/solution-concept-template-proposal.md` | `governance/rfc` | RFC | `adjacent-not-analysis` | keep as proposal/RFC; Analysis can cite it as downstream or upstream context | RFC: Universal Solution Concept Template |
 | `docs/rfc/tech-debt-solutions-proposal-2026-06.md` | `governance/rfc` | RFC | `adjacent-not-analysis` | keep as proposal/RFC; Analysis can cite it as downstream or upstream context | RFC: Предложения по решению техдолга |
-| `pr-ops/session-digests.md` | `governance` | Report | `adjacent-not-analysis` | route by Reports standard / docs/report profile, not Analysis | Session Digests — суммарии сессий |
+| `ops/session-digests.md` | `governance` | Report | `adjacent-not-analysis` | route by Reports standard / docs/report profile, not Analysis | Session Digests — суммарии сессий |
 | `research/README.md` | `research` | Other | `adjacent-not-analysis` | no B-028 move candidate unless a future standard names it | Research |
 | `research/cicd/2026-06-09-js-cicd-template-analysis.md` | `research` | Research | `analysis-named-research` | keep under Research routing unless future Analysis standard cites it as upstream evidence | Исследование: JS CI/CD Template — Анализ шаблона link-foundation |
 | `research/cicd/README.md` | `research` | Other | `adjacent-not-analysis` | no B-028 move candidate unless a future standard names it | Research: CI/CD |
@@ -242,7 +242,7 @@ analysis document performs the final synthesis and recommendations.
 | `governance/agent-onboarding-protocol.executable.md` | `governance` | Other | `adjacent-not-analysis` | no B-028 move candidate unless a future standard names it | Agent Onboarding Protocol — executable layer |
 | `ai-rules/agent-onboarding-protocol.md` | `governance` | Other | `adjacent-not-analysis` | no B-028 move candidate unless a future standard names it | Agent Onboarding — Протокол бесшовной передачи проекта |
 | `governance/approval-contract.md` | `governance` | Other | `adjacent-not-analysis` | no B-028 move candidate unless a future standard names it | Контракт AI-агента: итеративное согласование документов |
-| `pr-ops/artifact-map.md` | `governance` | Other | `adjacent-not-analysis` | no B-028 move candidate unless a future standard names it | Artifact Map — mango_ba_prompts |
+| `ops/artifact-map.md` | `governance` | Other | `adjacent-not-analysis` | no B-028 move candidate unless a future standard names it | Artifact Map — mango_ba_prompts |
 | `governance/audit-contracts-2026-06-17.md` | `governance` | Audit | `adjacent-not-analysis` | route by future Audit standard; do not absorb into Analysis | Аудит контрактов — отладка и изменение промптов (2026-06-17) |
 | `governance/audit-contracts-mango-2026-06-17.md` | `governance` | Audit | `adjacent-not-analysis` | route by future Audit standard; do not absorb into Analysis | Аудит контрактов mango_ba_prompts (2026-06-17) |
 | `governance/audit-hub-2026-06-17.md` | `governance` | Audit | `adjacent-not-analysis` | route by future Audit standard; do not absorb into Analysis | Аудит документов Хаба для mango_ba_prompts (2026-06-17) |
@@ -267,7 +267,7 @@ analysis document performs the final synthesis and recommendations.
 | `docs/rfc/bcreq-ft-scope-formation-rules-proposal.md` | `governance/rfc` | RFC | `adjacent-not-analysis` | keep as proposal/RFC; Analysis can cite it as downstream or upstream context | RFC: Правила формирования скоупа bcreq ФТ (что описываем, а что исключаем) |
 | `docs/rfc/prompt-improvement-bcreq-1025-proposal.md` | `governance/rfc` | RFC | `adjacent-not-analysis` | keep as proposal/RFC; Analysis can cite it as downstream or upstream context | RFC: Улучшение промптов на основе эксперимента BCREQ-1025 |
 | `docs/rfc/prompt-improvement-multichannel-proposal.md` | `governance/rfc` | RFC | `adjacent-not-analysis` | keep as proposal/RFC; Analysis can cite it as downstream or upstream context | RFC: Улучшение промптов на основе эксперимента «Многоканальная нагрузка агента» |
-| `pr-ops/session-digests.md` | `governance` | Report | `adjacent-not-analysis` | route by Reports standard / docs/report profile, not Analysis | Session Digests — Mango BA Prompts |
+| `ops/session-digests.md` | `governance` | Report | `adjacent-not-analysis` | route by Reports standard / docs/report profile, not Analysis | Session Digests — Mango BA Prompts |
 | `governance/sync-matrix-2026-06-17.md` | `governance` | Report | `adjacent-not-analysis` | route by Reports standard / docs/report profile, not Analysis | Матрица синхронизации mango_ba_prompts ↔ Хаб (2026-06-17) |
 
 ## Clarify / clarify-engine-ai

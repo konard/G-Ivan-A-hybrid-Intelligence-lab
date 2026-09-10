@@ -301,7 +301,7 @@ relation-метаданные, routing `docs/analysis/`, knowledge-lifecycle)
 кодифицируется обновлением валидаторов в цепочке cleanup B-028, не в этом
 стандарте. Расширение валидаторов за пределы frontmatter, naming и registry
 checks отслеживается как tech debt в
-[pr-ops/backlog.md](../pr-ops/backlog.md).
+[ops/backlog.md](../ops/backlog.md).
 
 ## Related Artifacts
 
@@ -336,7 +336,7 @@ checks отслеживается как tech debt в
 - [frontmatter-docs-standard.md](frontmatter-docs-standard.md) — контракт
   frontmatter по классам документов.
 - [file-naming.md](file-naming.md) — дата-первое именование.
-- [pr-ops/backlog.md](../pr-ops/backlog.md) — цепочка Analysis B-024,
+- [ops/backlog.md](../ops/backlog.md) — цепочка Analysis B-024,
   B-025, B-026, B-027 (этот стандарт), B-028 и координация с B-034.
 - Issues
   [#366](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/366)
@@ -351,7 +351,7 @@ checks отслеживается как tech debt в
 Этот раздел уточняет anti-inflation trigger для модели типа, заявленной в
 [Type Model](#type-model) и в границах [Scope](#scope): профили подтипов остаются
 **секциями** этого базового стандарта до явного порога выделения. **Триггер B
-(Anti-Inflation, [`pr-ops/repo-model.md`](../pr-ops/repo-model.md)).** Профиль
+(Anti-Inflation, [`ops/repo-model.md`](../ops/repo-model.md)).** Профиль
 выделяется в отдельный стандарт (`analysis-inventory-standard.md` и т.п.)
 **только** когда:
 

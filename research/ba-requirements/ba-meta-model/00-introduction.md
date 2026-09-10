@@ -17,7 +17,7 @@ related_artifacts:
   - "docs/adr/2026-09-adr-013-run-modes-deprecation.md"
   - "standards/product-taxonomy-reference.md"
   - "research/ba-requirements/orchestration/00-introduction.md"
-  - "pr-ops/backlog.md"
+  - "ops/backlog.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/561"

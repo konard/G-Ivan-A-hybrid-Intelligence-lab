@@ -56,6 +56,8 @@ required_directories=(
 )
 
 required_files=(
+  "AGENTS.md"
+  ".hub-profile.json"
   "README.md"
   "CONTRIBUTING.md"
   "CHANGELOG.md"
@@ -138,6 +140,13 @@ done
 
 PROFILE_FILE=".hub-profile.json"
 
+# The bootstrap contract is shared with the Hub and copied into generated
+# repositories by Smart Sync. Read the profile before classifying directories.
+bootstrap_validator="tools/validate-agents-bootstrap.sh"
+if [[ -x "$bootstrap_validator" ]]; then
+  "$bootstrap_validator" "$ROOT_DIR" || failures=$((failures + 1))
+fi
+
 canonical_directories=(
   ".git"
   ".github"
@@ -167,6 +176,17 @@ try:
 except Exception as exc:  # noqa: BLE001 - сообщение уходит в валидатор как FAIL
     print("error\t%s" % exc)
     sys.exit(0)
+archetype = profile.get("archetype")
+if archetype not in {"A", "B", "C", "D"}:
+    print("error\tarchetype must be one of A, B, C, D")
+environment = profile.get("environment", "local")
+if environment not in {"local", "gigacode", "serverless"}:
+    print("error\tenvironment must be one of local, gigacode, serverless")
+else:
+    print("environment\t%s" % environment)
+secondary = profile.get("secondary_environments", []) or []
+if not isinstance(secondary, list) or any(value not in {"local", "gigacode", "serverless"} for value in secondary):
+    print("error\tsecondary_environments contains an unknown value")
 until = profile.get("structure_grandfather_until")
 if until:
     print("grandfather\t%s" % until)
@@ -186,6 +206,7 @@ PYEOF
 
 declared_directories=()
 grandfather_until=""
+profile_environment="local"
 profile_readable=1
 
 if [[ -f "$PROFILE_FILE" ]]; then
@@ -196,6 +217,7 @@ if [[ -f "$PROFILE_FILE" ]]; then
       case "$kind" in
         declared) declared_directories+=("$value") ;;
         grandfather) grandfather_until="$value" ;;
+        environment) profile_environment="$value" ;;
         invalid)
           fail "$PROFILE_FILE: декларация каталога '$value' неполна — нужны непустые поля path и reason"
           ;;
@@ -208,6 +230,14 @@ if [[ -f "$PROFILE_FILE" ]]; then
     warn "python не найден: декларации $PROFILE_FILE не проверены, классификация каталогов пропущена."
   fi
 fi
+
+# Environment deltas are additive. Local has no extra surface; provider
+# adapters remain pointers and are never treated as copies of Hub rules.
+case "$profile_environment" in
+  local) ;;
+  gigacode) canonical_directories+=(".gigacode") ;;
+  serverless) canonical_directories+=(".serverless") ;;
+esac
 
 in_list() {
   local needle="$1"

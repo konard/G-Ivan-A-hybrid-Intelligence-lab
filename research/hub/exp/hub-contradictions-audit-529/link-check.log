@@ -9,7 +9,7 @@ templates/htom/AI_SESSION_HANDOVER_PROMPT.md:123: {{hub_url}}/blob/main/ai-rules
 templates/htom/AI_SESSION_HANDOVER_PROMPT.md:124: {{hub_url}}
 templates/htom/AI_SESSION_HANDOVER_PROMPT.md:137: {{hub_url}}
 templates/htom/AI_SESSION_HANDOVER_PROMPT.md:147: {{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md
-templates/htom/AI_SESSION_HANDOVER_PROMPT.md:149: {{hub_url}}/blob/main/pr-ops/session-digests.md
+templates/htom/AI_SESSION_HANDOVER_PROMPT.md:149: {{hub_url}}/blob/main/ops/session-digests.md
 templates/htom/README.md:27: {{hub_url}}
 templates/htom/README.md:136: {{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md
 templates/htom/README.md:137: {{hub_url}}/blob/main/standards/session-handover-standard.md

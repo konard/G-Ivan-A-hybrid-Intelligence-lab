@@ -36,8 +36,8 @@ Governance-правила наследуются от Хаба и не дубл�
 
 ## AI-Assisted Work
 
-ИИ-агенты сохраняют human decision rights, не публикуют sensitive data, работают
-внутри requested scope и наследуют контракты Хаба `hybrid-Intelligence-lab`.
+ИИ-агент начинает с `/AGENTS.md`, сохраняет human decision rights, не публикует
+sensitive data, работает внутри requested scope и наследует контракты Хаба.
 
 ## Pull Request Checklist
 

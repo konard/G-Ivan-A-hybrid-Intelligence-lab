@@ -27,7 +27,7 @@ parallelization, orchestrator-workers, evaluator-optimizer. Сложность �
 ## Почему это релевантно экосистеме
 
 - **Прямое совпадение с Anti-Inflation principle** Хаба
-  ([pr-ops/repo-model.md](../../../pr-ops/repo-model.md)): «не добавлять
+  ([ops/repo-model.md](../../../ops/repo-model.md)): «не добавлять
   сложность без операционной боли». Источник формулирует тот же принцип для
   архитектуры агентов.
 - Совпадает с нашим разделением **descriptive vs executable** документов

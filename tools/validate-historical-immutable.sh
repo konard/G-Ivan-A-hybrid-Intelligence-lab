@@ -111,6 +111,59 @@ is_pre_decision_record() {
   return 0
 }
 
+# Объявленная миграция пути безопасна для исторического документа, только если
+# обратные подстановки из HEAD дают точное содержимое base-ревизии.
+load_path_migrations() {
+  git show "$head_ref:.hub-profile.json" 2>/dev/null | python3 -c '
+import json
+import sys
+
+try:
+    profile = json.load(sys.stdin)
+except (json.JSONDecodeError, TypeError):
+    raise SystemExit(0)
+for item in profile.get("path_migrations", []):
+    if not isinstance(item, dict):
+        continue
+    source, target = item.get("from"), item.get("to")
+    if isinstance(source, str) and source and isinstance(target, str) and target and source != target:
+        print(source + "\t" + target)
+'
+}
+
+is_declared_path_migration() {
+  local path="$1" base_file head_file source target
+  ((${#path_migrations[@]} > 0)) || return 1
+  base_file="$(mktemp)"
+  head_file="$(mktemp)"
+  git show "$merge_base:$path" >"$base_file" 2>/dev/null || {
+    rm -f "$base_file" "$head_file"
+    return 1
+  }
+  git show "$head_ref:$path" >"$head_file" 2>/dev/null || {
+    rm -f "$base_file" "$head_file"
+    return 1
+  }
+  for migration in "${path_migrations[@]}"; do
+    IFS=$'\t' read -r source target <<<"$migration"
+    SOURCE_PATH="$source" TARGET_PATH="$target" python3 - "$head_file" <<'PY'
+import os
+import sys
+
+path = sys.argv[1]
+with open(path, encoding="utf-8") as source_file:
+    content = source_file.read()
+content = content.replace(os.environ["TARGET_PATH"], os.environ["SOURCE_PATH"])
+with open(path, "w", encoding="utf-8") as target_file:
+    target_file.write(content)
+PY
+  done
+  cmp -s "$base_file" "$head_file"
+  local result=$?
+  rm -f "$base_file" "$head_file"
+  return "$result"
+}
+
 # Совместимый редирект: deprecated/superseded frontmatter + короткое тело со ссылкой.
 is_compatibility_redirect() {
   local path="$1" content status body
@@ -135,6 +188,7 @@ git rev-parse --verify --quiet "$head_ref^{commit}" >/dev/null || fail "head-р�
 
 merge_base="$(git merge-base "$base_commit" "$head_ref")" ||
   fail "не найден merge-base между '$base_ref' и '$head_ref'; нужен checkout с fetch-depth: 0"
+mapfile -t path_migrations < <(load_path_migrations)
 
 violations=()
 added=()
@@ -157,6 +211,8 @@ while IFS=$'\t' read -r status path rename_target; do
           allowed+=("$candidate (явный allowlist)")
         elif is_pre_decision_record "$candidate"; then
           allowed+=("$candidate (запись до decision gate)")
+        elif is_declared_path_migration "$candidate"; then
+          allowed+=("$candidate (объявленная path-миграция)")
         elif is_compatibility_redirect "$candidate"; then
           allowed+=("$candidate (совместимый редирект)")
         else

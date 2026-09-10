@@ -11,7 +11,7 @@ source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/557"
 based_on:
   - research/ba-requirements/methodology-unification/30-decision-framework.md
 related_artifacts:
-  - "pr-ops/backlog.md"
+  - "ops/backlog.md"
   - "research/ba-requirements/2026-09-07-ecosystem-knowledge-inventory.md"
 related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/557"
@@ -20,7 +20,7 @@ related_issues:
 # Роадмап каскада, открытые вопросы и самоаудит
 
 Файл отвечает на ФТ-4 issue #557. Задачи каскада заведены в
-[`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md)
+[`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md)
 как `B-121`…`B-135`; ниже — их обоснование, порядок и точки останова.
 
 **Статус роадмапа.** Согласно пункту 5 согласованного диалога, утверждение
@@ -154,7 +154,7 @@ related_issues:
 ## Источники
 
 - [issue #557](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/557)
-- [`pr-ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/pr-ops/backlog.md)
+- [`ops/backlog.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md)
 - [`mango_ba_prompts/runs/`](https://github.com/G-Ivan-A/mango_ba_prompts/tree/main/runs)
 - [BABOK v3, IIBA](https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/)
 - [ISO/IEC/IEEE 29148:2018](https://www.iso.org/standard/72089.html)

@@ -34,7 +34,7 @@ temperature: 0.1
   совместимо.
 - Стандарт-адресат: `standards/research-profile.md` (legacy)
   (структура research-документа, frontmatter, цитирование).
-- Anti-Inflation principle Хаба: [`pr-ops/repo-model.md`](../../pr-ops/repo-model.md).
+- Anti-Inflation principle Хаба: [`ops/repo-model.md`](../../ops/repo-model.md).
 - Эталон проблемы: [`AI_SESSION_HANDOVER_PROMPT.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/AI_SESSION_HANDOVER_PROMPT.md).
 
 **Метод / Method.** `internal-analysis` + `comparative-analysis`: снимок дерева
@@ -102,7 +102,7 @@ LLM, (2) объяснение для человека, (3) запись исто
 | # | Рекомендация | Тип | Эффект (оценка) | Куда фиксируется (реализация — отд. задачей) |
 | --- | --- | --- | --- | --- |
 | R1 | **Executable-first layout**: вынести исполнимый блок в начало файла или в отдельный `*.exec.md`, пояснения — ниже/в `*.full.md`. Применить к `AI_SESSION_HANDOVER_PROMPT.md` первым. | Архитектура | −60% на онбординг (H1) | `standards/` спока + сам файл |
-| R2 | **Single Source of Truth + ссылки вместо копий**: для каждого концепта — один канонический носитель, остальные ссылаются (а не дублируют тело). | Дедупликация | −40–70% retrieval noise (H2) | `pr-ops/artifact-map.md` спока |
+| R2 | **Single Source of Truth + ссылки вместо копий**: для каждого концепта — один канонический носитель, остальные ссылаются (а не дублируют тело). | Дедупликация | −40–70% retrieval noise (H2) | `ops/artifact-map.md` спока |
 | R3 | **Frontmatter-контракт `layer` + `tokens_estimate`**: размечать слой (`exec`/`explanation`/`history`) и бюджет, чтобы агент/инструмент грузил нужный слой. | Технич. + процесс | избирательная загрузка | `standards/frontmatter` спока |
 | R4 | **Бюджет-валидатор размера** в CI: warn при превышении порога токенов для `executable: true` документов. | Процесс | предотвращение регресса | `tools/` спока, CI |
 | R5 | **Контекст-контракт онбординга**: «тощий» entry-prompt (~3 000) + ссылки на слои по требованию, вместо чтения всего bootstrap-набора. | Архитектура | −50–70% (§ 2.2, ~46k) | `AI_SESSION_HANDOVER_PROMPT.md` |
@@ -130,7 +130,7 @@ LLM, (2) объяснение для человека, (3) запись исто
 Разделение `Full`/`Executable` (R1) естественно ложится на разделение
 Public/Private и на единый контракт `runs/RUN-XXXX/`. Дедупликация (R2)
 усиливает принцип «один мост к Хабу» и Anti-Inflation principle
-([`pr-ops/repo-model.md`](../../pr-ops/repo-model.md)). Намеренный split
+([`ops/repo-model.md`](../../ops/repo-model.md)). Намеренный split
 `ADR ↔ Standard` Хаба **сохраняется** — мы оптимизируем загрузку слоёв, а не
 ломаем практику обоснования решений.
 
@@ -276,9 +276,9 @@ handover — нужно лишь, чтобы пояснения не «обво�
 | **S1. Canonical carrier + ссылки** | Один носитель тела концепта; копии → ссылки | Да (ADR остаётся как rationale) | Стоимость retrieval (OQ3) |
 | **S2. Слоевое разделение ролей** | ADR = почему, Standard = что, Transfer = мост к Хабу — без повторения тела | Да | Требует дисциплины авторов |
 | **S3. Summary-указатель** | Короткий индекс-саммари + ссылка на полное | Да | Саммари может устареть |
-| **S4. Карта артефактов как реестр SSOT** | `pr-ops/artifact-map.md` фиксирует «где источник истины» | Да | Нужна актуализация |
+| **S4. Карта артефактов как реестр SSOT** | `ops/artifact-map.md` фиксирует «где источник истины» | Да | Нужна актуализация |
 
-**Single Source of Truth для LLM:** объявить в `pr-ops/artifact-map.md`
+**Single Source of Truth для LLM:** объявить в `ops/artifact-map.md`
 спока для каждого концепта **один** `canonical`-носитель и пометить остальные
 `status: derived` + ссылка. Агент по контракту грузит canonical; derived —
 только при явной нужде в обосновании/истории. Намеренный split `ADR ↔ Standard`
@@ -365,7 +365,7 @@ baseline) и context caching на стороне SDK.
 
 - [RFC: Независимое видение структуры](2026-06-19-repository-structure-vision.md) (PR #254) — целевая архитектура.
 - `standards/research-profile.md` — legacy-структура и frontmatter research-документа.
-- [`pr-ops/repo-model.md`](../../pr-ops/repo-model.md) — Anti-Inflation principle.
+- [`ops/repo-model.md`](../../ops/repo-model.md) — Anti-Inflation principle.
 - Issue [#255](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/255) — постановка задачи (traceability).
 
 **Внешние / External:**

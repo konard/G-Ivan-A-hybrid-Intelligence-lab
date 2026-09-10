@@ -22,8 +22,8 @@ related_artifacts:
   - "research/governance/2026-06-06-contract-documentation-format.md"
   - "research/external-knowledge/external-sources-registry.md"
   - "standards/project-structure-inheritance.md"
-  - "pr-ops/repo-model.md"
-  - "pr-ops/artifact-map.md"
+  - "ops/repo-model.md"
+  - "ops/artifact-map.md"
 ---
 
 # Концепция базовых каталогов для архетипов проектов (дополнение к mango-исследованию)
@@ -728,7 +728,7 @@ flowchart LR
 - [research/mango/2026-06-19-repository-structure-vision.md](../mango/2026-06-19-repository-structure-vision.md) — видение структуры спока mango.
 - [research/hub/2026-06-20-ecosystem-architecture-research.md](2026-06-20-ecosystem-architecture-research.md) — архитектура экосистемы (PR #258).
 - [standards/project-structure-inheritance.md](../../standards/project-structure-inheritance.md) — наследование структуры.
-- [pr-ops/repo-model.md](../../pr-ops/repo-model.md), [pr-ops/artifact-map.md](../../pr-ops/artifact-map.md).
+- [ops/repo-model.md](../../ops/repo-model.md), [ops/artifact-map.md](../../ops/artifact-map.md).
 - [standards/glossary.md](../../standards/glossary.md) — термины.
 
 **Внешние (приложены к issue #263):**
@@ -824,14 +824,14 @@ TheOdinProject/curriculum.
 
 ```text
 {repo}/
-├── pr-ops/         ← управление проектом (плоский)
+├── ops/         ← управление проектом (плоский)
 ├── ai-ops/         ← правила AI-агента в проекте (плоский)
 ├── ai-governance/  ← политики, compliance, риски AI
 ├── standards/      ← стандарты (плоский, исключения через 2FA)
 ├── docs/           ← analysis / reports / adr / rfc / practice
 ├── kb/             ← боевые знания (taxonomy/roles/rules/processes/experiments/patterns)
 ├── runs/           ← результаты выполнения (данные, не знания)
-├── templates/      ← шаблоны (pr-ops/ai-ops/kb)
+├── templates/      ← шаблоны (ops/ai-ops/kb)
 ├── tools/          ← инструменты (с подкаталогами)
 └── app/            ← веб-приложение (если есть)
 ```
@@ -846,7 +846,7 @@ TheOdinProject/curriculum.
 | Δ1 | `governance/` | базовый каталог-store (§3); §8-R1 «сохранить, держать узким» | **исключён** (§7.1.1) | замена |
 | Δ2 | `AI_GOVERNANCE.md` | корневой файл-исключение (file-naming) | → `ai-ops/operating-contract.md` (§7.1.2) | замена |
 | Δ3 | `ai-governance/` | — | **создан** для политик/compliance/рисков AI (§7.1.3) | дополнение |
-| Δ4 | управление | (в `governance/`) | разделено: `pr-ops/` (люди/процессы) + `ai-ops/` (поведение AI) | дополнение |
+| Δ4 | управление | (в `governance/`) | разделено: `ops/` (люди/процессы) + `ai-ops/` (поведение AI) | дополнение |
 | Δ5 | уровни | бинарь Descriptive/Executable (стандарт) | **IL-0..IL-3** (§3) | дополнение |
 | Δ6 | сущности | Roles (в governance) | **Roles** + **Ref** (§4) | дополнение |
 | Δ7 | размещение | «плоский vs подкаталоги» (§6.3 Части I) | «документ в корне **наименьшего** контекста исполнения» (§2) | дополнение |
@@ -883,7 +883,7 @@ TheOdinProject/curriculum.
 | --- | --- | --- | --- | --- |
 | 1 | «Почему НЕ `governance/`» — ссылка на Ghost/Supabase/Directus/Appwrite/Strapi/Cal.com (§1.3) | Reference class: архетип A — governance-хабы (CNCF/TOC, Node.js, Kubernetes, OpenSSF) | ❌ | **Неверный референс-класс:** все 6 репозиториев — архетип **C** (Product Spoke) по §10.3 Части I (строки 1–5, 8). Хаб — архетип **A**. См. §19. |
 | 2 | Удаление каталога `governance/` (§7.1.1) | §8-R1 Части I: 0/19 репозиториев имеют каталог `governance/`, но **есть файл `GOVERNANCE.md`/charter** | ⚠️ | Удаление **каталога** согласуется с 0/19; но архетип A держит **видимую точку входа** governance (файл/charter), которую Соглашение растворяет в `ai-governance/`. |
-| 3 | `pr-ops/` + `ai-ops/` раздельно (§1.3) | «правила для AI-агентов» = `AGENTS.md`/`CLAUDE.md` (agents.md); `AIOps` = «AI for IT Operations» (Gartner) | ⚠️ | Разделение субъектов оправдано, но имя `ai-ops` **коллидирует** с AIOps; «правила агента» индустриально кладут в `AGENTS.md`. См. §19. |
+| 3 | `ops/` + `ai-ops/` раздельно (§1.3) | «правила для AI-агентов» = `AGENTS.md`/`CLAUDE.md` (agents.md); `AIOps` = «AI for IT Operations» (Gartner) | ⚠️ | Разделение субъектов оправдано, но имя `ai-ops` **коллидирует** с AIOps; «правила агента» индустриально кладут в `AGENTS.md`. См. §19. |
 | 4 | `ai-governance/` (§7.1.3) | NIST AI RMF, ISO/IEC 42001, EU AI Act | ✅ | «AI governance» — устоявшийся термин политик/рисков/compliance. |
 | 5 | `runs/` ≠ `kb/` (KB vs DB) (§1.3, §5.1) | DIKW; DAMA-DMBOK (data ≠ knowledge); immutable run-records | ✅ | Разделение данных и знаний поддержано Частью I (R3) и нормой. |
 | 6 | «Документ в корне наименьшего контекста» (§2) | Colocation / proximity principle; package-local config в монорепо; locality of behaviour | ✅ | Признанный принцип; неоднозначность снимается ссылкой (SSOT/DRY). |
@@ -1068,14 +1068,14 @@ golden** standard»; «'Gold standard' is an appropriate term»). В ML кано
   при этом **0/19** репозиториев имеют такой каталог, **но есть файл
   `GOVERNANCE.md`** (роли).
 - **Соглашение, §7.1.1:** `governance/` **исключён**; надзор разнесён на
-  `pr-ops/` (процессы) и `ai-governance/` (политики AI).
+  `ops/` (процессы) и `ai-governance/` (политики AI).
 
 **Синтез (trade-off, решение — фаундер через RFC → ADR):** удаление **каталога**
 `governance/` согласуется и с §8-R1 (0/19), и с продуктовой нормой; **но** Хаб —
 архетип A, где governance имеет **видимую точку входа** (по §8-R1 — файл
 `GOVERNANCE.md`; в индустрии — charter: Node.js, OpenSSF, OpenTelemetry).
 Рекомендация: если каталог удаляется, **сохранить явный якорь org-governance**
-(например, корневой `GOVERNANCE.md` или `pr-ops/governance.md`), **отличный** от
+(например, корневой `GOVERNANCE.md` или `ops/governance.md`), **отличный** от
 `ai-governance/`; не позволять «AI governance» поглотить «project governance» —
 это разные субъекты, что утверждает и сам §1.3 Соглашения.
 

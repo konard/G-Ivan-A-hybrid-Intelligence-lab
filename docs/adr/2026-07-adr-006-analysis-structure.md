@@ -19,7 +19,7 @@ decision-type: methodology
 | Decision date | 2026-07-02 |
 | Owner | G-Ivan-A |
 | Source | [RFC B-025](../rfc/2026-07-02-rfc-analysis-structure.md); issue [#357](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/357); контекст issue [#296](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/296), [#350](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/350) |
-| Impacted artifacts | `standards/analysis-standard.md` (B-027, future), `docs/analysis/*`, `research/**` (legacy Analysis), `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `standards/research-standard.md` (routing R/A/A уже задан), `pr-ops/backlog.md`, `pr-ops/artifact-map.md` |
+| Impacted artifacts | `standards/analysis-standard.md` (B-027, future), `docs/analysis/*`, `research/**` (legacy Analysis), `standards/frontmatter-docs-standard.md`, `standards/glossary.md`, `standards/research-standard.md` (routing R/A/A уже задан), `ops/backlog.md`, `ops/artifact-map.md` |
 | Supersedes | none |
 | Superseded by | none |
 
@@ -157,8 +157,8 @@ ADR не переименовывает и не перемещает сущес�
   правила acceptance review для ADR.
 - ADR явно избегает копирования proposal-деталей RFC B-025, таблицы альтернатив и
   матрицы downstream-задач; proposal, alternatives и trade-offs остаются в RFC.
-- Регистрация в репозитории валидируется через `pr-ops/artifact-map.md`,
-  `pr-ops/backlog.md`, `CHANGELOG.md` и
+- Регистрация в репозитории валидируется через `ops/artifact-map.md`,
+  `ops/backlog.md`, `CHANGELOG.md` и
   `tools/validate-repository-structure.sh`.
 - Локальная проверка в этом PR:
 
@@ -209,5 +209,5 @@ flowchart LR
   — каноническое определение Analysis / Research / Audit (B-020).
 - [`standards/adr-structure-standard.md`](../../standards/adr-structure-standard.md)
   — структура ADR и правила section-level delegation.
-- [`pr-ops/backlog.md`](../../pr-ops/backlog.md) — цепочка Analysis
+- [`ops/backlog.md`](../../ops/backlog.md) — цепочка Analysis
   B-024, B-025, B-026, B-027, B-028 и координация с B-034.

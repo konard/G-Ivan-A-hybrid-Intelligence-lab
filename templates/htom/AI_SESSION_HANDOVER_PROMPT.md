@@ -52,21 +52,22 @@ executable: true
   в новый чат. Вопрос инициируешь ты, решение — за пользователем.
 - При согласии собери суммарию по структуре: Контекст, Решения, Открытые
   вопросы, Следующие шаги — и предложи сохранить её в
-  pr-ops/session-digests.md (через issue → PR → review, не коммить напрямую).
-- Если в суммарии есть открытые вопросы, добавь их в pr-ops/backlog.md
+  ops/session-digests.md (через issue → PR → review, не коммить напрямую).
+- Если в суммарии есть открытые вопросы, добавь их в ops/backlog.md
   (секция «Открытые вопросы»). Если вопрос уже есть в BACKLOG — не дублируй,
   добавь ссылку на дайджест в секцию/колонку «Связанные дайджесты».
-- При старте нового чата читай сначала индекс pr-ops/session-digests.md,
+- При старте нового чата читай сначала индекс ops/session-digests.md,
   полные суммарии — по необходимости. Не пересказывай контекст из памяти,
   ссылайся на артефакты репозитория.
 
 Сделай ровно по шагам:
-1. Контекст проекта. Определи тип проекта по README/AI_GOVERNANCE: HTOM-команда,
+1. Точка входа. Прочитай `/AGENTS.md`, затем определи тип проекта по
+   `.hub-profile.json` и README: HTOM-команда,
    Spoke-репозиторий или Хаб. Не применяй правила spoke к HTOM-команде без
    явного основания.
 2. Чек-лист governance. Прочитай локальные AI_GOVERNANCE.md, CONTRIBUTING.md и
-   README.md. Если доступны, прочитай pr-ops/repo-model.md,
-   pr-ops/artifact-map.md, standards/project-structure-inheritance.md и
+   README.md. Если доступны, прочитай ops/repo-model.md,
+   ops/artifact-map.md, standards/project-structure-inheritance.md и
    standards/session-handover-standard.md в Хабе или текущем репозитории.
 3. Чек-лист контекста. Прочитай текст issue и последние комментарии, ближайший
    README (репозитория и затронутого проекта/команды) и блок «Быстрый контекст»,
@@ -146,6 +147,6 @@ executable: true
   эскалация, DoD.
 - Хаб [`ai-rules/agent-onboarding-protocol.md`]({{hub_url}}/blob/main/ai-rules/agent-onboarding-protocol.md)
   — полный 4-шаговый протокол и канонический *Handover Prompt* (источник истины).
-- Хаб [`pr-ops/session-digests.md`]({{hub_url}}/blob/main/pr-ops/session-digests.md)
+- Хаб [`ops/session-digests.md`]({{hub_url}}/blob/main/ops/session-digests.md)
   — единая точка хранения суммарий сессий для передачи контекста между чатами.
   Механизм только для внешних агентов; агент-исполнитель его не использует.

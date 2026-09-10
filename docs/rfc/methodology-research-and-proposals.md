@@ -39,7 +39,7 @@ decision должна быть делегирована в active artifact (`sta
 ([docs/rfc/README.md](README.md)). Этот RFC **не** создаёт сам по себе шесть
 методологических стандартов; он определяет, какие из них и в какой
 последовательности должны появиться, под какой реальной операционной болью
-(Anti-Inflation, [pr-ops/repo-model.md](../../pr-ops/repo-model.md)).
+(Anti-Inflation, [ops/repo-model.md](../../ops/repo-model.md)).
 
 ## Decision Scope
 
@@ -620,7 +620,7 @@ Evidence (как доказательство ценности). Influence/ре�
   Product Layer Mango (4-уровневая форма, переиспользуется для BA-классификации).
 - [AI Governance](../../ai-governance/ai-governance.md) — Operating Modes, Creative bypass,
   DoD, разделение Framework / Methodology.
-- [pr-ops/repo-model.md](../../pr-ops/repo-model.md) — Anti-Inflation principle.
+- [ops/repo-model.md](../../ops/repo-model.md) — Anti-Inflation principle.
 - [standards/project-structure-inheritance.md](../../standards/project-structure-inheritance.md)
   — Base Governance + Local Extension, scope-правила.
 - [research/external-knowledge/external-sources-registry.md](../../research/external-knowledge/external-sources-registry.md)

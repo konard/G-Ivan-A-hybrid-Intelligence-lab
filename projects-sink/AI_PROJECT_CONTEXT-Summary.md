@@ -23,7 +23,7 @@ temperature: 0.1
   [standards/executable-documentation-standard.md](../standards/executable-documentation-standard.md),
   [standards/frontmatter-standard.md](../standards/frontmatter-standard.md),
   [docs/rfc/knowledge-lifecycle-proposal.md](../docs/rfc/knowledge-lifecycle-proposal.md),
-  [pr-ops/repo-model.md](../pr-ops/repo-model.md) (Anti-Inflation).
+  [ops/repo-model.md](../ops/repo-model.md) (Anti-Inflation).
 - **Границы (НЕ делаем сейчас):** Хаб — не production-кодовая база (код живёт в
   споках); не вводим CI-скраперы и авто-парсинг документов; не плодим каталоги и
   документы «на вырост» без доказанной операционной боли (Anti-Inflation).

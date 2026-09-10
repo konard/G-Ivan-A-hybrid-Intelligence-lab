@@ -9,7 +9,7 @@ method: gap-analysis + placement-rationale
 scope: ecosystem
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563"
 related_artifacts:
-  - "pr-ops/backlog.md"
+  - "ops/backlog.md"
   - "docs/adr/2026-09-adr-013-run-modes-deprecation.md"
   - "standards/product-taxonomy-reference.md"
 related_issues:

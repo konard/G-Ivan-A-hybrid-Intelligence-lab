@@ -26,7 +26,7 @@ Mango от сырого сигнала заказчика до согласов�
 | В фокусе | Запросы на доработку системы и новые фичи; декомпозиция составных требований; обработка неопределенности (этапы `0.1 → 0.5`, бизнес-слой `1`). |
 | Вне фокуса | Валидация готовых тендерных ТЗ и расчет tender-fit — это отдельный процесс, уже описанный в [2026-05-22-requirements-flow.md](2026-05-22-requirements-flow.md). |
 | Опора | Уточненный поток требования и 4 уровня автоматизации из issue #55; Unified Capability Taxonomy из [2026-05-26-taxonomy-concept.md](2026-05-26-taxonomy-concept.md). |
-| Принцип | Anti-Inflation ([pr-ops/repo-model.md](../../pr-ops/repo-model.md)): не плодим новый стандарт и не дублируем существующие исследования; этот файл — research draft, а не canonical правило. |
+| Принцип | Anti-Inflation ([ops/repo-model.md](../../ops/repo-model.md)): не плодим новый стандарт и не дублируем существующие исследования; этот файл — research draft, а не canonical правило. |
 
 ### Уточненный поток требования (рабочая модель из issue #55)
 
@@ -469,7 +469,7 @@ human-in-the-loop точки, не убирая обязательные точ�
   ТЗ как источник реалистичных кейсов.
 - [standards/glossary.md](../../standards/glossary.md) — контролируемый словарь
   терминов governance и AI-assisted work.
-- [pr-ops/repo-model.md](../../pr-ops/repo-model.md) — Anti-Inflation
+- [ops/repo-model.md](../../ops/repo-model.md) — Anti-Inflation
   principle и правила размещения.
 - [mango_ba_prompts](https://github.com/G-Ivan-A/mango_ba_prompts) — связь Mango как
   spoke-проекта и подход mini-agent + `kb/`.

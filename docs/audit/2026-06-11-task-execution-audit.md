@@ -250,7 +250,7 @@ is removed by this audit.
 | 3 | Стандарт требований к `AI_SESSION_HANDOVER_PROMPT.md` | Не найден | P1 |
 | 4 | Проверка шаблонов в spoke-репо через Smart Sync | Частично покрыто `experiments/test-smart-sync.sh`, нет fixture-spoke CI | P1 |
 | 5 | Политика generated HTML/PNG artifacts | Не формализована | P2 |
-| 6 | Актуализация `pr-ops/backlog.md` после закрытых CE-задач | Требует отдельной проверки: в видимом фрагменте есть TODO для уже закрытых CE issues | P2 |
+| 6 | Актуализация `ops/backlog.md` после закрытых CE-задач | Требует отдельной проверки: в видимом фрагменте есть TODO для уже закрытых CE issues | P2 |
 
 ## Проверка MkDocs и generated artifacts
 

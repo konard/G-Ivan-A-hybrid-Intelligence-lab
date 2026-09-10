@@ -97,7 +97,7 @@ RFC.
 ## Consequences
 
 Это архитектурные последствия принятого решения. Конкретный список задач живёт в
-[`pr-ops/backlog.md`](../../pr-ops/backlog.md) (цепочка B-018..B-023) и
+[`ops/backlog.md`](../../ops/backlog.md) (цепочка B-018..B-023) и
 здесь не дублируется как план работ.
 
 **Положительные:**
@@ -124,7 +124,7 @@ RFC.
 ADR-002 addendum B-019, glossary B-020, удаление профиля B-021, миграция `exp-*`
 B-022, валидаторы B-023). Состав и последовательность этих задач — в RFC B-016
 (раздел Impacted Artifacts, таблица downstream chain) и
-[`pr-ops/backlog.md`](../../pr-ops/backlog.md); здесь они не дублируются
+[`ops/backlog.md`](../../ops/backlog.md); здесь они не дублируются
 как план работ.
 
 ## Compliance and Validation
@@ -189,6 +189,6 @@ B-018 и ADR-002 addendum B-019.
   routing `runs/` и lifecycle артефактов; получает addendum B-019.
 - [`standards/adr-structure-standard.md`](../../standards/adr-structure-standard.md) —
   стандарт структуры ADR.
-- [`pr-ops/backlog.md`](../../pr-ops/backlog.md) — цепочка B-016..B-023.
+- [`ops/backlog.md`](../../ops/backlog.md) — цепочка B-016..B-023.
 - Issue [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294) —
   зонтичная задача стандартизации research.

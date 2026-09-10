@@ -28,7 +28,7 @@ related_artifacts:
   - "docs/adr/2026-07-adr-005-audit-structure.md"
   - "docs/adr/2026-07-adr-004-reports-structure.md"
   - "docs/adr/2026-07-adr-003-research-structure.md"
-  - "pr-ops/backlog.md"
+  - "ops/backlog.md"
 ---
 
 # Отчёт: кросс-стресс-тесты стандартов R/A/A/Report на рассинхрон, противоречия и неоднозначность
@@ -47,7 +47,7 @@ frontmatter, конвенции именования ключей и месту 
 
 **Критический факт, обнаруженный первым:** из четырёх стандартов **физически
 существуют только три**. `standards/analysis-standard.md` (B-027) не создан
-(статус `TODO` в [backlog](../../pr-ops/backlog.md#L235)), при этом уже
+(статус `TODO` в [backlog](../../ops/backlog.md#L235)), при этом уже
 принятый `report-standard.md` **нормативно ссылается на его секцию** («Analysis
 §3») как на источник граничных таблиц. То есть система стандартов неполна, а
 существующие стандарты уже содержат «висящие» ссылки на ненаписанный стандарт.
@@ -331,7 +331,7 @@ Standard» vs «Report Standard»). Аналогичные body-секции н�
 - [RFC B-025 (analysis-structure)](../rfc/2026-07-02-rfc-analysis-structure.md)
   и [ADR-006](../../docs/adr/2026-07-adr-006-analysis-structure.md) — нормативная
   спецификация ненаписанного `analysis-standard.md` (профили, `analysis-subtype`).
-- [`pr-ops/backlog.md`](../../pr-ops/backlog.md) — статус B-027 = `TODO`
+- [`ops/backlog.md`](../../ops/backlog.md) — статус B-027 = `TODO`
   (analysis-standard не создан), B-018/B-032/B-043 = `DONE (draft)`.
 
 ## Related Artifacts

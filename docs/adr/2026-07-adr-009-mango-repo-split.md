@@ -21,7 +21,7 @@ decision-type: governance
 | Owner | G-Ivan-A |
 | Source | Решение фаундера от 2026-07-10, зафиксированное в issues [#411](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/411), [#413](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/413) и в постановке [#424](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/424) |
 | Upstream decisions | [ADR-001](2026-06-adr-001-ecosystem-infrastructure-methodology.md), [ADR-002](2026-06-adr-002-artifact-document-methodology.md), [ADR-007](2026-07-adr-007-hub-root-structure.md) |
-| Impacted artifacts | Будущий публичный репозиторий `ai-ba-playbooks` (B-081), существующий `mango_ba_prompts` при переводе в Private (B-082), план миграции B-080, миграция B-083, синхронизация B-084, `pr-ops/backlog.md`, `pr-ops/artifact-map.md` |
+| Impacted artifacts | Будущий публичный репозиторий `ai-ba-playbooks` (B-081), существующий `mango_ba_prompts` при переводе в Private (B-082), план миграции B-080, миграция B-083, синхронизация B-084, `ops/backlog.md`, `ops/artifact-map.md` |
 | Supersedes | none |
 | Superseded by | none |
 
@@ -197,7 +197,7 @@ human decision gate по
 Downstream-работа не дублируется здесь: план миграции остаётся B-080, создание
 публичного репозитория — B-081, перевод приватного в Private — B-082,
 физическая миграция — B-083, настройка и
-тестирование синхронизации — B-084 в [backlog](../../pr-ops/backlog.md).
+тестирование синхронизации — B-084 в [backlog](../../ops/backlog.md).
 
 ## Compliance and Validation
 
@@ -242,6 +242,6 @@ record; календарный срок сам по себе не являетс
 - [ADR-002: Методология создания и управления артефактами](2026-06-adr-002-artifact-document-methodology.md)
 - [ADR-007: Целевая структура корня Хаба](2026-07-adr-007-hub-root-structure.md)
 - [ADR Structure Standard](../../standards/adr-structure-standard.md)
-- [Backlog: B-079..B-084, Спринт 8](../../pr-ops/backlog.md)
-- [Artifact Map](../../pr-ops/artifact-map.md)
-- [Repo Model](../../pr-ops/repo-model.md)
+- [Backlog: B-079..B-084, Спринт 8](../../ops/backlog.md)
+- [Artifact Map](../../ops/artifact-map.md)
+- [Repo Model](../../ops/repo-model.md)

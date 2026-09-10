@@ -224,8 +224,8 @@ python3 tools/generate-manifest.py --check
 - [Evals Contract Standard](evals-contract-standard.md) — прецедент
   добровольного применения F10 за пределами R/A/A/Report; его вопрос Q5 закрыт
   областью применения этого документа
-- [Backlog](../pr-ops/backlog.md)
-- [Artifact Map](../pr-ops/artifact-map.md)
+- [Backlog](../ops/backlog.md)
+- [Artifact Map](../ops/artifact-map.md)
 - [Issue #423 / B-052: создание мета-стандарта](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/423)
 - [Issue #435 / B-052: расширение области F10 на все стандарты экосистемы](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/435)
 - [Issue #417: решение фаундера F10 explicit](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/417)

@@ -225,7 +225,7 @@ Local checks:
 Нормативный enforcement принятой модели (`exp/`, запрет `outputs/`, routing)
 делегирован обновлению валидаторов (B-023). Расширение валидаторов за пределы
 frontmatter, naming и registry checks отслеживается как tech debt в
-[pr-ops/backlog.md](../pr-ops/backlog.md).
+[ops/backlog.md](../ops/backlog.md).
 
 ## Related Artifacts
 
@@ -252,7 +252,7 @@ frontmatter, naming и registry checks отслеживается как tech de
 - [frontmatter-docs-standard.md](frontmatter-docs-standard.md) — контракт
   frontmatter по классам документов.
 - [file-naming.md](file-naming.md) — дата-первое именование.
-- [pr-ops/backlog.md](../pr-ops/backlog.md) — цепочка B-016..B-023.
+- [ops/backlog.md](../ops/backlog.md) — цепочка B-016..B-023.
 - Issues
   [#294](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/294) (зонтичная
   задача стандартизации research),
@@ -281,7 +281,7 @@ frontmatter, naming и registry checks отслеживается как tech de
   по роли данных (например, `data/`), но обязательная папка `outputs/`
   ЗАПРЕЩЕНА в любом случае. Дефолт — плоско; группировка появляется только при
   реальной операционной боли (Anti-Inflation principle,
-  [pr-ops/repo-model.md](../pr-ops/repo-model.md)).
+  [ops/repo-model.md](../ops/repo-model.md)).
 
 ## Граница `exp/` vs `runs/`
 

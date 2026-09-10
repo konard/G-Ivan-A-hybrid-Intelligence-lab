@@ -51,7 +51,7 @@ governance-решений, не меняет
 
 Правила обязательны для **любого изменения, которое прекращает, замещает или
 удаляет уже существующий артефакт репозитория**: файл в `standards/`,
-`docs/`, `ai-rules/`, `ai-governance/`, `pr-ops/`, `templates/`,
+`docs/`, `ai-rules/`, `ai-governance/`, `ops/`, `templates/`,
 `.github/ISSUE_TEMPLATE/`, `practices/`, `guides/`, `tools/` и `research/`, а
 также каталог, целиком выполняющий роль артефакта.
 
@@ -275,7 +275,7 @@ flowchart LR
 2. `superseded` содержит разрешимую ссылку на замену;
 3. удалённый путь не встречается как активная Markdown-ссылка в артефактах, не
    отнесённых к историческим;
-4. переход отражён в `CHANGELOG.md` и в `pr-ops/artifact-map.md`;
+4. переход отражён в `CHANGELOG.md` и в `ops/artifact-map.md`;
 5. `updated` и `version` изменены в том же коммите, что и `status`.
 
 Human-only:
@@ -319,7 +319,7 @@ python3 tools/generate-manifest.py --check
 - [Glossary](glossary.md)
 - [AI Governance](../ai-governance/ai-governance.md)
 - [Agent Work Rules](../ai-rules/agent-work-rules.md)
-- [Artifact Map](../pr-ops/artifact-map.md)
+- [Artifact Map](../ops/artifact-map.md)
 - [PR #491](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/491) и [PR #492](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/492) — эмпирическая база
 - [Issue #495: анализ пробелов контрактов](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/495)
 - [Issue #500: постановка этого стандарта](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/500)
@@ -417,7 +417,7 @@ python3 tools/generate-manifest.py --check
    подтверждение через легальный выход
    [§P.2 RFC #470](../docs/rfc/2026-08-06-rfc-task-statement-architecture.md);
 6. удаление зафиксировано в `CHANGELOG.md` (раздел `Removed`) и в
-   `pr-ops/artifact-map.md`.
+   `ops/artifact-map.md`.
 
 Физическое удаление ЗАПРЕЩЕНО, если верно хотя бы одно:
 

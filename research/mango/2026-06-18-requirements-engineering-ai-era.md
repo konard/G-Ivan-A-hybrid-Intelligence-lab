@@ -24,7 +24,7 @@ temperature: 0.1
    **(a) настоящий велосипед/пробел**, **(b) нужен мост (alias)**,
    **(c) обоснованная локализация** (не велосипед).
 3. Предлагает синхронизацию **под реальную операционную боль** (Anti-Inflation,
-   [pr-ops/repo-model.md](../../pr-ops/repo-model.md)): какие понятия Вигерса стоит
+   [ops/repo-model.md](../../ops/repo-model.md)): какие понятия Вигерса стоит
    добавить как явную ось/тип, какие — только как crosswalk, какие — оставить как
    есть.
 
@@ -409,6 +409,6 @@ mango — НФТ совместимости mango):
   — PR #246: 5-слойная модель и ось доверия E0–E4 (использованы для классификации).
 - [AI_GOVERNANCE.md](../../ai-governance/ai-governance.md) — Operating Modes, правило 4 (решения
   за человеком), Creative-mode.
-- [pr-ops/repo-model.md](../../pr-ops/repo-model.md) — Anti-Inflation principle.
+- [ops/repo-model.md](../../ops/repo-model.md) — Anti-Inflation principle.
 - [standards/glossary.md](../../standards/glossary.md) — цель опциональной ФТ-6
   (синхронизация терминов С4).
