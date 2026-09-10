@@ -115,6 +115,66 @@ PY
   fi
 fi
 
+GENERAL_LAYER_SECTIONS=(hard_rules forbidden guidelines hybrid_work)
+REQUIRED_SECTIONS=(scope hard_rules forbidden guidelines hybrid_work project_specific_rules routing artifact_homes issue_levels missing_tags context_scope validation models escalation)
+
+assert_sections() {
+  local path="$1"
+  local section
+  for section in "${REQUIRED_SECTIONS[@]}"; do
+    grep -Fq "<$section>" "$ROOT_DIR/$path" \
+      || fail "$path is missing the required section <$section>"
+    grep -Fq "</$section>" "$ROOT_DIR/$path" \
+      || fail "$path is missing the closing tag </$section>"
+  done
+}
+
+for agents_path in AGENTS.md templates/htom/AGENTS.md templates/spoke/AGENTS.md; do
+  assert_sections "$agents_path"
+done
+
+# The Hub-specific research-boundary rule must live in the project layer only, and
+# must not be shipped into spokes through the general layer of a template.
+if ! sed -n '/<project_specific_rules>/,/<\/project_specific_rules>/p' "$ROOT_DIR/AGENTS.md" \
+  | grep -q 'expands the considered boundary'; then
+  fail "the Hub research-boundary rule must live inside <project_specific_rules> of AGENTS.md"
+fi
+for template in templates/htom/AGENTS.md templates/spoke/AGENTS.md; do
+  if grep -q 'expands the considered boundary' "$ROOT_DIR/$template"; then
+    fail "$template must not ship the Hub-specific research-boundary rule"
+  fi
+  if ! sed -n '/<project_specific_rules>/,/<\/project_specific_rules>/p' "$ROOT_DIR/$template" \
+    | grep -q 'REQUIRED: define the rules of THIS project here'; then
+    fail "$template must reserve <project_specific_rules> with an explicit placeholder"
+  fi
+done
+
+# The size threshold is normed in the structure standard, not restated in the entrypoint.
+for agents_path in AGENTS.md templates/htom/AGENTS.md templates/spoke/AGENTS.md; do
+  if grep -Eq '4K tokens|8K tokens|4,000|8,000' "$ROOT_DIR/$agents_path"; then
+    fail "$agents_path must not restate the size thresholds; they belong to the structure standard"
+  fi
+done
+if ! grep -Fq "4,000 estimated tokens" "$ROOT_DIR/standards/agents-md-bootstrap-standard.md"; then
+  fail "standards/agents-md-bootstrap-standard.md must norm the size thresholds"
+fi
+
+# A dropped general-layer section is a validator failure, not a silent pass.
+if [[ -f "$ROOT_DIR/AGENTS.md" && -f "$ROOT_DIR/.hub-profile.json" ]]; then
+  for section in "${GENERAL_LAYER_SECTIONS[@]}"; do
+    dropped="$TMP_DIR/dropped-$section"
+    mkdir -p "$dropped"
+    cp "$ROOT_DIR/.hub-profile.json" "$dropped/.hub-profile.json"
+    sed "/^<$section>$/,/^<\/$section>$/d" "$ROOT_DIR/AGENTS.md" >"$dropped/AGENTS.md"
+    # The open tag is also mentioned in the prose of <scope>, so the closing tag is
+    # the signal that the section body itself is gone.
+    expect_validator_failure \
+      "dropped-$section" \
+      "$dropped" \
+      "AGENTS.md missing section: </$section>"
+  done
+fi
+
 if [[ -d "$ROOT_DIR/ops" ]]; then
   if git -C "$ROOT_DIR" grep -n 'pr-ops/' -- . \
     ':(exclude)CHANGELOG.md' \

@@ -1,6 +1,6 @@
 ---
 status: canonical
-version: 1.0
+version: 2.0
 updated: {{date}}
 temperature: 0.1
 entrypoint: true
@@ -15,13 +15,16 @@ This file is the single AI-agent entrypoint for this production spoke. Read it b
 - environment: `local`
 
 The values mirror `.hub-profile.json`. Rules are not copied into model- or environment-specific files.
+
+Rule scope is explicit. `<hard_rules>`, `<forbidden>`, `<guidelines>` and `<hybrid_work>` are the **general layer** delivered from the Hub: this project MUST NOT weaken, rewrite or subtract from them. `<project_specific_rules>` is the **only** place for rules of this project. Section list, size thresholds and frontmatter contract: {{hub_url}}/blob/main/standards/agents-md-bootstrap-standard.md.
 </scope>
 
 <hard_rules>
-1. Read the current issue, latest comments, local README, product contracts, and relevant Hub route before editing.
-2. Keep product code in `src/`, tests in `tests/`, and architecture decisions in `docs/adr/`.
-3. Use issue → PR → review, preserve human decision rights, and run CI checks before commit.
-4. Do not invent facts, paths, decisions, or missing context; record gaps and escalate material conflicts.
+1. Read the current issue, latest comments, local README, product contracts, and relevant Hub route before editing. Keep product code in `src/`, tests in `tests/`, and architecture decisions in `docs/adr/`.
+2. Use issue → PR → review. Preserve human decision rights and run local validation before commit.
+3. Do not invent facts, paths, decisions, or missing context; record gaps and escalate material conflicts.
+4. Normalise the goal before executing: read the project concept, interpret the stated goal in its context, and check that the listed tasks actually close it. A contradiction between the task, the project contracts and the concept is appealed, not silently resolved — see `<hybrid_work>`.
+5. Check the project backlog before starting and update the entry you executed after finishing. Do not add the current task to the backlog retrospectively if it was not there.
 </hard_rules>
 
 <forbidden>
@@ -29,27 +32,66 @@ The values mirror `.hub-profile.json`. Rules are not copied into model- or envir
 - Do not use `ai-generated` in frontmatter.
 - Do not add named directory denylists. Declare non-canonical project directories in `.hub-profile.json` with `path` and a non-empty `reason`.
 - Do not use relative links to Hub rules.
+- Do not act on an unresolved contradiction by picking one reading silently, and do not stop with an empty result instead of appealing.
 </forbidden>
+
+<guidelines>
+Recommendations. Apply them unless they conflict with `<hard_rules>`, `<forbidden>`, or the goal of the task; a justified deviation is recorded in the pull request. There is no class of "soft rules".
+
+- Prefer extending an existing canonical artifact over creating a new one.
+- Test the boundary and the alternative hypothesis before confirming a direction, and record what was falsified.
+- Keep the diff small and reviewable; one PR closes one goal.
+- Name the evidence next to the claim, and record an unresolvable anchor as a gap instead of an assumption.
+</guidelines>
+
+<hybrid_work>
+The agent is an assistant with a right to appeal, not an executor of literal text.
+
+**Appeal.** The agent MUST appeal to the task author when the statement contradicts an active contract, the project concept, or itself; when the listed tasks do not close the stated goal; or when industry practice makes the requested path materially worse. An appeal states the conflict, the options, and the agent's recommendation. Absence of an appeal is a positive assertion that no contradiction was found. Appeal is not a stop: the agent performs the part of the work the disputed decision does not touch and carries the question into the pull request body.
+
+**Autonomy by operating mode.** The mode is the author's up-front approval of a level of initiative and of the execution budget. Modes are normed in {{hub_url}}/blob/main/ai-rules/agent-work-rules.md.
+
+| Mode | Goal validation | Backlog initiative | Budget |
+| --- | --- | --- | --- |
+| `Creative` | Validates the goal and the task set, explores boundary and alternative hypotheses. | Creates backlog tasks and may execute one it initiated inside the goal. | Highest: depth is spent on completeness. |
+| `Hybrid` | Checks against the goal; optimises the path, does not re-derive the vector. | Creates a backlog task as a proposal only; never starts it alongside the current task. | Medium. |
+| `Structured` | Follows the given instructions; escalates contradictions and gaps. | Creates a backlog task only when escalating. | Lowest. |
+
+**Backlog.** Check it before starting; update the entry executed after finishing. Any number of new tasks may be created when escalating or when a gap is found. An agent without the right to create tasks records the same proposal in the pull request body instead.
+
+**Boundaries of the project.** Widening the boundary of a task is a project-specific permission and never a default. Unless `<project_specific_rules>` below grants it, an agent that sees the need to go beyond the accepted contract MUST NOT act on its own: it creates a backlog task with the rationale in `docs/analysis/` and leaves the decision to the author, who may resolve it in this project or raise it to the Hub.
+</hybrid_work>
+
+<project_specific_rules>
+<!-- REQUIRED: define the rules of THIS project here, in line with its concept, and delete this comment.
+     This section is the only additive delta over the general layer above; it must not weaken it.
+     Answer at least: may an agent widen the boundary of a task, and under what recorded condition?
+     Where do direction-scoped artifacts live? Is synthesising reference data a legitimate method here,
+     and what is its home? Leave the section with an explicit "no project-specific rules yet" statement
+     rather than empty. -->
+1. No project-specific rule is defined yet. Until this section is filled, an agent MUST NOT widen the boundary of a task and follows the general layer only.
+</project_specific_rules>
 
 <routing>
 | Need | Canonical route |
 | --- | --- |
 | Full agent router | {{hub_url}}/blob/main/ai-rules/agent-work-routing.md |
-| Agent work rules | {{hub_url}}/blob/main/ai-rules/agent-work-rules.md |
+| Agent work rules, modes, autonomy and appeal | {{hub_url}}/blob/main/ai-rules/agent-work-rules.md |
+| Structure of this file | {{hub_url}}/blob/main/standards/agents-md-bootstrap-standard.md |
 | Repository model | {{hub_url}}/blob/main/ops/repo-model.md |
 | Standards | {{hub_url}}/tree/main/standards |
 </routing>
 
 <artifact_homes>
-Production code lives in `src/`, automated tests in `tests/`, and product analysis/RFC/ADR artifacts in `docs/analysis/`, `docs/rfc/`, and `docs/adr/`.
+An artifact lives in the home of its execution. Agent contracts — how the agent works — live in `ai-rules/` (always-loaded rule flat, human-invoked command in `ai-rules/commands/<slug>.md`, self-contained executable skill in `ai-rules/skills/<slug>/SKILL.md`). Process contracts — how the subject-matter process is arranged — live in `ops/`, and reusable norms in `standards/`. Production code lives in `src/`, automated tests in `tests/`, and product analysis/RFC/ADR artifacts in `docs/analysis/`, `docs/rfc/`, and `docs/adr/`.
 </artifact_homes>
 
 <issue_levels>
-Separate user story, system functional requirements, system non-functional requirements, executor task, and process constraints.
+Keep the levels distinct: user story, system functional requirements, system non-functional requirements, executor task, and process constraints. The user story is mandatory. Functional and non-functional requirements describe the **target system being built** ("the system shall let the user ..."), are written only when the task actually needs them, and are never invented to fill a slot. Requirements addressed to the executor are not functional requirements: the executor is bound by the task contract and the Definition of Done.
 </issue_levels>
 
 <missing_tags>
-Missing task metadata does not block safe work; derive deterministic values and record unresolved gaps.
+Missing task metadata does not block safe work, and it is not closed by a record alone. Act: derive the value from active contracts only, request the clarification the derivation could not supply, do the part of the work that does not depend on it, and record every underived value as a gap in the pull request body.
 </missing_tags>
 
 <context_scope>
@@ -65,5 +107,5 @@ Use `/AGENTS.md` directly or through a generated, drift-protected native adapter
 </models>
 
 <escalation>
-Ask in the issue or PR when the task conflicts with the repository genome, needs an unauthorized decision, or would delete an existing artifact.
+Appeal and ask in the issue or PR when the task conflicts with the repository genome, needs an unauthorized decision, or would delete an existing artifact. Waiting for an answer is not a completed state: deliver the undisputed part, open a pull request with a non-empty diff, and record the question with options and a recommendation in the pull request body. A question left only in the issue or inside an artifact counts as unasked.
 </escalation>

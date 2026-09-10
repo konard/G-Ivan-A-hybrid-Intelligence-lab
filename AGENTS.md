@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 1.0
-updated: 2026-09-09
+version: 2.0
+updated: 2026-09-10
 temperature: 0.1
 entrypoint: true
 ---
@@ -14,18 +14,21 @@ This file is the single entrypoint for every AI agent working with this reposito
 - archetype: `A`
 - environment: `local`
 
-The values mirror `.hub-profile.json`, which is the SSOT. A mismatch is a validation failure. This contract applies to every model; model- or environment-specific files may only be generated pointers, never copies of these rules. Above 4K tokens, extract a non-critical block into a sub-contract; above 8K tokens, validation fails. `<hard_rules>` and `<forbidden>` remain here.
+The values mirror `.hub-profile.json`, which is the SSOT. A mismatch is a validation failure. This contract applies to every model; model- or environment-specific files may only be generated pointers, never copies of these rules.
+
+Rule scope is explicit and machine-checkable. `<hard_rules>`, `<forbidden>`, `<guidelines>` and `<hybrid_work>` are **general**: they hold in every repository of the ecosystem and are delivered unchanged into spoke templates. `<project_specific_rules>` is the **only** home for rules of this repository; a spoke replaces its content and never weakens or rewrites the general sections. The section list, the size thresholds and the frontmatter contract are normed once in https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/agents-md-bootstrap-standard.md and are not restated here.
 </scope>
 
 <hard_rules>
 1. Read this file before changing files, then follow the full router at https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-work-routing.md.
-2. Start from an issue or explicit maintainer request; read its latest comments and current PR feedback before editing.
+2. Start from an issue or an explicit request of the repository owner or the task author; read its latest comments and current PR feedback before editing.
 3. Do not invent repository structure, facts, estimates, or sources. Classify an artifact by content and place it in its canonical home.
 4. One artifact exists only for an operational need (Anti-Inflation).
 5. Work through a pull request; direct commits to `main` are forbidden.
 6. Run applicable validators before committing. A red validator stops the change.
-7. When a task is incomplete, continue within safe explicit scope and record the gap. Escalate only when a missing decision would materially change the result.
-8. Hub research expands the considered boundary: missing status, existing linkage, or alignment with an accepted concept is not grounds for excluding an artifact or alternative. Exclusion requires a recorded substantive analysis. Spoke execution may narrow scope to its accepted product contract.
+7. Normalise the goal before executing: read the project concept, interpret the stated goal in its context, and check that the listed tasks actually close it. A contradiction between the task, the repository contracts and the project concept is appealed, not silently resolved — see `<hybrid_work>`.
+8. Check the backlog at https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog.md before starting and update the entry you executed after finishing. Do not add the current task to the backlog retrospectively if it was not there.
+9. When a task is incomplete, continue within safe explicit scope and record the gap. Escalate only when a missing decision would materially change the result.
 </hard_rules>
 
 <forbidden>
@@ -37,39 +40,81 @@ The values mirror `.hub-profile.json`, which is the SSOT. A mismatch is a valida
 - Do not change `standards/` or `docs/adr/` without explicit task authority.
 - Do not delete or overwrite another contributor's artifacts instead of creating the required new version.
 - Do not use relative links to Hub rules from a spoke.
+- Do not act on an unresolved contradiction by picking one reading silently, and do not stop with an empty result instead of appealing.
 </forbidden>
+
+<guidelines>
+Recommendations. Apply them unless they conflict with `<hard_rules>`, `<forbidden>`, or the goal of the task; a justified deviation is recorded in the pull request. There is no class of "soft rules": a norm is either absolute above or a recommendation here.
+
+- Prefer extending an existing canonical artifact over creating a new one.
+- Test the boundary and the alternative hypothesis before confirming a direction, and record what was falsified.
+- Keep the diff small and reviewable; one PR closes one goal.
+- Name the evidence next to the claim, and record an unresolvable anchor as a gap instead of an assumption.
+</guidelines>
+
+<hybrid_work>
+The agent is an assistant with a right to appeal, not an executor of literal text.
+
+**Appeal.** The agent MUST appeal to the task author when the statement contradicts an active contract, the project concept, or itself; when the listed tasks do not close the stated goal; or when industry practice makes the requested path materially worse. An appeal states the conflict, the options, and the agent's recommendation. Absence of an appeal is a positive assertion that no contradiction was found. Appeal is not a stop: the agent performs the part of the work that the disputed decision does not touch and carries the question into the pull request body by the escalation contract.
+
+**Autonomy by operating mode.** The mode is the author's up-front approval of a level of initiative and, with it, of the execution budget. Modes are normed in https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-work-rules.md; here is the entrypoint summary.
+
+| Mode | Goal validation | Backlog initiative | Budget |
+| --- | --- | --- | --- |
+| `Creative` | Validates the goal and the task set, explores boundary and alternative hypotheses. | Creates backlog tasks and may execute one it initiated inside the goal. | Highest: depth is spent on completeness. |
+| `Hybrid` | Checks against the goal; optimises the path, does not re-derive the vector. | Creates a backlog task as a proposal only; never starts it alongside the current task. | Medium. |
+| `Structured` | Follows the given instructions; escalates contradictions and gaps. | Creates a backlog task only when escalating. | Lowest. |
+
+**Backlog.** Check it before starting; update the entry executed after finishing. Any number of new tasks may be created when escalating or when a gap is found. An agent without the right to create tasks records the same proposal in the pull request body instead.
+
+**Boundaries of the project.** Widening the boundary of a task is a project-specific permission and never a default. Where the repository contract does not grant it, an agent that sees the need to go beyond the contract MUST NOT act on its own: it creates a backlog task with the rationale in `docs/analysis/` and leaves the decision to the author. Two escalation controls remain with the human: the operating mode at statement time and the merge decision.
+</hybrid_work>
+
+<project_specific_rules>
+Rules of this repository only. They do not travel into spokes; a spoke defines its own delta here in line with its concept.
+
+1. Hub research expands the considered boundary: missing status, existing linkage, or alignment with an accepted concept is not grounds for excluding an artifact or alternative. Exclusion requires a recorded substantive analysis. This rule governs research in the Hub; spoke execution narrowing scope to its accepted product contract is correct behaviour, not a defect.
+2. Direction-scoped artifacts of a Hub initiative live in `projects/<direction>/`, not in the shared `docs/` tree.
+3. Synthesising reference data is a legitimate Hub method in `Creative` mode; the Hub has no `runs/` or `kb/` home, so synthesised material lives with the research or analysis artifact that produced it.
+</project_specific_rules>
 
 <routing>
 | Need | Canonical route |
 | --- | --- |
 | Full task-class routing and priority graph | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-work-routing.md |
-| Agent execution rules, modes, autonomy and DoD | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-work-rules.md |
+| Agent execution rules, modes, autonomy, appeal and DoD | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-work-rules.md |
 | Preflight onboarding protocol | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ai-rules/agent-onboarding-protocol.md |
+| Backlog and its rules | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/backlog-instruction.md |
 | Repository model and artifact homes | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/repo-model.md |
 | Artifact registry | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/ops/artifact-map.md |
+| Structure of this file | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/standards/agents-md-bootstrap-standard.md |
 | Standards | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/standards |
 | Governance | https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/GOVERNANCE.md |
 </routing>
 
 <artifact_homes>
+An artifact lives in the home of its execution. Agent contracts — how the agent works — are separated from process contracts — how the subject-matter process is arranged.
+
 | Artifact class | Home |
 | --- | --- |
+| Agent contract: always-loaded rule | `ai-rules/<name>.md` |
+| Agent contract: human-invoked command | `ai-rules/commands/<slug>.md` |
+| Agent contract: context-selected skill, self-contained and executable | `ai-rules/skills/<slug>/SKILL.md` |
+| Process contract: operational process artifact | `ops/<name>.md` |
+| Process norm: mandatory reusable rule, may reference other documents | `standards/<name>.md` |
 | Research | `research/<domain>/YYYY-MM-DD-name.md` |
 | Analysis / audit / report | `docs/analysis/`, `docs/audit/`, `docs/report/` |
 | Architecture decision | `docs/adr/YYYY-MM-adr-NNN-name.md` |
-| Mandatory reusable norm | `standards/<name>.md` |
-| Always-loaded agent rule | `ai-rules/<name>.md` |
-| Human-invoked command | `ai-rules/commands/<slug>.md` |
-| Context-selected skill | `ai-rules/skills/<slug>/SKILL.md` |
-| Operational process artifact | `ops/<name>.md` |
+
+A standard states a norm and may delegate detail by reference. An executable contract — a command or a skill — is self-contained at the moment the agent executes it.
 </artifact_homes>
 
 <issue_levels>
-Keep five levels distinct: user story, system functional requirements, system non-functional requirements, executor task, and process constraints. The system—not the executor—is the subject of functional and non-functional requirements.
+Keep the levels distinct: user story, system functional requirements, system non-functional requirements, executor task, and process constraints. The user story is mandatory. Functional and non-functional requirements describe the **target system being built** ("the system shall let the user ..."), are written only when the task actually needs them, and are never invented to fill a slot. Requirements addressed to the executor are not functional requirements: the executor is bound by the task contract and the Definition of Done.
 </issue_levels>
 
 <missing_tags>
-Missing task type, operating mode, or another required field triggers an escalation record but does not stop safe work. Infer only from active contracts; record anything that cannot be derived.
+A missing task type, operating mode, or other required field does not stop safe work, and it is not closed by a record alone. Act: derive the value from active contracts only, request the clarification that the derivation could not supply, do the part of the work that does not depend on it, and record every value that remained underived as a gap in the pull request body.
 </missing_tags>
 
 <context_scope>
@@ -85,5 +130,5 @@ Codex reads `AGENTS.md` natively. Other tools may use a native adapter that impo
 </models>
 
 <escalation>
-The task contract has priority for scope and desired outcome; repository governance has priority for safe execution and artifact placement. Stop and ask when a required decision is absent, the requested path conflicts with the genome, authorization does not cover a standards/ADR change, or deletion would remove an existing artifact. Record the question in the issue or PR. Do not silently violate either branch of this priority graph.
+The task contract has priority for scope and desired outcome; repository governance has priority for safe execution and artifact placement. Appeal and ask when a required decision is absent, the requested path conflicts with the genome, authorization does not cover a standards/ADR change, or deletion would remove an existing artifact. Waiting for an answer is not a completed state: deliver the undisputed part, open a pull request with a non-empty diff, and record the question with options and a recommendation in the pull request body. A question left only in the issue or inside an artifact counts as unasked. Do not silently violate either branch of this priority graph.
 </escalation>
