@@ -45,6 +45,10 @@ Issue #571 требует не поправить формулировки, а *
 | [`audit-taxonomy-defects.py`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/audit-taxonomy-defects.py) | измеритель дефектов `D1`–`D8`; словари операций, процессов, сущностей и лексические маркеры — именованные константы в шапке |
 | [`taxonomy-defects.json`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/taxonomy-defects.json) | результат: запись на каждый дефект с местами обнаружения |
 | [`audit-taxonomy-defects.log`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/audit-taxonomy-defects.log) | вывод прогона, фиксирующий опубликованные цифры и коммиты обоих корпусов |
+| [`2026-09-10-synthetic-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/2026-09-10-synthetic-cases.md) | семь синтетических кейсов с эталонами: вход, шаги «процесс — навык — операции — гейт», ожидаемый результат |
+| [`validate-new-taxonomy.py`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/validate-new-taxonomy.py) | проверка новой таксономии: словари читаются из модулей, эталоны — из кейсов; режим `--legacy` воспроизводит дефект прежнего словаря |
+| [`taxonomy-validation.json`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/taxonomy-validation.json) | результат проверки: числа словарей, покрытие, перечень ошибок |
+| [`validate-new-taxonomy.log`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/validate-new-taxonomy.log) | вывод обоих режимов проверки |
 
 ## Воспроизведение
 
@@ -52,6 +56,18 @@ Issue #571 требует не поправить формулировки, а *
 git clone https://github.com/G-Ivan-A/mango_ba_prompts.git /tmp/mango
 python3 audit-taxonomy-defects.py --mango /tmp/mango --hub ../../../.. --json taxonomy-defects.json
 ```
+
+Проверка новой таксономии не требует спицы: словари читаются из модулей Хаба.
+
+```bash
+python3 validate-new-taxonomy.py --hub ../../../.. --json taxonomy-validation.json
+python3 validate-new-taxonomy.py --hub ../../../.. --legacy
+```
+
+Первый прогон проходит только при полном покрытии: каждый навык разложен,
+каждая операция вызвана, каждый шаг каждого кейса выражен словарями. Второй
+прогон проходит только тогда, когда **все** шаги кейсов оказываются
+невыразимыми в прежнем словаре — то есть дефект воспроизведён до исправления.
 
 Коммиты, на которых получены опубликованные цифры, записаны в поле `corpus`
 результата: спица `8cbf82aa73129ec5747af07f790aaf438b0fb6e9`, Хаб
@@ -66,3 +82,6 @@ python3 audit-taxonomy-defects.py --mango /tmp/mango --hub ../../../.. --json ta
   что занижает число дефектных определений.
 - `D7` берёт объявленное поле процесса прогона: замер доказывает отсутствие
   привязки к словарю, а не отсутствие процесса как такового.
+- Кейсы синтетические: они проверяют **выразимость** таксономии, а не качество
+  работы БА на реальных данных. Утверждение «новая таксономия даёт лучший
+  результат на реальном материале» этим экспериментом не проверяется.
