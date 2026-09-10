@@ -99,6 +99,7 @@ is_active_file() {
     docs/adr/2026-09-adr-012-agents-md-root-contract.md | \
     docs/adr/2026-09-adr-013-run-modes-deprecation.md | \
     docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md | \
+    docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md | \
     docs/adr/README.md | \
     standards/README.md | \
     standards/agents-md-bootstrap-standard.md | \
@@ -218,6 +219,27 @@ is_active_file() {
     research/ba-requirements/exp/ba-meta-model-563/measure-legacy-normative-influence.py | \
     research/ba-requirements/exp/ba-meta-model-563/measure-legacy-normative-influence.log | \
     research/ba-requirements/exp/ba-meta-model-563/legacy-normative-influence.json | \
+    research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/README.md | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/audit-taxonomy-defects.py | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/audit-taxonomy-defects.log | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/taxonomy-defects.json | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/validate-new-taxonomy.py | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/validate-new-taxonomy.log | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/taxonomy-validation.json | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/2026-09-10-synthetic-cases.md | \
+    research/ba-requirements/ba-process-taxonomy/00-introduction.md | \
+    research/ba-requirements/ba-process-taxonomy/10-theory.md | \
+    research/ba-requirements/ba-process-taxonomy/20-taxonomy.md | \
+    research/ba-requirements/ba-process-taxonomy/30-decision-framework.md | \
+    research/ba-requirements/ba-process-taxonomy/40-practice-and-cases.md | \
+    research/ba-requirements/ba-process-taxonomy/50-open-research.md | \
+    research/ba-requirements/ba-operation-taxonomy/00-introduction.md | \
+    research/ba-requirements/ba-operation-taxonomy/10-theory.md | \
+    research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md | \
+    research/ba-requirements/ba-operation-taxonomy/30-decision-framework.md | \
+    research/ba-requirements/ba-operation-taxonomy/40-practice-and-cases.md | \
+    research/ba-requirements/ba-operation-taxonomy/50-open-research.md | \
     research/ba-requirements/solution-modeling/00-introduction.md | \
     research/ba-requirements/solution-modeling/10-theory.md | \
     research/ba-requirements/solution-modeling/20-taxonomy.md | \

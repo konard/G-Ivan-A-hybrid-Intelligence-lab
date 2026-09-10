@@ -1,0 +1,68 @@
+---
+status: draft
+version: 0.1
+updated: 2026-09-10
+temperature: 0.1
+type: experiment
+---
+
+# exp: ba-process-taxonomy-571
+
+Evidence container для датированного замера
+[`../../2026-09-10-process-taxonomy-defects-facts.md`](../../2026-09-10-process-taxonomy-defects-facts.md)
+и модулей
+[`ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-process-taxonomy)
+и
+[`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-operation-taxonomy),
+issue [#571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571).
+
+> **Ссылки.** Issue #571 требует абсолютных ссылок. Относительная ссылка на
+> родительский отчёт выше — вынужденное исключение: её форму машинно проверяет
+> [`tools/validate-evidence-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/tools/validate-evidence-structure.sh).
+
+## Что здесь измеряется
+
+Issue #571 требует не поправить формулировки, а **пересобрать** таксономию
+процессов и операций. Такое решение нельзя принять по тексту: нужно показать,
+что действующая таксономия дефектна **измеримо**, и что дефект не косметический,
+а делает таксономию неисполнимой AI-агентом.
+
+Измеритель проверяет восемь утверждений (`D1`–`D8`): слияние ФТ и ТЗ в одном
+имени выхода при двух различных типах в онтологии спицы; «черновик» как граница
+процесса при том, что `draft` — состояние жизненного цикла; число классов выхода
+на одну операцию; перечисление разнородных результатов в определении операции;
+наличие уровня подпроцесса в споке и его отсутствие в Хабе; отсутствие сущностей
+«Система» и «Пользователь»; доля прогонов, чей процесс лежит вне закрытого
+словаря; наличие ветвления в описании маршрута.
+
+Содержательной интерпретации здесь нет — она в родительском отчёте и в двух
+модулях таксономии.
+
+## Состав
+
+| Файл | Что это |
+| --- | --- |
+| [`audit-taxonomy-defects.py`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/audit-taxonomy-defects.py) | измеритель дефектов `D1`–`D8`; словари операций, процессов, сущностей и лексические маркеры — именованные константы в шапке |
+| [`taxonomy-defects.json`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/taxonomy-defects.json) | результат: запись на каждый дефект с местами обнаружения |
+| [`audit-taxonomy-defects.log`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/audit-taxonomy-defects.log) | вывод прогона, фиксирующий опубликованные цифры и коммиты обоих корпусов |
+
+## Воспроизведение
+
+```bash
+git clone https://github.com/G-Ivan-A/mango_ba_prompts.git /tmp/mango
+python3 audit-taxonomy-defects.py --mango /tmp/mango --hub ../../../.. --json taxonomy-defects.json
+```
+
+Коммиты, на которых получены опубликованные цифры, записаны в поле `corpus`
+результата: спица `8cbf82aa73129ec5747af07f790aaf438b0fb6e9`, Хаб
+`15aa76f88987511312cbf7cdb2c87b8912fb53f5`. На других коммитах цифры будут
+другими — это ожидаемо, отчёт датирован.
+
+## Границы измерения
+
+- Дефекты `D1`, `D2`, `D8` ищутся лексическими маркерами: замер доказывает
+  наличие или отсутствие **объявленной конструкции**, а не намерение автора.
+- `D4` считает маркеры перечисления, а не смысл; порог — два маркера и более,
+  что занижает число дефектных определений.
+- `D7` берёт объявленное поле процесса прогона: замер доказывает отсутствие
+  привязки к словарю, а не отсутствие процесса как такового.
