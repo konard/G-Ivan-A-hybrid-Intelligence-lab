@@ -176,9 +176,18 @@ L0  Индустриальный базис (TM Forum SID/eTOM, BABOK, IREB, UNS
 | `DP-2` | Новый активный артефакт не содержит `stepwise`/`oneshot`/`legacy` в имени, идентификаторе или поле маршрута. |
 | `DP-3` | Историческая ссылка на режим в датированном отчёте, прогоне или иммутабельном документе легитимна и не правится. |
 | `DP-4` | Форма взаимодействия выражается полем `interaction` маршрута (`dialog` \| `single-pass`), которое не участвует в идентичности навыка. |
+| `DP-5` | Значение `interaction` **вычисляется** по тексту контракта, а не назначается: `dialog`, если контракт возвращает управление актору до формирования выхода, иначе `single-pass` (`FM-1`, `FM-2`, `SK-9`). Историческое соответствие `stepwise` ≡ `dialog`, `oneshot` ≡ `single-pass` служит чтением старых артефактов и нормой не является. |
 
 Решение, его основания и альтернативы —
-[ADR-013](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-013-run-modes-deprecation.md).
+[ADR-013](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-013-run-modes-deprecation.md). Что именно
+различали исторические имена режимов, измерено после депрекации: точка возврата
+управления актору делит корпус без пересечения (`stepwise` 10 из 10, `oneshot`
+0 из 9), тогда как число шагов не различает ничего — внутренний упорядоченный
+алгоритм есть у 9 из 9 `oneshot`-промптов
+([замер `F4`, `F5`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-10-skill-granularity-format-facts.md)).
+Поэтому `DP-5` формулирует различие как предикат, а не как выбор автора;
+депрекация режимов как **идентичности** остаётся в силе
+([ADR-016](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-016-skill-form-and-contract-format.md)).
 Ссылки на режимы в шести исследовательских модулях Хаба остаются как контекст:
 `DP-3` разрешает их, а сквозной рефактор заведён задачей `B-150`.
 

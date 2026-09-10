@@ -273,6 +273,26 @@
       "needle": "Сначала он видит только имена и описания",
       "found": true
     },
+    "GC-25": {
+      "url": "https://gitverse.ru/docs/ai/ai-development/skills",
+      "needle": "инструкция для повторяющейся работы",
+      "found": true
+    },
+    "GC-26": {
+      "url": "https://gitverse.ru/docs/ai/ai-development/skills",
+      "needle": "Короткое правило или команда",
+      "found": true
+    },
+    "GC-27": {
+      "url": "https://gitverse.ru/docs/ai/ai-development/skills",
+      "needle": "Содержит пошаговую процедуру",
+      "found": true
+    },
+    "GC-28": {
+      "url": "https://gitverse.ru/docs/ai/ai-development/skills",
+      "needle": "отдельный набор прав и изолированный контекст",
+      "found": true
+    },
     "GC-7": {
       "url": "https://gitverse.ru/docs/ai/ai-development/agents",
       "needle": ".opencode/agent",
@@ -315,6 +335,6 @@
     }
   },
   "errors": [],
-  "claims_total": 24,
+  "claims_total": 28,
   "claims_missing": []
 }

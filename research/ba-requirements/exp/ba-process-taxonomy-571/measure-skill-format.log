@@ -1,0 +1,7 @@
+oneshot: промптов 9, с точкой возврата управления 0, с внутренним порядком 9, с более чем одним классом выхода 1
+stepwise: промптов 10, с точкой возврата управления 10, с внутренним порядком 9, с более чем одним классом выхода 6
+legacy: промптов 5, с точкой возврата управления 0, с внутренним порядком 4, с более чем одним классом выхода 2
+каталог L3: навыков 33, операций 31, навыков из одной операции 0, операций на навык 2–7
+кандидаты в навык-операцию (вызывается из трёх и более навыков): check-schema (11), link-elements (8), map-to-slot (7), check-completeness (6), classify-item (6), classify-severity (6), extract-statements (6), deduplicate-items (5), match-coverage (5), check-atomicity (4), check-consistency (4), check-verifiability (4), generate-statement (4), check-source-evidence (3), extract-actors (3), extract-constraints (3), extract-metrics (3), extract-source-reference (3), generate-rationale (3), rank-items (3), split-statement (3)
+H1 (точка возврата отделяет stepwise от oneshot): да
+H2 (oneshot ⇒ атомарность) опровергнута: да
