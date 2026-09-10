@@ -220,6 +220,7 @@ is_active_file() {
     research/ba-requirements/exp/ba-meta-model-563/measure-legacy-normative-influence.log | \
     research/ba-requirements/exp/ba-meta-model-563/legacy-normative-influence.json | \
     research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md | \
+    research/ba-requirements/2026-09-10-gigacode-environment-facts.md | \
     research/ba-requirements/exp/ba-process-taxonomy-571/README.md | \
     research/ba-requirements/exp/ba-process-taxonomy-571/audit-taxonomy-defects.py | \
     research/ba-requirements/exp/ba-process-taxonomy-571/audit-taxonomy-defects.log | \
@@ -228,6 +229,9 @@ is_active_file() {
     research/ba-requirements/exp/ba-process-taxonomy-571/validate-new-taxonomy.log | \
     research/ba-requirements/exp/ba-process-taxonomy-571/taxonomy-validation.json | \
     research/ba-requirements/exp/ba-process-taxonomy-571/2026-09-10-synthetic-cases.md | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/fetch-gigacode-docs.py | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/fetch-gigacode-docs.log | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/gigacode-docs.json | \
     research/ba-requirements/ba-process-taxonomy/00-introduction.md | \
     research/ba-requirements/ba-process-taxonomy/10-theory.md | \
     research/ba-requirements/ba-process-taxonomy/20-taxonomy.md | \
@@ -1880,7 +1884,7 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.13"
+require_text "ops/artifact-map.md" "version: 2.14"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"

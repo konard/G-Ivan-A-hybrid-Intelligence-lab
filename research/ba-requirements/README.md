@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.4
+version: 0.5
 updated: 2026-09-10
 temperature: 0.1
 ---
@@ -164,6 +164,16 @@ temperature: 0.1
   против двух утверждений о неизменности маршрута. Доказательная база модулей
   `ba-process-taxonomy/`, `ba-operation-taxonomy/` и решения ADR-015.
 
+- [`2026-09-10-gigacode-environment-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-10-gigacode-environment-facts.md)
+  — снимок документации среды исполнения GigaCode на GitVerse: 11 страниц из
+  11 доступны, 24 контрольные формулировки `GC-1`–`GC-24` подтверждены. Снимок
+  **опровергает** допущение версии 0.1 мета-модели о том, что документации нет
+  и форма `SKILL.md` выведена по аналогии: контракт навыка задан средой
+  (`.agents/skills/<имя>/SKILL.md`, обязательные `name` и `description`,
+  уникальность имени, ступенчатая загрузка), машинный гейт исполним командой
+  оболочки, а `curl` и `wget` запрещены профилем прав. Доказательная база
+  правил `SK-0`…`SK-8` и `GB-5`.
+
 ## Эксперименты
 
 - [`exp/ba-requirements-normalization-539/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/exp/ba-requirements-normalization-539)
@@ -192,8 +202,10 @@ temperature: 0.1
 - [`exp/ba-process-taxonomy-571/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/exp/ba-process-taxonomy-571)
   — воспроизводимый аудит восьми дефектов таксономии, семь синтетических кейсов
   с эталонными траекториями и валидатор новой таксономии: разбирает `20-*.md`
-  обоих модулей и проверяет покрытие процессов, навыков и операций кейсами
-  (issue [#571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571)).
+  обоих модулей и проверяет покрытие процессов, навыков и операций кейсами.
+  Там же — снимок документации среды GigaCode: доступность одиннадцати страниц
+  и наличие 24 формулировок, на которые опирается норма (issue
+  [#571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571)).
 
 ## Политика ссылок
 
