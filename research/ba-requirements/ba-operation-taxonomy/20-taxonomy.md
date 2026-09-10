@@ -207,7 +207,7 @@ related_issues:
 
 `deprecated` означает: значение перестаёт быть допустимым для **новых**
 артефактов; исторические артефакты не переписываются (`LG-1`,
-[ADR-014](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-corpus-governance.md)).
+[ADR-014](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md)).
 
 **Что видно из реестра.** Ни одно прежнее значение не удалено без замены, и ни
 одно не перенесено целиком: четыре из тринадцати пришлось разделить, потому что
