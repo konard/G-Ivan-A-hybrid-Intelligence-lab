@@ -1,0 +1,17 @@
+{
+  "mode": "new",
+  "counts": {
+    "processes": 10,
+    "skills": 33,
+    "operations": 31,
+    "case_steps": 33,
+    "cases": 7
+  },
+  "coverage": {
+    "processes": "10/10",
+    "skills": "33/33",
+    "operations": "31/31"
+  },
+  "errors": [],
+  "passed": true
+}

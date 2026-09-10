@@ -1,0 +1,447 @@
+{
+  "corpus": {
+    "spoke": "/tmp/mango_ba_prompts",
+    "spoke_commit": "8cbf82aa73129ec5747af07f790aaf438b0fb6e9",
+    "hub_commit": "15aa76f88987511312cbf7cdb2c87b8912fb53f5"
+  },
+  "findings": {
+    "D1": {
+      "question": "D1: слияние ФТ и ТЗ в одном имени выхода",
+      "merge_hits": 29,
+      "merge_locations": [
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/taxonomy.md",
+          "line": 69
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/taxonomy.md",
+          "line": 70
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 44
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 45
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 63
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 64
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 88
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 89
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 91
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 92
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 93
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 112
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 115
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 130
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 132
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 137
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 146
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 147
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 263
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 284
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 285
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 293
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 307
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 309
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 320
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 334
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 347
+        },
+        {
+          "repo": "hybrid-Intelligence-lab",
+          "file": "research/ba-requirements/ba-meta-model/20-taxonomy.md",
+          "line": 93
+        },
+        {
+          "repo": "hybrid-Intelligence-lab",
+          "file": "research/ba-requirements/ba-meta-model/20-taxonomy.md",
+          "line": 94
+        }
+      ],
+      "distinct_artifact_types_in_ontology": [
+        "feature-spec-kk",
+        "tz-contract"
+      ],
+      "contradiction": true
+    },
+    "D2": {
+      "question": "D2: черновик объявлен границей процесса",
+      "boundary_hits": 4,
+      "boundary_locations": [
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/taxonomy.md",
+          "line": 69,
+          "text": "| 1 | Формирование ФТ/ТЗ | От сырого запроса (встреча, письмо, идея) до черновика ФТ/ТЗ. | `ingestion`, `understanding`, `documentation`, `solution_design` |"
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 45,
+          "text": "| Проверить готовый черновик ФТ/ТЗ | [2. Валидация ФТ/ТЗ](#2-валидация-фттз) | [`fr-validation-stepwise.md`](../../prompts/fr-validation-stepwise.md) | Дефекты отделены от новых требований и рисков. |"
+        },
+        {
+          "repo": "mango_ba_prompts",
+          "file": "docs/ba-processes/00-index.md",
+          "line": 115,
+          "text": "согласованный бизнес-слой и черновик ФТ/ТЗ."
+        },
+        {
+          "repo": "hybrid-Intelligence-lab",
+          "file": "research/ba-requirements/ba-meta-model/20-taxonomy.md",
+          "line": 93,
+          "text": "| `fr-generation` | от сырого запроса до черновика ФТ/ТЗ | `ingestion`, `understanding`, `documentation`, `solution_design` | `A-FR`, `A-TZ` |"
+        }
+      ],
+      "draft_token_hits": 10,
+      "draft_declared_as_lifecycle_state": true,
+      "contradiction": true
+    },
+    "D3": {
+      "question": "D3: число классов выхода на одну операцию",
+      "artifact_rows_parsed": 30,
+      "per_operation": {
+        "ingestion": {
+          "output_classes": [
+            "transcript-clean"
+          ],
+          "count": 1
+        },
+        "understanding": {
+          "output_classes": [
+            "business-alignment-pack",
+            "customer-questions",
+            "task-glossary"
+          ],
+          "count": 3
+        },
+        "validation": {
+          "output_classes": [
+            "acceptance-criteria",
+            "coverage-matrix",
+            "defect-report"
+          ],
+          "count": 3
+        },
+        "modeling": {
+          "output_classes": [
+            "acceptance-criteria",
+            "uml-bpmn-diagram",
+            "use-case",
+            "user-story"
+          ],
+          "count": 4
+        },
+        "solution_design": {
+          "output_classes": [
+            "technical-details-section"
+          ],
+          "count": 1
+        },
+        "documentation": {
+          "output_classes": [
+            "business-alignment-pack",
+            "constraints-section",
+            "feature-spec-kk",
+            "fr-section",
+            "meeting-summary",
+            "tz-contract"
+          ],
+          "count": 6
+        },
+        "quality": {
+          "output_classes": [
+            "coverage-matrix",
+            "quality-summary"
+          ],
+          "count": 2
+        },
+        "research": {
+          "output_classes": [
+            "analysis-note"
+          ],
+          "count": 1
+        },
+        "governance": {
+          "output_classes": [
+            "status-backlog",
+            "traceability-matrix"
+          ],
+          "count": 2
+        },
+        "impact_analysis": {
+          "output_classes": [
+            "impact-map",
+            "traceability-matrix"
+          ],
+          "count": 2
+        },
+        "reverse_requirements": {
+          "output_classes": [
+            "reverse-requirements"
+          ],
+          "count": 1
+        },
+        "risk_analysis": {
+          "output_classes": [
+            "risk-register"
+          ],
+          "count": 1
+        },
+        "release_readiness": {
+          "output_classes": [
+            "release-readiness-checklist"
+          ],
+          "count": 1
+        }
+      },
+      "operations_with_multiple_outputs": [
+        "documentation",
+        "governance",
+        "impact_analysis",
+        "modeling",
+        "quality",
+        "understanding",
+        "validation"
+      ],
+      "violation_share": 0.538
+    },
+    "D4": {
+      "question": "D4: определение операции перечисляет разнородные результаты",
+      "operations_parsed": 13,
+      "per_operation": {
+        "ingestion": {
+          "definition": "Превращает сырой вход (ASR-расшифровка, письмо, заметки, тендерное ТЗ) в форму, пригодную для анализа.",
+          "enumeration_markers": 4,
+          "enumerates": true
+        },
+        "understanding": {
+          "definition": "Извлекает термины, цели, неявные допущения; формирует уточняющие вопросы.",
+          "enumeration_markers": 3,
+          "enumerates": true
+        },
+        "validation": {
+          "definition": "Проверяет артефакт на полноту, непротиворечивость, тестируемость, соответствие стандартам.",
+          "enumeration_markers": 3,
+          "enumerates": true
+        },
+        "modeling": {
+          "definition": "Структурирует требования в формальные модели: Use Case, User Story, диаграммы UML/BPMN.",
+          "enumeration_markers": 3,
+          "enumerates": true
+        },
+        "solution_design": {
+          "definition": "Прорабатывает системно-технические требования и варианты реализации.",
+          "enumeration_markers": 0,
+          "enumerates": false
+        },
+        "documentation": {
+          "definition": "Оформляет результаты анализа в целевые документы: ФТ, ТЗ, резюме встреч, письма.",
+          "enumeration_markers": 4,
+          "enumerates": true
+        },
+        "quality": {
+          "definition": "Оценивает качество артефактов и самих промптов; собирает метрики и статистику.",
+          "enumeration_markers": 1,
+          "enumerates": false
+        },
+        "research": {
+          "definition": "Изучает предметную область, рынок, практики; производит знание для решений.",
+          "enumeration_markers": 3,
+          "enumerates": true
+        },
+        "governance": {
+          "definition": "Поддерживает правила, статусы, жизненный цикл артефактов и задач.",
+          "enumeration_markers": 2,
+          "enumerates": true
+        },
+        "impact_analysis": {
+          "definition": "Оценивает влияние изменения на существующие требования, функции и интеграции продукта.",
+          "enumeration_markers": 1,
+          "enumerates": false
+        },
+        "reverse_requirements": {
+          "definition": "Восстанавливает требования из существующей системы, кода или наблюдаемого поведения.",
+          "enumeration_markers": 2,
+          "enumerates": true
+        },
+        "risk_analysis": {
+          "definition": "Выявляет и оценивает риски требований и решений; предлагает митигации.",
+          "enumeration_markers": 1,
+          "enumerates": false
+        },
+        "release_readiness": {
+          "definition": "Проверяет полноту требований, критериев приёмки и чек-листов перед релизом.",
+          "enumeration_markers": 1,
+          "enumerates": false
+        }
+      },
+      "operations_enumerating": [
+        "documentation",
+        "governance",
+        "ingestion",
+        "modeling",
+        "research",
+        "reverse_requirements",
+        "understanding",
+        "validation"
+      ]
+    },
+    "D5": {
+      "question": "D5: уровень подпроцесса между процессом и операцией",
+      "spoke_declares_subprocess_entity": true,
+      "spoke_named_subprocesses_in_adr009": 6,
+      "hub_meta_model_mentions": 0,
+      "level_lost_in_hub": true
+    },
+    "D6": {
+      "question": "D6: Система и Пользователь как сущности мета-модели",
+      "declared_entities": [
+        "Product",
+        "Artifact",
+        "Operation",
+        "Skill (реализация Operation)",
+        "Process",
+        "Route",
+        "Actor",
+        "Gate",
+        "Contract",
+        "Trace"
+      ],
+      "missing_required_entities": [
+        "Система",
+        "Пользователь",
+        "Подпроцесс"
+      ],
+      "spoke_prompts_requiring_actors": 5
+    },
+    "D7": {
+      "question": "D7: используется ли закрытый словарь процессов",
+      "runs": 67,
+      "process_declared_in_vocabulary": 1,
+      "process_declared_outside_vocabulary": 66,
+      "process_absent": 0,
+      "outside_vocabulary_sample": [
+        "Architecture Spike: HH.ru Chats ↔ Mango CC data mapping",
+        "Combined L4 gap report: BA verdicts + SA models + footnoted hh.ru API sources",
+        "Re-evaluation: HH.ru Chat API Feasibility",
+        "bcreq-1025-email-routing",
+        "bcreq-1059-multichannel-slots-limits",
+        "bcreq-1064-browser-softphone-in-mis",
+        "bcreq-1069-restricted-api-key",
+        "error-analysis-and-feature-specification-bcreq-1074-report-view",
+        "feasibility-assessment-telephony-requirements-task-1099",
+        "feasibility-assessment-tender-appendices-5-7",
+        "feasibility-assessment-tender-tz-stt-tts-nlu-dialogue-manager",
+        "feature-specification-bcreq-1074-communication-expenses-report",
+        "feature-specification-bcreq-1074-detailed-export (rework of RUN-0063 by audit)",
+        "fr-analysis-978-email-signature-in-lk",
+        "fr-drafting-58093-amocrm-deal-card-new-tab"
+      ]
+    },
+    "D8": {
+      "question": "D8: маршрут как граф с ветвлением",
+      "branch_tokens_found": 1,
+      "route_immutability_statements": 2,
+      "route_sheet_declares_linear_steps": true,
+      "route_is_linear_only": false
+    }
+  }
+}

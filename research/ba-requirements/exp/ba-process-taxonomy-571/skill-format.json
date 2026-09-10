@@ -1,0 +1,434 @@
+{
+  "measured_at": "2026-09-10",
+  "source_issue": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571",
+  "corpus": {
+    "mango": "8cbf82aa73129ec5747af07f790aaf438b0fb6e9",
+    "hub": "4ba26f4c15b64b6fe2eaea8d7d007b9b98df65c5"
+  },
+  "prompts": {
+    "items": [
+      {
+        "file": "prompts/asr-ingestion-legacy.md",
+        "mode": "legacy",
+        "handoff": 0,
+        "declared_steps": 0,
+        "stage_markers": 2,
+        "output_classes": [
+          "glossary"
+        ],
+        "words": 1267
+      },
+      {
+        "file": "prompts/asr-ingestion-oneshot.md",
+        "mode": "oneshot",
+        "handoff": 0,
+        "declared_steps": 0,
+        "stage_markers": 1,
+        "output_classes": [],
+        "words": 421
+      },
+      {
+        "file": "prompts/constraints-documentation-oneshot.md",
+        "mode": "oneshot",
+        "handoff": 0,
+        "declared_steps": 0,
+        "stage_markers": 1,
+        "output_classes": [],
+        "words": 210
+      },
+      {
+        "file": "prompts/constraints-documentation-stepwise.md",
+        "mode": "stepwise",
+        "handoff": 1,
+        "declared_steps": 3,
+        "stage_markers": 0,
+        "output_classes": [
+          "requirements"
+        ],
+        "words": 348
+      },
+      {
+        "file": "prompts/fr-documentation-oneshot.md",
+        "mode": "oneshot",
+        "handoff": 0,
+        "declared_steps": 0,
+        "stage_markers": 2,
+        "output_classes": [
+          "glossary",
+          "questions",
+          "report",
+          "requirements",
+          "scenarios"
+        ],
+        "words": 202
+      },
+      {
+        "file": "prompts/fr-documentation-stepwise.md",
+        "mode": "stepwise",
+        "handoff": 3,
+        "declared_steps": 4,
+        "stage_markers": 0,
+        "output_classes": [
+          "glossary",
+          "matrix",
+          "report",
+          "requirements",
+          "scenarios"
+        ],
+        "words": 448
+      },
+      {
+        "file": "prompts/fr-validation-legacy.md",
+        "mode": "legacy",
+        "handoff": 0,
+        "declared_steps": 0,
+        "stage_markers": 3,
+        "output_classes": [
+          "glossary",
+          "requirements",
+          "scenarios"
+        ],
+        "words": 500
+      },
+      {
+        "file": "prompts/fr-validation-oneshot.md",
+        "mode": "oneshot",
+        "handoff": 0,
+        "declared_steps": 0,
+        "stage_markers": 1,
+        "output_classes": [
+          "glossary"
+        ],
+        "words": 231
+      },
+      {
+        "file": "prompts/fr-validation-stepwise.md",
+        "mode": "stepwise",
+        "handoff": 1,
+        "declared_steps": 3,
+        "stage_markers": 0,
+        "output_classes": [
+          "glossary",
+          "report",
+          "scenarios"
+        ],
+        "words": 390
+      },
+      {
+        "file": "prompts/glossary-context-understanding-oneshot.md",
+        "mode": "oneshot",
+        "handoff": 0,
+        "declared_steps": 0,
+        "stage_markers": 2,
+        "output_classes": [
+          "glossary"
+        ],
+        "words": 240
+      },
+      {
+        "file": "prompts/glossary-context-understanding-stepwise.md",
+        "mode": "stepwise",
+        "handoff": 4,
+        "declared_steps": 4,
+        "stage_markers": 2,
+        "output_classes": [
+          "glossary",
+          "report"
+        ],
+        "words": 474
+      },
+      {
+        "file": "prompts/letter-customer-documentation-legacy.md",
+        "mode": "legacy",
+        "handoff": 0,
+        "declared_steps": 0,
+        "stage_markers": 1,
+        "output_classes": [],
+        "words": 172
+      },
+      {
+        "file": "prompts/meeting-customer-documentation-stepwise.md",
+        "mode": "stepwise",
+        "handoff": 1,
+        "declared_steps": 0,
+        "stage_markers": 1,
+        "output_classes": [],
+        "words": 263
+      },
+      {
+        "file": "prompts/meeting-team-documentation-stepwise.md",
+        "mode": "stepwise",
+        "handoff": 1,
+        "declared_steps": 0,
+        "stage_markers": 1,
+        "output_classes": [],
+        "words": 333
+      },
+      {
+        "file": "prompts/questions-customer-understanding-legacy.md",
+        "mode": "legacy",
+        "handoff": 0,
+        "declared_steps": 0,
+        "stage_markers": 1,
+        "output_classes": [
+          "questions",
+          "requirements",
+          "scenarios"
+        ],
+        "words": 456
+      },
+      {
+        "file": "prompts/questions-customer-understanding-stepwise.md",
+        "mode": "stepwise",
+        "handoff": 6,
+        "declared_steps": 0,
+        "stage_markers": 0,
+        "output_classes": [
+          "questions",
+          "report",
+          "scenarios"
+        ],
+        "words": 684
+      },
+      {
+        "file": "prompts/session-debug-documentation-oneshot.md",
+        "mode": "oneshot",
+        "handoff": 0,
+        "declared_steps": 0,
+        "stage_markers": 2,
+        "output_classes": [],
+        "words": 626
+      },
+      {
+        "file": "prompts/technical-details-solution-design-legacy.md",
+        "mode": "legacy",
+        "handoff": 0,
+        "declared_steps": 0,
+        "stage_markers": 0,
+        "output_classes": [
+          "requirements"
+        ],
+        "words": 366
+      },
+      {
+        "file": "prompts/technical-details-solution-design-oneshot.md",
+        "mode": "oneshot",
+        "handoff": 0,
+        "declared_steps": 0,
+        "stage_markers": 1,
+        "output_classes": [
+          "questions"
+        ],
+        "words": 236
+      },
+      {
+        "file": "prompts/technical-details-solution-design-stepwise.md",
+        "mode": "stepwise",
+        "handoff": 1,
+        "declared_steps": 4,
+        "stage_markers": 0,
+        "output_classes": [
+          "scenarios"
+        ],
+        "words": 471
+      },
+      {
+        "file": "prompts/uc-modeling-oneshot.md",
+        "mode": "oneshot",
+        "handoff": 0,
+        "declared_steps": 1,
+        "stage_markers": 1,
+        "output_classes": [],
+        "words": 272
+      },
+      {
+        "file": "prompts/uc-modeling-stepwise.md",
+        "mode": "stepwise",
+        "handoff": 3,
+        "declared_steps": 1,
+        "stage_markers": 1,
+        "output_classes": [
+          "glossary",
+          "questions",
+          "scenarios"
+        ],
+        "words": 365
+      },
+      {
+        "file": "prompts/us-modeling-oneshot.md",
+        "mode": "oneshot",
+        "handoff": 0,
+        "declared_steps": 0,
+        "stage_markers": 1,
+        "output_classes": [
+          "scenarios"
+        ],
+        "words": 297
+      },
+      {
+        "file": "prompts/us-modeling-stepwise.md",
+        "mode": "stepwise",
+        "handoff": 2,
+        "declared_steps": 0,
+        "stage_markers": 1,
+        "output_classes": [
+          "glossary",
+          "questions",
+          "scenarios"
+        ],
+        "words": 426
+      }
+    ],
+    "by_mode": {
+      "oneshot": {
+        "prompts": 9,
+        "with_handoff": 0,
+        "with_internal_order": 9,
+        "multi_output": 1
+      },
+      "stepwise": {
+        "prompts": 10,
+        "with_handoff": 10,
+        "with_internal_order": 9,
+        "multi_output": 6
+      },
+      "legacy": {
+        "prompts": 5,
+        "with_handoff": 0,
+        "with_internal_order": 4,
+        "multi_output": 2
+      }
+    }
+  },
+  "catalogue": {
+    "skills": 33,
+    "operations": 31,
+    "single_operation_skills": [],
+    "min_operations_per_skill": 2,
+    "max_operations_per_skill": 7,
+    "reuse": {
+      "check-ambiguity": 2,
+      "check-atomicity": 4,
+      "check-completeness": 6,
+      "check-consistency": 4,
+      "check-schema": 11,
+      "check-source-evidence": 3,
+      "check-verifiability": 4,
+      "check-vocabulary": 2,
+      "classify-item": 6,
+      "classify-severity": 6,
+      "deduplicate-items": 5,
+      "extract-actors": 3,
+      "extract-constraints": 3,
+      "extract-entities": 1,
+      "extract-metrics": 3,
+      "extract-source-reference": 3,
+      "extract-statements": 6,
+      "generate-abstract": 2,
+      "generate-acceptance-criterion": 1,
+      "generate-question": 1,
+      "generate-rationale": 3,
+      "generate-statement": 4,
+      "link-elements": 8,
+      "map-to-slot": 7,
+      "match-coverage": 5,
+      "normalize-text": 1,
+      "rank-items": 3,
+      "render-projection": 1,
+      "score-item": 2,
+      "select-option": 2,
+      "split-statement": 3
+    },
+    "reuse_candidates": [
+      {
+        "operation": "check-schema",
+        "callers": 11
+      },
+      {
+        "operation": "link-elements",
+        "callers": 8
+      },
+      {
+        "operation": "map-to-slot",
+        "callers": 7
+      },
+      {
+        "operation": "check-completeness",
+        "callers": 6
+      },
+      {
+        "operation": "classify-item",
+        "callers": 6
+      },
+      {
+        "operation": "classify-severity",
+        "callers": 6
+      },
+      {
+        "operation": "extract-statements",
+        "callers": 6
+      },
+      {
+        "operation": "deduplicate-items",
+        "callers": 5
+      },
+      {
+        "operation": "match-coverage",
+        "callers": 5
+      },
+      {
+        "operation": "check-atomicity",
+        "callers": 4
+      },
+      {
+        "operation": "check-consistency",
+        "callers": 4
+      },
+      {
+        "operation": "check-verifiability",
+        "callers": 4
+      },
+      {
+        "operation": "generate-statement",
+        "callers": 4
+      },
+      {
+        "operation": "check-source-evidence",
+        "callers": 3
+      },
+      {
+        "operation": "extract-actors",
+        "callers": 3
+      },
+      {
+        "operation": "extract-constraints",
+        "callers": 3
+      },
+      {
+        "operation": "extract-metrics",
+        "callers": 3
+      },
+      {
+        "operation": "extract-source-reference",
+        "callers": 3
+      },
+      {
+        "operation": "generate-rationale",
+        "callers": 3
+      },
+      {
+        "operation": "rank-items",
+        "callers": 3
+      },
+      {
+        "operation": "split-statement",
+        "callers": 3
+      }
+    ]
+  },
+  "verdicts": {
+    "H1_handoff_separates_modes": true,
+    "H2_oneshot_implies_atomic_refuted": true,
+    "H3_single_operation_skills": 0
+  }
+}

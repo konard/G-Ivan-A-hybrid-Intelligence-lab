@@ -99,6 +99,8 @@ is_active_file() {
     docs/adr/2026-09-adr-012-agents-md-root-contract.md | \
     docs/adr/2026-09-adr-013-run-modes-deprecation.md | \
     docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md | \
+    docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md | \
+    docs/adr/2026-09-adr-016-skill-form-and-contract-format.md | \
     docs/adr/README.md | \
     standards/README.md | \
     standards/agents-md-bootstrap-standard.md | \
@@ -218,6 +220,35 @@ is_active_file() {
     research/ba-requirements/exp/ba-meta-model-563/measure-legacy-normative-influence.py | \
     research/ba-requirements/exp/ba-meta-model-563/measure-legacy-normative-influence.log | \
     research/ba-requirements/exp/ba-meta-model-563/legacy-normative-influence.json | \
+    research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md | \
+    research/ba-requirements/2026-09-10-gigacode-environment-facts.md | \
+    research/ba-requirements/2026-09-10-skill-granularity-format-facts.md | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/README.md | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/audit-taxonomy-defects.py | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/audit-taxonomy-defects.log | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/taxonomy-defects.json | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/validate-new-taxonomy.py | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/validate-new-taxonomy.log | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/taxonomy-validation.json | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/2026-09-10-synthetic-cases.md | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/fetch-gigacode-docs.py | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/fetch-gigacode-docs.log | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/gigacode-docs.json | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/measure-skill-format.py | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/measure-skill-format.log | \
+    research/ba-requirements/exp/ba-process-taxonomy-571/skill-format.json | \
+    research/ba-requirements/ba-process-taxonomy/00-introduction.md | \
+    research/ba-requirements/ba-process-taxonomy/10-theory.md | \
+    research/ba-requirements/ba-process-taxonomy/20-taxonomy.md | \
+    research/ba-requirements/ba-process-taxonomy/30-decision-framework.md | \
+    research/ba-requirements/ba-process-taxonomy/40-practice-and-cases.md | \
+    research/ba-requirements/ba-process-taxonomy/50-open-research.md | \
+    research/ba-requirements/ba-operation-taxonomy/00-introduction.md | \
+    research/ba-requirements/ba-operation-taxonomy/10-theory.md | \
+    research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md | \
+    research/ba-requirements/ba-operation-taxonomy/30-decision-framework.md | \
+    research/ba-requirements/ba-operation-taxonomy/40-practice-and-cases.md | \
+    research/ba-requirements/ba-operation-taxonomy/50-open-research.md | \
     research/ba-requirements/solution-modeling/00-introduction.md | \
     research/ba-requirements/solution-modeling/10-theory.md | \
     research/ba-requirements/solution-modeling/20-taxonomy.md | \
@@ -1858,11 +1889,11 @@ require_text "ai-rules/agent-onboarding-protocol.md" "templates/htom/README.md"
 require_text "ai-rules/agent-onboarding-protocol.md" "standards/session-handover-standard.md"
 
 require_text "ops/artifact-map.md" "status: canonical"
-require_text "ops/artifact-map.md" "version: 2.12"
+require_text "ops/artifact-map.md" "version: 2.14"
 require_text "ops/artifact-map.md" "templates/htom/AI_GOVERNANCE.md"
 require_text "ops/artifact-map.md" "templates/spoke/README.md"
 require_text "ops/artifact-map.md" "docs/rfc/htom-vs-spoke-clarification-2026-06.md"
-require_text "ops/artifact-map.md" "updated: 2026-09-09"
+require_text "ops/artifact-map.md" "updated: 2026-09-10"
 require_text "ops/artifact-map.md" "temperature: 0.1"
 require_text "ops/artifact-map.md" "agent-onboarding-protocol.md"
 require_text "ops/artifact-map.md" "docs/adr/2026-06-adr-001-ecosystem-infrastructure-methodology.md"
@@ -2271,7 +2302,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.60"
+require_text "ops/backlog.md" "version: 1.61"
 require_text "ops/backlog.md" "type: backlog"
 require_text "ops/backlog.md" "ops/backlog-instruction.md"
 require_text "ops/backlog.md" "# BACKLOG - активные спринты Хаба"
