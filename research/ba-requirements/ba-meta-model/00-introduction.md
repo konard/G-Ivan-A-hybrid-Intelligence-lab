@@ -1,12 +1,12 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-09-08
+version: 0.2
+updated: 2026-09-10
 temperature: 0.3
 type: research
-context: [ba, methodology, meta-model, taxonomy, execution-package, gigacode, deprecation, traceability, issue-563]
+context: [ba, methodology, meta-model, taxonomy, actor, execution-package, gigacode, deprecation, traceability, issue-563, issue-571]
 method: synthesis + corpus-measurement + entity-modeling + package-design
-scope: ecosystem
+scope: mango-only
 source: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563"
 based_on:
   - research/ba-requirements/2026-09-08-meta-model-inputs-facts.md
@@ -15,6 +15,9 @@ based_on:
   - research/ba-requirements/artifact-micro-structure/20-taxonomy.md
 related_artifacts:
   - "docs/adr/2026-09-adr-013-run-modes-deprecation.md"
+  - "docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md"
+  - "research/ba-requirements/ba-process-taxonomy/20-taxonomy.md"
+  - "research/ba-requirements/ba-operation-taxonomy/20-taxonomy.md"
   - "standards/product-taxonomy-reference.md"
   - "research/ba-requirements/orchestration/00-introduction.md"
   - "ops/backlog.md"
@@ -22,6 +25,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/561"
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/557"
+  - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571"
 ---
 
 # Каноническая BA Meta-Model и Execution Package
@@ -54,11 +58,30 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
 добавляет нового слоя поверх существующих — он объявляет, какие сущности
 канонические, а какие являются их проекциями.
 
-## BLUF: одиннадцать утверждений
+**Область применимости (версия 0.2).** Мета-модель специализирована под
+предметную область КК Манго и среду исполнения GigaCode. Универсальность **не
+утверждается**: `L0` и `L1` процессной таксономии унаследованы из BABOK Guide v3
+и переносимы по построению, а `L2`, `L3` и словарь операций выведены из одной
+предметной области. Переносимость на другой домен — гипотеза дорожной карты
+([`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/50-open-research.md)),
+а не свойство модели.
 
-1. **Мета-модель состоит из девяти сущностей.** `Product`, `Artifact`,
-   `Operation`, `Process`, `Route`, `Actor`, `Gate`, `Contract`, `Trace`. Всё
-   остальное в накопленных модулях — их проекция, а не новая сущность
+**Что изменила версия 0.2**
+([issue #571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571)):
+добавлены сущности `System` и `Actor` в расширенном значении, `Skill` объявлен
+подпроцессом и самостоятельной сущностью, процессная и операционная таксономии
+вынесены в отдельные модули и пересобраны на индустриальном базисе, а
+унаследованные из спицы словари девяти процессов и тринадцати операций
+депрекированы.
+
+## BLUF: двенадцать утверждений
+
+1. **Мета-модель состоит из одиннадцати сущностей.** `Product`, `System`,
+   `Artifact`, `Operation`, `Skill`, `Process`, `Route`, `Actor`, `Gate`,
+   `Contract`, `Trace`. Версия 0.2 добавила `System` — объект изменения, к
+   которому предъявляются требования, — и перевела `Skill` из реализации
+   операции в самостоятельную сущность. Всё остальное в накопленных модулях —
+   проекция, а не новая сущность
    ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md), §2).
 2. **Идентичность работы задаётся парой «операция + продуктовый класс».**
    Режим запуска (`stepwise`, `oneshot`, `legacy`) идентичностью не является и
@@ -66,10 +89,13 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
    ([ADR-013](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-013-run-modes-deprecation.md)).
    Основание измеримо: 24 промпта на 13 способностей, средний Жаккар скелетов
    режимных вариантов — 0.077.
-3. **Операция — тип работы, навык — её единственная исполнимая реализация,
-   процесс — оркестрация навыков.** Три сущности, которые в корпусе спицы
-   слиты в один артефакт (промпт), в мета-модели разведены и связаны
-   отображением «многие к одному» снизу вверх.
+3. **Процесс → навыки (1:N) → операции (1:N).** Навык — не реализация
+   операции, а **подпроцесс**: участок процесса с собственным входом, выходом,
+   гейтом и правом ветвиться. Операция ветвиться не может и производит ровно
+   один класс результата. Три сущности, слитые в корпусе спицы в один артефакт
+   (промпт), разведены и связаны цепочкой вложения, а не отображением «многие к
+   одному»
+   ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md), §4).
 4. **Гейт — одна сущность с тремя исполнителями.** `G-self` (агент проверяет
    себя), `G-mach` (валидатор), `G-human` (человек) — не три типологии из трёх
    модулей, а три значения поля `executor` одной сущности. Человеческие гейты
@@ -110,6 +136,14 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
     Основание измеримо: 10 из 12 нормативных конструкций мета-модели
     отсутствуют во всех 24 активных промптах.
 
+12. **Актор объявляется, а не изобретается.** `Актор` — общее понятие
+    действующего лица: пользователь, заказчик, аналитик, AI-агент, валидатор.
+    Перечень акторов задачи извлекается из источника операцией
+    `extract-actors` и фиксируется в `A-CORE`; артефакт-проекция (диаграмма
+    вариантов использования, пользовательская история) берёт акторов только
+    оттуда. `Система` при этом — объект требований, а не исполнитель шага
+    ([`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md), §2.1–§2.2).
+
 ## Что закрывают файлы модуля
 
 | Контракт issue #563 | Где закрыт |
@@ -122,6 +156,21 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
 | План вертикального среза и сбора эмпирики | [`40-practice-and-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/40-practice-and-cases.md) §4–§5 |
 | Защита новой нормы от диктата наследия ([комментарий фаундера к PR #564](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/564)) | [ADR-014](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md), §6.1 [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md), §7 [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md), `EP-C6`/`SK-7` [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/30-decision-framework.md) |
 | Не выполнено и вопросы | [`50-open-research.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/50-open-research.md) §4 |
+
+Контракты [issue #571](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/571)
+закрываются версией 0.2 и двумя новыми модулями.
+
+| Контракт issue #571 | Где закрыт |
+| --- | --- |
+| Глубокий разбор дефектов действующей таксономии | [`2026-09-10-process-taxonomy-defects-facts.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/2026-09-10-process-taxonomy-defects-facts.md) |
+| Индустриальный базис процессов и дельта КК Манго | [`ba-process-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-process-taxonomy) |
+| Гранулярность операций и связь с навыками | [`ba-operation-taxonomy/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/ba-requirements/ba-operation-taxonomy) |
+| Однозначные определения артефактов (`A-CORE`, `A-TZ`, `A-BCREQ`, `A-REP`, `A-TRACE`) | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md) §2 |
+| Сущности `Система`, `Пользователь`, `Актор`, навык как подпроцесс | [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md) §2, §4 |
+| Маршрут как граф с ветвлениями по гейтам | [`10-theory.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/10-theory.md) §6, [`30-decision-framework.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/30-decision-framework.md) §6.1 |
+| Обязательная ссылка на источник в контракте человеческого гейта | [`20-taxonomy.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/ba-meta-model/20-taxonomy.md) §7, `GT-5` |
+| Синтетические кейсы и эталоны | [`exp/ba-process-taxonomy-571/2026-09-10-synthetic-cases.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/ba-requirements/exp/ba-process-taxonomy-571/2026-09-10-synthetic-cases.md) |
+| Решение о пересборке | [ADR-015](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/docs/adr/2026-09-adr-015-process-operation-taxonomy-rebuild.md) |
 
 ## Доказательная база
 
@@ -154,4 +203,8 @@ Issue [#563](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/563)
 - **Нет продуктового каталога.** Домены, capability и features остаются в
   споке; Хаб владеет формой уровней.
 - **Нет утверждённой нормы.** Модуль — исследование. Переход в норму идёт
-  задачами `B-146`…`B-152`.
+  задачами `B-146`…`B-152` и `B-154`…`B-160`.
+- **Нет заявки на универсальность.** Модуль описывает реализацию БА-процессов
+  КК Манго в GigaCode. Перенос дома мета-модели в `projects/` и создание
+  стандарта мета-модели — задачи дорожной карты `B-154` и `B-155`, а не
+  содержание этой версии.
