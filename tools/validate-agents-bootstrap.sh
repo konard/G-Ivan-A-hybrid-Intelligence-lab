@@ -68,7 +68,7 @@ grep -Fq -- "- archetype: \`${archetype}\`" "$agents_file" || \
 grep -Fq -- "- environment: \`${environment}\`" "$agents_file" || \
   fail "AGENTS.md environment must match .hub-profile.json"
 
-for section in scope hard_rules forbidden routing artifact_homes issue_levels missing_tags context_scope validation models escalation; do
+for section in scope hard_rules forbidden guidelines hybrid_work project_specific_rules routing artifact_homes issue_levels missing_tags context_scope validation models escalation; do
   grep -Fq "<$section>" "$agents_file" || fail "AGENTS.md missing section: <$section>"
   grep -Fq "</$section>" "$agents_file" || fail "AGENTS.md missing section: </$section>"
 done

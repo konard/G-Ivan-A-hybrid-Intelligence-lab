@@ -530,6 +530,7 @@ is_active_file() {
     docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md | \
     docs/analysis/2026-08-17-agent-lifecycle-rrp-gap-analysis.md | \
     docs/analysis/2026-09-03-ai-rules-compliance-failure-root-cause.md | \
+    docs/analysis/2026-09-10-agents-md-hybrid-work-contract-analysis.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task.md | \
     templates/htom/.github/ISSUE_TEMPLATE/task-creative.md | \
     templates/htom/tools/validate-repository-structure.sh | \
@@ -2270,7 +2271,7 @@ require_text "ops/session-digests.md" "ops/backlog.md"
 reject_text "ops/session-digests.md" "Конард"
 
 require_text "ops/backlog.md" "status: canonical"
-require_text "ops/backlog.md" "version: 1.59"
+require_text "ops/backlog.md" "version: 1.60"
 require_text "ops/backlog.md" "type: backlog"
 require_text "ops/backlog.md" "ops/backlog-instruction.md"
 require_text "ops/backlog.md" "# BACKLOG - активные спринты Хаба"

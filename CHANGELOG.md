@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 2.02
-updated: 2026-09-09
+version: 2.03
+updated: 2026-09-10
 temperature: 0.1
 ---
 
@@ -12,6 +12,8 @@ All notable repository governance changes are documented here.
 ## Unreleased
 
 ### Added
+
+- contracts: корневой [`AGENTS.md`](AGENTS.md) обновлён до версии 2.0 (issue #569, B-135) — общий слой правил (`<hard_rules>`, `<forbidden>`, новые `<guidelines>` и `<hybrid_work>`) отделён от проектного слоя `<project_specific_rules>`, куда перенесено правило Хаба о расширении границ рассмотрения. Введён контракт гибридной работы: обязанность апеллировать при противоречии (отсутствие апелляции — утверждение, что противоречий не найдено), автономия и бюджет по режиму `Creative`/`Hybrid`/`Structured`, работа с бэклогом без ретроспективного добавления текущей задачи и поведение на границе контракта проекта. Пороги объёма убраны из точки входа и нормируются один раз в [стандарте структуры](standards/agents-md-bootstrap-standard.md); `<artifact_homes>` разделяет контракты агента и процессные контракты; `<issue_levels>` и `<missing_tags>` переписаны (ФТ/НФТ описывают целевую систему; отсутствие поля запускает действия, а не запись). Шаблоны [спицы](templates/spoke/AGENTS.md) и [HTOM](templates/htom/AGENTS.md) получили обязательный слот проектных правил, [`ai-rules/agent-work-rules.md`](ai-rules/agent-work-rules.md) — «Контракт апелляции» (v1.7), а разбор всех предложений владельца и пять синтетических кейсов — [аналитику контракта гибридной работы](docs/analysis/2026-09-10-agents-md-hybrid-work-contract-analysis.md). Черновик `templates/agents-md-root-draft.md` переведён в `superseded`, чтобы не расходиться с действующими артефактами. Предложение о метке `ai-generated` эскалировано без реализации (B-154).
 
 - docs: добавлен презентационный обзор Мета-модели БА для стейкхолдеров — от ограничений prompt-only подхода через таксономии, процессы, гейты и прослеживаемость к честному GigaCode mapping, Evidence Map и первому MVP (issue #565).
 
